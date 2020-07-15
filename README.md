@@ -1,5 +1,5 @@
 # SemSim AutoCor
-Semantic Similarities for the computation of textual autocorrelation
+Semantic similarities for the computation of textual autocorrelation
 
 Useful links :
 
