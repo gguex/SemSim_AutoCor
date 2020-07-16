@@ -1,14 +1,15 @@
 import nltk
 from flair.models import SequenceTagger
 from flair.data import Sentence
-from nltk.stem import WordNetLemmatizer
 import re
 
 #--- Parameters ---#
 
 # Path of the raw text file
 text_file_path = "/home/gguex/Documents/data/corpora/pg43936-The_Wonderful_Wizard_of_Oz.txt"
+# Path of the outputted text file with two columns : token, POS tag
 tagged_output_file = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_tagged.txt"
+# Path of the outputted text file with only nouns
 noun_only_output_file = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
 
 #--- POS tagging of the file ---#
@@ -39,7 +40,7 @@ with open(tagged_output_file, "w") as output_tagged_file:
 
 # Saving the file with only nouns
 allowed_tag = ["NN", "NNS", "NNP", "NNPS"]
-lemmatizer = WordNetLemmatizer()
+lemmatizer = nltk.stem.WordNetLemmatizer()
 with open(noun_only_output_file, "w") as output_tagged_file:
     for tagged_sentence in tagged_sentence_list:
         for token in tagged_sentence:
