@@ -2,7 +2,7 @@
 
 # on considère divers types de distances D entre mots, ainsi que différentes matrices d'échange E(l) ("l-sized neighborhoods")
 
-setwd("/Documents/SimDiversity/SemSim_AutoCor/textual_autocorrelation_old")
+setwd("/Documents/SimDiversity/SemSim_AutoCor/code_R/textual_autocorrelation_old")
 
   
 distances=read.csv(file="distances.txt",sep = "\t",header = TRUE)
