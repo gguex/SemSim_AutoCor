@@ -1,6 +1,6 @@
 # Notes on python scripts
 
-**text_processing.py** : This script take a raw text file and create two text files.
+**text_preprocessing.py** : This script take a raw text file and create two text files.
 
   - The first file (ending with \_tagged.txt) contains two columns, the first one with every token from the text file and the second the corresponding POS tag obtained by Flair library (https://github.com/flairNLP/flair).
   
