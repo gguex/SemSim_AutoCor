@@ -6,3 +6,5 @@
   
   - The second file (ending with \_noun_only.txt) contains only nouns from the raw text file (tokens tagged with "NN", "NNS", "NNP" and "NNPS" by Flair). Each token is lemmatized, lower-cased and non-alpha characters are removed (compound words are splitted). Tokens are separated by a whitespace and sentences by "\n" (end of line).
 
+**transform_text_into_gensim_model.py** : This short script take a text word vector model (from e.g. https://wikipedia2vec.github.io/wikipedia2vec/pretrained/) and transform it into a gensim model (it's faster to load in a gensim format)
+
