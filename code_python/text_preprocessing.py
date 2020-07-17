@@ -41,7 +41,7 @@ with open(tagged_output_file, "w") as output_tagged_file:
 # Saving the file with only nouns
 allowed_tag = ["NN", "NNS", "NNP", "NNPS"]
 lemmatizer = nltk.stem.WordNetLemmatizer()
-with open(noun_only_output_file, "w") as output_tagged_file:
+with open(noun_only_output_file, "w") as noun_only_file:
     for tagged_sentence in tagged_sentence_list:
         for token in tagged_sentence:
             if token.get_tag("pos").value in allowed_tag:
@@ -49,5 +49,5 @@ with open(noun_only_output_file, "w") as output_tagged_file:
                 processed_token = re.sub(r'[^\w\s\-]', "", processed_token)
                 processed_token = re.sub(r'\-', " ", processed_token)
                 processed_token = lemmatizer.lemmatize(processed_token)
-                output_tagged_file.write(processed_token + " ")
-        output_tagged_file.write("\n")
+                noun_only_file.write(processed_token + " ")
+        noun_only_file.write("\n")
