@@ -5,12 +5,15 @@ import re
 
 # --- Parameters --- #
 
+base_path = "/home/gguex/Documents"
+
 # Path of the raw text file
-text_file_path = "/home/gguex/Documents/data/corpora/pg43936-The_Wonderful_Wizard_of_Oz.txt"
+text_file_path = base_path + "/data/corpora/pg43936-The_Wonderful_Wizard_of_Oz.txt"
 # Path of the outputted text file with two columns : token, POS tag
-tagged_output_path = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_tagged.txt"
+tagged_output_path =  base_path + "/data/corpora/The_Wonderful_Wizard_of_Oz_tagged.txt"
 # Path of the outputted text file with only nouns
-noun_only_output_path = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
+noun_only_output_path =  base_path + "/data/corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
+verbs_only_output_path = base_path + "/data/corpora/The_Wonderful_Wizard_of_Oz_verbs_only.txt"
 
 # --- POS tagging of the file --- #
 
@@ -51,3 +54,17 @@ with open(noun_only_output_path, "w") as noun_only_file:
                 processed_token = lemmatizer.lemmatize(processed_token)
                 noun_only_file.write(processed_token + " ")
         noun_only_file.write("\n")
+
+
+# Saving the file with only verbs
+lemmatizer = nltk.stem.WordNetLemmatizer()
+with open(verbs_only_output_path, "w") as verbs_only_file:
+    for tagged_sentence.startswith("VB"):
+        for token in tagged_sentence:
+            if token.get_tag("pos").value in allowed_tag:
+                processed_token = token.text.lower()
+                processed_token = re.sub(r'[^\w\s\-]', "", processed_token)
+                processed_token = re.sub(r'\-', " ", processed_token)
+                processed_token = lemmatizer.lemmatize(processed_token)
+                verbs_only_file.write(processed_token + " ")
+        verbs_only_file.write("\n")
