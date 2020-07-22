@@ -69,7 +69,7 @@ for r in r_range:
     # local inertial
     local_inertia = np.sum(epsilon_mat * d_mat) / 2
     # autocorrelation index
-    autocor_index = global_inertia - local_inertia / global_inertia
+    autocor_index = (global_inertia - local_inertia) / global_inertia
     # append
     autocor_vec.append(autocor_index)
 
