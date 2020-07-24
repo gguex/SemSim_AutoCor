@@ -1,0 +1,7 @@
+gensim~=3.8.3
+nltk~=3.5
+flair~=0.5.1
+tqdm~=4.47.0
+numpy~=1.19.0
+pandas~=1.0.5
+matplotlib~=3.2.2

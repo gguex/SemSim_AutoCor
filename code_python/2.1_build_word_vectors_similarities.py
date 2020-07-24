@@ -1,11 +1,12 @@
 import nltk
 from gensim.models import KeyedVectors
 import os
+from tqdm import tqdm
 
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
+input_file = "The_WW_of_Oz_nouns.txt"
 
 # Path of the Word vector model (absolute path, not in the project directory)
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
@@ -54,7 +55,7 @@ vocab_common = list(vocab_wiki & vocab_text)
 
 # Write the two files
 with open(type_freq_file_path, "w") as type_freq_file, open(sim_matrix_file_path, "w") as sim_matrix_file:
-    for type_1 in vocab_common:
+    for type_1 in tqdm(vocab_common):
         type_freq_file.write(type_1 + ";" + str(type_freq_dict[type_1]) + "\n")
         for type_2 in vocab_common:
             sim_matrix_file.write(str(wv_wiki.similarity(type_1, type_2)))

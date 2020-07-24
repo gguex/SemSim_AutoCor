@@ -3,11 +3,12 @@ import nltk
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from tqdm import tqdm
 
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
-input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
+input_file = "The_WW_of_Oz_nouns.txt"
 
 # Name of the tag for the similarity
 sim_tag = "wesim"
@@ -80,7 +81,7 @@ r_range = list(range(1, max_range + 1))
 
 # autocor_vec
 autocor_vec = []
-for r in r_range:
+for r in tqdm(r_range):
     # epsilon matrix (page 5 article)
     epsilon_mat = pres_mat.dot(exch_mat(r).dot(pres_mat.T))
     # local inertial
@@ -95,7 +96,7 @@ for r in r_range:
 plt.figure("autocorrelation")
 plt.scatter(r_range, autocor_vec)
 plt.plot(r_range, autocor_vec)
-plt.title(input_file + "| Sim: " + sim_tag)
+plt.title(input_file + " | Sim: " + sim_tag + " | n tokens: " + str(n_token))
 plt.xlabel("Neighbourhood size r")
 plt.ylabel("Autocorrelation index")
 plt.savefig(results_file_path)

@@ -8,7 +8,7 @@ import os
 # --- Parameters --- #
 
 # Corpus name
-corpus_name = "The_Wonderful_Wizard_of_Oz.txt"
+corpus_name = "The_WW_of_Oz.txt"
 
 # --- Defining paths --- #
 
