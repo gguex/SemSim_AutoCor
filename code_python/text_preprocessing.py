@@ -3,20 +3,27 @@ from flair.models import SequenceTagger
 from flair.data import Sentence
 import re
 from tqdm import tqdm
+import os
 
 # --- Parameters --- #
 
-base_path = "/home/megloff1/Desktop/ARTICLE/SemSim_AutoCor/"
+# Corpus name
+corpus_name = "The_Wonderful_Wizard_of_Oz.txt"
+
+# --- Defining paths --- #
+
+working_path = os.getcwd()
+base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
 # Path of the raw text file
-text_file_path = base_path + "corpora/pg43936-The_Wonderful_Wizard_of_Oz.txt"
+text_file_path = base_path + "corpora/" + corpus_name
 # Path of the outputted text file with two columns : token, POS tag
-tagged_output_path =  base_path + "corpora/The_Wonderful_Wizard_of_Oz_tagged.txt"
+tagged_output_path = base_path + "corpora/" + corpus_name[:-4] + "_tagged.txt"
 # Path of the outputted text file with only nouns
-noun_only_output_path =  base_path + "corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
-verb_only_output_path = base_path + "corpora/The_Wonderful_Wizard_of_Oz_verb_only.txt"
-adjective_only_output_path = base_path + "corpora/The_Wonderful_Wizard_of_Oz_adjective_only.txt"
-adverb_only_output_path = base_path + "corpora/The_Wonderful_Wizard_of_Oz_adverb_only.txt"
+noun_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_nouns.txt"
+verb_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_verbs.txt"
+adjective_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_adjectives.txt"
+adverb_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_adverbs.txt"
 
 # --- POS tagging of the file --- #
 
@@ -44,7 +51,6 @@ with open(tagged_output_path, "w") as output_tagged_file:
         for token in tagged_sentence:
             output_tagged_file.write(token.text + "\t" + token.get_tag("pos").value + "\n")
 
-
 # Saving the file with one type of part of speach
 #
 # NN <- nouns
@@ -54,14 +60,14 @@ with open(tagged_output_path, "w") as output_tagged_file:
 
 lemmatizer = nltk.stem.WordNetLemmatizer()
 with open(noun_only_output_path, "w") as noun_only_file, \
-    open(verb_only_output_path, "w") as verb_only_file, \
-    open(adjective_only_output_path, "w") as adjective_only_file, \
-    open(adverb_only_output_path, "w") as adverb_only_file:
+        open(verb_only_output_path, "w") as verb_only_file, \
+        open(adjective_only_output_path, "w") as adjective_only_file, \
+        open(adverb_only_output_path, "w") as adverb_only_file:
     for tagged_sentence in tqdm(tagged_sentence_list):
         for token in tagged_sentence:
             pos = token.get_tag("pos").value[:2]
             if pos not in ("NN", "VB", "JJ", "RB"):
-              continue;
+                continue;
             processed_token = token.text.lower()
             processed_token = re.sub(r'[^\w\s\-]', "", processed_token)
             processed_token = re.sub(r'\-', " ", processed_token)
