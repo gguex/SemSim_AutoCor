@@ -3,19 +3,29 @@ from gensim.models import KeyedVectors
 
 # --- Parameters --- #
 
-# Path of the text file with only nouns
-noun_only_file_path = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
+# Path of the text file with only nouns, verbs, adjectives or adverbs
+input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
+
+# Path of the Word vector model (absolute path, not in the project directory)
+wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
+
+# --- Defining paths --- #
+
+working_path = os.getcwd()
+base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
+
+# Path of the inputted file
+file_path = base_path + "corpora/" + input_file
 # Path of the outputted present types and frequencies
-type_freq_file_path = \
-    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/Wizard_of_Oz_typefreq.txt"
+type_freq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_typefreq.txt"
 # Path of the outputted similarity matrix
-sim_matrix_file_path = \
-    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/Wizard_of_Oz_similarities.txt"
+sim_matrix_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_similarities.txt"
+
 
 # --- Get token, type and freq --- #
 
 # Opening the file
-with open(noun_only_file_path, "r") as text_file:
+with open(file_path, "r") as text_file:
     text_string = text_file.read()
 
 # Split by tokens
@@ -28,7 +38,7 @@ vocab_text = set(type_freq_dict.keys())
 # --- Load the gensim model, check common vocabulary and write files ---#
 
 # load gensim model
-wv_wiki = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model")
+wv_wiki = KeyedVectors.load(wv_model_path)
 
 # build vocabulary
 vocab_wiki = set(wv_wiki.vocab.keys())

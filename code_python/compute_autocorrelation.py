@@ -9,10 +9,12 @@ import matplotlib.pyplot as plt
 noun_only_file_path = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
 # Path of the present types and frequencies
 type_freq_file_path = \
-    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/Wizard_of_Oz_typefreq.txt"
+    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/" \
+    "The_Wonderful_Wizard_of_Oz_nouns_typefreq.txt"
 # Path of the similarity matrix
 sim_matrix_file_path = \
-    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/Wizard_of_Oz_similarities.txt"
+    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/" \
+    "The_Wonderful_Wizard_of_Oz_nouns_similarities.txt"
 
 # --- Load the data --- #
 
