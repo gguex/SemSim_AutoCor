@@ -1,5 +1,6 @@
 import nltk
 from gensim.models import KeyedVectors
+import os
 
 # --- Parameters --- #
 
@@ -9,17 +10,22 @@ input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
 # Path of the Word vector model (absolute path, not in the project directory)
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
 
+# Name of the outputted tag for the similarity
+sim_ext_name = "wesim"
+
 # --- Defining paths --- #
 
+# Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
 working_path = os.getcwd()
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
 # Path of the inputted file
 file_path = base_path + "corpora/" + input_file
 # Path of the outputted present types and frequencies
-type_freq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_typefreq.txt"
+type_freq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_ext_name + "_typefreq.txt"
 # Path of the outputted similarity matrix
-sim_matrix_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_similarities.txt"
+sim_matrix_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
+                       "_" + sim_ext_name + "_similarities.txt"
 
 
 # --- Get token, type and freq --- #

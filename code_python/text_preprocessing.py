@@ -12,6 +12,7 @@ corpus_name = "The_Wonderful_Wizard_of_Oz.txt"
 
 # --- Defining paths --- #
 
+# Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
 working_path = os.getcwd()
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 

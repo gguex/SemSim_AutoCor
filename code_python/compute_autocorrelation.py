@@ -2,38 +2,50 @@ import numpy as np
 import nltk
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 # --- Parameters --- #
 
-# Path of the text file with only nouns
-noun_only_file_path = "/home/gguex/Documents/data/corpora/The_Wonderful_Wizard_of_Oz_noun_only.txt"
-# Path of the present types and frequencies
-type_freq_file_path = \
-    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/" \
-    "The_Wonderful_Wizard_of_Oz_nouns_typefreq.txt"
+# Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
+input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
+
+# Name of the tag for the similarity
+sim_ext_name = "wesim"
+
+# --- Defining paths --- #
+
+# Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
+working_path = os.getcwd()
+base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
+
+# Path of the text file
+file_path = base_path + "corpora/" + input_file
+# Path of the types and frequencies file
+typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_ext_name + "_typefreq.txt"
 # Path of the similarity matrix
-sim_matrix_file_path = \
-    "/home/gguex/Documents/recherche/SemSim_AutoCor-master/similarities_frequencies/" \
-    "The_Wonderful_Wizard_of_Oz_nouns_similarities.txt"
+similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
+                         "_" + sim_ext_name + "_similarities.txt"
+# Results path file
+results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_ext_name + "_autocor.png"
 
 # --- Load the data --- #
 
 # Import the type freq file
-type_freq_df = pd.read_csv(type_freq_file_path, sep=";", header=None)
+type_freq_df = pd.read_csv(typefreq_file_path, sep=";", header=None)
 type_list = list(type_freq_df[0])
 freq_vec = np.array(type_freq_df[1])
 freq_vec = freq_vec / sum(freq_vec)
 n_type = len(type_list)  # The number of types
 
 # Import the text file and remove non-existing token
-with open(noun_only_file_path, "r") as text_file:
+with open(file_path, "r") as text_file:
     text_string = text_file.read()
 raw_token_list = nltk.word_tokenize(text_string)
 token_list = [token for token in raw_token_list if token in type_list]
 n_token = len(token_list)  # The number of tokens
 
 # Import the similarity matrix
-sim_mat = np.loadtxt(sim_matrix_file_path, delimiter=";")
+sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
 
 # --- Compute the dissimilarity matrix and the exchange matrix function ---#
 
@@ -80,6 +92,7 @@ for r in r_range:
 plt.figure("autocorrelation")
 plt.scatter(r_range, autocor_vec)
 plt.plot(r_range, autocor_vec)
+plt.title(input_file + "| Sim: " + sim_ext_name)
 plt.xlabel("Neighbourhood size r")
 plt.ylabel("Autocorrelation index")
-plt.show()
+plt.savefig(results_file_path)
