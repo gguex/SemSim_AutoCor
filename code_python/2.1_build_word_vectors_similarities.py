@@ -11,7 +11,7 @@ input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
 
 # Name of the outputted tag for the similarity
-sim_ext_name = "wesim"
+sim_tag = "wesim"
 
 # --- Defining paths --- #
 
@@ -22,10 +22,10 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 # Path of the inputted file
 file_path = base_path + "corpora/" + input_file
 # Path of the outputted present types and frequencies
-type_freq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_ext_name + "_typefreq.txt"
+type_freq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
 # Path of the outputted similarity matrix
 sim_matrix_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
-                       "_" + sim_ext_name + "_similarities.txt"
+                       "_" + sim_tag + "_similarities.txt"
 
 
 # --- Get token, type and freq --- #

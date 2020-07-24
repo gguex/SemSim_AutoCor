@@ -10,7 +10,10 @@ import os
 input_file = "The_Wonderful_Wizard_of_Oz_nouns.txt"
 
 # Name of the tag for the similarity
-sim_ext_name = "wesim"
+sim_tag = "wesim"
+
+# Autocorrelation range limit
+max_range = 50
 
 # --- Defining paths --- #
 
@@ -21,12 +24,12 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 # Path of the text file
 file_path = base_path + "corpora/" + input_file
 # Path of the types and frequencies file
-typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_ext_name + "_typefreq.txt"
+typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
 # Path of the similarity matrix
 similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
-                         "_" + sim_ext_name + "_similarities.txt"
+                         "_" + sim_tag + "_similarities.txt"
 # Results path file
-results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_ext_name + "_autocor.png"
+results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_autocor.png"
 
 # --- Load the data --- #
 
@@ -73,7 +76,7 @@ for type_i in type_list:
 global_inertia = np.sum(np.outer(freq_vec, freq_vec) * d_mat) / 2
 
 # r_range
-r_range = list(range(1, 51))
+r_range = list(range(1, max_range + 1))
 
 # autocor_vec
 autocor_vec = []
@@ -92,7 +95,7 @@ for r in r_range:
 plt.figure("autocorrelation")
 plt.scatter(r_range, autocor_vec)
 plt.plot(r_range, autocor_vec)
-plt.title(input_file + "| Sim: " + sim_ext_name)
+plt.title(input_file + "| Sim: " + sim_tag)
 plt.xlabel("Neighbourhood size r")
 plt.ylabel("Autocorrelation index")
 plt.savefig(results_file_path)
