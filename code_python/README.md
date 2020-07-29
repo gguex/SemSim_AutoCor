@@ -12,7 +12,7 @@ adjectives or adverbs) along with the frequencies of each terms.
 The pipeline work with the help of extensions added to the end of the raw text file to ease the workflow.
 
 **1_text_preprocessing.py** : This script take a raw text file and create five text files: One file containing every 
-token with POS tag, and 4 POS-selection files.
+token with POS tag, and 4 POS-selection files, and only token only file.
 
 - *INPUTS*: 
 
@@ -28,6 +28,8 @@ token with POS tag, and 4 POS-selection files.
     adjectives, and adverbs from the corpus (tokens with tag beginning respectively by "NN", "VB", "JJ" and "RB" in 
     Flair). Each token is lemmatized, lower-cased and non-alpha characters are removed (compound words are split). 
     Tokens are separated by a whitespace and sentences by "\n" (end of line).
+    
+    - The file with all tokens *<corpus_name>_all.txt*, with the same structure found in the POS-selection files.
 
 **2.1_build_word_vectors_similarities.py** : This script use the one of the POS-selection files from 
 "1_text_preprocessing.py" and build the similarities and frequencies between terms coming from word embeddings.

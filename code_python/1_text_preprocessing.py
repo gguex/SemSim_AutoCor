@@ -25,6 +25,7 @@ noun_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_nouns.txt"
 verb_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_verbs.txt"
 adjective_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_adjectives.txt"
 adverb_only_output_path = base_path + "corpora/" + corpus_name[:-4] + "_adverbs.txt"
+all_output_path = base_path + "corpora/" + corpus_name[:-4] + "_all.txt"
 
 # --- POS tagging of the file --- #
 
@@ -63,7 +64,8 @@ lemmatizer = nltk.stem.WordNetLemmatizer()
 with open(noun_only_output_path, "w") as noun_only_file, \
         open(verb_only_output_path, "w") as verb_only_file, \
         open(adjective_only_output_path, "w") as adjective_only_file, \
-        open(adverb_only_output_path, "w") as adverb_only_file:
+        open(adverb_only_output_path, "w") as adverb_only_file, \
+        open(all_output_path, "w") as all_file:
     for tagged_sentence in tqdm(tagged_sentence_list):
         for token in tagged_sentence:
             pos = token.get_tag("pos").value[:2]
@@ -73,6 +75,7 @@ with open(noun_only_output_path, "w") as noun_only_file, \
             processed_token = re.sub(r'[^\w\s\-]', "", processed_token)
             processed_token = re.sub(r'\-', " ", processed_token)
             processed_token = lemmatizer.lemmatize(processed_token)
+            all_file.write(processed_token + " ")
             if pos == "NN":
                 noun_only_file.write(processed_token + " ")
             elif pos == "VB":
@@ -85,3 +88,4 @@ with open(noun_only_output_path, "w") as noun_only_file, \
         verb_only_file.write("\n")
         adjective_only_file.write("\n")
         adverb_only_file.write("\n")
+        all_file.write("\n")
