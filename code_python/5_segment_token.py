@@ -2,6 +2,7 @@ import numpy as np
 import nltk
 import pandas as pd
 import os
+import colorsys
 
 # --- Parameters --- #
 
@@ -12,19 +13,19 @@ input_file = "The_WW_of_Oz_nouns.txt"
 sim_tag = "wesim"
 
 # Autocorrelation windows size
-segm_range = 100
+segm_range = 20
 
 # Number of groups
 n_groups = 5
 
 # Alpha parameter
-alpha = 10
+alpha = 0.9
 
 # Beta parameter
 beta = 10
 
 # kappa parameter
-kappa = 0.5
+kappa = 1
 
 # convergence threshold
 conv_threshold = 1e-5
@@ -43,7 +44,7 @@ typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] +
 similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
                          "_" + sim_tag + "_similarities.txt"
 # Results path file
-results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_segm" + str(segm_range) + ".png"
+results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_segm.html"
 
 # --- Load the data --- #
 
@@ -127,3 +128,23 @@ while not converge:
 
 
 # --- Saving results --- #
+
+# Creating group colors
+color_rgb_list = []
+for i in range(n_groups):
+    color_rgb_list.append(np.array(colorsys.hsv_to_rgb(i*1/n_groups, 1, 1)))
+color_rgb_mat = np.array(color_rgb_list)
+
+# Creating words color
+token_color_mat = np.array(255 * z_mat.dot(color_rgb_mat), int)
+
+with open(results_file_path, 'w') as html_file:
+    html_file.write("<html>\n<head></head>\n")
+    html_file.write("<body><p>")
+    for i in range(len(token_list)):
+        html_file.write("<span style=\"background-color: rgb({},{},{})\">".format(token_color_mat[i, 0],
+                                                                                  token_color_mat[i, 1],
+                                                                                  token_color_mat[i, 2]))
+        html_file.write(token_list[i] + " </span>")
+    html_file.write("</p></body>\n</html>")
+
