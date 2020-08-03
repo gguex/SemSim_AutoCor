@@ -2,14 +2,17 @@
 
 ## Main scripts
 
-The pipeline for the computation of autocorrelation take 3 steps: 
+The pipeline for obtaining results take 2 preliminary scripts (1, 2) and 3 computation scripts (3, 4, 5): 
 
 1. The text processing to extract nouns, verbs, adjectives, and adverbs from a raw text file.
 2. The computation of the similarity matrix between terms from a POS-selection file (containing only nouns, verbs, 
 adjectives or adverbs) along with the frequencies of each terms.
-3. The computation of the autocorrelation from a POS-selection file and a similarity matrix
+3. The computation of the autocorrelation from a POS-selection file and a similarity matrix.
+4. The computation of the Local Indicator of Spatial Autocorrelation (LISA) on every token from a POS-selection file 
+and a similarity matrix.
+5. The computation of a (n_token x n_group) membership matrix Z from a POS-selection file and a similarity matrix.
 
-The pipeline work with the help of extensions added to the end of the raw text file to ease the workflow.
+The pipeline works with the help of suffixes to ease the workflow.
 
 **1_text_preprocessing.py** : This script take a raw text file and create five text files: One file containing every 
 token with POS tag, and 4 POS-selection files, and only token only file.
@@ -69,6 +72,74 @@ file to plot the autocorrelation index for a maximum range.
 
     - The file <input_file>_<sim_tag>_autocor.png in the "results" folder, storing the graphic of the 
     autocorrelation index.
+    
+**4_compute_lisa.py** : This script take a POS-selection file and a similarity (by tag), and compute the Local 
+Indicator of Spatial Autocorrelation (LISA) on all token. 
+
+- *INPUTS*:
+
+    - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
+    
+    - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
+    
+    - The *lisa_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
+    
+- *OUPUTS*:
+
+    - The file <input_file>_<sim_tag>_lisa<lisa_range>.png, showing the LISA index for every token.
+    
+    - The file <input_file>_<sim_tag>_lisa<lisa_range>.html, coloring every token depending its LISA index 
+    (green = positive, red = negative).
+    
+**5.1_discontinuity_segment_token.py** : This script take a POS-selection file and a similarity (by tag), 
+and compute a (n_token x n_group) membership matrix Z, which softy assign each token to a group (discontinuity method).
+
+- *INPUTS*:
+
+    - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
+    
+    - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
+    
+    - The *segm_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
+    
+    - The *n_groups*, i.e. the number of groups.
+    
+    - The *alpha*, *beta* and *kappa* hyperparameters, which are defined in article.
+    
+    - The *conv_threshold* parameter, defining when iterations have to stop.
+    
+- *OUPUTS*:
+
+    - The file <input_file>_<sim_tag>_discsegm.csv, containing every token ordered by decreasing membership value for 
+    each groups.
+    
+    - The file <input_file>_<sim_tag>_discsegm.html, coloring every token according to its membership values.
+
+**5.2_cut_segment_token.py** : This script take a POS-selection file and a similarity (by tag), 
+and compute a (n_token x n_group) membership matrix Z, which softy assign each token to a group (cut method).
+
+**WARNING FOR THE MOMENT, THE ALGORITHM OFTEN DIVERGE: ITERATIONS ARE LIMITED TO 300**
+
+- *INPUTS*:
+
+    - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
+    
+    - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
+    
+    - The *segm_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
+    
+    - The *n_groups*, i.e. the number of groups.
+    
+    - The *gamma*, *beta* and *kappa* hyperparameters, which are defined in article.
+    
+    - The *conv_threshold* parameter, defining when iterations have to stop.
+    
+- *OUPUTS*:
+
+    - The file <input_file>_<sim_tag>_cutsegm.csv, containing every token ordered by decreasing membership value for 
+    each groups.
+    
+    - The file <input_file>_<sim_tag>_cutsegm.html, coloring every token according to its membership values.
 
 ## Utils
 
