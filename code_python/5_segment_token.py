@@ -18,10 +18,16 @@ segm_range = 100
 n_groups = 5
 
 # Alpha parameter
-alpha = 0.1
+alpha = 10
 
 # Beta parameter
-beta = 0.1
+beta = 10
+
+# kappa parameter
+kappa = 0.5
+
+# convergence threshold
+conv_threshold = 1e-5
 
 # --- Defining paths --- #
 
@@ -58,7 +64,7 @@ n_token = len(token_list)  # The number of tokens
 # Import the similarity matrix
 sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
 
-# --- Computation ---#
+# --- Computation before loop --- #
 
 # Compute the exchange matrix and the markov chain transition matrix
 exch_m = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= segm_range
@@ -78,3 +84,46 @@ for type_i in type_list:
 # Compute the extended distance matrix
 d_ext_mat = pres_mat.T.dot(d_mat.dot(pres_mat))
 
+# --- Loop --- #
+
+# Initialization of Z
+z_mat = np.random.random((n_token, n_groups))
+z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
+
+# Control of the loop
+converge = False
+
+# Loop
+while not converge:
+
+    # Computation of rho_g vector
+    rho_vec = np.sum(z_mat.T * f_vec, axis=1)
+
+    # Computation of f_i^g matrix
+    fig_mat = ((z_mat / rho_vec).T * f_vec).T
+
+    # Computation of D_i^g matrix
+    dig_mat = fig_mat.T.dot(d_ext_mat).T
+    delta_g_vec = 0.5 * np.diag(dig_mat.T.dot(fig_mat))
+    dig_mat = dig_mat - delta_g_vec
+
+    # Computation of the epsilon_g vector
+    epsilon_g = np.sum(exch_m.dot(z_mat**2), axis=0) -  np.diag(z_mat.T.dot(exch_m.dot(z_mat)))
+
+    # Computation of H_ig
+    hig_mat = beta * dig_mat + alpha * (rho_vec**-kappa) * (z_mat - w_mat.dot(z_mat)) \
+              - (0.5 * alpha * kappa * (rho_vec**(-kappa-1)) * epsilon_g)
+
+    # Computation of the new z_mat
+    z_new_mat = rho_vec * np.exp(hig_mat)
+    z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
+
+    # Verification of convergence
+    if np.linalg.norm(z_mat - z_new_mat) < conv_threshold:
+        converge = True
+
+    # Saving the new z_mat
+    z_mat = z_new_mat
+
+
+# --- Saving results --- #
