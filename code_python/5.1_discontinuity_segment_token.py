@@ -14,19 +14,14 @@ sim_tag = "wesim"
 
 # Autocorrelation windows size
 segm_range = 20
-
 # Number of groups
 n_groups = 5
-
 # Alpha parameter
-alpha = 0.9
-
+alpha = 1
 # Beta parameter
 beta = 10
-
 # kappa parameter
 kappa = 1
-
 # convergence threshold
 conv_threshold = 1e-5
 
@@ -43,8 +38,11 @@ typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] +
 # Path of the similarity matrix
 similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
                          "_" + sim_tag + "_similarities.txt"
-# Results path file
-results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_segm.html"
+# Results html path file
+results_html_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_discsegm.html"
+
+# Results csv path file
+results_csv_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_discsegm.csv"
 
 # --- Load the data --- #
 
@@ -95,6 +93,8 @@ z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
 converge = False
 
 # Loop
+it = 0
+print("Starting loop")
 while not converge:
 
     # Computation of rho_g vector
@@ -109,38 +109,51 @@ while not converge:
     dig_mat = dig_mat - delta_g_vec
 
     # Computation of the epsilon_g vector
-    epsilon_g = np.sum(exch_m.dot(z_mat**2), axis=0) -  np.diag(z_mat.T.dot(exch_m.dot(z_mat)))
+    epsilon_g = np.sum(exch_m.dot(z_mat ** 2), axis=0) - np.diag(z_mat.T.dot(exch_m.dot(z_mat)))
 
     # Computation of H_ig
-    hig_mat = beta * dig_mat + alpha * (rho_vec**-kappa) * (z_mat - w_mat.dot(z_mat)) \
-              - (0.5 * alpha * kappa * (rho_vec**(-kappa-1)) * epsilon_g)
+    hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
+              - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
     # Computation of the new z_mat
     z_new_mat = rho_vec * np.exp(hig_mat)
     z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
 
+    # Print diff and it
+    diff_pre_new = np.linalg.norm(z_mat - z_new_mat)
+    it += 1
+    print("Iteration {}: {}".format(it, diff_pre_new))
+
     # Verification of convergence
-    if np.linalg.norm(z_mat - z_new_mat) < conv_threshold:
+    if diff_pre_new < conv_threshold:
         converge = True
 
     # Saving the new z_mat
     z_mat = z_new_mat
-
 
 # --- Saving results --- #
 
 # Creating group colors
 color_rgb_list = []
 for i in range(n_groups):
-    color_rgb_list.append(np.array(colorsys.hsv_to_rgb(i*1/n_groups, 1, 1)))
+    color_rgb_list.append(np.array(colorsys.hsv_to_rgb(i * 1 / n_groups, 1, 1)))
 color_rgb_mat = np.array(color_rgb_list)
 
 # Creating words color
 token_color_mat = np.array(255 * z_mat.dot(color_rgb_mat), int)
 
-with open(results_file_path, 'w') as html_file:
+# Creating html file
+with open(results_html_file_path, 'w') as html_file:
     html_file.write("<html>\n<head></head>\n")
-    html_file.write("<body><p>")
+    html_file.write("<body><p>Input file: {} | Similarity tag: {} | Neighbourhood range: {} | Number of groups: {} | "
+                    "Alpha: {} | Beta: {} | Kappa: {} | Convergence threshold: {}</p> <p>".format(input_file,
+                                                                                                  sim_tag,
+                                                                                                  segm_range,
+                                                                                                  n_groups,
+                                                                                                  alpha,
+                                                                                                  beta,
+                                                                                                  kappa,
+                                                                                                  conv_threshold))
     for i in range(len(token_list)):
         html_file.write("<span style=\"background-color: rgb({},{},{})\">".format(token_color_mat[i, 0],
                                                                                   token_color_mat[i, 1],
@@ -148,3 +161,22 @@ with open(results_file_path, 'w') as html_file:
         html_file.write(token_list[i] + " </span>")
     html_file.write("</p></body>\n</html>")
 
+# Creating csv file
+with open(results_csv_file_path, 'w') as text_file:
+    text_file.write("Input file: {} | Similarity tag: {} | Neighbourhood range: {} | Number of groups: {} | "
+                    "Alpha: {} | Beta: {} | Kappa: {} | Convergence threshold: {}\n".format(input_file,
+                                                                                            sim_tag,
+                                                                                            segm_range,
+                                                                                            n_groups,
+                                                                                            alpha,
+                                                                                            beta,
+                                                                                            kappa,
+                                                                                            conv_threshold))
+    text_file.write("group;token;id_token;percent\n")
+    for i in range(n_groups):
+        z_g_vec = z_mat[:, i]
+        index_z_g = np.flip(np.argsort(z_g_vec))
+        for j in range(n_token):
+            id_token = index_z_g[j]
+            text_file.write("{};{};{};{}\n".format(i + 1, token_list[id_token], id_token,
+                                                   np.round(100 * z_g_vec[id_token], 2)))
