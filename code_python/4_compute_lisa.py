@@ -52,7 +52,7 @@ n_token = len(token_list)  # The number of tokens
 # Import the similarity matrix
 sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
 
-# --- Computation ---#
+# --- Computation --- #
 
 # Compute the exchange matrix and the markov chain transition matrix
 exch_m = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= lisa_range
@@ -76,7 +76,7 @@ d_ext_mat = pres_mat.T.dot(d_mat.dot(pres_mat))
 h_mat = np.identity(n_token) - np.outer(np.ones(n_token), f_vec)
 
 # Compute the scalar produced matrix
-b_mat = 0.5 * h_mat.dot(d_ext_mat.dot(h_mat.T))
+b_mat = - 0.5 * h_mat.dot(d_ext_mat.dot(h_mat.T))
 
 # Compute of the global inertia
 global_inertia = np.sum(np.outer(freq_vec, freq_vec) * d_mat) / 2
