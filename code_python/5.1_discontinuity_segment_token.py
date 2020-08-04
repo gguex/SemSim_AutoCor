@@ -15,13 +15,13 @@ sim_tag = "wesim"
 # Autocorrelation windows size
 segm_range = 20
 # Number of groups
-n_groups = 5
+n_groups = 2
 # Alpha parameter
 alpha = 1
 # Beta parameter
-beta = 10
+beta = 100
 # kappa parameter
-kappa = 1
+kappa = 0.6
 # convergence threshold
 conv_threshold = 1e-5
 
@@ -126,6 +126,8 @@ while not converge:
 
     # Verification of convergence
     if diff_pre_new < conv_threshold:
+        converge = True
+    if it > 300:
         converge = True
 
     # Saving the new z_mat
