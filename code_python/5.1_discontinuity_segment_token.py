@@ -13,17 +13,19 @@ input_file = "The_WW_of_Oz_nouns.txt"
 sim_tag = "wesim"
 
 # Autocorrelation windows size
-segm_range = 20
+segm_range = 5
 # Number of groups
-n_groups = 2
+n_groups = 5
 # Alpha parameter
-alpha = 1
+alpha = 2
 # Beta parameter
-beta = 100
-# kappa parameter
-kappa = 0.6
-# convergence threshold
+beta = 20
+# Kappa parameter
+kappa = 0.7
+# Convergence threshold
 conv_threshold = 1e-5
+# Maximum iterations
+max_it = 1000
 
 # --- Defining paths --- #
 
@@ -127,7 +129,7 @@ while not converge:
     # Verification of convergence
     if diff_pre_new < conv_threshold:
         converge = True
-    if it > 300:
+    if it > max_it:
         converge = True
 
     # Saving the new z_mat

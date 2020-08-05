@@ -17,13 +17,15 @@ segm_range = 5
 # Number of groups
 n_groups = 5
 # Gamma parameter
-gamma = 1
+gamma = 2
 # Beta parameter
 beta = 20
-# kappa parameter
-kappa = 1
-# convergence threshold
+# Kappa parameter
+kappa = 0.7
+# Convergence threshold
 conv_threshold = 1e-5
+# Maximum iterations
+max_it = 1000
 
 # --- Defining paths --- #
 
@@ -113,7 +115,7 @@ while not converge:
 
     # Computation of H_ig
     hig_mat = beta * dig_mat + gamma * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-              - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec**2 - e_gg))
+              - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
 
     # Computation of the new z_mat
     z_new_mat = rho_vec * np.exp(-hig_mat)
@@ -127,7 +129,7 @@ while not converge:
     # Verification of convergence
     if diff_pre_new < conv_threshold:
         converge = True
-    if it > 300:
+    if it > max_it:
         converge = True
 
     # Saving the new z_mat

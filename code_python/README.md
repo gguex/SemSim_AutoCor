@@ -25,13 +25,11 @@ token with POS tag, and 4 POS-selection files, and only token only file.
 
     - The token-POStag file *<corpus_name>_tagged.txt* containing two columns: the first one with every token from the text file 
   and the second the corresponding POS tag obtained by Flair library (https://github.com/flairNLP/flair).
-  
     - 4 POS-selection files, respectively, *<corpus_name>_nouns.txt*, *<corpus_name>_verbs.txt*, 
     *<corpus_name>_adjectives.txt*, and *<corpus_name>_adverbs.txt*, containing respectively only nouns, verbs, 
     adjectives, and adverbs from the corpus (tokens with tag beginning respectively by "NN", "VB", "JJ" and "RB" in 
     Flair). Each token is lemmatized, lower-cased and non-alpha characters are removed (compound words are split). 
     Tokens are separated by a whitespace and sentences by "\n" (end of line).
-    
     - The file with all tokens *<corpus_name>_all.txt*, with the same structure found in the POS-selection files.
 
 **2.1_build_word_vectors_similarities.py** : This script use the one of the POS-selection files from 
@@ -40,10 +38,8 @@ token with POS tag, and 4 POS-selection files, and only token only file.
 - *INPUT*:
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in the "corpora" folder.
-    
     - The *wv_model_path*, i.e. the absolute path to a word vector model (see utils/transform_text_into_gensim.py), 
     outside the project director (the word vector file is too big to be stored here).
-    
     - A *sim_tag*, i.e. a tag name for the similarity, currently set to "wesim" for this script.
     
 - *OUTPUT*: (these files are stored in the "similarities_frequencies" folder)
@@ -53,7 +49,6 @@ token with POS tag, and 4 POS-selection files, and only token only file.
     file. The order of the types in this file correspond to the order of row and column in the similarity matrix. 
     (separator = ";"). This file also help to know which terms appear both in the POS-selection file and in 
     the word vector model, i.e. which term possesses a similarity with the others.
-  
     - The *<input_file>_<sim_tag>_similarities.txt* containing the n_type x n_type similarity matrix between each type 
     obtained from the word embedding. (separator = ";")
   
@@ -63,9 +58,7 @@ file to plot the autocorrelation index for a maximum range.
 - *INPUTS*: 
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in the "corpora" folder.
-    
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    
     - The *max_range* parameter, defining the maximum autocorrelation range to compute.
 
 - *OUPUTS*:
@@ -79,15 +72,12 @@ Indicator of Spatial Autocorrelation (LISA) on all token.
 - *INPUTS*:
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
-    
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    
     - The *lisa_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
     
 - *OUPUTS*:
 
-    - The file <input_file>_<sim_tag>_lisa<lisa_range>.png, showing the LISA index for every token.
-    
+    - The file <input_file>_<sim_tag>_lisa<lisa_range>.png, showing the LISA index for every token. 
     - The file <input_file>_<sim_tag>_lisa<lisa_range>.html, coloring every token depending its LISA index 
     (green = positive, red = negative).
     
@@ -97,48 +87,36 @@ and compute a (n_token x n_group) membership matrix Z, which softy assign each t
 - *INPUTS*:
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
-    
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    
     - The *segm_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
-    
     - The *n_groups*, i.e. the number of groups.
-    
     - The *alpha*, *beta* and *kappa* hyperparameters, which are defined in article.
-    
     - The *conv_threshold* parameter, defining when iterations have to stop.
+    - The *max_it* parameter, defining the maximum iterations possible.
     
 - *OUPUTS*:
 
     - The file <input_file>_<sim_tag>_discsegm.csv, containing every token ordered by decreasing membership value for 
     each groups.
-    
     - The file <input_file>_<sim_tag>_discsegm.html, coloring every token according to its membership values.
 
 **5.2_cut_segment_token.py** : This script take a POS-selection file and a similarity (by tag), 
 and compute a (n_token x n_group) membership matrix Z, which softy assign each token to a group (cut method).
 
-**WARNING FOR THE MOMENT, THE ALGORITHM OFTEN DIVERGE: ITERATIONS ARE LIMITED TO 300**
-
 - *INPUTS*:
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
-    
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    
     - The *segm_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
-    
     - The *n_groups*, i.e. the number of groups.
-    
     - The *gamma*, *beta* and *kappa* hyperparameters, which are defined in article.
-    
     - The *conv_threshold* parameter, defining when iterations have to stop.
+    - The *max_it* parameter, defining the maximum iterations possible.
     
 - *OUPUTS*:
 
     - The file <input_file>_<sim_tag>_cutsegm.csv, containing every token ordered by decreasing membership value for 
     each groups.
-    
     - The file <input_file>_<sim_tag>_cutsegm.html, coloring every token according to its membership values.
 
 ## Utils
