@@ -116,7 +116,7 @@ while not converge:
               - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
     # Computation of the new z_mat
-    z_new_mat = rho_vec * np.exp(hig_mat)
+    z_new_mat = rho_vec * np.exp(-hig_mat)
     z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
 
     # Print diff and it
