@@ -1,0 +1,160 @@
+\documentclass[11p]{article}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+
+
+%opening
+\title{Algorithms: AutoCor, Lisa, DiscSegm and CutSegm}
+\author{Guillaume Guex}
+
+\begin{document}
+	
+\maketitle
+	
+\subsection*{General notations}
+
+\begin{itemize}
+	\item $\mathbf{1}_n$: the (column) vector of ones with length $n$.
+	\item $\mathbf{I}_n$: the identity matrix of size $(n \times n)$.
+	\item $\circ, \div$: the component-wise multiplication or division.
+	\item $\mathbf{v}^{(a)}, \mathbf{M}^{(a)}$: the component-wise power of $a$ of a vector or a matrix.
+	\item $\mathbf{exp}(\mathbf{v})$ or $\mathbf{Exp}(\mathbf{M})$: the component-wise exponential on a vector or on a matrix.
+	\item $\mathbf{diag}(\mathbf{M})$: the diagonal function taking a matrix and returning the diagonal vector.
+	\item $\mathbf{Diag}(\mathbf{v})$: the diagonal function taking a vector and returning a diagonal matrix.
+\end{itemize}
+
+\subsection*{Algorithms}
+
+%--------------------------------------%
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	
+	\Input{\begin{itemize}
+			\item A scalar $r$ defining the maximum range of autocorrelation.
+			\item A $(v \times n)$ presence matrix $\mathbf{P}$, where $p_{ij} = 1$ iif type $i$ is in token position $j$, 0 otherwise (constructed from corpus).
+			\item A $(v \times v)$ dissimilarity matrix $\mathbf{D}_v$ between types.
+			\item A vector $\bm{\pi}$ of length $v$ containing type frequencies.
+	\end{itemize}}
+	\Output{\begin{itemize}
+			\item The vector $\bm{\delta}$ of length $r$ containing autocorrelation indices for a token position difference of $r$.
+	\end{itemize}}
+	Compute the global inertia:  $\Delta \leftarrow \frac{1}{2} \mathbf{1}_v^\top(\bm{\pi}\bm{\pi}^\top \circ \mathbf{D}_v)\mathbf{1}_v$\;
+	\For{$i$ \text{from} 1 to $r$}{
+		Compute the $(n \times n)$ exchange matrix $\mathbf{E}$ with range $i$\;
+		Compute the $(v \times v)$ between-types exchange matrix: $\bm{\mathcal{E}} \leftarrow \mathbf{P} \mathbf{E} \mathbf{P}^\top$\;
+		Compute the local variance: $\Delta_\text{loc} \leftarrow \frac{1}{2} \mathbf{1}_v^\top(\bm{\mathcal{E}} \circ \mathbf{D}_v)\mathbf{1}_v$\;
+		Compute the autocorrelation for range $i$: $\delta_i \leftarrow \frac{\Delta - \Delta_\text{loc}}{\Delta}$\;
+	}
+	\Return $\bm{\delta}$\;
+	\caption{AutoCor algorithm}
+\end{algorithm}
+ 
+\vspace{0.5cm}
+
+%--------------------------------------%
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	
+	\Input{\begin{itemize}
+				\item A $(n \times n)$ exchange matrix $\mathbf{E}$ between token positions.
+				\item A $(v \times v)$ dissimilarity matrix $\mathbf{D}_v$ between types.
+				\item A $(v \times n)$ presence matrix $\mathbf{P}$, where $p_{ij} = 1$ iif type $i$ is in token position $j$, 0 otherwise (constructed from corpus).
+				\item A vector $\bm{\pi}$ of length $v$ containing type frequencies.
+		   \end{itemize}}
+	\Output{\begin{itemize}
+				\item The vector $\bm{\delta}$ of length $n$ containing lisa indices for each token.
+			\end{itemize}}
+	Compute the token weights vector of length $n$: $\mathbf{f} \leftarrow \mathbf{E} \mathbf{1}_n$\;
+	Compute the $(n \times n)$ transition matrix between token: $\mathbf{W} \leftarrow \mathbf{E} \; \div \; \mathbf{f}\mathbf{1}_n^\top $\;
+	Compute the $(n \times n)$ token dissimilarity matrix: $\mathbf{D}_n \leftarrow \mathbf{P}^\top \mathbf{D}_v \mathbf{P}$\;
+	Compute the $(n \times n)$ centration matrix: $\mathbf{H} \leftarrow \mathbf{I}_n - \mathbf{1} \mathbf{f}^\top$\;
+	Compute the $(n \times n)$ scalar products matrix: $\mathbf{B} \leftarrow - \frac{1}{2} \mathbf{H}\mathbf{D}_n \mathbf{H}^\top$\;
+	Compute the global inertia:  $\Delta \leftarrow \frac{1}{2} \mathbf{1}_v^\top(\bm{\pi}\bm{\pi}^\top \circ \mathbf{D}_v)\mathbf{1}_v$\;
+	Compute the lisa vector of length $n$: $\bm{\delta} \leftarrow \frac{1}{\Delta} \mathbf{diag} (\mathbf{W}\mathbf{B})$\;
+	\Return $\bm{\delta}$\;
+	\caption{Lisa algorithm}
+\end{algorithm}
+
+%--------------------------------------%
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	
+	\Input{\begin{itemize}
+			\item A $(n \times n)$ exchange matrix $\mathbf{E}$ between token positions.
+			\item A $(v \times v)$ dissimilarity matrix $\mathbf{D}_v$ between types.
+			\item A $(v \times n)$ presence matrix $\mathbf{P}$, where $p_{ij} = 1$ iif type $i$ is in token position $j$, 0 otherwise (constructed from corpus).
+			\item An integer $m$ defining the number of groups.
+			\item Hyperparmaters $\alpha > 0$, $\beta > 0$ and $\kappa \in [0,1]$.
+	\end{itemize}}
+	\Output{\begin{itemize}
+			\item The $(n \times m)$ membership matrix $\mathbf{Z}$ with fuzzy memberships of tokens into each group.
+	\end{itemize}}
+	Compute the token weights vector of length $n$: $\mathbf{f} \leftarrow \mathbf{E} \mathbf{1}_n$\;
+	Compute the $(n \times n)$ transition matrix between token: $\mathbf{W} \leftarrow \mathbf{E} \; \div \; \mathbf{f}\mathbf{1}_n^\top $\;
+	Compute the $(n \times n)$ token dissimilarity matrix: $\mathbf{D}_n \leftarrow \mathbf{P}^\top \mathbf{D}_v \mathbf{P}$\;
+	Initialize $\widetilde{\mathbf{Z}}$ with random strictly positive values\;
+	Normalize $\mathbf{Z}$: $\mathbf{Z} \leftarrow \widetilde{\mathbf{Z}} \div (\widetilde{\mathbf{Z}} \mathbf{1}_m \mathbf{1}_n^\top)$\;
+	\While{$\mathbf{Z}$ has not converged}{
+		Compute the group weights vector of length $m$: $\bm{\rho} \leftarrow (\mathbf{Z} \circ \mathbf{f}\mathbf{1}_m^\top)^\top \mathbf{1}_n$\;
+		Compute the $(n \times m)$ token distribution among groups matrix: $\mathbf{F} \leftarrow (\mathbf{Z} \div \mathbf{1}_n\bm{\rho}^\top) \circ \mathbf{f}\mathbf{1}_m^\top$\;
+		Compute the $(n \times m)$ uncentered token-centroid distance matrix: $\widetilde{\bm{\mathcal{D}}} \leftarrow \mathbf{D}_n^\top\mathbf{F}$\;
+		Compute the vector of group inertia of length $m$: $\bm{\delta} \leftarrow \frac{1}{2} \mathbf{diag}(\widetilde{\bm{\mathcal{D}}}^\top\mathbf{F})$\;
+		Compute the $(n \times m)$ token-centroid distance matrix: $\bm{\mathcal{D}} \leftarrow \widetilde{\bm{\mathcal{D}}} - \mathbf{1}_n \bm{\delta}^\top$\;
+		Compute the Dirichlet form vector of length $m$: $\bm{\epsilon} \leftarrow (\mathbf{E}\mathbf{Z}^{(2)})^\top \mathbf{1}_n - \mathbf{diag}(\mathbf{Z}^\top \mathbf{E} \mathbf{Z})$\;
+		Compute the $(n \times m)$ matrix $\mathbf{H}$: $\mathbf{H} \leftarrow \beta \bm{\mathcal{D}} + \alpha \mathbf{1}_n (\bm{\rho}^{(-\kappa)})^\top \circ (\mathbf{Z} - \mathbf{W}\mathbf{Z}) - \frac{\alpha \kappa}{2} \mathbf{1}_n (\bm{\rho}^{(-\kappa-1)} \circ \bm{\epsilon})^\top$\;
+		Compute the new unormalized membership matrix: $\widetilde{\mathbf{Z}} \leftarrow \mathbf{1}_n \bm{\rho}^\top \circ \mathbf{Exp}(\mathbf{-H})$\;
+		Normalize the new membership matrix: $\mathbf{Z}$: $\mathbf{Z} \leftarrow \widetilde{\mathbf{Z}} \div (\widetilde{\mathbf{Z}} \mathbf{1}_m \mathbf{1}_n^\top)$\; 
+	}
+	\Return $\mathbf{Z}$\;
+	\caption{DiscSegm algorithm}
+\end{algorithm}
+
+%--------------------------------------%
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	
+	\Input{\begin{itemize}
+			\item A $(n \times n)$ exchange matrix $\mathbf{E}$ between token positions.
+			\item A $(v \times v)$ dissimilarity matrix $\mathbf{D}_v$ between types.
+			\item A $(v \times n)$ presence matrix $\mathbf{P}$, where $p_{ij} = 1$ iif type $i$ is in token position $j$, 0 otherwise (constructed from corpus).
+			\item An integer $m$ defining the number of groups.
+			\item Hyperparmaters $\gamma > 0$, $\beta > 0$ and $\kappa \in [0,1]$.
+	\end{itemize}}
+	\Output{\begin{itemize}
+			\item The $(n \times m)$ membership matrix $\mathbf{Z}$ with fuzzy memberships of tokens into each group.
+	\end{itemize}}
+	Compute the token weights vector of length $n$: $\mathbf{f} \leftarrow \mathbf{E} \mathbf{1}_n$\;
+	Compute the $(n \times n)$ transition matrix between token: $\mathbf{W} \leftarrow \mathbf{E} \; \div \; \mathbf{f}\mathbf{1}_n^\top $\;
+	Compute the $(n \times n)$ token dissimilarity matrix: $\mathbf{D}_n \leftarrow \mathbf{P}^\top \mathbf{D}_v \mathbf{P}$\;
+	Initialize $\widetilde{\mathbf{Z}}$ with random strictly positive values\;
+	Normalize $\mathbf{Z}$: $\mathbf{Z} \leftarrow \widetilde{\mathbf{Z}} \div (\widetilde{\mathbf{Z}} \mathbf{1}_m \mathbf{1}_n^\top)$\;
+	\While{$\mathbf{Z}$ has not converged}{
+		Compute the group weights vector of length $m$: $\bm{\rho} \leftarrow (\mathbf{Z} \circ \mathbf{f}\mathbf{1}_m^\top)^\top \mathbf{1}_n$\;
+		Compute the $(n \times m)$ token distribution among groups matrix: $\mathbf{F} \leftarrow (\mathbf{Z} \div \mathbf{1}_n\bm{\rho}^\top) \circ \mathbf{f}\mathbf{1}_m^\top$\;
+		Compute the $(n \times m)$ uncentered token-centroid distance matrix: $\widetilde{\bm{\mathcal{D}}} \leftarrow \mathbf{D}_n^\top\mathbf{F}$\;
+		Compute the vector of group inertia of length $m$: $\bm{\delta} \leftarrow \frac{1}{2} \mathbf{diag}(\widetilde{\bm{\mathcal{D}}}^\top\mathbf{F})$\;
+		Compute the $(n \times m)$ token-centroid distance matrix: $\bm{\mathcal{D}} \leftarrow \widetilde{\bm{\mathcal{D}}} - \mathbf{1}_n \bm{\delta}^\top$\;
+		Compute the vector containing $e(g,g)$ values of length $m$: $\mathbf{e} \leftarrow \mathbf{diag}(\mathbf{Z}^\top \mathbf{E} \mathbf{Z})$\;
+		Compute the $(n \times m)$ matrix $\mathbf{H}$: $\mathbf{H} \leftarrow \beta \bm{\mathcal{D}} + \gamma \mathbf{1}_n (\bm{\rho}^{(-\kappa)})^\top \circ (\mathbf{1}_n \bm{\rho}^\top - \mathbf{W}\mathbf{Z}) - \frac{\gamma \kappa}{2} \mathbf{1}_n \left( \bm{\rho}^{(-\kappa-1)} \circ (\bm{\rho}^{(2)} - \mathbf{e})  \right)^\top$\;
+		Compute the new unormalized membership matrix: $\widetilde{\mathbf{Z}} \leftarrow \mathbf{1}_n \bm{\rho}^\top \circ \mathbf{Exp}(\mathbf{-H})$\;
+		Normalize the new membership matrix: $\mathbf{Z}$: $\mathbf{Z} \leftarrow \widetilde{\mathbf{Z}} \div (\widetilde{\mathbf{Z}} \mathbf{1}_m \mathbf{1}_n^\top)$\; 
+	}
+	\Return $\mathbf{Z}$\;
+	\caption{CutSegm algorithm}
+\end{algorithm}
+
+\end{document}
