@@ -3,6 +3,7 @@ import nltk
 import pandas as pd
 import os
 import colorsys
+from scipy.linalg import expm
 
 # --- Parameters --- #
 
@@ -12,16 +13,18 @@ input_file = "The_WW_of_Oz_nouns.txt"
 # Name of the tag for the similarity
 sim_tag = "wesim"
 
-# Autocorrelation windows size
-segm_range = 5
+# Exchange matrix option ("u" = uniform, "d" = diffusive)
+exch_mat_opt = "d"
+# Exchange matrix range (for uniform) OR time step (for diffusive)
+exch_range = 5
 # Number of groups
 n_groups = 5
 # Alpha parameter
-alpha = 2
+alpha = 20
 # Beta parameter
-beta = 20
+beta = 25
 # Kappa parameter
-kappa = 0.7
+kappa = 0.8
 # Convergence threshold
 conv_threshold = 1e-5
 # Maximum iterations
@@ -68,11 +71,28 @@ sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
 # --- Computation before loop --- #
 
 # Compute the exchange matrix and the markov chain transition matrix
-exch_m = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= segm_range
-np.fill_diagonal(exch_m, 0)
-exch_m = exch_m / np.sum(exch_m)
-f_vec = np.sum(exch_m, axis=0)
-w_mat = (exch_m / f_vec).T
+f_vec = np.ones(n_token) / n_token
+
+if exch_mat_opt not in ["u", "d"]:
+    print("EXCHANGE MATRIX OPTION NOT RECOGNIZED, SETTING IT TO UNIFORM")
+    exch_mat_opt = "u"
+
+if exch_mat_opt == "u":
+    adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+    np.fill_diagonal(adj_mat, 0)
+    g_vec = np.sum(adj_mat, axis=1) / np.sum(adj_mat)
+    k_vec = f_vec / g_vec
+    b_mat = np.array([[min(v1, v2) for v2 in g_vec] for v1 in g_vec]) * adj_mat / np.sum(adj_mat)
+    exch_mat = np.diag(f_vec) - np.diag(np.sum(b_mat, axis=1)) + b_mat
+else:
+    adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= 1
+    np.fill_diagonal(adj_mat, 0)
+    l_adj_mat = np.diag(np.sum(adj_mat, axis=1)) - adj_mat
+    pi_outer_mat = np.outer(np.sqrt(f_vec), np.sqrt(f_vec))
+    phi_mat = (l_adj_mat / pi_outer_mat) / np.trace(l_adj_mat)
+    exch_mat = expm(- exch_range * phi_mat) * pi_outer_mat
+
+w_mat = (exch_mat / np.sum(exch_mat, axis=1)).T
 
 # Easy computation of dissimilarity matrix
 d_mat = 1 - sim_mat
@@ -111,7 +131,7 @@ while not converge:
     dig_mat = dig_mat - delta_g_vec
 
     # Computation of the epsilon_g vector
-    epsilon_g = np.sum(exch_m.dot(z_mat ** 2), axis=0) - np.diag(z_mat.T.dot(exch_m.dot(z_mat)))
+    epsilon_g = np.sum(exch_mat.dot(z_mat ** 2), axis=0) - np.diag(z_mat.T.dot(exch_mat.dot(z_mat)))
 
     # Computation of H_ig
     hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
@@ -149,15 +169,17 @@ token_color_mat = np.array(255 * z_mat.dot(color_rgb_mat), int)
 # Creating html file
 with open(results_html_file_path, 'w') as html_file:
     html_file.write("<html>\n<head></head>\n")
-    html_file.write("<body><p>Input file: {} | Similarity tag: {} | Neighbourhood range: {} | Number of groups: {} | "
-                    "Alpha: {} | Beta: {} | Kappa: {} | Convergence threshold: {}</p> <p>".format(input_file,
-                                                                                                  sim_tag,
-                                                                                                  segm_range,
-                                                                                                  n_groups,
-                                                                                                  alpha,
-                                                                                                  beta,
-                                                                                                  kappa,
-                                                                                                  conv_threshold))
+    html_file.write("<body><p>Input file: {} | Similarity tag: {} | Exchange matrix option: {} | "
+                    "Exchange matrix range: {} | Number of groups: {} | Alpha: {} | Beta: {} | "
+                    "Kappa: {} | Convergence threshold: {}</p> <p>".format(input_file,
+                                                                           sim_tag,
+                                                                           exch_mat_opt,
+                                                                           exch_range,
+                                                                           n_groups,
+                                                                           alpha,
+                                                                           beta,
+                                                                           kappa,
+                                                                           conv_threshold))
     for i in range(len(token_list)):
         html_file.write("<span style=\"background-color: rgb({},{},{})\">".format(token_color_mat[i, 0],
                                                                                   token_color_mat[i, 1],
@@ -167,15 +189,17 @@ with open(results_html_file_path, 'w') as html_file:
 
 # Creating csv file
 with open(results_csv_file_path, 'w') as text_file:
-    text_file.write("Input file: {} | Similarity tag: {} | Neighbourhood range: {} | Number of groups: {} | "
-                    "Alpha: {} | Beta: {} | Kappa: {} | Convergence threshold: {}\n".format(input_file,
-                                                                                            sim_tag,
-                                                                                            segm_range,
-                                                                                            n_groups,
-                                                                                            alpha,
-                                                                                            beta,
-                                                                                            kappa,
-                                                                                            conv_threshold))
+    text_file.write("Input file: {} | Similarity tag: {} | Exchange matrix option: {} | Exchange matrix range: {} | "
+                    "Number of groups: {} | Alpha: {} | Beta: {} | Kappa: {} | "
+                    "Convergence threshold: {}\n".format(input_file,
+                                                         sim_tag,
+                                                         exch_mat_opt,
+                                                         exch_range,
+                                                         n_groups,
+                                                         alpha,
+                                                         beta,
+                                                         kappa,
+                                                         conv_threshold))
     text_file.write("group;token;id_token;percent\n")
     for i in range(n_groups):
         z_g_vec = z_mat[:, i]

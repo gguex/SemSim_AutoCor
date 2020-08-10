@@ -21,7 +21,7 @@ token with POS tag, and 4 POS-selection files, and only token only file.
 
     - the *corpus_name*, as found in the "corpora" folder.
     
-- *OUPUTS*:
+- *OUTPUTS*:
 
     - The token-POStag file *<corpus_name>_tagged.txt* containing two columns: the first one with every token from the text file 
   and the second the corresponding POS tag obtained by Flair library (https://github.com/flairNLP/flair).
@@ -61,7 +61,7 @@ file to plot the autocorrelation index for a maximum range.
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
     - The *max_range* parameter, defining the maximum autocorrelation range to compute.
 
-- *OUPUTS*:
+- *OUTPUTS*:
 
     - The file <input_file>_<sim_tag>_autocor.png in the "results" folder, storing the graphic of the 
     autocorrelation index.
@@ -73,9 +73,11 @@ Indicator of Spatial Autocorrelation (LISA) on all token.
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    - The *lisa_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
+    - The *exch_mat_opt* option, i.e. either "u" or "d", for respectively an uniform or diffusive exchange matrix.
+    - The *exch_range* parameter, i.e. the range of the exchange matrix (for the uniform exchange matrix) or 
+    the time parameter (for the diffusive exchange matrix).
     
-- *OUPUTS*:
+- *OUTPUTS*:
 
     - The file <input_file>_<sim_tag>_lisa<lisa_range>.png, showing the LISA index for every token. 
     - The file <input_file>_<sim_tag>_lisa<lisa_range>.html, coloring every token depending its LISA index 
@@ -88,13 +90,15 @@ and compute a (n_token x n_group) membership matrix Z, which softy assign each t
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    - The *segm_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
+    - The *exch_mat_opt* option, i.e. either "u" or "d", for respectively an uniform or diffusive exchange matrix.
+    - The *exch_range* parameter, i.e. the range of the exchange matrix (for the uniform exchange matrix) or 
+    the time parameter (for the diffusive exchange matrix).
     - The *n_groups*, i.e. the number of groups.
-    - The *alpha*, *beta* and *kappa* hyperparameters, which are defined in article.
+    - The *alpha*, *beta* and *kappa* hyper-parameters, which are defined in article.
     - The *conv_threshold* parameter, defining when iterations have to stop.
     - The *max_it* parameter, defining the maximum iterations possible.
     
-- *OUPUTS*:
+- *OUTPUTS*:
 
     - The file <input_file>_<sim_tag>_discsegm.csv, containing every token ordered by decreasing membership value for 
     each groups.
@@ -107,13 +111,15 @@ and compute a (n_token x n_group) membership matrix Z, which softy assign each t
 
     - The *input_file*, i.e. the name of the POS-selection file to use, as found in a the "corpora" folder.
     - The *sim_tag*, i.e. the name of the tag for a similarity given during the creation of the similarity.
-    - The *segm_range*, i.e. the range of neighbourhood for words, as defined by the exchange matrix E.
+    - The *exch_mat_opt* option, i.e. either "u" or "d", for respectively an uniform or diffusive exchange matrix.
+    - The *exch_range* parameter, i.e. the range of the exchange matrix (for the uniform exchange matrix) or 
+    the time parameter (for the diffusive exchange matrix).
     - The *n_groups*, i.e. the number of groups.
-    - The *gamma*, *beta* and *kappa* hyperparameters, which are defined in article.
+    - The *gamma*, *beta* and *kappa* hyper-parameters, which are defined in article.
     - The *conv_threshold* parameter, defining when iterations have to stop.
     - The *max_it* parameter, defining the maximum iterations possible.
     
-- *OUPUTS*:
+- *OUTPUTS*:
 
     - The file <input_file>_<sim_tag>_cutsegm.csv, containing every token ordered by decreasing membership value for 
     each groups.

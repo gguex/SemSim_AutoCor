@@ -3,17 +3,20 @@ import nltk
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from scipy.linalg import expm
 
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
-input_file = "The_WW_of_Oz_all.txt"
+input_file = "The_WW_of_Oz_nouns.txt"
 
 # Name of the tag for the similarity
 sim_tag = "wesim"
 
-# Autocorrelation windows size
-lisa_range = 1
+# Exchange matrix option ("u" = uniform, "d" = diffusive)
+exch_mat_opt = "d"
+# Exchange matrix range (for uniform) OR time step (for diffusive)
+exch_range = 1000
 
 # --- Defining paths --- #
 
@@ -29,9 +32,9 @@ typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] +
 similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
                          "_" + sim_tag + "_similarities.txt"
 # Results path file
-results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_lisa" + str(lisa_range) + ".png"
+results_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_lisa" + str(exch_range) + ".png"
 
-reshtml_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_lisa" + str(lisa_range) + ".html"
+reshtml_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_lisa" + str(exch_range) + ".html"
 
 # --- Load the data --- #
 
@@ -55,11 +58,34 @@ sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
 # --- Computation --- #
 
 # Compute the exchange matrix and the markov chain transition matrix
-exch_m = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= lisa_range
-np.fill_diagonal(exch_m, 0)
-exch_m = exch_m / np.sum(exch_m)
-f_vec = np.sum(exch_m, axis=0)
-w_mat = (exch_m / f_vec).T
+f_vec = np.ones(n_token) / n_token
+
+if exch_mat_opt not in ["u", "d"]:
+    print("EXCHANGE MATRIX OPTION NOT RECOGNIZED, SETTING IT TO UNIFORM")
+    exch_mat_opt = "u"
+
+if exch_mat_opt == "u":
+    adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+    np.fill_diagonal(adj_mat, 0)
+    g_vec = np.sum(adj_mat, axis=1) / np.sum(adj_mat)
+    k_vec = f_vec / g_vec
+    b_mat = np.array([[min(v1, v2) for v2 in g_vec] for v1 in g_vec]) * adj_mat / np.sum(adj_mat)
+    exch_mat = np.diag(f_vec) - np.diag(np.sum(b_mat, axis=1)) + b_mat
+else:
+    adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= 1
+    np.fill_diagonal(adj_mat, 0)
+    l_adj_mat = np.diag(np.sum(adj_mat, axis=1)) - adj_mat
+    pi_outer_mat = np.outer(np.sqrt(f_vec), np.sqrt(f_vec))
+    phi_mat = (l_adj_mat / pi_outer_mat) / np.trace(l_adj_mat)
+    exch_mat = expm(- exch_range * phi_mat) * pi_outer_mat
+
+# Compute the exchange matrix and the markov chain transition matrix (OLD)
+# exch_m = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= lisa_range
+# np.fill_diagonal(exch_m, 0)
+# exch_m = exch_m / np.sum(exch_m)
+# f_vec = np.sum(exch_m, axis=0)
+
+w_mat = (exch_mat / np.sum(exch_mat, axis=1)).T
 
 # Easy computation of dissimilarity matrix
 d_mat = 1 - sim_mat
@@ -88,7 +114,8 @@ lisa_vec = np.diag(w_mat.dot(b_mat)) / global_inertia
 
 plt.figure("Lisa index")
 plt.plot(list(range(1, n_token + 1)), lisa_vec, linewidth=0.1)
-plt.title(input_file + " | Sim: " + sim_tag + " | n tokens: " + str(n_token) + " | windows = " + str(lisa_range))
+plt.title("{} | Sim: {} | Ntoken: {} | Exch: {} | Exch_range: {}".format(input_file, sim_tag, n_token, exch_mat_opt,
+                                                                         exch_range))
 plt.xlabel("text token")
 plt.ylabel("Lisa index")
 plt.savefig(results_file_path)
@@ -103,7 +130,11 @@ color_lisa = np.intc(color_lisa)
 
 with open(reshtml_file_path, 'w') as html_file:
     html_file.write("<html>\n<head></head>\n")
-    html_file.write("<body><p>")
+    html_file.write("<body><p>Input file: {} | Similarity tag: {} | Exchange matrix option: {} | "
+                    "Exchange matrix range: {}</p> <p>".format(input_file,
+                                                               sim_tag,
+                                                               exch_mat_opt,
+                                                               exch_range))
     for i in range(len(token_list)):
         if color_lisa[i] >= 0:
             html_file.write("<span style=\"background-color: rgb({},255,{})\">".format(
