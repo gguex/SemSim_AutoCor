@@ -11,9 +11,9 @@ green long same gray
 dull gray 
 young pretty 
 
-sober gray 
+sober gray gray 
 thin gaunt 
-merry ear little 
+merry little 
 
 
 gray long rough stern solemn 
@@ -41,7 +41,7 @@ strange
 
 
 exact 
-still great higher very 
+great higher higher very 
 dark 
 first few other 
 
@@ -56,7 +56,7 @@ asleep
 
 sudden severe soft 
 cold little 
-moving dark bright little 
+dark bright little 
 
 little bigger bigger wonderful 
 marvelous 
@@ -66,12 +66,12 @@ little small green grateful little dry gray
 strange beautiful queerest 
 big grown small 
 tall well grown many older 
-
+dressed 
 round small little 
 blue little white white little 
 blue same deep blue 
 old 
-little much older covered white 
+little older covered white 
 afraid 
 little old low sweet welcome noble 
 grateful wicked free 
@@ -80,17 +80,17 @@ little wicked
 innocent harmless little many 
 little kind 
 
-little old laugh same 
+little old same 
 
 
 little 
-great out silver pointed 
+great silver pointed 
+dear 
 
 
-dismay 
 
 little 
-she 
+
 
 wicked little 
 many 
@@ -103,7 +103,7 @@ wicked
 
 dead swift 
 
-
+gracious 
 real 
 little 
 good 
@@ -112,8 +112,8 @@ wicked frightened real
 great 
 good 
 true 
-wicked witch wicked 
-moment 
+wicked wicked 
+dead 
 
 little old 
 
@@ -146,10 +146,10 @@ anxious sure
 great 
 same 
 
-told third same 
+third same 
 wicked 
 old same great 
-
+afraid 
 lonely strange 
 kind hearted 
 little old solemn 
@@ -162,7 +162,7 @@ little old
 
 
 good 
-anxiously 
+
 good 
 
 
@@ -180,7 +180,7 @@ afraid
 
 pleasant 
 friendly little left little afraid 
-surprised 
+surprised least 
 
 alone hungry 
 
@@ -189,7 +189,7 @@ little clear sparkling
 such delicious 
 good cool clear ready 
 other clean 
-white blue faded many washing pretty 
+white blue faded many pretty 
 clean pink 
 little white 
 old 
@@ -209,7 +209,7 @@ bright sweet bad little own strange
 surprised pretty 
 neat dainty blue 
 good able large 
-wicked free 
+low wicked free 
 odd round big 
 blue favorite 
 tired long larger 
@@ -217,14 +217,14 @@ green many
 little possible big delicious many other good 
 richest wicked 
 hearty rich 
-dance 
+
 silver great 
 
 
 silver wicked 
-white only white 
-blue white 
-that 
+white white 
+blue white checked 
+kind 
 white friendly 
 ordinary little strange 
 pretty 
@@ -238,7 +238,7 @@ better
 long many 
 rich pleasant rough dangerous 
 little great 
-good bye yellow 
+yellow 
 several 
 great ripe 
 
@@ -246,13 +246,13 @@ small
 old pointed blue blue 
 old blue such 
 surprised 
-wink friendly 
+friendly 
 
-husky 
-
-
+good husky 
 
 
+
+well 
 well tedious 
 
 
@@ -261,36 +261,36 @@ well tedious
 light 
 
 new 
-puzzled stuffed 
+stuffed 
 
 
 great 
 
 
-know 
+
 
 
 stuffed 
 sorry 
-great brain 
+great 
 
 worse 
 true 
 
-me 
-stuffed 
+
+
 little sorry 
 
-gratefully 
+
 yellow 
 
 stuffed unfriendly 
-new friend 
+new 
 afraid 
 
-
+tired 
 afraid 
-that 
+
 
 lighted 
 
@@ -302,8 +302,8 @@ own
 fewer fewer dismal lonesome 
 little 
 
-hungry lucky not 
-painted 
+hungry lucky 
+
 true 
 
 gray queer 
@@ -315,25 +315,25 @@ dreary gray other beautiful
 
 beautiful 
 fortunate 
-resting 
+
 
 short 
 
 unknown 
 first 
 first 
-other 
-true 
+straight other 
+same true 
 
 right great first 
-pretty farmer blue 
-other little second 
-mouth 
+pretty blue 
+other little bigger second 
+
 proud good 
 
 other 
 tall 
-
+alone 
 
 lonely little 
 many other important 
@@ -367,7 +367,7 @@ little
 
 tired 
 
-
+sound 
 tired 
 
 
@@ -376,17 +376,17 @@ tired
 
 
 clean dry 
-inconvenient thoughtfully 
+inconvenient 
 worth able 
 little clear 
 much thankful enough 
 about yellow startled deep 
-that 
+
 
 
 
 few 
-
+short 
 big uplifted 
 motionless 
 
@@ -399,7 +399,7 @@ sad
 
 oiled right 
 
-joint 
+
 
 rusted 
 
@@ -410,7 +410,7 @@ glad able
 
 polite grateful 
 
-here 
+
 great 
 
 
@@ -418,19 +418,19 @@ few
 
 
 easy 
-
+true 
 
 pleased 
 yellow 
 
-badly 
+
 good new 
 entire 
 
 
-hole 
 
-cheerfully 
+
+enough 
 
 
 best 
@@ -459,7 +459,7 @@ new
 wicked cruel 
 new beautiful 
 
-but 
+
 
 old 
 proud 
@@ -471,8 +471,8 @@ happiest
 interested anxious new 
 same 
 happy best 
-right 
-gone 
+puzzled right 
+
 sure 
 
 thick 
@@ -489,16 +489,16 @@ afraid good
 terrible next great 
 sharp 
 
-great killed heedless 
+little great heedless 
 ashamed big poor little 
 
 
 big 
-shame 
 
 
+sure 
 stuffed poor 
-
+stuffed 
 
 angry 
 
@@ -508,9 +508,9 @@ other
 
 
 cold 
-little tender of 
+little tender 
 
-
+stuffed 
 
 
 
@@ -521,20 +521,20 @@ little
 great big small 
 
 
-other 
+other brave 
 frightened 
 scared 
 
 right 
 
-tail great unhappy 
+great unhappy 
 
 
 
 glad 
 
 
-brain 
+
 
 
 
@@ -546,7 +546,7 @@ cowardly
 
 
 
-mind unbearable 
+unbearable 
 welcome other wild 
 cowardly 
 unhappy 
@@ -564,7 +564,7 @@ few
 
 tiny 
 great cruel unkind 
-wrong careful 
+careful 
 much 
 
 large 
@@ -582,7 +582,7 @@ padded clumsy small many
 
 good dry 
 snug warm 
-little rippling 
+little 
 eventful 
 great 
 wide deep many big jagged 
@@ -595,10 +595,10 @@ certain great
 
 right 
 
-first 
-killed 
-much 
-afraid falling 
+
+
+
+afraid 
 
 big 
 
@@ -610,7 +610,7 @@ pleased
 next safe other 
 third few great short big 
 dark gloomy 
-yellow wondering own bright 
+yellow own bright 
 strange 
 
 
@@ -632,8 +632,8 @@ sharp great
 
 afraid loud terrible fierce short 
 bigger 
-instant fierce lost sharp 
-
+instant fierce sharp 
+alive 
 
 
 best 
@@ -657,27 +657,27 @@ cozy good own
 
 little next refreshed full 
 dark many lovely sunny 
-sure broad beautiful done few more wooden ready 
+sure broad beautiful few more wooden ready 
 
 big heavy other long 
 swift yellow deep long 
-wicked 
+bad wicked 
 
 
 
 
 long poor 
-
+good 
 sorry 
 bad 
 worse 
-stuck 
+
 afraid 
 poor 
 
 
 
-hard work big long 
+hard big long 
 tired pretty green long yellow 
 
 
@@ -700,21 +700,21 @@ long
 
 
 big heavy 
-heavy bit 
+heavy 
 heavy 
 big 
 great 
 happy 
 gay 
 afraid 
-
+right 
 
 
 
 
 bright colored lovely thick 
 big yellow white blue purple great scarlet brilliant 
-
+beautiful 
 spicy 
 
 
@@ -722,12 +722,12 @@ spicy
 helpless frail 
 bright 
 more more big scarlet fewer fewer other great 
-many powerful 
+many powerful asleep 
 bright red heavy 
 
-yellow 
+yellow dark 
 
-
+asleep 
 
 
 
@@ -744,8 +744,8 @@ little asleep big
 great deadly 
 
 strong huge short sweet beautiful green 
-sadly heavy 
-last 
+heavy 
+
 sorry good cowardly 
 
 pretty more soft fresh 
@@ -759,11 +759,11 @@ short squeaky little
 
 
 careful 
-mouse 
-little indignantly 
+
+little 
 
 great brave 
-several little killed 
+several little 
 great 
 little 
 funny 
@@ -772,7 +772,7 @@ slightest
 shrill 
 
 
-
+tight 
 
 
 timid sure 
@@ -788,10 +788,10 @@ little
 
 
 
-very 
+
 
 many willing 
-thousand 
+
 possible long 
 
 possible 
@@ -799,26 +799,26 @@ possible
 
 wooden short big 
 ready 
-them big little middle sized 
+big little middle sized 
 long 
-timidly 
+
 dignified little 
 friendly little 
 
 other 
-bigger it able 
-queer little 
+bigger able 
+queer little asleep 
 great hard heavy 
 asleep 
-little many truck 
+little many 
 green sweet fresh poisonous 
 little 
 fond big glad 
 unharnessed 
 last 
 
-good 
 
+good 
 
 
 
@@ -831,29 +831,29 @@ strange
 yellow 
 soft fresh yellow great 
 smooth paved beautiful many gloomy 
-green small 
+green small green 
 several great afraid 
 dressed lovely emerald green peaked 
 
 green favorite 
 friendly afraid unable 
-
+sure starved 
 next 
 good sized 
 great 
 
+tame 
+little 
+great afraid 
 
-little wider 
-great too afraid 
 
 
-
-surprised strange busy 
+surprised busy 
 
 
 
 sure 
-not 
+
 
 
 many beautiful wonderful 
@@ -863,7 +863,7 @@ many beautiful wonderful
 great 
 
 
-hard thoughtfully 
+hard 
 great 
 
 beautiful other 
@@ -876,19 +876,19 @@ terrible
 more 
 
 large 
-cowardly 
+
 great golden 
 glad 
 
 
 
 sure 
-
+likely 
 
 hard great own 
 
 
-tail strange 
+strange 
 ready delicious nice white 
 
 
@@ -902,15 +902,15 @@ great
 high thick bright green 
 yellow big painted 
 silvery 
-big high arched countless 
+big open high arched countless 
 little same 
-greenish 
+green greenish 
 large green 
 
 
 surprised 
 many 
-powerful terrible idle foolish wise angry instant 
+powerful terrible idle foolish wise angry 
 foolish idle important 
 good 
 green 
@@ -926,7 +926,7 @@ big
 green 
 
 golden little 
-on 
+
 green little 
 own ready 
 big golden 
@@ -934,8 +934,8 @@ big golden
 green wonderful 
 beautiful green sparkling 
 same green 
-green glass green green 
-many men dressed green greenish 
+green green green 
+many dressed green greenish 
 assorted 
 many green 
 green green green green green 
@@ -943,7 +943,7 @@ green green
 little green 
 happy contented prosperous 
 big 
-green long green 
+dressed green long green 
 
 
 big green lovely green 
@@ -952,7 +952,7 @@ long
 
 
 
-desire 
+
 several 
 
 green young pretty green 
@@ -965,33 +965,33 @@ full green funny
 many green 
 green 
 
-others 
+alone 
 pleasant 
 alone 
 little wonderful 
-flesh able sure good 
+able sure good 
 much asleep 
 next green prettiest green brocaded 
 green green 
 great many rich 
 other 
-
+terrible 
 
 
 angry 
 silver interested 
 
 green 
-
+alone 
 little wonderful 
-big high large 
+big high arched large 
 great bright wonderful 
 big green 
 
 enormous 
 bigger biggest 
 
-great 
+great terrible 
 
 awful big 
 
@@ -1025,11 +1025,11 @@ wicked
 
 silver powerful 
 dead 
-little disappointed anxiously 
+little disappointed 
 
 great terrible 
 
-
+wicked wicked 
 
 
 
@@ -1037,10 +1037,10 @@ sorry own
 next green 
 great emerald lovely 
 dressed green flowing green 
-gorgeous light slightest 
-beautiful great 
+gorgeous slightest 
+beautiful great terrible 
 
-great astonished 
+great 
 
 much other 
 
@@ -1064,7 +1064,7 @@ great terrible
 big green strong 
 
 long long slim 
-woolly dreadful 
+thick woolly dreadful 
 fortunate loud 
 tin afraid disappointed 
 great terrible great 
@@ -1081,14 +1081,14 @@ low
 
 dead biggest kindest loving 
 terrible 
-many great 
+many great loudest 
 lovely 
 great 
 good well 
 next green great 
 fierce glowing 
 first intense 
-low quiet great 
+low quiet great terrible 
 
 afraid 
 
@@ -1108,7 +1108,7 @@ glad terrible
 
 
 
-
+careful 
 green green 
 sure 
 much 
@@ -1133,27 +1133,27 @@ different
 wicked fierce 
 
 soft 
-pretty green pure 
+pretty green pure white 
 green white 
 
 rougher hillier untilled 
-hot tired 
+hot tired asleep 
 powerful 
-
+asleep 
 long angry silver 
 great 
 long fierce sharp 
 
-slave 
+
 
 
 fit small 
-very full others 
+full 
 lucky awake 
 
 sharp 
 sharp 
-killed dead 
+dead 
 good 
 next 
 little frightened great shaggy 
@@ -1162,13 +1162,13 @@ same
 dead 
 angrier silver 
 great wild 
-stranger 
+
 wild great 
 little afraid 
 
 
 frightened 
-
+stuffed 
 
 
 
@@ -1183,7 +1183,7 @@ little
 
 
 black little fine 
-up good 
+good 
 
 angry black little fine 
 sharp 
@@ -1207,14 +1207,14 @@ left
 right 
 loud 
 
-darkened low 
-many great laughing dark immense powerful 
-bigger others 
+low 
+many great dark immense powerful 
+bigger 
 third last 
 
 
 
-obeyed great 
+great 
 sharp 
 poor great battered 
 long 
@@ -1223,14 +1223,14 @@ many unable
 small high 
 
 sad 
-long hairy ugly terribly 
+long hairy ugly short 
 little greater 
 
 front 
 able 
 
 little 
-ended 
+
 much 
 surprised worried 
 powerful 
@@ -1257,7 +1257,7 @@ wicked many
 sad harder 
 sorry little 
 little unhappy unhappy 
-great own silver 
+great own 
 more other 
 
 proud pretty 
@@ -1266,14 +1266,14 @@ old
 wicked cunning 
 magic invisible human 
 able full 
-much hurt own skinny 
+own skinny 
 wicked pleased 
 little pretty angry 
 
 wicked 
 
 
-it same other 
+same other 
 angry 
 wicked loud 
 
@@ -1281,9 +1281,9 @@ wicked loud
 
 sorry frightened brown very 
 
-wailing despairing 
+despairing 
 
-few melted 
+few 
 little able wicked 
 
 brown melted shapeless clean 
@@ -1298,14 +1298,14 @@ great yellow many great
 
 happy 
 
-anxiously 
+
 
 yellow delighted free 
-
-next rocky battered 
+most 
+next rocky bent 
 rusted short 
 yellow few sad old sober sorry 
-tinsmith 
+
 good 
 
 
@@ -1326,15 +1326,15 @@ nice clean
 good 
 few happy comfortable 
 
-last 
-joyfully 
-thoughtfully 
 
 
 
-next good bye 
+
+
+
+next 
 sorry fond 
-determined golden beautiful gold headed stumbling silver precious 
+determined golden beautiful gold headed silver precious 
 pretty 
 
 own 
@@ -1360,7 +1360,7 @@ long
 first tired 
 
 
-sure before 
+sure 
 little 
 few tiny many small grey 
 squeaky little 
@@ -1373,7 +1373,7 @@ le
 
 full great 
 
-anxiously 
+
 
 
 
@@ -1399,7 +1399,7 @@ biggest
 careful 
 
 
-long laugh long 
+long long 
 glad 
 free great 
 full 
@@ -1422,8 +1422,8 @@ wise good
 
 angry 
 
-hard kind 
-
+kind 
+present 
 other 
 
 interested 
@@ -1452,10 +1452,10 @@ several same
 
 melted 
 
-good news indeed 
+good 
 
 
-
+good gracious 
 
 little great 
 great 
@@ -1463,42 +1463,42 @@ green beautiful green old ready
 other 
 
 next next next 
-tiresome wearing vexed poor 
+tiresome vexed poor 
 green 
 frightened next 
 
 sleepless 
-glad little 
+asleep glad little 
 next green whiskered 
 surprised 
 closer empty dreadful 
 great 
-great 
+great terrible 
 
 
 common invisible 
 
 
-promise 
 
-destroyed 
+
+
 
 
 
 
 little 
 
-sudden 
+dear sudden 
 
 
 
 
-exclaimed 
+
 large loud fierce dreadful 
-way next 
+next 
 little old bald wrinkled surprised 
 little 
-great little 
+great terrible little 
 
 great 
 lovely 
@@ -1510,17 +1510,17 @@ wrong little
 
 great 
 
-great 
+
 
 
 common 
-grieved 
+more grieved 
 
 little 
 terrible 
 
 
-brain 
+
 
 dear little 
 terrible 
@@ -1545,32 +1545,32 @@ lovely
 false 
 
 ashamed 
-little sorrowfully only 
+little only 
 
+far 
 
-
-
+farther 
 great 
 
 
-tired 
-that 
+
+
 
 
 
 twisted 
-many 
+many many 
 second strange beautiful 
 
 strange great 
 afraid 
 good busy 
 green beautiful green green 
-
+green 
 
 other green green 
-many young old 
-green most beautiful precious good 
+great many young old 
+green most beautiful precious good happy 
 good 
 greatest magical able wonderful 
 
@@ -1578,13 +1578,13 @@ good wicked powerful
 deadly many pleased 
 willing other ashamed 
 bad 
-dear good bad 
+good bad 
 
 
 
 
-
-only knowledge more sure 
+much 
+only more sure 
 true unhappy 
 false 
 much 
@@ -1598,7 +1598,7 @@ sure
 
 afraid 
 true afraid 
-
+scared same 
 unhappy afraid 
 
 
@@ -1608,18 +1608,18 @@ most unhappy
 
 
 
-well 
 
-many little longer 
+
+many little 
 
 little 
 slightest 
-
+such 
 
 high 
 great willing 
 
-next friend 
+next 
 
 other 
 
@@ -1631,14 +1631,14 @@ little deep
 little 
 
 proper 
-
+right 
 welcome better 
 
 back many 
 
 great bran new 
 pleased proud greatest 
-curiously 
+
 
 
 
@@ -1650,7 +1650,7 @@ sharp
 
 
 
-very little 
+little 
 right 
 
 
@@ -1674,22 +1674,22 @@ good
 
 
 
-well little 
+little 
 high square green green gold 
 
 
 
-courage 
+
 
 possible 
 empty 
-now 
-
-good 
 
 
-easy 
-more 
+full good 
+
+
+easy happy 
+more sure 
 
 
 sad little happy contented 
@@ -1713,9 +1713,9 @@ best
 
 
 
-float 
 
 
+true 
 hot 
 hot good cold 
 
@@ -1739,7 +1739,7 @@ wonderful
 much 
 big hot silken 
 
-loud voice 
+loud 
 
 
 hot lighter 
@@ -1765,7 +1765,7 @@ glad
 sorry 
 ungrateful lovely 
 gone 
-with 
+
 several 
 jewelled 
 proud 
@@ -1801,16 +1801,16 @@ glad
 ready 
 
 bad 
-
+hearted 
 
 green 
-timidly alive 
+alive 
 little 
 
 
 
 
-might 
+
 
 
 
@@ -1822,7 +1822,7 @@ good kind
 beautiful young many 
 
 
-straight full 
+full 
 wild 
 
 best 
@@ -1848,7 +1848,7 @@ possible
 
 ready long 
 
-next pretty green good bye green 
+next pretty green green 
 beautiful new 
 green many good 
 possible 
@@ -1870,12 +1870,12 @@ bad
 good 
 same brave 
 
-
+best 
 good bad 
 first green bright 
 
 thick 
-lost 
+right 
 easiest 
 big such wide 
 first next fellow 
@@ -1883,13 +1883,13 @@ dizzy
 
 
 
-
+strange 
 
 first 
 big 
 
 
-others quick 
+quick 
 small 
 little free 
 other first wonderful 
@@ -1909,11 +1909,11 @@ clumsy sure strong
 ready 
 awkward 
 
-on 
 
 
-still 
-last 
+
+
+next 
 
 strange 
 great smooth shining white big 
@@ -1921,14 +1921,14 @@ many brightest
 small biggest 
 little many 
 strangest queer 
-bright colored golden gorgeous pink yellow blue golden jewelled ermine satin funny ruffled round red 
+golden gorgeous pink yellow blue golden jewelled ermine satin funny ruffled round red tall pointed 
 strangest small tallest higher 
 little purple extra large tiny 
 
 
 heavy hard 
 
-flattened 
+
 strange other unwise other due 
 first 
 great 
@@ -1950,14 +1950,14 @@ frightened little
 safe 
 
 
-pretty mended 
+pretty 
 
 
 
 
 jolly little pretty red yellow green covered many 
-poor old 
-stiff prim poker 
+fair poor old 
+stiff prim 
 quiet 
 
 
@@ -1968,14 +1968,14 @@ beautiful sure
 
 unhappy 
 own 
-pretty 
+stiffen pretty 
 pleasanter own 
 unhappy 
 
 
 
 little other 
-high 
+high first 
 
 bad lucky little more 
 brittle 
@@ -1986,15 +1986,15 @@ disagreeable full tall
 difficult muddy thick 
 solid 
 wilder long tiresome bigger older 
-beautiful 
+delightful beautiful 
 gloomy 
 
 soft rich green old 
-wild 
+wild pleasanter 
 wild 
 
 dark 
-
+usual 
 
 low many wild 
 little frightened well trodden 
@@ -2002,8 +2002,8 @@ natural afraid
 great 
 several great 
 biggest 
-good more 
-trouble 
+good 
+
 
 fierce 
 tremendous great big long 
@@ -2027,7 +2027,7 @@ long coarse black
 great sharp long pudgy slender 
 best easier asleep awake great 
 heavy armed sharp 
-long wiggling dead 
+long dead 
 
 
 
@@ -2044,8 +2044,8 @@ same
 strangest 
 short stout big flat thick full 
 helpless 
-sorry not 
-flat tumbling 
+sorry 
+flat 
 easy 
 boisterous other armless 
 angry loud 
@@ -2053,20 +2053,20 @@ great
 bruised sore useless 
 
 
-more 
-well magic 
-prompt few entire 
-command 
 
+magic 
+prompt few entire 
+
+low 
 
 
 beautiful 
-last good 
+last good bye good 
 
 rich happy 
 well paved strong 
-bright red yellow blue 
-short fat chubby good natured bright green yellowing 
+bright yellow blue 
+short fat chubby good natured bright green 
 
 good 
 
@@ -2074,7 +2074,7 @@ good
 great 
 
 good pretty beautiful 
-young handsome red braid 
+young handsome red 
 
 
 
@@ -2089,18 +2089,18 @@ pure white blue little
 
 
 wonderful 
-greatest dreadful mourning better sure 
+greatest dreadful better sure 
 sweet upturned loving little 
 dear sure 
 
 
-exclaimed 
+
 
 
 
 only 
 wonderful 
-
+wonderful 
 
 unusual 
 
@@ -2108,7 +2108,7 @@ unusual
 kind 
 fond 
 second 
-large brighter sure 
+large brighter polished sure 
 big shaggy own 
 grand old 
 
@@ -2129,7 +2129,7 @@ happy
 wonderful 
 curious 
 
-so 
+
 big 
 dangerous 
 soft stuffed painted sorrowful 
@@ -2138,17 +2138,17 @@ last
 
 several 
 
-
+good gracious 
 
 broad new old 
-joyously 
 
 
 
 
 
-little from 
-gravely 
+
+little 
+
 
 
 glad 

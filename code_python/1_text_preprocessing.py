@@ -14,7 +14,7 @@ corpus_name = "The_WW_of_Oz.txt"
 
 # Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
 working_path = os.getcwd()
-base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
+base_path = str.split(working_path, "SemSim_AutoCor")[0] + "/SemSim_AutoCor/"
 
 # Path of the raw text file
 text_file_path = base_path + "corpora/" + corpus_name
@@ -82,7 +82,7 @@ with open(noun_only_output_path, "w") as noun_only_file, \
                 verb_only_file.write(processed_token + " ")
             elif pos == "JJ":
                 adjective_only_file.write(processed_token + " ")
-            else:
+            elif pos == "RB":
                 adverb_only_file.write(processed_token + " ")
         noun_only_file.write("\n")
         verb_only_file.write("\n")
