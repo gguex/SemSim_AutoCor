@@ -11,8 +11,7 @@ Useful links :
   - Dictionnaire Electronique des Synonymes (DES) : https://crisco2.unicaen.fr/des/synonymes/synonyme
 
   - Word sense desambiguation : 
-      * git:  https://github.com/truas/MSSA
-      * paper: https://deepblue.lib.umich.edu/bitstream/handle/2027.42/145475/tacl.pdf?sequence=3&isAllowed=y
+      https://github.com/getalp/disambiguate
       
   - Pretrained Embeddings from Wikipedia (in different languages) : 
     https://wikipedia2vec.github.io/wikipedia2vec/pretrained/
