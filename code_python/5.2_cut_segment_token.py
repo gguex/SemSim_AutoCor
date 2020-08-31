@@ -8,7 +8,7 @@ from scipy.linalg import expm
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
-input_file = "The_WW_of_Oz_nouns.txt"
+input_file = "Animal_farm_nouns.txt"
 
 # Name of the tag for the similarity
 sim_tag = "wesim"
@@ -18,11 +18,11 @@ exch_mat_opt = "d"
 # Exchange matrix range (for uniform) OR time step (for diffusive)
 exch_range = 5
 # Number of groups
-n_groups = 5
+n_groups = 3
 # Gamma parameter
-gamma = 10
+gamma = 2
 # Beta parameter
-beta = 10
+beta = 0.4
 # Kappa parameter
 kappa = 0.7
 # Convergence threshold

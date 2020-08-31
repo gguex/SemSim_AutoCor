@@ -8,7 +8,7 @@ from tqdm import tqdm
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
-input_file = "The_WW_of_Oz_nouns.txt"
+input_file = "Animal_farm_nouns.txt"
 
 # Name of the tag for the similarity
 sim_tag = "wesim"
