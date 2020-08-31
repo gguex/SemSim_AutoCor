@@ -8,7 +8,7 @@ from scipy.linalg import expm
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
-input_file = "The_WW_of_Oz_nouns.txt"
+input_file = "The_WW_of_Oz_all.txt"
 
 # Name of the tag for the similarity
 sim_tag = "wesim"
@@ -124,8 +124,10 @@ plt.savefig(results_file_path)
 
 # vector of color Lisa
 color_lisa = np.copy(lisa_vec)
-color_lisa[color_lisa > 0] = color_lisa[color_lisa > 0] / np.max(lisa_vec) * 255
-color_lisa[color_lisa < 0] = color_lisa[color_lisa < 0] / np.abs(np.min(lisa_vec)) * 255
+color_lisa[color_lisa > 0] = (color_lisa[color_lisa > 0] - np.min(color_lisa[color_lisa > 0])) \
+                             / (np.max(lisa_vec) - np.min(color_lisa[color_lisa > 0])) * 255
+color_lisa[color_lisa < 0] = (color_lisa[color_lisa < 0] - np.max(color_lisa[color_lisa < 0])) \
+                             / np.abs(np.min(lisa_vec) - np.max(color_lisa[color_lisa < 0])) * 255
 color_lisa = np.intc(color_lisa)
 
 with open(reshtml_file_path, 'w') as html_file:
