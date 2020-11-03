@@ -1,8 +1,9 @@
-import numpy as np
-import nltk
-import pandas as pd
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
+import nltk
+import numpy as np
+import pandas as pd
 from tqdm import tqdm
 
 # --- Parameters --- #
@@ -54,7 +55,7 @@ def compute_autocorrelation(working_path, input_file, sim_tag):
     # --- Compute the dissimilarity matrix and the exchange matrix function ---#
 
     # Easy computation of dissimilarity matrix (BUT CERTAINLY BETTER CHOICES ?)
-    d_mat = 1 - sim_mat
+    d_mat = np.max(sim_mat) - sim_mat
 
     # Function for the exchange matrix
     def exch_mat(r):
