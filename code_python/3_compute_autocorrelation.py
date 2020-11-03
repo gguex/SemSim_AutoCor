@@ -27,6 +27,10 @@ def compute_autocorrelation(working_path, input_file, sim_tag):
     file_path = base_path + "corpora/" + input_file
     # Path of the types and frequencies file
     typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
+
+    if not (os.path.exists(file_path) and os.path.exists(typefreq_file_path)):
+        return
+
     # Path of the similarity matrix
     similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
                              "_" + sim_tag + "_similarities.txt"

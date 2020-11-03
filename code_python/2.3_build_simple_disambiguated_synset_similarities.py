@@ -143,6 +143,3 @@ for pos, synsets in pos_to_synsets:
         data = upper.fillna(0) + lower.fillna(0.0)
         data.to_csv(base_path + "similarities/lch_similarity" + re.sub("^.*corpora", "", path[:-4]) + ".csv",
                     header=False, index=False)
-
-
-

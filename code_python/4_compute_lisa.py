@@ -9,7 +9,7 @@ from scipy.linalg import expm
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs to compute autocorrelation
 input_files = ("The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt")
-sim_tags = ("resnik", "wu-palmer", "leacock-chodorow") #, "wesim")
+sim_tags = ("resnik", "wu-palmer", "leacock-chodorow", "wesim")
 
 
 # Exchange matrix option ("u" = uniform, "d" = diffusive)
@@ -22,7 +22,7 @@ exch_range = 1000
 # Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
 working_path = os.getcwd()
 
-def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt,exch_range ):
+def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt, exch_range ):
     base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
     # Path of the text file
@@ -30,6 +30,10 @@ def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt,exch_range ):
     # Path of the types and frequencies file
     typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
     # Path of the similarity matrix
+
+    if not (os.path.exists(file_path) and os.path.exists(typefreq_file_path)):
+        return
+
     similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
                              "_" + sim_tag + "_similarities.txt"
     # Results path file
@@ -151,4 +155,4 @@ def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt,exch_range ):
 
 for input_file in input_files:
     for sim_tag in sim_tags:
-        compute_lisa(working_path, input_file, sim_tag, exch_mat_opt,exch_range)
+        compute_lisa(working_path, input_file, sim_tag, exch_mat_opt, exch_range)
