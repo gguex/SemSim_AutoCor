@@ -18,7 +18,7 @@ and a similarity matrix.
 
 The pipeline works with the help of suffixes to ease the workflow.
 
-**1_text_preprocessing.py** : This script take a raw text file and create five text files: One file containing every
+**1.1_text_preprocessing.py** : This script take a raw text file and create five text files: One file containing every
 token with POS tag, and 4 POS-selection files, and only token only file.
 
 - *INPUTS*:
