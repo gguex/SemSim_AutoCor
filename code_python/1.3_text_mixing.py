@@ -1,8 +1,4 @@
-import nltk
-from flair.models import SequenceTagger
-from flair.data import Sentence
 import re
-from tqdm import tqdm
 import numpy as np
 import os
 import random
@@ -16,13 +12,13 @@ corpus_names_list = ["Lectures_on_Landscape_all.txt",
                     "Sidelights_on_relativity_all.txt"]
 
 # Sentence mixing, or words
-unit_of_mix = "sent"
-#unit_of_mix = "word"
+#unit_of_mix = "sent"
+unit_of_mix = "word"
 if unit_of_mix not in ["sent", "word"]:
     unit_of_mix = "sent"
 
 # Number of units for each bin
-nb_of_units = 10
+nb_of_units = 3
 
 # Minimum of words in sentence to mix
 min_nb_of_words_in_sent = 5
@@ -38,11 +34,11 @@ text_path_list = [base_path + "corpora/mixed_corpora/" + corpus_name for corpus_
 
 # Defining paths of the outputs
 if unit_of_mix == "sent":
-    output_file = f"{base_path}corpora/mixed_corpora/mix_sent{nb_of_units}_min{min_nb_of_words_in_sent}.txt"
-    word_group_file = f"{base_path}corpora/mixed_corpora/mixgroup_sent{nb_of_units}_min{min_nb_of_words_in_sent}.txt"
+    output_file = f"{base_path}corpora/mix_sent{nb_of_units}_min{min_nb_of_words_in_sent}.txt"
+    word_group_file = f"{base_path}corpora/mixgroup_sent{nb_of_units}_min{min_nb_of_words_in_sent}.txt"
 else:
-    output_file = f"{base_path}corpora/mixed_corpora/mix_word{nb_of_units}.txt"
-    word_group_file = f"{base_path}corpora/mixed_corpora/mixgroup_word{nb_of_units}.txt"
+    output_file = f"{base_path}corpora/mix_word{nb_of_units}.txt"
+    word_group_file = f"{base_path}corpora/mixgroup_word{nb_of_units}.txt"
 
 # --- Creating mixing file --- #
 

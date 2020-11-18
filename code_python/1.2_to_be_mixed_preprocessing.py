@@ -4,6 +4,7 @@ from flair.data import Sentence
 import re
 from tqdm import tqdm
 import os
+from gensim.models import KeyedVectors
 
 # --- Parameters --- #
 
@@ -23,6 +24,16 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "/SemSim_AutoCor/"
 text_path_list = [base_path + "corpora/mixed_corpora/" + corpus_name for corpus_name in corpus_name_list]
 all_output_path_list = [base_path + "corpora/mixed_corpora/" + corpus_name[:-4] + "_all.txt"
                         for corpus_name in corpus_name_list]
+
+# Path of the Word vector model (absolute path, not in the project directory)
+wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
+
+# Loading word vector vocab
+
+# load gensim model
+wv_wiki = KeyedVectors.load(wv_model_path)
+# build vocabulary
+vocab_wiki = set(wv_wiki.vocab.keys())
 
 # --- POS tagging of the file --- #
 
@@ -52,6 +63,8 @@ for i in range(len(corpus_name_list)):
             for token in tagged_sentence:
                 pos = token.get_tag("pos").value[:2]
                 if pos not in ("NN", "VB", "JJ", "RB"):
+                    continue;
+                if token.text.lower() not in vocab_wiki:
                     continue;
                 processed_token = token.text.lower()
                 processed_token = re.sub(r'[^\w\s\-]', "", processed_token)
