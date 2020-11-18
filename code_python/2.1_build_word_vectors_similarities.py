@@ -6,7 +6,7 @@ from tqdm import tqdm
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "Animal_farm_nouns.txt"
+input_file = "mix_word3.txt"
 
 # Path of the Word vector model (absolute path, not in the project directory)
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"

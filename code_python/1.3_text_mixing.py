@@ -12,16 +12,19 @@ corpus_names_list = ["Lectures_on_Landscape_all.txt",
                     "Sidelights_on_relativity_all.txt"]
 
 # Sentence mixing, or words
-#unit_of_mix = "sent"
-unit_of_mix = "word"
+unit_of_mix = "sent"
+#unit_of_mix = "word"
 if unit_of_mix not in ["sent", "word"]:
     unit_of_mix = "sent"
 
 # Number of units for each bin
-nb_of_units = 3
+nb_of_units = 10
 
 # Minimum of words in sentence to mix
 min_nb_of_words_in_sent = 5
+
+# Div factor (corpus size is divided by that to fit github size limit)
+div_factor = 2
 
 # --- Defining paths --- #
 
@@ -70,7 +73,7 @@ for i, text_path in enumerate(text_path_list):
             indices_list.append([i+1] * len(words_list))
 
 # Size of the smallest text
-min_size = min([len(text_string) for text_string in text_string_list])
+min_size = int(min([len(text_string) for text_string in text_string_list]) / div_factor)
 # Be sure we can have the desirable number of units
 min_size = min_size // nb_of_units * nb_of_units
 # Reduce to have list of same size
