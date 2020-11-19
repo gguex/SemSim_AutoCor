@@ -94,7 +94,7 @@ def compute_segment_token(working_path, input_file, sim_tag, exch_mat_opt, exch_
         np.fill_diagonal(adj_mat, 0)
         g_vec = np.sum(adj_mat, axis=1) / np.sum(adj_mat)
         k_vec = f_vec / g_vec
-        b_mat = np.array([[min(v1, v2) for v2 in g_vec] for v1 in g_vec]) * adj_mat / np.sum(adj_mat)
+        b_mat = np.array([[min(v1, v2) for v2 in k_vec] for v1 in k_vec]) * adj_mat / np.sum(adj_mat)
         exch_mat = np.diag(f_vec) - np.diag(np.sum(b_mat, axis=1)) + b_mat
     else:
         adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= 1
