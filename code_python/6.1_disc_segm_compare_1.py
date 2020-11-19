@@ -3,30 +3,26 @@ import nltk
 import pandas as pd
 import os
 import errno
+import random as rdm
 from scipy.linalg import expm
 from sklearn.metrics import confusion_matrix, normalized_mutual_info_score
+import warnings
 
 
-# --- Defining function --- #
+# --- Defining functions --- #
 
-def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_mat_opt, exch_range, n_groups,
-                                        alpha, beta, kappa, conv_threshold=1e-5, max_it=1000):
+def compute_token_dissimilarity_matrix(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
     """
-    :param working_path: working path of the SemSim_AutoCor folder, or a folder above
     :param input_file: name of the text input file
     :param sim_tag: similarity tag
-    :param exch_mat_opt: option for the exchange matrix, "u" = uniform, "d" = diffusive
-    :param exch_range: range of the exchange matrix
-    :param n_groups: number of groups
-    :param alpha: alpha parameter
-    :param beta: beta parameter
-    :param kappa: kappa parameter
-    :param conv_threshold: convergence threshold (default = 1e-5)
-    :param max_it: maximum iteration (default = 1000)
-    :return: A n_token x n_group matrix with group membership for each tokens
+    :param dist_option: transformation parameter from similarity to dissimilarity, eigther "minus_log" or "1_minus"
+    :param working_path: a path to the SemSim_AutoCor folder or above (default = os.getcwd())
+    :return: the n_token x n_token dissimilarity matrix between text tokens
     """
 
-    # Saving the SemSim_AutoCor folder, if above
+    # --- Defining paths --- #
+
+    # Getting the SemSim_AutoCor folder, if above
     base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
     # Path of the text file
@@ -35,8 +31,8 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
 
     # Path of the similarity matrix
-    similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
-                             "_" + sim_tag + "_similarities.txt"
+    similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] \
+                             + "_" + sim_tag + "_similarities.txt"
 
     # Raise errors if files not found
     if not os.path.exists(file_path):
@@ -62,13 +58,73 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     # Import the similarity matrix
     sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
 
-    # --- Computation before loop --- #
+    # Computation of dissimilarity matrix with option
+    if dist_option == "minus_log":
+        d_mat = - np.log(sim_mat - np.min(sim_mat) + 1e-30)
+    elif dist_option == "1_minus":
+        d_mat = 1 - sim_mat
+    else:
+        warnings.warn("The parameter 'dist_option' is not recognise, setting it to 'minus_log'")
+        d_mat = - np.log(sim_mat + 1e-30)
+
+    # Compute the n_type x n_token presence matrix
+    pres_mat = np.empty([0, n_token])
+    for type_i in type_list:
+        pres_mat = np.append(pres_mat, [[token == type_i for token in token_list]], axis=0)
+
+    # Compute the extended distance matrix
+    d_ext_mat = pres_mat.T.dot(d_mat.dot(pres_mat))
+
+    # Return the distance_matrix
+    return d_ext_mat
+
+
+def compute_exchange_and_transition_matrix(input_file, sim_tag, exch_mat_opt, exch_range, working_path=os.getcwd()):
+    """
+    :param input_file: name of the text input file
+    :param sim_tag: similarity tag
+    :param exch_mat_opt: option for the exchange matrix, "u" = uniform, "d" = diffusive
+    :param exch_range: range of the exchange matrix
+    :param working_path: a path to the SemSim_AutoCor folder or above (default = os.getcwd())
+    :return: the n_token x n_token exchange matrix and the n_token x n_token markov transition matrix
+    """
+
+    # --- Defining paths --- #
+
+    # Getting the SemSim_AutoCor folder, if above
+    base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
+
+    # Path of the text file
+    file_path = base_path + "corpora/" + input_file
+    # Path of the types and frequencies file
+    typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
+
+    # Raise errors if files not found
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), file_path)
+    if not os.path.exists(typefreq_file_path):
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
+
+    # --- Load the data --- #
+
+    # Import the type freq file
+    type_freq_df = pd.read_csv(typefreq_file_path, sep=";", header=None)
+    type_list = list(type_freq_df[0])
+
+    # Import the text file and remove non-existing token
+    with open(file_path, "r") as text_file:
+        text_string = text_file.read()
+    raw_token_list = nltk.word_tokenize(text_string)
+    token_list = [token for token in raw_token_list if token in type_list]
+    n_token = len(token_list)  # The number of tokens
+
+    # --- Compute the exchange matrix and transition matrix --- #
 
     # Compute the exchange matrix and the markov chain transition matrix
     f_vec = np.ones(n_token) / n_token
 
     if exch_mat_opt not in ["u", "d"]:
-        print("EXCHANGE MATRIX OPTION NOT RECOGNIZED, SETTING IT TO UNIFORM")
+        warnings.warn("Exchange matrix option ('exch_mat_opt') not recognized, setting it to 'u'")
         exch_mat_opt = "u"
 
     if exch_mat_opt == "u":
@@ -88,22 +144,43 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
 
     w_mat = (exch_mat / np.sum(exch_mat, axis=1)).T
 
-    # Easy computation of dissimilarity matrix
-    d_mat = 1 - sim_mat
+    # Return the transition matrix
+    return exch_mat, w_mat
 
-    # Compute the n_type x n_token presence matrix
-    pres_mat = np.empty([0, n_token])
-    for type_i in type_list:
-        pres_mat = np.append(pres_mat, [[token == type_i for token in token_list]], axis=0)
 
-    # Compute the extended distance matrix
-    d_ext_mat = pres_mat.T.dot(d_mat.dot(pres_mat))
+def compute_discontinuity_segment_token(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
+                                        conv_threshold=1e-5, max_it=100, init_labels=None):
+    """
+    :param d_ext_mat: the n_token x n_token distance matrix
+    :param exch_mat: the n_token x n_token exchange matrix
+    :param w_mat: the n_token x n_token Markov chain transition matrix
+    :param n_groups: the number of groups
+    :param alpha: alpha parameter
+    :param beta: beta parameter
+    :param kappa: kappa parameter
+    :param conv_threshold: convergence threshold (default = 1e-5)
+    :param max_it: maximum iterations (default = 100)
+    :param init_labels: a vector containing initial labels (default = None)
+    :return: the n_tokens x n_groups membership matrix for each token
+    """
 
-    # --- Loop --- #
+    # Getting the number of token
+    n_token, _ = d_ext_mat.shape
+
+    # Compute the weights of token
+    f_vec = np.ones(n_token) / n_token
 
     # Initialization of Z
     z_mat = np.random.random((n_token, n_groups))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
+
+    # Set true labels
+    # If init_labels is not None, set known to value
+    if init_labels is not None:
+        for i, label in enumerate(init_labels):
+            if label != 0:
+                z_mat[i, :] = 0
+                z_mat[i, label - 1] = 1
 
     # Control of the loop
     converge = False
@@ -132,8 +209,18 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
                   - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
         # Computation of the new z_mat
+        if np.sum(-hig_mat > 690) > 0:
+            warnings.warn("Overflow of exp(-hig_mat)")
+            hig_mat[-hig_mat > 690] = -690
         z_new_mat = rho_vec * np.exp(-hig_mat)
         z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
+
+        # If init_labels is not None, set known to value
+        if init_labels is not None:
+            for i, label in enumerate(init_labels):
+                if label != 0:
+                    z_new_mat[i, :] = 0
+                    z_new_mat[i, label - 1] = 1
 
         # Print diff and it
         diff_pre_new = np.linalg.norm(z_mat - z_new_mat)
@@ -153,29 +240,88 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     return z_mat
 
 
-# Parameters for the gride
+# --- Testing manually vs ground truth --- #
 
-# Real values
+# Ground truth
 with open("/home/gguex/PycharmProjects/SemSim_AutoCor/corpora/mixgroup_sent1_min5.txt") as group_file:
     real_group_vec = group_file.read()
     real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
 
-# Test the function
-result_matrix = compute_discontinuity_segment_token(working_path=os.getcwd(),
-                                                    input_file="mix_sent1_min5.txt",
-                                                    sim_tag="wesim",
-                                                    exch_mat_opt="d",
-                                                    exch_range=5,
-                                                    n_groups=4,
-                                                    alpha=5,
-                                                    beta=10,
-                                                    kappa=1,
-                                                    max_it=40)
+print("Starting")
 
-algo_group_value = np.argmax(result_matrix, 1) + 1
+# Compute the dissimilartiy_matrix
+d_ext_mat = compute_token_dissimilarity_matrix(input_file="mix_sent1_min5.txt",
+                                               sim_tag="wesim",
+                                               dist_option="minus_log")
 
-conf_matrix = confusion_matrix(real_group_vec, algo_group_value)
-nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
+print("Dissimilarity matrix computed")
 
-print(conf_matrix)
-print(f"NMI = {nmi}")
+# Compute the exchange and transition matrices
+exch_mat, w_mat = compute_exchange_and_transition_matrix(input_file="mix_sent1_min5.txt",
+                                                         sim_tag="wesim",
+                                                         exch_mat_opt="u",
+                                                         exch_range=5)
+
+print("Exchange matrix computed")
+
+# Values to explore
+alpha_vec = [0.001, 0.01, 0.1, 1, 10, 100]
+beta_vec = [0.001, 0.01, 0.1, 1, 10, 100]
+kappa_vec = [0, 0.2, 0.4, 0.6, 0.8, 1]
+
+# Make results file
+with open("results_sent1_mlog_u5_1.csv", "w") as output_file:
+    output_file.write("alpha,beta,kappa,nmi\n")
+
+for alpha in alpha_vec:
+    for beta in beta_vec:
+        for kappa in kappa_vec:
+            # Compute the matrix
+            result_matrix = compute_discontinuity_segment_token(d_ext_mat=d_ext_mat,
+                                                                exch_mat=exch_mat,
+                                                                w_mat=w_mat,
+                                                                n_groups=4,
+                                                                alpha=alpha,
+                                                                beta=beta,
+                                                                kappa=kappa)
+
+            # Compute the groups
+            algo_group_value = np.argmax(result_matrix, 1) + 1
+
+            # Compute nmi score
+            nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
+            print(f"NMI = {nmi}")
+
+            # Writing results
+            with open("results_sent1_mlog_u5_1.csv", "a") as output_file:
+                output_file.write(f"{alpha},{beta},{kappa},{nmi}\n")
+
+# ---- WITH LABEL
+
+# Give some label
+# percent_of_know_label = 0.1
+# index_to_keep = rdm.sample(range(len(real_group_vec)), int(len(real_group_vec) * percent_of_know_label))
+# known_labels = np.zeros(len(real_group_vec))
+# known_labels[index_to_keep] = real_group_vec[index_to_keep]
+# known_labels = known_labels.astype(int)
+#
+# # Compute the results matrix
+# result_matrix = compute_discontinuity_segment_token(d_ext_mat=d_ext_mat,
+#                                                     exch_mat=exch_mat,
+#                                                     w_mat=w_mat,
+#                                                     n_groups=4,
+#                                                     alpha=3,
+#                                                     beta=10,
+#                                                     kappa=0.8,
+#                                                     init_labels=known_labels)
+#
+# # Getting the group attribution (crisp)
+# algo_group_value = np.argmax(result_matrix, 1) + 1
+#
+# # Comparing with ground truth
+# #conf_matrix = confusion_matrix(real_group_vec, algo_group_value)
+# #nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
+# conf_matrix = confusion_matrix(np.delete(real_group_vec, index_to_keep), np.delete(algo_group_value, index_to_keep))
+# nmi = normalized_mutual_info_score(np.delete(real_group_vec, index_to_keep), np.delete(algo_group_value, index_to_keep))
+# print(conf_matrix)
+# print(f"NMI = {nmi}")
