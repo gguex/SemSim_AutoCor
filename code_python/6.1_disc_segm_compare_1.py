@@ -26,11 +26,13 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     :return: A n_token x n_group matrix with group membership for each tokens
     """
 
-    # Saving the SemSim_AutoCor folder, if working path is above
+    # Saving the SemSim_AutoCor folder, if above
     base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
     # Path of the text file
     file_path = base_path + "corpora/" + input_file
+    # Path of the types and frequencies file
+    typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
 
     # Path of the similarity matrix
     similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
@@ -39,10 +41,16 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     # Raise errors if files not found
     if not os.path.exists(file_path):
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), file_path)
+    if not os.path.exists(typefreq_file_path):
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
     if not os.path.exists(similarities_file_path):
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
 
     # --- Load the data --- #
+
+    # Import the type freq file
+    type_freq_df = pd.read_csv(typefreq_file_path, sep=";", header=None)
+    type_list = list(type_freq_df[0])
 
     # Import the text file and remove non-existing token
     with open(file_path, "r") as text_file:
