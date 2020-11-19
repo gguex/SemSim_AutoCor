@@ -4,6 +4,7 @@ import pandas as pd
 import os
 import errno
 from scipy.linalg import expm
+from sklearn.metrics import confusion_matrix, normalized_mutual_info_score
 
 
 # --- Defining function --- #
@@ -25,39 +26,23 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     :return: A n_token x n_group matrix with group membership for each tokens
     """
 
-    # Saving the SemSim_AutoCor folder, if above
+    # Saving the SemSim_AutoCor folder, if working path is above
     base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
     # Path of the text file
     file_path = base_path + "corpora/" + input_file
-    # Path of the types and frequencies file
-    typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
 
     # Path of the similarity matrix
     similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
                              "_" + sim_tag + "_similarities.txt"
-    # Results html path file
-    results_html_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_discsegm.html"
-
-    # Results csv path file
-    results_csv_file_path = base_path + "results/" + input_file[:-4] + "_" + sim_tag + "_discsegm.csv"
 
     # Raise errors if files not found
     if not os.path.exists(file_path):
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), file_path)
-    if not os.path.exists(typefreq_file_path):
-        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
     if not os.path.exists(similarities_file_path):
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
 
     # --- Load the data --- #
-
-    # Import the type freq file
-    type_freq_df = pd.read_csv(typefreq_file_path, sep=";", header=None)
-    type_list = list(type_freq_df[0])
-    freq_vec = np.array(type_freq_df[1])
-    freq_vec = freq_vec / sum(freq_vec)
-    n_type = len(type_list)  # The number of types
 
     # Import the text file and remove non-existing token
     with open(file_path, "r") as text_file:
@@ -159,13 +144,30 @@ def compute_discontinuity_segment_token(working_path, input_file, sim_tag, exch_
     # Return the result
     return z_mat
 
+
+# Parameters for the gride
+
+# Real values
+with open("/home/gguex/PycharmProjects/SemSim_AutoCor/corpora/mixgroup_sent1_min5.txt") as group_file:
+    real_group_vec = group_file.read()
+    real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
+
 # Test the function
-compute_discontinuity_segment_token(working_path=os.getcwd(),
-                                    input_file="Animal_farm_nouns.txt",
-                                    sim_tag="wesim",
-                                    exch_mat_opt="d",
-                                    exch_range=5,
-                                    n_groups=5,
-                                    alpha=20,
-                                    beta=25,
-                                    kappa=0.8)
+result_matrix = compute_discontinuity_segment_token(working_path=os.getcwd(),
+                                                    input_file="mix_sent1_min5.txt",
+                                                    sim_tag="wesim",
+                                                    exch_mat_opt="d",
+                                                    exch_range=5,
+                                                    n_groups=4,
+                                                    alpha=5,
+                                                    beta=10,
+                                                    kappa=1,
+                                                    max_it=40)
+
+algo_group_value = np.argmax(result_matrix, 1) + 1
+
+conf_matrix = confusion_matrix(real_group_vec, algo_group_value)
+nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
+
+print(conf_matrix)
+print(f"NMI = {nmi}")
