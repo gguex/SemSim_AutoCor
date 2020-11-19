@@ -264,13 +264,17 @@ exch_mat, w_mat = compute_exchange_and_transition_matrix(input_file="mix_sent1_m
 
 print("Exchange matrix computed")
 
+
+# File name to save
+results_file_name = "results_sent1_mlog_u5_3.csv"
+
 # Values to explore
-alpha_vec = [0.001, 0.01, 0.1, 1, 10, 100]
-beta_vec = [0.001, 0.01, 0.1, 1, 10, 100]
+alpha_vec = [0.01, 0.1, 1, 10, 100, 500]
+beta_vec = [0.1, 1, 10, 100, 500, 1000]
 kappa_vec = [0, 0.2, 0.4, 0.6, 0.8, 1]
 
 # Make results file
-with open("results_sent1_mlog_u5_1.csv", "w") as output_file:
+with open(results_file_name, "w") as output_file:
     output_file.write("alpha,beta,kappa,nmi\n")
 
 for alpha in alpha_vec:
@@ -293,7 +297,7 @@ for alpha in alpha_vec:
             print(f"NMI = {nmi}")
 
             # Writing results
-            with open("results_sent1_mlog_u5_1.csv", "a") as output_file:
+            with open(results_file_name, "a") as output_file:
                 output_file.write(f"{alpha},{beta},{kappa},{nmi}\n")
 
 # ---- WITH LABEL
