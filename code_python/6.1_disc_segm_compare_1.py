@@ -263,18 +263,18 @@ print("Dissimilarity matrix computed")
 # Compute the exchange and transition matrices
 exch_mat, w_mat = compute_exchange_and_transition_matrix(input_file="mix_sent1_min5.txt",
                                                          sim_tag="wesim",
-                                                         exch_mat_opt="u",
+                                                         exch_mat_opt="s",
                                                          exch_range=5)
 
 print("Exchange matrix computed")
 
 
 # File name to save
-results_file_name = "results_sent1_mlog_u5_3.csv"
+results_file_name = "results_sent1_mlog_s5_1.csv"
 
 # Values to explore
-alpha_vec = [0.01, 0.1, 1, 10, 100, 500]
-beta_vec = [0.1, 1, 10, 100, 500, 1000]
+alpha_vec = [1, 10, 100, 200]
+beta_vec = [1, 10, 100, 500]
 kappa_vec = [0, 0.2, 0.4, 0.6, 0.8, 1]
 
 # Make results file
