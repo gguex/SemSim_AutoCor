@@ -83,7 +83,7 @@ def compute_exchange_and_transition_matrix(input_file, sim_tag, exch_mat_opt, ex
     """
     :param input_file: name of the text input file
     :param sim_tag: similarity tag
-    :param exch_mat_opt: option for the exchange matrix, "u" = uniform, "d" = diffusive
+    :param exch_mat_opt: option for the exchange matrix, "s" = standard, "u" = uniform, "d" = diffusive
     :param exch_range: range of the exchange matrix
     :param working_path: a path to the SemSim_AutoCor folder or above (default = os.getcwd())
     :return: the n_token x n_token exchange matrix and the n_token x n_token markov transition matrix
@@ -123,11 +123,15 @@ def compute_exchange_and_transition_matrix(input_file, sim_tag, exch_mat_opt, ex
     # Compute the exchange matrix and the markov chain transition matrix
     f_vec = np.ones(n_token) / n_token
 
-    if exch_mat_opt not in ["u", "d"]:
-        warnings.warn("Exchange matrix option ('exch_mat_opt') not recognized, setting it to 'u'")
-        exch_mat_opt = "u"
+    if exch_mat_opt not in ["s", "u", "d"]:
+        warnings.warn("Exchange matrix option ('exch_mat_opt') not recognized, setting it to 's'")
+        exch_mat_opt = "s"
 
-    if exch_mat_opt == "u":
+    if exch_mat_opt  == "s":
+        exch_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+        np.fill_diagonal(exch_mat, 0)
+        exch_mat = exch_mat / np.sum(exch_mat)
+    elif exch_mat_opt == "u":
         adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
         np.fill_diagonal(adj_mat, 0)
         g_vec = np.sum(adj_mat, axis=1) / np.sum(adj_mat)
@@ -168,7 +172,7 @@ def compute_discontinuity_segment_token(d_ext_mat, exch_mat, w_mat, n_groups, al
     n_token, _ = d_ext_mat.shape
 
     # Compute the weights of token
-    f_vec = np.ones(n_token) / n_token
+    f_vec = np.sum(exch_mat, 0)
 
     # Initialization of Z
     z_mat = np.random.random((n_token, n_groups))
