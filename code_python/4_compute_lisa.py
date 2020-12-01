@@ -11,7 +11,6 @@ from scipy.linalg import expm
 input_files = ("The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt")
 sim_tags = ("resnik", "wu-palmer", "leacock-chodorow", "wesim")
 
-
 # Exchange matrix option ("u" = uniform, "d" = diffusive)
 exch_mat_opt = "d"
 # Exchange matrix range (for uniform) OR time step (for diffusive)
@@ -22,7 +21,8 @@ exch_range = 1000
 # Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
 working_path = os.getcwd()
 
-def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt, exch_range ):
+
+def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt, exch_range):
     base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
     # Path of the text file
@@ -152,6 +152,7 @@ def compute_lisa(working_path, input_file, sim_tag, exch_mat_opt, exch_range ):
                     255 + color_lisa[i], 255 + color_lisa[i]))
             html_file.write(token_list[i] + " </span>")
         html_file.write("</p></body>\n</html>")
+
 
 for input_file in input_files:
     for sim_tag in sim_tags:
