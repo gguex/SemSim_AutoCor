@@ -2,12 +2,14 @@ import nltk
 import pandas as pd
 import os
 import errno
+import colorsys
 from scipy.linalg import expm
 import warnings
 import numpy as np
 
 def sim_to_dissim_matrix(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
     """
+    Compute the token dissimilarity matrix from a file and a similarity tag.
     :param input_file: name of the text input file
     :param sim_tag: similarity tag
     :param dist_option: transformation parameter from similarity to dissimilarity, eigther "minus_log" or "1_minus"
@@ -76,6 +78,7 @@ def sim_to_dissim_matrix(input_file, sim_tag, dist_option="minus_log", working_p
 
 def exchange_and_transition_mat(input_file, sim_tag, exch_mat_opt, exch_range, working_path=os.getcwd()):
     """
+    Compute the exchange matrix and the Markov chain transition matrix from a file and a similarity tag.
     :param input_file: name of the text input file
     :param sim_tag: similarity tag
     :param exch_mat_opt: option for the exchange matrix, "s" = standard, "u" = uniform, "d" = diffusive
@@ -150,6 +153,7 @@ def exchange_and_transition_mat(input_file, sim_tag, exch_mat_opt, exch_range, w
 def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
                                conv_threshold=1e-5, max_it=100, init_labels=None):
     """
+    Cluster tokens with discontinuity segmentation from a dissimilarity matrix, exchange matrix and transition matrix.
     :param d_ext_mat: the n_token x n_token distance matrix
     :param exch_mat: the n_token x n_token exchange matrix
     :param w_mat: the n_token x n_token Markov chain transition matrix
@@ -237,3 +241,43 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
 
     # Return the result
     return z_mat
+
+
+def create_html_group_file(output_file, z_token_list, z_mat, comment_line=None):
+    """
+    Create the html group color file from an input file and a membership matrix Z.
+    :param output_file: the name of the html outputted file
+    :param z_token_list: the list of tokens which define z_mat rows
+    :param z_mat: the fuzzy membership matrix Z
+    :param comment_line: an optional comment line to start the file (default=None)
+    """
+
+    # Saving the number of groups
+    _, n_groups = z_mat.shape
+
+    # Creating group colors
+    color_rgb_list = []
+    for i in range(n_groups):
+        color_rgb_list.append(np.array(colorsys.hsv_to_rgb(i * 1 / n_groups, 1, 1)))
+    color_rgb_mat = np.array(color_rgb_list)
+
+    # Creating tokens color
+    token_color_mat = np.array(255 * z_mat.dot(color_rgb_mat), int)
+
+    # Creating html file
+    with open(output_file, 'w') as html_file:
+        html_file.write("<html>\n<head></head>\n")
+        if comment_line is None:
+            html_file.write("<body><p>")
+        else:
+            html_file.write(f"<body><p>{comment_line}</p> <p>")
+
+    # Writing tokens with colors
+    for i in range(len(z_token_list)):
+        html_file.write(f"<span style=\"background-color: "
+                        f"rgb({token_color_mat[i, 0]},{token_color_mat[i, 1]},{token_color_mat[i, 2]})\">")
+        html_file.write(z_token_list[i] + " </span>")
+    html_file.write("</p></body>\n</html>")
+
+    # Return 0 is all went well
+    return 0
