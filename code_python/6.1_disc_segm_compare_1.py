@@ -11,7 +11,7 @@ import warnings
 
 # --- Defining functions --- #
 
-def compute_token_dissimilarity_matrix(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
+def sim_to_dissim_matrix(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
     """
     :param input_file: name of the text input file
     :param sim_tag: similarity tag
@@ -79,7 +79,7 @@ def compute_token_dissimilarity_matrix(input_file, sim_tag, dist_option="minus_l
     return d_ext_mat
 
 
-def compute_exchange_and_transition_matrix(input_file, sim_tag, exch_mat_opt, exch_range, working_path=os.getcwd()):
+def exchange_and_transition_mat(input_file, sim_tag, exch_mat_opt, exch_range, working_path=os.getcwd()):
     """
     :param input_file: name of the text input file
     :param sim_tag: similarity tag
@@ -152,8 +152,8 @@ def compute_exchange_and_transition_matrix(input_file, sim_tag, exch_mat_opt, ex
     return exch_mat, w_mat
 
 
-def compute_discontinuity_segment_token(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
-                                        conv_threshold=1e-5, max_it=100, init_labels=None):
+def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
+                               conv_threshold=1e-5, max_it=100, init_labels=None):
     """
     :param d_ext_mat: the n_token x n_token distance matrix
     :param exch_mat: the n_token x n_token exchange matrix
@@ -278,9 +278,9 @@ print("Starting")
 
 for dist_option in dist_option_vec:
     # Compute the dissimilartiy_matrix
-    d_ext_mat = compute_token_dissimilarity_matrix(input_file="mix_sent1_min5.txt",
-                                                   sim_tag="wesim",
-                                                   dist_option=dist_option)
+    d_ext_mat = sim_to_dissim_matrix(input_file="mix_sent1_min5.txt",
+                                     sim_tag="wesim",
+                                     dist_option=dist_option)
 
     print(f"Dissimilarity matrix computed with {dist_option}")
 
@@ -288,10 +288,10 @@ for dist_option in dist_option_vec:
         for exch_range in exch_range_vec:
 
             # Compute the exchange and transition matrices
-            exch_mat, w_mat = compute_exchange_and_transition_matrix(input_file="mix_sent1_min5.txt",
-                                                                     sim_tag="wesim",
-                                                                     exch_mat_opt=exch_mat_opt,
-                                                                     exch_range=exch_range)
+            exch_mat, w_mat = exchange_and_transition_mat(input_file="mix_sent1_min5.txt",
+                                                          sim_tag="wesim",
+                                                          exch_mat_opt=exch_mat_opt,
+                                                          exch_range=exch_range)
 
             print(f"Exchange matrix computed with {exch_mat_opt} and range {exch_range}")
 
@@ -299,13 +299,13 @@ for dist_option in dist_option_vec:
                 for beta in beta_vec:
                     for kappa in kappa_vec:
                         # Compute the matrix
-                        result_matrix = compute_discontinuity_segment_token(d_ext_mat=d_ext_mat,
-                                                                            exch_mat=exch_mat,
-                                                                            w_mat=w_mat,
-                                                                            n_groups=4,
-                                                                            alpha=alpha,
-                                                                            beta=beta,
-                                                                            kappa=kappa)
+                        result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
+                                                                   exch_mat=exch_mat,
+                                                                   w_mat=w_mat,
+                                                                   n_groups=4,
+                                                                   alpha=alpha,
+                                                                   beta=beta,
+                                                                   kappa=kappa)
 
                         # Compute the groups
                         algo_group_value = np.argmax(result_matrix, 1) + 1
