@@ -1,18 +1,22 @@
-from code_python.functions import *
+from code_python.local_functions import sim_to_dissim_matrix, exchange_and_transition_matrices, \
+    discontinuity_segmentation, write_groups_in_html_file, write_membership_mat_in_csv_file
+import numpy as np
+import os
+from sklearn.metrics import normalized_mutual_info_score
 
-### Parameters
+# --- Parameters
 
 input_file = "mix_sent1_min5.txt"
 sim_tag = "wesim"
 dist_option = "minus_log"
-exch_mat_opt = "u"
+exch_mat_opt = "s"
 exch_range = 3
 n_groups = 4
-alpha = 1
-beta = 10
-kappa = 1
+alpha = 5
+beta = 50
+kappa = 2/3
 
-### Paths
+# --- Paths
 
 # Working path
 working_path = os.getcwd()
@@ -23,18 +27,16 @@ typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] +
 # Path of the text file
 file_path = base_path + "corpora/" + input_file
 
-### Computations
+# --- Computations
 
 # Compute the dissimilartiy_matrix
-d_ext_mat = sim_to_dissim_matrix(input_file=input_file,
-                                 sim_tag=sim_tag,
-                                 dist_option=dist_option)
+d_ext_mat, token_list = sim_to_dissim_matrix(input_file=input_file,
+                                             sim_tag=sim_tag,
+                                             dist_option=dist_option)
 
 # Compute the exchange and transition matrices
-exch_mat, w_mat = exchange_and_transition_mat(input_file=input_file,
-                                              sim_tag=sim_tag,
-                                              exch_mat_opt=exch_mat_opt,
-                                              exch_range=exch_range)
+exch_mat, w_mat = exchange_and_transition_matrices(len(token_list), exch_mat_opt=exch_mat_opt,
+                                                   exch_range=exch_range)
 
 # Compute the membership matrix
 result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
@@ -44,21 +46,10 @@ result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
                                            alpha=alpha,
                                            beta=beta,
                                            kappa=kappa)
-
-# Import the text file and tokenize
-with open(file_path, "r") as text_file:
-    text_string = text_file.read()
-raw_token_list = nltk.word_tokenize(text_string)
-
-# Import the type freq file for token list
-type_freq_df = pd.read_csv(typefreq_file_path, sep=";", header=None)
-type_list = type_freq_df[0].to_list()
-
-# Remove non-existing tokens
-token_list = [token for token in raw_token_list if token in type_list]
-
 # Write html results
 write_groups_in_html_file("test.html", token_list, result_matrix)
+# Write csv results
+write_membership_mat_in_csv_file("test.csv", token_list, result_matrix)
 
 # Real results
 with open("/home/gguex/PycharmProjects/SemSim_AutoCor/corpora/mixgroup_sent1_min5.txt") as group_file:
@@ -72,3 +63,10 @@ for i, label in enumerate(real_group_vec):
 
 # Write html results
 write_groups_in_html_file("test_real.html", token_list, z_real_mat)
+
+# Compute the groups
+algo_group_value = np.argmax(result_matrix, 1) + 1
+
+# Compute nmi score
+nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
+print(nmi)

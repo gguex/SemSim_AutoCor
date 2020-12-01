@@ -1,9 +1,12 @@
-from code_python.functions import *
+from code_python.local_functions import sim_to_dissim_matrix, exchange_and_transition_matrices, \
+    discontinuity_segmentation
 from sklearn.metrics import normalized_mutual_info_score
-#import random as rdm
-#from sklearn.metrics import confusion_matrix
+import numpy as np
 
-### PARAMETERS
+# import random as rdm
+# from sklearn.metrics import confusion_matrix
+
+# --- PARAMETERS
 
 # File name to save
 results_file_name = "results_sent1_big_1.csv"
@@ -18,9 +21,9 @@ exch_range_vec = [1, 3, 5, 10]
 # Parameter values to explore
 alpha_vec = [1, 5, 10, 50, 100, 500]
 beta_vec = [1, 5, 10, 50, 100, 500]
-kappa_vec = [0, 1/3, 2/3, 1]
+kappa_vec = [0, 1 / 3, 2 / 3, 1]
 
-### GRID SEARCH
+# --- GRID SEARCH
 
 # Ground truth
 with open("/home/gguex/PycharmProjects/SemSim_AutoCor/corpora/mixgroup_sent1_min5.txt") as group_file:
@@ -45,10 +48,8 @@ for dist_option in dist_option_vec:
         for exch_range in exch_range_vec:
 
             # Compute the exchange and transition matrices
-            exch_mat, w_mat = exchange_and_transition_mat(input_file="mix_sent1_min5.txt",
-                                                          sim_tag="wesim",
-                                                          exch_mat_opt=exch_mat_opt,
-                                                          exch_range=exch_range)
+            exch_mat, w_mat = exchange_and_transition_matrices(input_file="mix_sent1_min5.txt", sim_tag="wesim",
+                                                               exch_mat_opt=exch_mat_opt, exch_range=exch_range)
 
             print(f"Exchange matrix computed with {exch_mat_opt} and range {exch_range}")
 
@@ -102,6 +103,7 @@ for dist_option in dist_option_vec:
 # #conf_matrix = confusion_matrix(real_group_vec, algo_group_value)
 # #nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
 # conf_matrix = confusion_matrix(np.delete(real_group_vec, index_to_keep), np.delete(algo_group_value, index_to_keep))
-# nmi = normalized_mutual_info_score(np.delete(real_group_vec, index_to_keep), np.delete(algo_group_value, index_to_keep))
+# nmi = normalized_mutual_info_score(np.delete(real_group_vec, index_to_keep), \
+#     np.delete(algo_group_value, index_to_keep))
 # print(conf_matrix)
 # print(f"NMI = {nmi}")
