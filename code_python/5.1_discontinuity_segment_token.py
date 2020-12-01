@@ -13,9 +13,10 @@ input_file = "Animal_farm_nouns.txt"
 # Name of the tag for the similarity
 sim_tag = "wesim"
 
+# Input files list
 input_files = ("The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt")
+# Similarity tag list
 sim_tags = ("resnik", "wu-palmer", "leacock-chodorow", "wesim")
-
 
 # Exchange matrix option ("u" = uniform, "d" = diffusive)
 exch_mat_opt = "d"

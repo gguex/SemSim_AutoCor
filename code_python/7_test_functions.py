@@ -58,7 +58,7 @@ type_list = type_freq_df[0].to_list()
 token_list = [token for token in raw_token_list if token in type_list]
 
 # Write html results
-display_groups_in_html_file("test.html", token_list, result_matrix)
+write_groups_in_html_file("test.html", token_list, result_matrix)
 
 # Real results
 with open("/home/gguex/PycharmProjects/SemSim_AutoCor/corpora/mixgroup_sent1_min5.txt") as group_file:
@@ -71,4 +71,4 @@ for i, label in enumerate(real_group_vec):
         z_real_mat[i, label - 1] = 1
 
 # Write html results
-display_groups_in_html_file("test_real.html", token_list, z_real_mat)
+write_groups_in_html_file("test_real.html", token_list, z_real_mat)

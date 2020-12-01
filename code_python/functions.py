@@ -7,6 +7,7 @@ from scipy.linalg import expm
 import warnings
 import numpy as np
 
+
 def sim_to_dissim_matrix(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
     """
     Compute the token dissimilarity matrix from a file and a similarity tag.
@@ -30,7 +31,7 @@ def sim_to_dissim_matrix(input_file, sim_tag, dist_option="minus_log", working_p
 
     # Path of the similarity matrix
     similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] \
-                             + "_" + sim_tag + "_similarities.txt"
+        + "_" + sim_tag + "_similarities.txt"
 
     # Raise errors if files not found
     if not os.path.exists(file_path):
@@ -127,7 +128,7 @@ def exchange_and_transition_mat(input_file, sim_tag, exch_mat_opt, exch_range, w
         warnings.warn("Exchange matrix option ('exch_mat_opt') not recognized, setting it to 's'")
         exch_mat_opt = "s"
 
-    if exch_mat_opt  == "s":
+    if exch_mat_opt == "s":
         exch_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
         np.fill_diagonal(exch_mat, 0)
         exch_mat = exch_mat / np.sum(exch_mat)
@@ -212,7 +213,7 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
-                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
+            - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:
@@ -246,9 +247,9 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
     return z_mat
 
 
-def display_groups_in_html_file(output_file, z_token_list, z_mat, comment_line=None):
+def write_groups_in_html_file(output_file, z_token_list, z_mat, comment_line=None):
     """
-    Create the html group color file from an input file and a membership matrix Z.
+    Write the html group color file from an input file and a membership matrix Z.
 
     :param output_file: the name of the html outputted file
     :param z_token_list: the list of tokens which define z_mat rows
@@ -256,7 +257,7 @@ def display_groups_in_html_file(output_file, z_token_list, z_mat, comment_line=N
     :param comment_line: an optional comment line to start the file (default=None)
     """
 
-    # Saving the number of groups
+    # Getting the number of groups
     _, n_groups = z_mat.shape
 
     # Creating group colors
@@ -290,3 +291,38 @@ def display_groups_in_html_file(output_file, z_token_list, z_mat, comment_line=N
     # Return 0 is all went well
     return 0
 
+
+def write_membership_mat_in_csv_file(output_file, z_token_list, z_mat, comment_line=None):
+    """
+    Write the csv file containing the membership matrix and token list
+
+    :param output_file: the name of the csv outputted file
+    :param z_token_list: the list of tokens which define z_mat rows
+    :param z_mat: the fuzzy membership matrix Z
+    :param comment_line: an optional comment line to start the file (default=None)
+    """
+
+    # Getting the number of groups
+    _, n_groups = z_mat.shape
+
+    # Creating csv file
+    with open(output_file, 'w') as text_file:
+
+        # Write comment_line if exists
+        if comment_line is not None:
+            text_file.write(comment_line + "," * n_groups + "\n")
+
+        # Write head
+        text_file.write("token")
+        for i in range(n_groups):
+            text_file.write(f",G{i + 1}")
+
+        # Write matrix
+        for i, token in enumerate(z_token_list):
+            text_file.write(token)
+            for j in range(n_groups):
+                text_file.write(f",{z_mat[i, j]}")
+            text_file.write("\n")
+
+    # Return 0 is all went well
+    return 0
