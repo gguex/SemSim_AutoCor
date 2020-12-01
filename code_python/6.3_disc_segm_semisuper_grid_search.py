@@ -4,8 +4,6 @@ from sklearn.metrics import normalized_mutual_info_score
 import numpy as np
 import random as rdm
 
-# from sklearn.metrics import confusion_matrix
-
 # --- PARAMETERS
 
 # File name to save
