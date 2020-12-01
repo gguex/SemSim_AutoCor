@@ -8,7 +8,7 @@ import warnings
 import numpy as np
 
 
-def sim_to_dissim_matrix(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
+def sim_to_dissim(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
     """
     Compute the token dissimilarity matrix from a file and a similarity tag.
     Also give the list of tokens where a similarity was present

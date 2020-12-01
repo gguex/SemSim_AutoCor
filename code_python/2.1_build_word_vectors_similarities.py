@@ -6,13 +6,14 @@ from tqdm import tqdm
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "mix_word3.txt"
+input_file = "Animal_farm_verbs.txt"
 
 # Path of the Word vector model (absolute path, not in the project directory)
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
 
 # Name of the outputted tag for the similarity
 sim_tag = "wesim"
+
 
 # --- Defining paths --- #
 
