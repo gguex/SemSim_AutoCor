@@ -3,9 +3,6 @@ from code_python.local_functions import sim_to_dissim, exchange_and_transition_m
 from sklearn.metrics import normalized_mutual_info_score
 import numpy as np
 
-# import random as rdm
-# from sklearn.metrics import confusion_matrix
-
 # --- PARAMETERS
 
 # File name to save
@@ -77,34 +74,3 @@ for dist_option in dist_option_vec:
                         with open(results_file_name, "a") as output_file:
                             output_file.write(f"{dist_option},{exch_mat_opt},{exch_range},{alpha},{beta},{kappa},"
                                               f"{nmi}\n")
-
-# ---- WITH LABEL
-
-# Give some label
-# percent_of_know_label = 0.1
-# index_to_keep = rdm.sample(range(len(real_group_vec)), int(len(real_group_vec) * percent_of_know_label))
-# known_labels = np.zeros(len(real_group_vec))
-# known_labels[index_to_keep] = real_group_vec[index_to_keep]
-# known_labels = known_labels.astype(int)
-#
-# # Compute the results matrix
-# result_matrix = compute_discontinuity_segment_token(d_ext_mat=d_ext_mat,
-#                                                     exch_mat=exch_mat,
-#                                                     w_mat=w_mat,
-#                                                     n_groups=4,
-#                                                     alpha=3,
-#                                                     beta=10,
-#                                                     kappa=0.8,
-#                                                     init_labels=known_labels)
-#
-# # Getting the group attribution (crisp)
-# algo_group_value = np.argmax(result_matrix, 1) + 1
-#
-# # Comparing with ground truth
-# #conf_matrix = confusion_matrix(real_group_vec, algo_group_value)
-# #nmi = normalized_mutual_info_score(real_group_vec, algo_group_value)
-# conf_matrix = confusion_matrix(np.delete(real_group_vec, index_to_keep), np.delete(algo_group_value, index_to_keep))
-# nmi = normalized_mutual_info_score(np.delete(real_group_vec, index_to_keep), \
-#     np.delete(algo_group_value, index_to_keep))
-# print(conf_matrix)
-# print(f"NMI = {nmi}")
