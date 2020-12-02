@@ -1,76 +1,78 @@
-import nltk
-import pandas as pd
 import os
-import errno
+import nltk
 import colorsys
 from scipy.linalg import expm
 import warnings
 import numpy as np
 
 
-def sim_to_dissim(input_file, sim_tag, dist_option="minus_log", working_path=os.getcwd()):
+def get_all_paths(input_file, sim_tag, working_path=os.getcwd()):
     """
-    Compute the token dissimilarity matrix from a file and a similarity tag.
-    Also give the list of tokens where a similarity was present
+    A function specific to the Semsim_Autocor project that returns all the useful paths
+    given a input file name and a similarity tag. If any file is missing, raise a warning and return an empty string
+    (the missing of ground truth file don't raise a warning, as it is not always needed)
 
-    :param input_file: name of the text input file
+    :param input_file: the name of the text file
     :type input_file: str
-    :param sim_tag: similarity tag
+    :param sim_tag: the similarity tag
     :type sim_tag: str
-    :param dist_option: transformation parameter from similarity to dissimilarity, eigther "minus_log" or "1_minus"
-    :type dist_option: str
-    :param working_path: a path to the SemSim_AutoCor folder or above (default = os.getcwd())
+    :param working_path: the initial path of script, must anywhere in the SemSim_AutoCor project
     :type working_path: str
-    :return: the n_token x n_token dissimilarity matrix between text tokens and the list of tokens used
+    :return: paths of : the corpus file, the typefreq file, the similarity file and the ground truth file.
+    :rtype: (str, str, str, str)
+    """
+
+    # Getting the SemSim_AutoCor folder, if above
+    base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
+
+    # Path of the text file
+    text_file_path = f"{base_path}/corpora/{input_file}"
+    # Path of the types and frequencies file
+    typefreq_file_path = f"{base_path}/similarities_frequencies/{input_file[:-4]}_{sim_tag}_typefreq.txt"
+    # Path of the similarity matrix
+    sim_file_path = f"{base_path}/similarities_frequencies/{input_file[:-4]}_{sim_tag}_similarities.txt"
+    # Path of the ground true file
+    ground_truth_path = f"{base_path}/corpora/mixgroup_{input_file[4:]}"
+
+    if not os.path.exists(text_file_path):
+        warnings.warn(f"The corpus file '{text_file_path}' is missing")
+        text_file_path = ""
+    if not os.path.exists(typefreq_file_path):
+        warnings.warn(f"The typefreq file '{typefreq_file_path}' is missing")
+        typefreq_file_path = ""
+    if not os.path.exists(sim_file_path):
+        warnings.warn(f"The similarity file '{sim_file_path}' is missing")
+        sim_file_path = ""
+    if not os.path.exists(ground_truth_path):
+        ground_truth_path = ""
+
+    # Return paths
+    return text_file_path, typefreq_file_path, sim_file_path, ground_truth_path
+
+
+def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
+    """
+    Transform the (n_type x n_type) similarity of dissimilarity matrix to its extended version,
+    with size (n_token x n_token). Return the extended matrix and the list of used tokens in corresponding order.
+
+    :param text_file_path: path of the text file containing tokens from which to build the extended matrix.
+    :type text_file_path: str
+    :param type_mat: the (n_type x n_type) similarity or dissimilarity matrix between types.
+    :type type_mat: numpy.ndarray
+    :param type_list: the list of types defining the rows and columns of the (n_type x n_type) matrix.
+    :type type_list: list[str]
+    :return: the (n_token x n_token) extended matrix between text tokens and the (n_token) list of tokens used.
     :rtype: (numpy.ndarray, list[str])
     """
 
-    # --- Defining paths --- #
-
-    # Getting the SemSim_AutoCor folder, if above
-    base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
-
-    # Path of the text file
-    file_path = base_path + "corpora/" + input_file
-    # Path of the types and frequencies file
-    typefreq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
-
-    # Path of the similarity matrix
-    similarities_file_path = base_path + "similarities_frequencies/" + input_file[:-4] \
-        + "_" + sim_tag + "_similarities.txt"
-
-    # Raise errors if files not found
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), file_path)
-    if not os.path.exists(typefreq_file_path):
-        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
-    if not os.path.exists(similarities_file_path):
-        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), typefreq_file_path)
-
-    # --- Load the data --- #
-
-    # Import the type freq file
-    type_freq_df = pd.read_csv(typefreq_file_path, sep=";", header=None)
-    type_list = list(type_freq_df[0])
-
     # Import the text file and remove non-existing token
-    with open(file_path, "r") as text_file:
+    with open(text_file_path, "r") as text_file:
         text_string = text_file.read()
     raw_token_list = nltk.word_tokenize(text_string)
+
+    # Keep only the tokens which are present in the type_list
     token_list = [token for token in raw_token_list if token in type_list]
-    n_token = len(token_list)  # The number of tokens
-
-    # Import the similarity matrix
-    sim_mat = np.loadtxt(similarities_file_path, delimiter=";")
-
-    # Computation of dissimilarity matrix with option
-    if dist_option == "minus_log":
-        d_mat = - np.log(sim_mat - np.min(sim_mat) + 1e-30)
-    elif dist_option == "1_minus":
-        d_mat = 1 - sim_mat
-    else:
-        warnings.warn("The parameter 'dist_option' is not recognise, setting it to 'minus_log'")
-        d_mat = - np.log(sim_mat + 1e-30)
+    n_token = len(token_list)
 
     # Compute the n_type x n_token presence matrix
     pres_mat = np.empty([0, n_token])
@@ -78,10 +80,35 @@ def sim_to_dissim(input_file, sim_tag, dist_option="minus_log", working_path=os.
         pres_mat = np.append(pres_mat, [[token == type_i for token in token_list]], axis=0)
 
     # Compute the extended distance matrix
-    d_ext_mat = pres_mat.T.dot(d_mat.dot(pres_mat))
+    token_mat = pres_mat.T.dot(type_mat.dot(pres_mat))
 
     # Return the distance_matrix
-    return d_ext_mat, token_list
+    return token_mat, token_list
+
+
+def similarity_to_dissimilarity(sim_mat, dist_option="minus_log"):
+    """
+    Compute the dissimilarity matrix from a similarity matrix with different options.
+
+    :param sim_mat: the similarity matrix.
+    :type sim_mat: numpy.ndarray
+    :param dist_option: transformation parameter from similarity to dissimilarity, either "minus_log" or "1_minus".
+    :type dist_option: str
+    """
+
+    # Computation of dissimilarity matrix with option
+    if dist_option == "minus_log":
+        if np.min(sim_mat) <= 0:
+            sim_mat = sim_mat - np.min(sim_mat) + 1e-30
+        d_mat = - np.log(sim_mat - np.min(sim_mat) + 1e-30)
+    elif dist_option == "1_minus":
+        d_mat = 1 - sim_mat
+    else:
+        warnings.warn("The parameter 'dist_option' is not recognise, setting it to 'minus_log'")
+        d_mat = - np.log(sim_mat + 1e-30)
+
+    #  Return the dissimilarity matrix
+    return d_mat
 
 
 def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
@@ -203,7 +230,7 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
-            - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
+                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:
@@ -309,7 +336,7 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + gamma * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-            - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
+                  - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:
