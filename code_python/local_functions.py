@@ -158,6 +158,39 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     return exch_mat, w_mat
 
 
+def lisa_computation(d_ext_mat, exch_mat, w_mat):
+    """
+    From an (n_token x n_token) extended dissimilarity matrix, an exchange matrix and a transition matrix,
+    compute the length (n_token) lisa vector where local autocorrelation for each token is stored.
+
+    :param d_ext_mat: an (n_token x n_token) extended dissimilarity matrix.
+    :type d_ext_mat: numpy.ndarray
+    :param exch_mat: an (n_token x n_token) exchange matrix.
+    :type exch_mat: numpy.ndarray
+    :param w_mat: a (n_token x n_token) transition matrix.
+    :type w_mat: numpy.ndarray
+    :return: the (n_token) lisa vector containing local autocorrelation for each token.
+    :rtype: numpy.ndarray
+    """
+
+    # Get the number of tokens
+    n_token, _ = d_ext_mat.shape
+    # Get the weights of tokens
+    f_vec = np.sum(exch_mat, 0)
+
+    # Compute the centring matrix
+    h_mat = np.identity(n_token) - np.outer(np.ones(n_token), f_vec)
+    # Compute the scalar produced matrix
+    b_mat = - 0.5 * h_mat.dot(d_ext_mat.dot(h_mat.T))
+    # Compute of the global inertia
+    global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
+    # Compute lisa vector
+    lisa_vec = np.diag(w_mat.dot(b_mat)) / global_inertia
+
+    # Return the result
+    return lisa_vec
+
+
 def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
                                conv_threshold=1e-5, max_it=100, init_labels=None):
     """
@@ -188,10 +221,10 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
     :rtype: numpy.ndarray
     """
 
-    # Getting the number of token
+    # Get the number of tokens
     n_token, _ = d_ext_mat.shape
 
-    # Compute the weights of token
+    # Get the weights of tokens
     f_vec = np.sum(exch_mat, 0)
 
     # Initialization of Z
@@ -230,7 +263,7 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
-                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
+            - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:
@@ -294,10 +327,10 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
     :rtype: numpy.ndarray
     """
 
-    # Getting the number of token
+    # Get the number of tokens
     n_token, _ = d_ext_mat.shape
 
-    # Compute the weights of token
+    # Get the weights of tokens
     f_vec = np.sum(exch_mat, 0)
 
     # Initialization of Z
@@ -336,7 +369,7 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + gamma * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-                  - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
+            - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:
@@ -363,14 +396,58 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
     return z_mat
 
 
-def write_groups_in_html_file(output_file, z_token_list, z_mat, comment_line=None):
+def write_vector_in_html_file(output_file, token_list, vec, comment_line=None):
     """
-    Write the html group color file from an input file and a membership matrix Z.
+    Write the token list in html file where colors correspond to value of the vector "vec".
 
     :param output_file: the name of the html outputted file
     :type output_file: str
-    :param z_token_list: the list of tokens which define z_mat rows
-    :type z_token_list: list[string]
+    :param token_list: the list of tokens which define z_mat rows
+    :type token_list: list[string]
+    :param vec: the vector defining color of the tokens
+    :type vec: numpy.ndarray
+    :param comment_line: an optional comment line to start the file (default=None)
+    :type comment_line: str
+    """
+
+    # Compute the vector of color
+    color_vec = np.copy(vec)
+    color_vec[color_vec > 0] = (color_vec[color_vec > 0] - np.min(color_vec[color_vec > 0])) \
+        / (np.max(vec) - np.min(color_vec[color_vec > 0])) * 255
+    color_vec[color_vec < 0] = (color_vec[color_vec < 0] - np.max(color_vec[color_vec < 0])) \
+        / np.abs(np.min(vec) - np.max(color_vec[color_vec < 0])) * 255
+    color_vec = np.intc(color_vec)
+
+    # Write token in the html file
+    with open(output_file, 'w') as html_file:
+        html_file.write("<html>\n<head></head>\n")
+        if comment_line is None:
+            html_file.write("<body><p>")
+        else:
+            html_file.write(f"<body><p>{comment_line}</p> <p>")
+
+        for i, token in enumerate(token_list):
+            if color_vec[i] >= 0:
+                html_file.write(f"<span style=\"background-color: "
+                                f"rgb({255 - color_vec[i]},255,{255 - color_vec[i]})\">")
+            else:
+                html_file.write(f"<span style=\"background-color: "
+                                f"rgb(255,{255 + color_vec[i]},{255 + color_vec[i]})\">")
+            html_file.write(token + " </span>")
+        html_file.write("</p></body>\n</html>")
+
+    # Return 0 is all went well
+    return 0
+
+
+def write_groups_in_html_file(output_file, token_list, z_mat, comment_line=None):
+    """
+    Write the html group color file from an input file and a membership matrix "z_mat".
+
+    :param output_file: the name of the html outputted file
+    :type output_file: str
+    :param token_list: the list of tokens which define z_mat rows
+    :type token_list: list[string]
     :param z_mat: the fuzzy membership matrix Z
     :type z_mat: numpy.ndarray
     :param comment_line: an optional comment line to start the file (default=None)
@@ -401,10 +478,10 @@ def write_groups_in_html_file(output_file, z_token_list, z_mat, comment_line=Non
             html_file.write(f"<body><p>{comment_line}</p> <p>")
 
         # Writing tokens with colors
-        for i in range(len(z_token_list)):
+        for i in range(len(token_list)):
             html_file.write(f"<span style=\"background-color: "
                             f"rgb({token_color_mat[i, 0]},{token_color_mat[i, 1]},{token_color_mat[i, 2]})\">")
-            html_file.write(z_token_list[i] + " </span>")
+            html_file.write(token_list[i] + " </span>")
 
         html_file.write("</p></body>\n</html>")
 

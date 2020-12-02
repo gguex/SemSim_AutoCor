@@ -10,9 +10,9 @@ import csv
 # -------------------------------------
 
 # Input files list
-input_files = ["The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt"]
+input_file_list = ["The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt"]
 # Similarity tag list
-sim_tags = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
+sim_tag_list = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
 
 # Distance option
 dist_option = "minus_log"
@@ -30,7 +30,7 @@ beta = 50
 kappa = 0.8
 
 # -------------------------------------
-# --- Computing
+# --- Computations
 # -------------------------------------
 
 # Working path
@@ -38,8 +38,9 @@ working_path = os.getcwd()
 # Getting the SemSim_AutoCor folder, if above
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 
-for input_file in input_files:
-    for sim_tag in sim_tags:
+for input_file in input_file_list:
+    for sim_tag in sim_tag_list:
+
         # Get the file paths
         text_file_path, typefreq_file_path, sim_file_path, _ = get_all_paths(input_file, sim_tag)
 
@@ -69,9 +70,14 @@ for input_file in input_files:
                                                    beta=beta,
                                                    kappa=kappa)
 
+        # Experiment description
+        experiment_description = f"{input_file} | sim_tag: {sim_tag} | dist_option: {dist_option} | " \
+                                 f"exch_mat_opt: {exch_mat_opt} | exch_range: {exch_range} | " \
+                                 f"n_groups: {n_groups} | alpha: {alpha} | beta: {beta} | kappa: {kappa}"
+
         # Write html results
         write_groups_in_html_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_discsegm.html",
-                                  token_list, result_matrix)
+                                  token_list, result_matrix, experiment_description)
         # Write csv results
         write_membership_mat_in_csv_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_discsegm.csv",
                                          token_list, result_matrix)

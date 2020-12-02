@@ -51,7 +51,7 @@ else:
     indices_for_known_label = []
 
 # -------------------------------------
-# --- Computing
+# --- Computations
 # -------------------------------------
 
 # Compute the dissimilarity_matrix
