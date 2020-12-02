@@ -1,9 +1,9 @@
 from code_python.local_functions import get_all_paths, similarity_to_dissimilarity, type_to_token_matrix_expansion, \
     exchange_and_transition_matrices, lisa_computation, write_vector_in_html_file
-import numpy as np
-import matplotlib.pyplot as plt
 import os
+import numpy as np
 import csv
+import matplotlib.pyplot as plt
 
 # -------------------------------------
 # --- Parameters
@@ -26,7 +26,7 @@ exch_range = 100
 # -------------------------------------
 
 # Working path
-working_path=os.getcwd()
+working_path = os.getcwd()
 # Getting the SemSim_AutoCor folder, if above
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 

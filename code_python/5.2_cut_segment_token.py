@@ -33,7 +33,7 @@ kappa = 0.7
 # -------------------------------------
 
 # Working path
-working_path=os.getcwd()
+working_path = os.getcwd()
 # Getting the SemSim_AutoCor folder, if above
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 

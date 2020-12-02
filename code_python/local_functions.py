@@ -92,20 +92,22 @@ def similarity_to_dissimilarity(sim_mat, dist_option="minus_log"):
 
     :param sim_mat: the similarity matrix.
     :type sim_mat: numpy.ndarray
-    :param dist_option: transformation parameter from similarity to dissimilarity, either "minus_log" or "1_minus".
+    :param dist_option: transformation parameter from similarity to dissimilarity, either "minus_log" or "max_minus".
     :type dist_option: str
     """
 
-    # Computation of dissimilarity matrix with option
+    # Warning if dist_option is not recognised
+    if dist_option not in ["minus_log", "max_minus"]:
+        warnings.warn("The parameter 'dist_option' is not recognise, setting it to 'minus_log'")
+        dist_option = "minus_log"
+
+    # Computation of dissimilarity matrix regarding dist_option
     if dist_option == "minus_log":
         if np.min(sim_mat) <= 0:
             sim_mat = sim_mat - np.min(sim_mat) + 1e-30
         d_mat = - np.log(sim_mat - np.min(sim_mat) + 1e-30)
-    elif dist_option == "1_minus":
-        d_mat = 1 - sim_mat
-    else:
-        warnings.warn("The parameter 'dist_option' is not recognise, setting it to 'minus_log'")
-        d_mat = - np.log(sim_mat + 1e-30)
+    elif dist_option == "max_minus":
+        d_mat = np.max(sim_mat) - sim_mat
 
     #  Return the dissimilarity matrix
     return d_mat
@@ -156,6 +158,31 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
 
     # Return the transition matrix
     return exch_mat, w_mat
+
+
+def autocorrelation_index(d_ext_mat, exch_mat):
+    """
+    Compute the autocorrelation index regarding a dissimilarity matrix and a exchange matrix
+
+    :param d_ext_mat: the (n_token x  n_token) dissimilarity matrix between tokens
+    :type d_ext_mat: numpy.ndarray
+    :param exch_mat: the (n_token x n_token) exchange matrix between tokens
+    :type exch_mat: numpy.ndarray
+    :return: the autocorrelation index
+    :rtype: float
+    """
+    # Get the weights of tokens
+    f_vec = np.sum(exch_mat, 0)
+
+    # Compute the local inertia
+    local_inertia = 0.5 * np.sum(exch_mat * d_ext_mat)
+    # Compute of the global inertia
+    global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
+    # Compute the autocorrelation index
+    autocorrelation_index = (global_inertia - local_inertia) / global_inertia
+
+    # Return autocorrelation index
+    return autocorrelation_index
 
 
 def lisa_computation(d_ext_mat, exch_mat, w_mat):
