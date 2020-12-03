@@ -14,18 +14,18 @@ input_file = "mix_sent1_min5.txt"
 # Similarity tag
 sim_tag = "wesim"
 # File name to save
-results_file_name = "results_semisuper10_sent1_big_1.csv"
+results_file_name = "results_sent1_big_2.csv"
 # Ratio of known labels. If 0, clustering
 known_label_ratio = 0
 # Dist options to explore
-dist_option_vec = ["minus_log"]
+dist_option_vec = ["minus_log", "max_minus"]
 # Exchange matrix options to explore
 exch_mat_opt_vec = ["s", "u", "d"]
-exch_range_vec = [1, 3, 5, 10]
+exch_range_vec = [3, 5, 10, 15]
 # Parameter values to explore
-alpha_vec = [1, 5, 10, 50, 100]
-beta_vec = [1, 5, 10, 50, 100, 500]
-kappa_vec = [0, 1 / 3, 2 / 3, 1]
+alpha_vec = [0.1, 1, 2, 5, 10, 50]
+beta_vec = [1, 2, 5, 10, 50, 100]
+kappa_vec = [1 / 3, 2 / 3, 1]
 
 # -------------------------------------
 # --- Loading and preprocessing
