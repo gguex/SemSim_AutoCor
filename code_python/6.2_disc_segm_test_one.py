@@ -5,21 +5,22 @@ import numpy as np
 import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
+import pandas as pd
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
-input_file = "mix_sent1_min5.txt"
+input_file = "mix_sent10_min5.txt"
 sim_tag = "wesim"
 dist_option = "minus_log"
-exch_mat_opt = "s"
-exch_range = 3
-n_groups = 4
-alpha = 5
-beta = 50
+exch_mat_opt = "d"
+exch_range = 10
+n_groups = 5
+alpha = 2
+beta = 10
 kappa = 2/3
-known_label_ratio = 0.5  # if 0, clustering
+known_label_ratio = 0  # if 0, clustering
 
 # -------------------------------------
 # --- Loading
@@ -99,6 +100,13 @@ for i, label in enumerate(real_group_vec):
 nmi = normalized_mutual_info_score(np.delete(real_group_vec, indices_for_known_label),
                                    np.delete(algo_group_value, indices_for_known_label))
 
+# Compute the aggregate labels
+df_results = pd.DataFrame(result_matrix)
+df_results["Token"] = token_list
+type_results = df_results.groupby("Token").mean()
+type_list = list(type_results.index)
+type_values = type_results.to_numpy()
+
 # -------------------------------------
 # --- Writing
 # -------------------------------------
@@ -109,5 +117,7 @@ write_groups_in_html_file("test.html", token_list, result_matrix)
 write_groups_in_html_file("test_real.html", token_list, z_real_mat)
 # Write csv results
 write_membership_mat_in_csv_file("test.csv", token_list, result_matrix)
+# Write csv type result
+write_membership_mat_in_csv_file("test_type.csv", type_list, type_values)
 # Print nmi
 print(nmi)
