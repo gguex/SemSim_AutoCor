@@ -10,22 +10,22 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # File name to explore
-input_file = "mix_sent1_min5.txt"
+input_file = "mix_word3.txt"
 # Similarity tag
 sim_tag = "wesim"
 # File name to save
-results_file_name = "results_sent1_big_2.csv"
+results_file_name = "results_semisuper10_word3_big_1.csv"
 # Ratio of known labels. If 0, clustering
-known_label_ratio = 0
+known_label_ratio = 0.1
 # Dist options to explore
-dist_option_vec = ["minus_log", "max_minus"]
+dist_option_vec = ["minus_log"]
 # Exchange matrix options to explore
-exch_mat_opt_vec = ["s", "u", "d"]
+exch_mat_opt_vec = ["d"]
 exch_range_vec = [3, 5, 10, 15]
 # Parameter values to explore
-alpha_vec = [0.1, 1, 2, 5, 10, 50]
-beta_vec = [1, 2, 5, 10, 50, 100]
-kappa_vec = [1 / 3, 2 / 3, 1]
+alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
+beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
+kappa_vec = [0, 1 / 3, 2 / 3, 1]
 
 # -------------------------------------
 # --- Loading and preprocessing
