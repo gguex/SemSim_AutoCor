@@ -1,5 +1,5 @@
 from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, discontinuity_segmentation, \
+    exchange_and_transition_matrices, discontinuity_segmentation, cut_segmentation, \
     write_groups_in_html_file, write_membership_mat_in_csv_file
 import numpy as np
 import csv
@@ -19,8 +19,10 @@ exch_range = 10
 n_groups = 5
 alpha = 2
 beta = 10
-kappa = 2/3
+kappa = 2 / 3
 known_label_ratio = 0  # if 0, clustering
+# segm_function = discontinuity_segmentation
+segm_function = cut_segmentation
 
 # -------------------------------------
 # --- Loading
@@ -69,22 +71,22 @@ exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
 
 # Compute the membership matrix
 if known_label_ratio > 0:
-    result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
-                                               exch_mat=exch_mat,
-                                               w_mat=w_mat,
-                                               n_groups=n_groups,
-                                               alpha=alpha,
-                                               beta=beta,
-                                               kappa=kappa,
-                                               init_labels=known_labels)
+    result_matrix = segm_function(d_ext_mat=d_ext_mat,
+                                  exch_mat=exch_mat,
+                                  w_mat=w_mat,
+                                  n_groups=n_groups,
+                                  alpha=alpha,
+                                  beta=beta,
+                                  kappa=kappa,
+                                  init_labels=known_labels)
 else:
-    result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
-                                               exch_mat=exch_mat,
-                                               w_mat=w_mat,
-                                               n_groups=n_groups,
-                                               alpha=alpha,
-                                               beta=beta,
-                                               kappa=kappa)
+    result_matrix = segm_function(d_ext_mat=d_ext_mat,
+                                  exch_mat=exch_mat,
+                                  w_mat=w_mat,
+                                  n_groups=n_groups,
+                                  alpha=alpha,
+                                  beta=beta,
+                                  kappa=kappa)
 
 # Compute the groups
 algo_group_value = np.argmax(result_matrix, 1) + 1

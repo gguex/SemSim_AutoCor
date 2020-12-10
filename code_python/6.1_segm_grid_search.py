@@ -10,13 +10,13 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # File name to explore
-input_file = "mix_word1.txt"
+input_file = "mix_sent1_min5.txt"
 # Similarity tag
 sim_tag = "wesim"
 # File name to save
-results_file_name = "results_semisuper10_word1_big_1.csv"
+results_file_name = "results_sent1_cut_1.csv"
 # Ratio of known labels. If 0, clustering
-known_label_ratio = 0.1
+known_label_ratio = 0
 # Dist options to explore
 dist_option_vec = ["minus_log"]
 # Exchange matrix options to explore
@@ -26,8 +26,9 @@ exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
 beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
 kappa_vec = [0, 1 / 3, 2 / 3, 1]
-# Parameter for the type of segmentation ("disc" or "cut")
-segm_type = "cut"
+# Function to use for the segmentation
+# segm_function = discontinuity_segmentation
+segm_function = cut_segmentation
 
 # -------------------------------------
 # --- Loading and preprocessing
@@ -93,22 +94,22 @@ for dist_option in dist_option_vec:
                     for kappa in kappa_vec:
                         # Compute the matrix
                         if known_label_ratio > 0:
-                            result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
-                                                                       exch_mat=exch_mat,
-                                                                       w_mat=w_mat,
-                                                                       n_groups=4,
-                                                                       alpha=alpha,
-                                                                       beta=beta,
-                                                                       kappa=kappa,
-                                                                       init_labels=known_labels)
+                            result_matrix = segm_function(d_ext_mat=d_ext_mat,
+                                                          exch_mat=exch_mat,
+                                                          w_mat=w_mat,
+                                                          n_groups=4,
+                                                          alpha=alpha,
+                                                          beta=beta,
+                                                          kappa=kappa,
+                                                          init_labels=known_labels)
                         else:
-                            result_matrix = discontinuity_segmentation(d_ext_mat=d_ext_mat,
-                                                                       exch_mat=exch_mat,
-                                                                       w_mat=w_mat,
-                                                                       n_groups=4,
-                                                                       alpha=alpha,
-                                                                       beta=beta,
-                                                                       kappa=kappa)
+                            result_matrix = segm_function(d_ext_mat=d_ext_mat,
+                                                          exch_mat=exch_mat,
+                                                          w_mat=w_mat,
+                                                          n_groups=4,
+                                                          alpha=alpha,
+                                                          beta=beta,
+                                                          kappa=kappa)
 
                         # Compute the groups
                         algo_group_value = np.argmax(result_matrix, 1) + 1
