@@ -324,7 +324,7 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
     return z_mat
 
 
-def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
+def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
                      conv_threshold=1e-5, max_it=100, init_labels=None):
     """
     Cluster tokens with cut segmentation from a dissimilarity matrix, exchange matrix and transition matrix.
@@ -338,8 +338,8 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
     :type w_mat: numpy.ndarray
     :param n_groups: the number of groups
     :type n_groups: int
-    :param gamma: gamma parameter
-    :type gamma: float
+    :param alpha: alpha parameter
+    :type alpha: float
     :param beta: beta parameter
     :type beta: float
     :param kappa: kappa parameter
@@ -395,8 +395,8 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, gamma, beta, kappa,
         e_gg = np.diag(z_mat.T.dot(exch_mat.dot(z_mat)))
 
         # Computation of H_ig
-        hig_mat = beta * dig_mat + gamma * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-            - (0.5 * gamma * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
+        hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
+                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:

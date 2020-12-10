@@ -1,5 +1,5 @@
 from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, discontinuity_segmentation
+    exchange_and_transition_matrices, discontinuity_segmentation, cut_segmentation
 import numpy as np
 import csv
 import random as rdm
@@ -10,11 +10,11 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # File name to explore
-input_file = "mix_word3.txt"
+input_file = "mix_word1.txt"
 # Similarity tag
 sim_tag = "wesim"
 # File name to save
-results_file_name = "results_semisuper10_word3_big_1.csv"
+results_file_name = "results_semisuper10_word1_big_1.csv"
 # Ratio of known labels. If 0, clustering
 known_label_ratio = 0.1
 # Dist options to explore
@@ -26,6 +26,8 @@ exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
 beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
 kappa_vec = [0, 1 / 3, 2 / 3, 1]
+# Parameter for the type of segmentation ("disc" or "cut")
+segm_type = "cut"
 
 # -------------------------------------
 # --- Loading and preprocessing
