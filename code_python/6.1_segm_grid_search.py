@@ -15,6 +15,8 @@ input_file = "mix_sent1_min5.txt"
 sim_tag = "wesim"
 # File name to save
 results_file_name = "results_sent1_cut_1.csv"
+# Number of groups
+n_groups = 4
 # Ratio of known labels. If 0, clustering
 known_label_ratio = 0
 # Dist options to explore
@@ -97,7 +99,7 @@ for dist_option in dist_option_vec:
                             result_matrix = segm_function(d_ext_mat=d_ext_mat,
                                                           exch_mat=exch_mat,
                                                           w_mat=w_mat,
-                                                          n_groups=4,
+                                                          n_groups=n_groups,
                                                           alpha=alpha,
                                                           beta=beta,
                                                           kappa=kappa,
