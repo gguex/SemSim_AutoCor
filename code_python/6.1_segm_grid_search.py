@@ -14,9 +14,9 @@ input_file = "mix_sent1_min5.txt"
 # Similarity tag
 sim_tag = "wesim"
 # File name to save
-results_file_name = "results_sent1_cut_1.csv"
+results_file_name = "results_semisuper10_sent1_cut_1.csv"
 # Ratio of known labels. If 0, clustering
-known_label_ratio = 0
+known_label_ratio = 0.1
 # Dist options to explore
 dist_option_vec = ["minus_log"]
 # Exchange matrix options to explore
