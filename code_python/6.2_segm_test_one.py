@@ -11,18 +11,25 @@ import pandas as pd
 # --- Parameters
 # -------------------------------------
 
-input_file = "mix_sent10_min5.txt"
+input_file = "mix_word1.txt"
+
+output_html = "best_word1_semi10.html"
+real_html = "word1_real.html"
+token_csv = "best_word1_semi10.csv"
+type_csv = "best_word1_semi10_type.csv"
+
 sim_tag = "wesim"
 dist_option = "minus_log"
 exch_mat_opt = "d"
-exch_range = 10
+exch_range = 15
 n_groups = 4
-alpha = 2
-beta = 10
-kappa = 2 / 3
-known_label_ratio = 0  # if 0, clustering
+alpha = 0.1
+beta = 300
+kappa = 1
+known_label_ratio = 0.1 # if 0, clustering
 # segm_function = discontinuity_segmentation
 segm_function = cut_segmentation
+max_it = 1000
 
 # -------------------------------------
 # --- Loading
@@ -78,7 +85,8 @@ if known_label_ratio > 0:
                                   alpha=alpha,
                                   beta=beta,
                                   kappa=kappa,
-                                  init_labels=known_labels)
+                                  init_labels=known_labels,
+                                  max_it=max_it)
 else:
     result_matrix = segm_function(d_ext_mat=d_ext_mat,
                                   exch_mat=exch_mat,
@@ -86,7 +94,8 @@ else:
                                   n_groups=n_groups,
                                   alpha=alpha,
                                   beta=beta,
-                                  kappa=kappa)
+                                  kappa=kappa,
+                                  max_it=max_it)
 
 # Compute the groups
 algo_group_value = np.argmax(result_matrix, 1) + 1
@@ -114,12 +123,12 @@ type_values = type_results.to_numpy()
 # -------------------------------------
 
 # Write html results
-write_groups_in_html_file("test.html", token_list, result_matrix)
+write_groups_in_html_file(output_html, token_list, result_matrix)
 # Write real html results
-write_groups_in_html_file("test_real.html", token_list, z_real_mat)
+write_groups_in_html_file(real_html, token_list, z_real_mat)
 # Write csv results
-write_membership_mat_in_csv_file("test.csv", token_list, result_matrix)
+write_membership_mat_in_csv_file(token_csv, token_list, result_matrix)
 # Write csv type result
-write_membership_mat_in_csv_file("test_type.csv", type_list, type_values)
+write_membership_mat_in_csv_file(type_csv, type_list, type_values)
 # Print nmi
 print(nmi)
