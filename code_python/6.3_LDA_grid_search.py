@@ -10,7 +10,7 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # File name to explore
-input_file = "mix_sent10_min5.txt"
+input_file = "mix_word1.txt"
 # Similarity tag
 sim_tag = "wesim"
 # Number of groups
@@ -65,3 +65,4 @@ for i in range(n_tests):
     nmi_vec.append(nmi)
 
 print(np.array(nmi_vec).mean())
+print(np.array(nmi_vec).std() / np.sqrt(n_tests) * 2)
