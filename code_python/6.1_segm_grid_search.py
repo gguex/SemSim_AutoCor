@@ -9,17 +9,21 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Over-Parameters
 # -------------------------------------
 
-input_file_list = ["mix_word1.txt",
+input_file_list = ["mix_word3.txt",
+                   "mix_word1.txt",
                    "mix_sent10_min5.txt",
                    "mix_sent1_min5.txt",
                    "mix_word3.txt",
                    "mix_word1.txt"]
-results_file_name_list = ["results_semisuper10_word1_cut_1.csv",
-                          "results_semisuper5_sent10_cut_1.csv",
-                          "results_semisuper5_sent1_cut_1.csv"
-                          "results_semisuper5_word3_cut_1.csv"
-                          "results_semisuper5_word1_cut_1.csv"]
-known_label_ratio_list = [0.1, 0.05, 0.05, 0.05, 0.05]
+
+results_file_name_list = ["results_semisuper5_word3_cut_1.csv",
+                          "results_semisuper5_word1_cut_1.csv",
+                          "results_semisuper20_sent10_cut_1.csv",
+                          "results_semisuper20_sent1_cut_1.csv",
+                          "results_semisuper20_word3_cut_1.csv",
+                          "results_semisuper20_sent1_cut_1.csv"]
+
+known_label_ratio_list = [0.05, 0.05, 0.2, 0.2, 0.2, 0.2]
 
 for i in range(len(input_file_list)):
 
