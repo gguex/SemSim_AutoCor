@@ -12,7 +12,7 @@ import itertools
 # Path of the text file with only nouns, verbs, adjectives or adverbs
 input_file = "The_WW_of_Oz_pp.txt"
 
-# Name of the outputted tag for the similarity ("wup", "path", "resb" or "ress")
+# Name of the outputted tag for the similarity ("wup", "path", "resb" or "jcnb")
 sim_tag = "path"
 
 # -------------------------------------
@@ -21,7 +21,8 @@ sim_tag = "path"
 
 # --- Defining similarity --- #
 
-# WordNet Similarity
+brown_ic = wordnet_ic.ic('ic-brown.dat')
+
 if sim_tag == "wup":
     def wn_similarity(synset_1, synset_2):
         return wn.wup_similarity(synset_1, synset_2)
@@ -29,19 +30,15 @@ elif sim_tag == "path":
     def wn_similarity(synset_1, synset_2):
         return wn.path_similarity(synset_1, synset_2)
 elif sim_tag == "resb":
-    brown_ic = wordnet_ic.ic('ic-brown.dat')
-
     def wn_similarity(synset_1, synset_2):
         if synset_1.pos() not in ["a", "s", "r"] and synset_2.pos() not in ["a", "s", "r"]:
             return wn.res_similarity(synset_1, synset_2, brown_ic)
         else:
             return None
 else:
-    semcor_ic = wordnet_ic.ic('ic-semcor.dat')
-
     def wn_similarity(synset_1, synset_2):
         if synset_1.pos() not in ["a", "s", "r"] and synset_2.pos() not in ["a", "s", "r"]:
-            return wn.res_similarity(synset_1, synset_2, semcor_ic)
+            return wn.jcn_similarity(synset_1, synset_2, brown_ic)
         else:
             return None
 

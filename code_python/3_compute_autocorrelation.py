@@ -15,7 +15,7 @@ from tqdm import tqdm
 input_file_list = ["The_WW_of_Oz_pp.txt"]
 # Similarity tag list
 #sim_tag_list = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
-sim_tag_list = ["wup"]
+sim_tag_list = ["resb"]
 
 # Distance option
 dist_option = "max_minus"
