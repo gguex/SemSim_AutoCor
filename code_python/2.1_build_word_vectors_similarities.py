@@ -1,19 +1,18 @@
 import nltk
 from gensim.models import KeyedVectors
-import os
 from tqdm import tqdm
+from code_python.local_functions import get_all_paths
 
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
 input_file = "Animal_farm_verbs.txt"
 
-# Path of the Word vector model (absolute path, not in the project directory)
-wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
-
 # Name of the outputted tag for the similarity
 sim_tag = "wesim"
 
+# Path of the Word vector model (absolute path, not in the project directory)
+wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
 
 # --- Defining paths --- #
 
