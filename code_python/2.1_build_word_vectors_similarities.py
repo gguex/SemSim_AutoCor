@@ -6,7 +6,7 @@ from code_python.local_functions import get_all_paths
 # --- Parameters --- #
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "Animal_farm_verbs.txt"
+input_file = "Animal_farm_all.txt"
 
 # Name of the outputted tag for the similarity
 sim_tag = "wesim"
@@ -16,18 +16,8 @@ wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model
 
 # --- Defining paths --- #
 
-# Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
-working_path = os.getcwd()
-base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
-
-# Path of the inputted file
-file_path = base_path + "corpora/" + input_file
-# Path of the outputted present types and frequencies
-type_freq_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + "_" + sim_tag + "_typefreq.txt"
-# Path of the outputted similarity matrix
-sim_matrix_file_path = base_path + "similarities_frequencies/" + input_file[:-4] + \
-                       "_" + sim_tag + "_similarities.txt"
-
+# Getting all paths
+file_path, type_freq_file_path, sim_matrix_file_path, _ = get_all_paths(input_file, sim_tag, warn=False)
 
 # --- Get token, type and freq --- #
 

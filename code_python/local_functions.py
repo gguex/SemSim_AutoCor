@@ -6,7 +6,7 @@ import warnings
 import numpy as np
 
 
-def get_all_paths(input_file, sim_tag, working_path=os.getcwd()):
+def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
     """
     A function specific to the Semsim_Autocor project that returns all the useful paths
     given a input file name and a similarity tag. If any file is missing, raise a warning and return an empty string
@@ -18,6 +18,8 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd()):
     :type sim_tag: str
     :param working_path: the initial path of script, must anywhere in the SemSim_AutoCor project
     :type working_path: str
+    :param warn: option to deactivate warnings
+    :type warn: bool
     :return: paths of : the corpus file, the typefreq file, the similarity file and the ground truth file.
     :rtype: (str, str, str, str)
     """
@@ -34,17 +36,18 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd()):
     # Path of the ground true file
     ground_truth_path = f"{base_path}/corpora/mixgroup_{input_file[4:]}"
 
-    if not os.path.exists(text_file_path):
-        warnings.warn(f"The corpus file '{text_file_path}' is missing")
-        text_file_path = ""
-    if not os.path.exists(typefreq_file_path):
-        warnings.warn(f"The typefreq file '{typefreq_file_path}' is missing")
-        typefreq_file_path = ""
-    if not os.path.exists(sim_file_path):
-        warnings.warn(f"The similarity file '{sim_file_path}' is missing")
-        sim_file_path = ""
-    if not os.path.exists(ground_truth_path):
-        ground_truth_path = ""
+    if warn:
+        if not os.path.exists(text_file_path):
+            warnings.warn(f"The corpus file '{text_file_path}' is missing")
+            text_file_path = ""
+        if not os.path.exists(typefreq_file_path):
+            warnings.warn(f"The typefreq file '{typefreq_file_path}' is missing")
+            typefreq_file_path = ""
+        if not os.path.exists(sim_file_path):
+            warnings.warn(f"The similarity file '{sim_file_path}' is missing")
+            sim_file_path = ""
+        if not os.path.exists(ground_truth_path):
+            ground_truth_path = ""
 
     # Return paths
     return text_file_path, typefreq_file_path, sim_file_path, ground_truth_path
@@ -106,7 +109,7 @@ def similarity_to_dissimilarity(sim_mat, dist_option="minus_log"):
         if np.min(sim_mat) <= 0:
             sim_mat = sim_mat - np.min(sim_mat) + 1e-30
         d_mat = - np.log(sim_mat - np.min(sim_mat) + 1e-30)
-    elif dist_option == "max_minus":
+    else:
         d_mat = np.max(sim_mat) - sim_mat
 
     #  Return the dissimilarity matrix
