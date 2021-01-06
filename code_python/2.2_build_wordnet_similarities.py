@@ -10,10 +10,10 @@ import itertools
 # -------------------------------------
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "The_WW_of_Oz_all.txt"
+input_file = "The_WW_of_Oz_pp.txt"
 
 # Name of the outputted tag for the similarity ("wup", "resb" or "ress")
-sim_tag = "resb"
+sim_tag = "wup"
 
 # -------------------------------------
 # --- Computations

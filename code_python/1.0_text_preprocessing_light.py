@@ -8,7 +8,7 @@ from nltk.corpus import wordnet
 # --- Parameters --- #
 
 # Corpus name
-corpus_name = "Animal_farm.txt"
+corpus_name = "The_WW_of_Oz.txt"
 
 # --- Defining paths --- #
 

@@ -8,7 +8,7 @@ from code_python.local_functions import get_all_paths
 # -------------------------------------
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "Animal_farm_all.txt"
+input_file = "The_WW_of_Oz_pp.txt"
 
 # Name of the outputted tag for the similarity
 sim_tag = "wesim"
