@@ -122,7 +122,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
 
     :param n_token: the number of tokens
     :type n_token: int
-    :param exch_mat_opt: option for the exchange matrix, "s" = standard, "u" = uniform, "d" = diffusive
+    :param exch_mat_opt: option for the exchange matrix, "s" = standard, "u" = uniform, "d" = diffusive, "r" = ring
     :type exch_mat_opt: str
     :param exch_range: range of the exchange matrix
     :type exch_range: int
@@ -131,7 +131,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     """
 
     # To manage other options
-    if exch_mat_opt not in ["s", "u", "d"]:
+    if exch_mat_opt not in ["s", "u", "d", "r"]:
         warnings.warn("Exchange matrix option ('exch_mat_opt') not recognized, setting it to 's'")
         exch_mat_opt = "s"
 
@@ -148,7 +148,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
         k_vec = f_vec / g_vec
         b_mat = np.array([[min(v1, v2) for v2 in k_vec] for v1 in k_vec]) * adj_mat / np.sum(adj_mat)
         exch_mat = np.diag(f_vec) - np.diag(np.sum(b_mat, axis=1)) + b_mat
-    else:
+    elif exch_mat_opt == "d":
         f_vec = np.ones(n_token) / n_token
         adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= 1
         np.fill_diagonal(adj_mat, 0)
@@ -156,6 +156,14 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
         pi_outer_mat = np.outer(np.sqrt(f_vec), np.sqrt(f_vec))
         phi_mat = (l_adj_mat / pi_outer_mat) / np.trace(l_adj_mat)
         exch_mat = expm(- exch_range * phi_mat) * pi_outer_mat
+    else:
+        exch_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+        if exch_range == 1:
+            np.fill_diagonal(exch_mat, 0)
+        else:
+            to_remove = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= (exch_range - 1)
+            exch_mat = exch_mat - to_remove
+        exch_mat = exch_mat / np.sum(exch_mat)
 
     w_mat = (exch_mat / np.sum(exch_mat, axis=1)).T
 
