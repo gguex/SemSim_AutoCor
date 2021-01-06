@@ -4,15 +4,18 @@ import os
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # Input files list
-input_file_list = ["The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt"]
+#input_file_list = ["The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt"]
+input_file_list = ["Animal_farm_all.txt"]
 # Similarity tag list
-sim_tag_list = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
+#sim_tag_list = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
+sim_tag_list = ["lch"]
 
 # Distance option
 dist_option = "minus_log"
@@ -54,7 +57,7 @@ for input_file in input_file_list:
 
         # Compute autocor vector
         autocor_vec = []
-        for exch_range in exch_range_window:
+        for exch_range in tqdm(exch_range_window):
 
             # Compute the exchange and transition matrices
             exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
