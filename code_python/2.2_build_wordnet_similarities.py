@@ -1,5 +1,6 @@
 import nltk
 from nltk.corpus import wordnet as wn
+from nltk.corpus import wordnet_ic
 from code_python.local_functions import get_all_paths
 from tqdm import tqdm
 import itertools
@@ -10,10 +11,14 @@ import itertools
 input_file = "Animal_farm_all.txt"
 
 # Name of the outputted tag for the similarity
-sim_tag = "lch"
+#sim_tag = "wup"
+sim_tag = "resb"
 
 # WordNet Similarity
-wn_similarity = wn.lch_similarity
+def wn_similarity(synset_1, synset_2):
+#    return wn.wup_similarity(synset_1, synset_2)
+    return wn.res_similarity(synset_1, synset_2, wordnet_ic.ic('ic-brown.dat'))
+
 
 # --- Defining paths --- #
 
@@ -47,7 +52,6 @@ for type in tqdm(vocab_in_wordnet):
         auto_sim_list.append(max(sim_list))
         checked_vocab_in_wordnet.append(type)
 
-
 # Write the two files
 with open(type_freq_file_path, "w") as type_freq_file, open(sim_matrix_file_path, "w") as sim_matrix_file:
     for type_1 in tqdm(checked_vocab_in_wordnet):
@@ -61,9 +65,9 @@ with open(type_freq_file_path, "w") as type_freq_file, open(sim_matrix_file_path
                 # Loop on synsets
                 type_2_synsets_list = wn.synsets(type_2)
                 sim_list = [wn_similarity(*cross_item)
-                             for cross_item in itertools.product(type_1_synsets_list, type_2_synsets_list)
-                             if cross_item[0].pos() == cross_item[1].pos() and
-                             wn_similarity(*cross_item) is not None]
+                            for cross_item in itertools.product(type_1_synsets_list, type_2_synsets_list)
+                            if cross_item[0].pos() == cross_item[1].pos() and
+                            wn_similarity(*cross_item) is not None]
                 if len(sim_list) > 0:
                     sim = max(sim_list)
                 else:
