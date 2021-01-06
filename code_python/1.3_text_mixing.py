@@ -3,7 +3,9 @@ import numpy as np
 import os
 import random
 
-# --- Parameters --- #
+# -------------------------------------
+# --- Parameters
+# -------------------------------------
 
 # Corpus names
 corpus_names_list = ["Lectures_on_Landscape_all.txt",
@@ -25,6 +27,10 @@ min_nb_of_words_in_sent = 5
 
 # Div factor (corpus size is divided by that to fit github size limit)
 div_factor = 2
+
+# -------------------------------------
+# --- Computations
+# -------------------------------------
 
 # --- Defining paths --- #
 

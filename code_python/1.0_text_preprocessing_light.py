@@ -5,10 +5,16 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 
-# --- Parameters --- #
+# -------------------------------------
+# --- Parameters
+# -------------------------------------
 
 # Corpus name
 corpus_name = "The_WW_of_Oz.txt"
+
+# -------------------------------------
+# --- Computations
+# -------------------------------------
 
 # --- Defining paths --- #
 

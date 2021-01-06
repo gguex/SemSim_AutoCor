@@ -162,7 +162,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
             np.fill_diagonal(exch_mat, 0)
         else:
             to_remove = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= (exch_range - 1)
-            exch_mat = exch_mat - to_remove
+            exch_mat = exch_mat ^ to_remove
         exch_mat = exch_mat / np.sum(exch_mat)
 
     w_mat = (exch_mat / np.sum(exch_mat, axis=1)).T

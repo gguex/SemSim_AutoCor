@@ -6,13 +6,19 @@ from tqdm import tqdm
 import os
 from gensim.models import KeyedVectors
 
-# --- Parameters --- #
+# -------------------------------------
+# --- Parameters
+# -------------------------------------
 
 # Corpus names
 corpus_name_list = ["Lectures_on_Landscape.txt",
                     "Metamorphosis.txt",
                     "On_the_Duty_of_Civil_Disobedience.txt",
                     "Sidelights_on_relativity.txt"]
+
+# -------------------------------------
+# --- Computations
+# -------------------------------------
 
 # --- Defining paths --- #
 

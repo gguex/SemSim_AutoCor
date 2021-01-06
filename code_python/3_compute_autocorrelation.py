@@ -18,9 +18,9 @@ input_file_list = ["The_WW_of_Oz_pp.txt"]
 sim_tag_list = ["wup"]
 
 # Distance option
-dist_option = "minus_log"
-# Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive)
-exch_mat_opt = "u"
+dist_option = "max_minus"
+# Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive, "r" = ring)
+exch_mat_opt = "s"
 # Exchange matrix max range
 exch_max_range = 50
 

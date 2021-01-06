@@ -5,10 +5,16 @@ import re
 from tqdm import tqdm
 import os
 
-# --- Parameters --- #
+# -------------------------------------
+# --- Parameters
+# -------------------------------------
 
 # Corpus name
 corpus_name = "Animal_farm.txt"
+
+# -------------------------------------
+# --- Computations
+# -------------------------------------
 
 # --- Defining paths --- #
 
