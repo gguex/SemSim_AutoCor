@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 
 # Input files list
 #input_file_list = ["The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt"]
-input_file_list = ["Animal_farm_all.txt"]
+input_file_list = ["The_WW_of_Oz_all.txt"]
 # Similarity tag list
-sim_tag_list = ["wesim"]
 #sim_tag_list = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
+sim_tag_list = ["resb"]
 
 # Distance option
 dist_option = "minus_log"

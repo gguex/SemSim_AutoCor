@@ -5,20 +5,42 @@ from code_python.local_functions import get_all_paths
 from tqdm import tqdm
 import itertools
 
-# --- Parameters --- #
+# -------------------------------------
+# --- Parameters
+# -------------------------------------
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
-input_file = "Animal_farm_all.txt"
+input_file = "The_WW_of_Oz_all.txt"
 
-# Name of the outputted tag for the similarity
-#sim_tag = "wup"
+# Name of the outputted tag for the similarity ("wup", "resb" or "ress")
 sim_tag = "resb"
 
-# WordNet Similarity
-def wn_similarity(synset_1, synset_2):
-#    return wn.wup_similarity(synset_1, synset_2)
-    return wn.res_similarity(synset_1, synset_2, wordnet_ic.ic('ic-brown.dat'))
+# -------------------------------------
+# --- Computations
+# -------------------------------------
 
+# --- Defining similarity --- #
+
+# WordNet Similarity
+if sim_tag == "wup":
+    def wn_similarity(synset_1, synset_2):
+        return wn.wup_similarity(synset_1, synset_2)
+elif sim_tag == "resb":
+    brown_ic = wordnet_ic.ic('ic-brown.dat')
+
+    def wn_similarity(synset_1, synset_2):
+        if synset_1.pos() not in ["a", "s", "r"] and synset_2.pos() not in ["a", "s", "r"]:
+            return wn.res_similarity(synset_1, synset_2, brown_ic)
+        else:
+            return None
+else:
+    semcor_ic = wordnet_ic.ic('ic-semcor.dat')
+
+    def wn_similarity(synset_1, synset_2):
+        if synset_1.pos() not in ["a", "s", "r"] and synset_2.pos() not in ["a", "s", "r"]:
+            return wn.res_similarity(synset_1, synset_2, semcor_ic)
+        else:
+            return None
 
 # --- Defining paths --- #
 
@@ -44,7 +66,7 @@ vocab_in_wordnet = [type for type in vocab_text if len(wn.synsets(type)) > 0]
 # Build autosim to check if any synset is connected
 auto_sim_list = []
 checked_vocab_in_wordnet = []
-for type in tqdm(vocab_in_wordnet):
+for type in vocab_in_wordnet:
     type_synsets_list = wn.synsets(type)
     sim_list = [wn_similarity(type_synsets, type_synsets) for type_synsets in type_synsets_list
                 if wn_similarity(type_synsets, type_synsets) is not None]

@@ -3,7 +3,9 @@ from gensim.models import KeyedVectors
 from tqdm import tqdm
 from code_python.local_functions import get_all_paths
 
-# --- Parameters --- #
+# -------------------------------------
+# --- Parameters
+# -------------------------------------
 
 # Path of the text file with only nouns, verbs, adjectives or adverbs
 input_file = "Animal_farm_all.txt"
@@ -13,6 +15,10 @@ sim_tag = "wesim"
 
 # Path of the Word vector model (absolute path, not in the project directory)
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"
+
+# -------------------------------------
+# --- Computations
+# -------------------------------------
 
 # --- Defining paths --- #
 
