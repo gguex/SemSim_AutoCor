@@ -18,7 +18,7 @@ real_html = "word1_real.html"
 token_csv = "best_word1_semi10.csv"
 type_csv = "best_word1_semi10_type.csv"
 
-sim_tag = "wesim"
+sim_tag = "w2v"
 dist_option = "minus_log"
 exch_mat_opt = "d"
 exch_range = 15

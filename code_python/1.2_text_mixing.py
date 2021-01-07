@@ -8,10 +8,10 @@ import random
 # -------------------------------------
 
 # Corpus names
-corpus_names_list = ["Lectures_on_Landscape_all.txt",
-                    "Metamorphosis_all.txt",
-                    "Civil_Disobedience_all.txt",
-                    "Sidelights_on_relativity_all.txt"]
+corpus_names_list = ["Lectures_on_Landscape_pp.txt",
+                    "Metamorphosis_pp.txt",
+                    "Civil_Disobedience_pp.txt",
+                    "Sidelights_on_relativity_pp.txt"]
 
 # Sentence mixing, or words
 unit_of_mix = "sent"

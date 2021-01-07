@@ -12,7 +12,7 @@ from sklearn.metrics import normalized_mutual_info_score
 # File name to explore
 input_file = "mix_word1.txt"
 # Similarity tag
-sim_tag = "wesim"
+sim_tag = "w2v"
 # Number of groups
 n_groups = 4
 # Number of test

@@ -11,7 +11,7 @@ from code_python.local_functions import get_all_paths
 input_file = "The_WW_of_Oz_pp.txt"
 
 # Name of the outputted tag for the similarity
-sim_tag = "wesim"
+sim_tag = "w2v"
 
 # Path of the Word vector model (absolute path, not in the project directory)
 wv_model_path = "/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model"

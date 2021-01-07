@@ -22,7 +22,7 @@ results_file_name_list = ["results_semisuper5_word1_cut_1.csv"]
 # List of label ratios to text
 known_label_ratio_list = [0.1]
 # List of similarity tag
-sim_tag_list = ["wesim"]
+sim_tag_list = ["w2v"]
 # List of number of groups
 n_groups_list = [4]
 
