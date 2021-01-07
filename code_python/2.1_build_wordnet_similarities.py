@@ -15,8 +15,8 @@ input_file_list = ["Lectures_on_Landscape_pp.txt",
                    "Civil_Disobedience_pp.txt",
                    "Sidelights_on_relativity_pp.txt"]
 
-# List of tags to enumerate similarity to compute
-sim_tag_list = ["wup", "path", "resb", "jcnb"]
+# List of tags to enumerate similarities to compute
+sim_tag_list = ["wup", "path", "resb"]
 
 # -------------------------------------
 # --- Computations
@@ -67,18 +67,18 @@ for input_file in input_file_list:
         vocab_text = set(type_freq_dict.keys())
 
         # build vocabulary
-        vocab_in_wordnet = [type for type in vocab_text if len(wn.synsets(type)) > 0]
+        vocab_in_wordnet = [word for word in vocab_text if len(wn.synsets(word)) > 0]
 
         # Build autosim to check if any synset is connected
         auto_sim_list = []
         checked_vocab_in_wordnet = []
-        for type in vocab_in_wordnet:
-            type_synsets_list = wn.synsets(type)
+        for word in vocab_in_wordnet:
+            type_synsets_list = wn.synsets(word)
             sim_list = [wn_similarity(type_synsets, type_synsets) for type_synsets in type_synsets_list
                         if wn_similarity(type_synsets, type_synsets) is not None]
             if len(sim_list) > 0:
                 auto_sim_list.append(max(sim_list))
-                checked_vocab_in_wordnet.append(type)
+                checked_vocab_in_wordnet.append(word)
 
         # Write the two files
         with open(type_freq_file_path, "w") as type_freq_file, open(sim_matrix_file_path, "w") as sim_matrix_file:

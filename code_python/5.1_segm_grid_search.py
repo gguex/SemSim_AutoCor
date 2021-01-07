@@ -9,11 +9,10 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
-# Function to use for the segmentation
-# segm_function = discontinuity_segmentation
-segm_function = cut_segmentation
+# Segmentation tag ("disc" or "cut")
+segm_tag = "cut"
 
-#--- Experiments loop lists (to make several experiments)
+# --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
 input_file_list = ["mix_word1.txt"]
@@ -26,7 +25,7 @@ sim_tag_list = ["w2v"]
 # List of number of groups
 n_groups_list = [4]
 
-#--- Grid search parameters
+# --- Grid search parameters
 
 # Dist options to explore
 dist_option_vec = ["minus_log"]
@@ -37,6 +36,16 @@ exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
 beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
 kappa_vec = [0, 1 / 3, 2 / 3, 1]
+
+# -------------------------------------
+# --- Computations
+# -------------------------------------
+
+# Selection of the segmentation function
+if segm_tag == "disc":
+    segm_function = discontinuity_segmentation
+else:
+    segm_function = cut_segmentation
 
 for i in range(len(input_file_list)):
 

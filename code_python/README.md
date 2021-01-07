@@ -6,17 +6,24 @@ python -m nltk.downloader all
 
 ## Main scripts
 
-The pipeline for obtaining results take 2 preliminary scripts (1, 2) and 3 computation scripts (3, 4, 5):
+The pipeline for obtaining results take different steps :
 
-1. The text processing to extract nouns, verbs, adjectives, and adverbs from a raw text file.
-2. The computation of the similarity matrix between terms from a POS-selection file (containing only nouns, verbs,
-adjectives or adverbs) along with the frequencies of each terms.
-3. The computation of the autocorrelation from a POS-selection file and a similarity matrix.
-4. The computation of the Local Indicator of Spatial Autocorrelation (LISA) on every token from a POS-selection file
-and a similarity matrix.
-5. The computation of a (n_token x n_group) membership matrix Z from a POS-selection file and a similarity matrix.
+1. The text pre-processing (1.1) which lowers cases, removes punctuation, removes stopwords and lemmatizes tokens. The 
+   text mixing step (1.2) creates artificial datasets mixing different pre-processed corpora, and a ground truth file.
+2. The computation of the similarity matrices between types from a pre-processed file, 
+   along with the frequencies of each types (which is also useful for referencing the row and column of the 
+   similarity matrix). (2.1) computes WordNet similarities, (2.2) Word Vectors similarities.
+3. The computation of the autocorrelation from text file and a similarity matrix.
+4. The computation of the Local Indicator of Spatial Autocorrelation (LISA) index for every token from a text file and 
+   a similarity matrix.
+5. The computation of a (n_token x n_group) membership matrix Z from a text file and a similarity matrix. (5.1) 
+   is designed to make a grid search (for best parameter) vs a ground truth file. (5.2) compute a unique results vs 
+   a ground truth file. (5.3) compute a segmentation on any file, even without ground truth groups.
 
-The pipeline works with the help of suffixes to ease the workflow.
+Along this pipeline, different functions are used, which are contained in the "local_functions.py" file.
+
+The pipeline works with the help of tags to identify similarity. Moreover, the "corpora", "similarities_frequencies",
+and "results" directories are hard-coded into some functions to ease the workflow.
 
 **1.1_text_preprocessing.py** : This script take a raw text file and create five text files: One file containing every
 token with POS tag, and 4 POS-selection files, and only token only file.

@@ -1,5 +1,5 @@
 from code_python.local_functions import get_all_paths, similarity_to_dissimilarity, type_to_token_matrix_expansion, \
-    exchange_and_transition_matrices, discontinuity_segmentation, write_groups_in_html_file, \
+    exchange_and_transition_matrices, discontinuity_segmentation, cut_segmentation, write_groups_in_html_file, \
     write_membership_mat_in_csv_file
 import os
 import numpy as np
@@ -35,7 +35,7 @@ segm_tag = "cut"
 # --- Computations
 # -------------------------------------
 
-# Choose the function
+# Selection of the segmentation function
 if segm_tag == "disc":
     segm_function = discontinuity_segmentation
 else:

@@ -66,7 +66,7 @@ def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     :type type_list: list[str]
     :return: the (n_token x n_token) extended matrix between text tokens, the (n_token) list of tokens used and
     the (n_token) indices in the original text of token exisiting in type_list.
-    :rtype: (numpy.ndarray, list[str])
+    :rtype: (numpy.ndarray, list[str], list[int])
     """
 
     # Import the text file and remove non-existing token
@@ -196,10 +196,10 @@ def autocorrelation_index(d_ext_mat, exch_mat):
     # Compute of the global inertia
     global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
     # Compute the autocorrelation index
-    autocorrelation_index = (global_inertia - local_inertia) / global_inertia
+    autocor_index = (global_inertia - local_inertia) / global_inertia
 
     # Return autocorrelation index
-    return autocorrelation_index
+    return autocor_index
 
 
 def lisa_computation(d_ext_mat, exch_mat, w_mat):

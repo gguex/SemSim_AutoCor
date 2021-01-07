@@ -26,14 +26,19 @@ n_groups = 4
 alpha = 0.1
 beta = 300
 kappa = 1
-known_label_ratio = 0.1 # if 0, clustering
-# segm_function = discontinuity_segmentation
-segm_function = cut_segmentation
+known_label_ratio = 0.1  # if 0, clustering
+segm_tag = "cut"  # Segmentation tag ("disc" or "cut")
 max_it = 1000
 
 # -------------------------------------
-# --- Loading and preprocessing
+# --- Computations
 # -------------------------------------
+
+# Selection of the segmentation function
+if segm_tag == "disc":
+    segm_function = discontinuity_segmentation
+else:
+    segm_function = cut_segmentation
 
 # Get the file paths
 text_file_path, typefreq_file_path, sim_file_path, ground_truth_path = get_all_paths(input_file, sim_tag)

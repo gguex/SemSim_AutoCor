@@ -9,15 +9,12 @@ import random
 
 # Corpus names
 corpus_names_list = ["Lectures_on_Landscape_pp.txt",
-                    "Metamorphosis_pp.txt",
-                    "Civil_Disobedience_pp.txt",
-                    "Sidelights_on_relativity_pp.txt"]
+                     "Metamorphosis_pp.txt",
+                     "Civil_Disobedience_pp.txt",
+                     "Sidelights_on_relativity_pp.txt"]
 
-# Sentence mixing, or words
+# Sentence mixing, or words ("sent" or "word")
 unit_of_mix = "sent"
-#unit_of_mix = "word"
-if unit_of_mix not in ["sent", "word"]:
-    unit_of_mix = "sent"
 
 # Number of units for each bin
 nb_of_units = 10
@@ -69,14 +66,14 @@ for i, text_path in enumerate(text_path_list):
                 sentence_length = len(sentence.split(" "))
                 if sentence_length >= min_nb_of_words_in_sent:
                     sentences_to_keep_list.append(sentence)
-                    indices_to_keep_list.append([i+1] * sentence_length)
+                    indices_to_keep_list.append([i + 1] * sentence_length)
 
             text_string_list.append(sentences_to_keep_list)
             indices_list.append(indices_to_keep_list)
         else:
             words_list = text_file.read().replace("\n", "").strip().split(" ")
             text_string_list.append(words_list)
-            indices_list.append([i+1] * len(words_list))
+            indices_list.append([i + 1] * len(words_list))
 
 # Size of the smallest text
 min_size = int(min([len(text_string) for text_string in text_string_list]) / div_factor)
