@@ -13,7 +13,7 @@ from tqdm import tqdm
 # Input files list
 input_file_list = ["The_WW_of_Oz_pp.txt"]
 # Similarity tag list
-sim_tag_list = ["jcnb"]
+sim_tag_list = ["glv"]
 
 # Distance option
 dist_option = "max_minus"
