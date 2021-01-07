@@ -13,7 +13,7 @@ from gensim.models import KeyedVectors
 # Corpus names
 corpus_name_list = ["Lectures_on_Landscape.txt",
                     "Metamorphosis.txt",
-                    "On_the_Duty_of_Civil_Disobedience.txt",
+                    "Civil_Disobedience.txt",
                     "Sidelights_on_relativity.txt"]
 
 # -------------------------------------

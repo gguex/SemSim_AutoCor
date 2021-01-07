@@ -10,7 +10,7 @@ from nltk.corpus import wordnet
 # -------------------------------------
 
 # Corpus name
-corpus_name = "The_WW_of_Oz.txt"
+corpus_name = "Sidelights_on_relativity.txt"
 
 # -------------------------------------
 # --- Computations

@@ -10,7 +10,7 @@ import random
 # Corpus names
 corpus_names_list = ["Lectures_on_Landscape_all.txt",
                     "Metamorphosis_all.txt",
-                    "On_the_Duty_of_Civil_Disobedience_all.txt",
+                    "Civil_Disobedience_all.txt",
                     "Sidelights_on_relativity_all.txt"]
 
 # Sentence mixing, or words
