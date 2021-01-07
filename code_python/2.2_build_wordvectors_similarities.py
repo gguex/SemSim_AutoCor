@@ -14,7 +14,7 @@ input_file_list = ["Lectures_on_Landscape_pp.txt",
                    "Sidelights_on_relativity_pp.txt"]
 
 # List of tags to enumerate similarity to compute
-sim_tag_list = ["w3v", "glv"]
+sim_tag_list = ["w2v", "glv"]
 
 # -------------------------------------
 # --- Computations
@@ -27,6 +27,9 @@ glv_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vector
 # Loop on files and tags
 for input_file in input_file_list:
     for sim_tag in sim_tag_list:
+
+        # Print which is computed
+        print(f"Computing similarity {sim_tag} for corpus {input_file}")
 
         # Getting all paths
         file_path, type_freq_file_path, sim_matrix_file_path, _ = get_all_paths(input_file, sim_tag, warn=False)
