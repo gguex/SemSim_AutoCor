@@ -5,15 +5,19 @@ import numpy as np
 import csv
 import matplotlib.pyplot as plt
 from tqdm import tqdm
+from itertools import cycle
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
-# Input files list
-input_file_list = ["The_WW_of_Oz_pp.txt"]
 # Similarity tag list
 sim_tag_list = ["glv"]
+# Input files list
+input_file_list = ["Lectures_on_Landscape_pp.txt",
+                   "Metamorphosis_pp.txt",
+                   "Civil_Disobedience_pp.txt",
+                   "Sidelights_on_relativity_pp.txt"]
 
 # Distance option
 dist_option = "max_minus"
@@ -33,8 +37,12 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 # Save the windows for autocorrelation range
 exch_range_window = list(range(1, exch_max_range + 1))
 
-for input_file in input_file_list:
-    for sim_tag in sim_tag_list:
+for sim_tag in sim_tag_list:
+    autocor_vec_list = []
+    for input_file in input_file_list:
+
+        # Print
+        print(f"Autocorrelation for {input_file} with similarity {sim_tag}")
 
         # Get the file paths
         text_file_path, typefreq_file_path, sim_file_path, _ = get_all_paths(input_file, sim_tag)
@@ -56,7 +64,6 @@ for input_file in input_file_list:
         # Compute autocor vector
         autocor_vec = []
         for exch_range in tqdm(exch_range_window):
-
             # Compute the exchange and transition matrices
             exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
                                                                exch_mat_opt=exch_mat_opt,
@@ -66,15 +73,25 @@ for input_file in input_file_list:
             # Append result to the autocor vector
             autocor_vec.append(autocor_index)
 
-        # Experiment description
-        experiment_description = f"{input_file} | sim_tag: {sim_tag} | dist_option: {dist_option} | " \
-                                 f"exch_mat_opt: {exch_mat_opt} | exch_max_range: {exch_max_range}"
-        # Plot the autocor vector
-        plt.figure("Autocorrelation")
-        plt.scatter(exch_range_window, autocor_vec)
-        plt.plot(exch_range_window, autocor_vec)
-        plt.title(experiment_description)
-        plt.xlabel("Neighbourhood size r")
-        plt.ylabel("Autocorrelation index")
-        plt.savefig(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_autocor{exch_max_range}.png")
-        plt.close()
+        autocor_vec_list.append(autocor_vec)
+
+    # Experiment description
+    experiment_description = f"Autocorrelation index for similarity {sim_tag}"
+
+    # line cycler
+    lines = ["-", "--", "-.", ":"]
+    linecycler = cycle(lines)
+
+    # Plot the autocor vector
+    plt.figure("Autocorrelation")
+
+    for i, input_file in enumerate(input_file_list):
+        plt.plot(exch_range_window, autocor_vec_list[i], next(linecycler), label=input_file[:-7])
+
+    plt.title(experiment_description)
+    plt.xlabel("Neighbourhood size r")
+    plt.ylabel("Autocorrelation index")
+    plt.legend()
+
+    plt.savefig(f"{base_path}/results/{sim_tag}_autocor{exch_max_range}.png")
+    plt.close()
