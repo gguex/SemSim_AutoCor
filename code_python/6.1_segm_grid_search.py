@@ -6,24 +6,37 @@ import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 
 # -------------------------------------
-# --- Over-Parameters
+# --- Parameters
 # -------------------------------------
 
-input_file_list = ["mix_word3.txt",
-                   "mix_word1.txt",
-                   "mix_sent10_min5.txt",
-                   "mix_sent1_min5.txt",
-                   "mix_word3.txt",
-                   "mix_word1.txt"]
+# Function to use for the segmentation
+# segm_function = discontinuity_segmentation
+segm_function = cut_segmentation
 
-results_file_name_list = ["results_semisuper5_word3_cut_1.csv",
-                          "results_semisuper5_word1_cut_1.csv",
-                          "results_semisuper20_sent10_cut_1.csv",
-                          "results_semisuper20_sent1_cut_1.csv",
-                          "results_semisuper20_word3_cut_1.csv",
-                          "results_semisuper20_sent1_cut_1.csv"]
+#--- Experiments loop lists (to make several experiments)
 
-known_label_ratio_list = [0.05, 0.05, 0.2, 0.2, 0.2, 0.2]
+# List of inputted text files to explore
+input_file_list = ["mix_word1.txt"]
+# List of names for the ouputted result files
+results_file_name_list = ["results_semisuper5_word1_cut_1.csv"]
+# List of label ratios to text
+known_label_ratio_list = [0.1]
+# List of similarity tag
+sim_tag_list = ["wesim"]
+# List of number of groups
+n_groups_list = [4]
+
+#--- Grid search parameters
+
+# Dist options to explore
+dist_option_vec = ["minus_log"]
+# Exchange matrix options to explore
+exch_mat_opt_vec = ["d"]
+exch_range_vec = [3, 5, 10, 15]
+# Parameter values to explore
+alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
+beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
+kappa_vec = [0, 1 / 3, 2 / 3, 1]
 
 for i in range(len(input_file_list)):
 
@@ -33,26 +46,14 @@ for i in range(len(input_file_list)):
 
     # File name to explore
     input_file = input_file_list[i]
-    # Similarity tag
-    sim_tag = "wesim"
     # File name to save
     results_file_name = results_file_name_list[i]
-    # Number of groups
-    n_groups = 4
     # Ratio of known labels. If 0, clustering
     known_label_ratio = known_label_ratio_list[i]
-    # Dist options to explore
-    dist_option_vec = ["minus_log"]
-    # Exchange matrix options to explore
-    exch_mat_opt_vec = ["d"]
-    exch_range_vec = [3, 5, 10, 15]
-    # Parameter values to explore
-    alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
-    beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
-    kappa_vec = [0, 1 / 3, 2 / 3, 1]
-    # Function to use for the segmentation
-    # segm_function = discontinuity_segmentation
-    segm_function = cut_segmentation
+    # Similarity tag
+    sim_tag = sim_tag_list[i]
+    # Number of groups
+    n_groups = n_groups_list[i]
 
     # -------------------------------------
     # --- Loading and preprocessing
@@ -68,12 +69,13 @@ for i in range(len(input_file_list)):
         csv_reader = csv.reader(typefreq_file, delimiter=";")
         type_list = [row[0] for row in csv_reader]
     # Compute the extended version of the similarity matrix
-    sim_ext_mat, token_list = type_to_token_matrix_expansion(text_file_path, sim_mat, type_list)
+    sim_ext_mat, token_list, existing_index_list = type_to_token_matrix_expansion(text_file_path, sim_mat, type_list)
 
     # Loading ground truth
     with open(ground_truth_path) as ground_truth:
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
+    real_group_vec = real_group_vec[existing_index_list]
 
     # For semi-supervised results, pick some labels
     if known_label_ratio > 0:

@@ -32,7 +32,7 @@ segm_function = cut_segmentation
 max_it = 1000
 
 # -------------------------------------
-# --- Loading
+# --- Loading and preprocessing
 # -------------------------------------
 
 # Get the file paths
@@ -44,11 +44,14 @@ sim_mat = np.loadtxt(sim_file_path, delimiter=";")
 with open(typefreq_file_path, 'r') as typefreq_file:
     csv_reader = csv.reader(typefreq_file, delimiter=";")
     type_list = [row[0] for row in csv_reader]
+# Compute the extended version of the similarity matrix
+sim_ext_mat, token_list, existing_index_list = type_to_token_matrix_expansion(text_file_path, sim_mat, type_list)
 
 # Loading ground truth
 with open(ground_truth_path) as ground_truth:
     real_group_vec = ground_truth.read()
     real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
+real_group_vec = real_group_vec[existing_index_list]
 
 # For semi-supervised results, pick some labels
 if known_label_ratio > 0:
@@ -60,16 +63,8 @@ else:
     known_labels = []
     indices_for_known_label = []
 
-# -------------------------------------
-# --- Computations
-# -------------------------------------
-
-# Compute the dissimilarity_matrix
-d_mat = similarity_to_dissimilarity(sim_mat,
-                                    dist_option=dist_option)
-
-# Expand the matrix
-d_ext_mat, token_list = type_to_token_matrix_expansion(text_file_path, d_mat, type_list)
+# Compute the dissimilarity matrix
+d_ext_mat = similarity_to_dissimilarity(sim_ext_mat, dist_option=dist_option)
 
 # Compute the exchange and transition matrices
 exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),

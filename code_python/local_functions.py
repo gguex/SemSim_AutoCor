@@ -64,7 +64,8 @@ def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     :type type_mat: numpy.ndarray
     :param type_list: the list of types defining the rows and columns of the (n_type x n_type) matrix.
     :type type_list: list[str]
-    :return: the (n_token x n_token) extended matrix between text tokens and the (n_token) list of tokens used.
+    :return: the (n_token x n_token) extended matrix between text tokens, the (n_token) list of tokens used and
+    the (n_token) indices in the original text of token exisiting in type_list.
     :rtype: (numpy.ndarray, list[str])
     """
 
@@ -73,8 +74,13 @@ def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
         text_string = text_file.read()
     raw_token_list = nltk.word_tokenize(text_string)
 
-    # Keep only the tokens which are present in the type_list
-    token_list = [token for token in raw_token_list if token in type_list]
+    # Keep only the tokens which are present in the type_list and create indices of existing tokens
+    token_list = []
+    existing_index_list = []
+    for i, token in enumerate(raw_token_list):
+        if token in type_list:
+            token_list.append(token)
+            existing_index_list.append(i)
     n_token = len(token_list)
 
     # Compute the n_type x n_token presence matrix
@@ -86,7 +92,7 @@ def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     token_mat = pres_mat.T.dot(type_mat.dot(pres_mat))
 
     # Return the distance_matrix
-    return token_mat, token_list
+    return token_mat, token_list, existing_index_list
 
 
 def similarity_to_dissimilarity(sim_mat, dist_option="minus_log"):
@@ -407,7 +413,7 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
+            - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
 
         # Computation of the new z_mat
         if np.sum(-hig_mat > 690) > 0:

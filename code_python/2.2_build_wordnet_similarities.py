@@ -13,7 +13,7 @@ import itertools
 input_file = "The_WW_of_Oz_pp.txt"
 
 # Name of the outputted tag for the similarity ("wup", "path", "resb" or "jcnb")
-sim_tag = "path"
+sim_tag = "jcnb"
 
 # -------------------------------------
 # --- Computations

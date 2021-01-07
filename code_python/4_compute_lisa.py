@@ -10,11 +10,9 @@ import matplotlib.pyplot as plt
 # -------------------------------------
 
 # Input files list
-#input_file_list = ["The_WW_of_Oz_nouns.txt", "The_WW_of_Oz_verbs.txt", "Animal_farm_nouns.txt", "Animal_farm_verbs.txt"]
-input_file_list = ["The_WW_of_Oz_all.txt"]
+input_file_list = ["The_WW_of_Oz_pp.txt"]
 # Similarity tag list
-#sim_tag_list = ["resnik", "wu-palmer", "leacock-chodorow", "wesim"]
-sim_tag_list = ["resb"]
+sim_tag_list = ["path"]
 
 # Distance option
 dist_option = "minus_log"
@@ -50,7 +48,7 @@ for input_file in input_file_list:
                                             dist_option=dist_option)
 
         # Compute the extended version of the matrix
-        d_ext_mat, token_list = type_to_token_matrix_expansion(text_file_path, d_mat, type_list)
+        d_ext_mat, token_list, _ = type_to_token_matrix_expansion(text_file_path, d_mat, type_list)
 
         # Compute the exchange and transition matrices
         exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
