@@ -10,8 +10,7 @@ import itertools
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["Lectures_on_Landscape_pp.txt",
-                   "Metamorphosis_pp.txt",
+input_file_list = ["Metamorphosis_pp.txt",
                    "Civil_Disobedience_pp.txt",
                    "Sidelights_on_relativity_pp.txt"]
 
