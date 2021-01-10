@@ -10,12 +10,10 @@ import itertools
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["Metamorphosis_pp.txt",
-                   "Civil_Disobedience_pp.txt",
-                   "Sidelights_on_relativity_pp.txt"]
+input_file_list = ["Lectures_on_Landscape_pp.txt"]
 
 # List of tags to enumerate similarities to compute
-sim_tag_list = ["wup", "path", "resb"]
+sim_tag_list = ["resb"]
 
 # -------------------------------------
 # --- Computations
