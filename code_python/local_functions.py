@@ -34,7 +34,7 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
     # Path of the similarity matrix
     sim_file_path = f"{base_path}/similarities_frequencies/{input_file[:-4]}_{sim_tag}_similarities.txt"
     # Path of the ground true file
-    ground_truth_path = f"{base_path}/corpora/mixgroup_{input_file[4:]}"
+    ground_truth_path = f"{base_path}/corpora/{input_file[:-4]}_groups.txt"
 
     if warn:
         if not os.path.exists(text_file_path):
