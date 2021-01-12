@@ -288,7 +288,6 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
 
     # Loop
     it = 0
-    print("Starting loop")
     while not converge:
 
         # Computation of rho_g vector
@@ -326,7 +325,6 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
         # Print diff and it
         diff_pre_new = np.linalg.norm(z_mat - z_new_mat)
         it += 1
-        print(f"Iteration {it}: {diff_pre_new}")
 
         # Verification of convergence
         if diff_pre_new < conv_threshold:
@@ -394,7 +392,6 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
 
     # Loop
     it = 0
-    print("Starting loop")
     while not converge:
 
         # Computation of rho_g vector
@@ -425,7 +422,6 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
         # Print diff and it
         diff_pre_new = np.linalg.norm(z_mat - z_new_mat)
         it += 1
-        print(f"Iteration {it}: {diff_pre_new}")
 
         # Verification of convergence
         if diff_pre_new < conv_threshold:

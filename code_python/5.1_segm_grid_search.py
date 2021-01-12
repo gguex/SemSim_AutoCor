@@ -132,7 +132,7 @@ for i in range(len(input_file_list)):
                                 result_matrix = segm_function(d_ext_mat=d_ext_mat,
                                                               exch_mat=exch_mat,
                                                               w_mat=w_mat,
-                                                              n_groups=4,
+                                                              n_groups=n_groups,
                                                               alpha=alpha,
                                                               beta=beta,
                                                               kappa=kappa,
@@ -141,7 +141,7 @@ for i in range(len(input_file_list)):
                                 result_matrix = segm_function(d_ext_mat=d_ext_mat,
                                                               exch_mat=exch_mat,
                                                               w_mat=w_mat,
-                                                              n_groups=4,
+                                                              n_groups=n_groups,
                                                               alpha=alpha,
                                                               beta=beta,
                                                               kappa=kappa)
