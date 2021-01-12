@@ -10,16 +10,20 @@ import matplotlib.pyplot as plt
 # -------------------------------------
 
 # Input files list
-input_file_list = ["The_WW_of_Oz_pp.txt"]
+input_file_list = ["Civil_Disobedience_pp.txt",
+                   "Lectures_on_Landscape_pp.txt",
+                   "Metamorphosis_pp.txt",
+                   "Sidelights_on_relativity_pp.txt"]
+
 # Similarity tag list
-sim_tag_list = ["path"]
+sim_tag_list = ["glv", "path", "resb", "w2v", "wup"]
 
 # Distance option
 dist_option = "max_minus"
 # Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive)
 exch_mat_opt = "s"
 # Exchange matrix range
-exch_range = 100
+exch_range = 50
 
 # -------------------------------------
 # --- Computations
@@ -32,6 +36,9 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 
 for input_file in input_file_list:
     for sim_tag in sim_tag_list:
+
+        # Print
+        print(f"Computation for {input_file} with {sim_tag}")
 
         # Get the file paths
         text_file_path, typefreq_file_path, sim_file_path, _ = get_all_paths(input_file, sim_tag)
@@ -69,8 +76,8 @@ for input_file in input_file_list:
         # Write the plot
         plt.figure("Lisa index")
         plt.plot(list(range(1, len(token_list) + 1)), lisa_vec, linewidth=0.1)
-        plt.title(experiment_description)
+        plt.title(f"Lisa on {input_file[:-4]} with {sim_tag}")
         plt.xlabel("Token")
         plt.ylabel("Lisa index")
-        plt.savefig(f"{base_path}/results/Lisa{exch_range}_{input_file[:-4]}_{sim_tag}.png")
+        plt.savefig(f"{base_path}/results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}.png")
         plt.close()
