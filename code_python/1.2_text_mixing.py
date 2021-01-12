@@ -14,10 +14,10 @@ corpus_names_list = ["Lectures_on_Landscape_pp.txt",
                      "Sidelights_on_relativity_pp.txt"]
 
 # Sentence mixing, or words ("sent" or "word")
-unit_of_mix = "sent"
+unit_of_mix = "word"
 
 # Number of units for each bin
-nb_of_units = 10
+nb_of_units = 3
 
 # Minimum of words in sentence to mix
 min_nb_of_words_in_sent = 5
@@ -33,14 +33,14 @@ div_factor = 2
 
 # Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)
 working_path = os.getcwd()
-base_path = str.split(working_path, "SemSim_AutoCor")[0] + "/SemSim_AutoCor/"
+base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
 # Defining paths of the text files
-text_path_list = [f"{base_path}coprora/{corpus_name}" for corpus_name in corpus_names_list]
+text_path_list = [f"{base_path}corpora/{corpus_name}" for corpus_name in corpus_names_list]
 
 # Defining paths of the outputs
 output_file = f"{base_path}corpora/mix_{unit_of_mix}{nb_of_units}.txt"
-word_group_file = f"{base_path}corpora/mixgroup_{unit_of_mix}{nb_of_units}.txt"
+word_group_file = f"{base_path}corpora/mix_{unit_of_mix}{nb_of_units}_groups.txt"
 
 # --- Creating mixing file --- #
 
