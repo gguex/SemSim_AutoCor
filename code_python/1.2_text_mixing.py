@@ -36,15 +36,11 @@ working_path = os.getcwd()
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "/SemSim_AutoCor/"
 
 # Defining paths of the text files
-text_path_list = [base_path + "corpora/" + corpus_name for corpus_name in corpus_names_list]
+text_path_list = [f"{base_path}coprora/{corpus_name}" for corpus_name in corpus_names_list]
 
 # Defining paths of the outputs
-if unit_of_mix == "sent":
-    output_file = f"{base_path}corpora/mix_sent{nb_of_units}_min{min_nb_of_words_in_sent}.txt"
-    word_group_file = f"{base_path}corpora/mixgroup_sent{nb_of_units}_min{min_nb_of_words_in_sent}.txt"
-else:
-    output_file = f"{base_path}corpora/mix_word{nb_of_units}.txt"
-    word_group_file = f"{base_path}corpora/mixgroup_word{nb_of_units}.txt"
+output_file = f"{base_path}corpora/mix_{unit_of_mix}{nb_of_units}.txt"
+word_group_file = f"{base_path}corpora/mixgroup_{unit_of_mix}{nb_of_units}.txt"
 
 # --- Creating mixing file --- #
 

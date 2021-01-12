@@ -90,5 +90,5 @@ for input_file in input_file_list:
     plt.ylabel("Autocorrelation index")
     plt.legend()
 
-    plt.savefig(f"{base_path}/results/{input_file[:-4]}_autocor{exch_max_range}.png")
+    plt.savefig(f"{base_path}/results/Autocor{exch_max_range}_{input_file[:-4]}.png")
     plt.close()

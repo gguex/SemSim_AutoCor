@@ -12,7 +12,7 @@ from itertools import cycle
 # -------------------------------------
 
 # Similarity tag list
-sim_tag_list = ["glv"]
+sim_tag_list = ["resb", "wup"]
 # Input files list
 input_file_list = ["Lectures_on_Landscape_pp.txt",
                    "Metamorphosis_pp.txt",
@@ -93,5 +93,5 @@ for sim_tag in sim_tag_list:
     plt.ylabel("Autocorrelation index")
     plt.legend()
 
-    plt.savefig(f"{base_path}/results/{sim_tag}_autocor{exch_max_range}.png")
+    plt.savefig(f"{base_path}/results/Autocor{exch_max_range}_{sim_tag}.png")
     plt.close()
