@@ -93,5 +93,5 @@ for sim_tag in sim_tag_list:
     plt.ylabel("Autocorrelation index")
     plt.legend()
 
-    plt.savefig(f"{base_path}/results/Autocor{exch_max_range}_{sim_tag}.png")
+    plt.savefig(f"{base_path}/results/3.1_autocor{exch_max_range}_{sim_tag}.png")
     plt.close()

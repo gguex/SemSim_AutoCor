@@ -15,7 +15,7 @@ input_file_list = ["The_WW_of_Oz_pp.txt"]
 sim_tag_list = ["path"]
 
 # Distance option
-dist_option = "minus_log"
+dist_option = "max_minus"
 # Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive)
 exch_mat_opt = "s"
 # Exchange matrix range
@@ -63,7 +63,7 @@ for input_file in input_file_list:
                                  f"exch_mat_opt: {exch_mat_opt} | exch_range: {exch_range}"
 
         # Write the html file from lisa vector
-        write_vector_in_html_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_lisa{exch_range}.html",
+        write_vector_in_html_file(f"{base_path}/results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}.html",
                                   token_list, lisa_vec, experiment_description)
 
         # Write the plot
@@ -72,5 +72,5 @@ for input_file in input_file_list:
         plt.title(experiment_description)
         plt.xlabel("Token")
         plt.ylabel("Lisa index")
-        plt.savefig(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_lisa{exch_range}.png")
+        plt.savefig(f"{base_path}/results/Lisa{exch_range}_{input_file[:-4]}_{sim_tag}.png")
         plt.close()
