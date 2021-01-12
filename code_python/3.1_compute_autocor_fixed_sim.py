@@ -12,7 +12,7 @@ from itertools import cycle
 # -------------------------------------
 
 # Similarity tag list
-sim_tag_list = ["resb", "wup"]
+sim_tag_list = ["wup"]
 # Input files list
 input_file_list = ["Lectures_on_Landscape_pp.txt",
                    "Metamorphosis_pp.txt",

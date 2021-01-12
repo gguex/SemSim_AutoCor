@@ -1,4 +1,5 @@
 import nltk
+import numpy as np
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 from code_python.local_functions import get_all_paths
@@ -10,10 +11,14 @@ import itertools
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["Lectures_on_Landscape_pp.txt"]
+input_file_list = ["Sidelights_on_relativity_pp.txt"]
 
 # List of tags to enumerate similarities to compute
-sim_tag_list = ["resb"]
+sim_tag_list = ["wup"]
+
+# Threshold for minimum similarity value
+# (a type is dropped if its maximum similarity with other types doesn't reach this threshold)
+sim_threshold = 1e-3
 
 # -------------------------------------
 # --- Computations
@@ -26,13 +31,16 @@ brown_ic = wordnet_ic.ic('ic-brown.dat')
 for input_file in input_file_list:
     for sim_tag in sim_tag_list:
 
-        # Print which is computed
+        # Print
         print(f"Computing similarity {sim_tag} for corpus {input_file}")
 
         # Defining similarity
         if sim_tag == "wup":
             def wn_similarity(synset_1, synset_2):
                 return wn.wup_similarity(synset_1, synset_2)
+        elif sim_tag == "lch":
+            def wn_similarity(synset_1, synset_2):
+                return wn.lch_similarity(synset_1, synset_2)
         elif sim_tag == "path":
             def wn_similarity(synset_1, synset_2):
                 return wn.path_similarity(synset_1, synset_2)
@@ -66,43 +74,46 @@ for input_file in input_file_list:
         # build vocabulary
         vocab_in_wordnet = [word for word in vocab_text if len(wn.synsets(word)) > 0]
 
-        # Build autosim to check if any synset is connected
+        # Build autosim to check if synset is valid
         auto_sim_list = []
-        checked_vocab_in_wordnet = []
+        checked_vocab = []
         for word in vocab_in_wordnet:
             type_synsets_list = wn.synsets(word)
             sim_list = [wn_similarity(type_synsets, type_synsets) for type_synsets in type_synsets_list
                         if wn_similarity(type_synsets, type_synsets) is not None]
             if len(sim_list) > 0:
                 auto_sim_list.append(max(sim_list))
-                checked_vocab_in_wordnet.append(word)
+                checked_vocab.append(word)
+        n_type = len(checked_vocab)
 
-        # Write the two files
-        with open(type_freq_file_path, "w") as type_freq_file, open(sim_matrix_file_path, "w") as sim_matrix_file:
-            for type_1 in tqdm(checked_vocab_in_wordnet):
+        # Computing the similarity matrix
+        sim_mat = np.zeros((n_type, n_type))
+        # Vector for index of type with existing similarities
+        ok_sim_index_list = []
+        with open(type_freq_file_path, "w") as type_freq_file:
+            for i in tqdm(range(n_type)):
 
-                type_1_synsets_list = wn.synsets(type_1)
-                type_freq_file.write(type_1 + ";" + str(type_freq_dict[type_1]) + "\n")
+                type_1_synsets_list = wn.synsets(checked_vocab[i])
 
-                for i, type_2 in enumerate(checked_vocab_in_wordnet):
+                for j in range(i+1, n_type):
+                    # Loop on synsets
+                    type_2_synsets_list = wn.synsets(checked_vocab[j])
+                    sim_list = [wn_similarity(*cross_item)
+                                for cross_item in itertools.product(type_1_synsets_list, type_2_synsets_list)
+                                if cross_item[0].pos() == cross_item[1].pos() and
+                                wn_similarity(*cross_item) is not None]
+                    if len(sim_list) > 0:
+                        sim = max(sim_list)
+                        sim_mat[i, j], sim_mat[j, i] = sim, sim
 
-                    if type_2 != type_1:
-                        # Loop on synsets
-                        type_2_synsets_list = wn.synsets(type_2)
-                        sim_list = [wn_similarity(*cross_item)
-                                    for cross_item in itertools.product(type_1_synsets_list, type_2_synsets_list)
-                                    if cross_item[0].pos() == cross_item[1].pos() and
-                                    wn_similarity(*cross_item) is not None]
-                        if len(sim_list) > 0:
-                            sim = max(sim_list)
-                        else:
-                            sim = 0
-                    else:
-                        sim = auto_sim_list[i]
+                if max(sim_mat[i, :]) > sim_threshold:
+                    type_freq_file.write(f"{checked_vocab[i]};{type_freq_dict[checked_vocab[i]]}\n")
+                    ok_sim_index_list.append(i)
 
-                    # Write the similarity
-                    sim_matrix_file.write(str(sim))
-                    if type_2 != checked_vocab_in_wordnet[len(checked_vocab_in_wordnet) - 1]:
-                        sim_matrix_file.write(";")
-                    else:
-                        sim_matrix_file.write("\n")
+        # Compute the final matrix
+        np.fill_diagonal(sim_mat, auto_sim_list)
+        sim_mat = sim_mat[ok_sim_index_list, :][:, ok_sim_index_list]
+
+        # Write the similarity
+        with open(sim_matrix_file_path, "w") as sim_matrix_file:
+            np.savetxt(sim_matrix_file, sim_mat, delimiter=";")

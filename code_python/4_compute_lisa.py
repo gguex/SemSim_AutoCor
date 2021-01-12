@@ -20,7 +20,7 @@ sim_tag_list = ["glv", "path", "resb", "w2v", "wup"]
 
 # Distance option
 dist_option = "max_minus"
-# Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive)
+# Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive, "r" = ring)
 exch_mat_opt = "s"
 # Exchange matrix range
 exch_range = 50
