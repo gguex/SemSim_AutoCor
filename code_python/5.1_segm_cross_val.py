@@ -17,7 +17,7 @@ segm_tag = "cut"
 n_fold = 5
 
 # List of names for the ouputted result files
-results_file_name = "grid_search_results/cv5_cut_w2v.csv"
+results_file_name = "grid_search_results/cv5_cut_w2v_2.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
@@ -30,11 +30,11 @@ sim_tag_list = ["w2v", "w2v", "w2v", "w2v"]
 # List of number of groups
 n_groups_list = [4, 4, 4, 4]
 # Dist options to explore
-dist_option_list = ["minus_log", "minus_log", "minus_log", "minus_log"]
+dist_option_list = ["max_minus", "max_minus", "max_minus", "max_minus"]
 
 # --- Grid search parameters
 
-exch_mat_opt_vec = ["d"]
+exch_mat_opt_vec = ["s"]
 exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
 beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
