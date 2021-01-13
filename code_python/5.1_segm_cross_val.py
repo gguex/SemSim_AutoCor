@@ -16,20 +16,21 @@ segm_tag = "cut"
 # Number of crossval folds
 n_fold = 5
 
+# List of names for the ouputted result files
+results_file_name = "grid_search_results/cv5_cut_w2v.csv"
+
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_sent1.txt"]
-# List of names for the ouputted result files
-results_file_name_list = ["results_crossval5_sent1_cut_1.csv"]
+input_file_list = ["mix_word1.txt", "mix_word3.txt", "mix_sent1.txt", "mix_sent10.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0]
+known_label_ratio_list = [0, 0, 0, 0]
 # List of similarity tag
-sim_tag_list = ["w2v"]
+sim_tag_list = ["w2v", "w2v", "w2v", "w2v"]
 # List of number of groups
-n_groups_list = [4]
+n_groups_list = [4, 4, 4, 4]
 # Dist options to explore
-dist_option_list = ["minus_log"]
+dist_option_list = ["minus_log", "minus_log", "minus_log", "minus_log"]
 
 # --- Grid search parameters
 
@@ -49,6 +50,11 @@ if segm_tag == "disc":
 else:
     segm_function = cut_segmentation
 
+# Make results file
+with open(results_file_name, "w") as output_file:
+    output_file.write("input_file,known_label_ratio,sim_tag,n_groups,dist_option,fold_id,exch_mat_opt,exch_range,"
+                      "alpha,beta,kappa,nmi_train,nmi_test\n")
+
 for i in range(len(input_file_list)):
 
     # -------------------------------------
@@ -57,8 +63,6 @@ for i in range(len(input_file_list)):
 
     # File name to explore
     input_file = input_file_list[i]
-    # File name to save
-    results_file_name = results_file_name_list[i]
     # Ratio of known labels. If 0, clustering
     known_label_ratio = known_label_ratio_list[i]
     # Similarity tag
@@ -71,11 +75,6 @@ for i in range(len(input_file_list)):
     # Print
     print(f"Crossval on {input_file}, known ratio = {known_label_ratio}, sim tag = {sim_tag}, n_groups = {n_groups}, "
           f"dist option = {dist_option}")
-
-    # Make results file
-    with open(results_file_name, "w") as output_file:
-        output_file.write("input_file,known_label_ratio,sim_tag,n_groups,dist_option,fold_id,exch_mat_opt,exch_range,"
-                          "alpha,beta,kappa,nmi_train,nmi_test\n")
 
     # -------------------------------------
     # --- Loading and preprocessing
@@ -234,4 +233,6 @@ for i in range(len(input_file_list)):
         # Writing results
         with open(results_file_name, "a") as output_file:
             output_file.write(f"{input_file},{known_label_ratio},{sim_tag},{n_groups},{dist_option},{fold_id},"
-                              f"{exch_mat_opt},{exch_range},{alpha},{beta},{kappa},{nmi_train},{nmi_test}\n")
+                              f"{best_param_dic['exch_mat_opt']},{best_param_dic['exch_range']},"
+                              f"{best_param_dic['alpha']},{best_param_dic['beta']},{best_param_dic['kappa']},"
+                              f"{nmi_train},{nmi_test}\n")
