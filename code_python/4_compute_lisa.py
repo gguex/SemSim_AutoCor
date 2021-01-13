@@ -16,7 +16,7 @@ input_file_list = ["Civil_Disobedience_pp.txt",
                    "Sidelights_on_relativity_pp.txt"]
 
 # Similarity tag list
-sim_tag_list = ["glv", "path", "resb", "w2v", "wup"]
+sim_tag_list = ["lch", "path", "wup"]
 
 # Distance option
 dist_option = "max_minus"
