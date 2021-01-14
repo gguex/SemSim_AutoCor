@@ -11,22 +11,22 @@ import pandas as pd
 # --- Parameters
 # -------------------------------------
 
-input_file = "mix_word1.txt"
+input_file = "mix_sent10.txt"
 
-output_html = "best_word1_semi10.html"
-real_html = "word1_real.html"
-token_csv = "best_word1_semi10.csv"
-type_csv = "best_word1_semi10_type.csv"
+output_html = "best_sent10.html"
+real_html = "sent10_real.html"
+token_csv = "best_sent10.csv"
+type_csv = "best_sent10_type.csv"
 
-sim_tag = "w2v"
-dist_option = "minus_log"
-exch_mat_opt = "d"
+sim_tag = "lch"
+dist_option = "max_minus"
+exch_mat_opt = "s"
 exch_range = 15
 n_groups = 4
-alpha = 0.1
-beta = 300
-kappa = 1
-known_label_ratio = 0.1  # if 0, clustering
+alpha = 10
+beta = 10
+kappa = 0
+known_label_ratio = 0.05  # if 0, clustering
 segm_tag = "cut"  # Segmentation tag ("disc" or "cut")
 max_it = 1000
 

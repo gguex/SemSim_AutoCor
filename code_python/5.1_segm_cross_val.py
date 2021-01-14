@@ -17,32 +17,26 @@ segm_tag = "cut"
 n_fold = 5
 
 # List of names for the ouputted result files
-results_file_name = "grid_search_results/cv5_cut_w2v_3.csv"
+results_file_name = "grid_search_results/cv5_lch.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_word1.txt", "mix_word3.txt", "mix_sent1.txt", "mix_sent10.txt",
-                   "mix_word1.txt", "mix_word3.txt", "mix_sent1.txt", "mix_sent10.txt"]
+input_file_list = ["mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0, 0, 0, 0,
-                          0, 0, 0, 0]
+known_label_ratio_list = [0, 0, 0, 0]
 # List of similarity tag
-sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
-                "w2v", "w2v", "w2v", "w2v"]
+sim_tag_list = ["lch", "lch", "lch", "lch"]
 # List of number of groups
-n_groups_list = [4, 4, 4, 4,
-                 4, 4, 4, 4]
-# Dist options to explore
-dist_option_list = ["max_minus", "max_minus", "max_minus", "max_minus",
-                    "minus_log", "minus_log", "minus_log", "minus_log"]
+n_groups_list = [4, 4, 4, 4]
 
 # --- Grid search parameters
 
-exch_mat_opt_vec = ["u", "d"]
+dist_option_vec = ["max_minus", "minus_log"]
+exch_mat_opt_vec = ["s", "u", "d"]
 exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 30]
-beta_vec = [5, 10, 50, 100, 300]
+beta_vec = [5, 10, 50, 100, 200]
 kappa_vec = [0, 1 / 3, 2 / 3, 1]
 
 # -------------------------------------
@@ -57,7 +51,7 @@ else:
 
 # Make results file
 with open(results_file_name, "w") as output_file:
-    output_file.write("input_file,known_label_ratio,sim_tag,n_groups,dist_option,fold_id,exch_mat_opt,exch_range,"
+    output_file.write("input_file,known_label_ratio,sim_tag,n_groups,fold_id,dist_option,exch_mat_opt,exch_range,"
                       "alpha,beta,kappa,nmi_train,nmi_test\n")
 
 for i in range(len(input_file_list)):
@@ -74,12 +68,9 @@ for i in range(len(input_file_list)):
     sim_tag = sim_tag_list[i]
     # Number of groups
     n_groups = n_groups_list[i]
-    # Dist option
-    dist_option = dist_option_list[i]
 
     # Print
-    print(f"Crossval on {input_file}, known ratio = {known_label_ratio}, sim tag = {sim_tag}, n_groups = {n_groups}, "
-          f"dist option = {dist_option}")
+    print(f"Crossval on {input_file}, known ratio = {known_label_ratio}, sim tag = {sim_tag}, n_groups = {n_groups}")
 
     # -------------------------------------
     # --- Loading and preprocessing
@@ -96,8 +87,6 @@ for i in range(len(input_file_list)):
         type_list = [row[0] for row in csv_reader]
     # Compute the extended version of the similarity matrix
     sim_ext_mat, token_list, existing_index_list = type_to_token_matrix_expansion(text_file_path, sim_mat, type_list)
-    # Compute the dissimilarity matrix
-    d_ext_mat = similarity_to_dissimilarity(sim_ext_mat, dist_option=dist_option)
 
     # Loading ground truth
     with open(ground_truth_path) as ground_truth:
@@ -115,7 +104,7 @@ for i in range(len(input_file_list)):
         # Setting train id and restricting to train set
         train_id = crossval_index == fold_id
         train_token_list = list(compress(token_list, train_id))
-        train_d_mat = d_ext_mat[train_id, :][:, train_id]
+        train_s_mat = sim_ext_mat[train_id, :][:, train_id]
         train_real_group_vec = real_group_vec[train_id]
 
         # For semi-supervised results, pick some labels
@@ -134,59 +123,67 @@ for i in range(len(input_file_list)):
         # Compute best parameters
         nmi_train = 0
         best_param_dic = {}
-        for exch_mat_opt in exch_mat_opt_vec:
-            for exch_range in exch_range_vec:
+        for dist_option in dist_option_vec:
 
-                # Compute the exchange and transition matrices
-                train_exch_mat, train_w_mat = exchange_and_transition_matrices(len(train_token_list),
-                                                                               exch_mat_opt=exch_mat_opt,
-                                                                               exch_range=exch_range)
+            # Compute the dissimilarity matrix
+            train_d_mat = similarity_to_dissimilarity(train_s_mat, dist_option=dist_option)
 
-                for alpha in alpha_vec:
-                    for beta in beta_vec:
-                        for kappa in kappa_vec:
-                            # Compute the matrix
-                            if known_label_ratio > 0:
-                                result_matrix = segm_function(d_ext_mat=train_d_mat,
-                                                              exch_mat=train_exch_mat,
-                                                              w_mat=train_w_mat,
-                                                              n_groups=4,
-                                                              alpha=alpha,
-                                                              beta=beta,
-                                                              kappa=kappa,
-                                                              init_labels=known_labels)
-                            else:
-                                result_matrix = segm_function(d_ext_mat=train_d_mat,
-                                                              exch_mat=train_exch_mat,
-                                                              w_mat=train_w_mat,
-                                                              n_groups=4,
-                                                              alpha=alpha,
-                                                              beta=beta,
-                                                              kappa=kappa)
+            for exch_mat_opt in exch_mat_opt_vec:
+                for exch_range in exch_range_vec:
 
-                            # Compute the groups
-                            algo_group_value = np.argmax(result_matrix, 1) + 1
+                    # Compute the exchange and transition matrices
+                    train_exch_mat, train_w_mat = exchange_and_transition_matrices(len(train_token_list),
+                                                                                   exch_mat_opt=exch_mat_opt,
+                                                                                   exch_range=exch_range)
 
-                            # Compute nmi score
-                            nmi = normalized_mutual_info_score(np.delete(train_real_group_vec, indices_for_known_label),
-                                                               np.delete(algo_group_value, indices_for_known_label))
+                    for alpha in alpha_vec:
+                        for beta in beta_vec:
+                            for kappa in kappa_vec:
+                                # Compute the matrix
+                                if known_label_ratio > 0:
+                                    result_matrix = segm_function(d_ext_mat=train_d_mat,
+                                                                  exch_mat=train_exch_mat,
+                                                                  w_mat=train_w_mat,
+                                                                  n_groups=4,
+                                                                  alpha=alpha,
+                                                                  beta=beta,
+                                                                  kappa=kappa,
+                                                                  init_labels=known_labels)
+                                else:
+                                    result_matrix = segm_function(d_ext_mat=train_d_mat,
+                                                                  exch_mat=train_exch_mat,
+                                                                  w_mat=train_w_mat,
+                                                                  n_groups=4,
+                                                                  alpha=alpha,
+                                                                  beta=beta,
+                                                                  kappa=kappa)
 
-                            # If nmi is better, write it
-                            if nmi > nmi_train:
-                                nmi_train = nmi
-                                best_param_dic = {"exch_mat_opt": exch_mat_opt,
-                                                  "exch_range": exch_range,
-                                                  "alpha": alpha,
-                                                  "beta": beta,
-                                                  "kappa": kappa}
-                                print(f"New best: {nmi_train}, {best_param_dic}")
+                                # Compute the groups
+                                algo_group_value = np.argmax(result_matrix, 1) + 1
 
-        # ----- TEST
+                                # Compute nmi score
+                                nmi = normalized_mutual_info_score(np.delete(train_real_group_vec,
+                                                                             indices_for_known_label),
+                                                                   np.delete(algo_group_value,
+                                                                             indices_for_known_label))
+
+                                # If nmi is better, write it
+                                if nmi > nmi_train:
+                                    nmi_train = nmi
+                                    best_param_dic = {"dist_option": dist_option,
+                                                      "exch_mat_opt": exch_mat_opt,
+                                                      "exch_range": exch_range,
+                                                      "alpha": alpha,
+                                                      "beta": beta,
+                                                      "kappa": kappa}
+                                    print(f"New best: {nmi_train}, {best_param_dic}")
+
+            # ----- TEST
 
         # Setting test id and restricting to test set
         test_id = crossval_index != fold_id
         test_token_list = list(compress(token_list, test_id))
-        test_d_mat = d_ext_mat[test_id, :][:, test_id]
+        test_s_mat = sim_ext_mat[test_id, :][:, test_id]
         test_real_group_vec = real_group_vec[test_id]
 
         # For semi-supervised results, pick some labels
@@ -199,6 +196,9 @@ for i in range(len(input_file_list)):
         else:
             known_labels = []
             indices_for_known_label = []
+
+        # Compute the dissimilarity matrix
+        test_d_mat = similarity_to_dissimilarity(test_s_mat, dist_option=best_param_dic["dist_option"])
 
         # Compute the exchange and transition matrices
         test_exch_mat, test_w_mat = exchange_and_transition_matrices(len(test_token_list),
@@ -237,7 +237,7 @@ for i in range(len(input_file_list)):
 
         # Writing results
         with open(results_file_name, "a") as output_file:
-            output_file.write(f"{input_file},{known_label_ratio},{sim_tag},{n_groups},{dist_option},{fold_id},"
-                              f"{best_param_dic['exch_mat_opt']},{best_param_dic['exch_range']},"
-                              f"{best_param_dic['alpha']},{best_param_dic['beta']},{best_param_dic['kappa']},"
-                              f"{nmi_train},{nmi_test}\n")
+            output_file.write(f"{input_file},{known_label_ratio},{sim_tag},{n_groups},{fold_id},"
+                              f"{best_param_dic['dist_option']},{best_param_dic['exch_mat_opt']},"
+                              f"{best_param_dic['exch_range']},{best_param_dic['alpha']},{best_param_dic['beta']},"
+                              f"{best_param_dic['kappa']},{nmi_train},{nmi_test}\n")

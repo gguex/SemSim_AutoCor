@@ -119,7 +119,7 @@ def similarity_to_dissimilarity(sim_mat, dist_option="minus_log"):
         d_mat = np.max(sim_mat) - sim_mat
 
     #  Return the dissimilarity matrix
-    return d_mat
+    return d_mat / np.max(d_mat)
 
 
 def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
@@ -272,7 +272,8 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
     f_vec = np.sum(exch_mat, 0)
 
     # Initialization of Z
-    z_mat = np.random.random((n_token, n_groups))
+    # z_mat = np.random.random((n_token, n_groups))
+    z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
 
     # Set true labels
@@ -309,10 +310,8 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
             - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
         # Computation of the new z_mat
-        if np.sum(-hig_mat > 690) > 0:
-            warnings.warn("Overflow of exp(-hig_mat)")
-            hig_mat[-hig_mat > 690] = -690
         z_new_mat = rho_vec * np.exp(-hig_mat)
+        z_new_mat[z_new_mat > 1e300] = 1e300
         z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
 
         # If init_labels is not None, set known to value
@@ -376,7 +375,8 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
     f_vec = np.sum(exch_mat, 0)
 
     # Initialization of Z
-    z_mat = np.random.random((n_token, n_groups))
+    #z_mat = np.random.random((n_token, n_groups))
+    z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
 
     # Set true labels
@@ -413,10 +413,8 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
             - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
 
         # Computation of the new z_mat
-        if np.sum(-hig_mat > 690) > 0:
-            warnings.warn("Overflow of exp(-hig_mat)")
-            hig_mat[-hig_mat > 690] = -690
         z_new_mat = rho_vec * np.exp(-hig_mat)
+        z_new_mat[z_new_mat > 1e300] = 1e300
         z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
 
         # Print diff and it
