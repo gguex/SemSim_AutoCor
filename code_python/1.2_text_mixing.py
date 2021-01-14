@@ -14,16 +14,16 @@ corpus_names_list = ["Lectures_on_Landscape_pp.txt",
                      "Sidelights_on_relativity_pp.txt"]
 
 # Sentence mixing, or words ("sent" or "word")
-unit_of_mix = "word"
+unit_of_mix = "sent"
 
 # Number of units for each bin
-nb_of_units = 3
+nb_of_units = 10
 
 # Minimum of words in sentence to mix
 min_nb_of_words_in_sent = 5
 
 # Div factor (corpus size is divided by that to fit github size limit)
-div_factor = 2
+div_factor = 2.5
 
 # -------------------------------------
 # --- Computations
