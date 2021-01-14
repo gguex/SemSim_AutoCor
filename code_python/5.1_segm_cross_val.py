@@ -16,11 +16,11 @@ segm_tag = "cut"
 # Number of crossval folds
 n_fold = 5
 
-# Number of tests on folds
+# Number of tests on each fold
 n_test = 5
 
 # List of names for the ouputted result files
-results_file_name = "grid_search_results/cv5_lch.csv"
+results_file_name = "grid_search_results/cv5_w2v.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
@@ -40,7 +40,7 @@ exch_mat_opt_vec = ["s", "u", "d"]
 exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]
-kappa_vec = [0, 1 / 3, 2 / 3, 1]
+kappa_vec = [0, 0.25, 0.5, 0.75, 1]
 
 # -------------------------------------
 # --- Computations
