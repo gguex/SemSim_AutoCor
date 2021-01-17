@@ -20,33 +20,21 @@ n_fold = 5
 n_test = 5
 
 # List of names for the ouputted result files
-results_file_name = "grid_search_results/cv5_all.csv"
+results_file_name = "grid_search_results/cv5_all_2.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
 input_file_list = ["mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt",
-                   "mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt",
-                   "mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt",
-                   "mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt",
                    "mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt"]
 # List of label ratios to text
 known_label_ratio_list = [0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0,
                           0, 0, 0, 0]
 # List of similarity tag
-sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
-                "glv", "glv", "glv", "glv",
-                "lch", "lch", "lch", "lch",
-                "path", "path", "path", "path",
+sim_tag_list = ["path", "path", "path", "path",
                 "wup", "wup", "wup", "wup"]
 # List of number of groups
 n_groups_list = [4, 4, 4, 4,
-                 4, 4, 4, 4,
-                 4, 4, 4, 4,
-                 4, 4, 4, 4,
                  4, 4, 4, 4]
 
 # --- Grid search parameters
