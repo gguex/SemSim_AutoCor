@@ -1,0 +1,88 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[11pt]{paper}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{url}
+\usepackage{fixltx2e}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+
+
+ 
+ 
+%\def\M{{\cal M}}
+%\def\O{{\cal O}}
+
+
+
+
+\title{A note on a simplified formula for the free energy}
+\author{F.Bavaud, UNIL}
+\date{2021}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\subsection{Image segmentation by generalized cut minimization}
+Minimizing the corresponding free energy 
+\begin{equation}
+\label{fee2}
+{\cal F}[Z]=\beta\Delta_W[Z]+\frac{\gamma}{2} {\cal C}^\kappa[Z]+{\cal K}[Z]\qquad\qquad \beta,\gamma\ge0
+\end{equation}
+where 
+\begin{equation}
+\label{wggc}
+{\cal C}^\kappa[Z]= \sum_{g=1}^m \frac{\rho_g^2-e(g,g)}{\rho_g^\kappa}\quad
+\mbox{where}\quad e(g,g)=\sum_{i,j=1}^ne_{ij}z_{ig}z_{jg}\hspace{0.25cm}\mbox{and}\hspace{0.25cm}\kappa\in [0,1]\enspace. 
+\end{equation}
+yields the necessary first-order condition 
+\begin{equation} 
+\label{iter2t}
+z_{ig}=\frac{\rho_g \exp( - H_{ig})}{\sum_h \rho_h \exp(- H_{ih})}
+\end{equation}
+with
+\begin{equation}
+\label{Hconti}
+\rho_g[Z]=\sum_{i=1}^n f_i z_{ig}
+\qquad\qquad
+H_{ig}[Z]=\beta D_i^g +\gamma\rho_g^{-\kappa} [\rho_g-(Wz^g)_i]
+-\frac{\gamma\kappa}{2} \rho_g^{-\kappa-1}[\rho_g^2-e(g,g)]\enspace. 
+\end{equation} 
+Here $D_i^g=\sum_j f_i^g D_{ij}-\Delta_g$ is the squared Euclidean dissimilarity from $i$ to the centroid of group $g$, and $ ({\cal L}z^g)_i=z_{ig}-\sum_j w_{ij}z_{jg}=z_{ig}-(Wz^g)_i$ is the {\em Laplacian} of membership $z^g$ at pixel $i$, comparing its value to the average value of its neighbors, and adjusting the former to the latter. 
+
+\
+
+Define $\zeta_i:=\sum_h \rho_h \exp(- H_{ih})$. Then 
+\begin{equation}
+\label{ }
+{\cal K}[Z]=\sum_{ig}f_i z_{ig}\ln \frac{z_{ig}}{\rho_g}=-\sum_{ig}f_i z_{ig} H_{ih}-\ln \zeta_i
+\end{equation}
+and
+\begin{align}
+\label{ }
+\sum_{ig}f_i z_{ig} H_{ih}& =\beta\sum_{ig}f_i z_{ig}D_i^g +\gamma\sum_{ig}f_i z_{ig} \rho_g^{-\kappa} [\rho_g-(Wz^g)_i] \notag \\
+ & -\sum_{ig}f_i z_{ig}\frac{\gamma\kappa}{2} \rho_g^{-\kappa-1}[\rho_g^2-e(g,g)]=
+ \beta\sum_{g}\sum_i \frac{f_i z_{ig}}{\rho_g}D_i^g+\gamma\sum_{g} \rho_g^{-\kappa} [\rho_g^2-e(g,g)] \notag \\ & 
+ -\frac{\gamma\kappa}{2} \sum_g\rho_g^{-\kappa}[\rho_g^2-e(g,g)]=\beta\Delta_W[Z]+\gamma(1-\frac{\kappa}{2}){\cal C}^\kappa[Z]
+\end{align}
+Hence
+\begin{align}
+\label{fee3}
+{\cal F}[Z] &=-\ln \zeta_i -\beta\Delta_W[Z]-\gamma(1-\frac{\kappa}{2}){\cal C}^\kappa[Z]+\beta\Delta_W[Z]+\frac{\gamma}{2} {\cal C}^\kappa[Z]
+\notag \\ 
+& =-\ln \zeta_i +\gamma\frac{\kappa-1}{2}{\cal C}^\kappa[Z]
+\end{align}
+
+
+
+\end{document}  
