@@ -113,7 +113,7 @@ type_values = type_results.to_numpy()
 # -------------------------------------
 
 # Write html results
-write_groups_in_html_file(output_html, token_list, result_matrix)
+write_groups_in_html_file(output_html, token_list, result_matrix, comment_line=f"nmi = {nmi}")
 # Write real html results
 write_groups_in_html_file(real_html, token_list, z_real_mat)
 # Write csv results

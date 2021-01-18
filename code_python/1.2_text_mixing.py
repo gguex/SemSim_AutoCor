@@ -23,7 +23,7 @@ nb_of_units = 5
 min_nb_of_words_in_sent = 5
 
 # Div factor (corpus size is divided by that to fit github size limit)
-div_factor = 2
+div_factor = 1.5
 
 # -------------------------------------
 # --- Computations
