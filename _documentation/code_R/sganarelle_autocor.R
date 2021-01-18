@@ -5,7 +5,7 @@
 setwd("/Documents/SimDiversity/SemSim_AutoCor/code_R/textual_autocorrelation_old")
 
   
-distances=read.csv(file="distances.txt",sep = "\t",header = TRUE)
+distances=read.csv(file= "distances.txt", sep = "\t", header = TRUE)
 
 pos1=distances$position1
 pos2=distances$position2
@@ -14,11 +14,11 @@ wdiscr=distances$weighted_discrete
 chiSq=distances$chi_square
 
 
-sexe=read.csv(file="sganarelle_sexe.txt",sep = "\t",header = TRUE)
+sexe=read.csv(file= "sganarelle_sexe.txt", sep = "\t", header = TRUE)
 pos=sexe$X__context__
 femme=sexe$femme
 
-docterme=read.csv(file="sganarelle_doc_terme.txt",sep = "\t",header = TRUE)
+docterme=read.csv(file= "sganarelle_doc_terme.txt", sep = "\t", header = TRUE)
 docterme=as.matrix(docterme)
 Encoding(docterme) <- "latin1"
 
