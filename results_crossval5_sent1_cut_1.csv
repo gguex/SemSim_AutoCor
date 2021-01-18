@@ -1,2 +1,0 @@
-input_file,known_label_ratio,sim_tag,n_groups,dist_option,fold_id,exch_mat_opt,exch_range,alpha,beta,kappa,nmi_train,nmi_test
-mix_sent1.txt,0,w2v,4,minus_log,0,d,15,100,300,1,0.2845069980675817,0.2530699643361553
