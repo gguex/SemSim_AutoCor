@@ -4,7 +4,7 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 from code_python.local_functions import get_all_paths
 from tqdm import tqdm
-import itertools
+from itertools import product
 
 # -------------------------------------
 # --- Parameters
@@ -15,7 +15,7 @@ input_file_list = ["mix_sent1.txt",
                    "mix_sent10.txt"]
 
 # List of tags to enumerate similarities to compute
-sim_tag_list = ["lch", "path","wup"]
+sim_tag_list = ["lch", "path", "wup"]
 
 # Threshold for minimum similarity value
 # (a type is dropped if its maximum similarity with other types doesn't reach this threshold)
@@ -79,9 +79,9 @@ for input_file in input_file_list:
         auto_sim_list = []
         checked_vocab = []
         for word in vocab_in_wordnet:
-            type_synsets_list = wn.synsets(word)
-            sim_list = [wn_similarity(type_synsets, type_synsets) for type_synsets in type_synsets_list
-                        if wn_similarity(type_synsets, type_synsets) is not None]
+            type_synset_list = wn.synsets(word)
+            sim_list = [wn_similarity(type_synset, type_synset) for type_synset in type_synset_list
+                        if wn_similarity(type_synset, type_synset) is not None]
             if len(sim_list) > 0:
                 auto_sim_list.append(max(sim_list))
                 checked_vocab.append(word)
@@ -100,7 +100,7 @@ for input_file in input_file_list:
                     # Loop on synsets
                     type_2_synsets_list = wn.synsets(checked_vocab[j])
                     sim_list = [wn_similarity(*cross_item)
-                                for cross_item in itertools.product(type_1_synsets_list, type_2_synsets_list)
+                                for cross_item in product(type_1_synsets_list, type_2_synsets_list)
                                 if cross_item[0].pos() == cross_item[1].pos() and
                                 wn_similarity(*cross_item) is not None]
                     if len(sim_list) > 0:
