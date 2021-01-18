@@ -10,12 +10,7 @@ from nltk.corpus import wordnet
 # -------------------------------------
 
 # Corpus name list
-corpus_name_list = ["Animal_farm.txt",
-                    "Civil_Disobedience.txt",
-                    "Lectures_on_Landscape.txt",
-                    "Metamorphosis.txt",
-                    "Sidelights_on_relativity.txt",
-                    "The_WW_of_Oz.txt"]
+corpus_name_list = ["Prehistoric_Textile.txt"]
 
 # -------------------------------------
 # --- Computations
