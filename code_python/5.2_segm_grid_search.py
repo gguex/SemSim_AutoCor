@@ -93,7 +93,7 @@ for i in range(len(input_file_list)):
         known_labels[indices_for_known_label] = real_group_vec[indices_for_known_label]
         known_labels = known_labels.astype(int)
     else:
-        known_labels = []
+        known_labels = None
         indices_for_known_label = []
 
     # Make results file
@@ -127,24 +127,17 @@ for i in range(len(input_file_list)):
                 for alpha in alpha_vec:
                     for beta in beta_vec:
                         for kappa in kappa_vec:
+
                             # Compute the matrix
-                            if known_label_ratio > 0:
-                                result_matrix = segm_function(d_ext_mat=d_ext_mat,
-                                                              exch_mat=exch_mat,
-                                                              w_mat=w_mat,
-                                                              n_groups=n_groups,
-                                                              alpha=alpha,
-                                                              beta=beta,
-                                                              kappa=kappa,
-                                                              init_labels=known_labels)
-                            else:
-                                result_matrix = segm_function(d_ext_mat=d_ext_mat,
-                                                              exch_mat=exch_mat,
-                                                              w_mat=w_mat,
-                                                              n_groups=n_groups,
-                                                              alpha=alpha,
-                                                              beta=beta,
-                                                              kappa=kappa)
+                            result_matrix = segm_function(d_ext_mat=d_ext_mat,
+                                                          exch_mat=exch_mat,
+                                                          w_mat=w_mat,
+                                                          n_groups=n_groups,
+                                                          alpha=alpha,
+                                                          beta=beta,
+                                                          kappa=kappa,
+                                                          init_labels=known_labels)
+
 
                             # Compute the groups
                             algo_group_value = np.argmax(result_matrix, 1) + 1

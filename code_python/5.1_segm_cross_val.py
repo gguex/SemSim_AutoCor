@@ -20,7 +20,7 @@ n_fold = 5
 n_test = 5
 
 # List of names for the ouputted result files
-results_file_name = "grid_search_results/cv5_all_2.csv"
+results_file_name = "cv_results/cv5_all_2.csv"
 
 # --- Experiments loop lists (to make several experiments)
 

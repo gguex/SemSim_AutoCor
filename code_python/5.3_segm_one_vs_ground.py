@@ -11,22 +11,22 @@ import pandas as pd
 # --- Parameters
 # -------------------------------------
 
-input_file = "mix_sent10.txt"
+input_file = "mix_word1.txt"
 
-output_html = "best_sent10.html"
-real_html = "sent10_real.html"
-token_csv = "best_sent10.csv"
-type_csv = "best_sent10_type.csv"
+output_html = "best_word1.html"
+real_html = "word1_real.html"
+token_csv = "best_word1.csv"
+type_csv = "best_word1_type.csv"
 
-sim_tag = "lch"
+sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "s"
-exch_range = 15
+exch_range = 5
 n_groups = 4
-alpha = 10
-beta = 10
-kappa = 0
-known_label_ratio = 0.05  # if 0, clustering
+alpha = 0.1
+beta = 200
+kappa = 0.25
+known_label_ratio = 0  # if 0, clustering
 segm_tag = "cut"  # Segmentation tag ("disc" or "cut")
 max_it = 1000
 
@@ -65,7 +65,7 @@ if known_label_ratio > 0:
     known_labels[indices_for_known_label] = real_group_vec[indices_for_known_label]
     known_labels = known_labels.astype(int)
 else:
-    known_labels = []
+    known_labels = None
     indices_for_known_label = []
 
 # Compute the dissimilarity matrix
@@ -77,25 +77,15 @@ exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
                                                    exch_range=exch_range)
 
 # Compute the membership matrix
-if known_label_ratio > 0:
-    result_matrix = segm_function(d_ext_mat=d_ext_mat,
-                                  exch_mat=exch_mat,
-                                  w_mat=w_mat,
-                                  n_groups=n_groups,
-                                  alpha=alpha,
-                                  beta=beta,
-                                  kappa=kappa,
-                                  init_labels=known_labels,
-                                  max_it=max_it)
-else:
-    result_matrix = segm_function(d_ext_mat=d_ext_mat,
-                                  exch_mat=exch_mat,
-                                  w_mat=w_mat,
-                                  n_groups=n_groups,
-                                  alpha=alpha,
-                                  beta=beta,
-                                  kappa=kappa,
-                                  max_it=max_it)
+result_matrix = segm_function(d_ext_mat=d_ext_mat,
+                              exch_mat=exch_mat,
+                              w_mat=w_mat,
+                              n_groups=n_groups,
+                              alpha=alpha,
+                              beta=beta,
+                              kappa=kappa,
+                              init_labels=known_labels,
+                              max_it=max_it)
 
 # Compute the groups
 algo_group_value = np.argmax(result_matrix, 1) + 1
