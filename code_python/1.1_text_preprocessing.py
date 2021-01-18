@@ -10,7 +10,7 @@ from nltk.corpus import wordnet
 # -------------------------------------
 
 # Corpus name list
-corpus_name_list = ["Prehistoric_Textile.txt"]
+corpus_name_list = ["Flowers_of_the_Farm.txt"]
 
 # -------------------------------------
 # --- Computations
