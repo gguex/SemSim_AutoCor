@@ -11,11 +11,10 @@ from itertools import product
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["mix_sent1.txt",
-                   "mix_sent10.txt"]
+input_file_list = ["The_WW_of_Oz_pp.txt"]
 
 # List of tags to enumerate similarities to compute
-sim_tag_list = ["lch", "path", "wup"]
+sim_tag_list = ["wup"]
 
 # Threshold for minimum similarity value
 # (a type is dropped if its maximum similarity with other types doesn't reach this threshold)
@@ -94,13 +93,13 @@ for input_file in input_file_list:
         with open(type_freq_file_path, "w") as type_freq_file:
             for i in tqdm(range(n_type)):
 
-                type_1_synsets_list = wn.synsets(checked_vocab[i])
+                type_1_synset_list = wn.synsets(checked_vocab[i])
 
                 for j in range(i+1, n_type):
                     # Loop on synsets
-                    type_2_synsets_list = wn.synsets(checked_vocab[j])
+                    type_2_synset_list = wn.synsets(checked_vocab[j])
                     sim_list = [wn_similarity(*cross_item)
-                                for cross_item in product(type_1_synsets_list, type_2_synsets_list)
+                                for cross_item in product(type_1_synset_list, type_2_synset_list)
                                 if cross_item[0].pos() == cross_item[1].pos() and
                                 wn_similarity(*cross_item) is not None]
                     if len(sim_list) > 0:
