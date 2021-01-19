@@ -65,7 +65,7 @@ Here $D_i^g=\sum_j f_i^g D_{ij}-\Delta_g$ is the squared Euclidean dissimilarity
 Define $\zeta_i:=\sum_h \rho_h \exp(- H_{ih})$. Then 
 \begin{equation}
 \label{ }
-{\cal K}[Z]=\sum_{ig}f_i z_{ig}\ln \frac{z_{ig}}{\rho_g}=-\sum_{ig}f_i z_{ig} H_{ih}-\ln \zeta_i
+{\cal K}[Z]=\sum_{ig}f_i z_{ig}\ln \frac{z_{ig}}{\rho_g}=-\sum_{ig}f_i z_{ig} H_{ih}-\sum_i f_i\ln \zeta_i
 \end{equation}
 and
 \begin{align}
@@ -80,7 +80,7 @@ Hence
 \label{fee3}
 {\cal F}[Z] &=-\ln \zeta_i -\beta\Delta_W[Z]-\gamma(1-\frac{\kappa}{2}){\cal C}^\kappa[Z]+\beta\Delta_W[Z]+\frac{\gamma}{2} {\cal C}^\kappa[Z]
 \notag \\ 
-& =-\ln \zeta_i +\gamma\frac{\kappa-1}{2}{\cal C}^\kappa[Z]
+& =-\sum_i f_i\ln \zeta_i +\gamma\frac{\kappa-1}{2}{\cal C}^\kappa[Z]
 \end{align}
 
 
