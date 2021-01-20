@@ -21,14 +21,14 @@ type_csv = "best_sent5_type.csv"
 sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 10
+exch_range = 3
 n_groups = 4
-alpha = 5
-beta = 50
-kappa = 0
+alpha = 0.1
+beta = 300
+kappa = 0.5
 known_label_ratio = 0  # if 0, clustering
 segm_tag = "cut"  # Segmentation tag ("disc" or "cut")
-max_it = 1000
+max_it = 200
 
 # -------------------------------------
 # --- Computations
@@ -85,7 +85,11 @@ result_matrix = segm_function(d_ext_mat=d_ext_mat,
                               beta=beta,
                               kappa=kappa,
                               init_labels=known_labels,
-                              max_it=max_it)
+                              conv_threshold=1e-5,
+                              learning_rate_init=1,
+                              learning_rate_mult=0.9,
+                              max_it=max_it,
+                              verbose=True)
 
 # Compute the groups
 algo_group_value = np.argmax(result_matrix, 1) + 1

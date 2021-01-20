@@ -338,8 +338,9 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
     return z_mat
 
 
-def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
-                     conv_threshold=1e-5, max_it=100, init_labels=None):
+def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
+                     conv_threshold=1e-5, n_hist=20, max_it=300, learning_rate_init=1, learning_rate_mult=0.9,
+                     verbose=False):
     """
     Cluster tokens with cut segmentation from a dissimilarity matrix, exchange matrix and transition matrix.
     Semi-supervised option available if init_labels is given.
@@ -358,12 +359,20 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
     :type beta: float
     :param kappa: kappa parameter
     :type kappa: float
-    :param conv_threshold: convergence threshold (default = 1e-5)
-    :type conv_threshold: float
-    :param max_it: maximum iterations (default = 100)
-    :type max_it: int
     :param init_labels: a vector containing initial labels. 0 = unknown class. (default = None)
     :type init_labels: numpy.ndarray
+    :param conv_threshold: convergence threshold (default = 1e-5)
+    :type conv_threshold: float
+    :param n_hist: number of past iterations which must be under threshold for considering convergence (default = 10)
+    :type n_hist: int
+    :param max_it: maximum iterations (default = 100)
+    :type max_it: int
+    :param learning_rate_init: initial value of the learning_rate parameter (>0, default = 1)
+    :type learning_rate_init: float
+    :param learning_rate_mult: multiplication coefficient for the learning_rate parameter (in ]0,1[, default = 0.9)
+    :type learning_rate_mult: float
+    :param verbose: turn on messages during computation (default = False)
+    :type verbose: bool
     :return: the n_tokens x n_groups membership matrix for each token
     :rtype: numpy.ndarray
     """
@@ -375,7 +384,7 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
     f_vec = np.sum(exch_mat, 0)
 
     # Initialization of Z
-    #z_mat = np.random.random((n_token, n_groups))
+    # z_mat = np.random.random((n_token, n_groups))
     z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
 
@@ -392,6 +401,9 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
 
     # Loop
     it = 0
+    free_energy = 1e300
+    learning_rate = learning_rate_init
+    diff_memory = []
     while not converge:
 
         # Computation of rho_g vector
@@ -405,30 +417,47 @@ def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
         delta_g_vec = 0.5 * np.diag(dig_mat.T.dot(fig_mat))
         dig_mat = dig_mat - delta_g_vec
 
-        # Computation of the e_gg vector
+        # Computation of the e_gg vector and c_g vector
         e_gg = np.diag(z_mat.T.dot(exch_mat.dot(z_mat)))
+        c_g = (rho_vec ** 2 - e_gg) / (rho_vec ** kappa)
+
+        # Computation of FE standard way
+        # free_energy_std = beta * np.sum(rho_vec * delta_g_vec) + alpha / 2 * np.sum(c_g) \
+        #    + np.sum((z_mat.T * f_vec).T * np.log(z_mat / rho_vec))
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-            - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * (rho_vec ** 2 - e_gg))
+            - (0.5 * alpha * kappa * c_g / rho_vec)
 
-        # Computation of the new z_mat
-        z_new_mat = rho_vec * np.exp(-hig_mat)
-        z_new_mat[z_new_mat > 1e300] = 1e300
-        z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
+        # Computation of the free energy and the new z_mat
+        z_mat_new = rho_vec * np.exp(-hig_mat)
+        z_mat_new[z_mat_new > 1e300] = 1e300
+        zeta = np.sum(z_mat_new, axis=1)
+        free_energy_new = 0.5 * alpha * (kappa - 1) * np.sum(c_g) - np.sum(np.log(zeta) * f_vec)
+        z_mat_new = (z_mat_new.T / zeta).T
+        z_mat_new = learning_rate * z_mat_new + (1 - learning_rate) * z_mat
+        if learning_rate > 1:
+            z_mat_new[z_mat_new < 0] = 0
+            z_mat_new = (z_mat_new.T / np.sum(z_mat_new, axis=1)).T
 
         # Print diff and it
-        diff_pre_new = np.linalg.norm(z_mat - z_new_mat)
+        # diff_pre_new = np.linalg.norm(z_mat - z_mat_new)
+        diff_free_energy = (free_energy_new - free_energy) / learning_rate
+        diff_memory.append(np.abs(diff_free_energy))
+        if diff_free_energy > 0:
+            learning_rate *= learning_rate_mult
         it += 1
+        if verbose:
+            print(f"Iteration {it}: FE = {free_energy_new}, Diff FE = {diff_free_energy}, "
+                  f"learning_rate = {learning_rate}")
 
         # Verification of convergence
-        if diff_pre_new < conv_threshold:
-            converge = True
-        if it > max_it:
+        if ((it >= n_hist) and (max(diff_memory[-n_hist:]) < conv_threshold)) or it > max_it:
             converge = True
 
-        # Saving the new z_mat
-        z_mat = z_new_mat
+        # Saving the new z_mat and new free_energy
+        z_mat = z_mat_new
+        free_energy = free_energy_new
 
     # Return the result
     return z_mat
