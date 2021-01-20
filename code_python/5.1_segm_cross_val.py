@@ -16,30 +16,26 @@ segm_tag = "cut"
 # Number of crossval folds
 n_fold = 5
 
-# Number of tests on each fold
-n_test = 5
+# Number of train on each fold
+n_train = 5
 
 # List of names for the ouputted result files
-results_file_name = "cv_results/cv5_all_2.csv"
+results_file_name = "cv_results/cv5_new.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt",
-                   "mix_sent10.txt", "mix_sent1.txt", "mix_word3.txt", "mix_word1.txt"]
+input_file_list = ["mix_sent5.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0, 0, 0, 0,
-                          0, 0, 0, 0]
+known_label_ratio_list = [0]
 # List of similarity tag
-sim_tag_list = ["path", "path", "path", "path",
-                "wup", "wup", "wup", "wup"]
+sim_tag_list = ["w2v"]
 # List of number of groups
-n_groups_list = [4, 4, 4, 4,
-                 4, 4, 4, 4]
+n_groups_list = [4]
 
 # --- Grid search parameters
 
-dist_option_vec = ["max_minus"]
+dist_option_vec = ["max_minus", "minus_log"]
 exch_mat_opt_vec = ["s", "u", "d"]
 exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 30]
@@ -77,7 +73,7 @@ for i in range(len(input_file_list)):
     n_groups = n_groups_list[i]
 
     # Print
-    print(f"Crossval on {input_file}, known ratio = {known_label_ratio}, sim tag = {sim_tag}, n_groups = {n_groups}")
+    print(f"Crossval on {input_file}, known_label_ratio={known_label_ratio}, sim_tag={sim_tag}, n_groups = {n_groups}")
 
     # -------------------------------------
     # --- Loading and preprocessing
@@ -144,9 +140,9 @@ for i in range(len(input_file_list)):
 
                 for alpha, beta, kappa in product(alpha_vec, beta_vec, kappa_vec):
 
-                    # Compute the matrix and nmi  n_test time
+                    # Compute the matrix and nmi  n_train time
                     nmi_vector = []
-                    for _ in range(n_test):
+                    for _ in range(n_train):
 
                         result_matrix = segm_function(d_ext_mat=train_d_mat,
                                                       exch_mat=train_exch_mat,

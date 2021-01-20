@@ -11,7 +11,7 @@ import pandas as pd
 # --- Parameters
 # -------------------------------------
 
-input_file = "mix_sent5.txt"
+input_file = "61620_201611_pp.txt"
 
 output_html = "best_sent5.html"
 real_html = "sent5_real.html"
@@ -21,11 +21,11 @@ type_csv = "best_sent5_type.csv"
 sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 3
-n_groups = 4
-alpha = 0.1
-beta = 300
-kappa = 0.5
+exch_range = 10
+n_groups = 57
+alpha = 5
+beta = 50
+kappa = 0
 known_label_ratio = 0  # if 0, clustering
 segm_tag = "cut"  # Segmentation tag ("disc" or "cut")
 max_it = 200
@@ -85,9 +85,6 @@ result_matrix = segm_function(d_ext_mat=d_ext_mat,
                               beta=beta,
                               kappa=kappa,
                               init_labels=known_labels,
-                              conv_threshold=1e-5,
-                              learning_rate_init=1,
-                              learning_rate_mult=0.9,
                               max_it=max_it,
                               verbose=True)
 
