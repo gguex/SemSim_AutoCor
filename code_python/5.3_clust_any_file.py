@@ -1,5 +1,5 @@
 from code_python.local_functions import get_all_paths, similarity_to_dissimilarity, type_to_token_matrix_expansion, \
-    exchange_and_transition_matrices, discontinuity_segmentation, cut_segmentation, write_groups_in_html_file, \
+    exchange_and_transition_matrices, discontinuity_clustering, cut_clustering, write_groups_in_html_file, \
     write_membership_mat_in_csv_file
 import os
 import numpy as np
@@ -28,18 +28,18 @@ alpha = 5
 beta = 50
 # Kappa parameter
 kappa = 0.8
-# Segmentation tag ("disc" or "cut")
-segm_tag = "cut"
+# Clustering method tag ("disc" or "cut")"
+clust_tag = "cut"
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
 
-# Selection of the segmentation function
-if segm_tag == "disc":
-    segm_function = discontinuity_segmentation
+# Selection of the clustering function
+if clust_tag == "disc":
+    segm_function = discontinuity_clustering
 else:
-    segm_function = cut_segmentation
+    segm_function = cut_clustering
 
 # Working path
 working_path = os.getcwd()
@@ -78,14 +78,14 @@ for input_file in input_file_list:
                                       kappa=kappa)
 
         # Experiment description
-        experiment_description = f"{input_file} | segm_tag: {segm_tag} | sim_tag: {sim_tag} | " \
+        experiment_description = f"{input_file} | segm_tag: {clust_tag} | sim_tag: {sim_tag} | " \
                                  f"dist_option: {dist_option} | exch_mat_opt: {exch_mat_opt} | " \
                                  f"exch_range: {exch_range} | n_groups: {n_groups} | " \
                                  f"alpha: {alpha} | beta: {beta} | kappa: {kappa}"
 
         # Write html results
-        write_groups_in_html_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_{segm_tag}.html",
+        write_groups_in_html_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_{clust_tag}.html",
                                   token_list, result_matrix, experiment_description)
         # Write csv results
-        write_membership_mat_in_csv_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_{segm_tag}.csv",
+        write_membership_mat_in_csv_file(f"{base_path}/results/{input_file[:-4]}_{sim_tag}_{clust_tag}.csv",
                                          token_list, result_matrix)

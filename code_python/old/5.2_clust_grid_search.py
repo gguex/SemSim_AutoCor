@@ -1,5 +1,5 @@
 from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, discontinuity_segmentation, cut_segmentation
+    exchange_and_transition_matrices, discontinuity_clustering, cut_clustering
 import numpy as np
 import csv
 import random as rdm
@@ -9,8 +9,8 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
-# Segmentation tag ("disc" or "cut")
-segm_tag = "cut"
+# Clustering method tag ("disc" or "cut")
+clust_tag = "cut"
 
 # --- Experiments loop lists (to make several experiments)
 
@@ -39,11 +39,11 @@ kappa_vec = [0, 1 / 3, 2 / 3, 1]
 # --- Computations
 # -------------------------------------
 
-# Selection of the segmentation function
-if segm_tag == "disc":
-    segm_function = discontinuity_segmentation
+# Selection of the clustering function
+if clust_tag == "disc":
+    segm_function = discontinuity_clustering
 else:
-    segm_function = cut_segmentation
+    segm_function = cut_clustering
 
 for i in range(len(input_file_list)):
 
@@ -125,7 +125,7 @@ for i in range(len(input_file_list)):
                     for beta in beta_vec:
                         for kappa in kappa_vec:
 
-                            # Compute the matrix
+                            # Compute the membership matrix
                             result_matrix = segm_function(d_ext_mat=d_ext_mat,
                                                           exch_mat=exch_mat,
                                                           w_mat=w_mat,
@@ -134,7 +134,6 @@ for i in range(len(input_file_list)):
                                                           beta=beta,
                                                           kappa=kappa,
                                                           init_labels=known_labels)
-
 
                             # Compute the groups
                             algo_group_value = np.argmax(result_matrix, 1) + 1

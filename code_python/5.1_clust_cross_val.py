@@ -1,5 +1,5 @@
 from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, discontinuity_segmentation, cut_segmentation
+    exchange_and_transition_matrices, discontinuity_clustering, cut_clustering
 import numpy as np
 import csv
 import random as rdm
@@ -10,47 +10,51 @@ from itertools import compress, product
 # --- Parameters
 # -------------------------------------
 
-# Segmentation tag ("disc" or "cut")
-segm_tag = "cut"
+# Clustering method tag ("disc" or "cut")
+clust_tag = "cut"
 
 # Number of crossval folds
-n_fold = 5
+n_fold = 2
 
 # Number of train on each fold
-n_train = 5
+n_train = 1
 
 # List of names for the ouputted result files
-results_file_name = "cv_results/cv5_new.csv"
+results_file_name = "cv_results/cv5_test.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_sent5.txt"]
+input_file_list = ["61620_201611_pp.txt"]
 # List of label ratios to text
 known_label_ratio_list = [0]
 # List of similarity tag
 sim_tag_list = ["w2v"]
-# List of number of groups
-n_groups_list = [4]
 
 # --- Grid search parameters
 
-dist_option_vec = ["max_minus", "minus_log"]
-exch_mat_opt_vec = ["s", "u", "d"]
+# dist_option_vec = ["max_minus", "minus_log"]
+# exch_mat_opt_vec = ["s", "u", "d"]
+# exch_range_vec = [3, 5, 10, 15]
+# alpha_vec = [0.1, 1, 2, 5, 10, 30]
+# beta_vec = [5, 10, 50, 100, 200]
+# kappa_vec = [0, 0.25, 0.5, 0.75, 1]
+dist_option_vec = ["max_minus"]
+exch_mat_opt_vec = ["u"]
 exch_range_vec = [3, 5, 10, 15]
-alpha_vec = [0.1, 1, 2, 5, 10, 30]
+alpha_vec = [1, 2, 5, 10, 20]
 beta_vec = [5, 10, 50, 100, 200]
-kappa_vec = [0, 0.25, 0.5, 0.75, 1]
+kappa_vec = [0, 1/3, 2/3, 1]
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
 
-# Selection of the segmentation function
-if segm_tag == "disc":
-    segm_function = discontinuity_segmentation
+# Selection of the clustering function
+if clust_tag == "disc":
+    segm_function = discontinuity_clustering
 else:
-    segm_function = cut_segmentation
+    segm_function = cut_clustering
 
 # Make results file
 with open(results_file_name, "w") as output_file:
@@ -69,11 +73,9 @@ for i in range(len(input_file_list)):
     known_label_ratio = known_label_ratio_list[i]
     # Similarity tag
     sim_tag = sim_tag_list[i]
-    # Number of groups
-    n_groups = n_groups_list[i]
 
     # Print
-    print(f"Crossval on {input_file}, known_label_ratio={known_label_ratio}, sim_tag={sim_tag}, n_groups = {n_groups}")
+    print(f"Crossval on {input_file}, known_label_ratio={known_label_ratio}, sim_tag={sim_tag}")
 
     # -------------------------------------
     # --- Loading and preprocessing
@@ -96,6 +98,8 @@ for i in range(len(input_file_list)):
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
+    # Number of groups
+    n_groups = len(set(real_group_vec))
 
     # Setting crossval groups:
     fold_size = len(token_list) // n_fold
@@ -144,10 +148,11 @@ for i in range(len(input_file_list)):
                     nmi_vector = []
                     for _ in range(n_train):
 
+                        # Compute the membership matrix
                         result_matrix = segm_function(d_ext_mat=train_d_mat,
                                                       exch_mat=train_exch_mat,
                                                       w_mat=train_w_mat,
-                                                      n_groups=4,
+                                                      n_groups=n_groups,
                                                       alpha=alpha,
                                                       beta=beta,
                                                       kappa=kappa,
@@ -205,7 +210,7 @@ for i in range(len(input_file_list)):
         result_matrix = segm_function(d_ext_mat=test_d_mat,
                                       exch_mat=test_exch_mat,
                                       w_mat=test_w_mat,
-                                      n_groups=4,
+                                      n_groups=n_groups,
                                       alpha=best_param_dic["alpha"],
                                       beta=best_param_dic["beta"],
                                       kappa=best_param_dic["kappa"],

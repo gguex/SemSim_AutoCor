@@ -7,3 +7,5 @@ scipy~=1.5.1
 flair~=0.5.1
 tqdm~=4.47.0
 scikit-learn~=0.23.1
+contractions~=0.0.45
+segeval~=2.0.11

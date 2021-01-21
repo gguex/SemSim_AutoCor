@@ -235,11 +235,11 @@ def lisa_computation(d_ext_mat, exch_mat, w_mat):
     return lisa_vec
 
 
-def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
-                               conv_threshold=1e-5, max_it=100, init_labels=None):
+def discontinuity_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
+                             conv_threshold=1e-5, max_it=100, init_labels=None):
     """
-    Cluster tokens with discontinuity segmentation from a dissimilarity matrix, exchange matrix and transition matrix.
-    Semi-supervised option available if init_labels is given.
+    Cluster tokens with discontinuity soft clustering from a dissimilarity matrix, exchange matrix
+    and transition matrix. Semi-supervised option available if init_labels is given.
 
     :param d_ext_mat: the n_token x n_token distance matrix
     :type d_ext_mat: numpy.ndarray
@@ -338,11 +338,11 @@ def discontinuity_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta
     return z_mat
 
 
-def cut_segmentation(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
-                     conv_threshold=1e-5, n_hist=20, max_it=300, learning_rate_init=1, learning_rate_mult=0.9,
-                     verbose=False):
+def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
+                   conv_threshold=1e-5, n_hist=20, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                   verbose=False):
     """
-    Cluster tokens with cut segmentation from a dissimilarity matrix, exchange matrix and transition matrix.
+    Cluster tokens with cut soft clustering from a dissimilarity matrix, exchange matrix and transition matrix.
     Semi-supervised option available if init_labels is given.
 
     :param d_ext_mat: the n_token x n_token distance matrix
