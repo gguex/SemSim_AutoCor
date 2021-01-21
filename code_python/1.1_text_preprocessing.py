@@ -4,6 +4,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
+import contractions
 
 # -------------------------------------
 # --- Parameters
@@ -37,6 +38,9 @@ for corpus_name in corpus_name_list:
     # To lower case
     text_string_pp = text_string.lower()
 
+    # Remove contractions
+    text_string_pp = contractions.fix(text_string_pp)
+
     # Split by sentence
     sentence_list = nltk.sent_tokenize(text_string_pp)
 
@@ -49,8 +53,9 @@ for corpus_name in corpus_name_list:
     # Loop on sentences
     with open(pp_output_path, "w") as output_file:
         for sentence in sentence_list:
+
             # Remove punctuation
-            sentence_pp = "".join([char for char in sentence if char not in string.punctuation + string.digits])
+            sentence_pp = "".join([char for char in sentence if char in string.ascii_letters + " "])
 
             # Split by token
             token_list = nltk.word_tokenize(sentence_pp)

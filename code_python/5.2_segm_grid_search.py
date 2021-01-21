@@ -22,8 +22,6 @@ results_file_name_list = ["results_semisuper5_word1_cut_1.csv"]
 known_label_ratio_list = [0.1]
 # List of similarity tag
 sim_tag_list = ["w2v"]
-# List of number of groups
-n_groups_list = [4]
 
 # --- Grid search parameters
 
@@ -61,8 +59,6 @@ for i in range(len(input_file_list)):
     known_label_ratio = known_label_ratio_list[i]
     # Similarity tag
     sim_tag = sim_tag_list[i]
-    # Number of groups
-    n_groups = n_groups_list[i]
 
     # -------------------------------------
     # --- Loading and preprocessing
@@ -85,6 +81,7 @@ for i in range(len(input_file_list)):
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
+    n_groups = len(set(real_group_vec))
 
     # For semi-supervised results, pick some labels
     if known_label_ratio > 0:

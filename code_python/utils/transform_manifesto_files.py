@@ -5,6 +5,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
+import contractions
 
 # Getting the os path
 working_path=os.getcwd()
@@ -21,8 +22,14 @@ with open(f"{base_path}/corpora/manifesto_csv_file/{file_name}", 'r') as typefre
     sent_list = []
     group_list = []
     for row in csv_reader:
-        sent_list.append(row[0])
-        group_list.append(row[1])
+        try:
+            class_id = float(row[1])
+            class_id = class_id // 100
+            sent_list.append(row[0])
+            group_list.append(class_id)
+        except:
+            pass
+
 
 # Setting dictionary for group labels
 translation_dic = {key: (i+1) for i, key in enumerate(set(group_list))}
@@ -33,14 +40,16 @@ stop_words = stopwords.words('english')
 lemmatizer = WordNetLemmatizer()
 # Preprocessing each sentence
 with open(f"{base_path}/corpora/{file_name[:-4]}_pp.txt", "w") as text_file, \
-        open(f"{base_path}/corpora/{file_name[:-4]}_groups.txt", "w") as groups_file:
+        open(f"{base_path}/corpora/{file_name[:-4]}_pp_groups.txt", "w") as groups_file:
 
     for i, sent in enumerate(sent_list):
 
         # To lower case
         sent_pp = sent.lower()
+        # Remove contractions
+        sent_pp = contractions.fix(sent_pp)
         # Remove punctuation
-        sent_pp = "".join([char for char in sent_pp if char not in string.punctuation + string.digits])
+        sent_pp = "".join([char for char in sent_pp if char in string.ascii_letters + " "])
         # Split by token
         token_list = nltk.word_tokenize(sent_pp)
         # Remove stopwords
@@ -67,9 +76,11 @@ with open(f"{base_path}/corpora/{file_name[:-4]}_pp.txt", "w") as text_file, \
 
         # If non_empty, saving to files
         if len(token_list_pp) > 0:
-            for token in token_list_pp:
+            for j, token in enumerate(token_list_pp):
                 text_file.write(f"{token} ")
-                groups_file.write(f"{translation_dic[group_list[i]]}, ")
+                groups_file.write(f"{translation_dic[group_list[i]]}")
+                if i != len(sent_list) - 1 or j != len(token_list_pp) - 1:
+                    groups_file.write(", ")
 
 
 
