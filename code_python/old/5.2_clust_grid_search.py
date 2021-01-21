@@ -4,6 +4,7 @@ import numpy as np
 import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
+import segeval
 
 # -------------------------------------
 # --- Parameters
@@ -15,25 +16,22 @@ clust_tag = "cut"
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_word1.txt"]
+input_file_list = ["choi_pp.txt"]
 # List of names for the ouputted result files
-results_file_name_list = ["results_semisuper5_word1_cut_1.csv"]
+results_file_name_list = ["test.csv"]
 # List of label ratios to text
-known_label_ratio_list = [0.1]
+known_label_ratio_list = [0]
 # List of similarity tag
 sim_tag_list = ["w2v"]
 
 # --- Grid search parameters
 
-# Dist options to explore
-dist_option_vec = ["minus_log"]
-# Exchange matrix options to explore
-exch_mat_opt_vec = ["d"]
+dist_option_vec = ["max_minus", "minus_log"]
+exch_mat_opt_vec = ["s", "u", "d"]
 exch_range_vec = [3, 5, 10, 15]
-# Parameter values to explore
-alpha_vec = [0.1, 1, 2, 5, 10, 50, 100]
-beta_vec = [0.1, 1, 5, 10, 50, 100, 300]
-kappa_vec = [0, 1 / 3, 2 / 3, 1]
+alpha_vec = [0.1, 1, 2, 5, 10, 30]
+beta_vec = [5, 10, 50, 100, 200]
+kappa_vec = [0, 0.25, 0.5, 0.75, 1]
 
 # -------------------------------------
 # --- Computations
@@ -41,9 +39,9 @@ kappa_vec = [0, 1 / 3, 2 / 3, 1]
 
 # Selection of the clustering function
 if clust_tag == "disc":
-    segm_function = discontinuity_clustering
+    clust_function = discontinuity_clustering
 else:
-    segm_function = cut_clustering
+    clust_function = cut_clustering
 
 for i in range(len(input_file_list)):
 
@@ -126,24 +124,33 @@ for i in range(len(input_file_list)):
                         for kappa in kappa_vec:
 
                             # Compute the membership matrix
-                            result_matrix = segm_function(d_ext_mat=d_ext_mat,
-                                                          exch_mat=exch_mat,
-                                                          w_mat=w_mat,
-                                                          n_groups=n_groups,
-                                                          alpha=alpha,
-                                                          beta=beta,
-                                                          kappa=kappa,
-                                                          init_labels=known_labels)
+                            result_matrix = clust_function(d_ext_mat=d_ext_mat,
+                                                           exch_mat=exch_mat,
+                                                           w_mat=w_mat,
+                                                           n_groups=n_groups,
+                                                           alpha=alpha,
+                                                           beta=beta,
+                                                           kappa=kappa,
+                                                           init_labels=known_labels)
 
                             # Compute the groups
                             algo_group_value = np.argmax(result_matrix, 1) + 1
 
+                            # Restrained results
+                            rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
+                            rstr_algo_group_vec = np.delete(algo_group_value, indices_for_known_label)
+
                             # Compute nmi score
-                            nmi = normalized_mutual_info_score(np.delete(real_group_vec, indices_for_known_label),
-                                                               np.delete(algo_group_value, indices_for_known_label))
-                            print(f"NMI = {nmi}")
+                            nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
+
+                            # Compute segeval scores
+                            real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
+                            algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+                            pk = segeval.pk(algo_segm_vec, real_segm_vec)
+
+                            print(f"NMI = {1-pk}")
 
                             # Writing results
                             with open(results_file_name, "a") as output_file:
                                 output_file.write(f"{dist_option},{exch_mat_opt},{exch_range},{alpha},{beta},{kappa},"
-                                                  f"{nmi}\n")
+                                                  f"{pk}\n")

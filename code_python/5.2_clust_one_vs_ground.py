@@ -12,7 +12,7 @@ import segeval
 # --- Parameters
 # -------------------------------------
 
-input_file = "mix_sent5.txt"
+input_file = "choi_pp.txt"
 
 output_html = "best_sent5.html"
 real_html = "sent5_real.html"
@@ -20,15 +20,15 @@ token_csv = "best_sent5.csv"
 type_csv = "best_sent5_type.csv"
 
 sim_tag = "w2v"
-dist_option = "max_minus"
-exch_mat_opt = "u"
+dist_option = "minus_log"
+exch_mat_opt = "d"
 exch_range = 10
 alpha = 5
-beta = 50
-kappa = 0
+beta = 10
+kappa = 0.5
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
-max_it = 200
+max_it = 300
 
 # -------------------------------------
 # --- Computations
@@ -36,9 +36,9 @@ max_it = 200
 
 # Selection of the clustering function
 if clust_tag == "disc":
-    segm_function = discontinuity_clustering
+    clust_function = discontinuity_clustering
 else:
-    segm_function = cut_clustering
+    clust_function = cut_clustering
 
 # Get the file paths
 text_file_path, typefreq_file_path, sim_file_path, ground_truth_path = get_all_paths(input_file, sim_tag)
@@ -78,19 +78,19 @@ exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
                                                    exch_range=exch_range)
 
 # Compute the membership matrix
-result_matrix = segm_function(d_ext_mat=d_ext_mat,
-                              exch_mat=exch_mat,
-                              w_mat=w_mat,
-                              n_groups=n_groups,
-                              alpha=alpha,
-                              beta=beta,
-                              kappa=kappa,
-                              init_labels=known_labels,
-                              max_it=max_it,
-                              verbose=True)
+result_matrix = clust_function(d_ext_mat=d_ext_mat,
+                               exch_mat=exch_mat,
+                               w_mat=w_mat,
+                               n_groups=n_groups,
+                               alpha=alpha,
+                               beta=beta,
+                               kappa=kappa,
+                               init_labels=known_labels,
+                               max_it=max_it,
+                               verbose=True)
 
 # Compute the groups
-algo_group_value = np.argmax(result_matrix, 1) + 1
+algo_group_vec = np.argmax(result_matrix, 1) + 1
 
 # Compute the real membership matrix
 z_real_mat = np.zeros((len(token_list), n_groups))
@@ -99,20 +99,23 @@ for i, label in enumerate(real_group_vec):
         z_real_mat[i, :] = 0
         z_real_mat[i, label - 1] = 1
 
+# Restrained results
+rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
+rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
+
 # Compute nmi score
-nmi = normalized_mutual_info_score(np.delete(real_group_vec, indices_for_known_label),
-                                   np.delete(algo_group_value, indices_for_known_label))
+nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
 
 # Segmentation evaluation
-real_segm_vec = segeval.convert_positions_to_masses(real_group_vec)
-algo_segm_vec = segeval.convert_positions_to_masses(algo_group_value)
-rdm_group_vec = real_group_vec.copy()
+real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
+algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+rdm_group_vec = rstr_real_group_vec.copy()
 rdm.shuffle(rdm_group_vec)
 rdm_segm_vec = segeval.convert_positions_to_masses(rdm_group_vec)
 pk = segeval.pk(algo_segm_vec, real_segm_vec)
 win_diff = segeval.window_diff(algo_segm_vec, real_segm_vec)
-segeval.pk(rdm_segm_vec, real_segm_vec)
-segeval.window_diff(rdm_segm_vec, real_segm_vec)
+pk_rdm = segeval.pk(rdm_segm_vec, real_segm_vec)
+win_diff_rdm = segeval.window_diff(rdm_segm_vec, real_segm_vec)
 
 # Compute the aggregate labels
 df_results = pd.DataFrame(result_matrix)
@@ -129,10 +132,10 @@ type_values = type_results.to_numpy()
 write_groups_in_html_file(output_html, token_list, result_matrix, comment_line=f"nmi = {nmi}, pk={pk}, "
                                                                                f"win_diff={win_diff}")
 # Write real html results
-write_groups_in_html_file(real_html, token_list, z_real_mat)
+write_groups_in_html_file(real_html, token_list, z_real_mat, comment_line="Real results")
 # Write csv results
 write_membership_mat_in_csv_file(token_csv, token_list, result_matrix)
 # Write csv type result
 write_membership_mat_in_csv_file(type_csv, type_list, type_values)
 # Print nmi, pk, win_diff
-print(f"nmi = {nmi}, pk={pk}, win_diff={win_diff}")
+print(f"nmi = {nmi}, pk={pk} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")

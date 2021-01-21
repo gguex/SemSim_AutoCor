@@ -5,6 +5,7 @@ import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 from itertools import compress, product
+import segeval
 
 # -------------------------------------
 # --- Parameters
@@ -14,7 +15,7 @@ from itertools import compress, product
 clust_tag = "cut"
 
 # Number of crossval folds
-n_fold = 2
+n_fold = 10
 
 # Number of train on each fold
 n_train = 1
@@ -25,7 +26,7 @@ results_file_name = "cv_results/cv5_test.csv"
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["61620_201611_pp.txt"]
+input_file_list = ["choi_pp.txt"]
 # List of label ratios to text
 known_label_ratio_list = [0]
 # List of similarity tag
@@ -33,18 +34,12 @@ sim_tag_list = ["w2v"]
 
 # --- Grid search parameters
 
-# dist_option_vec = ["max_minus", "minus_log"]
-# exch_mat_opt_vec = ["s", "u", "d"]
-# exch_range_vec = [3, 5, 10, 15]
-# alpha_vec = [0.1, 1, 2, 5, 10, 30]
-# beta_vec = [5, 10, 50, 100, 200]
-# kappa_vec = [0, 0.25, 0.5, 0.75, 1]
-dist_option_vec = ["max_minus"]
-exch_mat_opt_vec = ["u"]
+dist_option_vec = ["max_minus", "minus_log"]
+exch_mat_opt_vec = ["s", "u", "d"]
 exch_range_vec = [3, 5, 10, 15]
-alpha_vec = [1, 2, 5, 10, 20]
+alpha_vec = [0.1, 1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]
-kappa_vec = [0, 1/3, 2/3, 1]
+kappa_vec = [0, 0.25, 0.5, 0.75, 1]
 
 # -------------------------------------
 # --- Computations
@@ -52,9 +47,9 @@ kappa_vec = [0, 1/3, 2/3, 1]
 
 # Selection of the clustering function
 if clust_tag == "disc":
-    segm_function = discontinuity_clustering
+    clust_function = discontinuity_clustering
 else:
-    segm_function = cut_clustering
+    clust_function = cut_clustering
 
 # Make results file
 with open(results_file_name, "w") as output_file:
@@ -98,8 +93,6 @@ for i in range(len(input_file_list)):
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
-    # Number of groups
-    n_groups = len(set(real_group_vec))
 
     # Setting crossval groups:
     fold_size = len(token_list) // n_fold
@@ -113,6 +106,8 @@ for i in range(len(input_file_list)):
         train_token_list = list(compress(token_list, train_id))
         train_s_mat = sim_ext_mat[train_id, :][:, train_id]
         train_real_group_vec = real_group_vec[train_id]
+        # Number of groups
+        n_groups = len(set(train_real_group_vec))
 
         # For semi-supervised results, pick some labels
         if known_label_ratio > 0:
@@ -147,25 +142,33 @@ for i in range(len(input_file_list)):
                     # Compute the matrix and nmi  n_train time
                     nmi_vector = []
                     for _ in range(n_train):
-
                         # Compute the membership matrix
-                        result_matrix = segm_function(d_ext_mat=train_d_mat,
-                                                      exch_mat=train_exch_mat,
-                                                      w_mat=train_w_mat,
-                                                      n_groups=n_groups,
-                                                      alpha=alpha,
-                                                      beta=beta,
-                                                      kappa=kappa,
-                                                      init_labels=known_labels)
+                        result_matrix = clust_function(d_ext_mat=train_d_mat,
+                                                       exch_mat=train_exch_mat,
+                                                       w_mat=train_w_mat,
+                                                       n_groups=n_groups,
+                                                       alpha=alpha,
+                                                       beta=beta,
+                                                       kappa=kappa,
+                                                       init_labels=known_labels)
 
                         # Compute the groups
-                        algo_group_value = np.argmax(result_matrix, 1) + 1
+                        algo_group_vec = np.argmax(result_matrix, 1) + 1
+
+                        # Restrained results
+                        rstr_real_group_vec = np.delete(train_real_group_vec, indices_for_known_label)
+                        rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
 
                         # Compute nmi score
-                        nmi_vector.append(normalized_mutual_info_score(np.delete(train_real_group_vec,
-                                                                                 indices_for_known_label),
-                                                                       np.delete(algo_group_value,
-                                                                                 indices_for_known_label)))
+                        nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
+
+                        # Compute segeval scores
+                        real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
+                        algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+                        pk = segeval.pk(algo_segm_vec, real_segm_vec)
+
+                        nmi_vector.append(nmi)
+
                     # Compute mean nmi
                     mean_nmi = np.mean(nmi_vector)
                     # If nmi is better, write it
@@ -207,21 +210,29 @@ for i in range(len(input_file_list)):
                                                                      exch_range=best_param_dic["exch_range"])
 
         # Compute the matrix
-        result_matrix = segm_function(d_ext_mat=test_d_mat,
-                                      exch_mat=test_exch_mat,
-                                      w_mat=test_w_mat,
-                                      n_groups=n_groups,
-                                      alpha=best_param_dic["alpha"],
-                                      beta=best_param_dic["beta"],
-                                      kappa=best_param_dic["kappa"],
-                                      init_labels=known_labels)
+        result_matrix = clust_function(d_ext_mat=test_d_mat,
+                                       exch_mat=test_exch_mat,
+                                       w_mat=test_w_mat,
+                                       n_groups=n_groups,
+                                       alpha=best_param_dic["alpha"],
+                                       beta=best_param_dic["beta"],
+                                       kappa=best_param_dic["kappa"],
+                                       init_labels=known_labels)
 
         # Compute the groups
-        algo_group_value = np.argmax(result_matrix, 1) + 1
+        algo_group_vec = np.argmax(result_matrix, 1) + 1
+
+        # Restrained results
+        rstr_real_group_vec = np.delete(test_real_group_vec, indices_for_known_label)
+        rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
 
         # Compute nmi score
-        nmi_test = normalized_mutual_info_score(np.delete(test_real_group_vec, indices_for_known_label),
-                                                np.delete(algo_group_value, indices_for_known_label))
+        nmi_test = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
+
+        # Compute segeval scores
+        real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
+        algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+        pk_test = segeval.pk(algo_segm_vec, real_segm_vec)
 
         # Printing best param and nmi
         print(f"Fold {fold_id + 1}/{n_fold} : nmi train = {nmi_train}, nmi test = {nmi_test}, "

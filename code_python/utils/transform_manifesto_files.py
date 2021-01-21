@@ -17,8 +17,8 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 file_name = "61620_201611.csv"
 
 # Loading the file
-with open(f"{base_path}/corpora/manifesto_csv_file/{file_name}", 'r') as typefreq_file:
-    csv_reader = csv.reader(typefreq_file, delimiter=",")
+with open(f"{base_path}/corpora/manifesto_csv_file/{file_name}", 'r') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=",")
     sent_list = []
     group_list = []
     for row in csv_reader:
@@ -78,9 +78,9 @@ with open(f"{base_path}/corpora/{file_name[:-4]}_pp.txt", "w") as text_file, \
         if len(token_list_pp) > 0:
             for j, token in enumerate(token_list_pp):
                 text_file.write(f"{token} ")
-                groups_file.write(f"{translation_dic[group_list[i]]}")
-                if i != len(sent_list) - 1 or j != len(token_list_pp) - 1:
-                    groups_file.write(", ")
+                groups_file.write(f"{translation_dic[group_list[i]]}, ")
 
+    groups_file.seek(groups_file.tell() - 2)
+    groups_file.truncate()
 
 
