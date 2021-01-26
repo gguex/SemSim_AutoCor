@@ -14,11 +14,8 @@ from itertools import cycle
 # Similarity tag list
 sim_tag_list = ["glv", "w2v", "lch", "path", "wup"]
 # Input files list
-input_file_list = ["Lectures_on_Landscape_pp.txt",
-                   "Metamorphosis_pp.txt",
-                   "Civil_Disobedience_pp.txt",
-                   "Sidelights_on_relativity_pp.txt"]
-
+input_file_list = ["Lectures_on_Landscape_pp.txt", "Metamorphosis_pp.txt",
+                   "Sidelights_on_relativity_pp.txt", "Civil_Disobedience_pp.txt"]
 # Distance option
 dist_option = "max_minus"
 # Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive, "r" = ring)
@@ -63,15 +60,18 @@ for sim_tag in sim_tag_list:
 
         # Compute autocor vector
         autocor_vec = []
+        theoretical_var_vec = []
+        theoretical_mean_vec = []
         for exch_range in tqdm(exch_range_window):
             # Compute the exchange and transition matrices
             exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
                                                                exch_mat_opt=exch_mat_opt,
                                                                exch_range=exch_range)
             # Compute the autocorrelation index
-            autocor_index = autocorrelation_index(d_ext_mat, exch_mat)
-            # Append result to the autocor vector
-            autocor_vec.append(autocor_index)
+            autocor_index, theoretical_mean, theoretical_var = autocorrelation_index(d_ext_mat, exch_mat, w_mat)
+
+            # Append result to vectors
+            autocor_vec.append((autocor_index - theoretical_mean) / np.sqrt(theoretical_var))
 
         autocor_vec_list.append(autocor_vec)
 
@@ -79,14 +79,15 @@ for sim_tag in sim_tag_list:
     experiment_description = f"Autocorrelation index for similarity {sim_tag}"
 
     # line cycler
-    lines = ["-", "--", "-.", ":"]
-    linecycler = cycle(lines)
+    line_cycler = cycle(["-", "--", "-.", ":"])
 
     # Plot the autocor vector
     plt.figure("Autocorrelation")
 
     for i, input_file in enumerate(input_file_list):
-        plt.plot(exch_range_window, autocor_vec_list[i], next(linecycler), label=input_file[:-7])
+        plt.plot(exch_range_window, autocor_vec_list[i], next(line_cycler), label=input_file[:-7])
+
+    plt.plot(exch_range_window, np.repeat(2.58, len(exch_range_window)), ":", color="black")
 
     plt.title(experiment_description)
     plt.xlabel("Neighbourhood size r")

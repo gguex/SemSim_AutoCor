@@ -177,7 +177,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     return exch_mat, w_mat
 
 
-def autocorrelation_index(d_ext_mat, exch_mat):
+def autocorrelation_index(d_ext_mat, exch_mat, w_mat):
     """
     Compute the autocorrelation index regarding a dissimilarity matrix and a exchange matrix
 
@@ -185,11 +185,15 @@ def autocorrelation_index(d_ext_mat, exch_mat):
     :type d_ext_mat: numpy.ndarray
     :param exch_mat: the (n_token x n_token) exchange matrix between tokens
     :type exch_mat: numpy.ndarray
-    :return: the autocorrelation index
-    :rtype: float
+    :param w_mat: a (n_token x n_token) transition matrix.
+    :type w_mat: numpy.ndarray
+    :return: the autocorrelation index, the theoretical mean and the theoretical variance
+    :rtype: (float, float, float)
     """
     # Get the weights of tokens
     f_vec = np.sum(exch_mat, 0)
+    # Get the number of token
+    n_token = len(f_vec)
 
     # Compute the local inertia
     local_inertia = 0.5 * np.sum(exch_mat * d_ext_mat)
@@ -198,8 +202,14 @@ def autocorrelation_index(d_ext_mat, exch_mat):
     # Compute the autocorrelation index
     autocor_index = (global_inertia - local_inertia) / global_inertia
 
-    # Return autocorrelation index
-    return autocor_index
+    # Compute the theoretical expected value
+    theoretical_mean = (np.trace(w_mat) - 1) / (n_token - 1)
+    # Compute the theoretical
+    theoretical_var = 2 * (np.trace(np.linalg.matrix_power(w_mat, 2)) - 1 - (np.trace(w_mat) - 1)**2 / (n_token - 1)) \
+        / (n_token**2 - 1)
+
+    # Return autocorrelation index, theoretical mean and theoretical variance
+    return autocor_index, theoretical_mean, theoretical_var
 
 
 def lisa_computation(d_ext_mat, exch_mat, w_mat):
