@@ -11,8 +11,7 @@ from code_python.local_functions import get_all_paths
 input_file_list = ["61320_200411_pp.txt",
                    "61320_201211_pp.txt",
                    "61620_200411_pp.txt",
-                   "61620_200811_pp.txt",
-                   "61620_201211_pp.txt"]
+                   "61620_200811_pp.txt"]
 
 # List of tags to enumerate similarity to compute
 sim_tag_list = ["w2v"]
@@ -22,8 +21,8 @@ sim_tag_list = ["w2v"]
 # -------------------------------------
 
 # Loading wordvector models
-w2v_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model")
-glv_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/glove42B300d.model")
+w2v_model = KeyedVectors.load("~/Documents/data/pretrained_word_vectors/enwiki.model")
+glv_model = KeyedVectors.load("~/Documents/data/pretrained_word_vectors/glove42B300d.model")
 
 # Loop on files and tags
 for input_file in input_file_list:
