@@ -8,7 +8,7 @@ import random
 # -------------------------------------
 
 # Corpus names
-corpus_names_list = ["Civil_Disobedience_pp.txt",
+corpus_name_list = ["Civil_Disobedience_pp.txt",
                      "Flowers_of_the_Farm_pp.txt",
                      "Sidelights_on_relativity_pp.txt",
                      "Prehistoric_Textile_pp.txt"]
@@ -36,7 +36,7 @@ working_path = os.getcwd()
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor/"
 
 # Defining paths of the text files
-text_path_list = [f"{base_path}corpora/{corpus_name}" for corpus_name in corpus_names_list]
+text_path_list = [f"{base_path}corpora/{corpus_name}" for corpus_name in corpus_name_list]
 
 # Defining paths of the outputs
 output_file = f"{base_path}corpora/mix_{unit_of_mix}{nb_of_units}.txt"
@@ -45,7 +45,7 @@ word_group_file = f"{base_path}corpora/mix_{unit_of_mix}{nb_of_units}_groups.txt
 # --- Creating mixing file --- #
 
 # Number of corpora
-n_corpora = len(corpus_names_list)
+n_corpus = len(corpus_name_list)
 
 # Loop for opening file
 text_string_list = []
@@ -80,7 +80,7 @@ text_string_list = [text_string[0:min_size] for text_string in text_string_list]
 indices_list = [indices[0:min_size] for indices in indices_list]
 
 # Draw indices of corpora to mix
-rdm_corpora_indices_list = list(np.repeat(list(range(n_corpora)), min_size // nb_of_units))
+rdm_corpora_indices_list = list(np.repeat(list(range(n_corpus)), min_size // nb_of_units))
 random.shuffle(rdm_corpora_indices_list)
 rdm_corpora_indices_list = list(np.repeat(rdm_corpora_indices_list, nb_of_units))
 

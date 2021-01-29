@@ -195,10 +195,10 @@ def autocorrelation_index(d_ext_mat, exch_mat, w_mat):
     # Get the number of token
     n_token = len(f_vec)
 
-    # Compute the local inertia
-    local_inertia = 0.5 * np.sum(exch_mat * d_ext_mat)
     # Compute of the global inertia
     global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
+    # Compute the local inertia
+    local_inertia = 0.5 * np.sum(exch_mat * d_ext_mat)
     # Compute the autocorrelation index
     autocor_index = (global_inertia - local_inertia) / global_inertia
 
