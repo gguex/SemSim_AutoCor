@@ -21,8 +21,8 @@ sim_tag_list = ["glv", "w2v"]
 # -------------------------------------
 
 # Loading wordvector models
-w2v_model = KeyedVectors.load("~/Documents/data/pretrained_word_vectors/enwiki.model")
-glv_model = KeyedVectors.load("~/Documents/data/pretrained_word_vectors/glove42B300d.model")
+w2v_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model")
+glv_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/glove42B300d.model")
 
 # Loop on files and tags
 for input_file in input_file_list:
