@@ -9,9 +9,9 @@ import random
 
 # Corpus names
 corpus_name_list = ["Civil_Disobedience_pp.txt",
-                     "Flowers_of_the_Farm_pp.txt",
-                     "Sidelights_on_relativity_pp.txt",
-                     "Prehistoric_Textile_pp.txt"]
+                    "Flowers_of_the_Farm_pp.txt",
+                    "Sidelights_on_relativity_pp.txt",
+                    "Prehistoric_Textile_pp.txt"]
 
 # Sentence mixing, or words ("sent" or "word")
 unit_of_mix = "sent"

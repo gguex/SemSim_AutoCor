@@ -11,10 +11,13 @@ from itertools import product
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["The_WW_of_Oz_pp.txt"]
+input_file_list = ["Civil_Disobedience_pp.txt",
+                   "Flowers_of_the_Farm_pp.txt",
+                   "Sidelights_on_relativity_pp.txt",
+                   "Prehistoric_Textile_pp.txt"]
 
 # List of tags to enumerate similarities to compute
-sim_tag_list = ["wup"]
+sim_tag_list = ["lch", "path", "wup"]
 
 # Threshold for minimum similarity value
 # (a type is dropped if its maximum similarity with other types doesn't reach this threshold)

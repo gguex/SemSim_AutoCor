@@ -11,7 +11,10 @@ import contractions
 # -------------------------------------
 
 # Corpus name list
-corpus_name_list = ["Flowers_of_the_Farm.txt"]
+corpus_name_list = ["Civil_Disobedience.txt",
+                    "Flowers_of_the_Farm.txt",
+                    "Sidelights_on_relativity.txt",
+                    "Prehistoric_Textile.txt"]
 
 # -------------------------------------
 # --- Computations
