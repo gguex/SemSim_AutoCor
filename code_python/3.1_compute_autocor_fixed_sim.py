@@ -102,7 +102,7 @@ for sim_tag in sim_tag_list:
         plt.text(1, quant, str(percent_list[i] * 100)+"%")
 
     plt.xlabel("Neighbourhood size r")
-    plt.ylabel("Global autocorrelation z-score")
+    plt.ylabel(f"Global autocorrelation z-score for {sim_tag}")
     plt.legend()
 
     plt.savefig(f"{base_path}/results/3.1_autocor{exch_max_range}_{sim_tag}.png")
