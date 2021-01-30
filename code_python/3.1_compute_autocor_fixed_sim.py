@@ -6,20 +6,23 @@ import csv
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from itertools import cycle
+from scipy.stats import norm
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # Similarity tag list
-sim_tag_list = ["glv", "w2v", "lch", "path", "wup"]
+sim_tag_list = ["glv"]
 # Input files list
-input_file_list = ["Lectures_on_Landscape_pp.txt", "Metamorphosis_pp.txt",
-                   "Sidelights_on_relativity_pp.txt", "Civil_Disobedience_pp.txt"]
+input_file_list = ["Civil_Disobedience_pp.txt",
+                   "Flowers_of_the_Farm_pp.txt",
+                   "Sidelights_on_relativity_pp.txt",
+                   "Prehistoric_Textile_pp.txt"]
 # Distance option
 dist_option = "max_minus"
 # Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive, "r" = ring)
-exch_mat_opt = "s"
+exch_mat_opt = "u"
 # Exchange matrix max range
 exch_max_range = 50
 
@@ -81,17 +84,25 @@ for sim_tag in sim_tag_list:
     # line cycler
     line_cycler = cycle(["-", "--", "-.", ":"])
 
+    # Set important p-value
+    percent_list = np.array([0.90, 0.95, 0.99, 0.999, 0.9999])
+    quant_list = norm.ppf(percent_list)
+
     # Plot the autocor vector
     plt.figure("Autocorrelation")
 
     for i, input_file in enumerate(input_file_list):
         plt.plot(exch_range_window, autocor_vec_list[i], next(line_cycler), label=input_file[:-7])
 
-    plt.plot(exch_range_window, np.repeat(2.58, len(exch_range_window)), ":", color="black")
+    xlim = plt.gca().get_xlim()
+    plt.autoscale(False)
 
-    plt.title(experiment_description)
+    for i, quant in enumerate(quant_list):
+        plt.plot(exch_range_window, np.repeat(quant, len(exch_range_window)), ":", color="black")
+        plt.text(1, quant, str(percent_list[i] * 100)+"%")
+
     plt.xlabel("Neighbourhood size r")
-    plt.ylabel("Autocorrelation index")
+    plt.ylabel("Global autocorrelation z-score")
     plt.legend()
 
     plt.savefig(f"{base_path}/results/3.1_autocor{exch_max_range}_{sim_tag}.png")
