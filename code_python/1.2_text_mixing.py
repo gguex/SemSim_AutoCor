@@ -14,7 +14,7 @@ corpus_name_list = ["Civil_Disobedience_pp.txt",
                     "Prehistoric_Textile_pp.txt"]
 
 # Sentence mixing, or words ("sent" or "word")
-unit_of_mix = "sent"
+unit_of_mix = "word"
 
 # Number of units for each bin
 nb_of_units = 5

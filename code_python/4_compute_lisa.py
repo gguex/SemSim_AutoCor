@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 
 # Input files list
 input_file_list = ["Civil_Disobedience_pp.txt",
-                   "Lectures_on_Landscape_pp.txt",
-                   "Metamorphosis_pp.txt",
-                   "Sidelights_on_relativity_pp.txt"]
+                   "Flowers_of_the_Farm_pp.txt",
+                   "Sidelights_on_relativity_pp.txt",
+                   "Prehistoric_Textile_pp.txt"]
 
 # Similarity tag list
 sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
