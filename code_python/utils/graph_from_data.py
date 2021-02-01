@@ -6,7 +6,11 @@ import csv
 import os
 
 # CSV file list
-csv_file_name_list = ["3.1_autocor50_path.csv"]
+csv_file_name_list = ["3.1_autocor50_glv.csv",
+                      "3.1_autocor50_w2v.csv",
+                      "3.1_autocor50_lch.csv",
+                      "3.1_autocor50_path.csv",
+                      "3.1_autocor50_wup.csv"]
 
 # Computations
 # Working path
@@ -18,7 +22,7 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 for csv_file_name in csv_file_name_list:
 
     # Sim tag name
-    sim_tag = csv_file_name[-8:-4]
+    sim_tag = csv_file_name[-7:-4]
 
     # File name path
     with open(f"{base_path}/results/{csv_file_name}", 'r') as typefreq_file:
@@ -39,7 +43,7 @@ for csv_file_name in csv_file_name_list:
     line_cycler = cycle(["-", "--", "-.", ":"])
 
     # Set important p-value
-    percent_list = np.array([0.5, 0.75, 0.90, 0.95, 0.99, 0.999])
+    percent_list = np.array([0.5, 0.75, 0.95, 0.99, 0.999])
     quant_list = norm.ppf(percent_list)
 
     # Plot the autocor vector
