@@ -3,17 +3,14 @@ from code_python.local_functions import get_all_paths, similarity_to_dissimilari
 import os
 import numpy as np
 import csv
-import matplotlib.pyplot as plt
 from tqdm import tqdm
-from itertools import cycle
-from scipy.stats import norm
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # Similarity tag list
-sim_tag_list = ["glv"]
+sim_tag_list = ["glv", "w2v", "lch", "path", "wup"]
 # Input files list
 input_file_list = ["Civil_Disobedience_pp.txt",
                    "Flowers_of_the_Farm_pp.txt",
@@ -38,9 +35,18 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 exch_range_window = list(range(1, exch_max_range + 1))
 
 for sim_tag in sim_tag_list:
-    autocor_vec_list = []
+
+    # Output file name
+    output_file_name = f"{base_path}/results/3.1_autocor{exch_max_range}_{sim_tag}.csv"
+    # Write header
+    with open(output_file_name, "w") as output_file:
+        output_file.write("csv_file_name, " + f"{list(range(1, 1 + exch_max_range))}"[1:-1] + "\n")
+
     for input_file in input_file_list:
 
+        # Write file name
+        with open(output_file_name, "a") as output_file:
+            output_file.write(input_file[:-7])
         # Print
         print(f"Autocorrelation for {input_file} with similarity {sim_tag}")
 
@@ -66,6 +72,9 @@ for sim_tag in sim_tag_list:
         theoretical_var_vec = []
         theoretical_mean_vec = []
         for exch_range in tqdm(exch_range_window):
+            # Write ", "
+            with open(output_file_name, "a") as output_file:
+                output_file.write(", ")
             # Compute the exchange and transition matrices
             exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
                                                                exch_mat_opt=exch_mat_opt,
@@ -73,37 +82,9 @@ for sim_tag in sim_tag_list:
             # Compute the autocorrelation index
             autocor_index, theoretical_mean, theoretical_var = autocorrelation_index(d_ext_mat, exch_mat, w_mat)
 
-            # Append result to vectors
-            autocor_vec.append((autocor_index - theoretical_mean) / np.sqrt(theoretical_var))
-
-        autocor_vec_list.append(autocor_vec)
-
-    # Experiment description
-    experiment_description = f"Autocorrelation index for similarity {sim_tag}"
-
-    # line cycler
-    line_cycler = cycle(["-", "--", "-.", ":"])
-
-    # Set important p-value
-    percent_list = np.array([0.90, 0.95, 0.99, 0.999, 0.9999])
-    quant_list = norm.ppf(percent_list)
-
-    # Plot the autocor vector
-    plt.figure("Autocorrelation")
-
-    for i, input_file in enumerate(input_file_list):
-        plt.plot(exch_range_window, autocor_vec_list[i], next(line_cycler), label=input_file[:-7])
-
-    xlim = plt.gca().get_xlim()
-    plt.autoscale(False)
-
-    for i, quant in enumerate(quant_list):
-        plt.plot(exch_range_window, np.repeat(quant, len(exch_range_window)), ":", color="black")
-        plt.text(1, quant, str(percent_list[i] * 100)+"%")
-
-    plt.xlabel("Neighbourhood size r")
-    plt.ylabel(f"Global autocorrelation z-score for {sim_tag}")
-    plt.legend()
-
-    plt.savefig(f"{base_path}/results/3.1_autocor{exch_max_range}_{sim_tag}.png")
-    plt.close()
+            # Z score for autocor
+            z_autocor = (autocor_index - theoretical_mean) / np.sqrt(theoretical_var)
+            with open(output_file_name, "a") as output_file:
+                output_file.write(f"{z_autocor}")
+        with open(output_file_name, "a") as output_file:
+            output_file.write("\n")
