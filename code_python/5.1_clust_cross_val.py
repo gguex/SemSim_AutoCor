@@ -5,7 +5,7 @@ import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 from itertools import compress, product
-import segeval
+# import segeval
 
 # -------------------------------------
 # --- Parameters
@@ -15,27 +15,39 @@ import segeval
 clust_tag = "cut"
 
 # Number of crossval folds
-n_fold = 10
+n_fold = 4
 
 # Number of train on each fold
-n_train = 1
+n_train = 5
 
 # List of names for the ouputted result files
-results_file_name = "cv_results/cv5_test.csv"
+results_file_name = "cv_results/cv5_all_new.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["choi_pp.txt"]
+input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0]
+known_label_ratio_list = [0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0]
 # List of similarity tag
-sim_tag_list = ["w2v"]
+sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
+                "glv", "glv", "glv", "glv",
+                "lch", "lch", "lch", "lch",
+                "path", "path", "path", "path",
+                "wup", "wup", "wup", "wup"]
 
 # --- Grid search parameters
 
-dist_option_vec = ["max_minus", "minus_log"]
-exch_mat_opt_vec = ["s", "u", "d"]
+dist_option_vec = ["max_minus"]
+exch_mat_opt_vec = ["u", "d"]
 exch_range_vec = [3, 5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]
@@ -102,7 +114,7 @@ for i in range(len(input_file_list)):
     for fold_id in range(n_fold):
 
         # Setting train id and restricting to train set
-        train_id = crossval_index == fold_id
+        train_id = crossval_index != fold_id
         train_token_list = list(compress(token_list, train_id))
         train_s_mat = sim_ext_mat[train_id, :][:, train_id]
         train_real_group_vec = real_group_vec[train_id]
@@ -163,9 +175,9 @@ for i in range(len(input_file_list)):
                         nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
 
                         # Compute segeval scores
-                        real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
-                        algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
-                        pk = segeval.pk(algo_segm_vec, real_segm_vec)
+                        # real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
+                        # algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+                        # pk = segeval.pk(algo_segm_vec, real_segm_vec)
 
                         nmi_vector.append(nmi)
 
@@ -185,7 +197,7 @@ for i in range(len(input_file_list)):
         # ----- TEST
 
         # Setting test id and restricting to test set
-        test_id = crossval_index != fold_id
+        test_id = crossval_index == fold_id
         test_token_list = list(compress(token_list, test_id))
         test_s_mat = sim_ext_mat[test_id, :][:, test_id]
         test_real_group_vec = real_group_vec[test_id]
@@ -230,9 +242,9 @@ for i in range(len(input_file_list)):
         nmi_test = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
 
         # Compute segeval scores
-        real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
-        algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
-        pk_test = segeval.pk(algo_segm_vec, real_segm_vec)
+        # real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
+        # algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+        # pk_test = segeval.pk(algo_segm_vec, real_segm_vec)
 
         # Printing best param and nmi
         print(f"Fold {fold_id + 1}/{n_fold} : nmi train = {nmi_train}, nmi test = {nmi_test}, "

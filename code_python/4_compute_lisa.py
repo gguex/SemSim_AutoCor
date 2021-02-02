@@ -21,9 +21,9 @@ sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
 # Distance option
 dist_option = "max_minus"
 # Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive, "r" = ring)
-exch_mat_opt = "s"
+exch_mat_opt = "u"
 # Exchange matrix range
-exch_range = 50
+exch_range = 25
 
 # -------------------------------------
 # --- Computations
