@@ -5,7 +5,12 @@ import segeval
 ground_truth_file_list = ["mix_word1_groups.txt",
                           "mix_word5_groups.txt",
                           "mix_sent1_groups.txt",
-                          "mix_sent5_groups.txt"]
+                          "mix_sent5_groups.txt",
+                          "61320_200411_pp_groups.txt",
+                          "61320_201211_pp_groups.txt",
+                          "61620_200411_pp_groups.txt",
+                          "61620_200811_pp_groups.txt",
+                          "61620_201211_pp_groups.txt"]
 
 
 for ground_truth_file in ground_truth_file_list:

@@ -8,13 +8,10 @@ from code_python.local_functions import get_all_paths
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["mix_word1.txt",
-                   "mix_word5.txt",
-                   "mix_sent1.txt",
-                   "mix_sent5.txt"]
+input_file_list = ["61620_201211_pp.txt"]
 
 # List of tags to enumerate similarity to compute
-sim_tag_list = ["glv", "w2v"]
+sim_tag_list = ["w2v"]
 
 # -------------------------------------
 # --- Computations

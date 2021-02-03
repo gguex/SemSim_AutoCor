@@ -12,7 +12,7 @@ import segeval
 # --- Parameters
 # -------------------------------------
 
-input_file = "choi_pp.txt"
+input_file = "61620_201211_pp.txt"
 
 output_html = "best_sent5.html"
 real_html = "sent5_real.html"
@@ -21,10 +21,10 @@ type_csv = "best_sent5_type.csv"
 
 sim_tag = "w2v"
 dist_option = "minus_log"
-exch_mat_opt = "d"
-exch_range = 10
-alpha = 5
-beta = 10
+exch_mat_opt = "u"
+exch_range = 3
+alpha = 2
+beta = 50
 kappa = 0.5
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
