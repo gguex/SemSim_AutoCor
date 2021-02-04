@@ -26,7 +26,7 @@ results_file_name = "cv_results/cv5_all_new.csv"
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+input_file_list = ["mix_sent1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",

@@ -17,13 +17,13 @@ corpus_name_list = ["Civil_Disobedience_pp.txt",
 unit_of_mix = "word"
 
 # Number of units for each bin
-nb_of_units = 5
+nb_of_units = 1
 
 # Minimum of words in sentence to mix
 min_nb_of_words_in_sent = 5
 
 # Div factor (corpus size is divided by that to fit github size limit)
-div_factor = 1.5
+div_factor = 3
 
 # -------------------------------------
 # --- Computations

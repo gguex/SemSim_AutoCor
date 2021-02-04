@@ -3,18 +3,28 @@ import numpy as np
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 from code_python.local_functions import get_all_paths
-from tqdm import tqdm
 from itertools import product
+import multiprocessing as mp
+from miniutils import parallel_progbar
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["The_WW_of_Oz_pp.txt"]
+# input_file_list = ["mix_word1.txt",
+#                    "mix_word5.txt",
+#                    "mix_sent1.txt",
+#                    "mix_sent5.txt"]
+input_file_list = ["mix_sent1.txt"]
 
 # List of tags to enumerate similarities to compute
-sim_tag_list = ["wup"]
+# sim_tag_list = ["lch", "path", "wup"]
+sim_tag_list = ["lch"]
+
+
+# Number of cpus to use
+n_cpu = mp.cpu_count() - 1
 
 # Threshold for minimum similarity value
 # (a type is dropped if its maximum similarity with other types doesn't reach this threshold)
@@ -90,30 +100,45 @@ for input_file in input_file_list:
         sim_mat = np.zeros((n_type, n_type))
         # Vector for index of type with existing similarities
         ok_sim_index_list = []
-        with open(type_freq_file_path, "w") as type_freq_file:
-            for i in tqdm(range(n_type)):
 
-                type_1_synset_list = wn.synsets(checked_vocab[i])
+        # Define compute col function
+        def compute_col(i):
+            type_1_synset_list = wn.synsets(checked_vocab[i])
+            sim_col = np.repeat(0, i)
+            for j in range(i + 1, n_type):
+                type_2_synset_list = wn.synsets(checked_vocab[j])
+                sim_list = []
+                for cross_item in product(type_1_synset_list, type_2_synset_list):
+                    try:
+                        sim_1 = wn_similarity(cross_item[0], cross_item[1])
+                    except:
+                        sim_1 = 0
+                    try:
+                        sim_2 = wn_similarity(cross_item[1], cross_item[0])
+                    except:
+                        sim_2 = 0
+                    if sim_1 is None:
+                        sim_1 = 0
+                    if sim_2 is None:
+                        sim_2 = 0
+                    sim_list.append(max(sim_1, sim_2))
+                if len(sim_list) > 0:
+                    sim = max(sim_list)
+                else:
+                    sim = 0
+                sim_col = np.append(sim_col, sim)
+            return sim_col
 
-                for j in range(i+1, n_type):
-                    # Loop on synsets
-                    type_2_synset_list = wn.synsets(checked_vocab[j])
-                    sim_list = [wn_similarity(*cross_item)
-                                for cross_item in product(type_1_synset_list, type_2_synset_list)
-                                if cross_item[0].pos() == cross_item[1].pos() and
-                                wn_similarity(*cross_item) is not None]
-                    if len(sim_list) > 0:
-                        sim = max(sim_list)
-                        sim_mat[i, j], sim_mat[j, i] = sim, sim
-
-                if max(sim_mat[i, :]) > sim_threshold:
-                    type_freq_file.write(f"{checked_vocab[i]};{type_freq_dict[checked_vocab[i]]}\n")
-                    ok_sim_index_list.append(i)
+        # Multiprocess
+        sim_mat = np.array(parallel_progbar(compute_col, range(n_type), nprocs=n_cpu))
 
         # Compute the final matrix
         np.fill_diagonal(sim_mat, auto_sim_list)
-        sim_mat = sim_mat[ok_sim_index_list, :][:, ok_sim_index_list]
 
         # Write the similarity
         with open(sim_matrix_file_path, "w") as sim_matrix_file:
-            np.savetxt(sim_matrix_file, sim_mat, delimiter=";")
+            np.savetxt(sim_matrix_file, sim_mat, delimiter=";", fmt="%.8f")
+        # Write the words
+        with open(type_freq_file_path, "w") as type_freq_file:
+            for type in checked_vocab:
+                type_freq_file.write(f"{type};{type_freq_dict[type]}\n")
