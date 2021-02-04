@@ -12,19 +12,17 @@ from miniutils import parallel_progbar
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-# input_file_list = ["mix_word1.txt",
-#                    "mix_word5.txt",
-#                    "mix_sent1.txt",
-#                    "mix_sent5.txt"]
-input_file_list = ["mix_sent1.txt"]
+input_file_list = ["mix_word1.txt",
+                   "mix_word5.txt",
+                   "mix_sent1.txt",
+                   "mix_sent5.txt"]
 
 # List of tags to enumerate similarities to compute
-# sim_tag_list = ["lch", "path", "wup"]
-sim_tag_list = ["lch"]
+sim_tag_list = ["lch", "path", "wup"]
 
 
 # Number of cpus to use
-n_cpu = mp.cpu_count() - 1
+n_cpu = mp.cpu_count()
 
 # Threshold for minimum similarity value
 # (a type is dropped if its maximum similarity with other types doesn't reach this threshold)
@@ -96,15 +94,13 @@ for input_file in input_file_list:
                 checked_vocab.append(word)
         n_type = len(checked_vocab)
 
-        # Computing the similarity matrix
-        sim_mat = np.zeros((n_type, n_type))
         # Vector for index of type with existing similarities
         ok_sim_index_list = []
 
         # Define compute col function
         def compute_col(i):
             type_1_synset_list = wn.synsets(checked_vocab[i])
-            sim_col = np.repeat(0, i)
+            sim_col = np.repeat(0, i + 1)
             for j in range(i + 1, n_type):
                 type_2_synset_list = wn.synsets(checked_vocab[j])
                 sim_list = []
@@ -131,6 +127,7 @@ for input_file in input_file_list:
 
         # Multiprocess
         sim_mat = np.array(parallel_progbar(compute_col, range(n_type), nprocs=n_cpu))
+        sim_mat = sim_mat + sim_mat.T
 
         # Compute the final matrix
         np.fill_diagonal(sim_mat, auto_sim_list)

@@ -5,7 +5,8 @@ import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 from itertools import compress, product
-# import segeval
+import multiprocessing as mp
+from miniutils import parallel_progbar
 
 # -------------------------------------
 # --- Parameters
@@ -18,7 +19,10 @@ clust_tag = "cut"
 n_fold = 4
 
 # Number of train on each fold
-n_train = 5
+n_train = 3
+
+# Number of cpu to use
+n_cpu = mp.cpu_count() - 1
 
 # List of names for the ouputted result files
 results_file_name = "cv_results/cv5_all_new.csv"
@@ -26,23 +30,11 @@ results_file_name = "cv_results/cv5_all_new.csv"
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_sent1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
+input_file_list = ["mix_sent1.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0]
+known_label_ratio_list = [0]
 # List of similarity tag
-sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
-                "glv", "glv", "glv", "glv",
-                "lch", "lch", "lch", "lch",
-                "path", "path", "path", "path",
-                "wup", "wup", "wup", "wup"]
+sim_tag_list = ["w2v"]
 
 # --- Grid search parameters
 
@@ -56,6 +48,9 @@ kappa_vec = [0, 0.25, 0.5, 0.75, 1]
 # -------------------------------------
 # --- Computations
 # -------------------------------------
+
+# Creating hyperparameters for multiproc
+hyperp_list = list(product(alpha_vec, beta_vec, kappa_vec))
 
 # Selection of the clustering function
 if clust_tag == "disc":
@@ -149,8 +144,11 @@ for i in range(len(input_file_list)):
                                                                                exch_mat_opt=exch_mat_opt,
                                                                                exch_range=exch_range)
 
-                for alpha, beta, kappa in product(alpha_vec, beta_vec, kappa_vec):
+                # Restrain real groups
+                rstr_real_group_vec = np.delete(train_real_group_vec, indices_for_known_label)
 
+                # Creating the function for multiprocess:
+                def nmi_computation(alpha, beta, kappa):
                     # Compute the matrix and nmi  n_train time
                     nmi_vector = []
                     for _ in range(n_train):
@@ -163,36 +161,33 @@ for i in range(len(input_file_list)):
                                                        beta=beta,
                                                        kappa=kappa,
                                                        init_labels=known_labels)
-
                         # Compute the groups
                         algo_group_vec = np.argmax(result_matrix, 1) + 1
-
-                        # Restrained results
-                        rstr_real_group_vec = np.delete(train_real_group_vec, indices_for_known_label)
                         rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
-
                         # Compute nmi score
                         nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
-
-                        # Compute segeval scores
-                        # real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
-                        # algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
-                        # pk = segeval.pk(algo_segm_vec, real_segm_vec)
-
                         nmi_vector.append(nmi)
 
-                    # Compute mean nmi
-                    mean_nmi = np.mean(nmi_vector)
-                    # If nmi is better, write it
-                    if mean_nmi > nmi_train:
-                        nmi_train = mean_nmi
-                        best_param_dic = {"dist_option": dist_option,
-                                          "exch_mat_opt": exch_mat_opt,
-                                          "exch_range": exch_range,
-                                          "alpha": alpha,
-                                          "beta": beta,
-                                          "kappa": kappa}
-                        print(f"New best: {nmi_train}, {best_param_dic}")
+                    return np.mean(nmi_vector)
+
+                # Pool on multiprocessors
+                # Multiprocess
+                res_multi = parallel_progbar(nmi_computation, hyperp_list, starmap=True, nprocs=n_cpu)
+
+                # Get best result
+                max_nmi = max(res_multi)
+                id_max_nmi = res_multi.index(max_nmi)
+
+                # If nmi is better, write it
+                if max_nmi > nmi_train:
+                    nmi_train = max_nmi
+                    best_param_dic = {"dist_option": dist_option,
+                                      "exch_mat_opt": exch_mat_opt,
+                                      "exch_range": exch_range,
+                                      "alpha": hyperp_list[id_max_nmi][0],
+                                      "beta": hyperp_list[id_max_nmi][1],
+                                      "kappa": hyperp_list[id_max_nmi][2]}
+                    print(f"New best: {nmi_train}, {best_param_dic}")
 
         # ----- TEST
 
@@ -240,11 +235,6 @@ for i in range(len(input_file_list)):
 
         # Compute nmi score
         nmi_test = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
-
-        # Compute segeval scores
-        # real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
-        # algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
-        # pk_test = segeval.pk(algo_segm_vec, real_segm_vec)
 
         # Printing best param and nmi
         print(f"Fold {fold_id + 1}/{n_fold} : nmi train = {nmi_train}, nmi test = {nmi_test}, "
