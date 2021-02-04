@@ -22,7 +22,7 @@ n_fold = 4
 n_train = 3
 
 # Number of cpu to use
-n_cpu = mp.cpu_count() - 1
+n_cpu = mp.cpu_count()
 
 # List of names for the ouputted result files
 results_file_name = "cv_results/cv5_all_new.csv"
@@ -30,11 +30,23 @@ results_file_name = "cv_results/cv5_all_new.csv"
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_sent1.txt"]
+input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0]
+known_label_ratio_list = [0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0]
 # List of similarity tag
-sim_tag_list = ["w2v"]
+sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
+                "glv", "glv", "glv", "glv",
+                "lch", "lch", "lch", "lch",
+                "path", "path", "path", "path",
+                "wup", "wup", "wup", "wup"]
 
 # --- Grid search parameters
 
