@@ -1,10 +1,10 @@
-from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, discontinuity_clustering, cut_clustering
-import numpy as np
-import csv
-import random as rdm
-from sklearn.metrics import normalized_mutual_info_score
-import segeval
+# from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
+#     exchange_and_transition_matrices, discontinuity_clustering, cut_clustering
+# import numpy as np
+# import csv
+# import random as rdm
+# from sklearn.metrics import normalized_mutual_info_score
+# import segeval
 
 # -------------------------------------
 # --- Parameters

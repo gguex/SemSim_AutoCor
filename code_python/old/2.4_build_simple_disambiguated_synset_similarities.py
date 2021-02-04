@@ -1,14 +1,14 @@
-import re
-import os
-import itertools
-import pandas as pd
-import numpy as np
-from tqdm import tqdm
-
-
-from nltk.corpus import wordnet as wn
-from nltk.corpus.reader.wordnet import WordNetError
-from nltk.corpus.reader.plaintext import PlaintextCorpusReader
+# import re
+# import os
+# import itertools
+# import pandas as pd
+# import numpy as np
+# from tqdm import tqdm
+#
+#
+# from nltk.corpus import wordnet as wn
+# from nltk.corpus.reader.wordnet import WordNetError
+# from nltk.corpus.reader.plaintext import PlaintextCorpusReader
 
 from collections import defaultdict
 # Corpus name

@@ -1,10 +1,10 @@
-import nltk
-import numpy as np
-from nltk.corpus import wordnet as wn
-from nltk.corpus import wordnet_ic
-from code_python.local_functions import get_all_paths
-from tqdm import tqdm
-from itertools import product
+# import nltk
+# import numpy as np
+# from nltk.corpus import wordnet as wn
+# from nltk.corpus import wordnet_ic
+# from code_python.local_functions import get_all_paths
+# from tqdm import tqdm
+# from itertools import product
 
 # -------------------------------------
 # --- Parameters

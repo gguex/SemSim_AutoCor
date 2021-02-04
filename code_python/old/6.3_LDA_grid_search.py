@@ -1,9 +1,9 @@
-from gensim.models.ldamodel import LdaModel
-from gensim.corpora.dictionary import Dictionary
-from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion
-import numpy as np
-import csv
-from sklearn.metrics import normalized_mutual_info_score
+# from gensim.models.ldamodel import LdaModel
+# from gensim.corpora.dictionary import Dictionary
+# from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion
+# import numpy as np
+# import csv
+# from sklearn.metrics import normalized_mutual_info_score
 
 # -------------------------------------
 # --- Parameters

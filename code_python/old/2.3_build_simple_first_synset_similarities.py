@@ -5,17 +5,17 @@ nltk.download() # at lease wordnet, and wornet_ic
 """
 
 
-import re
-import os
-import itertools
-import pandas as pd
-import numpy as np
-from tqdm import tqdm
-from nltk.corpus import wordnet as wn
-from nltk.corpus.reader.wordnet import WordNetError
-from nltk.corpus.reader.plaintext import PlaintextCorpusReader
-from nltk.corpus import wordnet_ic
-from collections import defaultdict
+# import re
+# import os
+# import itertools
+# import pandas as pd
+# import numpy as np
+# from tqdm import tqdm
+# from nltk.corpus import wordnet as wn
+# from nltk.corpus.reader.wordnet import WordNetError
+# from nltk.corpus.reader.plaintext import PlaintextCorpusReader
+# from nltk.corpus import wordnet_ic
+# from collections import defaultdict
 # Corpus name
 corpus_names =  ("Animal_farm.txt", "The_WW_of_Oz.txt")
 verbose = False

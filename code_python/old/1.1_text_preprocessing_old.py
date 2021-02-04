@@ -1,9 +1,9 @@
-import nltk
+# import nltk
 # from flair.models import SequenceTagger
 # from flair.data import Sentence
-import re
-from tqdm import tqdm
-import os
+# import re
+# from tqdm import tqdm
+# import os
 
 # -------------------------------------
 # --- Parameters
