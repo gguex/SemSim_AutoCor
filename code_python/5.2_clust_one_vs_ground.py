@@ -12,7 +12,7 @@ import segeval
 # --- Parameters
 # -------------------------------------
 
-input_file = "61620_201211_pp.txt"
+input_file = "mix_sent5.txt"
 
 output_html = "best_sent5.html"
 real_html = "sent5_real.html"
@@ -20,15 +20,15 @@ token_csv = "best_sent5.csv"
 type_csv = "best_sent5_type.csv"
 
 sim_tag = "w2v"
-dist_option = "minus_log"
+dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 3
+exch_range = 10
 alpha = 2
 beta = 50
 kappa = 0.5
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
-max_it = 300
+max_it = 1000
 
 # -------------------------------------
 # --- Computations
