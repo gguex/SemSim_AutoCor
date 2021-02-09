@@ -10,11 +10,14 @@ corpus_name_list = ["Civil_Disobedience_pp.txt",
                     "mix_word5.txt",
                     "mix_sent1.txt",
                     "mix_sent5.txt",
+                    "61320_199211_pp.txt",
                     "61320_200411_pp.txt",
                     "61320_201211_pp.txt",
+                    "61320_201611_pp.txt",
                     "61620_200411_pp.txt",
                     "61620_200811_pp.txt",
-                    "61620_201211_pp.txt"]
+                    "61620_201211_pp.txt",
+                    "61620_201611_pp.txt"]
 
 for corpus_name in corpus_name_list:
     # Getting the base path (must run the script from a folder inside the "SemSim_Autocor" folder)

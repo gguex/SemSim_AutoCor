@@ -14,11 +14,14 @@ working_path=os.getcwd()
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 
 # Name of the file
-file_name_list = ["61320_200411.csv",
+file_name_list = ["61320_199211.csv",
+                  "61320_200411.csv",
                   "61320_201211.csv",
+                  "61320_201611.csv",
                   "61620_200411.csv",
                   "61620_200811.csv",
-                  "61620_201211.csv"]
+                  "61620_201211.csv",
+                  "61620_201611.csv"]
 
 # Loop on files
 for file_name in file_name_list:
