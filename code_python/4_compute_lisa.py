@@ -1,4 +1,4 @@
-from code_python.local_functions import get_all_paths, similarity_to_dissimilarity, type_to_token_matrix_expansion, \
+from local_functions import get_all_paths, similarity_to_dissimilarity, type_to_token_matrix_expansion, \
     exchange_and_transition_matrices, lisa_computation, write_vector_in_html_file
 import os
 import numpy as np

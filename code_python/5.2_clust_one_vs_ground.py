@@ -1,4 +1,4 @@
-from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
+from local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
     exchange_and_transition_matrices, discontinuity_clustering, cut_clustering, \
     write_groups_in_html_file, write_membership_mat_in_csv_file
 import numpy as np
@@ -6,7 +6,7 @@ import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 import pandas as pd
-import segeval
+from segeval import convert_positions_to_masses, pk, window_diff
 
 # -------------------------------------
 # --- Parameters
@@ -107,15 +107,15 @@ rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
 nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
 
 # Segmentation evaluation
-real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
-algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
+real_segm_vec = convert_positions_to_masses(rstr_real_group_vec)
+algo_segm_vec = convert_positions_to_masses(rstr_algo_group_vec)
 rdm_group_vec = rstr_real_group_vec.copy()
 rdm.shuffle(rdm_group_vec)
-rdm_segm_vec = segeval.convert_positions_to_masses(rdm_group_vec)
-pk = segeval.pk(algo_segm_vec, real_segm_vec)
-win_diff = segeval.window_diff(algo_segm_vec, real_segm_vec)
-pk_rdm = segeval.pk(rdm_segm_vec, real_segm_vec)
-win_diff_rdm = segeval.window_diff(rdm_segm_vec, real_segm_vec)
+rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
+pk_res = pk(algo_segm_vec, real_segm_vec)
+win_diff = window_diff(algo_segm_vec, real_segm_vec)
+pk_rdm = pk(rdm_segm_vec, real_segm_vec)
+win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
 
 # Compute the aggregate labels
 df_results = pd.DataFrame(result_matrix)
@@ -129,7 +129,7 @@ type_values = type_results.to_numpy()
 # -------------------------------------
 
 # Write html results
-write_groups_in_html_file(output_html, token_list, result_matrix, comment_line=f"nmi = {nmi}, pk={pk}, "
+write_groups_in_html_file(output_html, token_list, result_matrix, comment_line=f"nmi = {nmi}, pk={pk_res}, "
                                                                                f"win_diff={win_diff}")
 # Write real html results
 write_groups_in_html_file(real_html, token_list, z_real_mat, comment_line="Real results")
@@ -137,5 +137,5 @@ write_groups_in_html_file(real_html, token_list, z_real_mat, comment_line="Real 
 write_membership_mat_in_csv_file(token_csv, token_list, result_matrix)
 # Write csv type result
 write_membership_mat_in_csv_file(type_csv, type_list, type_values)
-# Print nmi, pk, win_diff
-print(f"nmi = {nmi}, pk={pk} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")
+# Print nmi, pk_res, win_diff
+print(f"nmi = {nmi}, pk={pk_res} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")

@@ -1,7 +1,8 @@
 import nltk
 from gensim.models import KeyedVectors
 from tqdm import tqdm
-from code_python.local_functions import get_all_paths
+from local_functions import get_all_paths
+from os.path import expanduser
 
 # -------------------------------------
 # --- Parameters
@@ -9,7 +10,12 @@ from code_python.local_functions import get_all_paths
 
 # List of paths for text files to compute similarity
 input_file_list = ["61320_199211_pp.txt",
+                   "61320_200411_pp.txt",
+                   "61320_201211_pp.txt",
                    "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
                    "61620_201611_pp.txt"]
 
 # List of tags to enumerate similarity to compute
@@ -20,8 +26,10 @@ sim_tag_list = ["w2v"]
 # -------------------------------------
 
 # Loading wordvector models
-w2v_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/enwiki.model")
-glv_model = KeyedVectors.load("/home/gguex/Documents/data/pretrained_word_vectors/glove42B300d.model")
+home = expanduser("~")
+w2v_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/enwiki.model")
+# glv_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/glove42B300d.model")
+glv_model = w2v_model
 
 # Loop on files and tags
 for input_file in input_file_list:

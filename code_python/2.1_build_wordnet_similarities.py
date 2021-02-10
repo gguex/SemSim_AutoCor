@@ -2,7 +2,7 @@ import nltk
 import numpy as np
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
-from code_python.local_functions import get_all_paths
+from local_functions import get_all_paths
 from itertools import product
 import multiprocessing as mp
 from miniutils import parallel_progbar
@@ -19,7 +19,6 @@ input_file_list = ["mix_word1.txt",
 
 # List of tags to enumerate similarities to compute
 sim_tag_list = ["lch", "path", "wup"]
-
 
 # Number of cpus to use
 n_cpu = mp.cpu_count()
@@ -103,7 +102,7 @@ for input_file in input_file_list:
             sim_col = np.repeat(0, i + 1)
             for j in range(i + 1, n_type):
                 type_2_synset_list = wn.synsets(checked_vocab[j])
-                sim_list = []
+                sim_cand_list = []
                 for cross_item in product(type_1_synset_list, type_2_synset_list):
                     try:
                         sim_1 = wn_similarity(cross_item[0], cross_item[1])
@@ -117,13 +116,14 @@ for input_file in input_file_list:
                         sim_1 = 0
                     if sim_2 is None:
                         sim_2 = 0
-                    sim_list.append(max(sim_1, sim_2))
-                if len(sim_list) > 0:
-                    sim = max(sim_list)
+                    sim_cand_list.append(max(sim_1, sim_2))
+                if len(sim_cand_list) > 0:
+                    sim = max(sim_cand_list)
                 else:
                     sim = 0
                 sim_col = np.append(sim_col, sim)
             return sim_col
+
 
         # Multiprocess
         sim_mat = np.array(parallel_progbar(compute_col, range(n_type), nprocs=n_cpu))
@@ -137,5 +137,5 @@ for input_file in input_file_list:
             np.savetxt(sim_matrix_file, sim_mat, delimiter=";", fmt="%.8f")
         # Write the words
         with open(type_freq_file_path, "w") as type_freq_file:
-            for type in checked_vocab:
-                type_freq_file.write(f"{type};{type_freq_dict[type]}\n")
+            for type_item in checked_vocab:
+                type_freq_file.write(f"{type_item};{type_freq_dict[type_item]}\n")

@@ -1,4 +1,4 @@
-# from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
+# from local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
 #     exchange_and_transition_matrices, discontinuity_clustering, cut_clustering
 # import numpy as np
 # import csv
@@ -146,7 +146,7 @@ for i in range(len(input_file_list)):
                             # Compute segeval scores
                             real_segm_vec = segeval.convert_positions_to_masses(rstr_real_group_vec)
                             algo_segm_vec = segeval.convert_positions_to_masses(rstr_algo_group_vec)
-                            pk = segeval.pk(algo_segm_vec, real_segm_vec)
+                            pk = segeval.pk_res(algo_segm_vec, real_segm_vec)
 
                             print(f"NMI = {1-pk}")
 

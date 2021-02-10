@@ -1,12 +1,13 @@
-from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
+from local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
     exchange_and_transition_matrices, discontinuity_clustering, cut_clustering
 import numpy as np
 import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 from itertools import compress, product
-import multiprocessing as mp
+# import multiprocessing as mp
 from miniutils import parallel_progbar
+import os
 
 # -------------------------------------
 # --- Parameters
@@ -22,10 +23,11 @@ n_fold = 2
 n_train = 1
 
 # Number of cpu to use
-n_cpu = mp.cpu_count()
+# n_cpu = mp.cpu_count()
+n_cpu = int(os.getenv("SLURM_CPUS_PER_TASK"))
 
 # List of names for the ouputted result files
-results_file_name = "cv_results/cv_test.csv"
+results_file_name = "cv_results/cv_manifestos1.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
@@ -35,27 +37,34 @@ results_file_name = "cv_results/cv_test.csv"
 #                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
 #                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
 #                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
-input_file_list = ["61320_201211_pp.txt"]
+input_file_list = ["61320_199211_pp.txt",
+                   "61320_200411_pp.txt",
+                   "61320_201211_pp.txt",
+                   "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
+                   "61620_201611_pp.txt"]
 # List of label ratios to text
 # known_label_ratio_list = [0, 0, 0, 0,
 #                           0, 0, 0, 0,
 #                           0, 0, 0, 0,
 #                           0, 0, 0, 0,
 #                           0, 0, 0, 0]
-known_label_ratio_list = [0]
+known_label_ratio_list = [0, 0, 0, 0, 0, 0, 0, 0]
 # List of similarity tag
 # sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
 #                 "glv", "glv", "glv", "glv",
 #                 "lch", "lch", "lch", "lch",
 #                 "path", "path", "path", "path",
 #                 "wup", "wup", "wup", "wup"]
-sim_tag_list = ["w2v"]
+sim_tag_list = ["w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v"]
 
 # --- Grid search parameters
 
 dist_option_vec = ["max_minus"]
 exch_mat_opt_vec = ["u"]
-exch_range_vec = [3, 5, 10, 15]
+exch_range_vec = [5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]
 kappa_vec = [0, 0.25, 0.5, 0.75, 1]
@@ -168,22 +177,23 @@ for i in range(len(input_file_list)):
                     nmi_vector = []
                     for _ in range(n_train):
                         # Compute the membership matrix
-                        result_matrix = clust_function(d_ext_mat=train_d_mat,
-                                                       exch_mat=train_exch_mat,
-                                                       w_mat=train_w_mat,
-                                                       n_groups=n_groups,
-                                                       alpha=alpha,
-                                                       beta=beta,
-                                                       kappa=kappa,
-                                                       init_labels=known_labels)
+                        res_matrix = clust_function(d_ext_mat=train_d_mat,
+                                                    exch_mat=train_exch_mat,
+                                                    w_mat=train_w_mat,
+                                                    n_groups=n_groups,
+                                                    alpha=alpha,
+                                                    beta=beta,
+                                                    kappa=kappa,
+                                                    init_labels=known_labels)
                         # Compute the groups
-                        algo_group_vec = np.argmax(result_matrix, 1) + 1
-                        rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
+                        alg_group_vec = np.argmax(res_matrix, 1) + 1
+                        rstr_alg_group_vec = np.delete(alg_group_vec, indices_for_known_label)
                         # Compute nmi score
-                        nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
+                        nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_alg_group_vec)
                         nmi_vector.append(nmi)
 
                     return np.mean(nmi_vector)
+
 
                 # Pool on multiprocessors
                 # Multiprocess
