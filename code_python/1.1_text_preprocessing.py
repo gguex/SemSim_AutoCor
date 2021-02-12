@@ -57,7 +57,7 @@ for corpus_name in corpus_name_list:
         for sentence in sentence_list:
 
             # Remove punctuation
-            sentence_pp = "".join([char for char in sentence if char in string.ascii_letters + " "])
+            sentence_pp = "".join([char for char in sentence if char in string.ascii_letters + " \n"])
 
             # Split by token
             token_list = nltk.word_tokenize(sentence_pp)

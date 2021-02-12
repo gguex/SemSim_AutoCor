@@ -12,7 +12,7 @@ from segeval import convert_positions_to_masses, pk, window_diff
 # --- Parameters
 # -------------------------------------
 
-input_file = "61320_201211_pp.txt"
+input_file = "61320_199211_pp.txt"
 
 output_html = "best_sent5.html"
 real_html = "sent5_real.html"

@@ -12,10 +12,15 @@ from miniutils import parallel_progbar
 # -------------------------------------
 
 # List of paths for text files to compute similarity
-input_file_list = ["mix_word1.txt",
-                   "mix_word5.txt",
-                   "mix_sent1.txt",
-                   "mix_sent5.txt"]
+input_file_list = ["Civil_Disobedience_pp.txt",
+                   "Flowers_of_the_Farm_pp.txt",
+                   "Sidelights_on_relativity_pp.txt",
+                   "Prehistoric_Textile_pp.txt"]
+#
+# input_file_list = ["mix_word1.txt",
+#                    "mix_word5.txt",
+#                    "mix_sent1.txt",
+#                    "mix_sent5.txt"]
 
 # List of tags to enumerate similarities to compute
 sim_tag_list = ["lch", "path", "wup"]
@@ -95,6 +100,7 @@ for input_file in input_file_list:
 
         # Vector for index of type with existing similarities
         ok_sim_index_list = []
+
 
         # Define compute col function
         def compute_col(i):

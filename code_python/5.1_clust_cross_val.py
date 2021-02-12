@@ -194,8 +194,6 @@ for i in range(len(input_file_list)):
 
                     return np.mean(nmi_vector)
 
-
-                # Pool on multiprocessors
                 # Multiprocess
                 res_multi = parallel_progbar(nmi_computation, hyperp_list, starmap=True, nprocs=n_cpu)
 
