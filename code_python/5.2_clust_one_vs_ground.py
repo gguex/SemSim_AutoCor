@@ -12,12 +12,12 @@ from segeval import convert_positions_to_masses, pk, window_diff
 # --- Parameters
 # -------------------------------------
 
-input_file = "61320_199211_pp.txt"
+input_file = "61620_200411_pp.txt"
 
-output_html = "best_sent5.html"
-real_html = "sent5_real.html"
-token_csv = "best_sent5.csv"
-type_csv = "best_sent5_type.csv"
+output_html = "algo.html"
+real_html = "real.html"
+token_csv = "tokens.csv"
+type_csv = "types.csv"
 
 sim_tag = "w2v"
 dist_option = "max_minus"
@@ -25,10 +25,10 @@ exch_mat_opt = "u"
 exch_range = 15
 alpha = 5
 beta = 50
-kappa = 0.25
+kappa = 0.5
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
-max_it = 1000
+max_it = 200
 
 # -------------------------------------
 # --- Computations

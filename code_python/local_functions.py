@@ -349,7 +349,7 @@ def discontinuity_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, 
 
 
 def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
-                   conv_threshold=1e-5, n_hist=20, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                   conv_threshold=1e-4, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
                    verbose=False):
     """
     Cluster tokens with cut soft clustering from a dissimilarity matrix, exchange matrix and transition matrix.
