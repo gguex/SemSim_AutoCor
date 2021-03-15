@@ -12,7 +12,7 @@ from segeval import convert_positions_to_masses, pk, window_diff
 # --- Parameters
 # -------------------------------------
 
-input_file = "61620_200411_pp.txt"
+input_file = "mix_sent1.txt"
 
 output_html = "algo.html"
 real_html = "real.html"
@@ -22,10 +22,10 @@ type_csv = "types.csv"
 sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 15
-alpha = 5
+exch_range = 3
+alpha = 2
 beta = 50
-kappa = 0.5
+kappa = 1
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
 max_it = 200

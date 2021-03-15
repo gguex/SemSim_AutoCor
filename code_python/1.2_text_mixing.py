@@ -14,10 +14,10 @@ corpus_name_list = ["Civil_Disobedience_pp.txt",
                     "Prehistoric_Textile_pp.txt"]
 
 # Sentence mixing, or words ("sent" or "word")
-unit_of_mix = "word"
+unit_of_mix = "sent"
 
 # Number of units for each bin
-nb_of_units = 1
+nb_of_units = 5
 
 # Minimum of words in sentence to mix
 min_nb_of_words_in_sent = 5
