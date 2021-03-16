@@ -7,6 +7,7 @@ import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 import pandas as pd
 from segeval import convert_positions_to_masses, pk, window_diff
+from itertools import permutations
 
 # -------------------------------------
 # --- Parameters
@@ -92,9 +93,21 @@ result_matrix = clust_function(d_ext_mat=d_ext_mat,
 # Compute the groups
 algo_group_vec = np.argmax(result_matrix, 1) + 1
 
+# Permutation of real group (for most matching colors)
+original_group = list(range(1, n_groups + 1))
+best_real_group_vec = real_group_vec
+best_nb_match = np.sum(real_group_vec == algo_group_vec)
+for perm in list(permutations(original_group)):
+    perm = np.array(perm)
+    test_real_group_vec = perm[real_group_vec - 1]
+    test_nb_match = np.sum(test_real_group_vec == algo_group_vec)
+    if test_nb_match > best_nb_match:
+        best_nb_match = test_nb_match
+        best_real_group_vec = test_real_group_vec
+
 # Compute the real membership matrix
 z_real_mat = np.zeros((len(token_list), n_groups))
-for i, label in enumerate(real_group_vec):
+for i, label in enumerate(best_real_group_vec):
     if label != 0:
         z_real_mat[i, :] = 0
         z_real_mat[i, label - 1] = 1
