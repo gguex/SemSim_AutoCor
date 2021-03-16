@@ -1,5 +1,6 @@
-# SemSim AutoCor
-Semantic similarities for the computation of textual autocorrelation
+# Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering
+
+![Alt text](fig/manifesto_clust.png)
 
 Useful links :
 
@@ -17,18 +18,4 @@ Useful links :
       https://github.com/getalp/disambiguate
       
   - Pretrained Embeddings from Wikipedia (in different languages) : 
-    https://wikipedia2vec.github.io/wikipedia2vec/pretrained/
-      
-
-Corpora : 
-
-  - Shakespeare: https://teipublisher.com/exist/apps/shakespeare-pm/index.html
-
-  - Karamazof: https://www.gutenberg.org/files/28054/28054-tei/
-  
-  
-Overleaf:
-
-https://www.overleaf.com/project/5f46262d3ce1bd0001fec944
-
-https://www.overleaf.com/project/5f46262d3ce1bd0001fec944
+    https://wikipedia2vec.github.io/wikipedia2vec/pretrained
