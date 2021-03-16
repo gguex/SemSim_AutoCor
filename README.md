@@ -1,6 +1,6 @@
 # Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering
 
-![Alt text](fig/manifesto_clust.png)
+![Alt text](fig/manifesto_clust.png?v=4&s=200)
 
 Useful links :
 
