@@ -18,17 +18,28 @@ and real-life corpora. It provides an original way to extract topics from a docu
 
 ### Result examples
 
+#### Standardized values of the Global Autocorrelation index vs distance between tokens according to the *Wu-Palmer semantic similarity*
+
 <p align="center">
 <img src="results/fig/3.1_autocor50_wup.png" alt="tokens" style="width:50%">
-<figcaption>Standardized values of the Global Autocorrelation index vs distance between tokens according to 
-the Wu-Palmer semantic similarity./figcaption>
+</p>
+
+#### Local semantic autocorrelation of tokens of *Flower of the Farms* corpus according to GloVe semantic similarity.
+
+<p align="center">
 <img src="results/fig/lisa.png" alt="tokens" style="width:50%">
-<figcaption>Local semantic autocorrelation of tokens of "Flower of the Farms" corpus according to GloVe semantic 
-similarity./figcaption>
+</p>
+
+#### Fuzzy Topic Clustering results on a *Manifesto project* file (Republican Party 2004)
+
+<p align="center">
 <img src="results/fig/manifesto_clust.png" alt="tokens" style="width:50%">
-<figcaption> Fuzzy Topic Clustering results on a Manifesto project file./figcaption>
+</p>
+
+#### Top 10 types for each cluster sorted by mean membership on a *Manifesto project* file (Republican Party 2004)
+
+<p align="center">
 <img src="results/fig/clust_table.png" alt="cluster" style="width:50%">
-<figcaption>The top 10 types for each cluster sorted by mean membership.</figcaption>
 </p>
 
 ### Organisation of this page
