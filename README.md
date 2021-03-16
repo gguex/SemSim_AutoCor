@@ -1,13 +1,11 @@
 # Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering
 
-<div class="row">
-  <div class="column">
+<table border="0">
+ <tr>
     <img src="fig/manifesto_clust.png" alt="tokens" style="width:100%">
-  </div>
-  <div class="column">
     <img src="fig/clust_table.png" alt="cluster" style="width:100%">
-  </div>
-</div> 
+ </tr>
+</table>
 
 Useful links :
 
