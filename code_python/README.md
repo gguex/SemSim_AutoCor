@@ -43,5 +43,5 @@ Contains utility
 
 ## Warnings
 
-The similarities and typefreq files computed with (w2v) similarities are missing from the github page, because 
+The similarities and typefreq files for the manifesto files are missing from the github page, because 
 the similarities files were too big to be stored on github (>100Mo). They can be quickly obtained with (2.2) script.
