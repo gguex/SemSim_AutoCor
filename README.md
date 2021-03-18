@@ -1,6 +1,6 @@
 # Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering
 
-Welcome to the GitHub repository for the article 
+Welcome to the GitHub repository for the (upcoming) article 
 *Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering*.
 
 ### Abstract 
