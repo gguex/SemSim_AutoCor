@@ -5,16 +5,16 @@ Welcome to the GitHub repository for the article
 
 ### Abstract 
 
-This paper presents a general formalism, originated from spatial statistics, which systematically combines two different 
-aspects of tokens found in a text: their *semantic similarities* and their *position* relatively to each others. 
-Uniting these two elements through a classical data analytic formalism yields textual autocorrelation indices of direct 
-relevance for clustering: the **global autocorrelation index** indicates if, overall, semantically similar tokens lies 
-in the same textual neighborhood; the **local autocorrelation index**, referring to each token, indicates if a token 
-semantically contrasted within its vicinity. This formalism also provides a **fuzzy tokens clustering** algorithm, where 
-resulting clusters contain a mixture of semantically and spatially similar words. This method, while close to 
+Many clustering procedures in Natural Language Processing aim at decomposing a text into $m$ groups of tokens both spatially 
+homogeneous and referring to the same topic. This paper presents a general formalism, originated from spatial statistics, 
+which systematically combines two different aspects of tokens found in a text: their *semantic similarities* and their 
+*position* relatively to each others. Uniting these two elements through a classical data analytic formalism yields textual 
+autocorrelation indices of direct relevance for clustering: the **global autocorrelation index** indicates if, overall, 
+semantically similar tokens lies in the same textual neighborhood; the **local autocorrelation index**, referring to each token, 
+indicates if a token semantically contrasted within its vicinity. This formalism also provides a **fuzzy tokens clustering** algorithm, 
+where resulting clusters contain a mixture of semantically and spatially similar words. This method, while close to 
 *Topic Modeling* or *Topic Segmentation* approaches, differs from it and demonstrates promising results on artificial 
-and real-life corpora. It provides an original way to extract topics from a document, hence the name 
-**Fuzzy Topic Clustering**.
+and real-life corpora. It provides an original way to extract topics from a document, hence the name **Fuzzy Topic Clustering**.
 
 ### Result examples
 
