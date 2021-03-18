@@ -48,7 +48,7 @@ This page is organised as followed :
 
 * In the *code_python* folder lies the code which allows to produce results found in the article. There is another 
   README.md inside this folder detailing the code. Perhaps the most important script is 
-  **local_functions.py**, which contains documented functions aimed to be used again.
+  **local_functions.py**, which contains documented functions aimed to be reused.
 
 * In the *corpora* folder, you will find all corpora used during experiments, with raw versions and preprocessed 
   versions.
