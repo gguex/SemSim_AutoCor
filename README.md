@@ -5,11 +5,10 @@ Welcome to the GitHub repository for the (upcoming) article
 
 ### Abstract 
 
-Many clustering procedures in Natural Language Processing aim at decomposing a text into $m$ groups of tokens both spatially 
-homogeneous and referring to the same topic. This paper presents a general formalism, originated from spatial statistics, 
-which systematically combines two different aspects of tokens found in a text: their *semantic similarities* and their 
-*position* relatively to each others. Uniting these two elements through a classical data analytic formalism yields textual 
-autocorrelation indices of direct relevance for clustering: the **global autocorrelation index** indicates if, overall, 
+Many procedures in Natural Language Processing aim at discovering underlying topics in a document. This paper presents 
+a general formalism, originated from spatial statistics, which systematically combines two different aspects of tokens found in a text: 
+their *semantic similarities* and their *position* relatively to each others. Uniting these two elements through a classical 
+data analytic formalism yields textual autocorrelation indices of direct relevance for clustering: the **global autocorrelation index** indicates if, overall, 
 semantically similar tokens lies in the same textual neighborhood; the **local autocorrelation index**, referring to each token, 
 indicates if a token semantically contrasted within its vicinity. This formalism also provides a **fuzzy tokens clustering** algorithm, 
 where resulting clusters contain a mixture of semantically and spatially similar words. This method, while close to 
