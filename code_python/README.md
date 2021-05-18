@@ -13,7 +13,7 @@ The pipeline for obtaining results take different steps :
    group file with true groups.
 2. The computation of the similarity matrices between types from a pre-processed file, 
    along with the frequencies of each type (which is also useful for referencing the row and column of the 
-   similarity matrix). (2.1) computes WordNet similarities, (2.2) Word Vectors similarities. The (2.2) script requires a copy of word vectors downloaded from GloVe or Wikipedia2Vec websites.
+   similarity matrix). (2.1) computes WordNet similarities, (2.2) Word Vectors similarities. The (2.2) script requires a copy of word vectors downloaded from GloVe or Wikipedia2Vec websites, in the Gensim format (use the transform_test_into_gensim_model.py script in utils).
 3. The computation of the global autocorrelation index from multiple text files and a similarity. Results are saved
    into a csv file and can be plotted with "utils/graph_from_data.py".
 4. The computation of the local autocorrelation index (LISA) for every token from a text file and 
