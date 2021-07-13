@@ -600,7 +600,7 @@ def write_membership_mat_in_csv_file(output_file, z_token_list, z_mat, comment_l
         for i, token in enumerate(z_token_list):
             text_file.write(f"{token},{i + 1}")
             for j in range(n_groups):
-                text_file.write(f",{z_mat[i, j]}")
+                text_file.write(f",{z_mat[i, j]:.20f}")
             text_file.write("\n")
 
     # Return 0 is all went well

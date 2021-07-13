@@ -12,20 +12,20 @@ import csv
 # Input files list
 input_file_list = ["The_WW_of_Oz_pp.txt"]
 # Similarity tag list
-sim_tag_list = ["wup"]
+sim_tag_list = ["w2v"]
 
 # Distance option
-dist_option = "minus_log"
+dist_option = "max_minus"
 # Exchange matrix option ("s" = standard, "u" = uniform, "d" = diffusive)
-exch_mat_opt = "d"
+exch_mat_opt = "u"
 # Exchange matrix range (for uniform) OR time step (for diffusive)
-exch_range = 5
+exch_range = 10
 # Number of groups
 n_groups = 5
 # Alpha parameter
-alpha = 5
+alpha = 10
 # Beta parameter
-beta = 50
+beta = 10
 # Kappa parameter
 kappa = 0.8
 # Clustering method tag ("disc" or "cut")"
