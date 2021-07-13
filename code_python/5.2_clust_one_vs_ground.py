@@ -4,7 +4,7 @@ from local_functions import get_all_paths, type_to_token_matrix_expansion, simil
 import numpy as np
 import csv
 import random as rdm
-from sklearn.metrics import normalized_mutual_info_score
+from sklearn.metrics import normalized_mutual_info_score, average_precision_score
 import pandas as pd
 from segeval import convert_positions_to_masses, pk, window_diff
 from itertools import permutations
@@ -115,9 +115,14 @@ for i, label in enumerate(best_real_group_vec):
 # Restrained results
 rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
 rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
+rstr_best_real_group_vec = np.delete(best_real_group_vec, indices_for_known_label)
 
 # Compute nmi score
 nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
+# Compute Map
+ap_vector = [average_precision_score(rstr_best_real_group_vec == group_id, rstr_algo_group_vec == group_id)
+             for group_id in range(1, max(rstr_real_group_vec) + 1)]
+map = np.mean(ap_vector)
 
 # Segmentation evaluation
 real_segm_vec = convert_positions_to_masses(rstr_real_group_vec)
@@ -151,4 +156,4 @@ write_membership_mat_in_csv_file(token_csv, token_list, result_matrix)
 # Write csv type result
 write_membership_mat_in_csv_file(type_csv, type_list, type_values)
 # Print nmi, pk_res, win_diff
-print(f"nmi = {nmi}, pk={pk_res} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")
+print(f"nmi = {nmi}, map = {map}, pk={pk_res} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")
