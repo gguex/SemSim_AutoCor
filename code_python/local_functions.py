@@ -401,10 +401,13 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, ini
     # Set true labels
     # If init_labels is not None, set known to value
     if init_labels is not None:
-        for i, label in enumerate(init_labels):
-            if label != 0:
-                z_mat[i, :] = 0
-                z_mat[i, label - 1] = 1
+        if len(np.array(init_labels).shape) == 1:
+            for i, label in enumerate(init_labels):
+                if label != 0:
+                    z_mat[i, :] = 0
+                    z_mat[i, label - 1] = 1
+        else:
+            z_mat[np.sum(init_labels, axis=1) > 1e-2, :] = init_labels[np.sum(init_labels, axis=1) > 1e-2, :]
 
     # Control of the loop
     converge = False
