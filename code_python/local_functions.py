@@ -350,7 +350,7 @@ def discontinuity_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, 
 
 
 def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
-                   conv_threshold=1e-4, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                   conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
                    verbose=False):
     """
     Cluster tokens with cut soft clustering from a dissimilarity matrix, exchange matrix and transition matrix.
@@ -478,7 +478,7 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, ini
 
 
 def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
-                            kappa, block_size=1000, init_labels=None, conv_threshold=1e-4, n_hist=10, max_it=200,
+                            kappa, block_size=1000, init_labels=None, conv_threshold=1e-5, n_hist=10, max_it=200,
                             learning_rate_init=1, learning_rate_mult=0.9, verbose=False):
     """
     Cluster tokens with cut soft clustering from any file. Uses the block_size to cut the text in smaller segments.
@@ -518,8 +518,9 @@ def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_o
     :type learning_rate_mult: float
     :param verbose: turn on messages during computation (default = False)
     :type verbose: bool
-    :return: the n_tokens x n_groups membership matrix for each token and the list of token found in the wv model
-    :rtype: (numpy.ndarray, list[str])
+    :return: the n_tokens x n_groups membership matrix for each token, the list of token found in the wv model,
+             the boolean vector of found tokens
+    :rtype: (numpy.ndarray, list[str], list[bool])
     """
 
     # Opening the file
@@ -607,7 +608,7 @@ def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_o
         # Put the z_block in z_final
         z_final[range_list[i], :] = z_block
 
-    return z_final, existing_token_list
+    return z_final, existing_token_list, existing_pos_list
 
 
 def write_vector_in_html_file(output_file, token_list, vec, comment_line=None):
