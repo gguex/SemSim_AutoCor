@@ -4,6 +4,7 @@ import colorsys
 from scipy.linalg import expm
 import warnings
 import numpy as np
+from gensim.models import KeyedVectors
 
 
 def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
@@ -205,8 +206,8 @@ def autocorrelation_index(d_ext_mat, exch_mat, w_mat):
     # Compute the theoretical expected value
     theoretical_mean = (np.trace(w_mat) - 1) / (n_token - 1)
     # Compute the theoretical
-    theoretical_var = 2 * (np.trace(np.linalg.matrix_power(w_mat, 2)) - 1 - (np.trace(w_mat) - 1)**2 / (n_token - 1)) \
-        / (n_token**2 - 1)
+    theoretical_var = 2 * (np.trace(np.linalg.matrix_power(w_mat, 2)) - 1 - (np.trace(w_mat) - 1) ** 2 / (n_token - 1)) \
+                      / (n_token ** 2 - 1)
 
     # Return autocorrelation index, theoretical mean and theoretical variance
     return autocor_index, theoretical_mean, theoretical_var
@@ -317,7 +318,7 @@ def discontinuity_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, 
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
-            - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
+                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
 
         # Computation of the new z_mat
         z_new_mat = rho_vec * np.exp(-hig_mat)
@@ -440,7 +441,7 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, ini
 
         # Computation of H_ig
         hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (rho_vec - w_mat.dot(z_mat)) \
-            - (0.5 * alpha * kappa * c_g / rho_vec)
+                  - (0.5 * alpha * kappa * c_g / rho_vec)
 
         # Computation of the free energy and the new z_mat
         z_mat_new = rho_vec * np.exp(-hig_mat)
@@ -476,6 +477,139 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, ini
     return z_mat
 
 
+def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
+                            kappa, block_size=1000, init_labels=None, conv_threshold=1e-4, n_hist=10, max_it=200,
+                            learning_rate_init=1, learning_rate_mult=0.9, verbose=False):
+    """
+    Cluster tokens with cut soft clustering from any file. Uses the block_size to cut the text in smaller segments.
+    Semi-supervised option available if init_labels is given.
+
+    :param file_path: The path of the text file
+    :type file_path: str
+    :param word_vector_path: The path of a word vector model, in a gensim format
+    :type word_vector_path: str
+    :param dist_option: transformation parameter from similarity to dissimilarity, either "minus_log" or "max_minus".
+    :type dist_option: str
+    :param exch_mat_opt: option for the exchange matrix, "s" = standard, "u" = uniform, "d" = diffusive, "r" = ring
+    :type exch_mat_opt: str
+    :param exch_range: range of the exchange matrix
+    :type exch_range: int
+    :param n_groups: the number of groups
+    :type n_groups: int
+    :param alpha: alpha parameter
+    :type alpha: float
+    :param beta: beta parameter
+    :type beta: float
+    :param kappa: kappa parameter
+    :type kappa: float
+    :param block_size: The size of the blocks to slice the initial text
+    :type block_size: int
+    :param init_labels: a vector containing initial labels. 0 = unknown class. (default = None)
+    :type init_labels: numpy.ndarray
+    :param conv_threshold: convergence threshold (default = 1e-5)
+    :type conv_threshold: float
+    :param n_hist: number of past iterations which must be under threshold for considering convergence (default = 10)
+    :type n_hist: int
+    :param max_it: maximum iterations (default = 100)
+    :type max_it: int
+    :param learning_rate_init: initial value of the learning_rate parameter (>0, default = 1)
+    :type learning_rate_init: float
+    :param learning_rate_mult: multiplication coefficient for the learning_rate parameter (in ]0,1[, default = 0.9)
+    :type learning_rate_mult: float
+    :param verbose: turn on messages during computation (default = False)
+    :type verbose: bool
+    :return: the n_tokens x n_groups membership matrix for each token and the list of token found in the wv model
+    :rtype: (numpy.ndarray, list[str])
+    """
+
+    # Opening the file
+    with open(file_path, "r") as text_file:
+        text_string = text_file.read()
+    # Split by tokens
+    token_list = nltk.word_tokenize(text_string)
+    # Vocabulary of text
+    vocab_text = set(token_list)
+
+    # Loading wordvector models
+    wv_model = KeyedVectors.load(word_vector_path)
+    # Vocabulary of word vectors
+    vocab_wv = set(wv_model.vocab.keys())
+
+    # The common vocabulary
+    vocab_common = list(vocab_wv & vocab_text)
+    # Reducing token_list to existing one
+    existing_pos_list = [token in vocab_common for token in token_list]
+    existing_token_list = np.array(token_list)[existing_pos_list]
+
+    # Defining blocks indices
+    n_token = len(existing_token_list)
+    n_split = round(n_token / block_size)
+    n_block = n_split + (n_split - 1)
+    real_split_size = int(n_token / n_split)
+    range_list = []
+    for i in range(n_block):
+        if i == (n_block - 1):
+            range_list.append(range(int(i * real_split_size / 2), n_token))
+        else:
+            range_list.append(range(int(i * real_split_size / 2), int((i / 2 + 1) * real_split_size)))
+
+    # Defining the initial matrix
+    z_final = np.zeros((n_token, n_groups))
+    if init_labels is not None:
+        if len(np.array(init_labels).shape) == 1:
+            for i, label in enumerate(init_labels):
+                if label != 0:
+                    z_final[i, :] = 0
+                    z_final[i, label - 1] = 1
+        else:
+            z_final[np.sum(init_labels, axis=1) > 1e-2, :] = init_labels[np.sum(init_labels, axis=1) > 1e-2, :]
+
+    # Loop on blocks
+    for i in range(n_block):
+
+        # Get block token and size
+        block_token = existing_token_list[range_list[i]]
+        n_block_token = len(block_token)
+
+        # Build sim matrix
+        sim_matrix = np.eye(n_block_token) / 2
+        for ind_token_1 in range(n_block_token):
+            for ind_token_2 in range(ind_token_1 + 1, n_block_token):
+                sim_matrix[ind_token_1, ind_token_2] = \
+                    wv_model.similarity(block_token[ind_token_1], block_token[ind_token_2])
+        sim_matrix = sim_matrix + sim_matrix.T
+
+        # Build dist matrix
+        dist_matrix = similarity_to_dissimilarity(sim_matrix, dist_option=dist_option)
+
+        # Compute the exchange and transition matrices
+        exch_mat, w_mat = exchange_and_transition_matrices(n_block_token, exch_mat_opt=exch_mat_opt,
+                                                           exch_range=exch_range)
+
+        known_labels = z_final[range_list[i], :]
+
+        # Compute the membership matrix for the block
+        z_block = cut_clustering(d_ext_mat=dist_matrix,
+                                 exch_mat=exch_mat,
+                                 w_mat=w_mat,
+                                 n_groups=n_groups,
+                                 alpha=alpha,
+                                 beta=beta,
+                                 kappa=kappa,
+                                 init_labels=known_labels,
+                                 max_it=max_it,
+                                 conv_threshold=conv_threshold,
+                                 n_hist=n_hist,
+                                 learning_rate_init=learning_rate_init,
+                                 learning_rate_mult=learning_rate_mult,
+                                 verbose=verbose)
+
+        # Put the z_block in z_final
+        z_final[range_list[i], :] = z_block
+
+    return z_final, existing_token_list
+
+
 def write_vector_in_html_file(output_file, token_list, vec, comment_line=None):
     """
     Write the token list in html file where colors correspond to value of the vector "vec".
@@ -493,9 +627,9 @@ def write_vector_in_html_file(output_file, token_list, vec, comment_line=None):
     # Compute the vector of color
     color_vec = np.copy(vec)
     color_vec[color_vec > 0] = (color_vec[color_vec > 0] - np.min(color_vec[color_vec > 0])) \
-        / (np.max(vec) - np.min(color_vec[color_vec > 0])) * 255
+                               / (np.max(vec) - np.min(color_vec[color_vec > 0])) * 255
     color_vec[color_vec < 0] = (color_vec[color_vec < 0] - np.max(color_vec[color_vec < 0])) \
-        / np.abs(np.min(vec) - np.max(color_vec[color_vec < 0])) * 255
+                               / np.abs(np.min(vec) - np.max(color_vec[color_vec < 0])) * 255
     color_vec = np.intc(color_vec)
 
     # Write token in the html file
