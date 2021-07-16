@@ -20,7 +20,7 @@ real_html = "real_rep2004.html"
 token_csv = "best_rep2004_tokens.csv"
 type_csv = "best_rep2004_types.csv"
 
-sim_tag = "w2v"
+sim_tag = "ftx"
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15

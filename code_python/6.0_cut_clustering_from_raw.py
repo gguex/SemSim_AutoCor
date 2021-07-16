@@ -23,10 +23,11 @@ file_path = f"{base_path}/corpora/{input_file}"
 
 # Getting the wv path
 home = expanduser("~")
-wv_path = f"{home}/Documents/data/pretrained_word_vectors/enwiki.model"
+word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/enwiki.model"
 
-z_res, existing_token_list, existing_pos_list = cut_clustering_from_raw(file_path, wv_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
-                              kappa, block_size=block_size, verbose=True)
+z_res, existing_token_list, existing_pos_list = cut_clustering_from_raw(file_path, word_vector_path, dist_option,
+                                                                        exch_mat_opt, exch_range, n_groups, alpha, beta,
+                                                                        kappa, block_size=block_size, verbose=True)
 
 write_groups_in_html_file("test.html", existing_token_list, z_res)
 

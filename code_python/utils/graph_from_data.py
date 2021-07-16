@@ -6,11 +6,13 @@ import csv
 import os
 
 # CSV file list
-csv_file_name_list = ["3.1_autocor50_glv.csv",
-                      "3.1_autocor50_w2v.csv",
-                      "3.1_autocor50_lch.csv",
-                      "3.1_autocor50_path.csv",
-                      "3.1_autocor50_wup.csv"]
+# csv_file_name_list = ["3.1_autocor50_glv.csv",
+#                       "3.1_autocor50_w2v.csv",
+#                       "3.1_autocor50_lch.csv",
+#                       "3.1_autocor50_path.csv",
+#                       "3.1_autocor50_wup.csv"]
+
+csv_file_name_list = ["3.2_autocor50_w2v.csv"]
 
 # Computations
 # Working path
