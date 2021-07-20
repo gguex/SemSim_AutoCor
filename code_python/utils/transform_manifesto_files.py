@@ -91,6 +91,8 @@ for file_name in file_name_list:
                     for j, token in enumerate(token_list_pp):
                         text_file.write(f"{token} ")
                         groups_file.write(f"{translation_dic[group_list[i]]}, ")
+                # Endline
+                text_file.write("\n")
 
             groups_file.seek(groups_file.tell() - 2)
             groups_file.truncate()
