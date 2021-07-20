@@ -349,7 +349,7 @@ def discontinuity_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, 
     return z_mat
 
 
-def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
+def cut_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, init_labels=None,
                    conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
                    verbose=False):
     """
@@ -362,8 +362,8 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, ini
     :type exch_mat: numpy.ndarray
     :param w_mat: the n_token x n_token Markov chain transition matrix
     :type w_mat: numpy.ndarray
-    :param n_groups: the number of groups
-    :type n_groups: int
+    :param n_group: the number of groups
+    :type n_group: int
     :param alpha: alpha parameter
     :type alpha: float
     :param beta: beta parameter
@@ -396,7 +396,7 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, ini
 
     # Initialization of Z
     # z_mat = np.random.random((n_token, n_groups))
-    z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
+    z_mat = np.abs(np.ones((n_token, n_group)) + np.random.normal(0, 0.001, (n_token, n_group)))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
 
     # Set true labels
@@ -593,7 +593,7 @@ def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_o
         z_block = cut_clustering(d_ext_mat=dist_matrix,
                                  exch_mat=exch_mat,
                                  w_mat=w_mat,
-                                 n_groups=n_groups,
+                                 n_group=n_groups,
                                  alpha=alpha,
                                  beta=beta,
                                  kappa=kappa,

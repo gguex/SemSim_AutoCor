@@ -1,20 +1,27 @@
-# from gensim.models.ldamodel import LdaModel
-# from gensim.corpora.dictionary import Dictionary
-# from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion
-# import numpy as np
-# import csv
-# from sklearn.metrics import normalized_mutual_info_score
+from gensim.models.ldamodel import LdaModel
+from gensim.corpora.dictionary import Dictionary
+from code_python.local_functions import get_all_paths, type_to_token_matrix_expansion
+import numpy as np
+import csv
+from sklearn.metrics import normalized_mutual_info_score
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # File name to explore
-input_file = "mix_word1.txt"
+input_file_list = ["61320_199211_pp.txt",
+                   "61320_200411_pp.txt",
+                   "61320_201211_pp.txt",
+                   "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
+                   "61620_201611_pp.txt"]
 # Similarity tag
 sim_tag = "w2v"
 # Number of groups
-n_groups = 4
+n_group = 4
 # Number of test
 n_tests = 50
 
@@ -51,7 +58,7 @@ nmi_vec = []
 for i in range(n_tests):
     # Computing the LDA
     lda = LdaModel(lda_corpus,
-                   num_topics=n_groups,
+                   num_topics=n_group,
                    alpha="auto",
                    eta="auto")
 

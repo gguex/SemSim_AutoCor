@@ -138,7 +138,7 @@ for i in range(len(input_file_list)):
         train_s_mat = sim_ext_mat[train_id, :][:, train_id]
         train_real_group_vec = real_group_vec[train_id]
         # Number of groups
-        n_groups = len(set(train_real_group_vec))
+        n_group = len(set(train_real_group_vec))
 
         # For semi-supervised results, pick some labels
         if known_label_ratio > 0:
@@ -180,7 +180,7 @@ for i in range(len(input_file_list)):
                         res_matrix = clust_function(d_ext_mat=train_d_mat,
                                                     exch_mat=train_exch_mat,
                                                     w_mat=train_w_mat,
-                                                    n_groups=n_groups,
+                                                    n_group=n_group,
                                                     alpha=alpha,
                                                     beta=beta,
                                                     kappa=kappa,
@@ -221,7 +221,7 @@ for i in range(len(input_file_list)):
         test_real_group_vec = real_group_vec[test_id]
 
         # Number of groups
-        n_groups = len(set(test_real_group_vec))
+        n_group = len(set(test_real_group_vec))
 
         # For semi-supervised results, pick some labels
         if known_label_ratio > 0:
@@ -246,7 +246,7 @@ for i in range(len(input_file_list)):
         result_matrix = clust_function(d_ext_mat=test_d_mat,
                                        exch_mat=test_exch_mat,
                                        w_mat=test_w_mat,
-                                       n_groups=n_groups,
+                                       n_group=n_group,
                                        alpha=best_param_dic["alpha"],
                                        beta=best_param_dic["beta"],
                                        kappa=best_param_dic["kappa"],
@@ -268,7 +268,7 @@ for i in range(len(input_file_list)):
 
         # Writing results
         with open(results_file_name, "a") as output_file:
-            output_file.write(f"{input_file},{known_label_ratio},{sim_tag},{n_groups},{fold_id},"
+            output_file.write(f"{input_file},{known_label_ratio},{sim_tag},{n_group},{fold_id},"
                               f"{best_param_dic['dist_option']},{best_param_dic['exch_mat_opt']},"
                               f"{best_param_dic['exch_range']},{best_param_dic['alpha']},{best_param_dic['beta']},"
                               f"{best_param_dic['kappa']},{nmi_train},{nmi_test}\n")

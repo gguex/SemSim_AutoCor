@@ -21,7 +21,7 @@ exch_mat_opt = "u"
 # Exchange matrix range (for uniform) OR time step (for diffusive)
 exch_range = 10
 # Number of groups
-n_groups = 5
+n_group = 5
 # Alpha parameter
 alpha = 10
 # Beta parameter
@@ -72,7 +72,7 @@ for input_file in input_file_list:
 
         # Compute the membership matrix
         result_matrix = segm_function(d_ext_mat, exch_mat, w_mat,
-                                      n_groups=n_groups,
+                                      n_group=n_group,
                                       alpha=alpha,
                                       beta=beta,
                                       kappa=kappa)
@@ -80,7 +80,7 @@ for input_file in input_file_list:
         # Experiment description
         experiment_description = f"{input_file} | segm_tag: {clust_tag} | sim_tag: {sim_tag} | " \
                                  f"dist_option: {dist_option} | exch_mat_opt: {exch_mat_opt} | " \
-                                 f"exch_range: {exch_range} | n_groups: {n_groups} | " \
+                                 f"exch_range: {exch_range} | n_groups: {n_group} | " \
                                  f"alpha: {alpha} | beta: {beta} | kappa: {kappa}"
 
         # Write html results

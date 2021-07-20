@@ -58,7 +58,7 @@ with open(ground_truth_path) as ground_truth:
     real_group_vec = ground_truth.read()
     real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
 real_group_vec = real_group_vec[existing_index_list]
-n_groups = len(set(real_group_vec))
+n_group = len(set(real_group_vec))
 
 # For semi-supervised results, pick some labels
 if known_label_ratio > 0:
@@ -82,7 +82,7 @@ exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
 result_matrix = clust_function(d_ext_mat=d_ext_mat,
                                exch_mat=exch_mat,
                                w_mat=w_mat,
-                               n_groups=n_groups,
+                               n_group=n_group,
                                alpha=alpha,
                                beta=beta,
                                kappa=kappa,
@@ -94,7 +94,7 @@ result_matrix = clust_function(d_ext_mat=d_ext_mat,
 algo_group_vec = np.argmax(result_matrix, 1) + 1
 
 # Permutation of real group (for most matching colors)
-original_group = list(range(1, n_groups + 1))
+original_group = list(range(1, n_group + 1))
 best_real_group_vec = real_group_vec
 best_nb_match = np.sum(real_group_vec == algo_group_vec)
 for perm in list(permutations(original_group)):
@@ -106,7 +106,7 @@ for perm in list(permutations(original_group)):
         best_real_group_vec = test_real_group_vec
 
 # Compute the real membership matrix
-z_real_mat = np.zeros((len(token_list), n_groups))
+z_real_mat = np.zeros((len(token_list), n_group))
 for i, label in enumerate(best_real_group_vec):
     if label != 0:
         z_real_mat[i, :] = 0
