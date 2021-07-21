@@ -4,6 +4,7 @@ import os
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # -------------------------------------
 # --- Parameters
@@ -64,6 +65,13 @@ for input_file in input_file_list:
 
         # Compute the lisa vector
         lisa_vec = lisa_computation(d_ext_mat, exch_mat, w_mat)
+
+        # Make the df by token
+        df_token = pd.DataFrame(lisa_vec)
+        df_token["token"] = token_list
+
+        # Make the df by type
+        df_type = df_token.groupby("Token").mean()
 
         # Experiment description
         experiment_description = f"{input_file} | sim_tag: {sim_tag} | dist_option: {dist_option} | " \
