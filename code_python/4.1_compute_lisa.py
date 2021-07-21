@@ -15,7 +15,7 @@ import pandas as pd
 #                    "Flowers_of_the_Farm_pp.txt",
 #                    "Sidelights_on_relativity_pp.txt",
 #                    "Prehistoric_Textile_pp.txt"]
-input_file_list = ["Civil_Disobedience_pp.txt"]
+input_file_list = ["Flowers_of_the_Farm_pp.txt"]
 
 # Similarity tag list
 #sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
@@ -74,7 +74,7 @@ for input_file in input_file_list:
         df_token["lisa"] = lisa_vec
 
         # Make the df by type
-        df_type = df_token.groupby("token").mean()
+        df_type = df_token.groupby("token").sum()
 
         # Experiment description
         experiment_description = f"{input_file} | sim_tag: {sim_tag} | dist_option: {dist_option} | " \
@@ -95,4 +95,5 @@ for input_file in input_file_list:
         plt.close()
 
         # Write token and type df
-        df_token.to_csv()
+        df_token.to_csv(f"{base_path}/results/4_lisa_results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}_token.csv")
+        df_type.to_csv(f"{base_path}/results/4_lisa_results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}_type.csv")

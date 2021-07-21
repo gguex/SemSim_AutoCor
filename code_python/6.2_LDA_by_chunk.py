@@ -10,24 +10,41 @@ from tqdm import tqdm
 # -------------------------------------
 
 # File name to explore
-input_file_list = ["mix_word1.txt",
-                   "mix_word5.txt",
-                   "mix_sent1.txt",
-                   "mix_sent5.txt",
-                   "mix_word1.txt",
-                   "mix_word5.txt",
-                   "mix_sent1.txt",
-                   "mix_sent5.txt"]
+# input_file_list = ["mix_word1.txt",
+#                    "mix_word5.txt",
+#                    "mix_sent1.txt",
+#                    "mix_sent5.txt",
+#                    "mix_word1.txt",
+#                    "mix_word5.txt",
+#                    "mix_sent1.txt",
+#                    "mix_sent5.txt"]
+input_file_list = ["61320_199211_pp.txt",
+                   "61320_200411_pp.txt",
+                   "61320_201211_pp.txt",
+                   "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
+                   "61620_201611_pp.txt",
+                   "61320_199211_pp.txt",
+                   "61320_200411_pp.txt",
+                   "61320_201211_pp.txt",
+                   "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
+                   "61620_201611_pp.txt"]
 # Use prior distrib for topics list
-prior_distrib_list = [True, True, True, True, False, False, False, False]
+prior_distrib_list = [False] * len(input_file_list)
 # Number of tests list
-n_test_list = [100, 100, 100, 100, 100, 100, 100, 100]
+n_test_list = [100] * len(input_file_list)
 # Number of tokens for chunk
 # n_token_per_chunk_list = [2, 7, 17, 85, 2, 7, 17, 85]
-n_token_per_chunk_list = [50, 50, 50, 50, 50, 50, 50, 50]
+n_token_per_chunk_list = [20, 20, 20, 20, 20, 20, 20, 20,
+                          50, 50, 50, 50, 50, 50, 50, 50]
 
 # Results file name
-results_file_name = "../results/6_lda_results/lda_mix_fixed_size.csv"
+results_file_name = "../results/6_lda_results/lda_manifesto_fixed_size.csv"
 
 # -------------------------------------
 # --- Loading and preprocessing
