@@ -35,9 +35,10 @@ for file_name in file_name_list:
             for row in csv_reader:
                 try:
                     class_id = float(row[1])
-                    class_id = class_id // 100
-                    sent_list.append(row[0])
-                    group_list.append(class_id)
+                    if (class_id > 0):
+                        class_id = class_id // 100
+                        sent_list.append(row[0])
+                        group_list.append(class_id)
                 except:
                     pass
 
@@ -92,7 +93,8 @@ for file_name in file_name_list:
                         text_file.write(f"{token} ")
                         groups_file.write(f"{translation_dic[group_list[i]]}, ")
                 # Endline
-                text_file.write("\n")
+                if i < (len(sent_list) - 1):
+                    text_file.write("\n")
 
             groups_file.seek(groups_file.tell() - 2)
             groups_file.truncate()

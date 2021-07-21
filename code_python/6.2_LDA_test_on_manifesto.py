@@ -20,8 +20,6 @@ input_file_list = ["61320_199211_pp.txt",
                    "61620_201611_pp.txt"]
 # Similarity tag
 sim_tag = "w2v"
-# Number of groups
-n_group = 4
 # Number of test
 n_test = 50
 

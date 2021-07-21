@@ -6,6 +6,7 @@ import multiprocessing as mp
 from miniutils import parallel_progbar
 from os.path import expanduser
 import nltk
+from gensim.models import KeyedVectors
 
 # -------------------------------------
 # --- Parameters
@@ -38,11 +39,18 @@ base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 # Save the windows for autocorrelation range
 exch_range_window = list(range(1, exch_max_range + 1))
 
-# Getting the wv path
+# Getting home path
 home = expanduser("~")
-word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/enwiki.model"
 
 for sim_tag in sim_tag_list:
+
+    # Get the wv path
+    if sim_tag == "w2v":
+        word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/enwiki.model"
+    elif sim_tag == "glv":
+        word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/glove42B300d.model"
+    else:
+        word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/cc.en.300.vec.txt"
 
     # Output file name
     output_file_name = f"{base_path}/results/3.2_autocor{exch_max_range}_{sim_tag}.csv"
