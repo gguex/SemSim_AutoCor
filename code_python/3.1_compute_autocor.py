@@ -40,7 +40,7 @@ exch_range_window = list(range(1, exch_max_range + 1))
 for sim_tag in sim_tag_list:
 
     # Output file name
-    output_file_name = f"{base_path}/results/3.1_autocor{exch_max_range}_{sim_tag}.csv"
+    output_file_name = f"{base_path}/results/3_autocor_results/3.1_autocor{exch_max_range}_{sim_tag}.csv"
     # Write header
     with open(output_file_name, "w") as output_file:
         output_file.write("csv_file_name, " + f"{list(range(1, 1 + exch_max_range))}"[1:-1] + "\n")

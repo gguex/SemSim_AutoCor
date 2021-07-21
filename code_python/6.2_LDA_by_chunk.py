@@ -27,7 +27,7 @@ n_test_list = [100, 100, 100, 100, 100, 100, 100, 100]
 n_token_per_chunk_list = [50, 50, 50, 50, 50, 50, 50, 50]
 
 # Results file name
-results_file_name = "../results/lda_results/lda_mix_fixed_size.csv"
+results_file_name = "../results/6_lda_results/lda_mix_fixed_size.csv"
 
 # -------------------------------------
 # --- Loading and preprocessing

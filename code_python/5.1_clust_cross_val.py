@@ -27,7 +27,7 @@ n_train = 1
 n_cpu = int(os.getenv("SLURM_CPUS_PER_TASK"))
 
 # List of names for the ouputted result files
-results_file_name = "results/cv_results/cv_manifestos1.csv"
+results_file_name = "results/5_cv_results/cv_manifestos1.csv"
 
 # --- Experiments loop lists (to make several experiments)
 

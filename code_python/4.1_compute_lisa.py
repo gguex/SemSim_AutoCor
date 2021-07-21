@@ -11,13 +11,15 @@ import pandas as pd
 # -------------------------------------
 
 # Input files list
-input_file_list = ["Civil_Disobedience_pp.txt",
-                   "Flowers_of_the_Farm_pp.txt",
-                   "Sidelights_on_relativity_pp.txt",
-                   "Prehistoric_Textile_pp.txt"]
+# input_file_list = ["Civil_Disobedience_pp.txt",
+#                    "Flowers_of_the_Farm_pp.txt",
+#                    "Sidelights_on_relativity_pp.txt",
+#                    "Prehistoric_Textile_pp.txt"]
+input_file_list = ["Civil_Disobedience_pp.txt"]
 
 # Similarity tag list
-sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
+#sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
+sim_tag_list = ["w2v"]
 
 # Distance option
 dist_option = "max_minus"
@@ -67,18 +69,20 @@ for input_file in input_file_list:
         lisa_vec = lisa_computation(d_ext_mat, exch_mat, w_mat)
 
         # Make the df by token
-        df_token = pd.DataFrame(lisa_vec)
+        df_token = pd.DataFrame()
         df_token["token"] = token_list
+        df_token["lisa"] = lisa_vec
 
         # Make the df by type
-        df_type = df_token.groupby("Token").mean()
+        df_type = df_token.groupby("token").mean()
 
         # Experiment description
         experiment_description = f"{input_file} | sim_tag: {sim_tag} | dist_option: {dist_option} | " \
                                  f"exch_mat_opt: {exch_mat_opt} | exch_range: {exch_range}"
 
         # Write the html file from lisa vector
-        write_vector_in_html_file(f"{base_path}/results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}.html",
+        write_vector_in_html_file(f"{base_path}/"
+                                  f"results/4_lisa_results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}.html",
                                   token_list, lisa_vec, experiment_description)
 
         # Write the plot
@@ -87,5 +91,8 @@ for input_file in input_file_list:
         plt.title(f"Lisa on {input_file[:-4]} with {sim_tag}")
         plt.xlabel("Token")
         plt.ylabel("Lisa index")
-        plt.savefig(f"{base_path}/results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}.png")
+        plt.savefig(f"{base_path}/results/4_lisa_results/4_lisa{exch_range}_{input_file[:-4]}_{sim_tag}.png")
         plt.close()
+
+        # Write token and type df
+        df_token.to_csv()

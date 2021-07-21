@@ -25,7 +25,7 @@ prior_distrib_list = [False, False, False, False, False, False, False, False]
 n_test_list = [100, 100, 100, 100, 100, 100, 100, 100]
 
 # Results file name
-results_file_name = "../results/lda_results/lda_manifesto_line_noprior.csv"
+results_file_name = "../results/6_lda_results/lda_manifesto_line_noprior.csv"
 
 # -------------------------------------
 # --- Loading and preprocessing
