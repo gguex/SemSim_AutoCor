@@ -1,7 +1,7 @@
 from local_functions import *
 from os.path import expanduser
 import pandas as pd
-from sklearn.metrics import normalized_mutual_info_score, average_precision_score
+from sklearn.metrics import normalized_mutual_info_score
 
 input_file = "61320_200411_pp.txt"
 

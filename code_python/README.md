@@ -22,6 +22,9 @@ The pipeline for obtaining results take different steps :
 5. Different scripts using the fuzzy topic clustering algorithm to compute results. (5.1) makes k-fold 
    cross-validations on multiple file with a grid search on hyperparameters. (5.2) computes a unique result and compares
    it to a group file (ground truth). (5.3) computes a simple result on any file.
+6. Scripts to performed LDA on a single text file. There are two versions of them : (6.1) will consider each line of 
+   the text file as a different document; (6.2) will split the text file in a defined number of tokens for the document.
+   In the *old* folder, you can find other versions of LDA, but they do not perform well on the token clustering task.
 
 Along this pipeline, different functions are used, which are contained in the "local_functions.py" file.
 
