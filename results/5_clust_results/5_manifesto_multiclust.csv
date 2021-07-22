@@ -1,0 +1,3 @@
+input_file,sim_tag,dist_opt,exch_opt,exch_range,alpha,beta,kappa,known_label,n_test,mean_nmi,ci95_nmi
+61320_199211_pp.txt,w2v,max_minus,u,15,2,100,1,0,50,0.20294573541756492,0.00888485632683699
+61320_200411_pp.txt,w2v,max_minus,u,15,2,100,1,0,50,0.1579640767132907,0.006803454956227136

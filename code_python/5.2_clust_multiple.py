@@ -22,15 +22,29 @@ input_file_list = ["61320_199211_pp.txt",
 sim_tag_list = ["w2v"] * len(input_file_list)
 dist_option_list = ["max_minus"] * len(input_file_list)
 exch_mat_opt_list = ["u"] * len(input_file_list)
-exch_range_list = [10] * len(input_file_list)
-alpha_list = [5] * len(input_file_list)
-beta_list = [50] * len(input_file_list)
-kappa_list = [0.5] * len(input_file_list)
+exch_range_list = [15] * len(input_file_list)
+alpha_list = [2] * len(input_file_list)
+beta_list = [100] * len(input_file_list)
+kappa_list = [1] * len(input_file_list)
 known_label_ratio_list = [0] * len(input_file_list)  # if 0, clustering
 n_test_list = [50] * len(input_file_list)
 
-# Results file name
 results_file_name = "../results/5_clust_results/5_manifesto_multiclust.csv"
+
+# exch_range_list = [5] * (5 * 5 * 5) + [10] * (5 * 5 * 5) + [15] * (5 * 5 * 5)
+# alpha_list = ([1] * (5 * 5) + [2] * (5 * 5) + [5] * (5 * 5) + [10] * (5 * 5) + [30] * (5 * 5)) * 3
+# beta_list = (([5] * 5 + [10] * 5 + [50] * 5 + [100] * 5 + [200] * 5) * 5) * 3
+# kappa_list = (([0, 0.25, 0.5, 0.75, 1] * 5) * 5) * 3
+#
+# input_file_list = ["61320_199211_pp.txt"] * len(exch_range_list)
+#
+# sim_tag_list = ["w2v"] * len(input_file_list)
+# dist_option_list = ["max_minus"] * len(input_file_list)
+# exch_mat_opt_list = ["u"] * len(input_file_list)
+# known_label_ratio_list = [0] * len(input_file_list)  # if 0, clustering
+# n_test_list = [5] * len(input_file_list)
+#
+# results_file_name = "../results/5_clust_results/5_manifesto_param_search.csv"
 
 # -------------------------------------
 # --- Computations
@@ -57,7 +71,7 @@ for i, input_file in enumerate(input_file_list):
 
     # Print
     print(f"File: {input_file}, {sim_tag}, {dist_option}, {exch_mat_opt}, {exch_range}, {alpha}, {beta}, {kappa},"
-          f"{known_label_ratio}, {n_test}")
+          f" {known_label_ratio}, {n_test}")
 
     # Get the file paths
     text_file_path, typefreq_file_path, sim_file_path, ground_truth_path = get_all_paths(input_file, sim_tag)
@@ -97,7 +111,6 @@ for i, input_file in enumerate(input_file_list):
                                                        exch_range=exch_range)
     nmi_vec = []
     for _ in tqdm(range(n_test)):
-
         # Compute the membership matrix
         result_matrix = cut_clustering(d_ext_mat=d_ext_mat,
                                        exch_mat=exch_mat,
@@ -123,4 +136,4 @@ for i, input_file in enumerate(input_file_list):
     nmi_std = np.std(nmi_vec)
     with open(results_file_name, "a") as output_file:
         output_file.write(f"{input_file},{sim_tag},{dist_option},{exch_mat_opt},{exch_range},{alpha},{beta},{kappa},"
-                          f"{known_label_ratio},{n_test},{nmi_mean},{nmi_std * 1.96 / np.sqrt(n_test)}")
+                          f"{known_label_ratio},{n_test},{nmi_mean},{nmi_std * 1.96 / np.sqrt(n_test)}\n")
