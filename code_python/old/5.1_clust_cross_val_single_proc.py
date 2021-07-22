@@ -21,7 +21,7 @@ n_fold = 4
 n_train = 5
 
 # List of names for the ouputted result files
-results_file_name = "5_cv_results/cv5_all_new.csv"
+results_file_name = "5_clust_results/cv5_all_new.csv"
 
 # --- Experiments loop lists (to make several experiments)
 

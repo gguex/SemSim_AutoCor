@@ -29,7 +29,6 @@ beta = 50
 kappa = 0.5
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
-max_it = 200
 
 # -------------------------------------
 # --- Computations
@@ -87,7 +86,6 @@ result_matrix = clust_function(d_ext_mat=d_ext_mat,
                                beta=beta,
                                kappa=kappa,
                                init_labels=known_labels,
-                               max_it=max_it,
                                verbose=True)
 
 # Compute the groups

@@ -27,43 +27,43 @@ n_train = 1
 n_cpu = int(os.getenv("SLURM_CPUS_PER_TASK"))
 
 # List of names for the ouputted result files
-results_file_name = "results/5_cv_results/cv_manifestos1.csv"
+results_file_name = "results/5_clust_results/cv_manifestos1.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-# input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-#                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-#                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-#                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-#                    "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
-input_file_list = ["61320_199211_pp.txt",
-                   "61320_200411_pp.txt",
-                   "61320_201211_pp.txt",
-                   "61320_201611_pp.txt",
-                   "61620_200411_pp.txt",
-                   "61620_200811_pp.txt",
-                   "61620_201211_pp.txt",
-                   "61620_201611_pp.txt"]
+input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
+                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
+# input_file_list = ["61320_199211_pp.txt",
+#                    "61320_200411_pp.txt",
+#                    "61320_201211_pp.txt",
+#                    "61320_201611_pp.txt",
+#                    "61620_200411_pp.txt",
+#                    "61620_200811_pp.txt",
+#                    "61620_201211_pp.txt",
+#                    "61620_201611_pp.txt"]
 # List of label ratios to text
-# known_label_ratio_list = [0, 0, 0, 0,
-#                           0, 0, 0, 0,
-#                           0, 0, 0, 0,
-#                           0, 0, 0, 0,
-#                           0, 0, 0, 0]
-known_label_ratio_list = [0, 0, 0, 0, 0, 0, 0, 0]
+known_label_ratio_list = [0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0,
+                          0, 0, 0, 0]
+# known_label_ratio_list = [0, 0, 0, 0, 0, 0, 0, 0]
 # List of similarity tag
-# sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
-#                 "glv", "glv", "glv", "glv",
-#                 "lch", "lch", "lch", "lch",
-#                 "path", "path", "path", "path",
-#                 "wup", "wup", "wup", "wup"]
-sim_tag_list = ["w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v"]
+sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
+                "glv", "glv", "glv", "glv",
+                "lch", "lch", "lch", "lch",
+                "path", "path", "path", "path",
+                "wup", "wup", "wup", "wup"]
+# sim_tag_list = ["w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v"]
 
 # --- Grid search parameters
 
 dist_option_vec = ["max_minus"]
-exch_mat_opt_vec = ["u"]
+exch_mat_opt_vec = ["u", "d"]
 exch_range_vec = [5, 10, 15]
 alpha_vec = [0.1, 1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]

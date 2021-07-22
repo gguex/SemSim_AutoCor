@@ -10,22 +10,28 @@ from tqdm import tqdm
 # -------------------------------------
 
 # File name to explore
-input_file_list = ["61320_199211_pp.txt",
-                   "61320_200411_pp.txt",
-                   "61320_201211_pp.txt",
-                   "61320_201611_pp.txt",
-                   "61620_200411_pp.txt",
-                   "61620_200811_pp.txt",
-                   "61620_201211_pp.txt",
-                   "61620_201611_pp.txt"]
+input_file_list = ["mix_word1.txt",
+                   "mix_word5.txt",
+                   "mix_sent1.txt",
+                   "mix_sent5.txt"] * 7
+# input_file_list = ["61320_199211_pp.txt",
+#                    "61320_200411_pp.txt",
+#                    "61320_201211_pp.txt",
+#                    "61320_201611_pp.txt",
+#                    "61620_200411_pp.txt",
+#                    "61620_200811_pp.txt",
+#                    "61620_201211_pp.txt",
+#                    "61620_201611_pp.txt"]
 # Use prior distrib for topics list
-#prior_distrib_list = [True, True, True, True, True, True, True, True]
-prior_distrib_list = [False, False, False, False, False, False, False, False]
+prior_distrib_list = [False] * len(input_file_list)
 # Number of tests list
-n_test_list = [100, 100, 100, 100, 100, 100, 100, 100]
+n_test_list = [100] * len(input_file_list)
+# Number of tokens for chunk
+# n_token_per_chunk_list = [2, 7, 17, 85, 2, 7, 17, 85]
+n_token_per_chunk_list = [20] * 4 + [50] * 4 + [100] * 4 + [200] * 4 + [300] * 4 + [400] * 4 + [500] * 4
 
 # Results file name
-results_file_name = "../results/6_lda_results/lda_manifesto_line_noprior.csv"
+results_file_name = "../results/6_lda_results/lda_mix_fixed_size.csv"
 
 # -------------------------------------
 # --- Loading and preprocessing
@@ -33,7 +39,7 @@ results_file_name = "../results/6_lda_results/lda_manifesto_line_noprior.csv"
 
 # Make results file
 with open(results_file_name, "w") as output_file:
-    output_file.write("input_file,use_prior,n_test,mean_nmi,ci95_nmi\n")
+    output_file.write("input_file,use_prior,n_test,n_token_per_chunk,mean_nmi,ci95_nmi\n")
 
 # Loop on files
 for i, input_file in enumerate(input_file_list):
@@ -41,9 +47,10 @@ for i, input_file in enumerate(input_file_list):
     # Get parameters
     prior_distrib = prior_distrib_list[i]
     n_test = n_test_list[i]
+    n_token_per_chunk = n_token_per_chunk_list[i]
 
     # Print
-    print(f"File: {input_file}, Prior: {prior_distrib}, Nb tests: {n_test}")
+    print(f"File: {input_file}, Prior: {prior_distrib}, Nb tests: {n_test}, Nb tokens per chunk: {n_token_per_chunk}")
 
     # Get paths
     text_file_path, _, _, ground_truth_path = get_all_paths(input_file, "w2v")
@@ -51,8 +58,12 @@ for i, input_file in enumerate(input_file_list):
     # Get tokens
     with open(text_file_path) as text_file:
         text = text_file.read()
-        line_list = text.split("\n")
-        token_list_list = [line.split() for line in line_list]
+        token_list = text.split()
+
+    n_chunk = int(np.ceil(len(token_list) / n_token_per_chunk))
+    token_list_list = []
+    for i in range(n_chunk):
+        token_list_list.append(token_list[i*n_token_per_chunk:(i+1)*n_token_per_chunk])
 
     # Get real groups
     with open(ground_truth_path) as ground_truth:
@@ -96,4 +107,5 @@ for i, input_file in enumerate(input_file_list):
     nmi_mean = np.mean(nmi_vec)
     nmi_std = np.std(nmi_vec)
     with open(results_file_name, "a") as output_file:
-        output_file.write(f"{input_file},{prior_distrib},{n_test},{nmi_mean},{nmi_std * 1.96 / np.sqrt(n_test)}\n")
+        output_file.write(f"{input_file},{prior_distrib},{n_test},{n_token_per_chunk},{nmi_mean},"
+                          f"{nmi_std * 1.96 / np.sqrt(n_test)}\n")
