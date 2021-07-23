@@ -19,6 +19,13 @@ input_file_list = ["61320_199211_pp.txt",
                    "61620_201211_pp.txt",
                    "61620_201611_pp.txt"]
 
+input_file_list = ["61320_201211_pp.txt",
+                   "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
+                   "61620_201611_pp.txt"]
+
 sim_tag_list = ["w2v"] * len(input_file_list)
 dist_option_list = ["max_minus"] * len(input_file_list)
 exch_mat_opt_list = ["u"] * len(input_file_list)
@@ -29,7 +36,7 @@ kappa_list = [1] * len(input_file_list)
 known_label_ratio_list = [0] * len(input_file_list)  # if 0, clustering
 n_test_list = [50] * len(input_file_list)
 
-results_file_name = "../results/5_clust_results/5_manifesto_multiclust.csv"
+results_file_name = "../results/5_clust_results/5_manifesto_multiclust2.csv"
 
 # exch_range_list = [5] * (5 * 5 * 5) + [10] * (5 * 5 * 5) + [15] * (5 * 5 * 5)
 # alpha_list = ([1] * (5 * 5) + [2] * (5 * 5) + [5] * (5 * 5) + [10] * (5 * 5) + [30] * (5 * 5)) * 3
