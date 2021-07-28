@@ -37,8 +37,8 @@ sim_tag_list = ["w2v"]
 # Loading wordvector models
 home = expanduser("~")
 w2v_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/enwiki.model")
-#glv_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/glove42B300d.model")
-#ftx_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/cc.en.300.vec.txt")
+glv_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/glove42B300d.model")
+ftx_model = KeyedVectors.load(f"{home}/Documents/data/pretrained_word_vectors/en_fasttext.model")
 
 # Loop on files and tags
 for input_file in input_file_list:

@@ -5,7 +5,7 @@ import csv
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
 from itertools import compress, product
-# import multiprocessing as mp
+import multiprocessing as mp
 from miniutils import parallel_progbar
 import os
 
@@ -17,26 +17,22 @@ import os
 clust_tag = "cut"
 
 # Number of crossval folds
-n_fold = 2
+n_fold = 4
 
 # Number of train on each fold
-n_train = 1
+n_train = 3
 
 # Number of cpu to use
-# n_cpu = mp.cpu_count()
-n_cpu = int(os.getenv("SLURM_CPUS_PER_TASK"))
+n_cpu = mp.cpu_count()
+#n_cpu = int(os.getenv("SLURM_CPUS_PER_TASK"))
 
 # List of names for the ouputted result files
-results_file_name = "results/5_clust_results/cv_manifestos1.csv"
+results_file_name = "../results/5_clust_results/cv_mix_new.csv"
 
 # --- Experiments loop lists (to make several experiments)
 
 # List of inputted text files to explore
-input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt",
-                   "mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
+input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5.txt"]
 # input_file_list = ["61320_199211_pp.txt",
 #                    "61320_200411_pp.txt",
 #                    "61320_201211_pp.txt",
@@ -46,18 +42,14 @@ input_file_list = ["mix_word1.txt", "mix_word5.txt", "mix_sent1.txt", "mix_sent5
 #                    "61620_201211_pp.txt",
 #                    "61620_201611_pp.txt"]
 # List of label ratios to text
-known_label_ratio_list = [0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0,
-                          0, 0, 0, 0]
-# known_label_ratio_list = [0, 0, 0, 0, 0, 0, 0, 0]
+known_label_ratio_list = [0] * len(input_file_list)
 # List of similarity tag
-sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
-                "glv", "glv", "glv", "glv",
-                "lch", "lch", "lch", "lch",
-                "path", "path", "path", "path",
-                "wup", "wup", "wup", "wup"]
+# sim_tag_list = ["w2v", "w2v", "w2v", "w2v",
+#                 "glv", "glv", "glv", "glv",
+#                 "lch", "lch", "lch", "lch",
+#                 "path", "path", "path", "path",
+#                 "wup", "wup", "wup", "wup"]
+sim_tag_list = ["ftx", "ftx", "ftx", "ftx"]
 # sim_tag_list = ["w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v", "w2v"]
 
 # --- Grid search parameters

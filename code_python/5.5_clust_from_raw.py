@@ -28,7 +28,7 @@ if sim_tag == "w2v":
 elif sim_tag == "glv":
     word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/glove42B300d.model"
 else:
-    word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/cc.en.300.vec.txt"
+    word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/en_fasttext.model"
 
 z_res, existing_token_list, existing_pos_list = cut_clustering_from_raw(file_path, word_vector_path, dist_option,
                                                                         exch_mat_opt, exch_range, n_groups, alpha, beta,

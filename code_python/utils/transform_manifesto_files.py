@@ -35,10 +35,9 @@ for file_name in file_name_list:
             for row in csv_reader:
                 try:
                     class_id = float(row[1])
-                    if (class_id > 0):
-                        class_id = class_id // 100
-                        sent_list.append(row[0])
-                        group_list.append(class_id)
+                    class_id = class_id // 100
+                    sent_list.append(row[0])
+                    group_list.append(class_id)
                 except:
                     pass
 

@@ -1,0 +1,1 @@
+input_file,known_label_ratio,sim_tag,n_groups,fold_id,dist_option,exch_mat_opt,exch_range,alpha,beta,kappa,nmi_train,nmi_test

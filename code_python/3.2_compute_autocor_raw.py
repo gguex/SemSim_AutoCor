@@ -50,7 +50,7 @@ for sim_tag in sim_tag_list:
     elif sim_tag == "glv":
         word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/glove42B300d.model"
     else:
-        word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/cc.en.300.vec.txt"
+        word_vector_path = f"{home}/Documents/data/pretrained_word_vectors/en_fasttext.model"
 
     # Output file name
     output_file_name = f"{base_path}/results/3.2_autocor{exch_max_range}_{sim_tag}.csv"
