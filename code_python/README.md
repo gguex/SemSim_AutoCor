@@ -15,15 +15,17 @@ The pipeline for obtaining results take different steps :
    along with the frequencies of each type (which is also useful for referencing the row and column of the 
    similarity matrix). (2.1) computes WordNet similarities, (2.2) Word Vectors similarities. The (2.2) script requires a copy of word vectors downloaded from GloVe or Wikipedia2Vec websites, in the Gensim format (use the transform_test_into_gensim_model.py script in utils).
 3. The computation of the global autocorrelation index from multiple text files and a similarity. Results are saved
-   into a csv file and can be plotted with "utils/graph_from_data.py".
+   into a csv file and can be plotted with "utils/graph_from_data.py". (3.1) uses the pipeline to make results and (3.2)
+   can be used on raw files.
 4. The computation of the local autocorrelation index (LISA) for every token from a text file and 
    a similarity matrix. Results are given with a plot of this index along the text, and with a html file coloring 
    tokens.
 5. Different scripts using the fuzzy topic clustering algorithm to compute results. (5.1) makes k-fold 
-   cross-validations on multiple file with a grid search on hyperparameters. (5.2) computes a unique result and compares
-   it to a group file (ground truth). (5.3) computes a simple result on any file.
-6. Scripts to performed LDA on a single text file. There are two versions of them : (6.1) will consider each line of 
-   the text file as a different document; (6.2) will split the text file in a defined number of tokens for the document.
+   cross-validations on multiple file with a grid search on hyperparameters. (5.2) computes several results on 
+   multiple files, but without cross-validation. (5.3) computes a unique result and compares
+   it to a group file (ground truth). (5.4) computes a simple result on any file. (5.5) allow to make a result from a raw
+   file, without using the pipeline.
+6. Scripts to performed LDA on a single text file. It will split the text file in a defined number of tokens for the document.
    In the *old* folder, you can find other versions of LDA, but they do not perform well on the token clustering task.
 
 Along this pipeline, different functions are used, which are contained in the "local_functions.py" file.
