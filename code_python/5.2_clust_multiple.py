@@ -10,41 +10,42 @@ from tqdm import tqdm
 # --- Parameters
 # -------------------------------------
 
-# input_file_list = ["61320_199211_pp.txt",
-#                    "61320_200411_pp.txt",
-#                    "61320_201211_pp.txt",
-#                    "61320_201611_pp.txt",
-#                    "61620_200411_pp.txt",
-#                    "61620_200811_pp.txt",
-#                    "61620_201211_pp.txt",
-#                    "61620_201611_pp.txt"]
-#
-# sim_tag_list = ["w2v"] * len(input_file_list)
-# dist_option_list = ["max_minus"] * len(input_file_list)
-# exch_mat_opt_list = ["u"] * len(input_file_list)
-# exch_range_list = [15] * len(input_file_list)
-# alpha_list = [5] * len(input_file_list)
-# beta_list = [50] * len(input_file_list)
-# kappa_list = [0.5] * len(input_file_list)
-# known_label_ratio_list = [0] * len(input_file_list)  # if 0, clustering
-# n_test_list = [5] * len(input_file_list)
-#
-# results_file_name = "../results/5_clust_results/5_manifesto_multiclust_test.csv"
-
-exch_range_list = [10] * (4 * 4 * 4) + [15] * (4 * 4 * 4)
-alpha_list = ([2] * (4 * 4) + [5] * (4 * 4) + [10] * (4 * 4) + [30] * (4 * 4)) * 2
-beta_list = (([10] * 4 + [50] * 4 + [100] * 4 + [200] * 4) * 4) * 2
-kappa_list = (([0, 0.33, 0.66, 1] * 4) * 4) * 2
-
-input_file_list = ["61320_201211_pp.txt"] * len(exch_range_list)
+input_file_list = ["61320_199211_pp.txt",
+                   "61320_200411_pp.txt",
+                   "61320_201211_pp.txt",
+                   "61320_201611_pp.txt",
+                   "61620_200411_pp.txt",
+                   "61620_200811_pp.txt",
+                   "61620_201211_pp.txt",
+                   "61620_201611_pp.txt"]
+input_file_list = ["61620_201611_pp.txt"]
 
 sim_tag_list = ["w2v"] * len(input_file_list)
 dist_option_list = ["max_minus"] * len(input_file_list)
 exch_mat_opt_list = ["u"] * len(input_file_list)
+exch_range_list = [15] * len(input_file_list)
+alpha_list = [2] * len(input_file_list)
+beta_list = [100] * len(input_file_list)
+kappa_list = [1] * len(input_file_list)
 known_label_ratio_list = [0] * len(input_file_list)  # if 0, clustering
-n_test_list = [5] * len(input_file_list)
+n_test_list = [10] * len(input_file_list)
 
-results_file_name = "../results/5_clust_results/5_manifesto_param_search3.csv"
+results_file_name = "../results/5_clust_results/5_manifesto_multiclust.csv"
+
+# exch_range_list = [5] * (5 * 5 * 5) + [10] * (5 * 5 * 5) + [15] * (5 * 5 * 5)
+# alpha_list = ([1] * (5 * 5) + [2] * (5 * 5) + [5] * (5 * 5) + [10] * (5 * 5) + [30] * (5 * 5)) * 3
+# beta_list = (([5] * 5 + [10] * 5 + [50] * 5 + [100] * 5 + [200] * 5) * 5) * 3
+# kappa_list = (([0, 0.25, 0.5, 0.75, 1] * 5) * 5) * 3
+#
+# input_file_list = ["61320_199211_pp.txt"] * len(exch_range_list)
+#
+# sim_tag_list = ["w2v"] * len(input_file_list)
+# dist_option_list = ["max_minus"] * len(input_file_list)
+# exch_mat_opt_list = ["u"] * len(input_file_list)
+# known_label_ratio_list = [0] * len(input_file_list)  # if 0, clustering
+# n_test_list = [2] * len(input_file_list)
+#
+# results_file_name = "../results/5_clust_results/5_manifesto_param_search.csv"
 
 # -------------------------------------
 # --- Computations

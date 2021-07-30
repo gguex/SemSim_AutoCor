@@ -24,9 +24,9 @@ sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
-alpha = 5
-beta = 50
-kappa = 0.5
+alpha = 2
+beta = 100
+kappa = 1
 known_label_ratio = 0  # if 0, clustering
 clust_tag = "cut"  # Clustering method tag ("disc" or "cut")
 

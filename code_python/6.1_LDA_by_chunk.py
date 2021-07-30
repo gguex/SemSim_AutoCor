@@ -4,16 +4,17 @@ from code_python.local_functions import get_all_paths
 import numpy as np
 from sklearn.metrics import normalized_mutual_info_score
 from tqdm import tqdm
+from local_functions import write_groups_in_html_file
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # File name to explore
-input_file_list = ["mix_word1.txt",
-                   "mix_word5.txt",
-                   "mix_sent1.txt",
-                   "mix_sent5.txt"] * 7
+# input_file_list = ["mix_word1.txt",
+#                    "mix_word5.txt",
+#                    "mix_sent1.txt",
+#                    "mix_sent5.txt"] * 7
 # input_file_list = ["61320_199211_pp.txt",
 #                    "61320_200411_pp.txt",
 #                    "61320_201211_pp.txt",
@@ -22,13 +23,15 @@ input_file_list = ["mix_word1.txt",
 #                    "61620_200811_pp.txt",
 #                    "61620_201211_pp.txt",
 #                    "61620_201611_pp.txt"]
+input_file_list = ["61620_200411_pp.txt"]
 # Use prior distrib for topics list
 prior_distrib_list = [False] * len(input_file_list)
 # Number of tests list
-n_test_list = [100] * len(input_file_list)
+n_test_list = [1] * len(input_file_list)
 # Number of tokens for chunk
 # n_token_per_chunk_list = [2, 7, 17, 85, 2, 7, 17, 85]
-n_token_per_chunk_list = [20] * 4 + [50] * 4 + [100] * 4 + [200] * 4 + [300] * 4 + [400] * 4 + [500] * 4
+# n_token_per_chunk_list = [20] * 4 + [50] * 4 + [100] * 4 + [200] * 4 + [300] * 4 + [400] * 4 + [500] * 4
+n_token_per_chunk_list = [300] * len(input_file_list)
 
 # Results file name
 results_file_name = "../results/6_lda_results/lda_mix_fixed_size.csv"
@@ -109,3 +112,13 @@ for i, input_file in enumerate(input_file_list):
     with open(results_file_name, "a") as output_file:
         output_file.write(f"{input_file},{prior_distrib},{n_test},{n_token_per_chunk},{nmi_mean},"
                           f"{nmi_std * 1.96 / np.sqrt(n_test)}\n")
+
+
+# Compute the real membership matrix
+z_algo_mat = np.zeros((len(token_list), n_group))
+for i, label in enumerate(algo_group_vec):
+    if label != 0:
+        z_algo_mat[i, :] = 0
+        z_algo_mat[i, label - 1] = 1
+
+write_groups_in_html_file("lda.html", token_list, z_algo_mat, comment_line=f"nmi = {nmi_mean}")

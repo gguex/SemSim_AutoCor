@@ -11,15 +11,13 @@ import pandas as pd
 # -------------------------------------
 
 # Input files list
-# input_file_list = ["Civil_Disobedience_pp.txt",
-#                    "Flowers_of_the_Farm_pp.txt",
-#                    "Sidelights_on_relativity_pp.txt",
-#                    "Prehistoric_Textile_pp.txt"]
-input_file_list = ["Flowers_of_the_Farm_pp.txt"]
+input_file_list = ["Civil_Disobedience_pp.txt",
+                   "Flowers_of_the_Farm_pp.txt",
+                   "Sidelights_on_relativity_pp.txt",
+                   "Prehistoric_Textile_pp.txt"]
 
 # Similarity tag list
-#sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
-sim_tag_list = ["w2v"]
+sim_tag_list = ["w2v", "glv", "lch", "path", "wup"]
 
 # Distance option
 dist_option = "max_minus"
