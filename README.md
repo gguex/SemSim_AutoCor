@@ -25,7 +25,7 @@ This paper presents a general formalism, originated from spatial statistics, whi
 #### Top 5 (and Bottom 5) words with highest (lowest) cumulative local semantic autocorrelation for 4 gutenberg books.
 
 <p align="center">
-<img src="results/fig/lisa_table.png" alt="tokens" style="width:50%">
+<img src="results/fig/table_lisa.png" alt="tokens" style="width:50%">
 </p>
 
 #### Fuzzy Topic Clustering results on a *Manifesto project* file (Republican Party 2004)
