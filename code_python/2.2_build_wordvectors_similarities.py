@@ -26,7 +26,6 @@ input_file_list = ["61320_199211_pp.txt",
                    "61620_201211_pp.txt",
                    "61620_201611_pp.txt"]
 
-
 # List of tags to enumerate similarity to compute
 sim_tag_list = ["w2v"]
 

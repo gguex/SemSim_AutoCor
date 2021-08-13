@@ -204,9 +204,10 @@ def autocorrelation_index(d_ext_mat, exch_mat, w_mat):
     autocor_index = (global_inertia - local_inertia) / global_inertia
 
     # Compute the theoretical expected value
-    theoretical_mean = (np.trace(w_mat) - 1) / (n_token - 1)
+    trace_w_mat = np.trace(w_mat)
+    theoretical_mean = (trace_w_mat - 1) / (n_token - 1)
     # Compute the theoretical
-    theoretical_var = 2 * (np.trace(np.linalg.matrix_power(w_mat, 2)) - 1 - (np.trace(w_mat) - 1) ** 2 / (n_token - 1)) \
+    theoretical_var = 2 * (np.trace(w_mat @ w_mat) - 1 - (trace_w_mat - 1) ** 2 / (n_token - 1)) \
                       / (n_token ** 2 - 1)
 
     # Return autocorrelation index, theoretical mean and theoretical variance

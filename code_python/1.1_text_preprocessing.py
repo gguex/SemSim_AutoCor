@@ -5,16 +5,33 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 import contractions
+from tqdm import tqdm
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
 # Corpus name list
-corpus_name_list = ["Civil_Disobedience.txt",
-                    "Flowers_of_the_Farm.txt",
-                    "Sidelights_on_relativity.txt",
-                    "Prehistoric_Textile.txt"]
+# corpus_name_list = ["Civil_Disobedience.txt",
+#                     "Flowers_of_the_Farm.txt",
+#                     "Sidelights_on_relativity.txt",
+#                     "Prehistoric_Textile.txt"]
+corpus_name_list = ["gutenberg/CarrollLewis_AliceAdventures.txt",
+                    "gutenberg/CarrollLewis_SylvieandBruno.txt",
+                    "gutenberg/CarrollLewis_TheHuntingoftheSnark.txt",
+                    "gutenberg/CarrollLewis_ThroughtheLookingGlass.txt",
+                    "gutenberg/ShakespeareWilliam_Hamlet.txt",
+                    "gutenberg/ShakespeareWilliam_Macbeth.txt",
+                    "gutenberg/ShakespeareWilliam_Othello.txt",
+                    "gutenberg/ShakespeareWilliam_RomeoandJuliette.txt",
+                    "gutenberg/WellsHG_DoctorMoreau.txt",
+                    "gutenberg/WellsHG_TheFirstMenintheMoon.txt",
+                    "gutenberg/WellsHG_TheInvisibleMan.txt",
+                    "gutenberg/WellsHG_TheTimeMachine.txt",
+                    "gutenberg/WildeOscar_AnIdealHusband.txt",
+                    "gutenberg/WildeOscar_TheCantervilleGhost.txt",
+                    "gutenberg/WildeOscar_TheImportanceofBeingEarnes.txt",
+                    "gutenberg/WildeOscar_ThePictureofDorianGray.txt"]
 
 # -------------------------------------
 # --- Computations
@@ -30,7 +47,7 @@ stop_words = stopwords.words('english')
 lemmatizer = WordNetLemmatizer()
 
 # Loop on coprora
-for corpus_name in corpus_name_list:
+for corpus_name in tqdm(corpus_name_list):
 
     # Path of the raw text file
     text_file_path = f"{base_path}corpora/{corpus_name}"
