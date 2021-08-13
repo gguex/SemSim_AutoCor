@@ -5,15 +5,7 @@ Welcome to the GitHub repository for the (upcoming) article
 
 ### Abstract 
 
-Many procedures in Natural Language Processing aim at discovering underlying topics in a document. This paper presents 
-a general formalism, originated from spatial statistics, which systematically combines two different aspects of tokens found in a text: 
-their *semantic similarities* and their *position* relatively to each others. Uniting these two elements through a classical 
-data analytic formalism yields textual autocorrelation indices of direct relevance for clustering: the **global autocorrelation index** indicates if, overall, 
-semantically similar tokens lies in the same textual neighborhood; the **local autocorrelation index**, referring to each token, 
-indicates if a token semantically contrasted within its vicinity. This formalism also provides a **fuzzy tokens clustering** algorithm, 
-where resulting clusters contain a mixture of semantically and spatially similar words. This method, while close to 
-*Topic Modeling* or *Topic Segmentation* approaches, differs from it and demonstrates promising results on artificial 
-and real-life corpora. It provides an original way to extract topics from a document, hence the name **Fuzzy Topic Clustering**.
+This paper presents a general formalism, originated from spatial statistics, which systematically combines two different aspects of tokens found in a text: their **semantic similarities** and their **position** relatively to each others. Uniting these two elements through a classical data analytic formalism yields textual autocorrelation indices of direct relevance for clustering: the **global autocorrelation index** indicates if, overall, semantically similar tokens lies in the same textual neighborhood; the **local autocorrelation index**, referring to each token, indicates if the token semantically contrasted within its vicinity. This formalism also provides a **fuzzy tokens clustering** algorithm, where resulting clusters contain a mixture of semantically and spatially similar tokens. This method, while close to **Topic Modeling** or **Topic Segmentation** approaches, differs from them as it assigns a probability of topic to each tokens, while preserving a spatial coherence between topics, all of this in a unsupervised fashion. It demonstrates promising results on artificial and real-life corpora and provides an new way to extract topics from a document, hence the name **Fuzzy Topic Clustering**.
 
 ### Result examples
 
@@ -27,6 +19,13 @@ and real-life corpora. It provides an original way to extract topics from a docu
 
 <p align="center">
 <img src="results/fig/lisa.png" alt="tokens" style="width:50%">
+</p>
+
+
+#### Top 5 (and Bottom 5) words with highest (lowest) cumulative local semantic autocorrelation for 4 gutenberg books.
+
+<p align="center">
+<img src="results/fig/table_lisa.png" alt="tokens" style="width:50%">
 </p>
 
 #### Fuzzy Topic Clustering results on a *Manifesto project* file (Republican Party 2004)
