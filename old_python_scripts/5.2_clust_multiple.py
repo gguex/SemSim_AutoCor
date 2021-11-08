@@ -1,4 +1,4 @@
-from local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
+from local_functions_old import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
     exchange_and_transition_matrices, cut_clustering
 import numpy as np
 import csv

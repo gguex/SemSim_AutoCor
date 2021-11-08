@@ -12,16 +12,16 @@ working_path = os.getcwd()
 base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
 
 # Name of the file
-file_name_list = ["61320_199211.csv",
-                  "61320_200411.csv",
-                  "61320_201211.csv",
-                  "61320_201611.csv",
-                  "61320_202011.csv",
-                  "61620_200411.csv",
-                  "61620_200811.csv",
-                  "61620_201211.csv",
-                  "61620_201611.csv",
-                  "61620_202011.csv"]
+input_file_list = ["61320_199211.csv",
+                   "61320_200411.csv",
+                   "61320_201211.csv",
+                   "61320_201611.csv",
+                   "61320_202011.csv",
+                   "61620_200411.csv",
+                   "61620_200811.csv",
+                   "61620_201211.csv",
+                   "61620_201611.csv",
+                   "61620_202011.csv"]
 
 # Removing stopwords option
 remove_stopwords = False
@@ -30,11 +30,11 @@ remove_stopwords = False
 stopwords = stopwords.words('english')
 
 # Loop on files
-for file_name in file_name_list:
+for input_file in input_file_list:
     # To store the final number of tokens
     n_token = 0
     # Loading the file
-    with open(f"{base_path}/corpora/manifesto_csv_file/{file_name}", 'r') as csv_file:
+    with open(f"{base_path}/corpora/manifesto_csv_file/{input_file}", 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         sent_list = []
         group_list = []
@@ -50,9 +50,9 @@ for file_name in file_name_list:
 
     # Preprocessing each sentence
     if remove_stopwords:
-        output_name = f"{file_name[:-4]}_pp_wostw"
+        output_name = f"{input_file[:-4]}_pp_wostw"
     else:
-        output_name = f"{file_name[:-4]}_pp"
+        output_name = f"{input_file[:-4]}_pp"
     with open(f"{base_path}/corpora/{output_name}.txt", "w") as text_file, \
             open(f"{base_path}/corpora/{output_name}_groups.txt", "w") as groups_file:
 

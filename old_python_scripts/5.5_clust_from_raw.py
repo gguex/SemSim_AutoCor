@@ -1,4 +1,4 @@
-from local_functions import *
+from local_functions_old import *
 from os.path import expanduser
 import pandas as pd
 from sklearn.metrics import normalized_mutual_info_score

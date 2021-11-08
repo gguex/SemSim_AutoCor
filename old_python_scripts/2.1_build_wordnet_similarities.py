@@ -2,7 +2,7 @@ import nltk
 import numpy as np
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
-from local_functions import get_all_paths
+from local_functions_old import get_all_paths
 from itertools import product
 import multiprocessing as mp
 from miniutils import parallel_progbar

@@ -1,4 +1,4 @@
-from local_functions import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
+from local_functions_old import get_all_paths, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
     exchange_and_transition_matrices, discontinuity_clustering, cut_clustering, \
     write_groups_in_html_file, write_membership_mat_in_csv_file
 import numpy as np

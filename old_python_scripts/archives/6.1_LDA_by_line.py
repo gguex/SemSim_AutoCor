@@ -1,6 +1,6 @@
 from gensim.models.ldamodel import LdaModel
 from gensim.corpora.dictionary import Dictionary
-from old_python_scripts.local_functions import get_all_paths
+from local_functions import get_all_paths
 import numpy as np
 from sklearn.metrics import normalized_mutual_info_score
 from tqdm import tqdm

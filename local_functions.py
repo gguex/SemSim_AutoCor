@@ -5,6 +5,7 @@ from scipy.linalg import expm
 import warnings
 import numpy as np
 from gensim.models import KeyedVectors
+from tqdm import tqdm
 
 
 def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
@@ -17,12 +18,12 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
     :type input_file: str
     :param sim_tag: the similarity tag
     :type sim_tag: str
-    :param working_path: the initial path of script, must anywhere in the SemSim_AutoCor project
+    :param working_path: the initial path of script, must be anywhere in the SemSim_AutoCor project
     :type working_path: str
     :param warn: option to deactivate warnings
     :type warn: bool
-    :return: paths of : the corpus file, the typefreq file, the similarity file and the ground truth file.
-    :rtype: (str, str, str, str)
+    :return: paths of : the corpus file, the similarity file and the ground truth file.
+    :rtype: (str, str, str)
     """
 
     # Getting the SemSim_AutoCor folder, if above
@@ -30,10 +31,8 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
 
     # Path of the text file
     text_file_path = f"{base_path}/corpora/{input_file}"
-    # Path of the types and frequencies file
-    typefreq_file_path = f"{base_path}/similarities_frequencies/{input_file[:-4]}_{sim_tag}_typefreq.txt"
     # Path of the similarity matrix
-    sim_file_path = f"{base_path}/similarities_frequencies/{input_file[:-4]}_{sim_tag}_similarities.txt"
+    sim_file_path = f"{base_path}/similarity_matrices/{input_file[:-4]}_{sim_tag}_similarities.txt"
     # Path of the ground true file
     ground_truth_path = f"{base_path}/corpora/{input_file[:-4]}_groups.txt"
 
@@ -41,9 +40,6 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
         if not os.path.exists(text_file_path):
             warnings.warn(f"The corpus file '{text_file_path}' is missing")
             text_file_path = ""
-        if not os.path.exists(typefreq_file_path):
-            warnings.warn(f"The typefreq file '{typefreq_file_path}' is missing")
-            typefreq_file_path = ""
         if not os.path.exists(sim_file_path):
             warnings.warn(f"The similarity file '{sim_file_path}' is missing")
             sim_file_path = ""
@@ -51,8 +47,37 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
             ground_truth_path = ""
 
     # Return paths
-    return text_file_path, typefreq_file_path, sim_file_path, ground_truth_path
+    return text_file_path, sim_file_path, ground_truth_path
 
+def build_wv_similarity_matrix(corpus_path, output_file_path, wv_model):
+
+    # Opening the corpus file
+    with open(corpus_path, "r") as text_file:
+        text_string = text_file.read()
+
+    # Split by tokens
+    token_list = nltk.word_tokenize(text_string)
+
+    # Get type list and frequencies
+    type_freq_dict = nltk.FreqDist(token_list)
+    vocab_text = set(type_freq_dict.keys())
+
+    # build vocabulary
+    vocab_wv = set(wv_model.vocab.keys())
+
+    # Find the common vocabulary
+    vocab_common = list(vocab_wv & vocab_text)
+
+    # Write the similarity file
+    with open(output_file_path, "w") as sim_matrix_file:
+        for type_1 in tqdm(vocab_common):
+            sim_matrix_file.write(type_1 + ",")
+            for type_2 in vocab_common:
+                sim_matrix_file.write(str(wv_model.similarity(type_1, type_2)))
+                if type_2 != vocab_common[len(vocab_common) - 1]:
+                    sim_matrix_file.write(",")
+                else:
+                    sim_matrix_file.write("\n")
 
 def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     """
