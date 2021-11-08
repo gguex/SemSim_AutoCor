@@ -98,7 +98,7 @@ def compute_wn_similarities(working_path, corpus_name, verbose):
             lower = data.pivot(index=1, columns=0, values=2)
             np.fill_diagonal(lower.values, 0.0)
             data = upper.fillna(0) + lower.fillna(0.0)
-            data.to_csv(base_path + "similarities_frequencies/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_resnik_similarities.txt",
+            data.to_csv(base_path + "precomputed_similarity_matrices/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_resnik_similarities.txt",
                         header=False, index=False, sep=";")
 
 
@@ -120,7 +120,7 @@ def compute_wn_similarities(working_path, corpus_name, verbose):
             lower = data.pivot(index=1, columns=0, values=2)
             np.fill_diagonal(lower.values, 0.0)
             data = upper.fillna(0) + lower.fillna(0.0)
-            data.to_csv(base_path + "similarities_frequencies/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_wu-palmer_similarities.txt",
+            data.to_csv(base_path + "precomputed_similarity_matrices/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_wu-palmer_similarities.txt",
                         header=False, index=False, sep=";")
 
 
@@ -142,7 +142,7 @@ def compute_wn_similarities(working_path, corpus_name, verbose):
             lower = data.pivot(index=1, columns=0, values=2)
             np.fill_diagonal(lower.values, 0.0)
             data = upper.fillna(0) + lower.fillna(0.0)
-            data.to_csv(base_path + "similarities_frequencies/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_leacock-chodorow_similarities.txt",
+            data.to_csv(base_path + "precomputed_similarity_matrices/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_leacock-chodorow_similarities.txt",
                         header=False, index=False, sep=";")
 
 
@@ -150,11 +150,11 @@ def compute_wn_similarities(working_path, corpus_name, verbose):
         total = sum(frequencies[pos].values())
         freq = [(wn.synset_from_pos_and_offset(pos,k).lemma_names()[0], v/total) for k, v in frequencies[pos].items()]
         data = pd.DataFrame().from_dict(freq)
-        data.to_csv(base_path + "similarities_frequencies/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_resnik_typefreq.txt",
+        data.to_csv(base_path + "precomputed_similarity_matrices/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_resnik_typefreq.txt",
                     header=False, index=False, sep=";")
-        data.to_csv(base_path + "similarities_frequencies/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_wu-palmer_typefreq.txt",
+        data.to_csv(base_path + "precomputed_similarity_matrices/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_wu-palmer_typefreq.txt",
                     header=False, index=False, sep=";")
-        data.to_csv(base_path + "similarities_frequencies/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_leacock-chodorow_typefreq.txt",
+        data.to_csv(base_path + "precomputed_similarity_matrices/" + corpus_name[:-4] + "_" + pos_to_path[pos].split(corpus_name[:-4])[1][1:-4] + "_leacock-chodorow_typefreq.txt",
                     header=False, index=False, sep=";")
 
     print(corpus_name)
