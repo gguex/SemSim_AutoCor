@@ -1,5 +1,5 @@
-code_python/.idea
-code_python/.idea/**
+old_python_scripts/.idea
+old_python_scripts/.idea/**
 venv
 venv/**
 .idea

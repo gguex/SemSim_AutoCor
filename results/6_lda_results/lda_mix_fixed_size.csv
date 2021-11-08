@@ -1,2 +1,0 @@
-input_file,use_prior,n_test,n_token_per_chunk,mean_nmi,ci95_nmi
-61620_200411_pp.txt,False,1,300,0.08502411436327421,0.0
