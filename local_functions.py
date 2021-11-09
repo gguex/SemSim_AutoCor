@@ -1,4 +1,3 @@
-import csv
 import os
 import nltk
 import csv
@@ -245,7 +244,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     return exch_mat, w_mat
 
 
-def token_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, init_labels=None,
+def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
                      conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
                      verbose=False):
     """
@@ -258,8 +257,8 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, in
     :type exch_mat: numpy.ndarray
     :param w_mat: the n_token x n_token Markov chain transition matrix
     :type w_mat: numpy.ndarray
-    :param n_group: the number of groups
-    :type n_group: int
+    :param n_groups: the number of groups
+    :type n_groups: int
     :param alpha: alpha parameter
     :type alpha: float
     :param beta: beta parameter
@@ -292,7 +291,7 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, in
 
     # Initialization of Z
     # z_mat = np.random.random((n_token, n_groups))
-    z_mat = np.abs(np.ones((n_token, n_group)) + np.random.normal(0, 0.001, (n_token, n_group)))
+    z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
 
     # Set true labels
@@ -486,19 +485,10 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
         known_labels = z_final[range_list[i], :]
 
         # Compute the membership matrix for the block
-        z_block = token_clustering(d_ext_mat=dist_matrix,
-                                   exch_mat=exch_mat,
-                                   w_mat=w_mat,
-                                   n_group=n_groups,
-                                   alpha=alpha,
-                                   beta=beta,
-                                   kappa=kappa,
-                                   init_labels=known_labels,
-                                   max_it=max_it,
-                                   conv_threshold=conv_threshold,
-                                   n_hist=n_hist,
-                                   learning_rate_init=learning_rate_init,
-                                   learning_rate_mult=learning_rate_mult,
+        z_block = token_clustering(d_ext_mat=dist_matrix, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups,
+                                   alpha=alpha, beta=beta, kappa=kappa, init_labels=known_labels,
+                                   conv_threshold=conv_threshold, n_hist=n_hist, max_it=max_it,
+                                   learning_rate_init=learning_rate_init, learning_rate_mult=learning_rate_mult,
                                    verbose=verbose)
 
         # Put the z_block in z_final
