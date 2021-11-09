@@ -24,29 +24,25 @@ input_file_list = ["61320_199211.csv",
                    "61620_202011.csv"]
 
 # Removing stopwords option
-remove_stopwords = False
+remove_stopwords = True
 
 # Getting stopwords
 stopwords = stopwords.words('english')
 
 # Loop on files
 for input_file in input_file_list:
-    # To store the final number of tokens
-    n_token = 0
+
     # Loading the file
     with open(f"{base_path}/corpora/manifesto_csv_file/{input_file}", 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         sent_list = []
         group_list = []
         for row in csv_reader:
-            try:
-                class_id = float(row[1])
-                class_id = int(class_id // 100)
+            if row[1].isdigit():
+                class_id = int(row[1]) // 100
                 if class_id > 0:
                     sent_list.append(row[0])
                     group_list.append(class_id)
-            except:
-                pass
 
     # Preprocessing each sentence
     if remove_stopwords:
@@ -71,10 +67,12 @@ for input_file in input_file_list:
             if remove_stopwords:
                 token_list = [token for token in token_list if token not in stopwords]
 
-            # Write the sentence
-            text_file.write(" ".join(token_list))
-            # Write the groups
-            groups_file.write(",".join([str(group_list[i])] * len(token_list)))
-            if i < len(sent_list) - 1:
-                text_file.write(" \n")
-                groups_file.write(",")
+            if len(token_list) > 0:
+                # Write the sentence
+                text_file.write(" ".join(token_list))
+                # Write the groups
+                groups_file.write(",".join([str(group_list[i])] * len(token_list)))
+                # If not last sentence, write a connector
+                if i < (len(sent_list) - 1):
+                    text_file.write(" \n")
+                    groups_file.write(",")

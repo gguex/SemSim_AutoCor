@@ -136,7 +136,7 @@ def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     :rtype: (numpy.ndarray, list[str], list[int])
     """
 
-    # Import the text file and remove non-existing token
+    # Import the text file
     with open(text_file_path, "r") as text_file:
         text_string = text_file.read()
     raw_token_list = nltk.word_tokenize(text_string)
