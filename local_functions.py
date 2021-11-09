@@ -1,5 +1,7 @@
+import csv
 import os
 import nltk
+import csv
 import colorsys
 from scipy.linalg import expm
 import warnings
@@ -49,7 +51,18 @@ def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
     # Return paths
     return text_file_path, sim_file_path, ground_truth_path
 
+
 def build_wv_similarity_matrix(corpus_path, output_file_path, wv_model):
+    """
+    Build and save a similarity matrix given a file and a word vector model in a gensim format
+
+    :param corpus_path: the path of the corpus file
+    :type corpus_path: str
+    :param output_file_path: the path of the outputted similarity files
+    :type output_file_path: str
+    :param wv_model: the word vector model in gensim format
+    :type wv_model: gensim.models.keyedvectors.Word2VecKeyedVectors
+    """
 
     # Opening the corpus file
     with open(corpus_path, "r") as text_file:
@@ -78,6 +91,35 @@ def build_wv_similarity_matrix(corpus_path, output_file_path, wv_model):
                     sim_matrix_file.write(",")
                 else:
                     sim_matrix_file.write("\n")
+
+
+def load_sim_matrix(sim_matrix_path):
+    """
+    Load a similarity matrix in csv format with types on the first column
+
+    :param sim_matrix_path: the path of the similarity matrix
+    :type sim_matrix_path: str
+    :return: the list of token corresponding to the row and columns of the similarity matrix
+    and the similarity matrix itself
+    :rtype: (list[str], numpy.ndarray)
+    """
+    # Load read file
+    with open(sim_matrix_path, "r") as csv_sim_file:
+        csv_reader = csv.reader(csv_sim_file)
+        type_list = []
+        sim_mat = []
+        for row in csv_reader:
+            type_list.append(row[0])
+            sim_mat.append(row[1:])
+
+    # Transform the list of list into numpy array
+    sim_mat = np.array(sim_mat)
+    sim_mat = sim_mat.astype(np.float)
+    np.fill_diagonal(sim_mat, 1)
+
+    # Return elements
+    return type_list, sim_mat
+
 
 def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     """
@@ -121,7 +163,7 @@ def type_to_token_matrix_expansion(text_file_path, type_mat, type_list):
     return token_mat, token_list, existing_index_list
 
 
-def similarity_to_dissimilarity(sim_mat, dist_option="minus_log"):
+def similarity_to_dissimilarity(sim_mat, dist_option="max_minus"):
     """
     Compute the dissimilarity matrix from a similarity matrix with different options.
 
@@ -203,181 +245,9 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     return exch_mat, w_mat
 
 
-def autocorrelation_index(d_ext_mat, exch_mat, w_mat):
-    """
-    Compute the autocorrelation index regarding a dissimilarity matrix and a exchange matrix
-
-    :param d_ext_mat: the (n_token x  n_token) dissimilarity matrix between tokens
-    :type d_ext_mat: numpy.ndarray
-    :param exch_mat: the (n_token x n_token) exchange matrix between tokens
-    :type exch_mat: numpy.ndarray
-    :param w_mat: a (n_token x n_token) transition matrix.
-    :type w_mat: numpy.ndarray
-    :return: the autocorrelation index, the theoretical mean and the theoretical variance
-    :rtype: (float, float, float)
-    """
-    # Get the weights of tokens
-    f_vec = np.sum(exch_mat, 0)
-    # Get the number of token
-    n_token = len(f_vec)
-
-    # Compute of the global inertia
-    global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
-    # Compute the local inertia
-    local_inertia = 0.5 * np.sum(exch_mat * d_ext_mat)
-    # Compute the autocorrelation index
-    autocor_index = (global_inertia - local_inertia) / global_inertia
-
-    # Compute the theoretical expected value
-    trace_w_mat = np.trace(w_mat)
-    theoretical_mean = (trace_w_mat - 1) / (n_token - 1)
-    # Compute the theoretical
-    theoretical_var = 2 * (np.trace(w_mat @ w_mat) - 1 - (trace_w_mat - 1) ** 2 / (n_token - 1)) \
-                      / (n_token ** 2 - 1)
-
-    # Return autocorrelation index, theoretical mean and theoretical variance
-    return autocor_index, theoretical_mean, theoretical_var
-
-
-def lisa_computation(d_ext_mat, exch_mat, w_mat):
-    """
-    From an (n_token x n_token) extended dissimilarity matrix, an exchange matrix and a transition matrix,
-    compute the length (n_token) lisa vector where local autocorrelation for each token is stored.
-
-    :param d_ext_mat: an (n_token x n_token) extended dissimilarity matrix.
-    :type d_ext_mat: numpy.ndarray
-    :param exch_mat: an (n_token x n_token) exchange matrix.
-    :type exch_mat: numpy.ndarray
-    :param w_mat: a (n_token x n_token) transition matrix.
-    :type w_mat: numpy.ndarray
-    :return: the (n_token) lisa vector containing local autocorrelation for each token.
-    :rtype: numpy.ndarray
-    """
-
-    # Get the number of tokens
-    n_token, _ = d_ext_mat.shape
-    # Get the weights of tokens
-    f_vec = np.sum(exch_mat, 0)
-
-    # Compute the centring matrix
-    h_mat = np.identity(n_token) - np.outer(np.ones(n_token), f_vec)
-    # Compute the scalar produced matrix
-    b_mat = - 0.5 * h_mat.dot(d_ext_mat.dot(h_mat.T))
-    # Compute of the global inertia
-    global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
-    # Compute lisa vector
-    lisa_vec = np.diag(w_mat.dot(b_mat)) / global_inertia
-
-    # Return the result
-    return lisa_vec
-
-
-def discontinuity_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa,
-                             conv_threshold=1e-5, max_it=100, init_labels=None):
-    """
-    Cluster tokens with discontinuity soft clustering from a dissimilarity matrix, exchange matrix
-    and transition matrix. Semi-supervised option available if init_labels is given.
-
-    :param d_ext_mat: the n_token x n_token distance matrix
-    :type d_ext_mat: numpy.ndarray
-    :param exch_mat: the n_token x n_token exchange matrix
-    :type exch_mat: numpy.ndarray
-    :param w_mat: the n_token x n_token Markov chain transition matrix
-    :type w_mat: numpy.ndarray
-    :param n_groups: the number of groups
-    :type n_groups: int
-    :param alpha: alpha parameter
-    :type alpha: float
-    :param beta: beta parameter
-    :type beta: float
-    :param kappa: kappa parameter
-    :type kappa: float
-    :param conv_threshold: convergence threshold (default = 1e-5)
-    :type conv_threshold: float
-    :param max_it: maximum iterations (default = 100)
-    :type max_it: int
-    :param init_labels: a vector containing initial labels. 0 = unknown class. (default = None)
-    :type init_labels: numpy.ndarray
-    :return: the n_tokens x n_groups membership matrix for each token
-    :rtype: numpy.ndarray
-    """
-
-    # Get the number of tokens
-    n_token, _ = d_ext_mat.shape
-
-    # Get the weights of tokens
-    f_vec = np.sum(exch_mat, 0)
-
-    # Initialization of Z
-    # z_mat = np.random.random((n_token, n_groups))
-    z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
-    z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
-
-    # Set true labels
-    # If init_labels is not None, set known to value
-    if init_labels is not None:
-        for i, label in enumerate(init_labels):
-            if label != 0:
-                z_mat[i, :] = 0
-                z_mat[i, label - 1] = 1
-
-    # Control of the loop
-    converge = False
-
-    # Loop
-    it = 0
-    while not converge:
-
-        # Computation of rho_g vector
-        rho_vec = np.sum(z_mat.T * f_vec, axis=1)
-
-        # Computation of f_i^g matrix
-        fig_mat = ((z_mat / rho_vec).T * f_vec).T
-
-        # Computation of D_i^g matrix
-        dig_mat = fig_mat.T.dot(d_ext_mat).T
-        delta_g_vec = 0.5 * np.diag(dig_mat.T.dot(fig_mat))
-        dig_mat = dig_mat - delta_g_vec
-
-        # Computation of the epsilon_g vector
-        epsilon_g = np.sum(exch_mat.dot(z_mat ** 2), axis=0) - np.diag(z_mat.T.dot(exch_mat.dot(z_mat)))
-
-        # Computation of H_ig
-        hig_mat = beta * dig_mat + alpha * (rho_vec ** -kappa) * (z_mat - w_mat.dot(z_mat)) \
-                  - (0.5 * alpha * kappa * (rho_vec ** (-kappa - 1)) * epsilon_g)
-
-        # Computation of the new z_mat
-        z_new_mat = rho_vec * np.exp(-hig_mat)
-        z_new_mat[z_new_mat > 1e300] = 1e300
-        z_new_mat = (z_new_mat.T / np.sum(z_new_mat, axis=1)).T
-
-        # If init_labels is not None, set known to value
-        if init_labels is not None:
-            for i, label in enumerate(init_labels):
-                if label != 0:
-                    z_new_mat[i, :] = 0
-                    z_new_mat[i, label - 1] = 1
-
-        # Print diff and it
-        diff_pre_new = np.linalg.norm(z_mat - z_new_mat)
-        it += 1
-
-        # Verification of convergence
-        if diff_pre_new < conv_threshold:
-            converge = True
-        if it > max_it:
-            converge = True
-
-        # Saving the new z_mat
-        z_mat = z_new_mat
-
-    # Return the result
-    return z_mat
-
-
-def cut_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, init_labels=None,
-                   conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
-                   verbose=False):
+def token_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, init_labels=None,
+                     conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                     verbose=False):
     """
     Cluster tokens with cut soft clustering from a dissimilarity matrix, exchange matrix and transition matrix.
     Semi-supervised option available if init_labels is given.
@@ -503,9 +373,9 @@ def cut_clustering(d_ext_mat, exch_mat, w_mat, n_group, alpha, beta, kappa, init
     return z_mat
 
 
-def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
-                            kappa, block_size=1000, init_labels=None, conv_threshold=1e-5, n_hist=10, max_it=200,
-                            learning_rate_init=1, learning_rate_mult=0.9, verbose=False):
+def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
+                             kappa, block_size=1000, init_labels=None, conv_threshold=1e-5, n_hist=10, max_it=200,
+                             learning_rate_init=1, learning_rate_mult=0.9, verbose=False):
     """
     Cluster tokens with cut soft clustering from any file. Uses the block_size to cut the text in smaller segments.
     Semi-supervised option available if init_labels is given.
@@ -616,20 +486,20 @@ def cut_clustering_from_raw(file_path, word_vector_path, dist_option, exch_mat_o
         known_labels = z_final[range_list[i], :]
 
         # Compute the membership matrix for the block
-        z_block = cut_clustering(d_ext_mat=dist_matrix,
-                                 exch_mat=exch_mat,
-                                 w_mat=w_mat,
-                                 n_group=n_groups,
-                                 alpha=alpha,
-                                 beta=beta,
-                                 kappa=kappa,
-                                 init_labels=known_labels,
-                                 max_it=max_it,
-                                 conv_threshold=conv_threshold,
-                                 n_hist=n_hist,
-                                 learning_rate_init=learning_rate_init,
-                                 learning_rate_mult=learning_rate_mult,
-                                 verbose=verbose)
+        z_block = token_clustering(d_ext_mat=dist_matrix,
+                                   exch_mat=exch_mat,
+                                   w_mat=w_mat,
+                                   n_group=n_groups,
+                                   alpha=alpha,
+                                   beta=beta,
+                                   kappa=kappa,
+                                   init_labels=known_labels,
+                                   max_it=max_it,
+                                   conv_threshold=conv_threshold,
+                                   n_hist=n_hist,
+                                   learning_rate_init=learning_rate_init,
+                                   learning_rate_mult=learning_rate_mult,
+                                   verbose=verbose)
 
         # Put the z_block in z_final
         z_final[range_list[i], :] = z_block
@@ -769,3 +639,72 @@ def write_membership_mat_in_csv_file(output_file, z_token_list, z_mat, comment_l
 
     # Return 0 is all went well
     return 0
+
+
+def autocorrelation_index(d_ext_mat, exch_mat, w_mat):
+    """
+    Compute the autocorrelation index regarding a dissimilarity matrix and a exchange matrix
+
+    :param d_ext_mat: the (n_token x  n_token) dissimilarity matrix between tokens
+    :type d_ext_mat: numpy.ndarray
+    :param exch_mat: the (n_token x n_token) exchange matrix between tokens
+    :type exch_mat: numpy.ndarray
+    :param w_mat: a (n_token x n_token) transition matrix.
+    :type w_mat: numpy.ndarray
+    :return: the autocorrelation index, the theoretical mean and the theoretical variance
+    :rtype: (float, float, float)
+    """
+    # Get the weights of tokens
+    f_vec = np.sum(exch_mat, 0)
+    # Get the number of token
+    n_token = len(f_vec)
+
+    # Compute of the global inertia
+    global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
+    # Compute the local inertia
+    local_inertia = 0.5 * np.sum(exch_mat * d_ext_mat)
+    # Compute the autocorrelation index
+    autocor_index = (global_inertia - local_inertia) / global_inertia
+
+    # Compute the theoretical expected value
+    trace_w_mat = np.trace(w_mat)
+    theoretical_mean = (trace_w_mat - 1) / (n_token - 1)
+    # Compute the theoretical
+    theoretical_var = 2 * (np.trace(w_mat @ w_mat) - 1 - (trace_w_mat - 1) ** 2 / (n_token - 1)) \
+                      / (n_token ** 2 - 1)
+
+    # Return autocorrelation index, theoretical mean and theoretical variance
+    return autocor_index, theoretical_mean, theoretical_var
+
+
+def lisa_computation(d_ext_mat, exch_mat, w_mat):
+    """
+    From an (n_token x n_token) extended dissimilarity matrix, an exchange matrix and a transition matrix,
+    compute the length (n_token) lisa vector where local autocorrelation for each token is stored.
+
+    :param d_ext_mat: an (n_token x n_token) extended dissimilarity matrix.
+    :type d_ext_mat: numpy.ndarray
+    :param exch_mat: an (n_token x n_token) exchange matrix.
+    :type exch_mat: numpy.ndarray
+    :param w_mat: a (n_token x n_token) transition matrix.
+    :type w_mat: numpy.ndarray
+    :return: the (n_token) lisa vector containing local autocorrelation for each token.
+    :rtype: numpy.ndarray
+    """
+
+    # Get the number of tokens
+    n_token, _ = d_ext_mat.shape
+    # Get the weights of tokens
+    f_vec = np.sum(exch_mat, 0)
+
+    # Compute the centring matrix
+    h_mat = np.identity(n_token) - np.outer(np.ones(n_token), f_vec)
+    # Compute the scalar produced matrix
+    b_mat = - 0.5 * h_mat.dot(d_ext_mat.dot(h_mat.T))
+    # Compute of the global inertia
+    global_inertia = 0.5 * np.sum(np.outer(f_vec, f_vec) * d_ext_mat)
+    # Compute lisa vector
+    lisa_vec = np.diag(w_mat.dot(b_mat)) / global_inertia
+
+    # Return the result
+    return lisa_vec

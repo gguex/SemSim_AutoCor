@@ -1,7 +1,5 @@
-import nltk
 from gensim.models import KeyedVectors
-from tqdm import tqdm
-from local_functions import get_all_paths, build_wv_similarity_matrix
+from local_functions import build_wv_similarity_matrix
 from os.path import expanduser
 
 # -------------------------------------
@@ -13,13 +11,24 @@ input_file_list = ["61320_199211_pp.txt",
                    "61320_200411_pp.txt",
                    "61320_201211_pp.txt",
                    "61320_201611_pp.txt",
+                   "61320_202011_pp.txt",
                    "61620_200411_pp.txt",
                    "61620_200811_pp.txt",
                    "61620_201211_pp.txt",
-                   "61620_201611_pp.txt"]
-input_file_list = ["61320_199211_pp.txt"]
+                   "61620_201611_pp.txt",
+                   "61620_202011_pp.txt",
+                   "61320_199211_pp_wostw.txt",
+                   "61320_200411_pp_wostw.txt",
+                   "61320_201211_pp_wostw.txt",
+                   "61320_201611_pp_wostw.txt",
+                   "61320_202011_pp_wostw.txt",
+                   "61620_200411_pp_wostw.txt",
+                   "61620_200811_pp_wostw.txt",
+                   "61620_201211_pp_wostw.txt",
+                   "61620_201611_pp_wostw.txt",
+                   "61620_202011_pp_wostw.txt"]
 # List of tags to enumerate similarity to compute
-sim_tag_list = ["w2v"]
+sim_tag_list = ["w2v", "glv", "ftx"]
 
 # -------------------------------------
 # --- Computations
