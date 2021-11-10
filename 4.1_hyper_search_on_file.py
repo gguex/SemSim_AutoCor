@@ -20,7 +20,7 @@ results_file_name = "results/search_big_199211.csv"
 known_label_ratio = 0
 
 # Number of tests
-n_tests = 3
+n_tests = 4
 
 # Number of groups
 n_groups = 7
