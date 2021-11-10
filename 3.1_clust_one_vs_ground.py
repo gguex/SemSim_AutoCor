@@ -24,7 +24,7 @@ exch_range = 15
 alpha = 5
 beta = 50
 kappa = 0.5
-known_label_ratio = 0  # if > 0, semi-supervised model
+known_label_ratio = 0 # if > 0, semi-supervised model
 
 # -------------------------------------
 # --- Computations
@@ -62,7 +62,7 @@ exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
 
 # Compute the membership matrix
 result_matrix = token_clustering(d_ext_mat=d_ext_mat, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups, alpha=alpha,
-                                 beta=beta, kappa=kappa, init_labels=known_labels, verbose=True)
+                                 beta=beta, kappa=kappa, known_labels=known_labels, verbose=True)
 
 # Compute the groups
 algo_group_vec = np.argmax(result_matrix, 1) + 1

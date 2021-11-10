@@ -118,7 +118,7 @@ for input_sim_file in input_sim_file_list:
                                                   alpha=alpha,
                                                   beta=beta,
                                                   kappa=kappa,
-                                                  init_labels=known_labels)
+                                                  known_labels=known_labels)
                     # Compute the groups
                     alg_group_vec = np.argmax(res_matrix, 1) + 1
                     rstr_alg_group_vec = np.delete(alg_group_vec, indices_for_known_label)
