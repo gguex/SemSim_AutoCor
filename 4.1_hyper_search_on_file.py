@@ -14,7 +14,7 @@ from miniutils import parallel_progbar
 input_text_file = "corpora/61320_199211_pp_wostw.txt"
 input_group_file = "corpora/61320_199211_pp_wostw_groups.txt"
 
-results_file_name = "results/search2_199211.csv"
+results_file_name = "results/search_all_199211.csv"
 
 # Known label ?
 known_label_ratio = 0
@@ -29,10 +29,10 @@ n_groups = 7
 input_sim_file_list = ["similarity_matrices/61320_199211_pp_wostw_w2v.csv",
                        "similarity_matrices/61320_199211_pp_wostw_glv.csv",
                        "similarity_matrices/61320_199211_pp_wostw_ftx.csv"]
-dist_option_vec = ["max_minus", "minus_log"]
+dist_option_vec = ["max_minus"]
 exch_mat_opt_vec = ["u", "d"]
-exch_range_vec = [10, 15]
-alpha_vec = [0.1, 1, 2, 5, 10, 30]
+exch_range_vec = [5, 10, 15]
+alpha_vec = [1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]
 kappa_vec = [0, 0.25, 0.5, 0.75, 1]
 
