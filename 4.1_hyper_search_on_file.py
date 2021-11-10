@@ -133,11 +133,6 @@ for input_sim_file in input_sim_file_list:
             # Multiprocess
             res_multi = parallel_progbar(nmi_computation, hyperp_list, starmap=True, nprocs=n_cpu)
 
-            # Make results file
-            with open(results_file_name, "w") as output_file:
-                output_file.write("input_file,label_ratio,sim_tag,n_groups,n_tests,dist_option,exch_mat_opt,exch_range,"
-                                  "alpha,beta,kappa,mean_nmi\n")
-
             # Writing results
             with open(results_file_name, "a") as output_file:
                 for id_hyp, hyperp in enumerate(hyperp_list):
