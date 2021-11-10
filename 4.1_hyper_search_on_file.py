@@ -14,7 +14,7 @@ from miniutils import parallel_progbar
 input_text_file = "corpora/61320_199211_pp_wostw.txt"
 input_group_file = "corpora/61320_199211_pp_wostw_groups.txt"
 
-results_file_name = "results/search_all_199211.csv"
+results_file_name = "results/search_big_199211.csv"
 
 # Known label ?
 known_label_ratio = 0
@@ -52,7 +52,7 @@ with open(results_file_name, "w") as output_file:
                       "alpha,beta,kappa,mean_nmi\n")
 
 ######################
-#### Loop on Sim files
+#### Loop on sim files
 
 for input_sim_file in input_sim_file_list:
 
@@ -85,15 +85,15 @@ for input_sim_file in input_sim_file_list:
     rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
 
     ########################
-    #### Loop on Dist option
+    #### Loop on dist option
 
     for dist_option in dist_option_vec:
 
         # Compute the dissimilarity matrix
         d_ext_mat = similarity_to_dissimilarity(sim_ext_mat, dist_option=dist_option)
 
-        ########################
-        #### Loop on Exchg opt
+        ######################
+        #### Loop on exchg opt
 
         for exch_mat_opt, exch_range in product(exch_mat_opt_vec, exch_range_vec):
 
@@ -103,7 +103,7 @@ for input_sim_file in input_sim_file_list:
                                                                exch_range=exch_range)
 
 
-            ########################
+            ########################################
             #### Creating a function to multiprocess
 
             def nmi_computation(alpha, beta, kappa):
@@ -127,6 +127,9 @@ for input_sim_file in input_sim_file_list:
                     nmi_vector.append(nmi)
 
                 return np.mean(nmi_vector)
+
+            ##################################
+            #### Computing and writing results
 
             # Print message
             print(f"Multiprocessing for {sim_tag}, {dist_option}, {exch_mat_opt}, {exch_range}")

@@ -244,7 +244,7 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     return exch_mat, w_mat
 
 
-def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None,
+def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None, known_labels=None,
                      conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
                      verbose=False):
     """
@@ -267,6 +267,8 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
     :type kappa: float
     :param init_labels: a vector containing initial labels. 0 = unknown class. (default = None)
     :type init_labels: numpy.ndarray
+    :param known_labels: a vector containing fixed labels. 0 = unknown class. (default = None)
+    :type known_labels: numpy.ndarray
     :param conv_threshold: convergence threshold (default = 1e-5)
     :type conv_threshold: float
     :param n_hist: number of past iterations which must be under threshold for considering convergence (default = 10)
@@ -293,6 +295,17 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
     # z_mat = np.random.random((n_token, n_groups))
     z_mat = np.abs(np.ones((n_token, n_groups)) + np.random.normal(0, 0.001, (n_token, n_groups)))
     z_mat = (z_mat.T / np.sum(z_mat, axis=1)).T
+
+    # If known_labels is not None, pass them to init_labels
+    if known_labels is not None:
+        if init_labels is None:
+            init_labels = known_labels
+        else:
+            if len(np.array(init_labels).shape) == 1:
+                init_labels[known_labels > 1e-2] = known_labels[known_labels > 1e-2]
+            else:
+                init_labels[np.sum(known_labels, axis=1) > 1e-2, :] = \
+                    known_labels[np.sum(known_labels, axis=1) > 1e-2, :]
 
     # Set true labels
     # If init_labels is not None, set known to value
@@ -349,6 +362,16 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
             z_mat_new[z_mat_new < 0] = 0
             z_mat_new = (z_mat_new.T / np.sum(z_mat_new, axis=1)).T
 
+        # If known_labels is not None, fix them again
+        if known_labels is not None:
+            if len(np.array(known_labels).shape) == 1:
+                for i, label in enumerate(known_labels):
+                    if label != 0:
+                        z_mat_new[i, :] = 0
+                        z_mat_new[i, label - 1] = 1
+            else:
+                z_mat_new[np.sum(init_labels, axis=1) > 1e-2, :] = known_labels[np.sum(known_labels, axis=1) > 1e-2, :]
+
         # Print diff and it
         # diff_pre_new = np.linalg.norm(z_mat - z_mat_new)
         diff_free_energy = (free_energy_new - free_energy) / learning_rate
@@ -373,8 +396,9 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
 
 
 def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
-                             kappa, block_size=1000, init_labels=None, conv_threshold=1e-5, n_hist=10, max_it=200,
-                             learning_rate_init=1, learning_rate_mult=0.9, verbose=False):
+                             kappa, block_size=1000, init_labels=None, known_labels=None, strong_pass=False,
+                             conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                             verbose=False):
     """
     Cluster tokens with cut soft clustering from any file. Uses the block_size to cut the text in smaller segments.
     Semi-supervised option available if init_labels is given.
@@ -401,6 +425,9 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
     :type block_size: int
     :param init_labels: a vector containing initial labels. 0 = unknown class. (default = None)
     :type init_labels: numpy.ndarray
+    :param known_labels: a vector containing fixed labels. 0 = unknown class. (default = None)
+    :type known_labels: numpy.ndarray
+    :param strong_pass: the way labels are pass between blocks, if true, via known_labels. if false, via init_labels
     :param conv_threshold: convergence threshold (default = 1e-5)
     :type conv_threshold: float
     :param n_hist: number of past iterations which must be under threshold for considering convergence (default = 10)
@@ -449,6 +476,17 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
         else:
             range_list.append(range(int(i * real_split_size / 2), int((i / 2 + 1) * real_split_size)))
 
+    # If known_labels is not None, pass them to init_labels
+    if known_labels is not None:
+        if init_labels is None:
+            init_labels = known_labels
+        else:
+            if len(np.array(init_labels).shape) == 1:
+                init_labels[known_labels > 1e-2] = known_labels[known_labels > 1e-2]
+            else:
+                init_labels[np.sum(known_labels, axis=1) > 1e-2, :] = \
+                    known_labels[np.sum(known_labels, axis=1) > 1e-2, :]
+
     # Defining the initial matrix
     z_final = np.zeros((n_token, n_groups))
     if init_labels is not None:
@@ -482,11 +520,18 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
         exch_mat, w_mat = exchange_and_transition_matrices(n_block_token, exch_mat_opt=exch_mat_opt,
                                                            exch_range=exch_range)
 
-        known_labels = z_final[range_list[i], :]
+        # Get the previous labels
+        previous_labels = z_final[range_list[i], :]
+
+        # Strong or weak pass
+        if strong_pass:
+            arg_dict = {"known_labels": previous_labels}
+        else:
+            arg_dict = {"init_labels": previous_labels}
 
         # Compute the membership matrix for the block
         z_block = token_clustering(d_ext_mat=dist_matrix, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups,
-                                   alpha=alpha, beta=beta, kappa=kappa, init_labels=known_labels,
+                                   alpha=alpha, beta=beta, kappa=kappa, **arg_dict,
                                    conv_threshold=conv_threshold, n_hist=n_hist, max_it=max_it,
                                    learning_rate_init=learning_rate_init, learning_rate_mult=learning_rate_mult,
                                    verbose=verbose)
@@ -698,3 +743,7 @@ def lisa_computation(d_ext_mat, exch_mat, w_mat):
 
     # Return the result
     return lisa_vec
+
+
+def test_f(a, b=10, c=100):
+    return a + b + c

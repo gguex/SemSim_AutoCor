@@ -1,6 +1,6 @@
 import nltk
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import heapq
 import pandas as pd
 
@@ -68,9 +68,22 @@ for id_group in id_group_list:
     group_token = list(np.array(full_token_list)[np.array(full_group_list) == id_group])
     corpus_by_group.append(" ".join(group_token))
 
-# Tfidf computation
+# Tfidf computation (optional)
 vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(corpus_by_group)
+X = vectorizer.fit_transform(corpus_by_group).todense()
+
+# Chi2 table computation
+vectorizer = CountVectorizer()
+CT = vectorizer.fit_transform(corpus_by_group)
+Id_mat = np.outer(np.sum(CT, axis=1), np.sum(CT, axis=0)) / np.sum(CT)
+X = np.power((CT - Id_mat), 2) / Id_mat
+
+# To compute more complex indices
+# new_X = np.copy(X)
+# for i, id_group in enumerate(id_group_list):
+#     other_group_id = list(set(range(n_groups)) - set([i]))
+#     new_X[i, :] = X[i, :] - np.sum(X[other_group_id, :], axis=0)
+# X = new_X
 
 # Token list
 type_list = vectorizer.get_feature_names()
@@ -78,18 +91,13 @@ type_list = vectorizer.get_feature_names()
 # Get the highest values
 highest_type_id = []
 for i, _ in enumerate(id_group_list):
-    highest_id = heapq.nlargest(top_n, range(X[i, ].shape[1]), X[i, ].todense().take)
+    highest_id = heapq.nlargest(top_n, range(len(type_list)), X[i, ].take)
     highest_type_id.extend(highest_id)
 
 highest_type_id = np.sort(list(set(highest_type_id)))
-highest_value = X[:,highest_type_id].todense()
+highest_value = X[:, highest_type_id]
 highest_type_list = np.array(type_list)[highest_type_id]
 
 df_results = pd.DataFrame(highest_value.T, index=highest_type_list)
-
-# Construct the index
-for i, id_group in enumerate(id_group_list):
-    other_group_id = list(set(range(n_groups)) - set([i]))
-    df_results[f"I{id_group}"] = df_results.iloc[:, i] / df_results.iloc[:, other_group_id].max(axis=1)
 
 df_results.to_csv(output_file_name, header=False)

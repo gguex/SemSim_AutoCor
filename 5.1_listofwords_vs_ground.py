@@ -20,25 +20,57 @@ output_names_root = "results/61320_199211_w2v"
 n_groups = 7
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 10
-alpha = 2
-beta = 100
-kappa = 1
+exch_range = 5
+alpha = 10
+beta = 50
+kappa = 0
 
 # List of words for each groups
-word_per_groups = [["nuclear", "military", "united", "security", "nato", "international", "israel", "nations", "forces",
-                    "russia"],
-                   ["rights", "constitution", "democracy", "political", "freedom", "vote", "people", "civil",
-                    "amendment", "citizens"],
-                   ["federal", "government", "local", "state", "washington", "administration", "tribal", "republican",
-                    "congress", "party"],
-                   ["tax", "economic", "economy", "energy", "businesses", "growth", "private", "market", "trade",
-                    "companies"],
-                   ["health", "education", "care", "students", "disabilities", "schools", "democrats", "access",
-                    "public", "colors"],
-                   ["abortion", "marriage", "religious", "family", "enforcement", "life", "crime", "first",
-                    "children", "life"],
-                   ["class", "labor", "farmers", "workers", "union", "wages", "veterans", "jobs", "middle", "working"]]
+# word_per_groups = [["united", "military", "security", "nuclear", "international", "nations", "peace", "forces",
+#                     "allies", "war"],
+#                    ["constitution", "constitutional", "vote", "political", "constitutions", "elections", "document",
+#                     "separation", "judiciary", "declaration"],
+#                    ["local", "state", "washington", "government", "governments", "tribal", "control",
+#                     "corruption", "audit", "vision"],
+#                    ["tax", "economic", "economy", "energy", "growth", "small", "businesses", "private",
+#                     "investment", "trade"],
+#                    ["health", "care", "education", "democrats", "students", "schools", "disabilities",
+#                     "access", "school", "public"],
+#                    ["abortion", "religious", "marriage", "family", "enforcement", "faith", "life", "crime",
+#                     "ban", "oppose"],
+#                    ["workers", "jobs", "labor", "veterans", "class", "union", "middle", "work",
+#                     "farmers", "wages"]]
+
+# List of words for each groups
+word_per_groups = [["nuclear", "military", "united", "peace", "international", "allies", "forces", "israel",
+                    "security", "weapons"],
+                   ["constitution", "rights", "vote", "constitutional", "democracy", "constitutions", "political",
+                    "judiciary", "freedom", "amendment"],
+                   ["local", "federal", "government", "washington", "state", "audit", "governments",
+                    "states", "corruption", "federalism"],
+                   ["tax", "growth", "economy", "economic", "businesses", "energy", "innovation", "trade",
+                    "market", "investment"],
+                   ["health", "care", "education", "disabilities", "students", "schools", "school",
+                    "access", "color", "mental"],
+                   ["abortion", "marriage", "religious", "crime", "faith", "family", "enforcement", "life",
+                    "beliefs", "intelligence"],
+                   ["workers", "jobs", "labor", "class", "union", "veterans", "unions", "organize",
+                    "wages", "farmers"]]
+
+# List of words for each groups
+# word_per_groups = [["nuclear", "military", "united", "security", "nato", "international", "israel", "nations", "forces",
+#                     "russia"],
+#                    ["rights", "constitution", "democracy", "political", "freedom", "vote", "people", "civil",
+#                     "amendment", "citizens"],
+#                    ["federal", "government", "local", "state", "washington", "administration", "tribal", "republican",
+#                     "congress", "party"],
+#                    ["tax", "economic", "economy", "energy", "businesses", "growth", "private", "market", "trade",
+#                     "companies"],
+#                    ["health", "education", "care", "students", "disabilities", "schools", "democrats", "access",
+#                     "public", "colors"],
+#                    ["abortion", "marriage", "religious", "family", "enforcement", "life", "crime", "first",
+#                     "children", "life"],
+#                    ["class", "labor", "farmers", "workers", "union", "wages", "veterans", "jobs", "middle", "working"]]
 
 # -------------------------------------
 # --- Computations
@@ -65,6 +97,19 @@ for i in range(len(word_per_groups)):
     indices_for_known_label.extend(indices_group_words)
     known_labels[indices_group_words] = (i+1)
 known_labels = known_labels.astype(int)
+
+# Some stats correct percentage
+nb_in_groups_list = []
+nb_right_groups_list = []
+for i in range(n_groups):
+    nb_in_groups = sum(known_labels == i+1)
+    nb_right_groups = sum(real_group_vec[known_labels == i+1] == i+1)
+    print(f"Groupe {i+1}: Nb = {nb_in_groups} Percent_right = {nb_right_groups / nb_in_groups}")
+    nb_in_groups_list.append(nb_in_groups)
+    nb_right_groups_list.append(nb_right_groups)
+
+print(f"Overall : Nb = {sum(nb_in_groups_list)} ({sum(nb_in_groups_list) / len(token_list)}%) "
+      f"Percent_right = {sum(nb_right_groups_list) / sum(nb_in_groups_list)}")
 
 # Compute the dissimilarity matrix
 d_ext_mat = similarity_to_dissimilarity(sim_ext_mat, dist_option=dist_option)
