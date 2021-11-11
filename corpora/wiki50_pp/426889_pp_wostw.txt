@@ -1,0 +1,71 @@
+photometry science measurement light terms perceived brightness human eye 
+distinct radiometry science measurement radiant energy including light terms absolute power 
+modern photometry radiant power wavelength weighted luminosity function models human brightness sensitivity 
+typically weighting function photopic sensitivity function although scotopic function functions may also applied way 
+human eye equally sensitive wavelengths visible light 
+photometry attempts account weighing measured power wavelength factor represents sensitive eye wavelength 
+standardized model eye response light function wavelength given luminosity function 
+eye different responses function wavelength adapted light conditions photopic vision dark conditions scotopic vision 
+photometry typically based eye photopic response photometric measurements may accurately indicate perceived brightness sources dim lighting conditions colors discernible moonlight starlight 
+photopic vision characteristic eye response luminance levels three candela per square metre 
+scotopic vision occurs × cd 
+mesopic vision occurs limits well characterised spectral response 
+measurement effects electromagnetic radiation became field study early end th century 
+measurement techniques varied depending effects study gave rise different nomenclature 
+total heating effect infrared radiation measured thermometers led development radiometric units terms total energy power 
+use human eye detector led photometric units weighted eye response characteristic 
+study chemical effects ultraviolet radiation led characterization total dose actinometric units expressed photons per second 
+many different units measure used photometric measurements 
+people sometimes ask need many different units ask conversions units converted lumens candelas example 
+familiar idea adjective heavy refer weight density fundamentally different things 
+similarly adjective bright refer light source delivers high luminous flux measured lumens light source concentrates luminous flux narrow beam candelas light source seen dark background 
+ways light propagates three dimensional space spreading becoming concentrated reflecting shiny matte surfaces light consists many different wavelengths number fundamentally different kinds light measurement made large numbers quantities units represent 
+example offices typically brightly illuminated array many recessed fluorescent lights combined high luminous flux 
+laser pointer low luminous flux could illuminate room blindingly bright one direction high luminous intensity direction 
+two parallel systems quantities known photometric radiometric quantities 
+every quantity one system analogous quantity system 
+examples parallel quantities include 
+photometric quantities every wavelength weighted according sensitive human eye radiometric quantities use unweighted absolute power 
+example eye responds much strongly green light red green source greater luminous flux red source radiant flux would 
+radiant energy outside visible spectrum contribute photometric quantities example watt space heater may put great deal radiant flux watts fact light source puts lumens energy infrared leaving dim red glow visible 
+watts units radiant flux lumens units luminous flux 
+comparison watt lumen illustrates distinction radiometric photometric units 
+watt unit power 
+accustomed thinking light bulbs terms power watts 
+power measure amount light output rather indicates much energy bulb use 
+incandescent bulbs sold general service fairly similar characteristics spectral power distribution power consumption provides rough guide light output incandescent bulbs 
+watts also direct measure output 
+radiometric sense incandescent light bulb efficient energy lost e g 
+conduction lamp base 
+remainder emitted radiation mostly infrared 
+thus watt light bulb emits total radiant flux watts 
+incandescent bulbs fact sometimes used heat sources chick incubator usually used purpose providing light 
+inefficient radiant energy emit invisible infrared 
+compact fluorescent lamp provide light comparable watt incandescent consuming little watts electricity 
+lumen photometric unit light output 
+although consumers still think light terms power consumed bulb u trade requirement several decades light bulb packaging give output lumens 
+package watt incandescent bulb indicates provides lumens package watt compact fluorescent 
+lumen defined amount light given one steradian point source one candela strength candela base si unit defined luminous intensity source monochromatic radiation frequency terahertz radiant intensity watts per steradian 
+thz corresponds nanometres wavelength green human eye sensitive 
+number chosen make candela equal standard candle unit superseded 
+combining definitions see watt nanometre green light provides one lumen 
+relation watts lumens simple scaling factor 
+know already watt incandescent bulb watt compact fluorescent provide lumens 
+definition tells us watt pure green nm light worth lumens 
+say anything wavelengths 
+lumens photometric units relationship watts depends wavelength according visible wavelength 
+infrared ultraviolet radiation example invisible count 
+one watt infrared radiation radiation incandescent bulb falls worth zero lumens 
+within visible spectrum wavelengths light weighted according function called photopic spectral luminous efficiency 
+according function nm red light efficient nm green light 
+thus one watt nm red light worth lumens 
+summation visual portion em spectrum part weighting unit lumen color blind way tell color lumen appear 
+equivalent evaluating groceries number bags information specific content number refers total weighted quantity 
+photometric measurement based photodetectors devices several types produce electric signal exposed light 
+simple applications technology include switching luminaires based ambient light conditions light meters used measure total amount light incident point 
+complex forms photometric measurement used frequently within lighting industry 
+spherical photometers used measure directional luminous flux produced lamps consist large diameter globe lamp mounted center 
+photocell rotates lamp three axes measuring output lamp sides 
+lamps lighting fixtures tested using goniophotometers rotating mirror photometers keep photocell stationary sufficient distance luminaire considered point source 
+rotating mirror photometers use motorized system mirrors reflect light emanating luminaire directions distant photocell goniophotometers use rotating axis table change orientation luminaire respect photocell 
+either case luminous intensity tabulated data used lighting design

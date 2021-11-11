@@ -1,6 +1,8 @@
 from sentence_transformers import SentenceTransformer, util
 from local_functions import *
 from sklearn.metrics import normalized_mutual_info_score
+from segeval import convert_positions_to_masses, pk, window_diff
+import random as rdm
 
 # -------------------------------------
 # --- Parameters
@@ -73,4 +75,15 @@ for i, sent in enumerate(sent_list):
 nmi = normalized_mutual_info_score(real_group_vec, algo_group_vec)
 ext_nmi = normalized_mutual_info_score(ext_real_group_vec, ext_algo_group_vec)
 
-print(f"nmi = {nmi}, ext_nmi = {ext_nmi}")
+# Segmentation evaluation
+real_segm_vec = convert_positions_to_masses(real_group_vec)
+algo_segm_vec = convert_positions_to_masses(algo_group_vec)
+rdm_group_vec = real_group_vec.copy()
+rdm.shuffle(rdm_group_vec)
+rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
+pk_res = pk(algo_segm_vec, real_segm_vec)
+win_diff = window_diff(algo_segm_vec, real_segm_vec)
+pk_rdm = pk(rdm_segm_vec, real_segm_vec)
+win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+
+print(f"nmi = {nmi}, ext_nmi = {ext_nmi}, pk={pk_res} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")

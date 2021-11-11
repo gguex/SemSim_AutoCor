@@ -5,35 +5,32 @@ import re
 import nltk
 from nltk.corpus import stopwords
 
-# Getting the os path
-working_path = os.getcwd()
+# Set root path
+root_path = os.getcwd().split("SemSim_AutoCor")[0] + "SemSim_AutoCor"
 
-# Getting the SemSim_AutoCor folder, if above
-base_path = str.split(working_path, "SemSim_AutoCor")[0] + "SemSim_AutoCor"
+# Setting the raw files path
+raw_files_path = f"{root_path}/corpora/manifesto_csv_file"
 
-# Name of the file
-input_file_list = ["61320_199211.csv",
-                   "61320_200411.csv",
-                   "61320_201211.csv",
-                   "61320_201611.csv",
-                   "61320_202011.csv",
-                   "61620_200411.csv",
-                   "61620_200811.csv",
-                   "61620_201211.csv",
-                   "61620_201611.csv",
-                   "61620_202011.csv"]
+# Setting the output files path
+output_files_path = f"{root_path}/corpora/manifesto_pp"
+
+# Getting files
+input_file_list = os.listdir(raw_files_path)
 
 # Removing stopwords option
-remove_stopwords = True
+remove_stopwords = False
 
 # Getting stopwords
 stopwords = stopwords.words('english')
+
+# Improved punctuation
+improved_punctuation = string.punctuation + "”’—“–"
 
 # Loop on files
 for input_file in input_file_list:
 
     # Loading the file
-    with open(f"{base_path}/corpora/manifesto_csv_file/{input_file}", 'r') as csv_file:
+    with open(f"{raw_files_path}/{input_file}", 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         sent_list = []
         group_list = []
@@ -49,8 +46,8 @@ for input_file in input_file_list:
         output_name = f"{input_file[:-4]}_pp_wostw"
     else:
         output_name = f"{input_file[:-4]}_pp"
-    with open(f"{base_path}/corpora/{output_name}.txt", "w") as text_file, \
-            open(f"{base_path}/corpora/{output_name}_groups.txt", "w") as groups_file:
+    with open(f"{output_files_path}/{output_name}.txt", "w") as text_file, \
+            open(f"{output_files_path}/{output_name}_groups.txt", "w") as groups_file:
 
         for i, sentence in enumerate(sent_list):
 
@@ -59,7 +56,7 @@ for input_file in input_file_list:
             # Remove numbers
             sentence_pp = re.sub(r"[0-9]", " ", sentence_pp)
             # Remove punctuation
-            sentence_pp = sentence_pp.translate(str.maketrans(" ", " ", string.punctuation + "”’—“"))
+            sentence_pp = sentence_pp.translate(str.maketrans(improved_punctuation, " " * len(improved_punctuation)))
             # Split by token
             token_list = nltk.word_tokenize(sentence_pp)
 

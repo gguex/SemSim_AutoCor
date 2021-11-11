@@ -1,0 +1,35 @@
+japanese particles or are suffixes or short words in japanese grammar that immediately follow the modified noun verb adjective or sentence 
+their grammatical range can indicate various meanings and functions such as speaker affect and assertiveness 
+japanese particles are written in hiragana in modern japanese though some of them also have kanji forms 弖 or 天 for te て 爾 for ni に 乎 or 遠 for o を and 波 for wa は 
+particles follow the same rules of phonetic transcription as all japanese words with the exception of は written ha pronounced wa as a particle へ written he pronounced e and を written using a hiragana character with no other use in modern japanese originally assigned as wo now usually pronounced o though some speakers render it as wo 
+these exceptions are a relic of historical kana usage 
+there are eight types of particles depending on what function they serve 
+が、の、を、に、へ、と、で、から、より 
+か、の、や、に、と、やら、なり、だの 
+か、の、や、な、わ、とも、かしら 
+さ、よ、ね 
+ばかり、まで、だけ、ほど、くらい、など、なり、やら 
+は、も、こそ、でも、しか、さえ、だに 
+ば、や、が、て、のに、ので、から、ところが、けれども 
+の、から 
+note that some particles appear in two types 
+for example kara is a case marker where it describes where something is from or what happens after something when it describes a cause it is a conjunctive particle 
+ni and de can both be used to show location corresponding to the prepositions in or at in english 
+their uses are mutually exclusive 
+ni when used to show location is used only with stative verbs such as iru to be exist aru to be exist have and sumu to live inhabit 
+de is used with action verbs to convey the place of action as opposed to location of being 
+ni and e can both indicate direction of motion meaning to or at in english 
+in this sense e is perhaps closer to english towards in terms of use see example below 
+as long as ni is used directionally it is possible to substitute e in its place 
+ni used in other senses can not be replaced by e 
+indicating direction using e instead of ni is preferred when ni is used non directionally in proximity 
+in some cases ga and o are interchangeable 
+for example with the tai form meaning want to it is possible to say either of the following 
+similarly 好き suki a na adjective meaning liked can take either ga or o 
+ni and to are sometimes interchangeable in forms like になる ni naru and となる to naru 
+the ni naru form suggests a natural change whereas to naru suggests change to a final stage 
+い i was used in old japanese and kanbun works 
+its meaning is still debated but has traditionally been considered emphatic 
+many japanese particles fill the role of prepositions in english but they are unlike prepositions in many ways 
+japanese does not have equivalents of prepositions like on and often uses particles along with verbs and nouns to modify another word where english might use prepositions 
+for example ue is a noun meaning top up and ni tsuite is a fixed verbal expression meaning concerning and when used as postpositions

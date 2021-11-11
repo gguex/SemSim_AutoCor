@@ -1,0 +1,71 @@
+photometry is the science of the measurement of light in terms of its perceived brightness to the human eye 
+it is distinct from radiometry which is the science of measurement of radiant energy including light in terms of absolute power 
+in modern photometry the radiant power at each wavelength is weighted by a luminosity function that models human brightness sensitivity 
+typically this weighting function is the photopic sensitivity function although the scotopic function or other functions may also be applied in the same way 
+the human eye is not equally sensitive to all wavelengths of visible light 
+photometry attempts to account for this by weighing the measured power at each wavelength with a factor that represents how sensitive the eye is at that wavelength 
+the standardized model of the eye s response to light as a function of wavelength is given by the luminosity function 
+the eye has different responses as a function of wavelength when it is adapted to light conditions photopic vision and dark conditions scotopic vision 
+photometry is typically based on the eye s photopic response and so photometric measurements may not accurately indicate the perceived brightness of sources in dim lighting conditions where colors are not discernible such as under just moonlight or starlight 
+photopic vision is characteristic of the eye s response at luminance levels over three candela per square metre 
+scotopic vision occurs below × cd m 
+mesopic vision occurs between these limits and is not well characterised for spectral response 
+measurement of the effects of electromagnetic radiation became a field of study as early as the end of th century 
+measurement techniques varied depending on the effects under study and gave rise to different nomenclature 
+the total heating effect of infrared radiation as measured by thermometers led to development of radiometric units in terms of total energy and power 
+use of the human eye as a detector led to photometric units weighted by the eye s response characteristic 
+study of the chemical effects of ultraviolet radiation led to characterization by the total dose or actinometric units expressed in photons per second 
+many different units of measure are used for photometric measurements 
+people sometimes ask why there need to be so many different units or ask for conversions between units that can t be converted lumens and candelas for example 
+we are familiar with the idea that the adjective heavy can refer to weight or density which are fundamentally different things 
+similarly the adjective bright can refer to a light source which delivers a high luminous flux measured in lumens or to a light source which concentrates the luminous flux it has into a very narrow beam candelas or to a light source that is seen against a dark background 
+because of the ways in which light propagates through three dimensional space spreading out becoming concentrated reflecting off shiny or matte surfaces and because light consists of many different wavelengths the number of fundamentally different kinds of light measurement that can be made is large and so are the numbers of quantities and units that represent them 
+for example offices are typically brightly illuminated by an array of many recessed fluorescent lights for a combined high luminous flux 
+a laser pointer has very low luminous flux it could not illuminate a room but is blindingly bright in one direction high luminous intensity in that direction 
+there are two parallel systems of quantities known as photometric and radiometric quantities 
+every quantity in one system has an analogous quantity in the other system 
+some examples of parallel quantities include 
+in photometric quantities every wavelength is weighted according to how sensitive the human eye is to it while radiometric quantities use unweighted absolute power 
+for example the eye responds much more strongly to green light than to red so a green source will have greater luminous flux than a red source with the same radiant flux would 
+radiant energy outside the visible spectrum does not contribute to photometric quantities at all so for example a watt space heater may put out a great deal of radiant flux watts in fact but as a light source it puts out very few lumens because most of the energy is in the infrared leaving only a dim red glow in the visible 
+watts are units of radiant flux while lumens are units of luminous flux 
+a comparison of the watt and the lumen illustrates the distinction between radiometric and photometric units 
+the watt is a unit of power 
+we are accustomed to thinking of light bulbs in terms of power in watts 
+this power is not a measure of the amount of light output but rather indicates how much energy the bulb will use 
+because incandescent bulbs sold for general service all have fairly similar characteristics same spectral power distribution power consumption provides a rough guide to the light output of incandescent bulbs 
+watts can also be a direct measure of output 
+in a radiometric sense an incandescent light bulb is about efficient of the energy is lost e g 
+by conduction through the lamp base 
+the remainder is emitted as radiation mostly in the infrared 
+thus a watt light bulb emits a total radiant flux of about watts 
+incandescent bulbs are in fact sometimes used as heat sources as in a chick incubator but usually they are used for the purpose of providing light 
+as such they are very inefficient because most of the radiant energy they emit is invisible infrared 
+a compact fluorescent lamp can provide light comparable to a watt incandescent while consuming as little as watts of electricity 
+the lumen is the photometric unit of light output 
+although most consumers still think of light in terms of power consumed by the bulb in the u s it has been a trade requirement for several decades that light bulb packaging give the output in lumens 
+the package of a watt incandescent bulb indicates that it provides about lumens as does the package of the watt compact fluorescent 
+the lumen is defined as amount of light given into one steradian by a point source of one candela strength while the candela a base si unit is defined as the luminous intensity of a source of monochromatic radiation of frequency terahertz and a radiant intensity of watts per steradian 
+thz corresponds to about nanometres the wavelength in the green to which the human eye is most sensitive 
+the number was chosen to make the candela about equal to the standard candle the unit which it superseded 
+combining these definitions we see that watt of nanometre green light provides one lumen 
+the relation between watts and lumens is not just a simple scaling factor 
+we know this already because the watt incandescent bulb and the watt compact fluorescent can both provide lumens 
+the definition tells us that watt of pure green nm light is worth lumens 
+it does not say anything about other wavelengths 
+because lumens are photometric units their relationship to watts depends on the wavelength according to how visible the wavelength is 
+infrared and ultraviolet radiation for example are invisible and do not count 
+one watt of infrared radiation which is where most of the radiation from an incandescent bulb falls is worth zero lumens 
+within the visible spectrum wavelengths of light are weighted according to a function called the photopic spectral luminous efficiency 
+according to this function nm red light is only about as efficient as nm green light 
+thus one watt of nm red light is worth only lumens 
+because of the summation over the visual portion of the em spectrum that is part of this weighting the unit of lumen is color blind there is no way to tell what color a lumen will appear 
+this is equivalent to evaluating groceries by number of bags there is no information about the specific content just a number that refers to the total weighted quantity 
+photometric measurement is based on photodetectors devices of several types that produce an electric signal when exposed to light 
+simple applications of this technology include switching luminaires on and off based on ambient light conditions and light meters used to measure the total amount of light incident on a point 
+more complex forms of photometric measurement are used frequently within the lighting industry 
+spherical photometers can be used to measure the directional luminous flux produced by lamps and consist of a large diameter globe with a lamp mounted at its center 
+a photocell rotates about the lamp in three axes measuring the output of the lamp from all sides 
+lamps and lighting fixtures are tested using goniophotometers and rotating mirror photometers which keep the photocell stationary at a sufficient distance that the luminaire can be considered a point source 
+rotating mirror photometers use a motorized system of mirrors to reflect light emanating from the luminaire in all directions to the distant photocell goniophotometers use a rotating axis table to change the orientation of the luminaire with respect to the photocell 
+in either case luminous intensity is tabulated from this data and used in lighting design

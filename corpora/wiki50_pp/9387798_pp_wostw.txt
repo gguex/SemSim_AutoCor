@@ -1,0 +1,50 @@
+lorenz beam blind landing radio navigation system developed c lorenz ag berlin 
+first system installed berlin tempelhof central airport followed dübendorf switzerland others world 
+lorenz company referred simply ultrakurzwellen landefunkfeuer german ultra short wave landing radio beacon lff 
+prior world war ii germans deployed landing aid system many luftwaffe airfields outside germany equipped bombers radio equipment needed use 
+raf continued using system late name standard beam approach sba 
+basic idea behind short range lff system later developed long range system air navigation known elektra 
+development produced system worked long distances hundreds thousands kilometres known sonne often elektra sonnen allowed aircraft u boats take fixes far atlantic 
+british captured sonne receivers maps started use navigation name consol 
+blind approach navigation system developed starting dr ernst kramar lorenz company 
+adopted deutsche lufthansa sold around world 
+lorenz company founded carl lorenz part itt 
+lorenz used single radio transmitter mhz anflugfunkfeuer three antennas placed line parallel end runway 
+center antenna always powered two short circuited mechanical rotary switch turned simple motor 
+resulted kidney shaped broadcast pattern centered one two side antennas depending antenna short circuited 
+contacts switch set one antenna shorted time considered dot morse operator dash 
+signal could detected distance end runway much km 
+lorenz obtained sharper beam could created aerial array two lobes signal 
+pilot approaching runway would tune radio broadcast frequency listen signal 
+heard series dots knew runway centerline left dot sector turn right line runway 
+right would hear series dashes instead dash sector turned left 
+key operation system area middle two signals overlapped 
+dots one signal filled dashes resulting steady tone known equi signal 
+adjusting path heard equi signal pilot could align aircraft runway landing 
+two small marker beacons also used one end runway hez haupteinflugzeichen another km away vez voreinflugzeichen broadcast mhz modulated hz respectively 
+signals broadcast directly upward would heard briefly aircraft flew 
+approach runway pilot would fly published altitude use main directional signals line runway started flying toward 
+flew vez would start descending standard glide slope continuing land abort hez depending whether could see runway 
+lorenz could fly plane straight line relatively high accuracy enough aircraft could find runway visually worst conditions 
+however required fairly constant monitoring radio pilot would often also tasked talking local control tower 
+order ease workload lorenz later introduced cockpit indicator could listen signals display direction runway centerline arrow telling pilot direction turn 
+indicator also included two neon lamps indicate aircraft crossed marker beacons 
+later derivatives system signals equal length pattern left right silence operate visual indicator cabin 
+lorenz system similar diamond dunmore equi signal radio guidance system developed us bureau standards early 
+second world war lorenz beam principle used german luftwaffe basis number blind bombing aids notably knickebein crooked leg x gerät x apparatus bombing offensive english cities winter 
+knickebein similar lff modifying slightly highly directional work much longer distance 
+using frequencies allowed bombers use already installed lff receivers although second receiver needed order pinpoint single location 
+x gerät involved cross beams characteristics different frequencies would enable pilot calculate speed time crossing fore cross signal crossing main cross signal indicate drop payload 
+calculation performed mechanical computer 
+lorenz modified system create viktoria hawaii lateral guidance system v rocket 
+british discovered existence knickebein system rapidly jammed however x gerät successfully jammed quite time 
+later innovation germans baedeker taub modification used supersonic modulation 
+quickly jammed germans practically gave use beam bombing systems exception fuge operated short time towards end operation steinbock known baby blitz 
+operational drawback system bombers follow fixed course beam transmitter station target beam detected defensive measures made effective knowledge course 
+sonne eng 
+sun derivation lorenz used luftwaffe long range navigation atlantic using transmitters occupied europe another neutral spain existence discovered british direction r v jones allowed continue use un jammed felt actually useful raf coastal command germans 
+british use german system named consol remained un jammed period war 
+long range version developed germans war used many countries civilian purposes war mostly english name consol 
+transmitters installed us uk ussr 
+reason lorenz beam principle necessary overlapping beams sharpness beam increases approximately logarithmically length aerial array generated 
+law diminishing returns operates attain sharpness achieved lorenz system single beam approximately mile wide range two hundred miles array prohibitive size would required

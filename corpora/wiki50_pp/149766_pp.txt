@@ -1,0 +1,50 @@
+microsoft basic is the foundation product of the microsoft company 
+it first appeared in as altair basic which was the first basic by microsoft and the first high level programming language available for the altair microcomputer 
+the altair basic interpreter was developed by microsoft founders paul allen and bill gates with help from monte davidoff using a self made intel software simulator running on a pdp minicomputer 
+the dialect of basic is similar to digital equipment corporation interpreters especially in string operations which vary between basic implementations 
+basic uses dynamically allocated strings which store their size 
+some implementations of microsoft basic support long variable names but others do not 
+altair basic was delivered on paper tape and in its original version took kb of memory 
+the extended kb version was then generalized into basic z and ported into basic basic and mos technology basic unfortunately spilling over to kb in an era when kb rom chips were standard as well as the bit basic 
+the core command set and syntax is the same in all implementations of microsoft basic and generally speaking a program can be run on any version if it does not use hardware specific features or double precision numbers not supported in some implementations 
+after the initial success of altair basic microsoft basic became the basis for a lucrative software licensing business being ported to the majority of the numerous home and other personal computers of the s and especially the s and extended along the way 
+contrary to the original altair basic most home computer basics are resident in rom and thus are available on the machines at power on in the form of the characteristic codice prompt 
+hence microsoft s and other variants of basic constitute a significant and visible part of the user interface of many home computers rudimentary operating systems 
+by microsoft basic was so popular that even companies that already had a basic licensed the language such as ibm for its personal computer 
+ibm s don estridge said microsoft basic had hundreds of thousands of users around the world 
+how are you going to argue with that 
+microsoft licensed similar versions to companies that competed with each other 
+after licensing basica to ibm for example microsoft licensed the compatible gw basic to makers of pc clones and also sold copies to retail customers 
+the company similarly licensed an applesoft compatible basic to vtech for its laser clone 
+variants were basic and k basic 
+mbasic is available for cp m and isis ii 
+also available for tekdos 
+mbasic is a stripped basic with only hardware neutral functions however due to the popularity of cp m the vast majority of z machines ran mbasic rather than a version customized for specific hardware trs basic was one of the few exceptions 
+the first implementation as a standalone disk based language system was for seattle computer products s bus cpu card in 
+it was utilizing an bit fat file system 
+microsoft also offered a version of standalone basic for sbc for intel s single board computer platform in 
+this is the version of basic used on texas instruments ti a computer line 
+notably it is not written in assembly language but in a high level interpreter developed by ti 
+the reason for this was because microsoft did not have any programmers who knew how to code for the ti a s cpu and so texas instruments instead gave them an interpreter to code in instead 
+the unfortunate effect of this was to make ti basic extremely slow due to being double interpreted 
+in addition to the version included in the rom of the ti a texas instruments also developed extended disk basic for disk drive owners 
+microsoft developed a rom based basic implementation for the mos microprocessor in which began appearing in microcomputers starting with the osi model and kim in 
+this was available in two variants a k variant supporting digit floating point numbers and a k variant supporting digit floating point numbers 
+three major versions were released by microsoft with certain licensees making their own changes later on 
+standard features of microsoft basic included 
+basic was less standardized than basic for example there were no standard commands to clear the screen output to a printer or manipulate disk files and these were entirely up to the oem to add themselves 
+there is also no statement in basic to reseed the random number generator and the screen editor was also not standardized and varied widely with each implementation 
+microsoft catalogs from the s also showed the availability of basic and basic for the motorola and microprocessors respectively running the flex operating systems and also mention oem versions for perkin elmer ohio nuclear pertec and societe occitane d electronique systems 
+it seems likely this is what is also the basis for the microsoft epson basic in the epson hx portable computer which has two hitachi cpus which are essentially a souped up 
+most of the core features in basic and basic were copied directly from basic 
+basic was notably also licensed to tandy where it formed the nucleus of trs coco basic 
+microsoft produced a rom basedmsx basic for use in the msx compatible home computers using a z processor 
+this version supported the graphics and sound systems of the msx computers some variants also had support for disk drives 
+no variety of microsoft basic basica gw basic quickbasic qbasic is currently distributed with microsoft windows or dos 
+however versions which will still run on modern machines can be downloaded from various internet sites or be found on old dos disks 
+the latest incarnation of microsoft basic is visual basic net which incorporates some features from c and c and can be used to develop web forms windows forms console applications and server based applications 
+most net code samples are presented in vb net as well as c and vb net continues to be favored by former visual basic programmers 
+in october microsoft released small basic 
+the language itself has only keywords 
+small basic version june was released with an updated microsoft msdn website that included a full teacher curriculum a getting started guide and several e books 
+small basic exists to help students as young as age eight learn the foundations of computer programming and then graduate to visual basic via the downloadable software visual studio express where they can continue to build on the foundation by learning visual c vb net and visual c

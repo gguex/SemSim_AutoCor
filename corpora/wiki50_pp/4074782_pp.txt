@@ -1,0 +1,12 @@
+icerocket is an internet search engine which specializes in real time search 
+based in dallas texas it launched in hoping to market itself solely through word of mouth 
+icerocket is backed by mark cuban and headquartered in dallas texas 
+the company has received angel funding from mr cuban 
+icerocket launched in 
+the search engine originally launched with features designed to make web searches on a pda much easier for instance allowing users to email a query to the engine and receive their results back in response 
+icerocket had an early licensing deal with gofish com in august it was announced that icerocket had been acquired by the meltwater group 
+icerocket is generally for blog searches but has expanded into searching the popular social networking websites twitter and facebook as well as allowing searching of news and the world wide web 
+icerocket s big buzz feature allows users to search blogs tweets news images etc 
+all from one page 
+the icerocket site is a free resource for people looking to monitor their brand it is ad supported 
+icerocket has an api that it licenses to social media monitoring firms as well as pr agencies

@@ -99,9 +99,9 @@ ap_vector = [average_precision_score(rstr_best_real_group_vec == group_id, rstr_
 map = np.mean(ap_vector)
 
 # Segmentation evaluation
-real_segm_vec = convert_positions_to_masses(rstr_real_group_vec)
-algo_segm_vec = convert_positions_to_masses(rstr_algo_group_vec)
-rdm_group_vec = rstr_real_group_vec.copy()
+real_segm_vec = convert_positions_to_masses(real_group_vec)
+algo_segm_vec = convert_positions_to_masses(algo_group_vec)
+rdm_group_vec = real_group_vec.copy()
 rdm.shuffle(rdm_group_vec)
 rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
 pk_res = pk(algo_segm_vec, real_segm_vec)

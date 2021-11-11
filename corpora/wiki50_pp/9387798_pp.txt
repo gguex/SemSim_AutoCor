@@ -1,0 +1,50 @@
+the lorenz beam was blind landing radio navigation system developed by c lorenz ag in berlin 
+the first system had been installed in at berlin tempelhof central airport followed by dübendorf in switzerland and others all over the world 
+the lorenz company referred to it simply as the ultrakurzwellen landefunkfeuer german for ultra short wave landing radio beacon or lff 
+prior to the world war ii the germans had deployed the landing aid system at many luftwaffe airfields in and outside germany and equipped most of their bombers with the radio equipment needed to use it 
+the raf continued using the system as late as under the name standard beam approach sba 
+the basic idea behind the short range lff system was later developed into a long range system for air navigation known as elektra 
+further development produced a system that worked over very long distances hundreds or thousands of kilometres known as sonne or often elektra sonnen that allowed aircraft and u boats to take fixes far into the atlantic 
+the british captured sonne receivers and maps and started to use it for their own navigation under the name consol 
+the blind approach navigation system was developed starting in by dr ernst kramar of the lorenz company 
+it was adopted by deutsche lufthansa in and sold around the world 
+the lorenz company was founded in by carl lorenz and is now part of itt 
+lorenz used a single radio transmitter at mhz anflugfunkfeuer and three antennas placed in a line parallel to the end of the runway 
+the center antenna was always powered while the other two were short circuited by a mechanical rotary switch turned by a simple motor 
+this resulted in a kidney shaped broadcast pattern centered on one of the two side antennas depending on which antenna had been short circuited 
+the contacts on the switch were set so that one antenna was shorted for the time to be considered a dot by a morse operator and the other as a dash 
+the signal could be detected for some distance off the end of the runway as much as km 
+the lorenz obtained a sharper beam than could be created by an aerial array by having two lobes of signal 
+a pilot approaching the runway would tune his radio to the broadcast frequency and listen for the signal 
+if he heard a series of dots he knew he was off the runway centerline to the left the dot sector and had to turn to the right to line up with the runway 
+if he was to the right he would hear a series of dashes instead the dash sector and turned left 
+the key to the operation of the system was an area in the middle where the two signals overlapped 
+the dots of the one signal filled in the dashes of the other resulting in a steady tone known as the equi signal 
+by adjusting his path until he heard the equi signal the pilot could align his aircraft with the runway for landing 
+two small marker beacons were also used one m off the end of runway the hez haupteinflugzeichen and another km away the vez voreinflugzeichen both were broadcast on mhz and modulated at and hz respectively 
+these signals were broadcast directly upward and would be heard briefly as the aircraft flew over them 
+to approach the runway the pilot would fly to a published altitude and then use the main directional signals to line up with the runway and started flying toward it 
+when he flew over the vez he would start descending on a standard glide slope continuing to land or abort at the hez depending on whether or not he could see the runway 
+lorenz could fly a plane down a straight line with relatively high accuracy enough so that the aircraft could then find the runway visually in all but the worst conditions 
+however it required a fairly constant monitoring of the radio by the pilot who would often also be tasked with talking to the local control tower 
+in order to ease the workload lorenz later introduced a cockpit indicator that could listen to the signals and display the direction to the runway centerline as an arrow telling the pilot which direction to turn 
+the indicator also included two neon lamps to indicate when the aircraft crossed over each of the marker beacons 
+later derivatives of the system had signals of equal length in the pattern left right silence to operate a visual indicator in the cabin 
+the lorenz system was similar to the diamond dunmore equi signal radio guidance system developed by the us bureau of standards in the early s 
+in the second world war the lorenz beam principle was used by the german luftwaffe as the basis of a number of blind bombing aids notably knickebein crooked leg and the x gerät x apparatus in their bombing offensive against english cities during the winter of 
+knickebein was very similar to lff modifying it only slightly to be more highly directional and work over much longer distance 
+using the same frequencies allowed their bombers to use the already installed lff receivers although a second receiver was needed in order to pinpoint a single location 
+the x gerät involved cross beams of the same characteristics but on different frequencies which would both enable the pilot to calculate his speed from the time between crossing the fore cross signal and crossing the main cross signal and indicate when he should drop his payload 
+the calculation was performed by a mechanical computer 
+lorenz modified this system to create the viktoria hawaii lateral guidance system for the v rocket 
+when the british discovered the existence of the knickebein system they rapidly jammed it however the x gerät was not successfully jammed for quite some time 
+a later innovation by the germans was the baedeker or taub modification which used supersonic modulation 
+this was so quickly jammed that the germans practically gave up on the use of beam bombing systems with the exception of the fuge a which operated for a short time towards the end of operation steinbock known as the baby blitz 
+a further operational drawback of the system was that bombers had to follow a fixed course between the beam transmitter station and the target once the beam had been detected defensive measures were made more effective by knowledge of the course 
+sonne eng 
+sun was a derivation of lorenz used by the luftwaffe for long range navigation out over the atlantic using transmitters in occupied europe and another in neutral spain and after its existence had been discovered by the british under the direction of r v jones it was allowed to continue in use un jammed because it was felt that it was actually more useful to raf coastal command than it was to the germans 
+in british use the german system was named consol and it remained un jammed for the period of the war 
+the long range version developed by the germans during the war was used by many countries for civilian purposes after the war mostly under its english name consol 
+transmitters were installed in the us the uk and the ussr 
+the reason the lorenz beam principle was necessary with its overlapping beams was because the sharpness of a beam increases approximately logarithmically with the length of the aerial array with which it is generated 
+a law of diminishing returns operates such that to attain the sharpness achieved by the lorenz system with a single beam approximately mile wide over a range of two hundred miles an array of prohibitive size would be required

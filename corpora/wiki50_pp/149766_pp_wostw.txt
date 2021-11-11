@@ -1,0 +1,50 @@
+microsoft basic foundation product microsoft company 
+first appeared altair basic first basic microsoft first high level programming language available altair microcomputer 
+altair basic interpreter developed microsoft founders paul allen bill gates help monte davidoff using self made intel software simulator running pdp minicomputer 
+dialect basic similar digital equipment corporation interpreters especially string operations vary basic implementations 
+basic uses dynamically allocated strings store size 
+implementations microsoft basic support long variable names others 
+altair basic delivered paper tape original version took kb memory 
+extended kb version generalized basic z ported basic basic mos technology basic unfortunately spilling kb era kb rom chips standard well bit basic 
+core command set syntax implementations microsoft basic generally speaking program run version use hardware specific features double precision numbers supported implementations 
+initial success altair basic microsoft basic became basis lucrative software licensing business ported majority numerous home personal computers especially extended along way 
+contrary original altair basic home computer basics resident rom thus available machines power form characteristic codice prompt 
+hence microsoft variants basic constitute significant visible part user interface many home computers rudimentary operating systems 
+microsoft basic popular even companies already basic licensed language ibm personal computer 
+ibm estridge said microsoft basic hundreds thousands users around world 
+going argue 
+microsoft licensed similar versions companies competed 
+licensing basica ibm example microsoft licensed compatible gw basic makers pc clones also sold copies retail customers 
+company similarly licensed applesoft compatible basic vtech laser clone 
+variants basic k basic 
+mbasic available cp isis ii 
+also available tekdos 
+mbasic stripped basic hardware neutral functions however due popularity cp vast majority z machines ran mbasic rather version customized specific hardware trs basic one exceptions 
+first implementation standalone disk based language system seattle computer products bus cpu card 
+utilizing bit fat file system 
+microsoft also offered version standalone basic sbc intel single board computer platform 
+version basic used texas instruments ti computer line 
+notably written assembly language high level interpreter developed ti 
+reason microsoft programmers knew code ti cpu texas instruments instead gave interpreter code instead 
+unfortunate effect make ti basic extremely slow due double interpreted 
+addition version included rom ti texas instruments also developed extended disk basic disk drive owners 
+microsoft developed rom based basic implementation mos microprocessor began appearing microcomputers starting osi model kim 
+available two variants k variant supporting digit floating point numbers k variant supporting digit floating point numbers 
+three major versions released microsoft certain licensees making changes later 
+standard features microsoft basic included 
+basic less standardized basic example standard commands clear screen output printer manipulate disk files entirely oem add 
+also statement basic reseed random number generator screen editor also standardized varied widely implementation 
+microsoft catalogs also showed availability basic basic motorola microprocessors respectively running flex operating systems also mention oem versions perkin elmer ohio nuclear pertec societe occitane electronique systems 
+seems likely also basis microsoft epson basic epson hx portable computer two hitachi cpus essentially souped 
+core features basic basic copied directly basic 
+basic notably also licensed tandy formed nucleus trs coco basic 
+microsoft produced rom basedmsx basic use msx compatible home computers using z processor 
+version supported graphics sound systems msx computers variants also support disk drives 
+variety microsoft basic basica gw basic quickbasic qbasic currently distributed microsoft windows dos 
+however versions still run modern machines downloaded various internet sites found old dos disks 
+latest incarnation microsoft basic visual basic net incorporates features c c used develop web forms windows forms console applications server based applications 
+net code samples presented vb net well c vb net continues favored former visual basic programmers 
+october microsoft released small basic 
+language keywords 
+small basic version june released updated microsoft msdn website included full teacher curriculum getting started guide several e books 
+small basic exists help students young age eight learn foundations computer programming graduate visual basic via downloadable software visual studio express continue build foundation learning visual c vb net visual c
