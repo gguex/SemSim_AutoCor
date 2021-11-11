@@ -11,19 +11,19 @@ from itertools import permutations
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/61320_202011_pp_wostw.txt"
-input_group_file = "corpora/61320_202011_pp_wostw_groups.txt"
-input_sim_file = "similarity_matrices/61320_202011_pp_wostw_w2v.csv"
+input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
+input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
+input_sim_file = "similarity_matrices/61320_199211_pp_wostw_w2v.csv"
 
-output_names_root = "results/61320_202011_w2v"
+output_names_root = "results/61320_199211_word_w2v"
 
 n_groups = 7
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 5
-alpha = 10
-beta = 50
-kappa = 0
+exch_range = 15
+alpha = 2
+beta = 100
+kappa = 1
 
 # List of words for each groups
 # word_per_groups = [["united", "military", "security", "nuclear", "international", "nations", "peace", "forces",

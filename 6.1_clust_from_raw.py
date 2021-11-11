@@ -7,8 +7,8 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/61320_199211_pp_wostw.txt"
-input_group_file = "corpora/61320_199211_pp_wostw_groups.txt"
+input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
+input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
 home = expanduser("~")
 vector_model_path = f"{home}/Documents/data/pretrained_word_vectors/enwiki.model"
 

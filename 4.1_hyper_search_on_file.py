@@ -11,10 +11,10 @@ from miniutils import parallel_progbar
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/61320_199211_pp_wostw.txt"
-input_group_file = "corpora/61320_199211_pp_wostw_groups.txt"
+input_text_file = "corpora/manifesto_pp/61620_200411_pp_wostw.txt"
+input_group_file = "corpora/manifesto_pp/61620_200411_pp_wostw_groups.txt"
 
-results_file_name = "results/search_big_199211.csv"
+results_file_name = "results/search_big_200411.csv"
 
 # Known label ?
 known_label_ratio = 0
@@ -26,9 +26,9 @@ n_tests = 4
 n_groups = 7
 
 # Search on
-input_sim_file_list = ["similarity_matrices/61320_199211_pp_wostw_w2v.csv",
-                       "similarity_matrices/61320_199211_pp_wostw_glv.csv",
-                       "similarity_matrices/61320_199211_pp_wostw_ftx.csv"]
+input_sim_file_list = ["similarity_matrices/61620_200411_pp_wostw_w2v.csv",
+                       "similarity_matrices/61620_200411_pp_wostw_glv.csv",
+                       "similarity_matrices/61620_200411_pp_wostw_ftx.csv"]
 dist_option_vec = ["max_minus"]
 exch_mat_opt_vec = ["u", "d"]
 exch_range_vec = [5, 10, 15]

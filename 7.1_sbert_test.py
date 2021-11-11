@@ -6,8 +6,8 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/61320_199211_pp.txt"
-input_group_file = "corpora/61320_199211_pp_groups.txt"
+input_text_file = "corpora/manifesto_pp/61320_199211_pp.txt"
+input_group_file = "corpora/manifesto_pp/61320_199211_pp_groups.txt"
 
 output_names_root = "results/61320_199211_sbert"
 
