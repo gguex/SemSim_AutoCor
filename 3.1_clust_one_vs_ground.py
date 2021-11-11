@@ -1,5 +1,4 @@
-from local_functions import load_sim_matrix, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, token_clustering, write_groups_in_html_file, write_membership_mat_in_csv_file
+from local_functions import *
 import numpy as np
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score, average_precision_score
@@ -91,7 +90,7 @@ rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
 rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
 rstr_best_real_group_vec = np.delete(best_real_group_vec, indices_for_known_label)
 
-# Compute nmi score
+# Compute nmi scorec
 nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
 # Compute Map
 ap_vector = [average_precision_score(rstr_best_real_group_vec == group_id, rstr_algo_group_vec == group_id)
@@ -99,15 +98,7 @@ ap_vector = [average_precision_score(rstr_best_real_group_vec == group_id, rstr_
 map = np.mean(ap_vector)
 
 # Segmentation evaluation
-real_segm_vec = convert_positions_to_masses(real_group_vec)
-algo_segm_vec = convert_positions_to_masses(algo_group_vec)
-rdm_group_vec = real_group_vec.copy()
-rdm.shuffle(rdm_group_vec)
-rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
-pk_res = pk(algo_segm_vec, real_segm_vec)
-win_diff = window_diff(algo_segm_vec, real_segm_vec)
-pk_rdm = pk(rdm_segm_vec, real_segm_vec)
-win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+pk_res, win_diff, pk_rdm, win_diff_rdm = seg_eval(algo_group_vec, real_group_vec)
 
 # Compute the aggregate labels
 df_results = pd.DataFrame(result_matrix)

@@ -7,6 +7,8 @@ import warnings
 import numpy as np
 from gensim.models import KeyedVectors
 from tqdm import tqdm
+from segeval import convert_positions_to_masses, pk, window_diff
+import random as rdm
 
 
 def get_all_paths(input_file, sim_tag, working_path=os.getcwd(), warn=True):
@@ -542,6 +544,38 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
     return z_final, existing_token_list, existing_pos_list
 
 
+def seg_eval(algo_group_vec, real_group_vec):
+    """
+    A function computing the Pk and win_diff value for 2 segmentations. Also give random baselines
+    :param algo_group_vec: The algorithm result in the form a token group memberships
+    :type algo_group_vec: numpy.ndarray
+    :param real_group_vec: The real group memberships of tokens
+    :type real_group_vec: numpy.ndarray
+    :return: Pk value, Win_diff value, Pk random value, Win_diff random value
+    :rtype: (float, float, float, float)
+    """
+
+    # Transform into segmentation vectors
+    real_segm_vec = convert_positions_to_masses(real_group_vec)
+    algo_segm_vec = convert_positions_to_masses(algo_group_vec)
+
+    # Make a shuffle group vec
+    rdm_group_vec = real_group_vec.copy()
+    rdm.shuffle(rdm_group_vec)
+    rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
+
+    # Compute the real value
+    pk_res = pk(algo_segm_vec, real_segm_vec)
+    win_diff = window_diff(algo_segm_vec, real_segm_vec)
+
+    # Compute the random value
+    pk_rdm = pk(rdm_segm_vec, real_segm_vec)
+    win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+
+    # Return
+    return pk_res, win_diff, pk_rdm, win_diff_rdm
+
+
 def write_vector_in_html_file(output_file, token_list, vec, comment_line=None):
     """
     Write the token list in html file where colors correspond to value of the vector "vec".
@@ -743,7 +777,3 @@ def lisa_computation(d_ext_mat, exch_mat, w_mat):
 
     # Return the result
     return lisa_vec
-
-
-def test_f(a, b=10, c=100):
-    return a + b + c

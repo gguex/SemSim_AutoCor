@@ -1,19 +1,16 @@
 from sentence_transformers import SentenceTransformer, util
 from local_functions import *
 from sklearn.metrics import normalized_mutual_info_score
-from segeval import convert_positions_to_masses, pk, window_diff
-import random as rdm
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/manifesto_pp/61320_199211_pp.txt"
-input_group_file = "corpora/manifesto_pp/61320_199211_pp_groups.txt"
+input_text_file = "corpora/wiki50_pp/28187_pp.txt"
+input_group_file = "corpora/wiki50_pp/28187_pp_groups.txt"
 
 output_names_root = "results/61320_199211_sbert"
 
-n_groups = 7
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
@@ -42,6 +39,7 @@ for sent in sent_list:
     real_group_vec.append(int(max(set(token_group), key=token_group.count)))
     ind_1 = ind_1 + len(sent_token)
 real_group_vec = np.array(real_group_vec)
+n_groups = len(set(real_group_vec))
 
 # Load sentence model
 sbert_model = SentenceTransformer("all-mpnet-base-v2")
@@ -71,19 +69,9 @@ for i, sent in enumerate(sent_list):
     ext_real_group_vec.extend([real_group_vec[i]] * len(sent))
     ext_algo_group_vec.extend([algo_group_vec[i]] * len(sent))
 
-# Compute nmi and ext_nmi score, print them
+# Compute nmi, ext_nmi, p_k and win_diff score, then print them
 nmi = normalized_mutual_info_score(real_group_vec, algo_group_vec)
 ext_nmi = normalized_mutual_info_score(ext_real_group_vec, ext_algo_group_vec)
-
-# Segmentation evaluation
-real_segm_vec = convert_positions_to_masses(real_group_vec)
-algo_segm_vec = convert_positions_to_masses(algo_group_vec)
-rdm_group_vec = real_group_vec.copy()
-rdm.shuffle(rdm_group_vec)
-rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
-pk_res = pk(algo_segm_vec, real_segm_vec)
-win_diff = window_diff(algo_segm_vec, real_segm_vec)
-pk_rdm = pk(rdm_segm_vec, real_segm_vec)
-win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+pk_res, win_diff, pk_rdm, win_diff_rdm = seg_eval(algo_group_vec, real_group_vec)
 
 print(f"nmi = {nmi}, ext_nmi = {ext_nmi}, pk={pk_res} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")
