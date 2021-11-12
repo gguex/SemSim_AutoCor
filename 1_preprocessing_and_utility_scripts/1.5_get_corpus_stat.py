@@ -7,10 +7,10 @@ import segeval
 # --- Parameters
 # -------------------------------------
 
-input_text_folder = "corpora/wiki50_pp"
+input_text_folder = "corpora/manifesto_pp"
 stop_words = False
 
-output_file = "results/wiki50_wostw_stats.csv"
+output_file = "results/manifesto_wostw_stats.csv"
 
 # -------------------------------------
 # --- Computation

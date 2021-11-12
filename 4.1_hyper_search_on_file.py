@@ -16,19 +16,17 @@ input_group_file = "corpora/manifesto_pp/61620_200411_pp_wostw_groups.txt"
 
 results_file_name = "results/search_big_200411.csv"
 
+input_sim_file_list = ["similarity_matrices/61620_200411_pp_wostw_w2v.csv",
+                       "similarity_matrices/61620_200411_pp_wostw_glv.csv",
+                       "similarity_matrices/61620_200411_pp_wostw_ftx.csv"]
+
 # Known label ?
 known_label_ratio = 0
 
 # Number of tests
 n_tests = 4
 
-# Number of groups
-n_groups = 7
-
 # Search on
-input_sim_file_list = ["similarity_matrices/61620_200411_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_200411_pp_wostw_glv.csv",
-                       "similarity_matrices/61620_200411_pp_wostw_ftx.csv"]
 dist_option_vec = ["max_minus"]
 exch_mat_opt_vec = ["u", "d"]
 exch_range_vec = [5, 10, 15]
@@ -70,6 +68,7 @@ for input_sim_file in input_sim_file_list:
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
+    n_groups = len(set(real_group_vec))
 
     # For semi-supervised results, pick some labels
     if known_label_ratio > 0:
