@@ -8,7 +8,7 @@ import pandas as pd
 # --- Parameters
 # -------------------------------------
 
-output_file_name = "../results/corpus_study.csv"
+output_file_name = "../results/corpus_study_new.csv"
 
 input_text_file_list = ["corpora/61320_199211_pp_wostw.txt",
                         "corpora/61320_200411_pp_wostw.txt",

@@ -57,6 +57,15 @@ word_per_groups = [["nuclear", "military", "united", "peace", "international", "
                    ["workers", "jobs", "labor", "class", "union", "veterans", "unions", "organize",
                     "wages", "farmers"]]
 
+# List of words for each groups (NEW WAY)
+# word_per_groups = [["nato", "israel", "korea", "europe", "allies"],
+#                    ["constitutional", "rule", "rights", "political", "rights"],
+#                    ["local", "vision", "eliminate", "state", "governments"],
+#                    ["consumers", "small", "market", "markets", "growth"],
+#                    ["school", "conservation", "discrimination", "students", "low"],
+#                    ["religious", "faith", "enforcement", "amendment", "legal"],
+#                    ["labor", "union", "workers", "class", "join"]]
+
 # List of words for each groups
 # word_per_groups = [["nuclear", "military", "united", "security", "nato", "international", "israel", "nations", "forces",
 #                     "russia"],
