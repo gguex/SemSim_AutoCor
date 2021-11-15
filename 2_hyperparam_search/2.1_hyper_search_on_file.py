@@ -11,12 +11,12 @@ from miniutils import parallel_progbar
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/manifesto_pp/61620_200411_pp_wostw.txt"
-input_group_file = "corpora/manifesto_pp/61620_200411_pp_wostw_groups.txt"
+input_text_file = "/corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_group_file = "/corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 
-results_file_name = "results/search_big_200411.csv"
+results_file_name = "results/all_61320_201211_pp_wostw.csv"
 
-input_sim_file_list = ["similarity_matrices/61620_200411_pp_wostw_w2v.csv",
+input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
                        "similarity_matrices/61620_200411_pp_wostw_glv.csv",
                        "similarity_matrices/61620_200411_pp_wostw_ftx.csv"]
 

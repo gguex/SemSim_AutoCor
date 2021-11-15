@@ -14,7 +14,6 @@ input_text_folder = "corpora/manifesto_pp"
 stop_words = False
 
 output_word_file = "results/manifesto_typical_words.csv"
-output_stat_file = "results/manifesto_typical_stat.csv"
 
 top_n = 20
 
@@ -92,8 +91,15 @@ X = (CT.T / np.sum(CT.T, axis=1)).T
 # Odd ratio
 new_X = np.copy(X)
 for i, id_group in enumerate(id_group_list):
-    other_group_id = list(set(range(n_groups)) - set([i]))
+    other_group_id = list(set(range(n_groups)) - {i})
     new_X[i, :] = X[i, :] / (np.sum(X[other_group_id, :], axis=0) + 1e-40)
+X = new_X
+
+# Odd ratio
+new_X = np.copy(X)
+for i, id_group in enumerate(id_group_list):
+    other_group_id = list(set(range(n_groups)) - {i})
+    new_X[i, :] = X[i, :] - np.max(X[other_group_id, :], axis=0)
 X = new_X
 
 # Token list

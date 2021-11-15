@@ -58,13 +58,20 @@ word_per_groups = [["nuclear", "military", "united", "peace", "international", "
                     "wages", "farmers"]]
 
 # List of words for each groups (NEW WAY)
-# word_per_groups = [["nato", "israel", "korea", "europe", "allies"],
-#                    ["constitutional", "rule", "rights", "political", "rights"],
-#                    ["local", "vision", "eliminate", "state", "governments"],
-#                    ["consumers", "small", "market", "markets", "growth"],
-#                    ["school", "conservation", "discrimination", "students", "low"],
-#                    ["religious", "faith", "enforcement", "amendment", "legal"],
-#                    ["labor", "union", "workers", "class", "join"]]
+word_per_groups = [["nato", "israel", "korea", "capabilities", "nuclear",
+                    "europe", "allies", "north", "peace", "weapons"],
+                   ["democracy", "constitutional", "rights", "political", "puerto"
+                    "rico", "freedom", "citizens", "civil", "independent"],
+                   ["vision", "local", "eliminate", "governments", "government",
+                    "state", "administration", "rather", "party"],
+                   ["consumers", "small", "growth", "businesses", "tax",
+                    "market", "business", "companies", "markets", "gas"],
+                   ["school", "discrimination", "students", "conservation", "schools",
+                    "quality", "low", "college", "education", "early"],
+                   ["crime", "crimes", "faith", "enforcement", "religious",
+                    "legal", "values", "law", "seeking", "violence"],
+                   ["farmer", "labor", "union", "workers", "class",
+                    "join", "middle", "jobs", "built", "good"]]
 
 # List of words for each groups
 # word_per_groups = [["nuclear", "military", "united", "security", "nato", "international", "israel", "nations", "forces",
