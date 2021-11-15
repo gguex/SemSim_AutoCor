@@ -18,7 +18,7 @@ output_files_path = f"{root_path}/corpora/manifesto_pp"
 input_file_list = os.listdir(raw_files_path)
 
 # Removing stopwords option
-remove_stopwords = False
+remove_stopwords = True
 
 # Getting stopwords
 stopwords = stopwords.words('english')
@@ -35,8 +35,8 @@ for input_file in input_file_list:
         sent_list = []
         group_list = []
         for row in csv_reader:
-            if row[1].isdigit():
-                class_id = int(row[1]) // 100
+            if row[1].replace('.', '').isdigit():
+                class_id = int(float(row[1]) // 100)
                 if class_id > 0:
                     sent_list.append(row[0])
                     group_list.append(class_id)

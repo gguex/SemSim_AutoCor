@@ -8,9 +8,9 @@ import segeval
 # -------------------------------------
 
 input_text_folder = "corpora/manifesto_pp"
-stop_words = False
+stop_words = True
 
-output_file = "results/manifesto_wostw_stats.csv"
+output_file = "results/manifesto_stats.csv"
 
 # -------------------------------------
 # --- Computation

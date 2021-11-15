@@ -9,44 +9,12 @@ from itertools import permutations
 # -------------------------------------
 
 input_text_folder = "corpora/manifesto_pp"
+stop_words = False
+output_file = "results/clust_manifesto.csv"
 
-file_list = os.listdir(input_text_folder)
+#---
 
-input_text_file_list = ["corpora/manifesto_pp/61320_199211_pp_wostw.txt",
-                        "corpora/manifesto_pp/61320_200411_pp_wostw.txt",
-                        "corpora/manifesto_pp/61320_201211_pp_wostw.txt",
-                        "corpora/manifesto_pp/61320_201611_pp_wostw.txt",
-                        "corpora/manifesto_pp/61320_202011_pp_wostw.txt",
-                        "corpora/manifesto_pp/61620_200411_pp_wostw.txt",
-                        "corpora/manifesto_pp/61620_200811_pp_wostw.txt",
-                        "corpora/manifesto_pp/61620_201211_pp_wostw.txt",
-                        "corpora/manifesto_pp/61620_201611_pp_wostw.txt",
-                        "corpora/manifesto_pp/61620_202011_pp_wostw.txt"]
-
-input_group_file_list = ["corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61320_200411_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61320_201611_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61320_202011_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61620_200411_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61620_200811_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61620_201211_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61620_201611_pp_wostw_groups.txt",
-                         "corpora/manifesto_pp/61620_202011_pp_wostw_groups.txt"]
-
-input_sim_file_list = ["similarity_matrices/61320_199211_pp_wostw_w2v.csv",
-                       "similarity_matrices/61320_200411_pp_wostw_w2v.csv",
-                       "similarity_matrices/61320_201211_pp_wostw_w2v.csv",
-                       "similarity_matrices/61320_201611_pp_wostw_w2v.csv",
-                       "similarity_matrices/61320_202011_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_200411_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_200811_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_201211_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_201611_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_202011_pp_wostw_w2v.csv"]
-
-output_file = "results/several.csv"
-
+sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
@@ -55,11 +23,25 @@ beta = 100
 kappa = 1
 known_label_ratio = 0  # if > 0, semi-supervised model
 
-n_test = 10
+n_tests = 10
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
+
+file_list = os.listdir(input_text_folder)
+
+# Restrict them to those with or without stopwords
+file_list = [file for file in file_list if ("wostw" in file) ^ stop_words]
+
+# Sort the list
+file_list.sort()
+
+# Split groups and non-groups file
+text_file_list = [file for file in file_list if "groups" not in file]
+input_text_file_list = [f"{input_text_folder}/{file}" for file in file_list if "groups" not in file]
+input_group_file_list = [f"{input_text_folder}/{file}" for file in file_list if "groups" in file]
+input_sim_file_list = [f"similarity_matrices/{file[:-4]}_{sim_tag}.csv" for file in file_list if "groups" not in file]
 
 with open(output_file, "w") as res_file:
     res_file.write(f"file,nmi,map,pk,win_diff,pk_rdm,win_diff_rdm\n")
@@ -107,7 +89,7 @@ for index_file in range(len(input_text_file_list)):
     win_diff_vec = []
     pk_rdm_vec = []
     win_diff_rdm_vec = []
-    for id_test in range(n_test):
+    for id_test in range(n_tests):
 
         # Compute the membership matrix
         result_matrix = token_clustering(d_ext_mat=d_ext_mat, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups, alpha=alpha,
