@@ -17,8 +17,8 @@ input_group_file = "/corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 results_file_name = "results/all_61320_201211_pp_wostw.csv"
 
 input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
-                       "similarity_matrices/61620_200411_pp_wostw_glv.csv",
-                       "similarity_matrices/61620_200411_pp_wostw_ftx.csv"]
+                       "similarity_matrices/61320_201211_pp_wostw_glv.csv",
+                       "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
 
 # Known label ?
 known_label_ratio = 0
