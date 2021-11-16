@@ -6,15 +6,18 @@ from sklearn.metrics import normalized_mutual_info_score
 from itertools import product
 import multiprocessing as mp
 from miniutils import parallel_progbar
+import os
 
 # -------------------------------------
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "/corpora/manifesto_pp/61320_201211_pp_wostw.txt"
-input_group_file = "/corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+base_path = os.getcwd()
 
-results_file_name = "results/all_61320_201211_pp_wostw.csv"
+input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+
+results_file_name = "results/param_search/w2v_61320_201211_pp_wostw.csv"
 
 input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
@@ -28,7 +31,7 @@ n_tests = 4
 
 # Search on
 dist_option_vec = ["max_minus"]
-exch_mat_opt_vec = ["u", "d"]
+exch_mat_opt_vec = ["u"]
 exch_range_vec = [5, 10, 15]
 alpha_vec = [1, 2, 5, 10, 30]
 beta_vec = [5, 10, 50, 100, 200]
