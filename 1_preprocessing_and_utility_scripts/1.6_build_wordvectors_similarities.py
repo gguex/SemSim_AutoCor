@@ -8,7 +8,7 @@ from os.path import expanduser
 # -------------------------------------
 
 # Input folder
-input_text_folder = "corpora/wiki50_pp"
+input_text_folder = "corpora/cities_pp"
 
 # Make with or without stopwords
 stop_words = False

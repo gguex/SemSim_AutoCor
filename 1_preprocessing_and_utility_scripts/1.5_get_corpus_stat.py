@@ -7,10 +7,10 @@ import segeval
 # --- Parameters
 # -------------------------------------
 
-input_text_folder = "corpora/cities_pp"
+input_text_folder = "corpora/elements_pp"
 stop_words = False
 
-output_file = "results/stats_cities_wostw.csv"
+output_file = "results/stats_elements_wostw.csv"
 
 # -------------------------------------
 # --- Computation
