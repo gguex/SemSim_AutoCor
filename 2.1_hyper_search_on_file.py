@@ -17,17 +17,19 @@ base_path = os.getcwd()
 input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 
-results_file_name = "results/param_search/w2v_61320_201211_pp_wostw.csv"
+results_file_name = "results/param_search/glv_61320_201211_pp_wostw.csv"
 
-input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
-                       "similarity_matrices/61320_201211_pp_wostw_glv.csv",
-                       "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
+# input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
+#                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
+#                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
+
+input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv"]
 
 # Known label ?
 known_label_ratio = 0
 
 # Number of tests
-n_tests = 4
+n_tests = 3
 
 # Search on
 dist_option_vec = ["max_minus"]
