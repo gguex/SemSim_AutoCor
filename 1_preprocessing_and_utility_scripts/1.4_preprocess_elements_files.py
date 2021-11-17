@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import string
 import re
@@ -71,10 +72,14 @@ for doc_id in set(doc_list):
             # Write if sentence is not empty
             if len(token_list) > 0:
                 # Write the sentence
-                text_file.write(" ".join(token_list))
+                text_file.write(" ".join(token_list) + "\n")
                 # Write the groups
-                groups_file.write(",".join([str(doc_group_id_vec[i])] * len(token_list)))
-                # If not last sentence, write a connector
-                if i < (len(doc_sent_vec) - 1):
-                    text_file.write(" \n")
-                    groups_file.write(",")
+                groups_file.write(",".join([str(doc_group_id_vec[i])] * len(token_list)) + ",")
+
+    # Remove last char
+    with open(f"{output_files_path}/{output_name}.txt", "rb+") as text_file, \
+            open(f"{output_files_path}/{output_name}_groups.txt", "rb+") as groups_file:
+        text_file.seek(-1, os.SEEK_END)
+        text_file.truncate()
+        groups_file.seek(-1, os.SEEK_END)
+        groups_file.truncate()
