@@ -1,0 +1,113 @@
+reticulocytes erythroid cells peripheral blood discrete penultimate phase maturation
+nucleus removed usually red cells enter peripheral blood
+however extranuclear rna remains
+residual rna generally lost progressively hours cell enters circulation
+reticulocytes thus represent distinctive cohort cells recently entering peripheral blood
+reticulocytes differ red cells convoluted shape larger mature cells
+latter two distinctions clear cut presence residual rna
+typical wright stain used routine examination earliest reticulocytes residual rna polychromatophil e bluish mature erythrocytes
+standard technique new methylene blue stain
+stain routinely done clinical hematology laboratory designed highlight rna blue color otherwise pink cell
+depending stage reticulocyte blue color may distributed general early reticulocyte punctate late reticulocyte pattern
+visual examination peripheral blood film stained number reticulocytes among erythrocytes found expressed percentage
+termed reticulocyte count
+assumed normal red cell life span days duration reticulocyte peripheral blood day
+follows reticulocytes random time normal subject steady state
+red cells
+allowing variation red cell life span would theoretically give range
+however considerable statistical variability number observations small
+observer variability deciding positively stained minimum intraobserver interobserver variation
+therefore duplicate error given reticulocyte percentage approaches normal subjects reticulocyte percentage varied average among five samples months
+laboratories liberal others designating cells reticulocytes clinician must know local normal values range certain represent laboratory actual experience rather values given reference book
+range normal values
+reticulocyte percentage peripheral blood indication rapidity red cell turnover patient steady state
+however number reticulocytes released blood reflects amount erythropoiesis given day
+absolute number reticulocytes determined reticulocyte index corrected reticulocyte count
+determine reticulocyte percentage adjusted ratio observed hematocrit expected hematocrit yielding absolute number reticulocytes
+sometimes second correction made
+subjectively judged pronounced polychromatophilia peripheral blood film assumed younger reticulocytes disproportionately numerous
+younger reticulocytes retain rna longer average represent cohort cells perceived reticulocytes longer day
+persistence reticulocytes would give falsely high percentage cells representing single day red cell production
+magnitude second correction tends parallel first
+instance reticulocyte count
+hematocrit polychromasia seen slide
+absolute number reticulocytes thus would double normal value
+values duplicate error initial reticulocyte percentage error absolute reticulocyte number must least great
+corrections would precise patient expected hematocrit could used denominator polychromasia could quantified
+nonetheless two values provide complementary data
+percentage proportional least value steady reciprocal red cell life span
+absolute number gives amount erythropoiesis given day
+interpreted obviously high substantially normal obviously low number allows valuable physiologic insight causes anemia
+duplicate error measurement however interpretation small changes borderline abnormal values made caution
+correlation reticulocyte percentage appearance polychromasia peripheral smear exact
+normal subject blood may contain visible polychromatophilic cells despite say reticulocytes figure
+subjects certain disorders may disproportionate number polychromatophilic cells percentage reticulocytes
+reticulocytes said large enough cause increase mean cell volume mcv percentage markedly elevated
+occurs small group subjects high reticulocyte percentagesthose chronic immune hemolytic anemia
+latter patients thought shift erythropoiesis cell division skipped cells larger normal produced
+otherwise reticulocytes larger red cells mature
+therefore autoimmune hemolytic anemia increased red cell size mcv attributed reticulocytosis
+new technique reticulocyte counting use flow cytometry
+approach uses dye selectively stains rna distinguishes reticulocytes rna containing cells another variable size
+technique yet widely used active study several centers
+four abnormal patterns distinguished
+shown figure correspond physiologically distinct group diseases
+analogous group platelet disorders
+reduced reticulocyte percentages seen bone marrow suppression
+examples include cytotoxic chemotherapy aplastic anemia figure
+anemia chronic disease also category
+certain reticulocyte percentage abnormally low repeat measurement may necessary four five reticulocytes thousand cells counted
+may within duplicate error normal
+correction factors used absolute reticulocyte count percentage adjusted degree anemia may normal even though percentage normal
+cases bone marrow responding appropriately anemia therefore absolute sense hypoproliferative
+approach helps distinguish physiologically red cell disorders number andor proliferative activity bone marrow erythroid precursors deficient
+however practice limitations described broad gray zone unclear whether reticulocyte percentage count normal
+hypoplastic thrombocytopenia similar basis
+increased reticulocyte percentages seen hemolytic disorders whether intrinsic e g hemoglobinopathy enzymopathy extrinsic e g traumatic heart valve acquired immune hemolytic anemia
+long hemolytic cause corrected reticulocyte count remain elevated
+particular danger patients chronic hemolytic anemia transient reticulocytopenia drug infection
+normal subject marrow hypoplasia even week makes little difference week erythropoiesis red cell mass
+contrast patient chronic hemolytic anemia reticulocyte percentage making cells day
+cells continue destroyed prematurely even fall half accustomed hyperproduction could disastrous
+therefore patient chronic hemolytic anemia e g sickle cell anemia interval reticulocyte counts well hemoglobin measured
+extent hemolysis caused shift erythropoiesis cells larger
+also anemia caused hemolysis greater proportion polychromatophilic cells figure b
+therefore extremely high reticulocyte percentage may represent modest increase absolute erythropoiesis
+disorders bone marrow precursors increased number also altered maturation
+analogous changes platelet production immune thrombocytopenia
+reticulocyte percentage also increased recovery nutritional anemia e g iron recovery erythropoiesis bone marrow suppression e g chemotherapy
+marrow normal therapy degree reticulocytosis parallel degree anemia
+similar pattern seen acute reticulocytosis following sudden blood loss
+recovery progresses reticulocyte percentage abate normal
+usually acute marrow responses shift erythropoiesis
+reticulocyte percentage number high proportion polychromatophilic cells normal figure c
+number marrow erythroid cells increased maturation normal
+represents lesser perhaps qualitatively different stimulation bone marrow
+similar reactive thrombocytosis
+red cell volume distribution histogram available many automated blood counters valuable
+noted marrow normal reticulocytes larger red cells mature
+thought specific therapy reticulocytes abnormal size fl fl physician ask abnormality unmasked therapy
+common macrocytic disorder due chronic liver disease folate vitamin b deficiency cytotoxic chemotherapy hidden low mcv iron deficiency iron therapy begun vice versa iron deficiency concealed megaloblastic deficiency
+thus low reticulocyte percentage count reflects marrow unable compensate anemia
+high reticulocyte percentage count reflects marrow attempting compensate red cell destruction recovering anemia
+two clear cut extremes subjects reticulocyte percentages within normal range including technologic error
+normal reticulocyte disorders include many cases nutritional disorders iron folate vitamin b deficiency confusing spectrum chronic liver disease alcohol abuse leukemias marrow infiltrative disorders nonanemic hemoglobinopathies hemoglobin ac
+differential long usually specific tests needed establish diagnosis patients normal reticulocyte values
+adjustment hematocrit polychromasia usually valuable cases marked anemia
+polychromasia may increased peripheral blood smear even reticulocyte count percentage normal
+finding suggests premature release erythroid cells marrow hyperactive
+causes include marrow infiltration tumor granulomas marrow fibrosis
+disorders presumed physiologic physical barrier keeping immature red cells circulation compromised
+removal spleen cause little change sort splenectomy incidental otherwise hematologically normal subject
+however subject already compromised bone marrow larger number abnormal cells exist including immature reticulocytes nucleated red cells
+removal spleen removes major filter cells
+therefore patients splenectomy marrow replacement fibrosis dramatic polychromasia despite modest reticulocyte percentage figure
+similarly patients splenectomy marrow infiltration abnormally large platelets released
+percentage rna containing erythrocytes amount rna per reticulocyte combined allow classification red cell disorders table
+enhance value morphophysiologic classification electronic indices mean cell volume red cell distribution width
+neither automated blood count abc reticulocyte count provide definitive specific diagnoses
+characteristic set abc reticulocyte values may suggest small differential even one specific disorder
+usually appropriate select specialized tests confirm definitive diagnosis
+example anemia high reticulocyte percentage suggests hemolysis
+depending data confirmatory test may hemoglobin electrophoresis coombs test etc
+use abc reticulocyte percentage rapid inexpensive focus speed diagnosis limiting number slower costlier confirmatory tests

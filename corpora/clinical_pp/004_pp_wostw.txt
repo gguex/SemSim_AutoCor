@@ -1,0 +1,308 @@
+diagnosis uncertain art
+mean physicians hesitant equivocating short autopsy room rarely absolutely certain diagnosis
+particularly true early phases diagnostic evaluations
+studies physician reasoning demonstrated physicians evaluate patients keep limited set five seven diagnostic hypotheses mind assigned relative probability likely possible unlikely
+relative probabilities likelihoods adjusted upward downward depending new information gained history physical examination diagnostic tests
+enough information one diagnostic possibility becomes likely enough physician stop investigations declare possibility diagnosis
+example process imagine asked evaluate patient hypertension
+even see patient several diagnostic possibilities come mind essential hypertension renovascular disease primary hyperaldosteronism pheochromocytoma coarctation aorta chronic renal disease name
+based large referred series hypertensive patients prior information fact patient hypertensive speculate likelihood essential hypertension cumulative likelihood secondary forms majority accounted renovascular disease
+initial probabilities might thus stated essential hypertension likely renovascular possible others less unlikely
+imagine walk examining room see patient year old white female
+based high proportion patients renovascular disease information alone causes revise probabilities
+revised probability renovascular disease would increase essential hypertension others would decrease
+adjusted revised set probabilities might look like essential hypertension likely renovascular disease likely others less extremely unlikely
+physical examination hear flank bruit would increasingly certain renovascular disease raising probability lowering possibilities
+diagnostic process would proceed intravenous pyelogram radionuclide flow scan arteriography probability revisions occurring step
+important point whether done explicitly implicitly physicians approach diagnosis using process successively revising probabilities
+several problems however
+evidence also exists physicians gain maximum benefit information available history physical diagnostic tests always revise diagnostic probabilities degree warranted data
+compared formal mathematical models probability revision physicians fail properly adjust disease likelihoods either overestimating diagnostic value laboratory tests
+physicians tend treat diagnostic tests perfect information failing recognize laboratory data probabilistic
+human failings face uncertainty lead misuses diagnostic information described earlier
+much chapter one follows devoted implications probabilistic nature diagnosis interpretation laboratory tests
+formal rules diagnostic test interpretation set forth
+several characteristics tests crucial interpretation
+two operating characteristics enable judge test per se reliability accuracy
+characteristics enable judge test respect results affect diagnostic probabilities sensitivity specificity predictive value positive negative
+reliability precision test measure reproducibility obtained running test many times specimen
+unreliable test one yields results vary widely due chance technical error
+tests therefore difficult interpret day day variation given test may due something true change patient condition
+changes reliable test contrast likely reflect true patient change
+test accuracy reflects degree test result reflects true value
+imagine investigating new cheaper way measuring hematocrit
+assume true hematocrit obtained hand centrifugation new test accurate closely matches centrifuged results
+test inaccurate systematically vary true value
+important realize test reliability accuracy may vary independently one another
+test may inaccurate totally reliable
+would case newly developed hematocrit example always exactly five percentage points higher centrifuged hematocrit
+case new hematocrit would reliable always value inaccurate always different true value
+different relationships reliability accuracy shown figure
+sensitivity test refers proportion patients given disease positive test
+specificity test refers proportion patients without disease negative test
+example consider obtaining antinuclear antibodies ana large number patients systemic lupus erythematosus sle
+patient may either positive ana referred true positive negative ana referred false negative
+sensitivity would proportion sle patients positive anas
+similarly proportion set patients without sle negative anas called true negatives would called specificity ana
+non sle patients positive anas would called false positives
+predictive value hand refers likelihood patient disease given positive negative test result
+referring sleana example took large number people positive anas independently without using ana results determined truly sle proportion ana positive patients sle would represent positive predictive value ana
+conversely proportion negative ana patients sle would represent negative predictive value
+relationships sensitivity specificity positive negative predictive values demonstrated figure
+concepts dealt greater depth following chapter important note positive negative predictive values test depend sensitivity specificity also likelihood disease test done referred prior probability prior likelihood prevalence disease
+means sensitivity specificity tests vary patient patient positive negative predictive values vary patients different prior likelihoods disease
+importance prior likelihood interpreting test result overemphasized
+particular low prior likelihood frequently results low positive predictive value even relatively specific test
+take instance disease low prior probability say
+test disease sensitivity specificity predictive value positive test
+little calculation reveals positive predictive value test patient prior likelihood
+still chance patient free disease even though test positive
+contrast prior likelihood positive predictive value test
+low prior likelihoods usually result low positive predictive values
+calculations surprised understand physicians always well asked intuitively revise probabilities
+reason every physician able perform simple probability calculations bedside
+understanding operating characteristics enable carry probability revisions necessary diagnostic process
+first prior likelihood determined history physical examination
+diagnostic test obtained using sensitivity specificity prior likelihood positive negative predictive value test calculated
+predictive value becomes revised probability disease
+calculations performed hand held calculator using effort takes calculate antibiotic doses creatinine clearances
+following chapter deals specifically actual process calculating predictive values
+purposes tests obtained great deal choice diagnostic test interpretation
+one survey physicians large teaching hospital found three general reasons accounted laboratory test ordering diagnosis monitoring therapy screening asymptomatic disease
+order use test diagnostic purposes test positive large proportion patients disease high sensitivity negative large proportion without disease high specificity
+ideally test maximally useful diagnostic use sensitivity specificity
+would mean every patient disease would positive test false negatives result negative predictive value
+similarly positive tests would occur patients disease false positives resulting positive predictive value
+unfortunately tests high sensitivity specificity predictive value unheard
+fact tests high sensitivity tend low specificity vice versa
+little thought however allow choose proper lest particular diagnostic purpose
+one might say two basic diagnostic uses laboratory tests
+first wish rule disease absolutely second wish confirm
+examining purposes closely allows identify test characteristics necessary use
+order absolutely sure patient disease ruling falsely negative tests minimized test high sensitivity used
+highly sensitive test negative result produces high negative predictive value essence meaning vast majority patients negative result disease
+conversely order confident individual disease confirming false positive tests minimized necessitating specific test
+test individual positive result likely disease high positive predictive value
+general wish rule particular diagnosis choose test high sensitivity wish confirm diagnosis choose test high specificity
+particular diagnostic purpose choose test determine important operating characteristic sensitivity specificity
+obvious tradeoffs however
+since sensitivity specificity tend inversely related test chosen ruling disease particularly valuable confirming unexpectedly positive
+similarly negative test chosen confirm disease less helpful ruling
+example consider disease exists two tests test sensitive poorly specific test b specific poorly sensitive
+furthermore assume likelihood disease roughly chance patient disease
+table
+presents revised probabilities disease given results test
+see test used possible rule disease possible confirm
+test positive likelihood disease still whereas negative likelihood drops way
+conversely test b used may possible confirm diagnosis possible rule disease
+test positive likelihood disease greater negative disease likelihood remains high
+remember confirm disease choose test high specificity rule disease choose test high sensitivity
+examples use diagnostic tests abound
+whenever test repeated order follow therapeutic drug level observe side effects used monitoring purposes
+following serum potassium patients using diuretics creatinine use nonsteroidal anti inflammatory agents aminoglycosides hematocrit patients acute gi bleeding monitoring uses
+monitoring therapeutic drug levels yet another instance
+purpose sensitivity specificity predictive value less relevance reliability accuracy
+monitoring serum value ordinarily means measuring repeatedly
+purpose reliability critical
+serum potassium suddenly drops
+mmoll vitally important confident represents true change potassium value simply technical error random variation
+highly reliable accurate test needed
+little good know potassium level
+mmoll particular test using inaccurate
+situation true potassium might low
+high
+purposes monitoring salient operating characteristics reliability accuracy
+object use diagnostic tests screening detect disease earliest presymptomatic state presumably less widespread easily treated cured
+screening programs stool occult blood screening mammography aimed cancer detection although screening programs exist disorders glaucoma hypertension diabetes
+many criteria successful screening programs focus operating characteristics necessary produce good screening test
+ideal screening test would share many characteristics ideal diagnostic test general
+sensitivity specificity predictive values close
+mentioned tests exist
+ordinarily faced choice tests high sensitivity high specificity
+implications choice screening test desired
+initial tendency would use sensitive test
+test false negatives high negative predictive value meaning individuals disease would missed
+tradeoff unfortunately type test high sensitivity low specificity poor positive predictive value meaning positive individuals would falsely positive
+test used screening large populations significant number individuals positive tests small number truly diseased
+remember individuals screening populations definition relatively low prior likelihoods disease
+low likelihood populations predictive value positive tests low
+case stool occult blood screening tested individuals positive positive individuals colon cancer
+positive predictive value many individuals subjected costly uncomfortable potentially dangerous procedures order detect colon cancer
+using highly specific test drawbacks
+highly specific tests higher positive predictive values lower negative predictive values
+higher proportion patients positive tests actually cancer fewer individuals cancer detected
+absence relatively inexpensive test highly sensitive highly specific choice sensitive test results high proportion unnecessary diagnostic evaluations specific test results sizeable proportion diseased individuals going undetected
+unfortunately general rule depend
+choice depend whether patients benefit early disease detection well relative costs risks subsequent diagnostic evaluation
+table
+summarizes general guidelines use choosing diagnostic tests one three specific purposes
+remember important specific purpose mind choosing test tests operating characteristics required satisfy every purpose
+laboratories define normal values provide results
+commonly set normal values obtained determining test results large number presumably healthy volunteers plotting frequency distribution results
+normal range determined calculating mean standard deviation distribution declaring normal value falling within two standard deviations mean fig
+definition statistically range encompasses roughly normal individuals
+normals defined way normal individuals paradoxically declared abnormal
+important point remember faced unexpectedly abnormal test result patient
+fact normal person given test chance declared abnormal important implications especially one recalls diagnostic tests often obtained groups batteries even
+large diagnostic batteries overall likelihood one test abnormal rises number tests battery rises
+look table
+demonstrates
+likelihood one test test battery abnormal
+means roughly healthy patients abnormal test result
+percentage chance abnormals even impressive number tests rises
+test chemistry screen
+likelihood set completely normal results
+important consider possibility chance deviations deciding whether investigate unexpectedly abnormal test results large test batteries
+investigations may account large proportion unnecessary costs risks incurred inappropriate laboratory testing
+course causes unexpected abnormals chance presence unsuspected disease
+certain subsets individuals differ systematically normal range general population
+young elderly instance particular normal ranges many diagnostic tests
+usual normal ranges applied significant proportions individuals may declared abnormal
+may also true persons different sex persons varying racial backgrounds
+one faced unexpectedly abnormal result
+suggestion reconsider reexamine patient
+taking focused detailed history well repeating certain portions physical examination may uncover information light unexpected result may increase suspicion underlying disease
+process uncover new information perhaps unexpected result may reflect true abnormality patient
+however perhaps best strategy cautiously observe patient time repeating pertinent history physical well single abnormal test result
+patient develops symptoms signs test result becomes progressively abnormal investigation warranted
+difficult course recommend specific action every unexpected abnormal result
+instead intent create awareness many perhaps majority test results due factor underlying disease
+best course action may often cautious wait see opposed blindly pursuing every abnormal value costly often frustrating end point
+normal test result hand may provide information think
+may fact affect diagnostic probabilities much abnormal test result
+example imagine patient considering two disease possibilities b
+disease erythrocyte sedimentation rate esr almost always elevated time whereas disease b uncommonly elevated time
+normal esr affect diagnostic likelihoods original probabilities diseases b
+look table
+demonstrates normal result marked effect diagnostic probabilities
+revised probabilities show disease b given normal esr almost four times likely disease
+normal results markedly alter diagnostic probabilities
+even normal individuals range test results distributed
+also true abnormal individuals unfortunately case ranges overlap
+situation understood becomes apparent sensitivity specificity many tests simultaneously maximized
+figure
+demonstrates
+figure overlapping ranges normal abnormal individuals given lab test displayed
+define cutoff point value test result said abnormal certain percentage normal individuals declared abnormal false positives certain percentage abnormal individuals declared normal false negatives
+would happen attempt made improve sensitivity test changing cutoff point
+could done moving cutoff point right figure b decreasing numbers false negatives increasing sensitivity
+unfortunately moving cutoff point right number false positives would increase decreasing specificity
+long distributions normal abnormal overlap way increase sensitivity without decreasing specificity
+reverse also true
+figure c represents attempt increase specificity moving cutoff point left order decrease false positives
+results decreasing sensitivity simultaneously increasing number false negatives
+sadly true long normal abnormal distributions overlap attempt improve sensitivity specificity changing cutoff point result lowering characteristic
+case laboratory tests
+however brighter side
+recall required operating characteristics differ different purposes
+rule tests require high sensitivity whereas confirmation tests require high specificity
+one therefore might imagine changing cutoff point order make test suitable particular purpose
+test used rule purposes cutoff point could moved right order increase sensitivity used confirmatory purposes cutoff point could moved left increase specificity
+test made suitable either purpose simply adjusting cutoff point
+summary lot normal test result first meets eye
+unexpectedly abnormal results viewed suspicion especially encountered large test batteries obtained apparently healthy individuals low likelihoods underlying disease
+normal test results hand frequently allow revisions diagnostic probabilities
+finally normal abnormal cutoff point given test may altered order make test suitable specific purposes
+exceptions albeit rarely
+normal ranges hemoglobin hematocrit different men women
+addition many tests different normal ranges pediatric adult age groups
+term adult however compromises large age range normal lab values vary considerably
+recall sensitivity equals
+number false negatives decreases sensitivity increases
+similarly specificity equals
+false positives increase specificity decreases
+reverse also true increasing false negatives decreases sensitivity decreasing false positives increases specificity
+several diagnostic test ordering strategies routinely used physicians discussed section
+shown inefficient costly
+since advent multichannel chemistry laboratory equipment become fashionable routinely order laboratory tests every patient admitted hospital
+tests usually include complete blood count coagulation profile urinalysis serum electrolytes combination serum chemistries electrocardiogram chest x ray
+tests ordered routinely without regard actual admitting diagnosis underlying probabilities
+two reasons usually cited justify process tests helpful screening asymptomatic disease useful defining database baseline set data light future changes evaluated
+routine screening admission tests looked critically several investigators
+general described problem number routine tests increases likelihood unexpectedly abnormal test rises dramatically
+addition anxiety aroused physician patient abnormal tests result expense repeated investigated using costly invasive confirmatory tests
+furthermore abnormal results even persistent sometimes little impact patient care
+one study found abnormal screening tests often ignored physicians pursued lead infrequently positive diagnosis
+another study investigated patients unexpectedly abnormal screening tests finding cases abnormalities lead diagnosis presymptomatic disease
+cases abnormalities could predicted retrospect careful consideration clinical status patient tests normal repeated testing
+durbridge evaluated benefits routine screening admission testing patients comparing two similarly sized groups screening tests either obtained obtained withheld attending physicians unless requested deemed necessary independent advisory committee
+benefit found spite increase total laboratory costs increase total hospital bill
+recently hubbell looked impact routine chest x rays patient care finding results affected treatment time spite fact x rays obtained population patients high prevalence cardiopulmonary disease
+studies routine testing therefore found strategy rarely leads new diagnoses dramatic changes patient care spite increased cost
+important note however carefully defined routine test obtained patients little evidence suspect underlying disease e patients prior likelihood disease low symptoms signs suggest disease
+patients one would expect predictive value positive test low leading findings studies cited
+specific admission testing done patients cause believe prior likelihood disease higher examples serum potassium magnesium patients diuretics chest x rays patients uncontrolled malignancies electrocardiograms patients chest pain
+tests obtained patients obtained routine screening purposes instead obtained monitoring therapy diagnostic purposes population patients high likelihood disease
+database concept closely linked routine screening
+many hospitals especially associated training programs defined database consisting battery diagnostic tests obtained every patient admitted
+database intended screen disease strategy subject criticisms discussed
+many physicians however use database baseline possible changes resulting known disease andor therapy compared
+examples include measuring renal function patients undergo therapy nephrotoxic antibiotics cytotoxic agents measuring serum electrolytes patients placed diuretics obtaining electrocardiogram patients high risk subsequent development ischemic heart disease
+many cases database serves valuable purpose
+note however database routine
+used specifically patients groups patients likelihood present future abnormalities higher usual patient specific instance monitoring
+decide use database remember several points
+first full database repeated every time patient admitted
+unless events occurred since last admission give reason believe certain database values changed originally obtained values may suffice
+second database obtained every patient especially ambulatory patients
+healthy year old man presents inguinal hernia require database year old man presents severe pneumonia simply differ likelihoods underlying disease expected monitoring needs
+decision obtain repeat database therefore one individualized respect patient happens patient time
+summarize routine admission repeated database testing confirmed high hopes began advocating use several decades ago multichannel testing equipment developed
+admission database testing never routine instead tailored differing needs individual selected groups patients time
+strategy consists ordering one two laboratory tests order rule every disease long list diagnostic possibilities
+often practiced physicians faced complex diagnostic problems broad differential diagnoses fever unknown origin rule testing falls prey many probabilistic pitfalls
+major problem rule strategies ignore prior probabilities
+test ordered investigate every disease possibility regardless likely unlikely possibility
+relatively large number tests ordered using strategy likelihood one tests abnormal chance rather high
+addition given poor specificity many lab tests positive predictive value one abnormal test low especially prior likelihood disease question low begin
+rule testing utilized fashion often leads rather less diagnostic uncertainty
+better strategy might developed formulating differential diagnosis based preliminary assessment patient ordering laboratory tests diseases deemed likely
+choosing tests likely subset possibilities diagnosis may confirmed without unnecessary expense confusion involved investigating entire list
+testing possibilities ruled revised probabilities subset drops second subset rise
+second stage investigation involves ordering laboratory diagnostic tests evaluate second list
+none possibilities confirmed progress third subset
+strategy might called ordered subset strategy
+evaluating successive subsets originally lengthy differential diagnosis avoids pitfalls multiple testing poor predictive value involved less efficient costly rule strategy
+considerations probability may enter
+perhaps relevant need diagnose certain diseases early course consequences even short delays life threatening
+possibility disease may prompt diagnostic testing even likelihood fairly low
+two tests varying sensitivity specificity available many diseases
+choice test either highly specific highly sensitive depends whether one wants confirm rule disease
+use tests together
+strategy termed combination parallel testing
+imagine disease prior likelihood
+two tests b differing sensitivity specificity
+test sensitive lower specificity test b poorly sensitive highly specific
+decide use tests
+furthermore decide diagnose disease either test test b positive
+table
+shows sensitivity specificity parallel combination tests
+used fashion sensitivity combination higher either test alone specificity much lower
+using tests combinations generally results increased sensitivity lower specificity
+negative predictive value combinations therefore generally high positive predictive value low compared one single test
+whether select strategy determined purpose
+wish rule disease parallel combinations may useful high negative predictive values
+purpose confirm disease low positive predictive value parallel combinations may unsuitable
+combination testing common clinical medicine examples including liver function tests scot total bilirubin alkaline phosphatase albumin rule myocardial infarction cpk sgot ldh batteries
+whatever purpose remember combinations always expensive single tests
+decision use combination therefore affected probability considerations costs well
+analysis based assumption conditional independence
+basically assumption dictates sensitivity specificity given test independent results tests
+assumption may always justified
+two situations lab test repeated test result unexpectedly abnormal multiple tests routinely ordered serial stool occult blood examinations serial blood cultures
+respects strategy analogous combination testing except multiple repetitions test used rather combinations different tests
+using strategy clinician faced choice two rules believe positive believe negative
+first rule positive test repeated set used confirm diagnosis whereas second rule negative set used rule diagnosis
+rules illustrated table
+tests repeated twice
+deciding rule use may considerably difficult seems
+general believe positive rule tend increase sensitivity expense specificity since multiple repetitions false positive results carry weight false negative results
+similarly believe negative rule tends increase specificity expense sensitivity
+often reilex act simply repeating abnormal test may simple would like believe
+politser discusses issue detail quite complex
+one considers test reliability diseased nondiseased populations rules may either increase decrease sensitivity specificity
+much costly misuse misinterpretation diagnostic tests due fact physicians always able manage intuitively probabilistic information laboratory tests provide
+diagnostic process one successive probability revision
+knowledge operating characteristics laboratory tests e sensitivity specificity predictive value greatly facilitate process
+knowledgeable use operating characteristics allows test choices tailored specific purposes diagnosis monitoring screening
+addition use allows proper interpretation normal test results well discriminate use common strategies screening rule testing repeating tests combination testing

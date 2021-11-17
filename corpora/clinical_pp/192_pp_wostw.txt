@@ -1,0 +1,142 @@
+urea creatinine nitrogenous end products metabolism
+urea primary metabolite derived dietary protein tissue protein turnover
+creatinine product muscle creatine catabolism
+relatively small molecules daltons respectively distribute throughout total body water
+europe whole urea molecule assayed whereas united states nitrogen component urea blood serum urea nitrogen e bun sun measured
+bun roughly one half
+blood urea
+normal range urea nitrogen blood serum mgdl
+mmol urea per liter
+range wide normal variations due protein intake endogenous protein catabolism state hydration hepatic urea synthesis renal urea excretion
+bun mgdl would represent significantly impaired function woman thirtieth week gestation
+higher glomerular filtration rate gfr expanded extracellular fluid volume anabolism developing fetus contribute relatively low bun mgdl
+contrast rugged rancher eats excess g protein day may normal bun mgdl
+normal serum creatinine scr varies subject body muscle mass technique used measure
+adult male normal range
+mgdl mmoll kinetic enzymatic method
+mgdl mmoll older manual jaffé reaction
+adult female generally lower muscle mass normal range
+mgdl mmoll enzymatic method
+multiple methods analysis bun creatinine evolved years
+current use automated give clinically reliable reproducible results
+two general methods measurement urea nitrogen
+diacetyl fearon reaction develops yellow chromogen urea quantified photometry
+modified use autoanalyzers generally gives relatively accurate results
+still limited specificity however illustrated spurious elevations sulfonylurea compounds colorimetric interference hemoglobin whole blood used
+specific enzymatic methods enzyme urease converts urea ammonia carbonic acid
+products proportional concentration urea sample assayed variety systems automated
+one system checks decrease absorbance mm ammonia reacts alpha ketoglutaric acid
+astra system measures rate increase conductivity solution urea hydrolyzed
+even though test performed mostly serum term bun still retained convention
+specimen collected tubes containing sodium fluoride fluoride inhibits urease
+also chloral hydrate guanethidine observed increase bun values
+jaffé reaction creatinine treated alkaline picrate solution yield red complex still basis commonly used methods measuring creatinine
+reaction nonspecific subject interference many noncreatinine chromogens including acetone acetoacetate pyruvate ascorbic acid glucose cephalosporins barbiturates protein
+also sensitive ph temperature changes
+one another many modifications designed nullify sources error used clinical laboratories today
+example recent kinetic rate modification isolates brief time interval true creatinine contributes total color formation basis astra modular system
+specific non jaffé assays also developed
+one automated dry slide enzymatic method measures ammonia generated creatinine hydrolyzed creatinine iminohydrolase
+simplicity precision speed highly recommend routine use clinical laboratory
+fluorocytosine interferes significantly test
+creatinine must determined plasma serum whole blood erythrocytes contain considerable amounts noncreatinine chromogens
+minimize conversion creatine creatinine specimens must fresh possible maintained ph storage
+urea synthesis occurs liver
+primary source dietary protein
+gut protein converted peptides amino acids absorbed carried liver
+hepatocyte amino acids deaminated transaminated
+resulting excess nitrogen feeds urea cycle incorporated urea
+protein moieties escaping absorption small bowel plus recycled urea converted ammonia gut flora predominantly colon
+ammonia diffuses portal circulation liver enter urea cycle figure
+amount urea produced varies substrate delivery liver adequacy liver function
+increased high protein diet gastrointestinal bleeding based plasma protein level
+gdl hemoglobin gdl ml whole blood equivalent g protein catabolic processes fever infection antianabolic drugs tetracyclines except doxycycline glucocorticoids
+decreased low protein diet malnutrition starvation impaired metabolic activity liver due parenchymal liver disease rarely congenital deficiency urea cycle enzymes
+normal subject g protein diet produces g urea day
+newly synthesized urea distributes throughout total body water
+recycled enterohepatic circulation
+usually small amount less
+gday lost gastrointestinal tract lungs skin exercise substantial fraction may excreted sweat
+bulk urea gm day excreted kidney process begins glomerular filtration
+high urine flow rates greater mlmin filtered load reabsorbed flow rates lower mlmin reabsorption may increase
+low flow urinary tract obstruction allows time reabsorption often associated increases antidiuretic hormone adh increases permeability terminal collecting tubule urea
+adh induced antidiuresis urea secretion contributes intratubular concentration urea
+subsequent buildup urea inner medulla critical process urinary concentration
+reabsorption also increased volume contraction reduced renal plasma flow congestive heart failure decreased glomerular filtration
+creatinine formation begins transamidination arginine glycine form glycocyamine guanidoacetic acid gaa
+reaction occurs primarily kidneys also mucosa small intestine pancreas
+gaa transported liver methylated adenosyl methionine sam form creatine
+creatine enters circulation taken stored muscle tissue
+reaction catalyzed creatine phosphokinase cpk muscle creatine phosphorylated creatine phosphate
+day stores converted nonenzymatically irreversibly creatinine figure
+thus creatinine production essentially reflects lean body mass
+mass changes little day day production rate fairly constant
+absolute creatinine production declines age line decreasing muscle mass
+unlike urea creatinine largely unaffected gastrointestinal bleeding catabolic factors fever steroids
+however ingestion cooked meat raise scr cooking converts creatine meat creatinine
+certain drugs notably psychoactive phenacemide increase production rate
+like urea creatinine distributes throughout total body water
+concentration serum function usually constant production excretion rates
+may slightly higher evening morning due likely dietary meat intake day
+normal subjects creatinine excreted primarily kidneys
+minimal extrarenal disposal demonstrable metabolism
+small molecule molecular weight daltons freely filtered glomerulus
+unlike urea reabsorbed affected urine flow rate
+normally secreted tubules small significant amount total excretion
+excretion urea creatinine increased exercise without producing significant change serum concentration
+total creatinine excretion normal man averages mgkgday normal woman mgkgday
+excretion declines age mgkgday year old man
+however vary given individual
+amount excreted used rough index completeness daily urine collection
+measurement urine creatinine excretion used calculating creatinine clearance ccr
+short precise technically impractical inulin clearance ccr standard clinical tool estimating gfr especially early stages renal disease
+setting scr bun useful indices gfr due parabolic relationship wide range normal figure
+contrast ccr major disadvantage inaccuracies urine collection especially short term clearances patients low urine volumes
+reason hour clearances preferred general use usually larger volumes minimize errors collection
+concentration creatinine serum urine determined careful attention units measurement ccr calculated follows
+ucr urine creatinine concentration mgdl v urine volume mlmin scr serum creatinine concentration mgdl
+result may standardized
+body surface area bsa
+subject bsa related weight height usually obtained nomogram
+example
+several shortcuts estimate ccr without collecting urine proposed
+earliest probably least accurate ignores subject age weight simply divides scr
+cockcroft gault formula one usually recommended use calculating dosage drugs especially nephrotoxic antibiotics
+takes account well documented fall grf age follows
+advanced renal failure net creatinine excretion decreases significantly
+even though tubular secretion increases gfr falls compensate decrease filtration gfr mlmin
+measurable creatinine metabolism gut flora patients decreased creatinine synthesis
+thus ccr unreliable often overestimates gfr chronic renal failure cirrhosis
+suggested gfr mlmin mean ccr plus urea clearance gives accurate index gfr
+thus
+certain drugs may affect ccr without changing gfr
+salicylates cimetidine trimethoprim interfere tubular secretion creatinine cause spuriously low ccr
+bun scr screening tests renal function
+handled primarily glomerular filtration little renal regulation adaptation course declining renal function essentially reflect gfr
+unfortunately relation grf straight line rather parabolic curve figure
+values remain within normal range renal function lost
+within range however doubling values e g bun rising mgdl scr
+mgdl may mean fall gfr
+therefore early stages renal disease tests could create false sense security
+random values midrange normal corroborated normal ccr one confidently tell patient kidney function normal
+end curve small changes kidney function produce large increments bun scr
+tests generally adequate follow patient course
+indeed reciprocal scr plotted time shows straight line progression renal disease individual patient used predict advent end stage renal disease
+stages renal insufficiency scr much reliable indicator renal function bun bun far likely affected dietary physiologic conditions related renal function table
+example patients congestive heart failure intact kidneys commonly present bun mgdl scr
+mgdl
+course scr may rise extrarenal factors seldom exceed mgdl
+stages renal failure defined according scr follows
+many limitations usefulness bun one wonders test survives
+taken scr useful clue presence prerenal postrenal component azotemia
+factors normal patient scr
+mgdl would expected bun close mgdl
+bun mgdl instead clinician begin search extrarenal factors table
+note ratio applies best moderate advanced renal failure
+attention reversible complications uremia give patient reprieve untimely sentence end stage renal disease
+low buncr ratio suggests inadequate protein intake reduced urea synthesis advanced liver disease supernormal excretion urea sickle cell anemia increased creatinine production rhabdomyolysis effective removal urea creatinine dialysis
+bun survives finding wide application nutritional management critically ill patients
+urea nitrogen appearance una objectively lets intensivist know whether patient nitrogen needs met
+una assessment requires measurement bun beginning end period observation well total urea excretion
+bun creatinine taken together valuable screening tests evaluating renal disease
+though may fall short absolute indicators renal function given point time useful following progression disease

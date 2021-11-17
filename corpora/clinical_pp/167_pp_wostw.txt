@@ -1,0 +1,642 @@
+number components plasma increased within first days following tissue destruction inflammation infection trauma
+acute phase reactants may proteins glycoproteins lipoproteins substances produced predominantly liver
+inflammatory insult brief levels acute phase reactants return normal within days weeks however may remain elevated chronic infections inflammatory conditions
+commonly studied acute phase proteins humans include c reactive protein haptoglobin fibrinogen serum amyloid protein sa alpha proteins including alpha antitrypsin ceruloplasmin components complement cascade especially c
+tests used frequently clinical practice acute phase response erythrocyte sedimentation rate measurement c reactive protein
+erythrocyte sedimentation rate esr nonspecific measurement acute phase response
+rate fall erythrocytes column blood hour
+generally accepted upper limit normal value young adults westergren method mm per hour males mm per hour females
+elderly normal range slightly higher
+esr simple test performed physician office
+two methods commonly used wintrobe method westergren method
+westergren method declared superior method international committee standardization hematology
+westergren method requires collecting ml venous blood tube containing
+ml sodium citrate
+stored longer hours room temperature hours °c
+blood drawn westergren katz tube mm mark
+tube placed rack strictly vertical position hour room temperature time distance lowest point surface meniscus upper limit red cell sediment measured
+distance fall erythrocytes expressed millimeters hour esr
+although results may affected slightly anemia international committee standardization hematology recommend correction factor used interpreting results
+wintrobe method performed similarly except wintrobe tube smaller diameter westergren tube mm long
+anticoagulated blood without extra diluent drawn tube rate fall erythrocytes measured millimeters hour
+correction anemia since tube short may necessary low hematocrit cause esr appear greater
+shorter column also makes method less sensitive westergren method maximal possible abnormal value lower
+newer technique zeta sedimentation ratio another method indirectly measuring acute phase response
+test blood drawn × mm capillary tubes placed vertically special centrifuge zetafuge tubes spun rpm four second periods
+tubes rotated degrees vertical axis spin
+aggregation red cells occurs downward zigzag path affected centrifugal force gravity
+test requires approximately minutes
+degree compaction erythrocytes expressed zetacrit dividing height red cell sediment height column blood
+hematocrit also done ratio hematocrit zetacrit zeta sedimentation ratio zsr
+zsr thus unaffected anemia values men women similar
+good correlation zsr simultaneously run esrs shown
+ranges values obtained study normal patients comparing westergren wintrobe zeta methods shown table
+rate fall erythrocytes column blood influenced extent erythrocytes aggregated
+three major factors influence erythrocyte aggregation surface free energy red cells surface charge red cells dielectric constant medium cells suspended
+surface free energy red cells acts attracting force due van der waals forces whereas negatively charged surface red cells acts repel cells
+positively charged cloud surrounds negatively charged cells two charges result zeta potential
+dielectric constant medium acts dissipate charges
+dielectric constant affected concentration symmetry plasma proteins
+asymmetrical plasma proteins cause increase dielectric constant polarizing red cells thereby diminishing repulsive forces red cells facilitating agglutination
+rate erythrocyte sedimentation directly proportional amount erythrocyte aggregation size aggregates
+asymmetric acute phase protein fibrinogen greatest effect esr
+acute phase proteins especially alpha gamma globulins may also enhance aggregation present large concentrations
+esr influenced several factors plasma proteins
+alterations shape red cells may prevent aggregation resulting normal esr regardless presence acute phase reactants
+anemia accelerate esr polycythemia retard
+heparin increase esr intramuscular injections
+ingestion food also causes fluctuation esr
+although level esr generally correlates severity inflammation tissue injury nonspecific test influenced factors
+acute severe bacterial viral infections causes acute inflammation tissue injury myocardial infarction trauma esr rise initially fall recovery
+chronic infections inflammatory conditions osteomyelitis rheumatoid arthritis vasculitis may also fluctuate exacerbations remissions
+since high levels immunoglobulins also cause elevation esr lymphoproliferative disorders multiple myeloma waldenström macroglobulinemia also considered patients markedly elevated esr
+however patients obvious inflammatory disease may normal esr
+elevation esr also reported noninflammatory conditions thyroid disease late pregnancy
+esr nonspecific test used screen inflammatory tissue damaging conditions necessary physician know respond abnormal value
+esr mildly elevated without obvious source evaluation limited since studies shown degree elevation esr little help differential diagnosis
+contrast patients esr greater mmhr westergren method often serious disease
+common causes markedly elevated esr hematologic nonhematologic malignancy infection connective tissue disease especially rheumatoid arthritis vasculitis including giant cell arteritis renal disease
+diagnoses made performing complete history physical examination well complete blood count routine urinalysis chest roentgenogram
+additional studies including serum protein electrophoresis bone marrow examination renal function tests may diagnostic value patients
+polymyalgia rheumatica common disease elderly characterized painful stiffness pectoral pelvic girdles temporal giant cell arteritis deserves special mention
+signs symptoms occur simultaneously separately nearly always associated esr greater mmhr westergren method
+limitations esr described
+major criticism specific measure acute phase proteins thus acute inflammatory response methods quantification many acute phase proteins available
+however simplicity wide availability esr favor value clinical medicine
+c reactive protein crp nonglycosylated protein produced human hepatocytes response infection inflammation tissue damage
+composed five identical noncovalently linked subunits form symmetrical pentagonal structure molecular weight daltons
+crp originally named ability precipitate somatic c polysaccharide pneumococci however methods used detect
+crp present low levels normal population
+levels less mgdl considered insignificant levels mgdl considered moderately elevated levels greater mgdl markedly elevated
+quantitative methods crp developed crp reported present absent
+several methods available determination common radial immunodiffusion electroimmunodiffusion immunonephelometry
+methods use monospecific anti crp antiserum antibodies bind crp antigen
+radial immunodiffusion procedure antiserum anti crp activity incorporated agarose gel coated onto glass plate
+wells made agarose small amount human serum placed well
+plate incubated approximately hours
+antigen crp human serum diffuses radially agarose forming precipitin ring
+diameter ring measured compared size rings simultaneously previously determined control sera amount crp known figure
+electroimmunodiffusion method also uses antiserum human crp incorporated agarose glass plate
+human serum standards placed wells agarose electrical current applied across plate minutes
+electrical current rapidly draws antigen well cone shaped peak formed antigen precipitates antibody
+distance sample origin top precipitin peak measured compared standards containing known quantities crp
+test requires approximately hours
+nephelometry measurement turbidity cloudiness
+immunonephelometric assays degree light scatter created formation antigen antibody complexes detected
+instrument light source various wavelengths laser source directs light beam tube containing test serum optically clear monospecific antibodies optically clear solution instance anti crp antibodies
+intensity light scattered precipitating complexes measured light detection system converted concentration units
+rate nephelometry method currently superior nephelometry method measures light scatter rapidly several times ascending phase antigen antibody reaction equivalence reached
+crp level extremely high patient serum must diluted
+immunodiffusion techniques sensitive detecting levels crp low
+mgdl
+nephelometric method detect levels low
+mgdl adequate clinical use
+precise physiologic role crp known however results many vitro studies suggest pathophysiologic importance
+crp binds variety ligands especially phosphorylcholine
+also bind variety proteins lipids polysaccharides resulting precipitation agglutination
+subsequent activation classic complement pathway demonstrated vitro
+crp binds plasma membranes damaged cells intact living cells
+crp also shown reduce toxicity pathogenicity microorganisms perhaps binding initiating complement activation phagocytosis
+possible roles crp include enhancement resolution repair damaged tissue initiating complement activation opsonization phagocytosis detoxification facilitation clearance foreign materials circulation initiation inflammatory response
+magnitude crp elevation correlates well severity disease
+following onset inflammatory stimulus crp levels begin rise within hours peak within hours
+depending type chronicity stimulus treatment levels may fall rapidly remain elevated
+severe bacterial infection usually potent stimulator crp production
+many rheumatic diseases cause acute chronic inflammation also associated crp elevation periods disease activity
+patients active arthritis including adult juvenile rheumatoid arthritis reiter syndrome psoriatic arthritis ankylosing spondylitis acute chronic gout rheumatic fever elevated crp levels
+crp levels increased patients vasculitis polyarteritis nodosa wegener granulomatosis giant cell arteritis polymyalgia rheumatica cutaneous systemic necrotising vasculitis
+contrast systemic lupus erythematosus sle polymyositis scleroderma usually cause modest crp elevations
+crp level thus useful unequivocal sign tissue damage
+serial levels used monitoring changes disease activity responses medical treatment
+crp levels may also useful diseases usually associated high crp levels sle cases marked elevations may indicate infection complications
+although crp response nonspecific used alone differential diagnosis valuable test advantages esr
+measure tissue damage affected immunoglobulin levels
+levels crp rise fall rapidly broad range changes clinical condition
+measurement crp sensitive reproducible
+level diurnal variation affected age sex hematocrit
+immunoglobulins ig heterogeneous group complex protein molecules function antibodies wide variety antigens
+immunoglobulin subunit composed four polypeptide chains two heavy chains two light chains
+heavy chains joined light chains held heavy chains disulfide bonds figure
+five major immunoglobulin classes humans igg igm iga igd ige
+classes differ structure heavy chain
+igg iga divided subclasses igg igg igg igg iga iga
+two types light chains kappa lambda class specific
+humans kappa chains predominate frequency lambda chains
+immunoglobulin chain constant region variable region
+constant region similar within class certain positions variable region function antigen binding site
+normal ranges immunoglobulin levels shown table
+cryoglobulins immunoglobulins precipitate exposure cold
+cryoimmunoglobulins g identified
+normal level less
+cryocrit less
+mg per deciliter serum
+serum protein electrophoresis may used screen total serum immunoglobulin level however methods specific quantitative
+appropriately used screen paraproteins occur multiple myeloma waldenström macroglobulinemia
+perform test serum applied strip paper agarose gel cellulose acetate electrophoresed approximately minutes
+five major bands protein separated normal human serum basis charge albumin alpha globulins alpha globulins beta globulins gamma globulins
+bands stained allow densitometer quantify protein concentration band
+results expressed shown figure
+paraprotein thus detected abnormal peak usually gamma beta region
+identification approximate quantification abnormal immunoglobulins light chains obtained immunoelectrophoresis figure
+double immunodiffusion technique
+serum biologic fluid urine csf placed well glass slide coated agarose cellulose acetate electrophoresed separate proteins according charge
+trough cut agarose parallel axis electrophoresed proteins placed monospecific antibodies igg igm iga kappa lambda light chains
+slide incubated hours allow antibodies diffuse trough agarose forming precipitin arcs respective antigens
+relative size precipitin arcs proportional quantity immunoglobulin light chains
+immunofixation electrophoresis also used clinically identify monoclonal proteins serum urine csf
+two stage procedure serum body fluid electrophoresed gel separate proteins followed immunoprecipitation specimen proteins control proteins comparison monospecific antisera
+gel washed remove nonprecipitated proteins followed application protein stain visualize antigen antibody complexes
+method advantage easily identifying igm iga monoclonal proteins may masked igg
+reagents igd ige monoclonal proteins also available
+test completed minutes another definite advantage
+nephelometric radial immunodiffusion assays tests choice quantification immunoglobulins g
+radial immunodiffusion technique antibodies fc heavy chain determinants immunoglobulins g incorporated agarose serum placed well
+amount ig patient serum proportional diameter precipitin ring formed complexed ig anti ig
+nephelometry also requires use monospecific antibodies immunoglobulins
+antibodies patient serum buffer solution added glass tube light source directed tube
+degree light scattered ig anti ig complexes detected light detector read optical density
+reading converted concentration units protein
+isolate cryoglobulins special care must taken drawing blood specimen
+ideally blood drawn warm syringe without anticoagulant transferred warmed tube transported laboratory cup containing water °c allowed clot °c waterbath centrifuged °c
+practically many conditions possible met
+blood may drawn tube room temperature placed cup warm water one pocket kept warm body temperature transported quickly laboratory placed °c waterbath
+blood clotted centrifuged room temperature tube placed cups containing °c water
+serum removed placed conical centrifuge tube covered stored °c
+cryoglobulins precipitate slowly serum stored days daily observation
+cryoglobulins appear hours
+assure precipitate cryoprecipitate rewarmed °c observed resolubilize
+recooling serum centrifuged material precipitates considered cryoglobulin
+quantified decanting serum resuspending precipitate saline determining protein content spectrophotometrically colorimetrically lowry method
+another method quantification cryocrit
+one recommended procedure entails placing known quantity water second tube identical contains precipitate level precipitate thus determine volume precipitate
+percentage total volume serum occupied precipitate calculated cryocrit
+cryoglobulin quantified resuspended analysis immunoelectrophoresis
+radial immunodiffusion less reliable poor diffusing capability complex cryoproteins
+rheumatoid factor activity cryoprecipitate may also determined
+primary function immunoglobulins act antibodies combine facilitate removal foreign antigens system
+rate antibody production thus influenced degree antigenic stimulation
+antibodies produced plasma cells mature b lymphocytes
+amount class antibody produced influenced effect many different types regulatory lymphocytes type antigen
+structure immunoglobulins differentiation b cells produce different classes antibodies controlled genetically
+numerous abnormalities immunoglobulin production occur including congenital acquired deficiencies one immunoglobulin classes malignant proliferation single clone immunoglobulin producing cells benign monoclonal gammopathies may ultimately develop production malignant paraproteins polyclonal gammopathies usually associated underlying infectious inflammatory diseases
+one phenomena associated overproduction certain immunoglobulins cryoglobulinemia
+cryoglobulins classified three types type monoclonal cryoglobulins usually igm class less often igg iga classes type mixed monoclonal cryoglobulins containing monoclonal igm cases infrequently monoclonal igg iga rheumatoid factor activity polyclonal igg type mixed polyclonal cryoglobulins composed one classes polyclonal immunoglobulin usually igm antibody activity polyclonal igg
+proteins complement lipoproteins also complexed type cryoglobulins
+important aware possible presence cryoglobulins evaluating serum immunoglobulins
+failure detect paraprotein immunoglobulin cryoprecipitating properties result allowing blood clot room temperature lower cryoproteins may precipitate clot removed serum centrifugation
+one suspicion high cryoglobulins serum used protein electrophoresis immunoelectrophoresis kept warm
+similarly sedimentation rate room temperature may appear falsely low due gelling serum containing cryoproteins whereas would elevated performed °c
+temperature cryoglobulins precipitate variable range °c
+reason cryoprecipitation yet known apparently influenced concentration molecular composition size shape charge complex
+relatively clinical conditions affecting musculoskeletal system qualitative quantitative evaluation serum immunoglobulins diagnostic significance conditions serious warrant use tests screening clinical findings compatible signs symptoms diseases
+multiple myeloma patients may present arthropathy mimic rheumatoid arthritis actually caused amyloid deposition synovium around joints
+congenital acquired hypogammaglobulinemia associated rheumatoid like arthritis addition recurrent infections
+selective iga deficiency common occurring one individuals may associated variety autoimmune disorders especially rheumatoid arthritis sle
+hyperglobulinemic state may occur sjögren syndrome multiple myeloma without known underlying etiology
+results formation igg igg complexes cause hyperviscosity vascular injury especially lower extremities distinguished vasculitides
+polyclonal elevation immunoglobulins seen frequently inflammatory disorders sle mixed connective tissue disease rheumatoid arthritis systemic vasculitis
+laboratory tests addition careful clinical observations usually appropriate diagnosis evaluation disease activity latter conditions
+cryoglobulinemia may found wide variety clinical conditions
+many patients underlying disease found
+patients type cryoglobulins disease called essential mixed polyclonal cryoglobulinemia
+authors hypothesized polyclonal immunoglobulins usually igm antibody activity polyclonal igg specific unknown antigen
+recent studies shown however many patients essential mixed cryoglobulinemia hepatitis b surface antigen antibody cryoprecipitate
+conditions commonly associated type cryoglobulins autoimmune diseases sle sjögren syndrome rheumatoid arthritis systemic vasculitis
+chronic infections subacute bacterial endocarditis lyme disease viral infections may also associated circulating type cryoglobulins
+patients type cryoproteins commonly vasculitic purpura articular symptoms glomerulitis hepatic involvement less frequently peripheral sensory motor neuropathy
+type cryoglobulinemia often associated multiple myeloma waldenström macroglobulinemia
+patients often symptoms associated hyperviscosity e g digital necrosis leg ulcers hemorrhage may also renal involvement
+raynaud phenomenon episodic vasospasm digits exposure cold common three types cryoglobulinemia
+type cryoglobulinemia often associated lymphoproliferative malignancy multiple myeloma waldenström macroglobulinemia also occur sjögren syndrome rheumatoid arthritis
+symptoms associated type cryoglobulins include due hyperviscosity associated vasculitic phenomena type cryoglobulinemia
+rheumatoid factors autoantibodies bind variety antigenic determinants fc portion immunoglobulin g igg antibodies
+autoantibodies may igm igg iga ige classes
+first detected sera rheumatoid arthritis patients waaler later rose subsequently found sera patients variety diseases
+normal values serum rheumatoid factors defined however high titers igm igg rheumatoid factors usually indicative active inflammatory infectious disease
+commonly used tests igm rheumatoid factor latex bentonite agglutination tests rose waaler sheep cell agglutination tests
+latex bentonite tests latex bentonite particles coated human igg acts antigen igm rheumatoid factor
+igm molecules including igm rheumatoid factors pentavalent combine igg particles cross linking occurs causes particles agglutinate visibly
+serial dilutions patient serum added igg coated particles highest dilution serum causes agglutination rheumatoid factor titer
+rose waaler test sheep erythrocytes coated rabbit igg
+serial dilutions human serum added aliquots ig coated sheep cells visibly agglutinated presence igm rheumatoid factor
+two sensitive methods used detect igm rheumatoid factor radioimmunoassay ria enzyme linked immunosorbent assay elisa
+ria plastic tubes microtiter wells coated human igg
+test serum added tubes wells incubated allow rheumatoid factor bind igg
+tubes wells washed leaving bound rheumatoid factor
+secondary radiolabeled anti human ig antibody added
+washing remove unbound secondary antibody radioactivity tubes wells determined amount rheumatoid factor present quantified
+elisa method similar except secondary anti ig antibody coupled enzyme
+washing substrate solution added changes color altered enzyme
+rheumatoid factor level quantified determining optical density substrate solution spectrophotometrically
+rate nephelometry also used frequently measurement igm rheumatoid factor
+aggregated igg used antigen rate increase light scattered particles suspended solution result complexes formed reaction igm rheumatoid factor igg measured
+results ria elisa nephelometry tests reported international units per milliliter iuml patient serum since world health organization reference preparation rheumatoid factor exists
+much variability among laboratories commercial preparations tests however often possible make direct comparisons normal abnormal values tests
+quantification igg rheumatoid factor difficult agglutinating properties tends self associate dimers trimers
+detected ultracentrifuge method recently developed ria elisa methods
+ria elisa methods also used quantify iga ige rheumatoid factors using ig class specific secondary antibodies
+production antibodies combine self igg antigen autoimmune phenomenon etiology precisely known although several mechanisms proposed
+possible igg altered way changes physicochemical conditions exposure otherwise hidden antigenic determinants immune complexes formed antigen antibody responses
+fc portion igg may also contain antigenic determinants similar exogenous self antigens resulting cross reactivity
+sensitization may occur pregnancy
+aberrations immunoregulatory status individual may lead rheumatoid factor production changes cell regulation b cells loss b andor cell tolerance igg
+foreign antigens mitogens may cause polyclonal b cell activation resulting production antibodies normally absent
+genetic factors may also play role predisposition rheumatoid factor production
+biologic function rheumatoid factor well defined
+known however complexes rheumatoid factor activate complement thereby induce inflammatory response
+may occur synovium synovial fluid elsewhere body
+specific sites rheumatoid factor production nonrheumatoid disease investigated presumably similar sites antibody production
+rheumatoid arthritis however predominant source rheumatoid factor synovium lesser amounts produced bone marrow lymph nodes subcutaneous nodules spleen
+rheumatoid factors produced patients rheumatoid arthritis usually present higher titer heterogeneous react better animal igg rheumatoid factors produced patients diseases
+rose waaler method using sheep cell agglutination thus specific rheumatoid arthritis although titers generally much lower obtained latex bentonite methods
+rheumatoid factor production shown variety diseases rheumatoid arthritis
+diseases associated chronic antigenic stimulation polyclonal b cell activation
+patients connective tissue diseases systemic lupus erythematosus mixed connective tissue disease scleroderma sjögren syndrome frequently elevated serum rheumatoid factor titers
+rheumatoid factor often elevated noninfectious hyperglobulinemic conditions hypergammaglobulinemic purpura cryoglobulinemia chronic liver disease sarcoidosis idiopathic pulmonary fibrosis
+many infectious diseases also result rheumatoid factor elevation
+examples include acute viral infections mononucleosis hepatitis chronic bacterial diseases tuberculosis leprosy syphilis subacute bacterial endocarditis parasitic infections
+presence rheumatoid factor thus diagnostic specific disease
+mild elevations rheumatoid factor normal result aging
+general high titers rheumatoid factor frequently found patients rheumatoid arthritis patients rheumatic nonrheumatic diseases
+patients rheumatoid arthritis elevated rheumatoid factor titers within year onset disease although approximately remain rheumatoid factor negative
+diagnosis rheumatoid arthritis made basis signs symptoms chronic inflammatory arthritis rather presence rheumatoid factor
+nevertheless high titers rheumatoid factor rheumatoid arthritis patients associated severely destructive arthritis extraarticular manifestations disease including subcutaneous nodules sicca symptoms felty syndrome pulmonary cardiac complications
+elevated titers igg rheumatoid factor frequently found patients rheumatoid vasculitis
+treatment rheumatoid arthritis disease modifying agents may cause reduced rheumatoid factor production however nonsteroidal anti inflammatory agents aspirin usually effect rheumatoid factor levels
+activity rheumatoid arthritis monitored physical findings roentgenographic changes laboratory studies rather changes rheumatoid factor titer
+previous studies shown however successful treatment infectious diseases subacute bacterial endocarditis result reduction rheumatoid factor production
+antibodies bind nuclear cytoplasmic components mammalian cells present sera patients many rheumatic diseases
+extensive study elucidated antigenic determinants many antibodies provided correlation specific antigen antibody systems specific diseases
+antinuclear antibodies ana frequently detected serum rheumatic disease patients listed table
+antigens antibodies react named several methods
+cell constituents named disease associated
+others sm ro la ha jo named first two letters name patient monospecific antibody first identified
+several methods available detection quantification autoantibodies
+depending type sensitivity test used results reported positive quantitative qualitative means
+test first reported detect antinuclear antibodies lupus erythematosus le cell test developed hargraves colleagues
+subsequently replaced sensitive specific tests
+rapid done laboratory difficult perform results difficult interpret persons experienced
+whole blood serum biologic fluid e g pleural pericardial synovial fluid used
+blood incubated source traumatized substrate cells source viable phagocytic cells usually polymorphonuclear white blood cells pmns
+antinuclear antibody nucleoprotein present test serum coats nonviable nuclei facilitates ingestion nucleus viable phagocytic cells
+result bluish homogeneous body pmn nucleus pmn crowded peripherally
+indirect immunofluorescent test ifa currently method choice screen presence antinuclear antibodies
+commercial kits containing tissue sections cell culture monolayers available test
+section mammalian tissue layer cells human tissue culture line applied slide
+serum tested flooded cells antibodies specificity nuclear cytoplasmic antigens bind antigens
+serum washed slide antinuclear antibodies remain bound
+next slide treated solution containing fluorescein tagged anti human ig binds antibodies patient serum bound nuclearcytoplasmic antigens
+slide washed ready viewing fluorescent microscope
+test first done screening serum dilution higher
+fluorescence seen dilutions done result given pattern staining highest dilution serum
+variations substrates laboratory conditions techniques antigen antibody systems determined possible make general statement significance certain titer pattern
+often pattern fluorescence may vary different dilutions patient serum
+examples fluorescence patterns shown figure general correlations patterns seen certain antinuclear antibodies listed table
+detect serum antibodies nuclear histones ifa test antihistone antibodies requires additional procedures
+three slides containing tissue sections mouse kidney used
+one prepared described two initially treated acid solution extract histones
+one acid treated sections reconstituted histones slides prepared described
+antibodies histones present patient serum fluorescent pattern seen routine ifa slide histone reconstituted slide acid extracted slide
+another ifa test developed sensitive specific antibodies double stranded dna
+hemoflagellate crithidia luciliae kinetoplast containing circular double stranded dna used substrate
+technique similar ifa technique described enhanced include characterization ig classes human serum bind dna determine ability anti dna antibodies fix complement
+presence antinuclear antibodies serum identified use immunodiffusion techniques
+ouchterlony method double immunodiffusion figure
+widely used identification specific antinuclear antibodies
+central well cut agarose gel placement source antigen calf thymus mammalian organ extracts
+wells placement serum patient sera known antibody specificity made around central well
+antigen antibodies diffuse agarose forming precipitin line
+antibody specificity patient serum reference serum line identity formed continuous precipitin line
+nonidentity indicated precipitin lines cross
+method relatively insensitive quantitative useful identification many antinuclear antibodies methods available
+used detection anti dna antibodies dna diffuse agarose
+antibodies dna acidic antigens sm rnp ss ss b detected counterimmunoelectrophoresis sensitive test
+method antigen placed cathodal well dilutions serum placed anodal well
+electrophoresis antigens antibodies diffuse agarose form one precipitin lines
+passive hemagglutination technique used detect antibodies rnp dna
+appropriate antigen coupled surface sheep red cells added microtiter wells containing increasing dilutions patient serum
+presence antibody specific antigen causes visible agglutination red cells test result expressed highest dilution hemagglutination present
+radioimmunoassays rias sensitive methods quantifying specific antinuclear antibodies
+maximal specificity nuclear antigen must purified method available clinically detection many antinuclear antibodies
+antibodies double single stranded dna detected ria
+frequently used methods farr assay modification assay using nitrocellulose filter
+farr assay test serum incubated radiolabeled double single stranded dna saturated ammonium sulfate solution
+insoluble antigen antibody complexes precipitated anti dna antibodies present serum separated supernatant centrifugation
+amount radioactive dna bound antibody precipitate compared remaining unbound supernatant results expressed percentage dna binding activity
+nitrocellulose technique modification farr assay antigen antibody complexes separated supernatant filtration
+radioactivity trapped filter form dna complexes compared unbound form supernatant
+results expressed nanograms dna bound per milliliter serum
+ria methods specific antigen may coated onto plastic tubes microtiter wells discussed section rheumatoid factor
+elisa method enzyme linked immunosorbent assay highly sensitive uses principles ria methods
+method advantage requiring radioisotopes thus less expensive safer
+detection antinuclear antibodies elisa requires adsorption nuclear cytoplasmic antigens onto solid medium otherwise described section rheumatoid factor
+lupus band test direct immunofluorescent test fluoresceinated antibodies immunoglobulin complement components substances fibrinogen placed skin biopsy tissue
+immunoglobulin complement deposited dermoepidermal junction band fluorescence observed
+etiology sle autoimmune diseases associated production antibodies specificity self antigens remains determined
+likely many factors including genetic predisposition superimposed environmental influences initiate autoimmune process
+immunologic abnormalities reported lupus patients include loss suppressor cell function b cell hyperactivity disease active
+whether abnormalities etiologic role occur result disease known
+sle prototype autoimmune disease deposition antigen antibody complexes results tissue damage
+anti dna antibodies thought role pathogenesis sle antibodies ss antigen probably directly responsible congenital complete heart block fetuses women whose serum contains antibodies
+pathogenetic role antinuclear antibodies associated mixed connective tissue disease scleroderma polymyositis yet determined
+occurrence latter autoantibodies serves marker disease allows characterization subsets patients terms genetic factors clinical manifestations prognosis
+recent ongoing studies molecular characterization biological biochemical function many autoanligens rnp sm ss ss b scl may elucidate pathogenetic role autoantibodies future
+clinical presentation suggests patient may rheumatic disease associated production antinuclear antibodies screening test choice ifa antinuclear antibodies
+sle patients positive test many serum dilutions greater
+screen negative organ tissue may positive repeated tissue culture cells
+frequency positive test normal individuals varies different laboratories increases age patient positive tests absence clinical findings usually pursued
+ifa positive patients suspected sle drug induced lupus mixed connective tissue disease myositis additional tests specific antinuclear antibodies performed allow specific diagnosis
+example patients drug induced lupus positive ifa antibodies nuclear histones rarely antibodies double stranded dna
+addition highly specific diagnosis sle serum levels antibodies double stranded dna fluctuate disease activity especially nephritis used monitor treatment
+crithidia luciliae ifa test ria tests well suited use
+biologically false positive test syphilis bfts known occur patients sle results antibody reactivity phospholipid cardiolipin
+occurrence positive test confirmed additional procedures negative syphilis one classification criteria sle
+positive bfts recently shown significant patients previously appreciated
+antibodies cardiolipin phospholipids also determined elisa
+lupus anticoagulant another antiphospholipid antibody bfts anticardiolipin antibodies associated arterial venous thrombosis recurrent fetal losses thrombocytopenia possibly nervous system abnormalities patients
+lupus band test positive sle patients skin biopsied lupus skin lesions sun exposed skin
+significant positive result presence immunoglobulin deposition dermoepidermal junction non sun exposed non lesional skin patient suspected sle
+finding appears correlate presence severe disease including nephritis
+test may also positive patients mixed connective tissue disease
+diagnosis mixed connective tissue disease made patients overlapping features sle rheumatoid arthritis polymyositis scleroderma
+titer antibodies rnp usually high may may fluctuate disease activity
+patients scleroderma presence anticentromere antibody identifies patients crest variant scleroderma calcinosis raynaud phenomenon esophageal dysmotility sclerodactyly telangiectasias
+patients shown develop disease slowly rapidly progressive form risk developing pulmonary systemic manifestations lower incidence renal disease
+presence anticentromere antibodies patients presenting isolated raynaud phenomenon may indicate future development crest syndrome
+many patients rheumatoid arthritis positive ifa tissue substrates usually speckled homogeneous even peripheral patterns
+patients usually positive tests rheumatoid factor severe disease
+previous studies shown rheumatoid factors may cross react nuclear antigens
+recent studies identified igg antibodies cytoplasmic components neutrophils patients wegener granulomatosis systemic vasculitides
+negative amicytoplasmic antibody acpa titer rule presence diseases positive may useful monitor disease activity since titer may change remissions exacerbations
+complement system composed least different proteins alpha beta globulins
+interact promote inhibit cascade enzymatic reactions resulting cell lysis initiation inflammatory response phenomena
+two initial pathways activation classic pathway alternative pathway result activation terminal sequence figure
+components classic pathway identified numbers preceded c c c c c c c c c c
+alternative pathway components indicated capital letters factor b factor factor p properdin
+components acted previous components molecules enzymes formed
+enzymes indicated bar protein complex components e g
+cleavage products enzymatic activity indicated lowercase letters e g cb ca
+inactive products indicated e g cbi
+ranges normal serum levels complement proteins known listed many references end section
+serum levels c highest followed c
+method used determine complement component levels normal ranges individual laboratories variable
+commonly used assay total complement function total hemolytic assay ch
+results test usually expressed comparison values obtained using normal sera absolute results may differ greatly depending performance conditions test
+serum biologic fluid samples complement determinations handled expeditiously avoid decay complement proteins
+serum used detection complement blood allowed clot room temperature centrifuged stored °c processed order preserve complement activity
+serum complement protein concentrations assessed individually quantitatively radial immunodiffusion assays available commercially kits
+widely used assays c c sufficient clinical situations
+method radial immunodiffusion discussed section c reactive protein
+quantifying complement components serum placed well containing antibodies specific complement protein
+diameter precipitin ring formed complexing antigen e complement protein antibody compared predetermined preferably simultaneously tested standards
+method capable detecting complement protein concentrations low mg per milliliter serum
+disadvantages immunodiffusion method recognized
+previously mentioned international standards wide variability absolute results occur
+also cleavage products complement proteins measured assay distinguished active proteins
+immunonephelometry elisa techniques also developed quantification complement proteins particularly c c
+ch assay provides means screening function total complement sequence determining ability patient serum lyse erythrocytes
+sheep red cells coated rabbit anti sheep erythrocyte antibodies usually × red cells used
+ch unit arbitrarily defined amount complement required lyse red cells
+number red cells lysed determined spectrophotometric absorbance released hemoglobin linear relationship complement protein levels lysis range
+amount patient serum required lyse red cells determined
+correlated amount complement known required lysis
+thus larger amounts patient serum required achieve lysis complement activity serum reduced
+test influenced many variables precisely quantitative
+especially useful however screening homozygous classic pathway complement deficiencies since lysis occur one component absent
+patients heterozygous incomplete deficiencies may normal ch
+test alternative pathway deficiency lysis rabbit erythrocytes coated antibody may used
+hereditary deficiencies complement proteins suspected clinical picture results ch assay additional tests classic complement proteins appropriate determined immunodiffusion methods
+levels inhibitor also determined method
+ch assay may also used assess function specific complement components test technically difficult
+assays developed recently measure events complement activation precisely
+tests measure limited proteolytic cleavage events pathways activation related changes properties complement pathway components quantity specific protein complexes generated certain stages complement activation
+tests still used primarily research since used body fluids may applicable future clinical use
+classic complement pathway activated antigen antibody complexes ig ig complexes substances dna staphylococcal protein crp enzymes
+immunoglobulins igm efficient activator classic pathway followed igg igg igg lgg iga igd ige activate classic sequence
+immunoglobulin substances bind directly c consists three protein moleculescq cr cs
+cq binding site fc portion ig
+binding followed activation cs cs acquires proteolytic enzyme activity activates c c form
+c cleaved ca cb cb attach cells membranes briefly
+also called c convertase cleaves activates c
+c cleaved ca cb latter ability bind membranes
+attachment cb near leads lo formation ability cleave c initial component terminal sequence
+alternative complement pathway activated iga igg ige substances lipopolysaccharides plant bacterial polysaccharides enzymes
+biologic advantage pathway activated microorganisms absence antibody
+reactions pathway analogous classic pathway involve different proteins
+factor protease present plasma active form functions similarly
+acts c factor b form alternative pathway c convertase stabilized factor p properdin
+unstable decay leads regeneration cb capable interacting b generate new c convertase
+c convertase cleaves c form similar classic pathway acts c convertase
+point terminal sequences pathways
+cleavage c c convertases results ca cb
+cb combines membranes c form reacts c
+complex first stage membrane attack complex
+complex reacts c cause membrane damage
+addition c form results stable complex causes cell lysis bound surface cells
+control proteins exist classic alternative pathways
+act prevent continual complement activation
+classic pathway c esterase inhibitor inh binds cs cr prevent c c cleavage
+inh also inhibits activity kallikrein factor xi plasmin activated hageman factor otherwise activate c form cb
+c binding protein c bp binds cb enables another inhibitor cb inactivator bind results inability c form
+control proteins alternative pathway factor leads inactivation cb factor h bind b render susceptible cleavage also compete binding factor b
+another protein affects activity alternative pathway c nephritic factor cnef
+cnef autoantibody binds alternative pathway c convertase
+function similar properdin stabilize c convertase increase efficiency pathway proteins
+addition end result complement pathways e cell lysis many cleavage products complement components biologic functions listed table
+importance cb biologically active fragment emphasized
+many different cell types possess cb receptors
+include b lymphocytes erythrocytes platelets phagocytic cells polymorphonuclear leukocytes monocytes macrophages
+immune complexes microorganisms coated cb presence igg bind fc receptors phagocytosis cb receptor bearing cells enhanced
+absence igg cb promotes adherence
+complement system thus provides mechanism initiating inflammatory response cell lysis removal microorganisms immune complexes
+importance complement system apparent patients congenitally deficient complement components regulators complement pathways
+patients hereditary deficiency inh c c c c c manifest systemic lupus erythematosus lupus like illness
+raynaud phenomenon reported occur deficiency c c
+deficiencies c c c associated recurrent infections
+patients deficiency c recurrent pyogenic infections
+c dysfunction associated leiner disease gram negative infections eczema children deficiency terminal complement components c associated increased susceptibility neisserial infections including gonococcal meningococcal illnesses
+c deficiency frequent complement component deficiencies
+deficiency inh c esterase inhibitor associated hereditary angioneurotic edema characterized recurrent subepithelial swelling skin mucous membranes gastrointestinal upper respiratory tracts
+attacks often precipitated local trauma
+serum levels c c usually depressed patients especially attacks due constant activation c subsequent utilization substrates c c
+complement components especially c elevated acute phase reactants inflammatory disease
+situations levels components elevated unless increased complement utilization occurring
+diseases frequently associated altered complement levels due increased activation complement system chronic inflammatory disorders immune complexes play important pathogenetic role
+sle common rheumatic disease associated low serum complement levels especially c c cq resulting reduction ch
+complement levels usually lower patients active sle especially nephritis
+monitoring serial complement levels thus provides useful parameter disease activity patients
+often complement levels may fall prior flare disease activity patients appear well falling complement levels followed frequently signs disease activity
+similarly serum complement levels c c ch useful monitoring response treatment
+rheumatic diseases serum complement levels may reduced include vasculitis associated rheumatoid arthritis sjögren syndrome essential mixed cryoglobulinemia necrotizing vasculitis including patients polyarteritis nodosa
+patients vasculitis including rheumatoid vasculitis complement levels may normalize clinical improvement
+however complement levels reported correlate disease activity essential mixed cryoglobulinemia
+nonrheumatic diseases may also cause hypocomplementemia
+decreased serum complement levels may found patients poststreptococcal glomerulonephritis membranoproliferative glomerulonephritis associated cnef idiopathic glomerulonephritis
+infectious diseases infective endocarditis infected arteriovenous shunts sepsis viremias parasitemias also cause increased complement consumption
+several studies evaluated utility measuring complement components synovial pleural pericardial fluids differential diagnosis effusions
+complement levels fluids must compared measurements total protein fluid order valid
+furthermore measurements specific complement components may detect inactive well functional components result may give valid indication complement activity
+ch determinations meaningful
+studies shown ch levels synovial fluids patients inflammatory arthritis due rheumatoid arthritis sle lower normal whereas decreased degenerative joint disease inflammatory arthritides
+tests recommended routine evaluation synovial fluid however usually add little diagnostic evaluation
+ch c levels also reported reduced rheumatoid sle pleural effusions compared effusions associated malignancy see hunder
+measurement complement levels cerebrospinal fluid practical reliable however rapid decay complement activity
+immune complex formed antibody combines antigen
+general three major sites immune complex formation
+antibody reacts tissue cell antigens antigens fixed intercellular space immune complex remains localized
+immune complexes may also formed deposited locally near site injected secreted soluble antigen
+soluble antigens circulating intravascular space combine antibody circulating immune complexes formed
+circulating immune complexes depending physical pathogenetic properties deposited blood vessels filtering membranes
+normal individual serum immune complex levels low
+multiple tests determining levels serum immune complexes absolute results may variable among laboratories
+frequently used methods available antigen nonspecific rely ability immune complexes interact complement immunoglobulin receptors complement immunoglobulin fc surface cells
+widely used assays described
+cq binding assay measures binding cq immune complexes may performed solid phase fluid phase assay
+cq interacts complexed rather monomeric igg
+complexes containing igm igg igg bound well cq containing igg bound moderately well containing igg bound
+solid phase cq binding assay edta treated serum incubated plastic tube coated cq
+tube washed remove serum leaving adhered complexes
+quantification complexes achieved adding radiolabeled anti igg results expressed nanograms igg bound
+fluid phase cq binding assay done adding radiolabeled cq edta treated serum presence polyethylene glycol enhances precipitation cq bound immune complexes
+centrifugation radioactivity precipitate determined result expressed percentage cq bound
+conglutinin solid phase binding assay relies ability conglutinin bovine serum protein bind fixed c
+immune complexes contain c detected method
+test serum incubated plastic tubes coated conglutinin
+washing radiolabeled anti ig radiolabeled staphylococcal protein added tube amount isotope bound immune complexes measured
+another solid phase binding assay detects immune complexes containing c anti c assay
+test fab fragments anti c antibodies coated onto plastic tubes incubated serum
+quantification done using radiolabeled anti ig cq binding assay
+monoclonal rheumatoid factor binding inhibition assay mrf solid phase assay uses monoclonal igg rheumatoid factor coupled microcrystalline cellulose
+aggregates igg radiolabeled incubated test serum cellulose
+amount radiolabeled aggregated igg bound cellulose determined
+immune complexes present test serum compete radiolabeled aggregates binding thus reducing amount radioactivity bound cellulose
+test sensitive immune complexes containing igg rheumatoid factor present serum interfere test
+two assays binding immune complexes cells assessed raji cell assay platelet aggregation assay
+raji cells obtained human lymphoblastoid cell line derived burkitt lymphoma
+high affinity receptors cb cbi cd cq low affinity receptors immunoglobulin fc
+assay useful detecting immune complexes fix complement
+dilution test serum incubated cells allow binding complement containing immune complexes
+washing serum cells cell pellet resuspended treated radiolabeled anti igg antibody
+cells centrifuged washed radioactivity cell pellet counted compared standard curve
+test sensitive igg containing immune complexes presence antinuclear antilymphocyte antibodies give false positive results
+platelet aggregation assay sensitive test based binding immune complexes fc receptors surface platelets
+freshly prepared human platelets mixed serial dilutions test serum micro plates incubated overnight °c
+results expressed highest dilution serum causes platelet aggregation viewed dark field illumination
+technique detecting mixed cryoglobulins ig ig immune complexes precipitate cold discussed section cryoglobulins
+detection antigen present immune complexes done routinely screening test wide variety antigens possible
+diagnosis known however presence certain antigens hepatitis b determined
+obtain accurate results avoid alteration biologic activity physical properties immune complexes processing blood specimens several precautions taken
+specimen drawn clot tube without anticoagulant heparin edta citrate interfere tests
+allowing blood clot ambient temperature °c greater avoid cryoprecipitation serum stored °c possible
+repeated freezing thawing avoided
+techniques also available determine presence immune complexes tissue specimens
+fluorescein peroxidase labeled antibodies immunoglobulin classes complement components fibrin fibrinogen antigens applied tissue sections
+granular deposits immunoglobulin often presence complement considered represent immune complexes
+immune complexes may also identified electron dense deposits electron microscopy
+formation immune complexes normal result immune antibody response immune complexes pathogenetic
+sources antigens immune complexes may exogenous endogenous
+exogenous sources include food drugs heterologous serum proteins microbial infection
+endogenous sources antigens may autoantigens including autologous immunoglobulin tumor antigens
+formation immune complexes depends type antigen affinity antibody antigen avidity strength interaction antibody antigen
+ratio antigen antibody characteristics antigen antibody determine size stability immune complex lattice
+antigen large excess small soluble immune complexes formed fix complement initiate inflammatory response
+immune complexes formed excess antibody present likely large insoluble
+although complexes fix complement removed circulation phagocytic cells reticuloendothelial system causing harmful effects
+major site immune complex clearance liver kupffer cells
+immune complexes formed near equivalence especially slight antigen excess greatest pathologic potential
+complexes smaller soluble formed antibody excess likely persist circulation deposited blood vessels filtering membranes glomerular basement membrane
+amount tissue damage chronicity disease determined degree persistence antigenic stimulation subsequent immune complex formation deposition
+ability immune complexes activate complement results many biologic phenomena discussed section complement systems
+activation alternative pathway results solubilization immune complexes facilitates elimination
+binding complement fixed immune complexes erythrocytes receptors cbcbcr results removal phagocytic cells cb surface receptors
+immune complexes fixed complement thus bound cr erythrocyte cleared fixed tissue macrophages via fc receptors slowly
+inflammatory response induced complement activation also appears enhance clearance immune complexes extravascular tissues
+precise sequence events occurs pathologic process associated immune complex deposition actually known
+activation complement apparently important serum complement levels frequently decreased complement components often seen immunofluorescent studies tissues
+deposition immune complexes vessels thought occur following permeability changes vessels caused release vasoactive amines platelets basophils mast cells
+subsequent influx polymorphonuclear leukocytes results release proteases collagenases elastases tissue damaging substances
+vascular damage tissue destruction end result
+antigens antibodies combine form immune complexes may different various diseases associated immune complex formation diseases may similar multisystem features
+common manifestations circulating immune complex deposition include glomerulonephritis vasculitis arthritis skin lesions purpuric rash ulcers pleuritis pericarditis
+contrast local immune complex deposition associated tissue damage isolated organs autoimmune thyroiditis antiglomerular basement membrane disease
+demonstration immune complexes vascular damage tissue skin kidney may helpful establishing diagnosis diseases associated immune complex deposition vasculitis
+contrast single determinations immune complex levels serum much less diagnostic value
+presence high levels immune complexes may aid categorizing disease means diagnostic results must correlated clinical presentation
+serial immune complex levels may value monitoring fluctuations disease activity response therapy although laboratory tests may equally satisfactory readily available
+immune complexes detected serum andor tissues patients many rheumatic diseases wide variety infectious malignant non rheumatic chronic inflammatory conditions
+rheumatic diseases immune complexes believed pathogenetic role include sle adult juvenile rheumatoid arthritis mixed connective tissue disease cutaneous vasculitis mixed cryoglobulinemia possibly polyarteritis nodosa wegener granulomatosis scleroderma
+four immune complex assays useful discriminating sle normal patients raji cell assay absence lymphocytotoxic antibodies cq liquid phase binding assay platelet aggregation assay cq solid phase assay
+last test also shown correlate disease activity especially renal disease
+antigenic component complexes widely variable
+rheumatoid arthritis presence serum immune complexes best detected raji cell cq binding assays occur patients
+high prevalence positive immune complex assays rheumatoid arthritis determination immune complex levels generally thought helpful making diagnosis rheumatoid vasculitis
+immune complexes also detected synovial fluid believed pathogenetic significance
+increased levels circulating immune complexes reported nearly patients mixed connective tissue disease positive raji cell assay approximately positive cq binding assay monoclonal rheumatoid factor inhibition assay
+antigens complexes unknown limited experience defining role immune complexes changes serum levels disease activity
+significance precise pathogenetic correlation circulating immune complexes wegener granulomatosis yet known
+patients scleroderma multisystem autoimmune disease generally vasculitis
+positive results circulating immune complexes reported using raji cell assay correlated presence serum antinuclear antibodies
+positive cq binding assay tests also reported correlated presence serum rheumatoid factor pulmonary disease
+hepatitis b surface antigen identified vascular lesions polyarteritis nodosa patients disease reported circulating immune complexes
+major histocompatibility complex mhc located short arm chromosome humans
+genes coded region determine structure antigens found cell surface human leukocytes hla cells
+three major classes hla class includes gene products encoded b c loci class ii includes molecules encoded region genes class iii includes complement molecules
+three subregions locus called dp formerly sb dq dr
+dq dr regions shown code region alloantigen systems mb mt dc te br
+products b c loci glycoprotein antigens associated b microglobulin surface nucleated cells platelets
+products region loci composed two polypeptide chains b found surface b cells macrophagesmonocytes activated cells cell types
+multiple alleles many gene loci identified
+group alleles located single chromosome either maternal paternal origin called haplotype
+alleles individual homozygous gene alleles different heterozygous
+genes define genotype individual expression genotype phenotype
+usually alleles expressed thus codominant
+world health organization hla nomenclature committee responsible officially approving allele
+antigen named according gene locus letter allele number e g b dr
+letter w locus designation indicates antigen recognized provisionally nomenclature committee except case c loci w used distinguish hla antigens terminology used complement components
+technique identifying class antigen specificities requires use alloantisera antibody activity specific hla
+sera usually obtained multiparous women exposed foreign hla
+standard technique microcytotoxicity assay
+multiple alloantisera specificity hla b c antigens placed wells microtiter plates incubated peripheral blood lymphocytes individual
+complement added following incubation dye added taken dead cells killed alloantibodies
+alloantisera specificity antigen lymphocyte surface elicit killing cells
+hla phenotype thus determined pattern reactivity determined cell killing
+similarities differences class ii antigens determined one way mixed lymphocyte reaction mlr
+assay lymphocytes one individual cultured lymphocytes another
+stimulator lymphocytes treated irradiation mitomycin c respond
+differences haplotypes determined lymphocyte proliferation uptake tritiated thymidine added culture
+method adequate determining histocompatibility transplantation genetic analysis since proliferative response occurs heterozygous lymphocytes differ one allele
+genetic analysis homozygous stimulator cells must used
+hla dr dq antigens surface b lymphocytes defined b cell alloantisera
+technique similar used class antigens except enriched b cells used
+monoclonal antibodies activity many class class ii antigens developed used identification specific antigen instead alloantisera
+hla dp antigens dpw dpwb identified typed primed lymphocyte typing
+primed lymphocytes prepared incubation stimulator cells matched hla b c dr dq antigens differ dp
+cells primed cultured unknown cells uptake tritiated thymidine primed cells indicates unknown cells dp antigen primed lymphocytes sensitized
+functions class class ii antigens known largely studies animals appear similar humans
+generally class antigens function recognition antigens graft rejection cell mediated lysis killer lymphocytes
+perhaps important class antigens function recognition sites viruses
+order cytotoxic lymphocytes kill virus infected cells recognize antigen context class antigen cytotoxic lymphocytes must bear identical class antigen
+class ii antigens function presentation antigen cells macrophages recognition sites interaction immunocompetent b cells
+reasons association certain hla antigens specific diseases unknown
+one hypothesis presence specific cell surface antigens determines type response lack response foreign self antigen thereby leading pathologic condition production autoantibodies
+another hypothesis specific hla antigens act receptors agents viruses toxins foreign substances etiologic certain diseases
+third possibility hla antigens structurally immunologically similar agent cause disease
+agent recognized self immune response results agent could cause pathologic effects without interference
+alternative response could recognition exogenous agent foreign thereby resulting immune response cross reacts self resulting autoimmune phenomena
+another mechanism hla genes may predispose autoimmunity called transcomplementation transassociation
+certain b chains different class ii molecules become paired immune response may result likely cause disease
+shown sjögren syndromesle highest autoantibody levels found dqwdqw heterozygotes
+rheumatic diseases known associated certain hla antigens listed table
+determination hla types patients diseases unknown etiology done primarily research purposes attempts characterize disease better understand etiology
+closely linked association hla b antigen ankylosing spondylitis
+least patients ankylosing spondylitis b positive
+association b similar spondylitides reiter syndrome spondylitis psoriatic arthritis spondylitis inflammatory bowel disease lower
+isolated peripheral joint arthritis latter two conditions associated hla b however
+hla b present american caucasian population american black population
+approximately b positive individuals likely develop clinically significant ankylosing spondylitis
+test determining presence b antigen expensive arguments made utility test differential diagnosis ankylosing spondylitis since disease could still present b negative patient majority b positive individuals develop disease
+used routine screening test may helpful confirming clinical suspicion diagnosis clear
+examples include presence apparently inflammatory low back pain young patients sacroiliac roentgenographic changes present incomplete reiter syndrome patients lack extraarticular signs disease juvenile arthritis patients seronegative rheumatoid factor antinuclear antibody prognostic indicator desired
+another clinical situation determination hla type may useful applies rheumatoid arthritis
+whereas dr antigen shown associated seropositive rheumatoid arthritis incidence hla dr positivity reported high rheumatoid arthritis patients develop proteinuria thrombocytopenia gold therapy proteinuria penicillamine therapy
+presence dr antigen patient developed proteinuria due gold therapy would suggest penicillamine therapy might also cause proteinuria

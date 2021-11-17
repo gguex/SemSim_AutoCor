@@ -1,0 +1,357 @@
+abdominal imaging encompasses range techniques evaluating diseases liver gallbladder pancreas well identifying nature source gastrointestinal bleeding
+computed tomography ct radiographic technique employs computer construct image radiographic attenuation data
+diagnostic ultrasound noninvasive imaging modality uses high frequency sound waves generate images body
+magnetic resonance imaging mri utilizes physical principles unclear magnetic resonance image body
+radionuclide imaging detection gamma radiations emitted site sites localization provides functional information organ system
+double contrast barium studies use combination air barium contrast medium identify lesions small mm
+indications techniques variations depend particular problem investigated discussed clinical significance section
+ct examinations performed radiographic study requiring barium unless reasons scheduling ct examination dependent result barium study
+barium contrast cause artifacts significantly degrade image especially intestinal barium collection large
+patients clear liquids hours prior ct scan
+scanning abdomen pelvis absolutely essential gastrointestinal tract opacified
+step necessary unopacified bowel mimic lymph nodes malignant masses abscesses
+indeed common error body ct scanning failure give adequate amounts oral contrast material identify alimentary tract correctly
+opacification gi tract usually accomplished oral occasionally rectal administration solution iodinated contrast dilute solution barium
+intravenous contrast material identical used intravenous pyelography greatly assists interpretation opacifying normal vascular structures making nonenhancing masses apparent
+contrast enhanced ct particularly given bolus multiple rapid sequential dynamic scans seven second scans per minute provides good estimate tissue tumor vascularity
+radiation exposure ct scanning small compares favorably conventional imaging modalities
+average abdominal scan delivers maximum surface dose rad internal organ dose smaller
+equivalent minute fluoroscopy one third one fifth radiation exposure standard radiographic study barium enema excretory urogram
+unlike chest film excretory urogram barium enema performed standard fashion ultrasound much problem oriented imaging technique
+excellent communication clinician radiologist essential tailor direct appropriate examination patient specific problem
+sonography provides information concerning location nature size internal structure independent organ function without ionizing radiation contrast media
+studies performed quickly safely minimum patient preparation cooperation
+studies performed patient bedside
+studies date determined untoward effects ultrasound mammalian tissues intensity used diagnostic sonography
+indeed ultrasound examination fetus routine procedure
+developments radiology caused much excitement anticipation mri combines advantages imaging modalities without sharing disadvantages
+mri offers superb tomography excellent spatial resolution like ct offers possibility following metabolic processes physiology like nuclear medicine affords tissue information without radiation like ultrasound
+also mri known biologic ill effects
+contraindications procedure include pacemakers metallic implants head critically ill patients need life support systems metallic objects must kept away powerful magnetic field claustrophobia
+radionuclide imaging become quite sophisticated last several years
+large variety radiopharmaceuticals increasing awareness pharmacokinetics normal disease states increased number clinical applications
+nuclear imaging utilizes organ system specific pharmaceuticals technique superior study function
+instances however structural anatomical information provided nuclear studies inferior standard radiography ct mri ultrasound
+double contrast studies esophagus stomach duodenum small bowel colon dramatically improved sensitivity accuracy radiology detection gastrointestinal abnormalities
+air administered per rectum colon studies g effervescent granules produce cm carbon dioxide ingested orally distend stomach
+lesions seen profile outer surface gut also visualized lumen
+small lesions painted barium obscured large amounts barium
+thus mm polyps erosions aphthous ulcers detected
+small bowel enteroclysis gained popularity evaluation chronic gastrointestinal bleeding routine barium endoscopic studies negative
+following peroral placement tube distal duodenum large volumes barium rapidly instilled without double contrast techniques
+tumors inflammatory diseases small bowel detected small bowel follow series may identified enteroclysis
+x rays standard radiography detected film ct x ray photons strike radiation detectors produce minute electrical impulse proportional intensity x ray beam
+electrical current quantified numerically registered form computer stored data
+visual display produced assignment varying shades gray individual picture elements cathode ray tube monitor according relative attenuation values
+ct images created manipulated computer highlight certain density differences reformatted give images sagittal coronal transverse oblique plane
+ct exquisite density discrimination accounts ability detect lesions small mm
+ultrasound scans obtained placing transducer sound generator sound receiver skin region interest directing narrow acoustic beam body
+sound beam passes tissue part sound absorbed part reflected interfaces tissues different acoustic impedance acoustic impedance product density tissue velocity sound passing
+image formed collecting returning echos displaying position intensity cathode ray tube
+echo pattern tissue depends upon homogeneity cellular elements acoustic impedances
+nonhomogeneous tissue greater variety acoustic impedances greater internal echos homogeneous tissue uniform acoustic impedance fewer echos created
+therefore fluid filled cysts homogeneous content generate internal echos whereas fat many cellular elements produce many
+characteristic echo pattern tissue altered influx fluid cellular infiltrates tumor fibrosis changes well alteration organ size form basis sonographic detection disease
+mri use ionizing radiation depends upon strong magnetic field gauss
+tesla radiofrequency pulses range mhz
+earth magnetic field comparison
+gauss
+placed strong magnetic field certain nuclei body hydrogen phosphorus sodium become aligned magnetic field
+nuclei perturbed application short radiofrequency pulses
+nuclei temporarily lose orientation magnetic field become realigned give radiofrequency energy detected antennas within magnet
+computer determines location intensity radiofrequency pulses data constructs image
+images may obtained plane
+since body composed primarily water hydrogen important nucleus imaged mri
+pathologic processes alter amount intracellular water type water tightly bound proteins loosely bound proteins free water within cytoplasm cell
+subtle changes intracellular water basis detection disease mri
+higher magnetic field strengths
+tesla nuclei body sodium phosphorus imaged spectroscopy performed
+permits detection pathology macroscopic even microscopic changes morphology occur
+conventional radiography ct depend upon transmitted x rays produced x ray tube nuclear imaging examinations depend emitted gamma rays vivo radiopharmaceuticals previously delivered parenterally orally
+tracer localization may occur one metabolic physical mechanisms active transport phagocytosis cell sequestration capillary blockage simple exchange diffusion compartmental localization antigen antibody reaction
+common isotope used abdominal imaging technetium mtc bound many chemicals whose structures determine vivo distribution chemical complex
+conventional single contrast barium studies lesions detected deforming outer contour barium column
+small lesions obscured sea intervening barium
+air contrast studies small amount thick barium given order coat mucosal surface gut gas given distend lumen
+principle underlying double contrast barium study
+past decade abdominal imaging revolutionized development implementation new technologies technical improvements widespread use established methods
+plethora new constantly evolving techniques often confronts clinician tantalizing albeit expensive choice work patients
+appropriate application imaging modalities major abdominal problems depends taking algorithmic approach specific problems
+careful history physical examination combined routine liver function tests suggest etiology hyperbilirubinemia patients jaundice
+patients however clinical distinction diffuse parenchymal disease focal liver disease extrahepatic biliary obstruction possible
+number invasive ercp ptc see noninvasive ct ultrasound modalities available evaluation jaundiced patient fig
+early recognition jaundice caused extrahepatic biliary obstruction important prolonged obstruction may lead deterioration liver function recurrent bouts cholangitis sepsis occasionally hepatic abscess formation
+reasons ultrasound andor ct recommended patients suspected obstructive jaundice ferrucci et al
+indeed low risk high yield noninvasive techniques detect segmental biliary dilation early dilation extrahepatic bile ducts patients elevated alkaline phosphatase normal bilirubin levels
+ultrasound initial screening procedure patients suspected obstructive jaundice rapid safe readily available accuracy detecting obstruction ferrucci et al
+dilated intrahepatic ducts appear branching tubular structures running adjacent portal venous structures
+extrahepatic obstruction diagnosed common hepatic duct anterior portal vein larger mm
+mass demonstrated sonographically guided aspiration biopsy performed
+ultrasound superb diagnosis cholelithiasis somewhat less sensitive diagnosis choledocholithiasis
+unfortunately bowel gas body habitus makes evaluation distal common bile duct difficult patients
+etiology level obstruction apparent computed tomography recommended
+sensitivity computed tomography ct detecting biliary obstruction comparable ultrasound recommended screening tool much expensive less available time consuming uses ionization radiation baron et al
+intrahepatic extrahepatic ducts well seen sonographicaliy normal caliber radiologic evaluation needed patients
+ct plays major role patients sonography indicates ductal dilation clearly establish level cause obstruction
+ct initial imaging procedure obese patients primary biliary enteric anastomoses patients often unsatisfactory ultrasound study
+ct provides unrivaled look porta hepatis pancreas accuracy detecting level biliary obstruction vs
+ultrasound accuracy determining etiology vs
+ultrasound baron et al
+ct diagnosis biliary obstruction based demonstrating dilation intrahepatic extrahepatic bile ducts
+dilated intrahepatic ducts appear linear branching circular structures near water density enlarge approach porta hepatis
+computed tomography accuracy detecting choledocholithiasis often obviates need invasive diagnostic procedures patients obstructive jaundice due stone disease
+mass causing obstruction identified aspiration biopsy ct guidance performed
+offending lesion tumor staged ct since retroperitoneal mesenteric adenopathy well hepatic adrenal metastases readily diagnosed modality
+ultrasound reveals dilated ducts gallbladder calculi
+ct usually effective finding cause extrahepatic biliary obstruction
+ct demonstrates lesions invasive studies indicated
+suggested endoscopic retrograde cholangiopancreatography ercp performed patients without intrahepatic duct dilation percutaneous transhepatic cholangiography ptc attempted first patients dilation
+true ptc successful opacifying nondilated ducts considerations potential interventional procedures kept mind ferrucci et al
+choice ercp ptc made basis provisional diagnosis established data available point
+stone common bile duct likely ercp performed confirmation removal endoscopic papillotomy
+malignant cause biliary obstruction likely ptc may guide temporary permanent biliary drainage preferred
+event either technique fails serve backup
+ercp several unique advantages including endoscopic visualization intestine visualization lower portion completely obstructed common bile duct evaluation nondilated intrahepatic system e g sclerosing cholangitis delineation pancreatic duct
+intravenous cholangiogram little role modern diagnostic scheme
+distal portion common bile duct well visualized even routine tomography biliary tree poorly opacified serum bilirubin level mgdl serum alkaline phosphatase rising
+also reactions contrast medium frequent intravenous cholangiography radiologic contrast agent
+poor alternative ptc ercp
+mtc hida performed newer analogues mtc labeled iminodiacetic acid derivatives permits visualization biliary tree serum bilirubin high mgdl
+satisfactory radionuclide study show size common bile duct dynamics excretion duodenum
+examination however identify cause obstruction used backup procedure rare instances ultrasound ct ptc ercp fail solve diagnostic problem
+useful childhood jaundice diagnosis obstructed biliary enteric anastomoses
+ability ct ultrasound characterize diffuse parenchymal disease yet matched exquisite accuracy modalities detecting obstructive jaundice
+ct accurately depict liver size fatty infiltration hemosiderosis copper deposition strongly suggest diagnosis cirrhosis demonstrating signs portal hypertension e g ascites peritoneal retroperitoneal varices changes liver size
+ultrasound accuracy detecting diffuse parenchymal disease diagnosis cirrhosis suggested demonstrating varices recanalization portal vein relative preservation caudate lobe size presence right lobe atrophy berland
+radionuclide mtc sulfur colloid liver spleen scan still sensitive noninvasive means demonstrating hepatic parenchymal disease
+patients icterus due primary secondary neoplasms causing hepatic replacement segmental biliary obstruction ct ultrasound mtc sulfur colloid scan mri sensitive diagnostic tools
+diagnosis hepatic metastases common clinical problem significant prognostic therapeutic implications
+choosing method examine liver depends anticipated benefits detecting specifying disease well available technology expertise delays scheduling risks expense
+ct ultrasound nuclear medicine mri useful regard
+question naturally arises technique used screening tool
+despite obvious clinical importance subject good prospective studies comparing sensitivity specificity ct mri ultrasound hepatic scintigraphy detection hepatic metastases
+scintigraphy using mtc labeled sulfur colloid quick low risk procedure less operator dependent radiographic approaches suspected hepatic metastases
+radiopharmaceutical phagocytized reticuloendothial system liver spleen bone marrow
+normal functioning liver spleen tissue appear radioactive hot areas whereas cold areas lack functioning reticuloendothial tissue
+space occupying lesion replaces displaces normal kupffer cells appear holes cold spots
+major drawback modality lack specificity metastases cysts abscesses hepatomas similar appearance
+also radionuclide scanning detect lesions less cm deeply seated substance liver
+ultrasound specific accurate method utilize ionizing radiation
+metastases may appear heperechoic hypoechoic complex lesions may target appearance figure
+abnormalities pathologically specific
+ultrasound exquisitely operator dependent may limited body habitus bowel gas
+ct detects hepatic metastases virtue low attenuation compared normal hepatic parenchyma figure
+intravenous contrast material usually exaggerates differences density mass lesions surrounding parenchyma
+metastases lower density normal parenchyma dense cysts
+metastases also less well circumscribed less unifonn density cysts
+literature suggests ct first choice examining patients suspected metastatic liver disease bernardino
+based greater sensitivity specificity contrast enhanced ct compared sonography scintigraphy focal liver disease ability ct detect diffuse liver abnormalities greater ease standardizing ct examination interpretation ability ct predict histology many focal diffuse liver diseases accurately superiority ct defining characterizing extrahepatic abnormalities e g adrenal metastases patients malignancies
+ultrasound may done first fast ct scanners sec available intravenous contrast administered problems arise technique patients requiring sonography reasons delays scheduling ct scans long
+radionuclide liver spleen scanning play limited role early evaluation liver disease reserved occasionally clarifying presence diffuse liver disease patients difficult study either ct sonography gore et al
+mri evolved competitive modality detection characterization liver metasteses
+reports claim superiority regard expense lack availability still militate routine use screening heiken et al
+approximately million people united states gallstones
+indeed cholecystectomies performed annually making common abdominal surgical procedure
+every patient eventually undergoes cholecystectomy estimated two five patients right upper quadrant pain requires gallbladder imaging gallstones
+four modalities currently available evaluation gallbladder oral cholecystogram ocg ultrasound ct mtc hida cholescintigraphy berk
+ocg patient consumes g iapanoic acid telepaque iodinated agent absorbed small bowel conjugated liver excreted bile concentrated gallbladder
+following day multiple radiographs gallbladder obtained
+although ocg accuracy several major limitations
+peak gallbladder opacification occurs within hours suitable patients present acute right upper quadrant pain
+double dose examination required normal patients necessitating prolonged hospitalization return visit
+ionizing radiation used patients develop diarrhea contrast tablets
+also many factors unrelated gallbladder function malabsorption poor liver function biliary obstruction interfere examination
+although ocg gold standard decades largely supplanted ultrasound imaging modality choice diagnosis disorders gallbladder biliary tract
+advantages ultrasound include rapid diagnosis gallstones minutes vs
+hours ocg absence ionizing radiation absence side effects contrast medium ability perform study presence various disorders e g
+liver disease jaundice malabsorption pancreatitis pregnancy
+sonographically gallstones produce echogenic foci within gallbladder show movement change position produce posterior acoustic shadow figure
+shadow produced gallbladder absorbs sound beam converts heat
+therefore sound available interrogate deeper structures thus shadow formed
+three conditions must fulfilled make diagnosis gallstones
+meticulously performed real time sonography detect calculi small mm sensitivity reported high laing et al
+gallbladder identified fasting patients appears saccular anechoic structure region interlobar fissure liver laing et al
+ideally patient fasting hours allow maximum filling distention gallbladder
+patient course scanned time
+failure ultrasound identify gallbladder fasting patient usually indicates shrunken stone packed organ
+gallbladder studied common hepatic duct visualized anterior portal vein
+normal patient duct mm less
+patient cholecystectomy common hepatic duct increase mm size patients remains mm smaller
+gallbladder wall thickness also assessed normally less mm size
+thickened variety conditions including acute chronic cholecystitis ascites total parenteral nutrition portal hypertension leukemia lymphoma
+tiny stones biliary sludge comprising cholesterol crystals calcium bilirubinate granules produce fine echogenic pattern gallbladder without shadowing
+occurs biliary stasis example patients fasting total parenteral nutrition recent surgery
+echogenic material layers dependent portion gallbladder
+calculus becomes impacted near neck gallbladder cystic duct patient experience biliary colic ultimately acute cholecystitis
+currently controversy radiology preferred technique diagnosis acute cholecystitis
+two modalities great value evaluating patients cholescintigraphy ultrasound figure
+ultrasound demonstrate gallstones occasionally thickening gallbladder wall
+demonstration pericholecystic fluid suggestive diagnosis uncommon finding
+also sonographic murphy sign gallbladder exquisitely tender transducer passed
+absence sign especially useful tenderness arises adjacent structure right kidney gastric antrum
+even lacking specific features suggest acute cholecystitis one need prove cystic duct obstructed justify cholecystectomy patient typical pain gallstones laing et al
+hida gallbladder scan another excellent modality diagnosis cholecystitis
+performed intravenous injection tagged compounds cleared rapidly excreted hepatocytes biliary tree
+isotope fills gallbladder retrograde passage cystic duct enters duodenum via common duct
+normally gallbladder duodenum filled radioisotope hour less
+gallbladder visualized cystic duct patency assured likelihood acute cholecystitis small
+modality several drawbacks however
+first stones within gallbladder visualized
+second failure visualize gallbladder suggestive acute cholecystitis prove diagnosis
+gallbladder patients history alcoholism pancreatitis total parenteral nutrition fasting prolonged periods may fail opacify
+additionally hida scan visualizes hepatobiliary system provide view surrounding structures
+ultrasound affords visualization pancreas liver right kidney may simulate pain acute cholecystitis
+important consider view fact one third patients symptoms typical acute cholecystitis disease
+reasons ultrasound recommended initial imaging procedure gallbladder
+demonstrates stones clinical history characteristic cholecystectomy performed
+however patient clinical condition relative contraindication emergency surgery proof patient signs symptoms due cystic obstruction obtained hida scan
+traditional radiographic techniques plain films barium studies image pancreas indirectly
+indeed pancreas long considered hidden organ abdomen difficult examine clinically radiographically
+development ct ultrasound opened new frontiers noninvasive detection pancreatic peripancreatic lesions allowing direct visualization pancreatic parencyma yankaskas et al
+ercp useful diagnostic adjunct regard
+pancreatitis common clinical entity associated considerable morbidity mortality
+alcoholism common bile duct stones trauma drugs hyperlipidemia pancreas divisum may precipitate disease
+spectrum clinical presentations broad acute epigastric pain nausea vomiting indicative acute pancreatitis fever septicemia indicating pancreatic abscess shock intestinal hemorrhage associated hemorrhagic pancreatitis bowel necrosis chronic pain severe steatorrhea malabsorption indicative pancreatic insufficiency
+acute self limited pancreatitis pancreatic imaging probably necessary
+number complications pancreatitis must diagnosed optimal patient management
+include pancreatic fluid collections pseudocysts phlegmon pancreatic abscess arteriovenous fistulas biliary obstruction hemorrhage
+pancreatic imaging important clinical settings order determine whether pancreas source symptoms determine extent complications
+acute pancreatitis regardless cause associated edema causes enlargement irregularity diffusely decreased echogenicity pancreas ultrasound
+acute uncomplicated pancreatitis pancreas enlarged low density ct
+choice ct ultrasound imaging acute pancreatitis dictated expertise examiner equipment available
+many patients acute pancreatitis may ileus preclude thorough sonographic evaluation
+ct additional ability image tail pancreas lesser sac various peritoneal compartments
+important defining true extent fluid collections pseudocysts
+ct also preferred imaging pancreatic abscesses uncommon complications disease
+reasons ct best single imaging modality diagnosis pancreatitis complications williford et al
+ultrasound however used follow size pseudocyst means employed evaluate gallbladder gallstones major cause pancreatitis united states
+complications acute pancreatitis common detected early often treated without sequelae
+primary role cross sectional imaging disorder
+intrahepatic extrapancreatic fluid collections occur patients pancreatitis figure
+although term pseudocyst implies presence wall containing structure fluid collections often uncontained poorly circumscribed
+fluid collections rich proteolytic enzymes frequently found lesser sac may extend along retroperitoneal tissue planes direction
+may also dissect mediastinum reach neck retroperitoneum far groin
+wall pseudocyst initially formed whatever tissue structures first limit spread
+pseudocyst matures evoked inflammatory reaction encapsulates contents pseudocyst granulation tissue ultimately fibrous wall
+ultrasound pseudocysts typically round smooth cystic collections detected accuracy
+ct pseudocysts may first soft tissue density might better termed phlegmon boggy edematous pancreas
+maturation becomes lower density
+ct preferred modality pseudocysts detect extrapancreatic locations hindered bowel gas
+pseudocyst followed resolution demonstrated
+pseudocysts dynamic lesions increase decrease size several days remain stable months
+first weeks resolve spontaneously chronicity sets spontaneous resolution much less likely rate complications rises weeks
+complications include infection intraperitoneal rupture erosion adjacent arteries gastrointestinal hemorrhage occlusion splenic vein
+pancreatic abscess another common serious complication acute pancreatitis occurring patients hemorrhagic necrotizing pancreatitis patients pancreatitis
+untreated mortality reaches
+ct preferred imaging modality diagnosis abscess
+usually diagnosed seeing gas within pancreatic bed
+diagnosis chronic pancreatitis suggested previous attacks pancreatitis recurrent pain steatorrhea malabsorption diabetes weight loss abdominal pain
+ultrasound disorder may variety presentations often gland small increased echogenicity
+sometime calcifications cast acoustic shadow
+ct preferred modality readily identify subtle calcifications abnormal ductal anatomy
+importantly ct help differentiate pancreatic malignancy chronic pancreatitis
+ercp another useful diagnostic technique high degree accuracy detecting changes chronic pancreatitis best way evaluate ductal system event surgical drainage comtemplated partial pancreatectomy indicated
+carcinoma pancreas remains elusive tumor exocrine pancreatic neoplasms present nonspecific symptoms
+carcinoma pancreas fifth common cause cancer death united states
+five year survival dismal cures rare tumor seldom diagnosed prior extensive local growth metastatic spread
+advent ct pancreatic carcinoma diagnosed resectability determined histologic confirmation obtained outpatient basis without resorting laparotomy
+overall accuracy ct detecting pancreatic carcinoma high ranging
+ct established primary screening modality pancreatic tumors
+ct diagnosis pancreatic carcinoma based gross alterations size shape gland identification disease spread peripancreatic vascular nodal structures
+two thirds carcinomas appear pancreatic head remainder occurring body tail
+ct findings pancreatic carcinoma figure
+include pancreatic mass low attenuation seen within mass celiac superior mesenteric artery encasement tumor dilation pancreatic duct biliary dilation hepatic metastases atrophy pancreatic tail
+tumors body tail often larger head time initial evaluation asymptomatic longer period
+mass defect contour abnormalities identified secondary signs tumor may helpful reaching diagnosis
+small tumors head may produce contour defects yet cause dilation biliary tree pancreatic duct
+absence calculi dilation often associated carcinoma pancreatic head
+cases time diagnosis carcinoma made tumor unresectable
+order eliminate need exploratory laparotomy tumor resectability must assessed tissue confirmation obtained
+primary ct criteria unresectability hepatic regional lymph node metastases retroperitoneal extension tumor enveloping superior mesenteric artery splenic vein celiac artery inferior vena cava loss posterior fat planes separate pancreas retroperitoneal lymph nodes invasion contiguous organs
+secondary signs include ascites splenomegaly due splenic vein occlusion mesenteric varices due obstruction superior mesenteric vein
+ct directed fine needle aspiration biopsy effective means establishing histologic diagnosis carcinoma pancreas
+one series accuracy sensitivity specificity reported hessel et al
+technique usually obviates need exploratory laparotomy resulting considerable savings money patient discomfort disease survival years receive operation gore et al
+carcinoma pancreas usually presents mass low amplitude echos ultrasound
+abnormalities pancreas discerned noting change typical echogenic texture well perception bulge contour gland
+small focal carcinomas changed boundaries gland may missed
+neither ct ultrasound routinely able detect early carcinoma pancreas asymptomatic curable
+another difficulty fact focal enlargement pancreas seen tumor pancreatitis
+distinction made either modality unless ancillary findings neoplasm adenopathy hepatic metastases direct invasion tumor around vessels characteristic carcinomatous extension
+ultrasound ct proven quite useful evaluation pancreatic pathology ct scanning reliable initial imaging procedure suspicion pancreatic carcinoma
+angiography ercp continue play important diminished role diagnosis pancreatic carcinoma
+ercp useful ct findings normal equivocal patient high index suspicion carcinoma
+indeed ercp probably accurate sensitive means detecting small pancreatic tumors
+also ct equivocally abnormal without ancillary findings tumor ercp may assist confirming diagnosis gore et al
+expeditious work patient gastrointestinal bleeding essential may presenting sign gastric colonic neoplasm mortality rate patients present acute gastrointestinal hemorrhage
+extensive gamut common uncommon causes upper lower gastrointestinal hemorrhage may evaluated variety imaging techniques barium contrast studies fiberoptic endoscopy radionuclide scans arteriography
+rational diagnostic approach complex problem involves series decisions based clinically suspected origin bleeding well severity hemorrhage
+simple single schema applied gastrointestinal tract whole
+prevailing medical opinion favors endoscopy initial diagnostic procedure patients massive upper gastrointestinal bleeding steer silen
+endoscopist visualize superficial mucosal lesions esophagitis gastritis superficial duodenal gastric erosions well mallory weiss tears varices ulcers
+endoscopy usually determine lesion responsible hemorrhage important consideration patients multiple lesions e patients cirrhosis portal hypertension
+endoscopist affect therapy patients bleeding example sclerotherapy varices laser coagulation larson farnell
+important realize majority patients endoscopic visualization bleeding source alter morbidity mortality length hospital stay transfusion requirements
+although endoscopy excellent evaluation upper gastrointestinal hemorrhage role colonoscopy massive colonic hemorrhage limited
+presence stool large amounts blood severely limit visualization colon
+flexible sigmoidoscopy value identifying site hemorrhage rectum well documenting presence fresh blood originating level
+barium gut interferes subsequent endoscopy angiography radionuclide procedures barium upper gi series used initial evaluation acute hemorrhage
+double contrast barium studies useful endoscopy failed angiography attempted cessation bleeding medical therapy stops hemorrhage endoscopy contraindicated endoscopy negative angiography contemplated
+barium enema limited role patients acute massive lower gastrointestinal hemorrhage bleeding diverticular disease vascular malformation
+although double contrast barium enema superb detection carcinoma polyps rarely present massive hemorrhage
+ischemic colitis usually due nonocclusive low flow states may present acute lower gastrointestinal hemorrhage
+patient history clinical pattern suggest diagnosis barium enema examination may procedure choice
+modern angiographic methods revolutionized diagnostic therapeutic approach acute gastrointestinal hemorrhage
+arteriography used patients continue bleed despite conservative medical management steer silen
+upper gastrointestinal tract arteriography used whenever bleeding rapid efficient endoscopy endoscopy inconclusive patient poor surgical candidate vigorously bleeding require therapeutic transcatheter hemostasis
+virtually major causes hemorrhage identified specific etiology dictate whether intra arterial infusion vasopressin transcatheter embolization employed
+bleeding site identified patients
+transcatheter hemostatic method permit time vascular volume replacement patients hemostasis fails temporary
+buys time get patient stable condition preparation surgery
+arteriography procedure choice patients acute lower gastrointestinal hemorrhage bleeding colonic diverticula angiodysplasia
+additionally arteriography useful diverticular hemorrhage vasopressin infusion selective embolization highly successful stopping hemorrhage
+many patients surgery completely avoided
+arteriography demonstrate small dilated clusters arteries veins characteristic angiodysplasia even patient actively bleeding
+arteriography positive patient actively bleeding rate
+mlmin
+hemorrhage slow intermittent stopped arteriography negative
+advocate utilizing nuclear techniques document active bleeding starting angiogram invasive specific less sensitive examination
+nuclear imaging techniques shown localize occult gastrointestinal bleeding sites whether active intermittent rates low
+mlmin
+major techniques depend upon recognition radioactivity bowel lumen indicate hemorrhage
+one technique bolus injection mtc sulfur colloid radioisotope used liver spleen scan administered
+since reticuloendothelial system rapidly extracts colloid blood extravasated colloid bleeding site imaged high contrast within minutes
+low background activity time small amounts blood seen
+useful determine patient actively bleeding agent almost completely removed vascular space minutes
+bleeding must occur within minutes injection detected however
+examination positive angiography performed excellent chance bleeding site found therapy effected
+nuclear medicine study performed first sensitive save patient invasive procedure active bleeding detected
+principal shortcoming procedure like contrast angiography patient must actively bleeding relatively short temporal transit radioisotope blood
+also areas bleeding near liver spleen may missed
+another technique developed patient red blood cells labeled mtc pertechnetate
+red blood cells circulate normally serial images abdomen may reveal focal accumulation labeled cells gut lumen pattern fairly easy differentiate blood vessels
+serial images obtained hour period
+thus intermittent bleeding sites located geographic movement extravasated activity monitored periodically allowing precise anatomical localization bleeding site
+labeled cells gut lumen resorbed bleeding occurs time radiopharmaceutical injection imaging may identified
+bleeding starts stops course one day may thus detected
+technique differs angiography mtc sulfur colloid scans active bleeding time injection need present detection
+labeled red blood cell technique less sensitive requires bleeding rates near
+mlmin similar angiography
+sulfur colloid method superior active slow bleeders red blood cell method better intermittent bleeders
+bleeding found angiogram performed vasopressin infusion embolization surgery contemplated
+past decade evaluation upper lower gastrointestinal tracts revolutionized two major developments introduction flexible fiberoptic endoscopy widespread use barium double contrast radiography
+numerous studies validated diagnostic accuracy procedure inevitably resulted dilemma deciding study perform first given situation
+argue barium studies abandoned diagnosis gastric colonic lesions endoscopy colonoscopy assume primary role evaluating gastrointestinal lesions
+others suggested high quality double contrast study negative useful look elsewhere cause patient symptoms
+others believe colonoscopy air contrast barium enema endoscopy upper gastrointestinal series complementary procedures gelfund et al
+clearly role interrelationship double contrast barium studies endoscopy still evolving
+patients chronic gastrointestinal hemorrhage present guaiac positive stool iron deficiency anemia barium studies initial screening technique
+single contrast barium studies inaccurate compared endoscopy colonoscopy double contrast techniques significantly increase yield upper lower gastrointestinal barium studies
+indeed yield barium studies well performed similar endoscopy colonoscopy
+view fact barium studies one fourth one third cost endoscopy small complication rate barium studies screening technique
+patients chronic lower gastrointestinal blood loss flexible sigmoidoscopy air contrast barium enema performed
+tests normal evaluation stop
+air contrast barium enema discloses polyp colonscopy performed biopsy polypectomy
+patients suspected upper gastrointestinal hemorrhage air contrast study stomach esophagus duodenum performed first
+small bowel study performed small bowel pathology suspected
+endoscopy obtained clinical suspicion pathology remains high studies normal

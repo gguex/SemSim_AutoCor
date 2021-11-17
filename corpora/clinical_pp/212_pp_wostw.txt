@@ -1,0 +1,438 @@
+adverse drug reaction adr undesired unintended response drug occurs usual therapeutic doses
+hospitalized patients receive average drugs adrs may occur population
+allergic drug reaction one involving special biochemical mechanisms involved immunologic amplification
+fewer adrs allergic nature
+different types adrs summarized table
+care must exercised defining allergic reaction
+particular immunologic explanation untoward event accepted merely explanations lacking
+even care exact definition often remains difficult rechallenge suspected agent usually unethical
+features support allergic mechanism follows
+reaction takes form associated known immunologic mechanisms e g rash urticaria anaphylaxis serum sickness
+reaction explained basis known pharmacologic idiosyncratic effects drugs
+absence prior exposure reaction occurs days drug
+prior sensitization anaphylactic reaction usually occurs within minutes accelerated reactions within days
+features eosinophilia resolution withdrawal drug support diagnosis
+case drug fever patient often appears remarkably well despite height fever
+may explained release endogenous pyrogen interleukin absence toxemia septicemia
+seen figure finite number immunologic response mechanisms although one drug may activate one types
+also body limited number ways express inflammatory consequences immunologic amplification
+thus unlike pharmacologically mediated reactions observe clinically effect drug limited number immunologic inflammatory reactions drug
+reasons seldom particular allergic reaction pathognomonic particular drug
+history temporal relation drug administration occurrence reaction thus single powerful diagnostic tool disposal
+diagnosis adverse drug reactions rests careful history detailing composition offending drugs including nonpharmacologic additives e g tartrazine dye along sequential temporal relationship development undesired effect administration drugs
+apart unlikely option rechallenge tests vivo vitro regarded correlates diagnosis make diagnosis
+example positive skin test prove etiologic role allergic event
+negative skin test exclude allergic relationship may mediated degradation product drug immunologic mechanisms revealed skin testing
+hence tests positive negative must interpreted context history particular attention following
+list drugs routes administration taken patient recalled
+ideally include agents taken years
+construct table listing ingredients medications including pharmacologically inert components filler dyes
+example allergic reaction procaine penicillin may due allergy penicillin caine anesthetics
+age drug also included shelf life may exceeded many years
+chemical nature drugs carefully analyzed drugs different therapeutic classes may belong chemical family e g sulfonamide antimicrobials sulfonyl urea hypoglycemics lidocaine antiarrhythmic local anethestic
+analyze table prior administration similar clinical components e g member penicillin sulfonamide families
+document time intervals administration drugs development untoward event
+stated anaphylactic reaction usually occur within minutes
+immunologic reaction usually take days develop
+latter time frame represents need clonal expansion reactive b andor lymphocyte populations
+exception time scale patients prior exposure drug called accelerated reaction may occur hours
+patients may recall prior administration drug however may received unwittingly relative physician foods contaminated drugs
+document description untoward event carefully exclude recognized patterns immunologic reactivity
+include persistence worsening continued administration drugs long half lives improvement discontinuation
+chapter provide encyclopedic treatment allergic drug reactions
+instead problem solving framework examples provided assist reader understanding anticipating diagnosing preventing reactions
+addressing objective important deal widely held misconceptions
+adverse drug reactions regarded nuisance events occasionally complicate patient management
+roses without thorns adrs inevitable consequence therapeutic intervention drugs
+united states hospitalizations per year result adrs estimated cost thousands millions dollars
+great majority adrs pharmacologic allergic nature follow dictates pharmacologic doseresponse curves higher dose greater various effects
+achieving pharmacologic effects drug neutral decide desirable undesirable
+term allergic reacting misleading suggests almost magical process
+reality biochemistry immunologic processes arranged provide exponential amplification response exemplified mast cell degranulation complement cascade release lymphokines lymphocytes
+immune amplification clearly necessary dealing challenge rapidly self replicating antigens e g viruses bacteria tumor cells unchecked threaten take physical space occupied body host animal
+unfortunately responses initiate inflammatory reactions injurious tissues
+term antigen allowed conceal fact antigens merely chemical entities however complex may
+thus given universality biochemistry surprising immunologic amplification occasionally initiated molecules mimic immunologic mediators share chemical configuration antigens andor antibodies
+example histamine release mast cells normally mediated cross linking bivalent antigen ige molecules previously adhered surface cell
+effect initiated iodine containing radiopaque contrast media opiates
+similarly lymphokines released lymphocytes exposure nonspecific plant extracts lectins concanavalin
+well known gastrointestinal intolerance beans gluten enteropathy may mediated nonspecific e nonantigenic triggering immunologic amplification
+light long debated difference gastrointestinal allergy versus intolerance foods drugs becomes less confusing
+still convenient gell coombs classification hypersensitivity reactions four types iv conceptually outmoded division immune responses humoral cell mediated
+antibodies produced b lymphocytes lymphokines lymphocytes immunologic reactions sense cell mediated
+table
+attempt reconcile older classifications meaningful functional form
+example possible points interaction drug immune system allergic reactions penicillin mediated via reaction types ii iii iv
+important distinguish emerging classification difference chemistry immunologic amplification response antigen chemistry tissue hyperreactivity end products amplification
+example patient allergic asthma probably must allergic antigen hyperreactive bronchi defined hyperreactivity intrabronchial challenge methacholine
+soon double requirement appreciated clinical confusion allergic reactions vanishes
+also follows concept immunologic event may occur one anatomic site hyperreactive organ another
+example recent study shown cases migraine precipitated food ingestion offending food led increased ige containing immune complexes
+case immunologic amplification occurred gut hyperreactive target organ cerebral blood vessels
+occurrence migraine appearance immune complexes blood could prevented oral cromoglycolate
+discussion relates immunologic reactions directed drugs metabolites
+also obvious drug chemical nature alter host tissues become antigenic elicit autoimmune reaction via mechanisms described table
+one example includes procainamide induced systemic lupus erythematosus sle due alteration components cell nucleus antinuclear antibodies appear antibodies native dna
+conclusion conceptual sequence immunologic initiation specific nonspecific means leading inappropriate immunologic amplification followed inappropriate tissue reactivity provides rational framework understanding allergic events
+fuller readable account immunologic mechanisms reader referred excellent reviews platts mills henson henny newman
+dangers documenting drug allergy readministration drug great deal attention usually unsuccessful devoted development less hazardous tests
+basis approaching problem figure
+illustrates points drugs may act order invoke processes immune amplification tissue reactivity
+diagram principles limitations tests drug allergy self evident
+first although administration drug may give rise allergic event may metabolite drug actually responsible e g penicilloyl polylysine called major minor determinants penicillins
+second immunologic responsiveness common hosts apart dealing rapidly self replicating antigens also involved clearing body foreign material
+example mild local reaction pollens eyes may beneficial effect increasing flow exudate enhancing removal pollen
+reaction strong enough produce clinically obvious inflammation patient declared allergic none event
+third clinical allergic events may result initiation immune responses drug haptens autoantigens drug altered tissues also failure suppression e control immunologic amplification target organ hyperreactivity normal levels immunologic mediators
+thus patient allergic asthma probably must two problems allergy antigen hyperreactivity bronchial mucosa smooth muscle end products immunologic amplification
+follows drug hypersensitivity may result action drug one points sequence shown figure
+unfortunately absence precise sequential kinetic studies causation various allergic reactions drugs makes extrapolation results tests vivo vitro problematic
+thus drug degranulates mast cells releases lymphokines lymphocytes necessarily mean mechanism tissue damage
+reason even positive immediate type delayed type iv skin reaction taken absolute evidence must interpreted context overall clinical picture
+mind examine usefulness various tests vivo vitro
+clear figure
+way totally imitate alleged allergic reaction readminister drug brand formulation dose route
+usually unjustifiable except unusual circumstances e g acute life threatening infections drug viable therapeutic option
+absolutely necessary process undertaken beginning approximately dilutions usual therapeutic doses
+epinephrine already drawn syringe means intubation tracheostomy life support available experienced hands
+purpose small dose drug injected intradermally result read minutes
+appearance inflammatory edema redness e wheal flare reactions follows drug induced degranulation mast cells skin result bridging two ige molecules divalent antigen
+drugs molecular weight daltons usually antigenic far less antigenically divalent
+exceptions high molecular weight agents horse antiserum vaccines containing egg protein e g influenza vaccine hormones insulin adrenocorticotrophic hormone pitressin dextran whole blood products local anesthetics diagnostic agents bromsulphthalein radiopaque contrast media
+noted opiates e g codeine may release mast cell mediators directly e nonimmunologically thus producing positive skin test
+low molecular weight drug reliably standardized immunologically mediated skin testing carried penicillin
+penicillin becomes allergenic forming drug protein complexes
+allergenic degradation products penicillin referred major frequently responsible minor less frequently responsible determinants
+however minor determinants precipitate major clinical reactions
+major determinant tested means synthetic penicilloyl polylysine pre pen cross links ige mast cell stimulate ige production e immunogenic
+however reactions sensitized mast cells pre pen precipitate anaphylaxis
+minor degradation determinants commercially available dilute concentrations newly reconstituted penicillin solutions old solutions reconstituted week substituted
+see deswarte mellon et al
+detailed protocols administration interpretation tests
+principle testing begin intradermal prick testing using dilute e g unitsml solutions penicillin physiologic saline
+negative proceed intradermal injections
+ml penicilloyl polylysine minor determinants incremental concentrations
+testing must take place epinephrine drawn syringe resuscitative measures endotracheal intubation even tracheostomy readily available
+series green et al
+results testing follows negative history penicillin allergy subjects yielded positive skin tests positive history positive reactions
+illustrates patient recollections may reliable andor degree type immunologic reactivity may vary time
+thus patients positive clinical history may take penicillin later without event
+even dramatic unforgettable marker anaphylaxis penicillin used patients positive skin tests
+corresponding figures prior urticaria rash also remarkably low
+finally nine patients positive skin tests therapeutically challenged six reacted three immediate min accelerated hr reactions
+patients negative skin test reactions treated penicillin fewer immediate ige reactions another reactions
+thus negative skin test may indicate relatively low risk clinical reactivity
+positive test indicates careful weighing therapeutic benefit risk ratio
+types allergic reactions penicillins mediated igg igm e g hemolytic anemia interstitial nephritis described sections dealing specific organ involvement
+types reactions predictable skin testing pre pen major minor determinants
+similar approach applicable skin testing reactivity local anesthetics
+drugs divided two groups depending possession e benzocaine procaine etc
+absence e g dibucaine lidocaine para amino phenyl group
+potential adverse effects may differ two groups
+although mechanism effects clear type ige mediated effects probably rare
+context appropriate note drugs different therapeutic classes may chemically allergenically similar
+examples include use procainamide lidocaine cardiac dysrhythmias procaine penicillin therapy
+occasionally one drugs may mandatory despite history prior reactions group drugs
+careful history increased doses given intradermally beginning prick test working
+ml volume undiluted material
+case radiopaque contrast media urticarial bronchospastic angioedematous full blown anaphylactoid reactions initiated immunologically figure
+thus skin testing value
+consequently radiopaque contrast media examinations replaced means ct nucleotide scanning radiologic study undertaken premedication steroids antihistamines
+guarantee freedom risk however administration radiopaque contrast medium must take place full resuscitative facilities available
+similar situation exists case urticaria angioedema asthma induced aspirin skin testing aspiryl polylysine may discriminate reactors nonreactors may precipitate attack
+attacks often associated presence nasal polyps pathognomonic aspirin sensitivity
+aspirin reactions reliably ruled tests bronchial hyperreactivity following intrabronchial challenge histamine methacholine
+context patient strong history aspirin avoided always bearing mind nonsteroidal anti inflammatory drugs also precipitate asthma
+absolutely necessary oral challenge increasing doses aspirin beginning mg alternate days undertaken fractional expired volume second measured intervals hours ingestion challenge dose
+similar process followed testing tartrazine dye sensitivity
+theoretically delayed type hypersensitivity reaction involving lymphokine release sensitive lymphocytes appearing hours intradermal injection drug also good indicator prior expansion cell clones sensitive drug
+practice however procedure gained wide spread use
+also risk intradermal dose drug may sensitize patient
+topical application drug sealed cover e patch testing associated uncertainties
+addition interpretation patch testing complicated lack simple rules standardized doses occurrence false positive irritant responses due drug hyperirritable skin extremely high concentrations drug
+thus although sometimes used detect allergy topically applied agents patch testing found place evaluating allergy systemically administered drugs
+tests vitro avoid anaphylactic sensitizing hazards rechallenge skin testing vivo
+ideally tests also give precise quantifiable result indicating type immunologic reaction table
+place sequentially linked events leading clinical expression figure
+ideals rarely realized however precise quantifiable kinetic experiments documenting existence events also timing sequence far
+modern student immunology faced myriad phenomenologic events b cells helper cells suppressor cells immunoglobulin levels etc
+yet linked meaningful kinetic sequences permit precise clinical correlation
+thus although extensive lists empiric associations compiled clinical usefulness limited time
+thus presence eosinophilia suggestive allergy providing causes ruled e g parasitic infections hodgkin disease periarteritis nodosa
+also possible quantify total serum ige levels using prist paper disc radioimmunoassay technique assay
+however meaningful interpretation test requires baseline antibody levels followed demonstration rise correlating allergic drug reaction subsequent decline
+principle serologic diagnosis infectious diseases except time drug reaction occurs serum ige level usually already raised
+consequently test often little value
+also prist assay measures total ige ige specific drug responsible reaction
+antigen specific ige measured semiquantifiably using rast radioallergosorbent assay
+test yields results penicillin allergy correlate results skin testing
+drug antigens available work system rast test available detecting minor determinants penicillins
+another test may use future release histamine vitro following exposure basophils patient drug question
+currently test available research tool
+still true plasma whole blood histamine levels
+tests use direct indirect coombs tests antibodies igg igm complement red cells
+hemolysis red cells antibody complement also employed context
+complement system evaluated measurement ch individual complement components
+tests established research laboratory may come clinical application lymphokine production lymphocytes lymphocyte blastogenesis exposure antigen
+lymphokine production test peripheral blood lymphocytes obtained patient exposed drug e g penicillin addition cell culture medium
+supernatant culture medium examined presence lymphokines macrophage migration inhibitory factor
+another measurable lymphocyte response initiation cell division requiring dna synthesis measured incorporation radiolabeled tritiated thymidine
+drugs immunologic reactivity demonstrated means include nitrofurantoin antituberculous drugs phenytoin carbamazepine
+apart technological difficulties make tests less routine clear examination figure
+immunologic reactivity drug vitro necessarily imply immunopathologic role
+conversely negative test one aspect immune reactivity exclude allergic reaction originating another point chain events
+allergic drug reactions inevitably occur
+therefore anticipated
+patients given drug high allergic potential e g penicillin remain supervision least minutes administration
+literature replete reports patients dying anaphylaxis minutes leaving doctor office
+tissue injury mediated immunologic reactions drug drug particular drug usually implicated nature allergic events
+consequently detailed often time consuming drug history linchpin diagnosis tests vivo vitro tertiary importance
+nearly cases prevention avoidance realistic cure recurrences depends successful detailed education patient guardians physician
+essence management allergic drug reactions lies three sequential steps anticipation diagnosis prevention
+anticipation adverse drug reactions crucial three
+hospitalized patients experience adverse drug reaction
+fewer allergic nature
+failure accept facts tantamount wishful thinking main reason many adverse effects pass unrecognized
+hand anticipation places physician patient best possible position diagnose adverse effects earliest warning
+best way incorporate practice formally discuss patient guardians risks intrinsic drug development adverse effects specifically looked
+list might observed felt patient family given without unduly alarmist
+development adverse effect anticipated discussed ahead time gives clearest possible signal patient competence physician events control however unpleasant may
+enhanced patient physician bonding derives process one satisfying professional experiences
+specific drugs available interrupt immunologic amplification sequence initiated
+treatment therefore usually limited life supportive measures combined discontinuance drug administration antihistamines nonspecific anti inflammatory agents corticosteroids
+reason considerable time often hours invested obtaining detailed drug history worthwhile
+armed information intelligent strategy avoiding offending agent often constructed
+may simple telling patient avoid single drug preparation however
+example case tartrazine dye sensitivity list tartrazine containing drugs foods may given patient
+case penicillin allergy penicillins avoided except life threatening situations therapeutic alternatives exist close supervision
+potential cross reactivity patients history penicillin allergy given cephalosporins kept mind possibility cross reactivity among aminoglycosides
+chemical relationship sulfa drugs e g sulfonamide antibiotics thiazide diuretics sulfonylureas also reemphasizes need careful documentation chemistry drug constituents
+true caine family used local anesthetics cardiac antidysrhythmics
+communicated articulated patient family understand ramifications problem
+patients taught carry list potential offending agents take responsibility allergic diathesis confronting new physician possibility allergic reaction proposed drug
+one final form prevention desensitization drug administration incremental doses starting extremely low levels
+detailed protocols different drugs e g penicillin insulin found standard allergy texts
+desensitization undertaken extreme situations enterococcal endocarditis urgent penicillin therapy may mandatory
+ideally conducted intensive care setting equipment resuscitation continued life support physicians experienced procedures
+desensitization applies type reactions immunologic mechanisms shown table
+drugs employed human therapeutics molecular weights daltons antigenic linked covalently hapten large molecules e g cell membrane components proteins polysaccharides
+mentioned drugs procainamide may alter nuclear components rendering immunogenic self resulting autoimmune disease resembling systemic lupus
+cephalothin methyldopa mefenamic acid also alter red cell membrane immunoglobulins adhere nonspecifically
+produces positive direct coomb test rarely hemolytic anemia
+drugs given orally greater opportunity altered combined gut flora products absorption mechanisms metabolism liver
+hand chase showed drugs given mouth could desensitize animal drug administration routes
+clinical example may desensitization penicillin oral route
+contrast topical application carries highest risk sensitization especially skin inflamed
+particular hazard nurses administer drugs infrequently contaminate hands drug
+factors genetic endowment race probably influence incidence type adrs concrete demonstrations
+examples include greater risk adrs isoniazid hydralazine procainamide slow acetylators perhaps debrisoquine phenytoin slow hydroxylators
+atopic patients whose problem seems involve intrinsic skin mucosal bronchial hyperreactivity overall increased risk drug allergy may actually less risk developing contact dermatitis
+age patient may important inasmuch children fewer allergic reactions drugs possibly less prior exposure
+older patients may fewer direct allergic reactions drugs autoimmune manifestations perhaps due reduction helper cell function
+clearly risk allergic reaction increases prior exposure drug cross sensitization chemically related agents e g caine local anesthetics
+approximately patients allergic penicillin allergic cephalosporins
+patient allergic one penicillin considered allergic penicillins
+general patients experienced one drug reaction twice risk approximately developing another probably applies allergic drug reactions
+finally underlying disease influence development allergy
+example patients hypo gammaglobulinemia fewer antibody related reactions patients sarcoid less cell reactivity
+customary divide allergic drug reactions two clinical categories systemic local single organ involvement
+said mechanisms clear allergic reactions systemic nature although specific organ damage e g asthma hypersensitivity pneumonia hepatitis easy visualization e g skin lesions may suggest dominant anatomic location
+mind synopsis systemic local allergic drug reactions given
+extensive lists found reviews cluff et al
+stewart et al
+meyler herxheimer
+ongoing reports found periodic reviews medical letter clin alert drug manufacturers literature
+anaphylaxis urticaria angioedema examples type reactions
+type reactions mediated mast cells first sensitized attachment fc component ige molecules fab components ige molecules cross linked bivalent antigen
+result mast cell degranulates release mediators histamine srs
+mediator release leads airway obstruction edema airways bronchial muscle constriction contraction smooth muscle gut causing vomiting diarrhea uterine contraction cramps perhaps vaginal bleeding increased vascular permeability angioedema urticaria
+last severe enough hypotensive shock may follow subsequent cardiac dysrhythmias coma
+death may ensue laryngeal obstruction alone usually children combination shock cardiac dysrhythmias
+diagnosis anaphylaxis clinical differential diagnosis includes vasovagal attacks unusual injections pulse slow cyanosis rare insulin hypoglycemia attacks myocardial infarction airway obstruction
+laboratory minor diagnostic role limited confirming complications anaphylaxis hyperinflation chest x ray ecg serum enzyme changes e g elevation serum glutamic oxaloacetic transaminase creatine phosphokinase lactate dehydrogenase
+identical picture follow release mediators mast cells basophils called complement derived anaphylotoxins ca ca
+also ca presence eicosanoids leukotriene b polymorphonuclear leukocytes causes increased vascular permeability
+furthermore pharmacologic e nonimmunologic induction mast cell degranulation also mediated drugs radiocontrast media opiates
+thus exact sequence events individual cases always clear
+incidence allergic reactions penicillin approximately
+nonfatal fatal anaphylactic reactions penicillin estimated approximately
+respectively
+percentage risk members long list implicated drugs documented
+briefly anaphylaxis reported nearly antimicrobials penicillin chief among
+important note intradermal pre pen used test penicillin allergy also cause anaphylaxis
+consequently testing undertaken without good reason certainly satisfy curiosity patient doctor
+important aspect managing anaphylaxis agents take careful history drug administration related past events patient family anticipate trouble keeping patient observation least minutes drug administration
+finally anaphylaxis tray containing epinephrine equipment intubation tracheostomy readily available
+especially case desensitization drug undertaken
+context immune like effects aspirin kept mind
+mechanism underlying events may relate effects aspirin nonsteroidal anti inflammatory drugs prostaglandin synthesis
+aspirin sensitive patients may also exhibit sensitivity yellow dye tartrazine found many foods medications
+serum sickness reactions
+serum sickness derives name illness developed patients given ml horse serum antitoxins
+use horse antitoxins declined advent vaccines antimicrobial therapy
+still available antivenoms snake spider bites botulism gas gangrene rabies diphtheria
+use rabies human hyper immune serum decrease current risk
+serum sickness patients receiving horse antitoxin
+serum sickness occurs host begun make significant amounts antibody horse serum e past days
+illness thought due formation antigen antibody immune complexes e type iii reaction
+full blown illness characterized fever urticaria maculopapular skin rash splenomegaly generalized adenopathy arthralgia
+view presence circulating immune complexes capable fixing complement occasional occurrence features generalized vasculitis purpura glomerular damage rare neuropathies easily understood
+patient prior exposure horse serum drug onset serum sickness may shortened days administration e accelerated reaction
+prior exposure horse serum even horse dander may also precipitate anaphylaxis via type reaction
+type iii reactions may follow administration many long list low molecular weight nonprotein drugs cause type reactions
+clinical spectrum indistinguishable classic serum sickness
+frequently implicated drugs time penicillins
+diagnosis clinical one based temporal relationship administration drug development illness
+view mediation via complement fixing immune complexes surprising skin kidney lesions rare show immunoglobulin complement deposits along infiltration polymorphonuclear leukocytes ca ca chemotactic cells
+similarly serum complement level may reduced indirect coombs test antibodies horse serum positive
+disease self limiting usually lasts week
+drug fever infrequent event complicating confusing patient management
+context treatment infectious disease antimicrobials patient fever gradually subsides recur around end first week therapy
+recognized cure achieved stopping therapy switching another antimicrobial
+may particular problem patients prolonged antimicrobial therapy serious infections endocarditis may alternative therapeutic choices
+fever may result immunologic mechanisms described table
+except type reactions
+however tissue toxic drugs amphotericin b may cause fever without immunologic mechanism
+also fever component jarich herxheimer reaction follows release endotoxin organisms e g treponema pallidum lysed action antimicrobial drug e g penicillin
+case drug fever temperature may high °c may accompanied polymorphonuclear neutrophil leukocytosis
+despite patient often looks feels remarkably well
+may due release interleukin absence local inflammation bacteremia toxemia
+illness benign resolves spontaneously within days stopping drug
+true cause fever recognized however various immune mechanisms may continue amplify manifest serious fashion e g exfoliative dermatitis hepatitis vasculitis tissue necrosis hemorrhage
+systemic vasculitis due immune complex disease may express hemorrhagic skin lesions purpura glomerulitis proteinuria hematuria arthralgias pulmonary infiltrates abdominal pain bleeding gut neuropathy etc
+currently penicillins cephalosporins commonest cause drug fever
+however causative drugs aminoglycosides phenytoin quinidine procainamide iodides methyldopa may encountered professional lifetime
+drug induced sle first observed hydralazine since reported increasing number agents chief among procainamide
+drug induced lupus syndrome many similarities naturally occurring disease e g fever arthralgias myalgia pleurisy anemia skin rashes
+however drug induced disease rash depression marrow elements white cells red cells less marked natural lupus pleurisy less severe kidney rarely damaged
+also unlike natural disease drug induced lupus occurs equally sexes sle marked predilection young women
+terms pathogenesis may drugs unmask latent lupus diathesis
+alternatively may drugs e g hydralazine isoniazid virtue hydrazine group alter cell nucleoproteins rendering immunogenic self
+keeping observation although antinuclear e antihistone antibodies occur antibodies native dna rarely found drug induced lupus exception hydralazine induced disease
+serum complement levels normal
+particular interest isoniazid hydralazine recently shown bind covalently fourth component complement c
+leads turn diminished solubility phagocytosis immune complexes increased tissue deposition
+observations provide first time rational link chemical nature drug increased risk disease slow acetylator dominant feature disease immune complex deposition
+laboratory findings include elevated erythrocyte sedimentation rate mild depression white cell red cell platelet counts even positive le cell phenomenon severe cases
+positive coombs test observed procainamide induced disease false positive syphilis serology hydralazine
+partial list commonly used drugs causing lupus given table
+drugs shown procainamide powerful inducer antinuclear antibodies followed hydralazine
+however minority patients antinuclear antibodies develop clinical sle risk increased slow acetylator
+individuals desirable choose antihypertensives hydralazine
+procainamide induced sle absence antibody native dna useful discriminator respect natural disease
+drug induced sle common slow acetylators interest acetylated procainamide may less powerful inducer antinuclear antibodies
+isoniazid induces antinuclear antibody production tuberculous patients receiving drug overt lupus rare
+main treatment withdrawal drug
+drug merely unmasked underlying lupus diathesis however vigorous therapy steroids may needed
+special diagnostic note sle induced penicillamine drug occasionally used therapy rheumatoid arthritis
+latter disease features common sle may overlap patient
+resistance insulin usually nonimmunologic may found disease states ketoacidosis acute infections decrease insulin receptors
+immunologically mediated insulin resistance rare may due anti insulin receptor antibodies antibodies igg insulin
+resistance usually occurs first months starting insulin
+igg antibodies also mediate painful local reactions beginning hours subcutaneous injection insulin
+usually appear within month starting insulin therapy spontaneously diminish next weeks
+ige antibodies also mediate early h local reactions urticaria even anaphylaxis
+may particular risk insulin begun stopped period reinstituted
+presumably continued daily administration insulin effectively desensitizes patient
+reason patient seen soon h reaction insulin continued lower dosages hospital supervision dosage gradually increased
+effect combination therapy desensitization
+insulin therapy stopped reaction insulin therapy mandatory skin testing followed desensitization undertaken
+details protocols found standard clinical allergy texts
+context remembered allergic reaction may due non insulin component injection e g protamine zinc
+hopefully availability human insulin revolutionize prevention management types problems
+probably largest organ body visible skin widely recognized
+site allergic events
+however reemphasized allergic reactions drugs nature systemic
+also allergic reaction drug may involve one immunologic mechanisms shown table
+corollary tissue damage mediated available inflammatory immunologic responses drug drug
+thus many drugs produce clinical reactions vice versa
+hence inspection skin lesions usually identify offending drug
+achieved careful history
+reasons exhaustive listings drugs clinical classifications reactions less useful might anticipated
+examples given table
+illustrate point
+ampicillin induced maculopapular rash seems special case patients rash immunologically mediated may actually disappear despite continued therapy
+also high percentage patients infectious mononucleosis develop rash given ampicillin fact may retrospect diagnostic test disease
+cases maculopapular rash contact dermatitis however type iv reaction ampicillin implicated witnessed release lymphokines patient lymphocytes penicillin vitro
+diagnostic principles described skin apply detection pulmonic allergic drug reactions
+greater difficulty access lung tissue pathogenetic immunologic definitions reactions even less clear case skin
+however number empiric associations made along putative mechanisms
+division antigenic nonantigenic initiation failure regulation immune amplification tissue hyperreactivity kept mind
+example last category propranolol induced bronchospasm due beta adrenergic blockade already hyperreactive bronchi asthmatic
+given inhalation aerosols polymyxin b pituitary snuff cromolyn acetylcysteine also produced attacks asthma
+whether effects represent irritation hyperreactive bronchi specific nonspecific initiation immunologic reactivity hard say individual case
+bronchospastic reactions acetylcysteine cromolyn particular note drugs may used treatment asthma
+also note asthma induced non steroidal anti inflammatory agents aspirin common indomethacin naproxen etc
+agents seem disturb balance tonic bronchial constriction dilation interfering prostaglandin synthesis
+reactions may frequent patients nasal polyps
+finally always kept mind non drug constituent common many drug formations may cause asthma
+classic example tartrazine dye used color many medications foods
+several drugs associated appearance acute inflammatory infiltration lung parenchyma
+phenomenon hypersensitivily pneumonia inhaled antigens well described context farmers lung bird fanciers lung etc
+therefore surprising similar effects result drug administration inhalation e g bovine pituitary snuff replaced synthetic antidiuretic hormone
+pulmonary infiltrates eosinophilia pie syndrome associated penicillins sulfonamides cromolyn
+acute interstitial pneumonitis characterized dyspnea cough pleuritic pain fever occur nitrofurantoin
+physical examination may reveal rales chest x ray may negative unless inflammatory process severe case cyanosis may appear lung function tests reveal restrictive pattern
+eosinophilia may may present
+process may begin anywhere hours several days nitrofurantoin started improves within days cessation recurs drug reintroduced
+chronic type fibrotic infiltrate lung also observed nitrofurantoin
+onset insidious begins months starting drug dyspnea cough cyanosis severe cases
+drugs similar fibrosing effects include phenytoin carbamazepine bleomycin busulfan cyclophosphamide methysergide
+methysergide also produce pleural retroperitoneal fibrosis
+present debated immunologic events represent secondary fibrotic reaction oxidative injury tissues drugs
+case methotrexate may initial acute granulomatous reaction suggestive immunologic reactivity
+often subsides even methotrexate continued although process may go pulmonary fibrosis
+drugs induce lupus syndrome also produce fibrosis e g hydralazine procainamide isoniazid
+pharmacologic idiosyncratic drug reactions primaquin induced hemolysis glucose phosphate dehydrogenase gpd deficiency chloramphenicol induced aplastic anemia already alluded table
+table
+clear various cells blood targets immunologic attack like cell body although precise immunologic mechanism one disease may clear
+commonly identified mechanisms type ii type iii reactions
+type ii reactions drug binds cell hapten antibody adheres
+type iii reaction drug binds serum protein antibody formed leading formation cytolytic antigen antibody complement complexes lyse cells happen come contact e innocent bystander reaction
+examples include sedormid quinidine induced thrombocytopenia
+list drugs causing type reaction long diagnosis made context thrombocytopenia associated drug administration followed literature search beginning manufacturer description drug
+particular note thrombocytopenia induced heparin may complicate anticoagulant therapy
+hemorrhagic features gastrointestinal bleeding hematuria purpura merely secondary thrombocytopenia offer specific diagnostic clues
+laboratory tests complement fixation platelet factor iii release release chromium radiolabeled platelets used
+however negative tests exclude diagnosis subsidiary diagnostic value history response withdrawal drug
+rechallenge almost invariably unjustified
+immunologically mediated lysis red cells e hemolytic anemia follows principles thrombocytopenia
+thus adherence penicillin red cell hapten subsequent adsorption antibody type ii reaction may lead removal cell spleen less commonly complement lysis
+direct coombs test may reveal igg adhering red cells
+complement fixing immune complex e type iii reactions drugs quinidine sulfonamides may also occur
+expected direct coombs test often detects complement red cell surface although coombs test immunoglobulin may negative
+latter observation may indicate light binding immunoglobulin e g igm may hop red cell red cell activating cytolytic complement surface turn producing degree hemolysis proportion amount circulating antigen antibody complexes
+patients positive coombs test actually develop hemolytic anemia however
+another important drug induce hemolytic anemia methyldopa
+mechanism controversial may involve alteration red cell membrane secondary development autoimmune antibody
+alternatively methyldopa may alter existing igg adheres red cells
+whichever mechanism applies positive coombs test develops one third patients first months therapy
+minority patients actually develop hemolytic anemia however stopping drug usually necessary
+similar phenomenon described l dopa
+similar vein cephalosporin drugs alter red cell membrane serum proteins adhere direct coombs test becomes positive
+hemolysis occur false agglutination may encountered cross matching blood transfusion
+like penicillins cross reaction cephalosporins may also produce hapten type positive coombs test
+agranulocytosis may result slow onset toxic effects drugs
+rapid onset agranulocytosis via immunologic mechanisms e g type iii innocent bystander usually appears within days starting therapy
+list drugs long one usefully reproduced
+examples include sulfa drugs phenothiazines antithyroid drugs quinine hydralazine
+one case manufacturer literature encyclopedic sources referred see references
+allergic drug reactions involving liver even less well defined lung inferred liver damage occurs context systemic manifestations fever adenopathy skin rash eosinophilia
+lung damage may focused parenchyma ducts organ
+cholestatic occlusion ducts described phenothiazines imipramine urinary antiseptics nalidixic acid nitrofurantoin
+erythromycins also implicated especially estolate preparation
+could anticipated obstruction bile ducts alkaline phosphatase raised liver biopsy shows cholestasis periportal infiltrate eosinophils mononuclear cells
+parenchymal hepatocellular damage resembles viral hepatitis fever eosinophilia rash
+drugs implicated include hydrazine monoamine oxidase inhibitors phenytoins quinidine methyldopa antituberculous drugs isoniazid rifampin pyrazinamide
+drug special interest anesthetic halothane cause eosinophilic granulomas liver
+risk reaction halothane may increase prior exposure also supports possible immunologic pathogenesis
+however whether immunologic response actually initiates damage merely represents immunologic reaction damaged tissue controversial
+view already said drug induced immune complex disease might anticipated glomerular damage would common sequel
+well documented drugs captopril
+glomerulitis without pulmonary basement membrane damage hemorrhage e goodpasture syndrome also reported penicillamine
+even drug induced sle glomerular damage rare
+contrast allergic interstitial nephritis uncommon reported penicillins cephalosporins phenytoin sulfa drugs thiazides rifampin
+classic cause methicillin accompanying fever rash eosinophilia
+renal biopsy reveals interstitial nephritis explains development renal insufficiency proteinuria presence red cells white cells urine
+immunologic staining may reveal penicilloyl determinants immunoglobulin complement basement membrane
+addition may positive skin test penicillin lymphocytic proliferation vitro response methicillin suggesting type iv reaction

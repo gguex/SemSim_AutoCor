@@ -1,0 +1,137 @@
+glucose important carbohydrate fuel body
+fed state majority circulating glucose comes diet fasting state gluconeogenesis glycogenolysis maintain glucose concentrations
+little glucose found diet glucose found complex carbohydrates broken monosaccharides though digestive process
+half total carbohydrates diet form polysaccharides remainder simpler sugars
+two thirds sugar diet sucrose disaccharide glucose fructose
+glucose classified monosaccharide broken hydrolysis
+classified hexose six carbon skeleton aldose presence aldehyde group carbon
+aldehyde group condenses hydroxyl group glucose exists hemiacetal ring structure
+ring structure explains many reactions glucose
+ordinarily concentration glucose blood maintained relatively stable concentration mgdl
+strong reducing properties glucose made relatively easy measure thus clinical estimation circulating glucose one earliest tests available clinician
+recent introduction microglucose oxidase technology made possible patient measure blood glucose concentration undoubtedly makes estimation blood glucose widely used test blood chemistry
+understanding methods blood glucose measurement help clinician interpret values avoid pitfalls inaccurate testing
+concentration glucose highest arterial circulation
+laboratory determinations usually done venous samples
+venous circulation delayed leaving tourniquet prolonged period time concentration falls even
+thus samples obtained releasing tourniquet
+studies shown blood glucose concentration may fall much mgdl tourniquet left place minutes
+concentration glucose capillary samples intermediate venous arterial
+warming extremity increases capillary flow arterializes sample cooling tourniquet decreases flow lowers concentration glucose
+red cells leukocytes contain glycolytic enzymes
+therefore glucose consumed concentration glucose sample whole blood decline time
+rate loss generally said approximately per hour may rapid hours
+consumption glucose whole blood samples prevented adding sodium fluoride specimen inhibit glycolytic enzymes
+approach generally applied method clinical laboratory
+effective except situations system overwhelmed specimens patients leukemia contain large numbers leukocytes
+sodium fluoride major disadvantage use makes sample unacceptable determinations sodium uric acid
+rapid separation sample cooling also prevent glycolysis allow sample used determinations
+unhemolyzed samples separated within minutes drawing generally considered adequate
+rapid cooling sample followed centrifugation even effective preventing glycolysis
+methods require attention detail therefore suitable routine laboratory use
+occasion circumstances require glucose concentration determined ordinary serum sample
+specimen promptly centrifuged reasonable ask laboratory measure glucose concentration even though sodium fluoride green top tube used
+glucose concentration may determined whole blood plasma serum samples
+whole blood used concentration lower plasma serum used
+due greater water content cellular fraction
+usual circumstances concentration glucose whole blood lower plasma serum difference less patients low hematocrits
+blood glucose determined accurately postmortem specimens glycogenolysis glycolysis continue death
+reasonable estimate antemortem blood glucose concentration obtained measuring glucose concentration vitreous eye contain glycolytic enzymes
+glucose oxidase reagents measure generation hydrogen peroxide bonded filter paper system used measure glucose concentrations drop capillary blood
+resulted important change diabetes management since introduction insulin
+patients instructed obtain blood sample pricking fingertip lancet
+spring loaded lancets available
+easy use cause minimal discomfort
+surprisingly many patients consider discomfort finger stick preferable inconvenience aesthetic unpleasantness obtaining urine sample testing
+drop whole capillary blood placed reagent bonded paper strip
+instead using known volume blood excess blood exposed fixed quantity glucose oxidase finite period time estimate concentration
+specified time usually minute excess blood removed washing wiping color allowed develop
+concentration estimated comparing color chart using portable reflectance meter specific reagent strip measure developed color
+reflectance meters measuring blood glucose becoming increasingly sophisticated compact reliable
+shirt pocket size models available prototype models store time date result insulin doses later graphic printing patient home physician office developed
+undoubtedly reflectance meters access complex algorithms recommending changes insulin dose individualized specific patient possible near future
+test reflects long term blood glucose control diabetics concentration hemoglobin ac
+hemolysates red cells chromatographed three small peaks named hemoglobin aa ab ac eluted main hemoglobin peak
+fast hemoglobins formed irreversible attachment glucose hemoglobin two step reaction
+percentage hemoglobin glycosylated depends average glucose concentration red cell exposed time
+since average life red cell days percentage glycosylated hemoglobin gives good indication degree blood sugar control preceding weeks
+hemoglobin ac quantifiably largest peak laboratories measure selectively although laboratories measure fast hemoglobins
+numerous biochemical methods used including electrophoresis mini columns radioimmunoassay high pressure liquid chromatography
+unfortunately standards reference methods test
+methods include labile hemoglobin ale measurement
+reversibly glycosylated hemoglobin dependent current blood glucose concentration falsely elevate results
+therefore important know local hospital norms variations
+international work group sponsored national diabetes data group national institutes health developed classification framework criteria diagnosis diabetes mellitus
+recommendations endorsed american diabetes association groups
+classification criteria summarized table
+frequently diagnosis diabetes mellitus made based elevated random fasting blood sugars
+special circumstances glucose tolerance test needed establish diagnosis
+test done morning hour fast patient permitted water
+patients allowed smoke test
+fasting blood sugar obtained
+adults given drink containing g glucose g dose actually compromise european custom giving g united states custom giving g
+children given
+gkg ideal body weight g pregnant patients given g glucose older g dose retained pregnant patients information pregnancy outcome based tests using g load
+timing begun patient begins drink glucose solution
+blood samples obtained every minutes hours adults children
+pregnant patients blood samples obtained every hour hours
+criteria interpretation given table
+three basic approaches laboratory measurement blood glucose concentration reducing methods condensation methods enzymatic methods
+reducing methods oldest take advantage reducing properties glucose change state metal ion glucose oxidized
+reducing methods nonspecific strong reducing agent cross react yield spuriously elevated values
+steps added remove cross reacting reducing agents approach largely abandoned clinical laboratory
+aldehyde group glucose undergo condensation aromatic compounds yield colored product
+commonly used condensation reaction toluidine reacts glucose form glucosamine intense green color
+color measured spectrophotometrically estimate glucose concentration
+reaction rapid intense color allows high degree sensitivity
+aldoses cross react mannose galactose give highly colored product
+sugars found great concentrations blood cross reactivity ordinarily significant
+toluidirie drawback highly corrosive toxic
+reason method rapidly phased clinical laboratory
+enzyme glucose oxidase reacts glucose water oxygen form gluconic acid hydrogen peroxide
+hydrogen peroxide used oxidize chromogen consumption oxygen measured estimate amount glucose present
+glucose oxidase specific b glucose cross reaction sugars problem
+aqueous solution approximately glucose b state exists glucose
+rate interconversion ph temperature dependent
+methods add glucomutarostase reagents speed conversion beta anomere seem alter clinical results
+measurement generated hydrogen peroxide specific first glucose oxidase reaction
+numerous reducing substances potentially inhibit oxidation chromogen
+although uric acid creatinine even uremic patients seem little effect results ascorbic acid yield spuriously low blood glucose measurements
+high concentration uric acid found urine affect result glucose oxidase methods directly applicable urine samples
+measurement oxygen consumption using oxygen specific electrode avoids problem interfering reducing agents
+general glucose oxidase method relatively inexpensive specific
+hands glucose oxidase strip method accurate reliable
+since whole blood used results tend slightly lower simultaneous venous samples balanced fact capillary blood higher glucose concentration venous blood
+patients visually estimate correct value patients consistently misread visual charts must use reflectance meter
+may due unexpectedly high prevalence disturbances color perception diabetics
+patients feel comfortable digital readout reflectance meter although necessarily accurate
+major sources error failing put large enough drop blood strip inaccurate timing
+patients use reflectance meters another source error failure keep machine clean calibrated
+color developed relatively stable patients instructed bring developed strips physician office accuracy checked
+glucose oxidase strips cost cents reflectance meters average
+estimated type diabetics country involved time day home glucose measurement program approximate annual cost would million
+hand estimated expenditure care type diabetics excess billion
+cost reagents decreasing
+fact patients visually read reagent strips realize reduction cost cutting strips half lengthwise
+patient laboratory determination blood sugar weekly biweekly basis may save money learning home glucose measurement
+author believes type iddm diabetics frequent home blood glucose monitoring program
+patients type ii diabetes mellitus also taught home glucose monitoring although measurements need frequent
+third party hospital payments tied diagnosis rather services rendered drgs hospitals looking ways reduce cost laboratory tests
+increasing numbers hospitals training ward staff use glucose oxidase strips monitor blood sugars fashion urine sugars traditionally monitored hospital
+plan instituted effective educational program staff must place well effective means quality control
+certain conditions uremia aspirin ingestion alcoholism cause spurious elevations glycosylated hemoglobin
+falsely low percentages glycosylate hemoglobins caused uremia anemia variant hemoglobins hemoglobin pregnancy
+sensitivity measurement hemoglobin ac test used diagnose diabetes useful means following blood glucose control diabetic patient
+measurement glycosylated proteins studied may eventually supplant glycosylated hemoglobin measurements
+oral glucose tolerance test fraught potential problems strict adherence protocol must followed reach valid conclusion
+patients must experiencing acute medical surgical stress
+tested several months recovery
+patients chronically malnourished carbohydrate restricted exaggerated blood sugar responses
+general patient least g carbohydrate intake normal physical activity days preceding test
+patients confined bed days also test delayed recovery
+possible patients discontinue medications days prior testing
+patients undergone recent gastrectomy watched carefully alimentary hypoglycemia
+abbreviated screening glucose tolerance test recommended women th th week pregnancy
+test consists g oral glucose measurement venous plasma glucose hour later
+test may administered time day non fasting
+hour plasma glucose mgdl greater indicates need full scale glucose tolerance test described

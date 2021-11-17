@@ -1,0 +1,205 @@
+ms
+jones single year old associate editor large publishing house treated dr
+burns mild hypertension
+particular visit ms
+jones indicates experiencing episodes burning pressure type chest pain times per week lasting minutes usually relieved maalox
+episodes occurred work generally hour lunch
+ascribed tension related job became concerned last week occurred aerobics class
+time pain occurred minutes class went away rest minutes
+ms
+jones admits although knows symptoms could sign heart trouble believe could causing problem good shape physically never smoked family history heart disease
+fact participated class yesterday experience discomfort
+upon hearing dr
+burns knows ms
+jones concerned possibility heart disease cause symptoms fearful discovering anything might wrong
+complete description chest pain radiation location quality duration description episodes directed physical examination dr
+burns need decide optimal course action ms
+jones make recommendation
+coronary artery disease cad major health problem united states chest pain common medical complaint encountered internists physicians provide care adults
+accordingly dr
+burns devoted special emphasis subject time available reading continuing education activities
+knows number workers collected data patients chest pain might angina pectoris classically chest pain due myocardial ischemia occurring consistent basis physical activity relieved rest categorized pattern pain several subsets correlate probability finding serious coronary artery disease coronary arteriography
+dr
+burns considers following subsets typical classic angina pain occurs consistently exercise relieved rest within minutes atypical chest pain pain features angina consistent relationship activity relief rest noncardiac chest pain e pain features resembling angina
+data derived clinical databases historical information collected large number patients typically hundred several thousand
+arrive plausible estimate ms
+jones likelihood coronary artery disease basis history results physical examination dr
+burns refers article drs
+diamond forrester entitled analysis probability aid clinical diagnosis coronary artery disease
+diamond forrester related probability person complaint chest pain coronary artery disease age sex pain pattern
+modification tabular data appeared article reproduced table
+dr
+burns interprets ms
+jones pain pattern atypical angina mainly inconsistent relationship physical activity
+extrapolating table notes reasonable estimate likelihood woman ms
+jones age atypical angina significant coronary artery disease
+arrive specific estimate ms
+jones decides revise figure downward younger end age interval lacks risk factors besides mild hypertension
+dr
+burns recognizes uncertainty estimate considers likelihood lie within range although best guess ms
+jones likelihood cad
+dr
+burns must decide whether recommend noninvasive test ecg treadmill stress test invasive procedure coronary arteriography simply nothing
+although exercise tests available stress thallium test dr
+burns considers treadmill test simplest perform preferred noninvasive test ms
+jones
+coronary arteriogram considered definitive test determining presence severity cad would provide best information anatomic state ms
+jones coronary arteries
+served gold standard accuracy diagnostic tests cad measured
+arteriogram would require one day hospitalization invasive associated mortality risk morbidity myocardial infarction arterial complications ventricular fibrillation franch et al
+hand stress test safer risk mortality order done dr
+burns office would allow revised determination ms
+jones likelihood serious cad clarke bruce
+patient undergoing ecg stress test walks moving treadmill increased speed minute intervals
+test continued patient either experiences signs symptoms cardiac dysfunction achieves predicted maximal heart rate specified period time
+addition symptoms specific electrocardiographic feature looked depression st segment
+figure
+shows picture normal ecg change st segment would associated myocardial ischemia
+segment may become depressed variable degree mm
+criterion e cutoff point abnormal st segment depression changes likelihood making errors interpretation also changes
+dr
+burns quickly goes series calculations determine ms
+jones likelihood cad would depending result exercise test
+called posttest likelihood alternatively predictive value test result
+dr
+burns uses hand held programmable calculator perform calculations quickly automatically purposes discussion describe process determining posttest likelihood dr
+burns would hand
+important terms notation used represent explained table
+three parameters must known estimated order derive ms
+jones likelihood cad tested treadmill
+sensitivity specificity treadmill test prior probability cad ms
+jones
+recall dr
+burns estimated latter ms
+jones age pain pattern
+sensitivity specificity diagnostic test determined comparing test results appropriate sample individuals gold standard said parameters later chapter
+dr
+burns depended published results estimates diamond forrester goldschlager rifkin hood suggesting using sensitivity
+specificity
+would reasonable
+probability disease sensitivity specificity test known predictive value positive pvp predictive value negative pvn posttest likelihoods calculated using bayes formula
+pvp equation may considered another way perhaps clearer
+numerator equation simply true positive rate probability positive test among disease multiplied probability disease
+denominator composed two terms true positive rate plus false positive rate
+quotient actually definition positive predictive value
+additional form equation also may useful
+similarly pvn calculated following
+dr
+burns believes reviewing clinical studies ms
+jones achieves predicted maximal heart rate takes stress test sensitivity detecting serious cad would
+specificity
+uses estimates determine probabilities interest
+ms
+jones probability cad test
+probability
+alternative method calculating predictive values shown table
+table indicates pvp derived following true positive ratetrue positive rate false positive rate
+similarly pvn obtained true negative ratetrue negative rate false negative rate
+indicated table b every patients disease since dr
+burns estimated ms
+jones likelihood
+sensitivity specificity used derive numbers patients falling individual cells
+cad test positive sensitivity
+people without cad test negative specificity
+predictive values
+essential point note predictive values change prior estimate ms
+jones probability cad changes
+thus physician interpret result less perfect test meaningfully requires estimation patient likelihood disease test performed
+figure
+illustrates principle using ecg stress test relating predictive value positive negative exercise test changing prior probability cad constant test sensitivity
+specificity
+figures reproduced quickly graphed dr
+burns using desktop personal computer appropriate software program
+table
+gives pvp pvn tabular form prevalence cad increases
+using exercise test result revise ms
+jones probability cad dr
+burns decide pvn would ms
+jones would feel reassured enough pursue coronary arteriogram conversely pvp would high enough recommend pursuing coronary arteriogram
+arriving threshold probabilities choice treatment options would affected dr
+burns must analyze beliefs natural history significant cad efficacy disadvantages alternative treatments problem ms
+jones attitudes various health outcomes
+small task requires ability evaluate results clinical research strong communication skills experience
+using diagnostic information revise clinical probabilities first step process clinical decision making
+completing process requires integrating revised probability estimate probabilistic information regarding different treatment options patient attitudes toward treatments
+acquiring skills formal decision analysis permit clinician follow probabilistic approach diagnosis described
+calculating ms
+jones likelihood cad based stress test results dr
+burns needed use sensitivity specificity test
+obtained values published reports stress test results persons known free cad according cardiac catheterization
+understood test characteristics express good poor test predicting presence disease
+understanding characteristics derived helped decide whether use stress test
+diagnostic tests indirect measures disease thus must standardized best estimate disease estimate often referred gold standard
+stress test gold standard coronary arteriography
+validity diagnostic test determined comparing test results gold standard results performed appropriate number selected patients
+agreement occur diagnostic test said falsely positive falsely negative
+thus sensitivity specificity diagnostic test describe ability test correctly classify patient compared gold standard
+one additional feature dr
+burns notes test cutoff point
+clinicians generally desire diagnostic test results reported either abnormal normal e categorical
+desire categorizing results presents problem since measurements biologic variables usually form continuum values
+continuous values made categorical selecting point cutoff point along continuum assigning values one side point abnormal category side point normal category
+sensitivity specificity test determined cutoff point selected
+true test values diseased non diseased populations usually overlap
+cutoff point chosen test high sensitivity high true positive rate specificity true negative rate usually lowered
+unavoidable tradeoff important clinician since different cutoff points produce different test characteristics
+thus clinician obtain different predictive values based particular cutoff point used
+example exercise stress test cutoff point set mm st depression
+effect using different cutoff points seen figure
+cutoff point chosen st segment depression
+mm test higher pvp given pretest probability less stringent cutoff points chosen
+occurs fewer false positive tests
+however remembered also greater number false negative test results
+price paid choosing stringent criterion abnormal result
+summary dr
+burns realizes characteristics test determine validity usefulness particular disease
+addition knows test characteristics vary depending choice cutoff point
+question set cutoff point test received considerable attention stimulated clinicians look receiver operating characteristic curves test likelihood ratios
+clinicians likelihood ratio useful test characteristic sensitivity specificity estimating probability disease following test result
+using likelihood ratio plus estimate prior odds disease pretest odds clinician calculate positive test posttest odds disease
+done multiplying likelihood ratio test prior odds disease obtain posttest odds disease
+vignette involving ms
+jones dr
+burns probability disease testing thought
+prior odds disease thus
+sometimes written
+positive exercise test posttest odds would
+e
+formula follows
+odds disease simple ratio probability disease divided probability disease pd l pd
+probability disease odds disease
+divided also written
+likelihood ratio measure efficacy test defined ratio true positive rate tp divided false positive rate fp
+dividing sensitivity test one minus test specificity specificity
+table
+indicates likelihood ratio stress test
+divided
+minus
+indicated table prior odds disease calculated dividing prior prevalence one minus prior prevalence
+multiplying prior odds likelihood ratio gives last column posttest odds disease test positive
+posttest odds easily converted posttest probability using odds numerator divided plus odds e
+likelihood ratio incorporates sensitivity specificity test value vary depending cutoff point chosen
+different likelihood ratios particular test cutoff point changes may derived receiver operating characteristic roc curve particular test consideration
+curve plot sensitivity versus minus specificity test cutoff point changed
+using personal computer dr
+burns easily plot curve data obtained laboratory
+minutes produce plot seen figure hypothetical roc curve stress test
+pair coordinates taken curve may used calculate likelihood ratio thus along prior odds disease may used calculate posttest odds disease
+clear curve false positive false negative rates low cutoff point
+chosen
+roc curves may also used compare efficiency different diagnostic tests used particular disease
+hanley mcneil give excellent discussion use roc curves
+test high specificity example would give relatively large likelihood ratio even sensitivity test low
+occurs specificity denominator small value give relatively large likelihood ratio
+may seen table
+cutoff point set give specificity sensitivity
+case likelihood ratio
+seen multiplying value times pretest odds give much higher posttest odds data table
+unfortunately something must lost obtaining higher likelihood ratio case false negative rate minus
+student actually goes literature learn performance characteristics signs symptoms tests struck divergent estimates reported
+sources variability derive patient selection factors differences technique performing test center center different stringency criteria constitutes abnormal result interobserver variability reading test results differences quality test administration
+thus important able evaluate published reports respect validly studied performance characteristics
+discussing skills beyond scope chapter ransohoff feinstein report department clinical epidemiology biostatistics mcmaster university contain excellent discussions issues
+second clinician still needs incorporate probabilistic information gained history physical examination laboratory tests patient management decisions
+many situations decisions complex selected clinical situations advocate using decision trees tool enable one maintain explicit approach patient management
+makes little sense use explicit approach diagnosis suddenly hide assumptions steps reasoning went making therapeutic management decision

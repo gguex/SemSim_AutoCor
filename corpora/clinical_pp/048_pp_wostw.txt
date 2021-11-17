@@ -1,0 +1,163 @@
+arterial blood gases abgs collective term applied three separate measurementsph pco pogenerally made together evaluate acid base status ventilation arterial oxygenation
+oxygen carbon dioxide co important respiratory gases partial pressures arterial blood reflect overall adequacy gas exchange
+pao affected age altitude
+paco altitude
+therefore pao must individually calculated patient determinations must interpreted local normal values
+hydrogen present blood gas therefore exert partial pressure
+however ph measures hydrogen ion activity conventional part every arterial blood gas determination
+normal range blood ph
+calculated derived variables may reported abgs
+bicarbonate concentration calculated ph pco useful
+others base excess base deficit essential may confusing
+accurate results abgs depend collecting handling analyzing specimen properly
+clinically important errors may occur steps abg measurements particularly vulnerable preanalytic errors
+common problems include nonarterial samples air bubbles sample either inadequate excessive anticoagulant sample delayed analysis un cooled sample
+proper blood sample abg analysis consists ml arterial specimen collected anaerobically peripheral artery ml plastic glass airtight syringe fitted small bore needle
+air bubbles inadvertently introduced sampling must promptly evacuated
+room air po approximately mm hg sea level pco essentially zero
+thus air bubbles mix equilibrate arterial blood shift pao toward mm hg lower paco
+heparin must added syringe anticoagulant
+ph heparin near po pco heparin solution near room air values excess heparin alter three abg measurements
+little heparin actually needed sample prevent clotting
+ml dilute solution unitsml anticoagulate ml blood without affecting ph
+pco po
+flushing syringe heparin sufficient amount usually remains dead space syringe needle anticoagulation without distortion abg determination
+collection specimen analyzed expeditiously
+delay minutes anticipated specimen must immersed ice bath
+leukocytes platelets continue consume oxygen sample drawn cause significant fall pao time room temperature especially setting leukocytosis thrombocytosis
+cooling prevent clinically important effect least hour decreasing metabolic activity cells
+abgs routinely measured automated analyzer
+basic components unit three electrodes one determining ph pco po
+ph electrode measures potential difference measuring electrode contains sample contact special glass membrane permeable h ions reference electrode known stable ph
+voltage across electrodes sample ph calculated
+pco electrode severinghaus electrode employs adaptation ph measurement
+carbon dioxide blood sample equilibrates across gas permeable membrane bicarbonate solution reaction generates h ions
+pco sample determined indirectly sensing ph change solution
+po electrode clark electrode determines po amperometrically
+oxygen blood sample diffuses across semipermeable membrane reduced cathode polarographic electrode
+reaction produces measurable current directly proportional sample po
+electrode calibrated two reference points typical operational range
+ph electrode two buffer solutions ph
+standards
+pco po electrodes two references gases usually co n co n utilized
+calibration accuracy reliability measurements may checked analyzing commercially available quality control samples known values ph pco po span range common clinical values
+although procedures generally ensure valid measurements high pao values mm hg present potential source error
+po electrode linear therefore may inaccurate values far beyond calibration points mm hg mm hg sea level reference gases
+consequently precision pao values exceeding mm hg uncertain unless electrode recalibrated appropriate range generally feasible automated analyzer
+electrodes maintained °c thermostatically regulated waterbath therefore abg measurements made °c regardless patient temperature
+nonetheless ph paco pao temperature dependent gas solubilities function temperature
+body temperature higher °c reported pao paco measured °c lower actual values patient converse holds body temperature °c
+equations nomograms developed adjust °c values corresponding patient temperature
+equations however complex easy calculation
+effect varying temperature normal set abgs illustrated table
+whether correct abg measurements especially pao patient temperature simply report °c controversial issue laboratory practices vary area
+relatively standard practice report ph paco °c without correction
+uniform practice regarding pao clinician must familiar local policy
+shown table effect temperature changes ph paco pao usual clinical range ° °c relatively small
+issue clinically relevant primarily hypothermia hyperthermia
+hydrogen ion h concentration determines acid base status blood
+convenience h concentration customarily expressed ph defined negative logarithm base h concentration
+note h concentration ph inversely related increasing h concentration increasing acidity corresponds declining ph vice versa
+normal h concentration
+meql equivalent ph
+normal range blood ph
+pao partial pressure oxygen arterial blood
+normal range pao affected age altitude
+result changes overall matching ventilation perfusion normal pao declines advancing age
+regression equations published estimate decrease however disparity results probably attributable heterogeneous study populations nonuniform study conditions
+hence equations guidelines
+example sorbini et al
+found following prediction equation supine subjects sea level
+based equation lower limit normal pao age would approximately mm hg
+elevations sea level partial pressure inspired oxygen falls barometric pressure normal pao decreases concomitantly
+example barometric pressure mm hg predicted normal pao healthy young subject approximately mm hg contrasts value close mm hg sea level
+therefore locations substantially sea level local normal values correct altitude must utilized abg interpretation
+paco partial pressure carbon dioxide arterial blood
+normal range mm hg vary significantly age
+nevertheless normal paco tends lower high altitudes ventilation stimulated local norms must established
+cellular metabolism whole organ function optimum relatively narrow range ph
+hence acid base status blood closely regulated
+homeostasis maintained three mechanisms buffers mitigate changes ph especially carbonic acidbicarbonate hcohco pair lungs control paco kidneys regulate plasma bicarbonate
+central relationship among following reaction
+dissolved co hydrated equilibrium reaction form strong acid hco
+amount dissolved co directly proportional paco proportionality constant solubility coefficient co
+therefore lungs effectively regulate hco concentration
+carbonic acid reversibly dissociates h hco
+metabolic acids titrated primarily hco hco concentration ultimately renal control
+interdependence among may expressed classic henderson hasselbalch equation ph rearranged equation h
+notice equations ph h concentration depends ratio paco hco absolute value either one alone
+acidosis alkalosis refer pathophysiologic disturbances tend increase decrease hydrogen ion concentration respectively
+primary disturbances paco cause respiratory acid base disorders whereas primary alterations bicarbonate responsible metabolic derangements
+primary disturbance elicits compensatory response usually incomplete returns ph toward normal
+thus acidosis alkalosis necessarily result acidemia ph
+alkalemia ph
+simple acid base disorders illustrated table
+mixed acid base disturbances result two simple disorders occurring together
+complex recognition analysis predicated thorough understanding primary disorders
+primary purposes respiration provide oxygen cells aerobic metabolism excrete carbon dioxide produced metabolic activity
+requires integrated function respiratory system gas exchange alveolar air pulmonary capillary blood cardiovascular system gas transport metabolizing tissues
+respiratory system may divided two parts respiratory pump lung
+respiratory pump includes thoracic cage abdomen respiratory muscles respiratory control centers neural interconnections
+major function respiratory pump ventilation lung whereas primary role lung gas transfer
+factors influence gas exchange lung include movement gas lung ventilation blood flow lung perfusion regional distributions ventilation perfusion ventilation perfusion matching diffusion across alveolar capillary membrane
+overall adequacy gas exchange oxygen carbon dioxide reflected pao paco
+carbon dioxide major product oxidative metabolism transported lung venous blood eliminated alveolar ventilation
+paco directly proportional carbon dioxide excretion rate co inversely proportional alveolar ventilation
+rise co production increases balanced appropriate rise alveolar ventilation alveolar ventilation decreases given co production
+therefore paco index adequacy alveolar ventilation relation carbon dioxide production
+alveolar ventilation portion total minute ventilation e participates effectively gas exchange
+remainder minute ventilation reaches anatomic physiologic dead space participate gas exchange called dead space ventilation
+alveolar ventilation total minute ventilation minus dead space ventilation
+alveolar ventilation may fall due decrease minute ventilation normal dead space due increase dead space ventilation without compensatory increase minute ventilation
+oxygen essential aerobic metabolism
+transfer oxygen alveolar air pulmonary capillary blood affected partial pressure oxygen alveoli diffusion across alveolar capillary membrane matching alveolar ventilation capillary perfusion
+five possible causes reduction pao low inspired oxygen tension alveolar hypoventilation diffusion impairment ventilation perfusion mismatching right left shunt
+addition low mixed venous oxygen tension magnify reduction pao due ventilation perfusion mismatching shunt
+partial pressure oxygen alveoli pao may determined ideal alveolar gas equation
+pb barometric pressure pho partial pressure water vapor mm hg fio fractional concentration inspired oxygen r respiratory exchange ratio usually
+alveolar arterial oxygen tension gradient pa ao difference calculated pao measured pao
+normal gradient increases age usually range mm hg
+either alveolar hypoventilation low inspired oxygen tension cause decreased pao gradient remains normal
+contrast abnormality either diffusion ventilation perfusion matching increase pa ao
+diffusion however rarely cause low pao rest
+arterial oxygen content cao sum hemoglobin bound oxygen dissolved oxygen
+hb hemoglobin concentration sao arterial saturation
+contribution dissolved oxygen small major impact pao oxygen content effect hemoglobin saturation figure
+pao mm hg dissociation curve relatively flat sao increases little even large increment pao
+contrast pao mm hg curve steeper sao decreases significantly decrement pao
+also illustrated figure position oxyhemoglobin dissociation curve may shifted factors alter configuration hemoglobin molecule change affinity binding oxygen
+oxygen delivery tissues product cardiac output arterial oxygen content
+oxygen delivery compromised reduction component cardiac output hemoglobin concentration sao
+however decrease one component may offset increase another maintain oxygen delivery
+abg contains data relevant three areas acid base status ventilation arterial oxygenation
+clinical estimates presence severity abnormalities areas often deceptive
+consequently abg useful disturbances apparent suspected three parameters
+systematic approach interpretation conjunction appropriate clinical correlation help delineate problems areas guide institution adjustment supportive therapy necessary
+first consider acid base status
+simple acid base disorders presented table
+differential diagnosis category relatively limited may found medicine texts
+diagnosis often aided using laboratory parameters serum electrolytes along abg clinical data
+treatment directed toward underlying cause depend nature severity disturbance
+prompt intervention generally necessary extremes acidemia ph
+alkalemia ph
+adverse effects cardiovascular central nervous systems common ph exceeds limits
+next ventilatory status evaluated
+extension acid base analysis focuses attention ventilatory function
+recall paco index adequacy alveolar ventilation relation carbon dioxide production eq
+normally primary rise paco trigger increase ventilation restore paco respiratory pump intact
+hence hypercapnia respiratory acidosis present degree ventilatory failure occurred
+common causes include central nervous system depression disease neuromuscular disorders thoracic cage deformities obstructive lung disease
+addition respiratory muscle fatigue due increased work breathing cause may culminate ventilatory failure
+respiratory acidemia severe progressive mechanical support ventilation may necessary measures directed underlying process
+finally arterial oxygenation assessed
+pao predicted lower limit normal eq
+widened pa ao indicates abnormality gas exchange recognized may always significantly impair arterial oxygenation
+pao mm hg provides approximately hemoglobin saturation acid base status temperature normal figure
+however pao mm hg significant desaturation occurs pao falls arterial oxygen content eq
+decreases proportionately
+oxygen delivery compromised low arterial oxygen content desaturation anemia inadequate cardiac output critical tissue hypoxia may occur
+sensitive sites central nervous system heart oxygen deprivation potentially harmful aerobic metabolically active tissues
+clinical circumstances reasonable goal therapy maintain pao mm hg range
+cases slightly lower levels may acceptable however generally little gained increasing pao substantially range
+needed supplemental oxygen administered guidelines mind
+addition attention given hemoglobin concentration cardiac output optimize oxygen delivery

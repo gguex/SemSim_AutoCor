@@ -1,0 +1,422 @@
+electrocardiogram ecg records body surface registers differences electrical potential generated heart
+signal recorded determined action potentials generated millions individual cells sequence activation
+multitude factors cardiac extracardiac alter final electrical signal
+instance electrical forces generated heart subsequently altered position heart within body nature intervening tissue distance recording electrode
+since final recorded electrical signal faithfully reflect electrical activity individual cells student expect ecg necessarily provide exact anatomic physiologic picture heart
+nevertheless result careful correlation electrocardiographic patterns observed anatomic pathologic physiologic data possible deduce high grade accuracy state heart surface ecg
+true ecg may normal despite abnormal heart abnormal normal heart equally true ecg often provides important indication cardiac abnormality even allows fairly accurate appraisal anatomic physiologic significance abnormality
+furthermore ecg far best method analysis disturbances cardiac rhythm
+frontal plane ecg recorded supine resting patient attaching electrode four extremities figure
+bipolar lead records difference potential left arm right arm left arm serving positive pole current electricity passing right left reflected upward deflection lead recording
+lead ii records difference potential right arm left leg left leg serving positive pole
+lead iii records differences potential left arm left leg left leg positive
+three additional leadsthe augmented leads avr avl avfrecord difference potential right arm left arm leg respectively ground lead formed summing two unused limb leads
+case positive pole designated limb
+taken together six leads record cardiac electrical vectors throughout entire ° frontal plane figure
+vectors moving horizontal plane contrast reflected precordial leads v v placed anterior left lateral chest positions shown figure c
+v electrode position located fourth right intercostal space adjacent sternum
+v electrode position located fourth left intercostal space adjacent sternum
+v electrode position located midpoint line connecting electrode position v electrode position v
+v electrode position located fifth left intercostal space midclavicular line
+v electrode position located level electrode position v anterior axillary line
+v electrode position located level electrode positions v v midaxillary line
+instance electrode serves positive pole negative pole formed electrically connecting limb leads electrical current moving toward one precordial leads reflected upward deflection recording
+conversely vector moving toward right posterior chest reflected negative deflection left anterior precordial leads
+thus even though electrodes placed right posterolateral chest vectors moving direction within ° horizontal plane still reflected six selected precordial leads
+ecg instrument records lead separately either sequentially instruments several leads recorded simultaneously
+stylus moves depending voltage reflecting recording paper moves constant present speed mmsec
+hence time represented recording paper horizontal axis voltage reflected vertical axis
+signal recorded grid lines mm apart vertical horizontal axes
+horizontal axis mm represents
+second msec every mm designated bold line indicates
+second
+recording must precisely standardized mm vertical deflection reflects
+mv mm indicated bold line represents
+mv figure
+electrocardiogram recorded different paper speed twice conventional rate voltage conventional alterations must recorded taken account measuring various intervals waves ecg
+convention first upward deflection baseline termed p wave reflects atrial depolarization
+p wave exceed
+mm height
+second width e less three small boxes high wide
+ventricular depolarization represented qrs complex
+q wave first negative deflection baseline p wave preceding upward deflection
+normally q wave reflects ventricular septal depolarization duration exceed
+second
+r wave first positive deflection p wave reflecting depolarization ventricular mass
+wave negative deflection following positive r wave representing later ventricular depolarization
+positive deflection following wave labeled r read r prime negative deflection following r labeled
+convention uppercase r infers large deflection whereas lowercase r infers smaller deflection
+wave reflects repolarization ventricle may represented either positive negative deflection following qrs complex
+area incorporated within wave approximates within qrs complex polarity roughly principal qrs polarity
+occasionally another wave u wave may follow wave generally polarity wave
+mechanism u wave unknown though may reflect repolarization papillary muscles simply represent afterpotential
+pr interval time beginning p wave beginning qrs whether initiated q r interval indicates time required atria depolarize electrical current conduct atrioventricular node bundle branches ventricle depolarizes
+qrs interval interval beginning q wave end wave incorporating ventricular depolarization
+qt interval time beginning q wave end wave incorporating ventricular depolarization repolarization
+pr segment portion recording end p wave beginning qrs
+st segment portion recording generally represented horizontal line end ventricular depolarization whether represented r wave wave beginning wave
+order understand mechanism recorded electrocardiographic patterns essential appreciate first genesis single action potential derivation surface tracing cardiac cells sequence activation heart
+adjacent cell diagrammed figure exquisitely fine tip microelectrode since yet advanced cell records nothing difference potential voltage zero
+introduced cell however b records negative potential mv respect outside cell
+inner negativity reflects selective permeability membrane potassium net loss potassium leaving inside electrically negative
+cell remains negative polarized state one two mechanisms negativity reduced becomes positive threshold potential
+threshold potential potential membrane permeability sodium altered cell depolarize
+since positive sodium ions move rapidly negative cell inside cell becomes positive
+fact sodium influx arrested intracellular potential becomes absolutely positive manifested called overshoot
+phase depolarization followed restitution intracellular potential normalthe phase repolarizationwhich accomplished loss positive intracellular potassium ion
+repolarization includes early slow phase termed plateau result relative balance diminishing inward calcium current increasing outward potassium current later rapid phase due principally potassium efflux
+phases action potential numbered phase depicts depolarization phase refers overshoot spike phase numbers slow phase repolarization phase rapid phase repolarization
+important understand transmembrane action potential surface electrocardiogram derived arrhythmias result changes action potential one several cells
+consider pattern recognition first
+note figure
+qrs inscribed phases depolarization st segment isoelectric plateau wave phase rapid repolarization
+changes intracellular action potential may responsible changes surface electrocardiogram
+consider qt interval wave configuration example figure
+comparison normal action potential surface qrs increase extracellular potassium causes resting membrane less negative hence slowing phase manifested slowing upstroke prolongation qrs complex
+increased extracellular potassium also increases permeability cell potassium potassium efflux hastened resulting rapid phase quicker phase
+foreshortening plateau quickening phase result foreshortening qt interval peaked wave
+conversely hypokalemia results decreased permeability cell membrane potassium phases merge resulting surface tracing prolongation qt flattening prominent u wave
+hypocalcemia plateau phase action potential prolonged resulting prolongation isoelectric st interval
+conversely hypercalcemia qt interval foreshortened result abbreviation phase isoelectric st interval
+recall order cell propagate transmembrane action potential depolarize resting potential must brought threshold
+two mechanisms may accomplished
+first simplest electrically stimulate cell outside source
+stimulus weak resting potential reduced threshold depolarization occur
+stimulus sufficiently strong reduce resting potential threshold transmembrane action potential propagated
+nearly cells heart depolarized fashion cell stimulated externally neighboring cell
+second mechanism resting potential reduced threshold termed automaticity
+automatic cell one displays gradual spontaneous loss negativity diastole phenomenon termed diastolic depolarization numbered phase transmembrane action potential figure
+heart two kinds cells electrically automatic electrically nonautomatic
+muscle cells generally nonautomatic
+resting potential remains constant cell stimulated reach threshold
+automatic cell hand demonstrates phase diastolic depolarization see figure
+specialized cells sinus node av node remainder purkinje conducting system demonstrate automaticity
+cells rapid slope diastolic depolarization reach threshold first cells generally located sinus node control rate heart
+words heart rate depends rapidity slope diastolic depolarization automatic cells
+rapid slope earlier cell reaches threshold faster heart rate
+altered automaticity would one cause rhythm abnormalities
+second common mechanism rhythm disturbances reentry
+considering box figure represent heart whole consider one small segment cell
+reentry refers phenomenon impulse depolarizing segment cell produce action potential surface ecg qrs complex traversing around another portion heart circuitous movement reenter first segment later time eliciting second response second qrs instance surface ecg coupled premature ventricular complex
+two conditions must prevail reentry occur
+first impulse must leave selected segment conduct cardiac muscle
+impulse depolarized first cell conducted remainder heart neighboring cells would refractory conduction circus pathway would possible
+words circus pathway excitable initial wave depolarization must reached pathwaythat must unidirectional block block forward reentry pathway retrograde portion pathway
+without unidirectional block reentry would possible
+second must slowing conduction
+heart requires second recover become excitable
+impulse travels speed msec speed conduction expected purkinje network impulse would travel sec × msec reentering cell
+course heart large
+alternative explanation conduction must remarkably slowed
+slowing conduction easily recognized level av node measuring pr segment surface electrocardiogram
+thus reentry often diagnosed inferred surface electrocardiogram reentry develops av junction
+hand slowing conduction reentry may easily recognized portions heart
+help ladder diagram denotes electrical activation atrium av junction ventricle consider mechanism supraventricular tachycardia resulting reentry level av node figure b
+first two diagrammed complexes originate sinus node atrial activation conducting normally av junction appropriate av resultant pr delay depolarizing ventricle
+third atrial activation labeled atrium p surface ecg occurs prematurely thereby reaching av junction relative refractory period conducting slowly junction
+note prolongation av interval pr interval surface tracing
+recall slowing conduction prerequisite reentry impulse may turn around junction conduct retrograde back junction via second pathway excite atrium second timethat atrium depolarized twice result single stimulus definition reentry
+impulse turn conduct antegrade though slowly av junction ventricle reciprocate back forth two chambers resulting supraventricular tachycardia
+four complexes second premature complex labeled atrium p ventricle occurs conducting av junction thereby interrupting retrograde path reentry circuit terminating tachycardia
+clinically mechanism reentrant supraventricular tachycardia often differentiated supraventricular tachycardia resulting augmented automaticity resulting digitalis excess
+latter diagrammed figure c
+course tachycardia must necessity initiated premature atrial complex premature complex often later reaching av junction regained excitability pr interval prolonged
+rather regular tachycardia ensuing automatic focus generally warms gradual acceleration rate ultimate rate tachycardia
+finally automatic rate tachycardia often terminated premature atrial complex gradually slows stopping
+reentrant supraventricular tachycardia initiated laboratory appropriately timed atrial stimulus terminated similarly
+contrast automatic tachycardia generally initiated terminated atrial pacing
+figure
+shows example accelerated idioventricular rhythm slow ventricular tachycardia whose mechanism presumably augmented automaticity focus ventricle
+study first two complexes top tracing determine normal p wave pr interval qrs
+compare complexes middle second trace
+note pr interval shorter
+likely p wave nothing ensuing qrs complex
+instead sinus rate gradually slows hitherto unrecognized ventricular rhythm rate cpm becomes manifest usurps control ventricle
+broad complexes ventricular origin resulting augmented automaticity focus
+toward end middle trace bottom trace sinus rate accelerates result increasing automaticity level sinus node atrium captures controls ventricle
+surface ecg tracing result summing electricity generated multitude cardiac cells
+segment myocardium diagrammed figure
+depolarizes endocardium epicardium electrical force generated
+force termed vector characterized given magnitude direction
+convention positive pole vector represented arrowhead also convention positive pole directed toward electrode ecg stylus deflected upward whereas vector directed away electrode negative deflection recorded
+amplitude deflection depends magnitude vector
+thus figure vector directed away electrode toward electrode b negative deflection recorded positive deflection b
+segment muscle depolarizes must repolarize
+repolarization directionthat endocardium epicardium represented reinstitution cell negativity repolarization wave reflected surface tracing would reflected identical complex opposite direction
+fact repolarization ventricle travels opposite direction depolarization probably result delay repolarization endocardium due intraluminal left ventricular cavity pressure
+addition repolarization slower depolarization
+hence repolarization reflected surface electrocardiogram slower direction depolarization
+general terms however area subtended qrs complex approximately equals wave
+next understand surface electrocardiogram consider sequence depolarization repolarization heart figure
+recall sinus node generally depolarizes rapidly cells first area excitement sinus node located upper right atrium
+depolarization low voltage recorded surface electrocardiogram atrial activation spreads sinus node downward left vector depolarizing right atrium left resulting upward p wave leads inferior leads often notch separating depolarization two atria terminal negativity v figure
+wave depolarization conducts slowly atrium av node bundle bundle branches
+electricity generated tiny structures insufficient recorded surface instead isoelectric pr interval recorded
+conducted av conducting system reach ventricles wave activation reaches terminal portion shorter left bundle hence ventricular muscle left side septum reaching termination longer right bundle
+hence interventricular septum first depolarized left right vector reflected upward deflection right precordial leads v negative deflection left precordial leads v
+initial wave ventricular depolarization may either superior vector inferior vector b either small q r may recorded leads ii iii avf
+following septal depolarization apex remainder ventricular free walls depolarize
+consideration figure student note second wave ventricular depolarization vector apex ventricles general isoelectric right left precordial leads stylus returns baseline
+two ventricles depolarize approximately time larger left ventricular muscle generates electrical voltage smaller right ventricular muscle net forces vector directed left inferiorly reflected negative stylus movement right precordium positive r wave left precordium
+stylus returns baseline superior left ventricular free wall right ventricular outflow tract finally depolarized diagrammed vector figure
+following phases multiple transmembrane action potentials plateau slow phase repolarization phase manifested surface ecg isoelectric st segment
+rapid repolarization apparent left ventricle right wave inscribed subtending area equal qrs slower drawn general pointing approximately direction qrs
+normal electrocardiogram begins p wave reflecting depolarization atria generally right left inferiorly
+thus atrial activation represented surface electrocardiogram p wave upright leads ii iii
+terminal negativity precordial lead v normal represents later depolarization posteriorly located left atrium
+amplitude p wave exceed
+mm
+mv duration exceed
+second less three small boxes
+p wave may notched indicating separate right left atrial activation
+pr segment generally isoelectric
+segment may deflected however repolarization abnormalities atria resulting atrial infarction pericarditis
+normal pr interval measures
+second
+duration qrs complex measures
+second
+q wave exceed
+second depth generally exceed mm
+height r wave generally exceed mm
+frontal axis qrs complex measures ° ° indicating complex principally positive lead lead ii
+normal sequence activation ventricle requires rs v gradually progressing larger r toward left precordium smaller
+small q wave generally recorded left limb precordial leads reflecting left right septal activation
+wave generally points direction qrs mean vector ° divergent mean qrs vector
+area subtended wave approximates included within qrs complex well
+normal qt interval dependent upon heart rate
+normal heart rate approximately cpm qt interval measures approximately
+second
+qt interval corrected heart rate qt according bassett formula
+alternatively add
+second
+second every decrement heart rate cpm beats subtract
+second
+second every beat increment heart rate cpm calculate normal qt interval heart rate
+simpler yet observation qt interval generally measures less one half rr interval
+st segment normally isoelectric divergence st interval baseline often indicates clinically significant abnormalities
+st interval generally clinical significance unless qt interval foreshortened prolonged example hyper hypocalcemia
+respectively
+precise calculation electrical axis usually unnecessary
+student simply needs determine whether axis normal deviated right right axis deviation toward left left axis deviation
+convention normal axis ranges ° ° figure
+right axis deviation indicates axis greater ° generally indicates either predominance right ventricular forces resulting right ventricular hypertrophy cause loss left lateral forces resulting lateral wall infarction
+left axis deviation infers axis left ° commonly result either left anterior hemiblock discussed subsequently left ventricular predominance
+determine axis visually calculate area subtended positive negative qrs deflections algebraically sum
+area principally upright lead right axis deviation excluded right axis deviation defined axis greater ° would reflected principally negative deflection lead
+similarily qrs complex lead ii principally positive left axis deviation excluded since definition left axis deviation left negative side ° perpendicular lead ii
+words student immediately determine axis normal simply observing principally upright deflections leads ii
+left axis deviation diagnosed wave exceeding r wave lead ii right axis deviation diagnosed wave exceeding r wave lead
+one may calculate qrs axis precisely determining relative positivity negativity limb leads hence placing resultant vector
+heart rate may slow less arbitrarily defined lower limit cpm one two reasons atria slowatrial bradycardia block conduction atria ventriclesatrioventricular av block
+three varieties atrial bradycardia sinus bradycardia sinus exit block sinus arrest
+sinus bradycardia characterized normal sequence activation impulse arising sinus node normal p wave rate less cpm
+sinus exit block characterized block conduction surrounding sinus node sinus pacemaker may function normally impulse fails exit sinus node excite atria
+surface ecg sinus exit block characterized periodic pauses exact multiples sinus intervals
+instance figure pauses recorded represent two three four sinoatrial ratio sinus intervals
+since p wave following pause precisely timed expected sinus interval may assume sinus node discharged appropriately interval impulse failed exit sinus node excite atrium generate p wave
+sinus arrest represented total cessation atrial activation without prior slowing sinus rate
+av conduction may block one two levels level av node beyond bifurcation bundle histhat level bundles ventricle figure
+block level av node may termed av nodal block type block supra block
+clinically helpful consider variety supraventricular block since abnormality level ventricles
+regardless block occurs three different degrees block possible
+first degree block refers slowing av conduction resultant prolongation pr interval though p wave succeed conducting av conducting system activate ventricle figure
+second degree block indicates p waves conduct av junction others fail excite ventricle
+second degree block develops level av node type invariably wenckebach type characterized progressive prolongation pr interval p wave fails traverse av conducting system excite ventricle figure b
+classically increment pr interval decremental
+consequently wenckebach second degree block av node although progressive prolongation pr interval rr interval commonly decreases pause measures less two pp intervals
+timing may better understood reference diagram figure
+third degree block complete blockthat none p waves succeed traversing av conduction system depolarize ventricle
+third degree block develops level av node type focus lower av junction generally escapes conduct ventricle escape rate may slightly less normal sinus rate figure c
+block develops bifurcation bundle level intraventricular conduction system termed infra bilateral bundle branch block type ii block
+clinically well recall block level ventricles may termed ventricular block
+block may develop three degrees
+first degree block characterized prolongation pr interval recognized coexistent prolongation intraventricular conduction
+second degree block level termed mobitz ii wenckebach block may also referred mobitz
+mobitz ii block characterized constant pr interval p wave suddenly fails conduct ventricle resultant pause
+invariably qrs prolonged bundle branch block pattern
+third degree complete block level ventricles characterized extraordinarily slow ventricular response since escape focus beneath level block slow intrinsic rate
+figure
+shows example infra block
+lead v note p wave followed markedly prolonged pr interval qrs right bundle branch block conduction delay
+would indicate first degree infra block
+lead avr third p wave suddenly fails conduct ventricle whereas preceding p waves conduct fixed pr interval
+example mobitz ii second degree infra type ii block escape focus previously positioned demand pace maker
+pacemaker patient may manifested complete heart block exceedingly slow ventricular escape
+indicated first determination student must make interpreting bradycardia origin supraventricular ventricular see figure
+etiology abnormality prognosis patient therapy much dependent upon site origin bradycardia precise rhythm disturbance degree block
+thus abnormality supraventricular either one three atrial varieties one three degrees av block cause may high vagal tone digitalis ischemia infarction inferior wall heart
+wenckebach block may even normal finding healthy young adult
+prognosis generally good
+therapy required commonly vagolytic therapy atropine low dose catecholamine infusion may suffice
+cardiac pacing infrequently required
+conversely block level ventricles never normal
+cause may idiopathic degeneration cardiac skeleton adjacent conducting system lev disease toxic amounts certain drugs infarction anterior wall interventricular septum
+depending upon etiology prognosis may much worse syncope even death likely ensue cause myocardial infarction
+vagolytic agents accelerate intraventricular conduction either catecholamines emergency measure cardiac pacing may indicated
+instance consider single etiology myocardial ischemia infarction
+knowledge coronary arterial distribution particularly coronary supply essential pacemaker conducting sites heart one predict bradycardia likely complicate given myocardial infarction
+figure diagrammed conducting system heart seen lateral view right side interventricular septum
+conduction system sinus node av node bundle right bundle right side septum stippled
+right coronary artery rca arises right sinus valsalva courses right av groove turns sharply crux heart descend posterior interventricular groove posterior descending artery
+supplies posterior inferior surface heart occlusion rca generally results inferior wall diaphragmatic infarction
+majority hearts rca sends large branch near origin sinus nodethe sinus node artery
+occlusion rca near origin usually induces ischemia sa node pacemaker function slows resulting sinus bradycardia
+actually sa node per se damaged much area junction node atrium sinus node exit block may develop
+sinus node may fail altogether resulting sinus arrest
+crux heart rca bends gives another large branch hearts nurture av nodethe av nodal artery
+rarely av node infarcted necrotic ischemic setting acute inferior wall infarction
+even node per se ischemic area surrounding area contains plethora cholinergic ganglia ischemia results release acetylcholine thus mimicking vagal stimulation slowing conduction av node
+result may either first second third degree av type block
+consequently inferior wall infarction commonly associated temporary reversible ischemia either sinus node av node resulting variety supraventricular bradycardia
+unless rate extremely slow therapy usually required
+conversely consider figure b diagrams conducting system coronary distribution left side septum
+left coronary artery descends anterior interventricular groove left anterior descending coronary artery lad nurtures main left bundle divisions left bundle also right bundle side septum
+quite significantly lad also supplies huge mass muscle interventricular septum anterior papillary muscle student also envision potential problems heart failure shock mitral regurgitation regardless conduction disturbance
+occlusion lad associated bradycardia explanation generally infra type ii block
+conduction system may ischemic infarcted block may irreversible
+ventricular escape much slower prognosis much worse
+cardiac pacing generally required emergency even prognosis poor
+figure
+provides example type ii block setting acute anterior wall infarction
+exactly bradycardias essential distinguish tachycardias supraventricular origin ventricular origin since etiology prognosis therapy differ two
+essential clinical features differentiating various tachycardias listed table
+though overly simplistic supraventricular tachycardias generally divided three types paroxysmal supraventricular tachycardia psvt atrial flutter atrial fibrillation
+psvt commonly occurs otherwise normal hearts
+atrial flutter atrial fibrillation imply cardiac disease variety types including hypertensive cardiomyopathic ischemic valvular disease
+rate psvt generally quite rapid range cpm figure
+rhythm quite regular
+auscultation first heart sound constant intensityso constant fact prove monotonous
+carotid sinus massage tachycardia may terminate
+atrial flutter atrial rate rapid cpmto traverse av conduction system
+hence every atrial impulse traverses system excite ventricle resultant atrioventricular ratio ventricular rate cpm figure b
+rhythm generally regular first heart sound relatively constant intensity
+carotid sinus massage atrial flutter persists ratio av block may increase consequent halving ventricular rate transiently
+atria depolarize cpm atrial fibrillation course impulses traverse av node reach av node varying intervals conducting varying distances node resulting variable ventricular response quite irregular figure c
+first heart sound may vary somewhat intensity depending upon irregularity pulse
+carotid sinus massage may transient slowing ventricular response
+reference electrocardiograms figure
+shows duration qrs generally normal supraventricular tachycardias
+essential diagnosis however since qrs could prolonged due underlying bundle branch block intraventricular conduction may slowed result excessively rapid depolarization ventricular conducting system
+ventricular tachycardia never normal complicates heart disease varieties particularly ischemic cardiomyopathic disease
+unlike varieties supraventricular tachycardia ventricular tachycardia may lethal
+prognosis depends underlying heart disease
+duration qrs ecg ventricular tachycardia almost always prolonged generally excess msec
+sec however rate quite variable
+less cpm ventricular tachycardia termed slow ventricular tachycardia accelerated idioventricular rhythm see figure
+conversely rate may reach high cpm
+typically ventricular tachycardia displays rate cpm
+rhythm generally fairly regular
+commonly atria ventricles dissociated ventricular tachycardiathat atria continue depolarize normal slightly accelerated rate instance cpm whereas ventricle depolarized rapid rate
+av dissociation results diagnostic physical findings
+right atrium contracts closed tricuspid valve resulting preceding ventricular contraction retrograde cannon wave seen jugular vein
+varying positions av valves dependent upon timing contraction chambers intensity first heart sound varies beat beat
+ventricular contraction preceded appropriately timed atrial contraction pulse blood pressure higher inappropriate timing occurs
+three findingscannon waves variable intensity first heart sound variations systolic blood pressureare extremely helpful bedside hints origin tachycardia
+av dissociation periodically appropriately timed atrial complex may conduct av conducting system capture ventricle prematurely
+electrocardiographically recognized complex slightly premature follows p wave conducted normally narrower qrs complex
+capture timed portion ventricle depolarized another portion ventricle depolarized site ventricular tachycardia result fusion two complexesone supra ventricular one ventricular origin
+resultant qrs intermediate configuration two origins figures
+ventricular fibrillation refers completely disorganized electrical activation ventricles
+effective ventricular contraction death imminent fibrillation immediately converted figure
+clinical bedside findings may help distinguish various tachycardias
+commonly egg essential differential diagnosis
+duration qrs narrow one may fairly certain tachycardia supraventricular origin
+duration qrs quite broad one approximately certain tachycardia ventricular origin
+hand approximately supraventricular tachycardias may conduct prolonged qrs complexes
+explanation may preexistent bundle branch block aberrant conduction rapid supraventricular complexes
+thus tachycardia broad qrs one must distinguish ventricular tachycardia supraventricular tachycardia conducting aberrantly
+aberrancy refers abnormally prolonged intraventricular conduction impulse supraventricular origin
+result alteration heart rate change cycle length functional abnormality
+aberration refer fixed bundle branch block
+supraventricular rate rapid greater cpm impulses may reach ventricle prior full repolarization recovery excitability action potentials conducting system consequently impulses conduct aberrantly
+addition refractory period given impulse directly related preceding rr interval
+longer interval longer refractory period likely subsequent impulse conduct aberrantly occurs relatively prematurely
+words long interval prolongs refractory period followed short interval impulse following short interval may reach conducting system still refractory thus conducting aberrantly
+referred ashman phenomenon figure
+thus heart rate rhythm certain physical findings duration qrs relationship atrial ventricular depolarization seen captures fusions help one distinguish supraventricular tachycardias broad qrs ventricular tachycardias
+configuration qrs precordial leads also helpful
+many distinguishing features listed table
+common egg abnormalities selected illustrate application technique pattern recognition
+instance diagnostic criteria listed followed brief description responsible vectors
+altered vectors responsible abnormal qrs complexes diagrammed figure
+pattern right bundle branch block
+despite conduction block right bundle wave depolarization still reaches termination left bundle entering muscle left side septum proper time traversing crossing septum left right depolarizing left ventricle endocardium epicardium
+hence initiation qrs complex remains normal
+delay least msec right ventricle belatedly excited secondary wave depolarization skirted area block
+thus tacked onto termination normal qrs vector right ventricular depolarization directed toward v away left lateral leads delayed slowed due conduction impulse muscle rather conduction system
+words normal early qrs added right ventricular vector prolonging qrs duration msec figure
+recall right bundle branch block may functional resulting supraventricular tachycardia ashman phenomenon delay depolarization right bundle allows left bundle depolarize first
+pattern left bundle branch block
+left bundle branch block hand abnormal inception since impulse must traverse right bundle termination enter ventricular muscle right side septum traverse septum right left subsequently belatedly depolarize left ventricle
+resultant qrs slowed delayed beginning directed solely right left away right toward left precordial leads figure
+pattern left anterior hemiblock
+left bundle actually single bundle conducting tissue divides least two fascicles hemidivisions
+left anterior hemifascicle directs depolarization toward left anteriorly superiorly whereas left posterior hemifascicle directs depolarization inferiorly posteriorly
+block left anterior hemidivision left anterior hemiblock left ventricle must initially depolarize via left posterior hemifascicle initial vector directed inferiorly toward leads ii iii avf away leads avl vector figure c
+hence r wave recorded inferior leads q wave lateral leads
+subsequently vector move direction anterolateral left ventricle toward leads avl away inferior leads vector b resulting tall r wave laterally deep wave inferiorly
+qrs prolonged msec resultant duration qrs depend initial duration
+diagnose left anterior hemiblock one must record rs deflection inferior leads deeper r tall resulting abnormal left axis deviation left ° °
+furthermore since vector directed away lead iii lead ii lead iii must exceed lead ii
+left posterior hemiblock exact opposite condition prevails qr recorded inferior leads rs anterolateral leads
+left posterior hemiblock much much less common left anterior hemiblock
+electrocardiographic criteria rbbb lah combined result termed bifascicular block
+coupled first degree av block may represent trifascicular blockthat rbbb lah plus first degree block remaining left posterior hemifascicle see figures
+hand prolongation pr interval result delay conduction across av node would indicate bifascicular block first degree av block trifascicular
+right ventricle anterior right sided structure right ventricular hypertrophy rvh results principal qrs vector directed toward lead v
+ecg criteria rvh
+congenital heart disease one may suspect rvh precise anatomic cause
+diastolic volume overload right ventricle resulting atrial septal defect rsr recorded v
+r said result hypertrophy crista supraventricularis
+systolic pressure overload right ventricular pressure less equal left ventricular pressure tall r recorded v delta wave slurring upstroke figure
+right ventricular pressure exceeds left ventricular pressure severe pulmonary hypertension pulmonic stenosis either pure r qr recorded v
+figure r exceeds v axis rightward suggesting right ventricular hypertrophy
+however qrs v quite squat absence deeper might suggest left ventricle relatively small
+plus coexistent left atrial abnormality highly suggestive causemitral stenosis
+pattern left ventricular hypertrophy
+left ventricle left sided posterior structure increased vectors would directed accordingly resulting taller generally delayed r wave laterally deeper wave right precordium
+repolarization begins endocardium rather epicardium due delay conduction endocardium epicardium st vector points opposite direction qrs resultant st depression wave inversion leads recording tall voltage figure
+left atrial abnormality shows following pattern
+abnormal conduction left atrium left atrial hypertrophy resultant atrial vector point toward left atriumthat posteriorly toward left
+furthermore since left atrial depolarization follows right atrial depolarization terminal portion p wave abnormal resulting terminal negative deflection v terminal delayed upright deflection lateral precordial leads figure
+right atrial abnormality characterized
+conversely earlier right atrial depolarization alters initial p wave vector prolonging overall duration p wave directing interiorly p wave normal duration peaked taller normal inferior leads
+myocardial infarction generally manifested q waves absence r waves due electrical silence scarred zone resultant vectors pointing away infarction
+table
+indicates ecg waves associated myocardial infarctions various locations
+anterior myocardial infarction absence r wave replaced abnormal qs complex anterior precordial leads generally limb leads recording left ventriclethat leads avl
+attempts made localize anterior infarction specifically septum v anterolateral wall v free anterior wall v
+figure
+provides examples frankly however correlation electrocardiographic diagnosis pathological demonstration highly variable
+inferior myocardial infarction r wave replaced pathological q wave exceeding
+sec duration figure
+leads ii iii avf
+true posterior infarction demonstrated less directly
+electrodes conventionally placed back infarction posterior wall ventricle recorded pathological q waves posteriorly
+hand resultant initial vector must directed anteriorly away posterior wall resulting abnormal upward early deflection r wave right precordial leads
+figure
+displays inferoposterior infarction resulted occlusion large right coronary artery
+repolarization abnormalities seen ischemic injury myocardium
+recall normal wave vector direction normal qrs vector since depolarization repolarization progress opposite directions opposite electrical forces generated repolarization
+contrast ischemia repolarization delayed reversing polarity wave wave inversion recorded leads traditionally record upright waves
+injury myocardium depolarization may delayed zone resulting current injury pointing toward area injury
+thus st segment elevation recorded leads overlying injured zone figure
+timing myocardial injury infarction precise
+however patterns diagrammatically displayed figure
+typify myocardial infarction various stages development
+earliest electrocardiographic indication myocardial injury may subtle increase amplitude wave
+st segments elevate generally concave upward
+within minutes st segment elevation generally convex upward less impressive wave amplification
+within hours r wave may diminish amplitude abnormal q wave begins develop st segment elevation diminishes
+hours extending days pathologic q waves increase duration loss r wave return st segment toward baseline
+electrocardiographic indication chronic infarction pathological q wave consequent loss r wave activity generally isoelectric st segments inversion waves leads record q waves
+basic science section discussed repolarizalion abnormalities accompanying electrolyte fluxes
+entire host events alter repolarization hence st segment including ischemia hypoxemia electrolyte abnormalities potassium calcium magnesium drugs digitalis antiarrhythmics tricyclic antidepressants virtually disease affecting myocardium myocarditis cardiomyopathy trauma tumor
+thus repolarization abnormalities generally quite nonspecific require clinical correlation interpretation
+one sort st wave abnormality fairly diagnostic however resulting pericarditis
+st segment directed toward epicardium left inferiorly anteriorly resulting st segment elevation leads st depression leads avr v st elevation generally concave upward wave upright leads least early course pericarditis though later waves commonly invert leads
+pr vector directed toward atria opposite direction pr segment depressed leads st segment elevation recorded figure
+thus ecg extraordinarily useful method evaluation state heart structure function rhythm
+authors indebted mr
+phillip wilson medical illustrator mrs
+karen deering secretary help

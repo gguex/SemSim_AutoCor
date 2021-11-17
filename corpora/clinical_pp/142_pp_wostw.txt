@@ -1,0 +1,370 @@
+thyroid function tests designed distinguish hyperthyroidism hypothyroidism euthyroid state
+accomplish task direct measurements serum concentration two thyroid hormonestriiodothyronine tetraiodothyronine tmore commonly known thyroxine extensively employed
+resin uptake tru used indirect measure serum thyroid hormone binding capacity free index fti derived tru corrects estimates serum binding abnormalities
+direct measurement serum concentration thyroid stimulating hormone tsh used extensively establish presence primary hypothyroidism recently identify hyperthyroid states
+selected clinical settings measurement serum concentration free dialysis may used clarify thyroid status measurement serum thyroid binding globulin tbg identify hormone binding disorders
+production rates estimated techniques time consuming expensive would indicated infrequently even readily available
+similarly free used limited basis generally available
+estimates fractional thyroid iodide uptake employed decades using marker
+relative low cost accuracy direct measurements serum hormone concentration uptake fallen disuse
+addition measurement basal hormone concentrations number techniques devised determine whether normal homeostatic feedback mechanisms operative whether normal functional reserve present
+useful tsh releasing hormone trh challenge wherein tsh measured trh infusion
+characteristic response patterns hyperthyroidism various types hypothyroidism diagnostic taken conjunction rest clinical picture
+currently generally available test specifically measures end organ response thyroid hormone
+consequently diagnosis thyrotoxicosis rests assumption appropriate signs symptoms accompanied confirmatory lab results sufficient evidence warrant conclusion
+majority instances assumption correct however exceptions
+sensitive specific test impact thyroid hormone peripheral tissues would reduce chance error
+frequency thyroid dysfunction population clearly dictates need every practicing physician skilled diagnosis thyroid disease
+thyroid function studies must selected interpreted specific question mind
+requires grasp thyroid physiology knowledge limitations tests question thorough understanding patient
+given prerequisites outcome often helpful number common clinical circumstances cause changes tests mislead unknowing
+section generally available tests thyroid function limitations described
+appropriate use interpretation allow accurate assessment thyroid status almost cases
+serum total concentration measured radioimmunoassay
+small molecule used antigen using hapten conjugated albumin native thyroglobulin conjugate antibodies produced
+dextro isomer generally binds well antibody naturally occurring levo isomer dextro isomer naturally present biological fluids measurable quantities
+antibody affinity several fold less since plasma concentration one fiftieth induced error small
+derivatives precursors l diiodothyronine monoiodothyronine l thyronine diiodotyrosine monoiodotyrosine react negligibly antibody
+iodide essentially effect antibody interaction
+two infrequently encountered compounds displace circulating tbg binding sites diphenylhydantoin salicylic acid also effect antibody interaction
+clinical purposes antibodies adequate specificity
+variable number high affinity tbg binding sites serum would tend abort precisely controlled interaction limited quantity antibody binding sites unknown amounts
+salicylic acid anilino l naphthaline sulfuricacid ans block binding tbg appreciably bind antibody
+addition reaction allows accurate estimates without extraction procedures designed separate native tbg
+binding antibody marked trace amounts separation bound free accomplished methods common immunoassays
+concentration total radioimmunoassay normally mgdl females slightly higher males
+intraassay coefficient variation order interassay variation approximately
+irrespective precise quantification appreciable overlap values normal subjects hypothyroid hyperthyroid patients
+illustrated figure schematically represents values typically found various states thyroid function
+significant fraction hypothyroid individuals values fall within normal range
+patients high low values often increased decreased concentrations tbg rather abnormal rates production
+radioimmunoassay distinguish two possibilities patients jeopardy abnormal laboratory values falsely attributed thyroid dysfunction
+tru indirect measure tbg binding capacity
+performed mixing comparatively low affinity solid phase resin binder aliquot patient serum added trace amount labeled
+partitions solid phase resin binder serum binding sites end incubation supernatant serum removed
+activity remaining resin binder divided total added multiplied defines percentage ru
+normal values vary function type solid phase binder used conditions employed incubation
+intraassay coefficient variation interassay value
+hyperthyroidism patient tbg relatively saturated higher usual fraction ii goes resin binder
+conversely hypothyroidism less label bound resin binder reduced amount endogenous competing normal complement tbg sites
+primary increase tbg concentration ru also reduced excess tbg rather reduction
+low tbg ru expected high
+illustrated figure large overlap hypothyroid normal hyperthyroid normal patients precludes use tru estimator thyroid function
+taken conjunction total however tru offers insight cause given deviation concentration
+thus patient elevation total due primarily increase tbg would expected low tru
+conversely patient reduced concentration tbg corresponding low concentration total would high tru
+changes outlined table
+inasmuch changes tru caused binding abnormalities discordant changes tru used correct total
+corrected free index fti generally calculated follows
+resultant number expressed without units illustrated following example
+woman increased tbg due pregnancy mg dl tru
+mid normal control tru laboratory day fti ×
+hand high total associated increased production leads oversaturation tbg increase total concentration tru
+multiplicands increased derived fti would tend exaggerate increase normal
+similar constructs low binding states versus hypothyroidism developed table
+figure comparison total fti shows latter test discriminates better normals abnormals still overlap subsets patients
+single estimation corrected otherwise reliably identify status thyroid function patients
+accurate method assessing thyroid function measure concentration free using equilibrium dialysis technique
+employing technique tbg variable effect total concentration eliminated thereby affording precise estimates thyroid status
+patient sera enriched trace amount labeled dialyzed protein free buffer overnight
+equilibrium free concentration retentate diffusate bound retentate
+unfortunately iodine contaminating also passes diffusate
+diffusate enriched serurm binds iodine
+contaminating iodine removed precipitation washing protein bound
+alternatively serum diffusate mixture dialyzed second time iodide binding resin
+ratio purified diffusate original retentate defines free fraction
+absolute values free calculated ii diffusatei retentate × concentration generally order
+ngdl
+laboratories original diffusate simply measured radioimmunoassay
+skilled hands intraassay coefficient variation approximately interassay variation
+technique time consuming demands much technical expertise generally available
+nonetheless test usually provides excellent separation normal hyperthyroid individuals surest way obtain reliable estimate total free binding abnormalities figure
+unfortunately overlap hypothyroid euthyroid patients
+modifications free developed circumvent difficulties performing equilibrium dialysis free
+analog free employs radiolabeled derivative reported bind tbg compete binding sites antibody
+labeled analog limited quantity antibody mixed directly patient serum standards quantification antibody bound analog accomplished routine radioimmunoassay techniques
+specificity antibody similar described radioimmunoassay
+normal concentration tbg abnormal binding substances test affords acceptable separation various states thyroid function however certain clinical situations results discordant equilibrium dialysis free
+example high concentration tbg analog free lower equilibrium dialysis free
+following heparin administration dialysis free increases analog free may decrease
+familial syndrome dysalbuminemic hyperthyroxinemia equilibrium dialysis normal analog free increased
+hereditary analbuminernia values analog free low values equilibrium dialysis free normal unusual patient binding antibodies analog free high equilibrium dialysis free normal
+second modification free employs reaction tube coated antibody
+patient sera incubated tube appropriate buffer short time tube washed
+amount patient binding antibody presumed proportional free concentration
+next buffer added allowed come equilibrium antibody patient bound
+tube washed counted
+fraction remaining tube function number antibody binding sites relative degree occupancy unlabeled patient
+published interassay variation
+discordances equilibrium dialysis free antibody coated tube technique similar described analog free
+third method employs saturated antibody emulsified coated material property dialysis membranes
+microencapsulated antibody mixed directly patient sera displacement antibody bound proportional free concentration
+published coefficient variation suggests intraassay variation interassay variation
+technique seems less influenced changes tbg concentration yields normal values state dysalbuminemic hyperthyroxinemia
+desperately ill patients variety disorders cirrhosis chronic renal failure may minimal remarkable differences one free method another
+none modifications free yields results exactly agree equilibrium dialysis technique remains best means obtaining reliable estimate concentration free
+concentration free also determined employing equilibrium dialysis methodology
+good separation hyperthyroid euthyroid individuals achievable
+serum concentration total measured radioimmunoassay methods producing antibodies similar employed
+antibody reacts significantly dextro isomer triiodothyroacetic acid naturally occurring conjugation product
+however important binding affinity less
+monoiodotyrosine diiodotyrosine l diiodothyronine thyronine bind negligibly
+since triiodothyroacetic acid present small concentration reacts little despite fifty fold greater concentration specificity antibody adequate clinical purposes
+intraassay coefficient variation
+normal values range ngdl depending upon assay conditions antibody employed
+small overlap normal hyperthyroid patients observed figure
+many hyperthyroid patients less elevation diagnosis readily appreciated obtaining latter determination
+occasional patient hyperthyroidism called toxicosis normal free values diagnostic elevation
+reasons concentration obtained patient suspicion hyperthyroidism clearly verified
+significant fraction patients hypothyroid otherwise ill normal values serum figure
+conversely many acutely chronically ill euthyroid patients concentration reduced patients taking one growing number drugs similarly reduced concentration
+mechanism reduction thought secondary reduced peripheral conversion deiodinase enzyme
+prevalence nonthyroidal causes low concentration frequency normal concentration hypothyroid patients make use determination hazardous establishing diagnosis hypothyroidism recommended purpose
+recently new immunoassay methodology applied measurement tsh
+depending type label attached tsh antibody assay variously called immunoradiometric assay immunofluorimetric assay immunochemiluminometric assay immunoenzymometric assay
+briefly excess monoclonal labeled tsh antibody mixed standard unknown tsh samples
+equilibrium solid phase tsh antibody property reacting different epitope tsh molecule added reaction allowed go completion
+juncture tsh bound labeled tsh antibody also bound solid phase antibody allows separation tsh attendant antibodies label reaction mixture
+washing concentration label measured techniques appropriate label
+case immunoradiometric assay antibody labeled counted
+original concentration tsh directly proportional activity separating bound solid phase antibody
+published sensitivities various assays range
+muml
+intraassay coefficient variation low values high values
+new methodology appears reliable means separating hyperthyroid euthyroid patients
+exceptions hyperthyroid patients zero low values whereas normal subjects measurable values tsh
+general excellent correlation zero values tsh trh tsh nonresponsiveness
+reasons sensitive tsh determination increasingly used first line test confirm screen diagnosis hyperthyroidism
+otherwise healthy individuals approach merit however disconcerting number sick hospitalized euthyroid patients found low unmeasurable tsh values table
+sustained trauma severe illness often treated steroids dopamine acute psychiatric disorders others depressed
+low unmeasurable values tsh flat trftsh responses also found otherwise well patients nontoxic nodular goiters patients recently treated thyrotoxicois patients euthyroid graves disease exophthalmous normal subjects first trimester pregnancy patients pituitary hypothalomic hypothyroidism
+finally small fraction apparently well people found low tsh values sometimes normal several weeks later sometimes remain low absence recognizable thyroid disease
+conversely fraction euthyroid hospitalized patients elevated tsh concentrations
+renal failure whereas others severely ill variety nonthyroidal diseases
+setting thyroid failure induced treatment hyperthyroidism external irradiation neck treatment lymphoma concentration tsh often rises long falls normal
+fact tsh sometimes elevated patients symptoms question whether subjects minimal hypothyroidism compensated thyroid dysfunction difficult resolve
+latter circumstance raised number issues important question whether treat
+elevated tsh reasonable assume concentration lowest acceptable limit patient
+patient symptomatic especially signs hypothyroidism treatment indicated even value within normal range
+patients normal values symptoms signs hypothyroidism tsh clearly elevated pose special problem may best resolved period observation
+tsh extremely reliable marker state primary hypothyroidism invariably low pituitary hypothalamic hypothyroidism
+discordance expected concentration tsh possibility pituitary hypothalamic disease considered
+thus patient low low normal tsh either normal low minimally elevated trf challenge used measure pituitary secretory reserve
+variety reasons measurement trh serum test thyroid function generally achieved
+reliable assay would great clinical interest might provide powerful means distinguishing various levels dysfunction along pituitaryhypothalamic axis
+intravenous administration trh followed measurable rise tsh peaks within minutes
+trh stimulation test performed giving mg trh intravenous bolus
+side effects nausea peculiar taste chest discomfort urinary urgency modest increase blood pressure
+timing blood samples predicated questions asked figure
+hyperthyroidism primary hypothyroidism diagnostic possibilities samples drawn injection minutes afterward
+flat line response hyperthyroidism supranormal response primary hypothyroidism evident time points figure
+pituitary hypothalamic hypothyroidism suspected samples obtained injection minutes
+illustrate reduced response pituitary hypothyroidism delayed response hypothalamic hypothyroidism
+unfortunately fraction patients pituitary hypothyroidism delayed tsh release finding consistent pituitary hypothalamic dysfunction
+females age normal peak response greater muml
+males age similar value applies age peak increases small muml found normal men
+fraction multinodular goiters follicular adenomas autonomous make sufficient hormone suppress tsh production thereby blunt tsh response trh
+setting flat tsh response necessarily diagnostic hyperthyroidism
+hand normal tsh response excludes hyperthyroidism
+frequently patients graves ophthalmopathy flat response necessarily hyperthyroid
+normal response exclude diagnosis graves ophthalmopathy
+euthyroid nonresponders patients treated hyperthyroidism within last several months patients severe illness especially treated dopamine steroids
+finally patients depression acute psychiatric disorders flat response
+patient low concentration normal low concentration tsh blunted flat line tsh response trh indicts pituitary cause hypothyroidism
+delayed sometimes exaggerated tsh peak suggests either pituitary hypothalamic disease
+unfortunately number hypopituitary subjects significant tsh increase distinguished low normal response especially true older males
+setting isolated tsh deficiency unusual complete evaluation pituitary gland establish presence pituitary disease
+thyroid avidity iodide ease measuring externally give clinician another indirect measurement production
+using appropriate columnation suitable standards fractional thyroid accumulation oral dose measured
+activity measured thyroid following oral administration radio nudide characterized early rapid uptake phase followed plateau radioactivity gland conveniently measured hours figure
+fractional uptake given amount depends production rate thyroid hormone thyroid iodide stores dietary iodide intake
+iodide stores dietary iodide usually closely inter related since dietary iodide mgday pharmacologic iodide loads certain drugs dyes may artificially reduce radioiodine uptake low values
+despite susceptibility hazards radioactive iodine uptake excellent adjunctive test
+estimation overlap various states thyroid function assessed radioactive iodine test
+major disadvantages cost requirement least two visits hospital
+reduced use increasingly unavailable
+reasons radioactive iodine uptake routinely used assess thyroid function circumstances still great utility
+example lymphocytic thyroiditis spontaneously resolving hyperthyroidism suspected low iodine uptake hyperthyroid phase greatly assist diagnosis
+addition patient hyperthyroid ingesting pharmacological doses thyroid hormone patient rare struma ovarii hyperthyroidism radioactive iodine uptake low
+latter case scanning abdomen reveal excessive production site
+patients symptoms hyperthyroidism nondiagnostic studies thyroid hormone concentration significant elevation uptake helps establish diagnosis
+pyroglutamyl histadyl prolinamide tsh releasing hormone trh synthesized anterior hypothalamic neurons released region median eminence figure
+circulating neurohypophyseal portal plexus trh binds cell membrane receptors anterior pituitary thyrotropes causes production release tsh
+number trh receptors part regulated nuclear receptor occupancy
+high nuclear receptor occupancy associated reduced trh receptor numbers low nuclear receptor occupany converse
+reciprocal relationship nuclear occupancy trh receptors modules thyrotrope response trh
+tsh basic glycoprotein molecular weight approximately daltons composed alpha beta chains linked sulfhydryl bonds
+alpha chain common tsh luteinizing hormone follicle stimulating hormone human chorionic gonadotropin beta chain unique
+case tsh provides important physicochemical properties promoting interaction tsh plasma membrane receptor
+tsh binding leads endocytosis colloid followed fusion endocytic vacuole intracellular lysosomes leads digestion contained thyroglobulin release bound ratio
+exiting enter circulation reversibly bind circulating proteins important tbg
+others thyroid binding prealbumin albumin
+tbg inter alpha globulin highest affinity iodothyronines low concentration limited capacity
+tightly bound
+free
+free
+bound hormone equilibrium free dialyzable fraction hormone
+equilibrium minimizes perturbations concentration free hormone could occur consequence abrupt changes utilization production
+presumed unbound enters cells deiodinated one two potential sites
+removal carbon iodine outer ring deiodination forms biologically active removal carbon iodine inner ring deiodination forms biologically inactive reverse figure
+production accounted peripheral conversion
+binding nuclear receptor target cell followed hormone action
+apparent plasma concentrations function trh tsh thyroid production tbg peripheral deiodinative conversion deiodinative clearance
+perturbation determinants may lead changes others changes may reflected changes thyroid function studies
+instance primary increase production tbg causing increased plasma tbg concentration would lead transiently reduced free increase binding thereby reduced intracellular concentration
+consequence intracellular production nuclear binding would reduced
+occurs pituitary thyrotrope augmented tsh release response trh would follow thereby increase production concentration free intracellular hormones normal
+would associated increased saturation enlarged pool tbg final steady state increase extracellular concentration
+great majority instances hyperthyroidism associated glandular overproduction hormone accompanied increased tru ft free uptake tsh low trh tsh responsiveness blunted table
+low uptake likely excessive hormone derives inflammatory disruption gland accompanying lymphocytic thyroiditis spontaneously resolving hyperthyroidism subacute viral thyroiditis struma ovarii exogenous iodide surreptitious ingestion considered
+hyperthyroidism caused pituitary tumor accompanied elevated tsh
+hyperthyroidism secondary hydatiform mole embryonal carcinoma hcg diagnostically increased
+occasionally hyperthyroidism caused overproduction measurements relating normal
+hyperthyroidism oral administration uptake reduced concentration low
+hypothyroidism often caused glandular hypo function
+ru free index free fall within normal range low figure
+table
+tsh andor trhtsh responsiveness high
+pituitary hypothalamic disease fault tsh may low normal
+trh tsh responsiveness blunted case pituitary disease delayed possibly exaggerated hypothalamic pituitary disease
+familial increases tbg concentration associated abnormalities thyroid function
+patients supranormal concentrations tbg high total total decrease tru
+free trh tsh responsiveness normal table
+except high elevations tbg fti expected normal
+recently abnormal albumin like protein found subjects syndrome familial dysalbuminemic hyperthyroxinemia found cause increase fti
+abnormal protein bind total tru normal
+free equilibrium dialysis microencapsulated free normal however analog free may remarkably elevated
+tsh trh tsh responsiveness normal
+rare familial elevation thyroid binding prealbumin accompanied increased fti little bound thyroid binding prealbumin concentration normal
+among acquired causes increased binding pregnancy hydatiform mole associated increased tbg concentrations secondary hyperestrogenic state
+changes tru occurring result increased tbg pregnancy expected return normal several weeks postpartum
+free may increased trh tsh responsiveness decreased first trimester pregnancy
+hyrotoxicosis sometimes complicates hydatiform mole
+latter conditions consequence thyroid stimulating properties placental tumor hcg
+diseases liver viral alcoholic hepatitis chronic active hepatitis biliary cirrhosis associated rises tbg
+similar changes described lymphocytoma acute intermittent porphyria
+poorly understood less important transient increase tbg found acutely disturbed psychiatric patients
+patients elevated fti usually normal occasionally elevated related tbg increase
+abnormalities frequent occurrence blunted trhtsh response acutely ill psychiatric patients potential sources misdiagnosis
+blunted trh tsh may return normal remains flat fraction patients
+rare group patients antibodies thyroid also bind
+one patient binding antibodies immunoassay values spuriously low propylene glycol used separate bound free however double antibody technique employed increased
+particular case tsh elevated patient hypothyroid
+cases antibody binds likewise low propylene glycol used separate bound free
+tru free equilibrium dialysis tsh trh stimulation normal
+radioligand free high
+occurring familial basis sometimes appearing sporadically syndrome euthyroid hyperthyroxinemia due peripheral resistance thyroid hormone characterized increased tru fti
+tsh normal slightly increased response trh augmented patients clinically euthyroid hypothyroid
+increased thyroid function tests plus goiter led occasion inadvertent treatment thyrotoxicosis
+occasionally patients familial syndrome deaf mutism stippled epiphysis
+hyperthyroxinemia occur nonthyroidal illness
+severely ill patients occasionally elevations total tru
+frequently low consequence acute illness see trh tsh test may blunted reasons
+common elderly patients findings return normal patient recovers
+follow indicated occasional patient group thyrotoxicosis
+high accompanied normal trh tsh response reduced follow mandatory incidence thyrotoxicosis group appreciable
+perhaps associated similar mechanism changes follow acute myocardial infarction
+reduction generally maximum around third postinfarct day return normal days thereafter
+days infarction concentration may increased subsequently returns normal
+numerous substances cause pharmacological increases
+estrogen heroin methadone clofibrate fluorouracil cause primary increase concentration tbg expected changes total tru
+drugs cause transient rise reduction inhibiting conversion
+propranolol common offender type
+iodinated antiarrhythmic drug amiodarone iodinated contrast agents ipodate iopanoate increase similar mechanism diverse poorly understood effects thyroid gland well
+amiodarone associated transient thyrotoxicosis temporary permanent hypothyroidism attributed iodide content
+iopanoate also associated thyrotoxicosis
+ipodate iopanoate inhibit organification enjoyed limited use treatment thyrotoxicosis
+least case ipodate organification inhibition dissociated iodide content
+hyperthyroxinemia without elevated noted patients goiters treated iodide
+replacement thyroxine therapy often associated increased free normal concentrations
+least part may relate earlier notion
+mgday appropriate daily replacement dose
+appreciated
+mgday generally adequate
+relatively common severe illness grim prognostic sign confusing array changes thyroid tests characterized decreased increased normal tru low normal low free index low normal high free equilibrium dialysis low normal free nondialysis techniques normal tsh blunted normal trhtsh response
+part findings may relate reduction production rate reduced concentration tbg
+patients often dopamine inhibits tsh response trh
+major abnormality appears inhibition binding present serum patients
+another drug used frequently setting furosemide inhibits binding certain putative binding inhibitor
+patient survives studies return normal
+modest elevation tsh may noted recovery phase
+patients renal failure often number alterations thyroid function tests
+free index free equilibrium dialysis sometimes low
+free nondialytic technique often low commonly low
+tsh usually normal may modestly elevated
+trhtsh response blunted normal
+congenital low tbg concentration characterized low low high tru normal tsh normal trh tsh responsiveness
+free equilibrium dialysis normal
+extremely low concentrations tbg fti may low
+patients prolactin secreting tumors sometimes low concentrations discordantly normal tsh trh responsiveness
+mechanism low speculated secondary suppression tsh secretion turn secondary excessive hypothalamic dopamine secretion induced high prolactin concentration
+dopamine blockade setting leads supernormal basal concentrations tsh significantly increased trh responsiveness
+rare syndrome pseudohypoparathyroidism type characterized deficiency guanine nucleotide regulatory protein accompanied reduction concentration free tsh trhtsh responsiveness increased
+question whether patients hypothyroid easy resolve
+androgenic compounds reduce production consequently concentration tbg expected changes thyroid function studies
+reduction secondary displacement serum binding sites observed patients treated heparin phenylbutazone large doses salicylates fenclofenac diazepam
+salicylates fenclofenac also lower
+diphenylhydantoin lowers similar mechanism causes modest increase clearance enzyme induction
+diphenylhydantoin may also reduce tsh well trh tsh responsiveness mechanism yet elucidated
+sulfonureas displace tbg susceptible individuals cause organification defect reversible hypothyroidism
+sulfonamides probably similar organification inhibition lower
+rarely iodides lithium many treated patients cause reversible hypothyroidism
+goiter may accompany pharmacologically induced hypothyroidism
+addition di phenylhydantoin carbamazepine phenobarbital may cause slight lowering enzyme induction leading rapid peripheral clearance hormone
+sodium nitroprusside inhibits thyroid function reduces
+hypothyroxinemia associated amiodarone iodide therapy described
+heavy cigarette smoking may associated mild reduction fti unaccompanied changes tru tsh
+may relate thiacyanate derived burning tobacco
+phenothiazine lowers concentration unknown mechanism
+protein calorie malnutrition severe illness uncontrolled diabetes associated low concentration secondary reduced deiodinase activity
+tru fti usually normal tsh trh tsh responsiveness normal low protein calorie malnutrition may modest significant increase free
+patients anorexia nervosa sometimes low levels
+low frequently found patients cirrhosis
+free may low patients free high
+tsh high normal trh tsh response normal
+mechanism confusing changes known
+hyperparathyroidism associated low mechanism change likewise unexplained
+pharmacological lowering occurs number drugs
+propylthiouracil methimazole inhibits deiodinase activity
+since drugs inhibit organification thyroid associated decrease concentration
+propranolol causes slight deiodinase inhibition small reduction concentration glucocorticoids sodium ipodate iopanoate amiodarone colistipal effect significant reductions enzyme activity concentrations
+hyperthyroidism presents remarkably diverse ways
+one hand anxious young woman classic signs symptoms elderly male goiter proximal muscle weakness
+former confirmatory test adequate latter number equivocal tests may necessitate protracted follow therapeutic trial
+either event critical establish diagnosis hyperthyroidism
+table
+intended offer guidance physician seeking diagnose hyperthyroidism
+replace thorough knowledge patient substitute rigorous thinking
+otherwise healthy patients sensitive tsh immunoassay best first line test evaluate thyroid function
+however assays appreciably better sensitivity specificity others behooves user know limitations one employed
+low value consistent necessarily diagnostic hyperthyroidism patients nontoxic nodular goiter euthyroid graves disease without exophthalmos others treated hyperthyroidism within last several months may low sensitive tsh values also flat trf tsh response
+moreover elderly depressed patients may low values low marginal tsh responses trh well
+low tsh found patient doubt whether hyperthyroidism present elevation tru fti normal radioimmunoassay would strongly support diagnosis
+fact always wise confirm diagnosis hyperthyroidism least two tests measure thyroid hormone concentration excellent compliment tsh test
+evaluate patients taking sensitive tsh clearly test choice
+setting tru fti particularly misleading sometimes high patient receiving appropriate amounts normal patient receiving excessive hormone
+doubt validity low tsh trf infusion minute post injection tsh values recommended
+flat response validates low tsh consistent thyrotoxicosis reasons cited
+normal response excludes hyperthyroidism
+available information suggests fti least good sensitive tsh diagnosis hyperthyroidism sick hospitalized patients
+low tsh values uncommon patients sustained trauma acute psychiatric emergency variety medical disorders often led treatment steroids dopamine
+clinical urgency sick patient attendant cost hospital day expedient simultaneously obtain sensitive tsh fti even tria combination changes likely afford rapid insight cause given abnormal result
+instance severely ill patient low tsh accompanied low fti tria would fall readily nonthyroid illness category whereas clinically similar patient low tsh high fti tria would likely thyrotoxicosis
+recovery occasional patient noted initially low tsh normal fti develop fti level diagnostic hyperthyroidism
+similarly sick patient low tsh normal fti normal followed significant number reported develop thyrotoxicosis
+studies equivocal therapeutical trial may warranted
+time permitting repeated observations testing monthly intervals often diagnostic
+patient presenting severe myxedema fortunately becoming historical anachronism
+thanks physician awareness inclusion thyroid function studies screening programs number severely myxedematous patients much reduced
+nonetheless incidence hypothyroidism appreciable screening adults especially elderly warranted
+reasonable clinical suspicion exists full work undertaken
+recommended approach outlined table
+low tru low fti high tsh diagnostic primary hypothyroidism
+antimicrosomal antibodies establish patient autoimmune thyroid disease
+patient equivocal findings exaggerated minute tsh response trh consistent primary hypothyroidism least compensated state thyroid dysfunction
+low tru fti accompanied normal low tsh suggests pituitary hypothyroidism
+trh stimulation setting done samples time injection minutes afterward
+pituitary hypothyroidism associated blunted tsh response rare hypothalamic hypothyroidism cases pituitary hypothyroidism elevation highest hours injection
+thyroid function studies usually provide accurate assessment patient status
+person ill variety causes taking one growing number drugs abnormal results often secondary nonthyroidal conditions knowing changes imposed conditions enables physician interpret abnormal tests appropriately
+thyroid function studies wanting accuracy much need interpretation responsibility physician caring patient

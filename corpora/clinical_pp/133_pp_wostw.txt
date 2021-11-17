@@ -1,0 +1,45 @@
+audiometry consists tests function hearing mechanism
+includes tests mechanical sound transmission middle ear function neural sound transmission cochlear function speech discrimination ability central integration
+complete evaluation patient hearing must done trained personnel using instruments designed specifically purpose
+pure tones single frequencies used test air bone conduction
+speech testing done audiometer
+audiometer electric instrument consisting pure tone generator bone conduction oscillator measuring cochlear function attenuator varying loudness microphone speech testing earphones air conduction testing
+tests include impedance audiometry measures mobility air pressure middle ear system middle ear stapedial reflexes auditory brainstem response abr measures neural transmission time cochlea brainstem
+pure tone audiometric air conduction testing performed presenting pure tone ear earphone measuring lowest intensity decibels db tone perceived time
+measurement called threshold
+testing procedure repeated specific frequencies hertz hz cycles per second ear thresholds recorded graph called audiogram
+bone conduction testing done placing oscillator mastoid process measuring threshold frequencies
+masking noise sometimes used nontest ear prevent participation test
+audiogram graph depicting hearing thresholds decibels ordinate frequency hertz abscissa
+symbols figure
+used plot thresholds pure tone air bone conduction testing
+zero level audiogram arbitrary sound pressure level indicates ideal normal hearing young adults
+speech testing measurement patient ability hear understand speech
+speech reception threshold srt lowest decibel level patient correctly repeat test words
+speech threshold within ± db pure tone average frequencies hz
+speech discrimination score obtained using phonetically balanced one syllable words usually presented db hearing threshold obtained pure tone audiogram
+speech discrimination usually good purely conductive hearing losses presentation level loud enough
+speech discrimination scores variable sensorineural losses
+poor speech discrimination less presence little loss pure tones raises index suspicion retrocochlear disease
+impedance audiometry hermetic seal obtained inserting probe tip external ear canal
+pressure enclosed cavity varied mm ho change sound pressure level probe tone graphed
+shows movement middle ear system pressure varied
+figure
+shows types tympanograms different conditions middle ear
+contraction stapedius muscle response loud sound measured impedance bridge
+normal ear reflex thresholds seen db pure tone thresholds
+db reflex threshold hz contraction stapedius sustained least seconds
+reflex decay failure sustain contraction seconds one earliest signs retrocochlear disease
+auditory brainstem response abr audiometry electrodes placed patient vertex earlobes forehead
+clicks delivered earphones computer sums time locked responses potentials first msec sound stimulation
+responses display five characteristic waves generated predictable latencies
+response must reliably repeatable evaluation made
+figure
+illustrates normal abr response response ear acoustic neuroma ear identifiable response
+conductive hearing loss may caused obstruction external ear canal e g wax middle ear problems infection tumor fixation ossicles otosclerosis congenital diseases
+many conductive losses managed medically surgically
+sensorineural hearing loss cochlear eighth nerve damage may caused conditions maternal rubella mumps meningitis noise trauma otologic effects aging presbycusis ototoxic drugs trauma ménière disease hyperlipidemia hereditary syndromes demyelinating diseases tumors affecting eighth nerve
+patient sensorineural hearing loss usually candidate hearing aid
+carefully performed audiometry make invaluable contribution diagnosis management patients ear problems
+figures
+illustrate tests presented

@@ -1,0 +1,93 @@
+alkaline phosphatase alp refers group phosphomonoesterases hydrolyze phosphate esters optimum vitro activity ph
+enzyme activity expressed international units iu amount enzyme catalyzes conversion mmole substrate per minute
+reference ranges vary widely methodology commonly used method produces reference range iu per liter adult population
+intraindividual variation alp activity shown vary considerably less interindividual variation included reference ranges
+therefore comparison preestablished values method individual may useful reference
+numerous methods utilizing different substrates reaction conditions applied measurement alp activity
+heterogeneity methods presents problems comparing results different laboratories often compromises current application data previously reported literature
+recent methodologic changes emphasized need standardization optimization assay
+readily hydrolyzed self indicating substrates permit continuous monitoring optimized reaction conditions preferred
+earlier methods bodansky king armstrong involved indirect quantitation reaction products obsolete
+widely used reference method utilizes nitro phenyl phosphate readily hydrolyzed self indicating alp substrate introduced bessey lowry brock
+reaction rate enhanced removal inhibitory phosphate optimizing divalent cation magnesium zinc concentrations
+serum specimen choice although heparinized plasma used
+chelating anticoagulants remove activator magnesium unacceptable
+since hemoglobin may interfere spectrophotometrically vitro hemolysis avoided
+assay within hours specimen colection recommended frozen specimens kept room temperature hours prior assay assure complete enzyme reactivation
+human tissues contain alp kidney liver bone intestine reticuloendothelial tissue placenta particularly rich sources
+enzymes derived different tissues share catalytic properties differ chemical physical characteristics
+three genetically determined forms described intestinal placental liverbonekidneyreticuloendothelial
+different molecular properties within isoenzyme groups probably result posttranslational modifications
+various methods used separate organ specific isoforms
+none entirely satisfactory particularly quantifying components liverbone isoenzyme group
+alp activity normal adult serum derived predominantly hepatic osseous reticuloendothelial sources
+physiologic bone growth children increases serum activity times levels observed adults
+placental alp causes fold elevations second third trimesters normal pregnancy
+serum enrichment intestinal isoenzyme may cause postprandial elevation particularly individuals blood groups b also secretors abh blood group substance
+number functions proposed
+location hepatic alp sinusoid membrane suggests involvement transport function
+increased alp synthesis observed cholestasis increased bile acid concentration caused intrahepatic extrahepatic obstruction biliary tree
+bone alp probably involved calcification perhaps hydrolyzing pyrophosphate inhibits mineralization
+hypophosphatasia inherited disorder virtual absence bone alp isoenzyme histochemical evidence deficient bone calcification
+intestinal isoenzyme appears function transport fatty acids calcium phosphate
+majority sustained elevated alp levels associated disorders liver bone
+therefore organ systems prime consideration differential diagnosis
+variety primary secondary hepatic conditions may associated elevated serum alp levels
+since production increased response cholestasis serum alp activity provides sensitive indicator obstructive space occupying lesions liver
+latter includes neoplastic primary metastic infiltrative diseases granulomatous hepatitis
+bilirubin excretion compromised extensive biliary obstruction diffuse hepatic cell disruption therefore differential elevation alp relative serum bilirubin provides early indicator obstructive space occupying conditions
+hepatic cell lesions manifested hyperbilirubinemia dominant serum elevation parenchymal enzymes aminotransferases alp elevations may minimal
+diseases bone associated increased serum alp restricted presence osteoblastic activity
+elevations generally detectable prior roentgenographic abnormalities
+neoplasms involving bone may associated marked serum elevations lesions incite osteoblastic reaction metastatic adenocarcinoma prostate
+conversely osteolytic lesions occur within multiple myeloma associated increased serum alp activity
+metabolic bone diseases usually associated serum enrichment bone isoenzyme include rickets osteomalacia paget disease
+levels usually normal osteoporosis
+increased serum activity may observed bone fractures rising week persisting months
+elevated serum alp occurring neoplastic disease may due hepatic metastases bone metastases direct contribution neoplastic cells
+isoenzymes physicochemical characteristics similar placental isoenzyme attributed ectopic production variety neoplasms apparently represents derepression normally repressed fetoplacental genes
+clinically obscure elevations alp commonly observed multitest biochemical panels performed hospital populations
+cellular distribution alp increased serum activity may caused wide variety disorders involving multiple organs
+attempts define organ source isoenzyme study may met limited success technical limitations accurate measurement different isoenzymes contributing total serum alp activity currently possible
+however presence intestinal placental isoenzyme may revealed selected methods
+evaluation unexpectedly increased alp include following
+exclude physiologic causes
+patient pregnant actively growing child
+observe presence clinical biochemical clues origin increased enzyme activity
+increased serum bilirubin aminotransferase either aspartate alanine activity suggests hepatic rather bone origin
+disproportionate elevation lactic dehydrogenase ldh relative transaminase usually suggests nonhepatobiliary multiorgan system disease
+association elevated ldh hypercalcemia hyperuricemia suggests metastastic neoplastic disease
+elevation transient observed various tissue reparative processes healing bone fractures passive congestion liver
+measurement enzymes nucleotidase gamma glutamyltransferase may assist identifying hepatobiliary system source elevated alp since enzymes significantly present bone
+nucleotidase highly specific less sensitive indicator hepatobiliary disease
+gamma glutamyltransferase sensitive however exception absence bone placenta less specific indicator hepatobiliary disease alp
+gamma glutamyltransferase ggt one broad group enzymes catalyze transfer amino acids one peptide another amino acid peptide
+enzyme sometimes referred transpeptidase appropriately included amino acid transferase group
+specifically catalyzes transfer gamma glutamyl group another acceptor
+reference range commonly used methods iul males iul females
+higher activity males probably caused high enzyme concentration prostatic tissue
+self indicating substrates continuous reaction monitoring preferred
+commonly gamma glutamyl para nitroanilide used substrate glyclyglycine acceptor
+substrate residue para nitroaniline directly measured absorbance nm
+recently proposed reference method utilizes carboxyl derivative gamma glutamyl para nitroanilide enhance substrate solubility higher levels activity observed substrate derivative
+however laboratories use unsubstituted substrate established clinical laboratory experience
+serum specimen choice hemoglobin may interfere spectrophotometrically hemolysis avoided
+edta plasma acceptable anticoagulants heparin citrate oxalate may interfere reaction
+high concentrations ggt found renal prostatic pancreatic hepatobiliary tissue smaller amounts found tissues except muscle
+number physiologic functions suggested
+involvement amino acid transport glutathione metabolism strongly indicated
+enzyme activity observed serum electrophoretically heterogeneous however true isoenzyme forms defined fractionation clinical significance
+hepatobiliary disease predominant source increased serum ggt activity
+increases associated forms primary secondary hepatobiliary disorders
+elevations moderate times reference diffuse hepatic cell injury due toxic infectious hepatitis
+cholestasis due intrahepatic extrahepatic biliary obstruction causes higher serum levels times reference
+increases occur earlier persist longer alp cholestatic disorders
+since skeletal disease associated increased serum activity measurement ggt clinical value identifying source obscure alp elevations
+levels children age year healthy pregnant women within usual adult reference range
+elevated serum levels ggt also found alcoholics patients receiving certain drugs phenytoin phenobarbital
+probably result microsomal induction enzyme activity
+serum measurement used monitor alcoholic patients therapy abstinence alcohol associated decrease serum ggt activity
+addition alcohol induced hepatic cell injury may cause significantly higher serum levels causes parenchymal disorders
+elevated ggt activity also occurs patients acute chronic pancreatitis
+prostatic adenocarcinoma may associated increased serum levels
+therefore although increases absent skeletal diseases ggt activity considered highly specific indicator hepatobiliary disease

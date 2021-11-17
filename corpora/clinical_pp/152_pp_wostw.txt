@@ -1,0 +1,66 @@
+mean corpuscular volume mcv mean corpuscular hemoglobin mch mean corpuscular hemoglobin concentration mchc first introduced wintrobe define size mcv hemoglobin content mch mchc red blood cells
+termed red cell indices values useful elucidating etiology anemias
+red cell indices calculated values hemoglobin hematocrit packed cell volume red blood cell count known
+general availability electronic cell counters red cell indices automatically measured blood count determinations
+variation size red cells anisocytosis quantified expressed red cell distribution width rdw red cell morphology index
+rdw widely available discussed chapter
+size distribution population cells graphically represented red cell histograms price jones curves see figure
+similar histograms also available white blood cells platelets
+mcv defines size red blood cells expressed femtoliters fl cubic microns mm
+normal values mcv ± fl
+mch quantifies amount hemoglobin per red blood cell
+normal values mch ± picograms pg per cell
+mchc indicates amount hemoglobin per unit volume
+contrast mch mchc correlates hemoglobin content volume cell
+expressed gdl red blood cells percentage value
+normal values mchc ± gdl
+rdw represents coefficient variation red blood cell volume distribution size expressed percentage
+normal value rdw ±
+red cell indices mcv mch mchc calculated hemoglobin hematocrit red blood cell count follows
+clinical laboratories use automated machines perform blood counts commonly called cbc include red cell indices part profile
+two types automated machines generally used
+instruments like coulter model employ principle electric impedance others like hemalog system analyzer use optical methods performing cell counts
+automated machines give following values white cell count red cell count platelet count hemoglobin hematocrit mcv mch mchc
+newer machines capable calculating rdw red cell morphology index mean platelet volume absolute lymphocyte count differential white cell count ate used many clinical laboratories
+instruments also capable producing histograms
+automated cell counters fast convenient precise certain conditions interfere machine calculations result spurious values
+important clinicians become familiar common causes spurious results electronic counters table
+red cell agglutination doublet erythrocytes counted one larger clumps counted red blood cells
+leads decrease red cell count falsely elevated mcv
+determination hemoglobin value affected
+prewarming sample eliminates spurious values
+hyperglycemia red cells transiently hypertonic relation isotonic diluting fluid resulting swollen cells elevated mcv
+avoided time allowed equilibration dilution
+hemoglobin quantified based absorption characteristics
+conditions hyperlipidemias hyperbilirubinemia high white blood cell count high serum protein interfere measurement result falsely elevated hemoglobin values
+presence immunoglobulins fibrinogen precipitated low temperatures blood sample leads interference cell counts resulting spuriously increased white blood cell count sometimes small elevations hemoglobin hematocrit red blood cell count slight decrease mcv
+prewarming sample °c correct artificial values
+values hemoglobin red cell count mcv affected mch mchc also become abnormal since indices calculated directly measured
+sometimes set spurious values may first clue otherwise unsuspected clinical condition e g combination low hematocrit normal hemoglobin high mcv mchc characteristic cold agglutinins
+mcv since average value normal presence two different cell populations e g dimorphic anemias red cell fragmentation reticulocyte response
+therefore important examine peripheral smear evaluation anemias
+available rdw good indicator degree anisocytosis
+similarly red cell histogram offers graphic depiction red cell size distribution reveal anisocytosis even mcv normal
+erythropoiesis process erythroid maturation involves progressive condensation nuclear chromatin termed nuclear maturation finally extrusion cell synthesis hemoglobin cytoplasm termed cytoplasmic maturation concomitant reduction cell size due division water loss
+defects nuclear maturation seen megaloblastic anemias due folate b deficiency result large oval erythrocytes macroovalocytes normal hemoglobin content
+mcv mch increased mchc remains normal
+anisocytosis rdw often increased
+macrocytosis liver disease defect nuclear maturation cells large due excess red cell membrane
+cells round rather oval rdw normal
+defective hemoglobin synthesis results small cells low mcv without anisocytosis
+heterozygous b thalassemias cells uniformly small low mcv rdw tends normal whereas iron deficiency anisocytosis increased rdw may first laboratory abnormality even anemia microcytosis seen
+abnormalities involving nuclear maturation hemoglobin production proceeds normally cell division lags behind ultimately leading larger normal cell
+contrast defective delayed synthesis hemoglobin continued cell division leads microcytosis
+anemias may classified based etiology e g hemolytic hemorrhagic etc erythropoietic response e g hypoproliferative ineffective cell morphology e g macrocytic microcytic hypochromic
+red cell indices valuable morphologic classification anemias
+since different etiologic factors result characteristically different red cell morphology clinician properly plan management patient anemia interpret blood counts peripheral blood smear well
+anemias classified according size red cell normocytic normal mcv macrocytic increased mcv microcytic decreased mcv
+microcytic anemias also often described hypochromic based peripheral smear examination mchc value determined manually
+mchc measured electronic machines mostly normal microcytic anemias however value mch closely parallels value mcv
+optical properties small thin microcytes make appear hypochromic blood smear hemoglobin concentration remains normal range microcytic normochromic anemias
+hyperchromic anemias
+spherocytosis mchc increased due loss membrane consequent spherical shape assumed cell
+general availability rdw measure anisocytosis helps evaluation anemias based morphology see table
+significant anisocytosis often leads increased rdw whereas absence rdw remains normal
+pointed evaluation anemias complete without careful examination well prepared peripheral blood smear
+red cell indices rdw red blood cell histograms help identify conditions red cell inclusions e g malarial parasites membrane abnormalities spherocytosis might responsible anemia

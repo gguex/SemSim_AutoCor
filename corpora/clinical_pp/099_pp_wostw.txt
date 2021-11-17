@@ -1,0 +1,44 @@
+aminotransferases transaminases group enzymes catalyze interconversion amino acids oxoacids transfer amino groups
+aspartate aminotransferase ast formerly termed glutamate oxaloacetate transaminase got alanine aminotransferase alt formerly termed glutamate pyruvate transaminase gpt two aminotransferases greatest clinical significance
+pyridoxal phosphate pp functions coenzyme amino transfer reactions
+amino transfer reactions oxoglutarate l glutamate serve one amino group acceptor donor pair
+specificity individual enzymes determines specific amino acid serves amino group donor
+ast reaction l amino acid aspartate alt alanine
+reactions shown facing page
+transaminase reaction directly monitored however continuous monitoring assays achieved coupling self indicating enzyme systems utilize substrate either glutamate specific oxoacid formed transaminase reaction
+kinetic assays utilizing coupled enzyme systems commonly used clinical laboratories
+older methods using colorimetric detection transaminase reaction products without continuous reaction monitoring obsolete
+proposed reference methods also recommend addition pyridoxal phosphate reagent system order activate enzyme
+however modification introduces technical problems compromises established clinical experience uniformly adapted
+reagent addition coenzyme increases enzyme activity ast normal serum ast
+greater changes may occur patient serum low levels pyridoxal phosphate caused precursor vitamin b deficiency
+serum specimen choice
+vitro hemolysis causes spuriously increased activity enrichment erythrocyte aminotransaminase
+heparinized edta citrated oxalated plasma generally acceptable may cause problems specific reagent instrument systems
+serum transaminase activity stable room temperature several hours days °c
+freezing may result loss activity recommended
+aminotransferases catalyze redistribution nitrogen amino acids corresponding oxoacids participating protein metabolism gluconeogenesis
+ubiquitous cellular distribution
+tissue activity ast follows decreasing concentration heart liver skeletal muscle kidney pancreas spleen lung erythrocyte
+two distinct forms identified cytoplasmic soluble isoenzyme mitochondrial isoform
+selective measurement isoenzymes currently demonstrated clinical application
+distribution relative tissue concentration alt similar importantly different
+highest activity found liver followed kidney myocardium skeletal muscle pancreas spleen lung erythrocyte
+alt activity found cytosol organ organelle specific isoenzymes demonstrated
+concentration alt hepatic cell cytoplasm comparable ast however mitochondrial alt isoform found
+tissues alt activity significantly less ast
+primary clinical application serum ast alt measurement detection differential etiologic diagnosis hepatic disease
+hepatic cell injury manifested elevated serum transaminase activity prior appearance clinical symptoms signs jaundice
+comparable elevations ast alt highly characteristic acute viral toxic nonethanol drug induced hepatitis
+similar serum transaminase levels conditions thought caused cellular release cytoplasmic enzymes associated reversible hepatic cell damage
+chronic hepatitis cirrhosis serum ast levels higher alt may reflect hepatic cell necrosis release mitochondrial ast
+alcohol hepatitis ast significantly increased alt
+cholestatic lesions associated either intrahepatic posthepatic diseases manifested modest transaminase elevations ast usually exceeding alt
+conditions elevations serum alkaline phosphatase alp gamma glutamyltransferase ggt dramatic
+since aminotransaminases ubiquitous cellular distribution serum elevations may occur variety nonhepatobiliary disorders
+however elevations exceeding times reference uncommon absence hepatic cell injury
+since concentration alt significantly less ast cells except hepatic cytosol alt serum elevations less common nonhepatic disorders
+following myocardial infarction ast activity consistently increased alt associated passive congestion liver
+ast occasionally alt serum activity increase inflammatory skeletal muscle diseases progressive muscular distrophy
+measurement serum alt activity routinely used screen blood donors risk transmitting hepatitis particularly non non b type since specific serologic test available
+use alt surrogate test non non b hepatitis expectedly reduces incidence post transfusion hepatitis

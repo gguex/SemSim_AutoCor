@@ -1,0 +1,62 @@
+measure serum total co content lieu measuring serum bicarbonate
+total co content includes serum bicarbonate well available forms carbon dioxide e dissolved co carbonic acid
+generally serum bicarbonate comprises total co content thus use measurement excellent estimator serum bicarbonate
+total co content normally equals meql serum
+laboratories use autoanalyzer measuring total co content
+method measures amount co liberated sample adding strong acid
+co diffuses across dialysis membrane
+bicarbonate carbonate buffer solution containing indicator dye absorbs co
+colorimeter evaluates new color converts total co measurement
+two potential problems exist method color reagent may change time thus laboratory must frequently check standardization curves exposure sample air allow loss co much meql hour
+arterial blood gas reports generally include bicarbonate value
+blood gas machine measures ph pco calculates bicarbonate value using henderson hasselbalch equation
+generally concurrent venous total co content exceed value less meql meql represents difference venous arterial blood remaining difference comes dissolved co
+kidneys lungs maintain daily acid base balance
+understanding normal physiology allows us appreciate abnormalities
+discussion refers bicarbonate rather total co content measure total co content surrogate bicarbonate
+bicarbonate carbonic acid constitute major buffer pair body fluids
+carbonic acid dissociates hydrogen ion bicarbonate dissociation constant
+×
+carbonic acid also maintains equilibrium ho co
+usually describe dissociation constants hydrogen ion concentrations negative logarithms
+thus negative logarithm dissociation constant equals
+value called pka
+normal hydrogen ion concentration equals nanoequivalentsliter corresponding ph
+familiar henderson hasselbalch equation derives facts
+carbonic acid concentration proportional partial pressure carbon dioxide pco blood
+multiplying pco constant
+estimates carbonic acid concentration giving useful form equation
+changes hydrogen ion concentration ph result changes either bicarbonate carbon dioxide
+measurement total co content help us explain acid base disorders ph pco known
+furthermore since often measure total co content part automated chemistry determinations measurement provide first clue acid base disturbances
+produce approximately meqkg daily hydrogen ions derived metabolism proteins primarily
+kidney normally excretes daily acid load
+failure excretion forces reaction h hco resulting decrease bicarbonate concentration
+bicarbonate reabsorption occurs primarily proximal tubule
+carbonic anhydrase controls absorption
+patient volume status major influence absorption since sodium reabsorbed along bicarbonate
+thus volume contraction stimulates sodium bicarbonate reabsorption
+results increased total co content
+likewise volume expansion lead mild decrease total co content
+hydrogen ion concentration ph another major determinant bicarbonate reabsorption
+thus kidney respond changes ventilation pco compensatory changes bicarbonate reabsorption
+example chronic hypoventilation pco causes decreased ph
+decreased ph stimulates bicarbonate reabsorption thus patient increased total co content
+major caveat concerning total co content involves interpretation isolated measurement
+one diagnose acid base disturbances isolated total comeasurement
+order characterize acid base disturbance one needs ph pco total co well measurement anion gap
+given caveat one use following guidelines
+low levels total co result either metabolic acidosis compensation respiratory alkalosis
+bicarbonate levels meql virtually identify metabolic acidosis cause compensation respiratory alkalosis drive bicarbonate low
+metabolic acidosis present one distinguish increased anion gap nonanion gap acidosis
+simplest formula anion gap
+table
+lists differential anion gap acidosis
+generally one consider differential gap exceeds meql
+table
+gives differential nonanion gap acidosis
+similar interpretation decreased bicarbonate level increased bicarbonate level may result either metabolic alkalosis compensation respiratory acidosis
+table
+lists causes metabolic alkalosis
+summary serum total co content give clues acid base abnormalities
+used conjunction ph pco measurement helps us define possible causes metabolic imbalance especially acutely ill patients
