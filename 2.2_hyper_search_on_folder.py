@@ -21,6 +21,9 @@ sim_tag_list = ["w2v", "glv", "ftx"]
 
 # ----
 
+# N groups (if none, extracted from data)
+n_groups = None
+
 # Known label ?
 known_label_ratio = 0
 
@@ -108,7 +111,8 @@ for id_file, input_text_file in enumerate(input_text_file_list):
             real_group_vec = ground_truth.read()
             real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
         real_group_vec = real_group_vec[existing_index_list]
-        n_groups = len(set(real_group_vec))
+        if n_groups is None:
+            n_groups = len(set(real_group_vec))
 
         # For semi-supervised results, pick some labels
         if known_label_ratio > 0:
@@ -194,4 +198,4 @@ for id_file, input_text_file in enumerate(input_text_file_list):
                         output_file.write(f"{input_text_file},{known_label_ratio},{sim_tag},{n_groups},{n_tests},"
                                           f"{dist_option},{exch_mat_opt},{exch_range},{hyperp[0]},{hyperp[1]},"
                                           f"{hyperp[2]},{res_multi[id_hyp][0]},{res_multi[id_hyp][1]},"
-                                          f"{res_multi[id_hyp][2]},{res_multi[id_hyp][3]}\n")
+                                          f"{res_multi[id_hyp][2]},{res_multi[id_hyp][3]},{res_multi[id_hyp][4]}\n")

@@ -14,16 +14,27 @@ import os
 
 base_path = os.getcwd()
 
-input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
-input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+# input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+# input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+#
+# results_file_name = "results/glv_61320_201211_pp_wostw.csv"
+#
+# # input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
+# #                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
+# #                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
+#
+# input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv"]
 
-results_file_name = "results/param_search/glv_61320_201211_pp_wostw.csv"
+input_text_file = "corpora/wiki50_pp/6544206_pp_wostw.txt"
+input_group_file = "corpora/wiki50_pp/6544206_pp_wostw_groups.txt"
+results_file_name = "results/param_search/G2_6544206_pp_wostw.csv"
 
-# input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
-#                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
-#                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
+input_sim_file_list = ["similarity_matrices/6544206_pp_wostw_w2v.csv",
+                       "similarity_matrices/6544206_pp_wostw_glv.csv",
+                       "similarity_matrices/6544206_pp_wostw_ftx.csv"]
 
-input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv"]
+# N groups (if None, extracted from data)
+n_groups = 2
 
 # Known label ?
 known_label_ratio = 0
@@ -73,7 +84,8 @@ for input_sim_file in input_sim_file_list:
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
-    n_groups = len(set(real_group_vec))
+    if n_groups is None:
+        n_groups = len(set(real_group_vec))
 
     # For semi-supervised results, pick some labels
     if known_label_ratio > 0:
@@ -156,4 +168,4 @@ for input_sim_file in input_sim_file_list:
                     output_file.write(f"{input_text_file},{known_label_ratio},{sim_tag},{n_groups},{n_tests},"
                                       f"{dist_option},{exch_mat_opt},{exch_range},{hyperp[0]},{hyperp[1]},"
                                       f"{hyperp[2]},{res_multi[id_hyp][0]},{res_multi[id_hyp][1]},"
-                                      f"{res_multi[id_hyp][2]},{res_multi[id_hyp][3]}\n")
+                                      f"{res_multi[id_hyp][2]},{res_multi[id_hyp][3]},{res_multi[id_hyp][4]}\n")
