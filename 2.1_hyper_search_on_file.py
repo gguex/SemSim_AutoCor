@@ -1,5 +1,5 @@
 from local_functions import load_sim_matrix, type_to_token_matrix_expansion, similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, token_clustering
+    exchange_and_transition_matrices, token_clustering, seg_eval
 import numpy as np
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score
@@ -52,10 +52,10 @@ hyperp_list = list(product(alpha_vec, beta_vec, kappa_vec))
 # Make results file
 with open(results_file_name, "w") as output_file:
     output_file.write("input_file,label_ratio,sim_tag,n_groups,n_tests,dist_option,exch_mat_opt,exch_range,"
-                      "alpha,beta,kappa,mean_nmi\n")
+                      "alpha,beta,kappa,mean_nmi,mean_pk,mean_rdm_pk,mean_wd,mean_rdm_wd\n")
 
 ######################
-#### Loop on sim files
+# -- Loop on sim files
 
 for input_sim_file in input_sim_file_list:
 
@@ -89,7 +89,7 @@ for input_sim_file in input_sim_file_list:
     rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
 
     ########################
-    #### Loop on dist option
+    # -- Loop on dist option
 
     for dist_option in dist_option_vec:
 
@@ -97,7 +97,7 @@ for input_sim_file in input_sim_file_list:
         d_ext_mat = similarity_to_dissimilarity(sim_ext_mat, dist_option=dist_option)
 
         ######################
-        #### Loop on exchg opt
+        # -- Loop on exchg opt
 
         for exch_mat_opt, exch_range in product(exch_mat_opt_vec, exch_range_vec):
 
@@ -106,13 +106,16 @@ for input_sim_file in input_sim_file_list:
                                                                exch_mat_opt=exch_mat_opt,
                                                                exch_range=exch_range)
 
-
             ########################################
-            #### Creating a function to multiprocess
+            # -- Creating a function to multiprocess
 
-            def nmi_computation(alpha, beta, kappa):
-                # Compute the matrix and nmi  n_train time
-                nmi_vector = []
+            def val_computation(alpha, beta, kappa):
+                # Compute the matrix and val  n_train time
+                nmi_list = []
+                pk_list = []
+                pk_rdm_list = []
+                wd_list = []
+                wd_rdm_list = []
                 for _ in range(n_tests):
                     # Compute the membership matrix
                     res_matrix = token_clustering(d_ext_mat=d_ext_mat,
@@ -128,21 +131,29 @@ for input_sim_file in input_sim_file_list:
                     rstr_alg_group_vec = np.delete(alg_group_vec, indices_for_known_label)
                     # Compute nmi score
                     nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_alg_group_vec)
-                    nmi_vector.append(nmi)
+                    nmi_list.append(nmi)
+                    # Segmentation evaluation
+                    pk, wd, pk_rdm, wd_rdm = seg_eval(alg_group_vec, real_group_vec)
+                    pk_list.append(pk)
+                    pk_rdm_list.append(pk_rdm)
+                    wd_list.append(wd)
+                    wd_rdm_list.append(wd_rdm)
 
-                return np.mean(nmi_vector)
+                return np.mean(nmi_list), np.mean(pk_list), np.mean(pk_rdm_list), np.mean(wd_list), np.mean(wd_rdm_list)
+
 
             ##################################
-            #### Computing and writing results
+            # -- Computing and writing results
 
             # Print message
             print(f"Multiprocessing for {sim_tag}, {dist_option}, {exch_mat_opt}, {exch_range}")
             # Multiprocess
-            res_multi = parallel_progbar(nmi_computation, hyperp_list, starmap=True, nprocs=n_cpu)
+            res_multi = parallel_progbar(val_computation, hyperp_list, starmap=True, nprocs=n_cpu)
 
             # Writing results
             with open(results_file_name, "a") as output_file:
                 for id_hyp, hyperp in enumerate(hyperp_list):
                     output_file.write(f"{input_text_file},{known_label_ratio},{sim_tag},{n_groups},{n_tests},"
                                       f"{dist_option},{exch_mat_opt},{exch_range},{hyperp[0]},{hyperp[1]},"
-                                      f"{hyperp[2]},{res_multi[id_hyp]}\n")
+                                      f"{hyperp[2]},{res_multi[id_hyp][0]},{res_multi[id_hyp][1]},"
+                                      f"{res_multi[id_hyp][2]},{res_multi[id_hyp][3]}\n")
