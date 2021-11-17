@@ -14,27 +14,30 @@ import os
 
 base_path = os.getcwd()
 
+
+# ------------ Options manifesto
+
 # input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 # input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 #
-# results_file_name = "results/glv_61320_201211_pp_wostw.csv"
+# results_file_name = "results/Gn_61320_201211_pp_wostw.csv"
 #
-# # input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
-# #                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
-# #                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
-#
-# input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv"]
+# input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
+#                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
+#                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
+
+# ------------ Options wiki50
 
 # input_text_file = "corpora/wiki50_pp/6544206_pp_wostw.txt"
 # input_group_file = "corpora/wiki50_pp/6544206_pp_wostw_groups.txt"
-# results_file_name = "results/param_search/G2_6544206_pp_wostw.csv"
+# results_file_name = "results/Gn_6544206_pp_wostw.csv"
 #
 # input_sim_file_list = ["similarity_matrices/6544206_pp_wostw_w2v.csv",
 #                        "similarity_matrices/6544206_pp_wostw_glv.csv",
 #                        "similarity_matrices/6544206_pp_wostw_ftx.csv"]
 
 # N groups (if None, extracted from data)
-n_groups = 2
+n_groups = None
 
 # Known label ?
 known_label_ratio = 0
@@ -52,6 +55,7 @@ kappa_vec = [0, 0.25, 0.5, 0.75, 1]
 
 # Number of cpu to use
 n_cpu = mp.cpu_count()
+#n_cpu = int(os.getenv("SLURM_CPUS_PER_TASK"))
 
 # -------------------------------------
 # --- Computations
