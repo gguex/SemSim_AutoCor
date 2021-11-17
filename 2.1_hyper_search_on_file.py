@@ -25,13 +25,13 @@ base_path = os.getcwd()
 #
 # input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv"]
 
-input_text_file = "corpora/wiki50_pp/6544206_pp_wostw.txt"
-input_group_file = "corpora/wiki50_pp/6544206_pp_wostw_groups.txt"
-results_file_name = "results/param_search/G2_6544206_pp_wostw.csv"
-
-input_sim_file_list = ["similarity_matrices/6544206_pp_wostw_w2v.csv",
-                       "similarity_matrices/6544206_pp_wostw_glv.csv",
-                       "similarity_matrices/6544206_pp_wostw_ftx.csv"]
+# input_text_file = "corpora/wiki50_pp/6544206_pp_wostw.txt"
+# input_group_file = "corpora/wiki50_pp/6544206_pp_wostw_groups.txt"
+# results_file_name = "results/param_search/G2_6544206_pp_wostw.csv"
+#
+# input_sim_file_list = ["similarity_matrices/6544206_pp_wostw_w2v.csv",
+#                        "similarity_matrices/6544206_pp_wostw_glv.csv",
+#                        "similarity_matrices/6544206_pp_wostw_ftx.csv"]
 
 # N groups (if None, extracted from data)
 n_groups = 2
