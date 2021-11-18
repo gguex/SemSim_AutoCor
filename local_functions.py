@@ -1,6 +1,5 @@
 import os
 import nltk
-import csv
 import colorsys
 from scipy.linalg import expm
 import warnings
@@ -106,12 +105,13 @@ def load_sim_matrix(sim_matrix_path):
     """
     # Load read file
     with open(sim_matrix_path, "r") as csv_sim_file:
-        csv_reader = csv.reader(csv_sim_file)
+        row_list = csv_sim_file.readlines()
         type_list = []
         sim_mat = []
-        for row in csv_reader:
-            type_list.append(row[0])
-            sim_mat.append(row[1:])
+        for row in row_list:
+            row_elem = row.strip().split(",")
+            type_list.append(row_elem[0])
+            sim_mat.append(row_elem[1:])
 
     # Transform the list of list into numpy array
     sim_mat = np.array(sim_mat)
