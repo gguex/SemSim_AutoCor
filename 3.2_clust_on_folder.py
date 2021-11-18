@@ -1,8 +1,7 @@
 from local_functions import *
 import numpy as np
 import random as rdm
-from sklearn.metrics import normalized_mutual_info_score, average_precision_score
-from itertools import permutations
+from sklearn.metrics import normalized_mutual_info_score
 
 # -------------------------------------
 # --- Parameters
@@ -14,6 +13,9 @@ output_file = "results/clust_manifesto.csv"
 
 #---
 
+# N groups (if none, extracted from data)
+n_groups = None
+
 sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
@@ -23,7 +25,7 @@ beta = 100
 kappa = 1
 known_label_ratio = 0  # if > 0, semi-supervised model
 
-n_tests = 10
+n_tests = 1
 
 # -------------------------------------
 # --- Computations
@@ -44,7 +46,7 @@ input_group_file_list = [f"{input_text_folder}/{file}" for file in file_list if 
 input_sim_file_list = [f"similarity_matrices/{file[:-4]}_{sim_tag}.csv" for file in file_list if "groups" not in file]
 
 with open(output_file, "w") as res_file:
-    res_file.write(f"file,nmi,map,pk,win_diff,pk_rdm,win_diff_rdm\n")
+    res_file.write(f"file,nmi,pk,pk_rdm,wd,wd_rdm\n")
 
 for index_file in range(len(input_text_file_list)):
 
@@ -63,7 +65,8 @@ for index_file in range(len(input_text_file_list)):
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
-    n_groups = len(set(real_group_vec))
+    if n_groups is None:
+        n_groups = len(set(real_group_vec))
 
     # For semi-supervised results, pick some labels
     if known_label_ratio > 0:
@@ -82,9 +85,8 @@ for index_file in range(len(input_text_file_list)):
     exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
                                                        exch_mat_opt=exch_mat_opt,
                                                        exch_range=exch_range)
-
+    # Loop on n_tests
     nmi_vec = []
-    map_vec = []
     pk_vec = []
     win_diff_vec = []
     pk_rdm_vec = []
@@ -92,48 +94,24 @@ for index_file in range(len(input_text_file_list)):
     for id_test in range(n_tests):
 
         # Compute the membership matrix
-        result_matrix = token_clustering(d_ext_mat=d_ext_mat, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups, alpha=alpha,
-                                         beta=beta, kappa=kappa, known_labels=known_labels, verbose=True)
+        result_matrix = token_clustering(d_ext_mat=d_ext_mat, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups,
+                                         alpha=alpha, beta=beta, kappa=kappa, known_labels=known_labels, verbose=True)
 
         # Compute the groups
         algo_group_vec = np.argmax(result_matrix, 1) + 1
 
-        # Permutation of real group (for most matching colors)
-        original_group = list(range(1, n_groups + 1))
-        best_real_group_vec = real_group_vec
-        best_nb_match = np.sum(real_group_vec == algo_group_vec)
-        for perm in list(permutations(original_group)):
-            perm = np.array(perm)
-            test_real_group_vec = perm[real_group_vec - 1]
-            test_nb_match = np.sum(test_real_group_vec == algo_group_vec)
-            if test_nb_match > best_nb_match:
-                best_nb_match = test_nb_match
-                best_real_group_vec = test_real_group_vec
-
-        # Compute the real membership matrix
-        z_real_mat = np.zeros((len(token_list), n_groups))
-        for i, label in enumerate(best_real_group_vec):
-            if label != 0:
-                z_real_mat[i, :] = 0
-                z_real_mat[i, label - 1] = 1
-
         # Restrained results
         rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
         rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
-        rstr_best_real_group_vec = np.delete(best_real_group_vec, indices_for_known_label)
 
         # Compute nmi scorec
         nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
-        # Compute Map
-        ap_vector = [average_precision_score(rstr_best_real_group_vec == group_id, rstr_algo_group_vec == group_id)
-                     for group_id in range(1, max(rstr_real_group_vec) + 1)]
-        map = np.mean(ap_vector)
 
         # Segmentation evaluation
         pk_res, win_diff, pk_rdm, win_diff_rdm = seg_eval(algo_group_vec, real_group_vec)
 
+        # Save results
         nmi_vec.append(nmi)
-        map_vec.append(map)
         pk_vec.append(pk_res)
         win_diff_vec.append(win_diff)
         pk_rdm_vec.append(pk_rdm)
@@ -141,5 +119,5 @@ for index_file in range(len(input_text_file_list)):
 
 
     with open(output_file, "a") as res_file:
-        res_file.write(f"{input_text_file},{np.mean(nmi_vec)},{np.mean(map_vec)},{np.mean(pk_vec)},"
-                       f"{np.mean(win_diff_vec)},{np.mean(pk_rdm_vec)},{np.mean(win_diff_rdm_vec)}\n")
+        res_file.write(f"{input_text_file},{np.mean(nmi_vec)},{np.mean(pk_vec)},{np.mean(pk_rdm_vec)},"
+                       f"{np.mean(win_diff_vec)},{np.mean(win_diff_rdm_vec)}\n")

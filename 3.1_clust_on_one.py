@@ -3,7 +3,6 @@ import numpy as np
 import random as rdm
 from sklearn.metrics import normalized_mutual_info_score, average_precision_score
 import pandas as pd
-from segeval import convert_positions_to_masses, pk, window_diff
 from itertools import permutations
 
 # -------------------------------------
@@ -16,7 +15,9 @@ input_sim_file = "similarity_matrices/61320_200411_pp_wostw_w2v.csv"
 
 output_names_root = "results/61320_200411_w2v"
 
-n_groups = 7
+# N groups (if none, extracted from data)
+n_groups = None
+
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
@@ -40,6 +41,8 @@ with open(input_group_file) as ground_truth:
     real_group_vec = ground_truth.read()
     real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
 real_group_vec = real_group_vec[existing_index_list]
+if n_groups is None:
+    n_groups = len(set(real_group_vec))
 
 # For semi-supervised results, pick some labels
 if known_label_ratio > 0:
