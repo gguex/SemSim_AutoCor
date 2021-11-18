@@ -17,14 +17,13 @@ base_path = os.getcwd()
 
 # ------------ Options manifesto
 
-# input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
-# input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
-#
-# results_file_name = "results/Gn_61320_201211_pp_wostw.csv"
-#
-# input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_w2v.csv",
-#                        "similarity_matrices/61320_201211_pp_wostw_glv.csv",
-#                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
+input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+
+results_file_name = "results/Gn_glvftx_61320_201211_pp_wostw.csv"
+
+input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv",
+                       "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
 
 # ------------ Options wiki50
 
