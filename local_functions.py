@@ -483,9 +483,11 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
 
     # If known_labels is not None, pass them to init_labels
     if known_labels is not None:
+        known_labels = known_labels[existing_pos_list]
         if init_labels is None:
             init_labels = known_labels
         else:
+            init_labels = init_labels[existing_pos_list]
             if len(np.array(init_labels).shape) == 1:
                 init_labels[known_labels > 1e-2] = known_labels[known_labels > 1e-2]
             else:

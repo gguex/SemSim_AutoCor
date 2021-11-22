@@ -1,5 +1,4 @@
 from local_functions import *
-from os.path import expanduser
 import pandas as pd
 from sklearn.metrics import normalized_mutual_info_score
 
@@ -9,7 +8,7 @@ from sklearn.metrics import normalized_mutual_info_score
 
 input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
 input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
-home = expanduser("~")
+home = os.path.expanduser("~")
 vector_model_path = f"{home}/Documents/data/pretrained_word_vectors/enwiki.model"
 
 n_groups = 7

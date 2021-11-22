@@ -45,11 +45,13 @@ input_text_file_list = [f"{input_text_folder}/{file}" for file in file_list if "
 input_group_file_list = [f"{input_text_folder}/{file}" for file in file_list if "groups" in file]
 input_sim_file_list = [f"similarity_matrices/{file[:-4]}_{sim_tag}.csv" for file in file_list if "groups" not in file]
 
+# Create output file
 with open(output_file, "w") as res_file:
     res_file.write(f"file,nmi,pk,pk_rdm,wd,wd_rdm\n")
 
 for index_file in range(len(input_text_file_list)):
 
+    # Get text file associated files
     input_text_file = input_text_file_list[index_file]
     input_group_file = input_group_file_list[index_file]
     input_sim_file = input_sim_file_list[index_file]
