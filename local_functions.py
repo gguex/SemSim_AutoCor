@@ -468,7 +468,10 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
 
     # Defining blocks indices
     n_token = len(existing_token_list)
-    n_split = round(n_token / block_size)
+    if block_size > n_token or block_size is None:
+        n_split = 1
+    else:
+        n_split = round(n_token / block_size)
     n_block = n_split + (n_split - 1)
     real_split_size = int(n_token / n_split)
     range_list = []
