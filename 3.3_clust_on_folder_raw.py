@@ -19,6 +19,12 @@ n_groups = None
 # Block size
 block_size = None
 
+# Best param for Pk (none groups)
+# wiki50 :  ftx, 15, 10, 50, 0.25
+# cities :  ftx, 10, 5, 5, 0.25
+# elem :    ftx, 5, 2, 5, 0.5
+# clini :   ftx, 5, 1, 5, 0
+
 sim_tag = "ftx"
 dist_option = "max_minus"
 exch_mat_opt = "u"
