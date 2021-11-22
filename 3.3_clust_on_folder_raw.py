@@ -7,9 +7,9 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
-input_text_folder = "corpora/manifesto_pp"
+input_text_folder = "corpora/wiki50_pp"
 stop_words = False
-output_file = "results/clust_manifesto.csv"
+output_file = "results/clust_wiki50.csv"
 
 # ---
 
@@ -19,13 +19,13 @@ n_groups = None
 # Block size
 block_size = None
 
-sim_tag = "w2v"
+sim_tag = "ftx"
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
-alpha = 5
-beta = 100
-kappa = 0.5
+alpha = 10
+beta = 50
+kappa = 0.25
 known_label_ratio = 0  # if > 0, semi-supervised model
 
 n_tests = 3
