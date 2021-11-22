@@ -37,8 +37,8 @@ for input_file in input_file_list:
         output_name = f"{input_file[:-4]}_pp_wostw"
     else:
         output_name = f"{input_file[:-4]}_pp"
-    with open(f"{output_files_path}/{output_name}.txt", "w") as text_file, \
-            open(f"{output_files_path}/{output_name}_groups.txt", "w") as groups_file:
+    with open(f"{output_files_path}/cl{output_name}.txt", "w") as text_file, \
+            open(f"{output_files_path}/cl{output_name}_groups.txt", "w") as groups_file:
 
         # Loop on sentences
         group_value = 0
@@ -68,8 +68,8 @@ for input_file in input_file_list:
                     groups_file.write(",".join([str(group_value)] * len(token_list)) + ",")
 
     # Remove last char
-    with open(f"{output_files_path}/{output_name}.txt", "rb+") as text_file, \
-            open(f"{output_files_path}/{output_name}_groups.txt", "rb+") as groups_file:
+    with open(f"{output_files_path}/cl{output_name}.txt", "rb+") as text_file, \
+            open(f"{output_files_path}/cl{output_name}_groups.txt", "rb+") as groups_file:
         text_file.seek(-1, os.SEEK_END)
         text_file.truncate()
         groups_file.seek(-1, os.SEEK_END)
