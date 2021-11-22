@@ -49,8 +49,8 @@ for doc_id in set(doc_list):
         output_name = f"{doc_id}_pp_wostw"
     else:
         output_name = f"{doc_id}_pp"
-    with open(f"{output_files_path}/{output_name}.txt", "w") as text_file, \
-            open(f"{output_files_path}/{output_name}_groups.txt", "w") as groups_file:
+    with open(f"{output_files_path}/c{output_name}.txt", "w") as text_file, \
+            open(f"{output_files_path}/c{output_name}_groups.txt", "w") as groups_file:
 
         # Loop on sentences
         for i, sentence in enumerate(doc_sent_vec):
@@ -76,8 +76,8 @@ for doc_id in set(doc_list):
                 groups_file.write(",".join([str(doc_group_id_vec[i])] * len(token_list)) + ",")
 
     # Remove last char
-    with open(f"{output_files_path}/{output_name}.txt", "rb+") as text_file, \
-            open(f"{output_files_path}/{output_name}_groups.txt", "rb+") as groups_file:
+    with open(f"{output_files_path}/c{output_name}.txt", "rb+") as text_file, \
+            open(f"{output_files_path}/c{output_name}_groups.txt", "rb+") as groups_file:
         text_file.seek(-1, os.SEEK_END)
         text_file.truncate()
         groups_file.seek(-1, os.SEEK_END)

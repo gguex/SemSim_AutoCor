@@ -7,7 +7,7 @@ from os.path import expanduser
 # -------------------------------------
 
 # Input folder
-input_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_file = "corpora/cities_pp/3_pp_.txt"
 
 # List of tags to enumerate similarity to compute
 sim_tag_list = ["w2v", "glv", "ftx"]
