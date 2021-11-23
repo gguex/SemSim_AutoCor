@@ -104,7 +104,7 @@ def load_sim_matrix(sim_matrix_path):
     :rtype: (list[str], numpy.ndarray)
     """
     # Load read file
-    with open(sim_matrix_path, "r") as csv_sim_file:
+    with open(sim_matrix_path, "r", encoding="utf-8", errors="ignore") as csv_sim_file:
         row_list = csv_sim_file.readlines()
         type_list = []
         sim_mat = []
