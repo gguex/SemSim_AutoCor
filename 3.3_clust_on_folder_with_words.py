@@ -21,12 +21,11 @@ sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
-alpha = 2
+alpha = 5
 beta = 100
-kappa = 1
-known_label_ratio = 0  # if > 0, semi-supervised model
+kappa = 0.5
 
-n_tests = 1
+n_tests = 3
 
 # ---
 

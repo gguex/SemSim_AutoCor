@@ -9,21 +9,21 @@ from itertools import permutations
 # --- Parameters
 # -------------------------------------
 
-input_text_file = "corpora/manifesto_pp/61320_200411_pp_wostw.txt"
-input_group_file = "corpora/manifesto_pp/61320_200411_pp_wostw_groups.txt"
-input_sim_file = "similarity_matrices/61320_200411_pp_wostw_w2v.csv"
+input_text_file = "corpora/wiki50_pp/6544206_pp_wostw.txt"
+input_group_file = "corpora/wiki50_pp/6544206_pp_wostw_groups.txt"
+input_sim_file = "similarity_matrices/6544206_pp_wostw_ftx.csv"
 
-output_names_root = "results/61320_200411_w2v"
+output_names_root = "results/6544206_ftx"
 
 # N groups (if none, extracted from data)
-n_groups = None
+n_groups = 2
 
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
-alpha = 2
+alpha = 30
 beta = 100
-kappa = 1
+kappa = 0
 known_label_ratio = 0 # if > 0, semi-supervised model
 
 # -------------------------------------
