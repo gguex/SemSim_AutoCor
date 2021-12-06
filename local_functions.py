@@ -571,11 +571,17 @@ def seg_eval(algo_group_vec, real_group_vec):
 
     # Compute the real value
     pk_res = pk(algo_segm_vec, real_segm_vec)
-    win_diff = window_diff(algo_segm_vec, real_segm_vec)
+    try:
+        win_diff = window_diff(algo_segm_vec, real_segm_vec)
+    except AssertionError:
+        win_diff = 1
 
     # Compute the random value
     pk_rdm = pk(rdm_segm_vec, real_segm_vec)
-    win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+    try:
+        win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+    except AssertionError:
+        win_diff_rdm = 1
 
     # Return
     return pk_res, win_diff, pk_rdm, win_diff_rdm
