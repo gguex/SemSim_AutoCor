@@ -15,7 +15,7 @@ import os
 base_path = os.getcwd()
 
 
-# ------------ Options manifesto
+# ------------ Options
 
 input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
@@ -24,16 +24,6 @@ results_file_name = "results/Gn_glvftx_61320_201211_pp_wostw.csv"
 
 input_sim_file_list = ["similarity_matrices/61320_201211_pp_wostw_glv.csv",
                        "similarity_matrices/61320_201211_pp_wostw_ftx.csv"]
-
-# ------------ Options wiki50
-
-# input_text_file = "corpora/wiki50_pp/6544206_pp_wostw.txt"
-# input_group_file = "corpora/wiki50_pp/6544206_pp_wostw_groups.txt"
-# results_file_name = "results/Gn_6544206_pp_wostw.csv"
-#
-# input_sim_file_list = ["similarity_matrices/6544206_pp_wostw_w2v.csv",
-#                        "similarity_matrices/6544206_pp_wostw_glv.csv",
-#                        "similarity_matrices/6544206_pp_wostw_ftx.csv"]
 
 # N groups (if None, extracted from data)
 n_groups = None
