@@ -15,7 +15,6 @@ from sentence_transformers import SentenceTransformer, util
 
 base_path = os.getcwd()
 
-
 # ------------ Options
 
 input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
@@ -56,7 +55,6 @@ with open(results_file_name, "w") as output_file:
 # Load corpus
 with open(input_text_file, "r") as text_file:
     sent_list = text_file.readlines()
-
 # Load ground truth
 with open(input_group_file, "r") as group_file:
     group_list = group_file.read().split(",")
