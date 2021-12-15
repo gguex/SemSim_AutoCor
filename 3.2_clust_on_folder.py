@@ -9,7 +9,7 @@ from sklearn.metrics import normalized_mutual_info_score
 
 input_text_folder = "corpora/manifesto_pp"
 stop_words = False
-output_file = "results/3_clust_results/clust_nmi_manifesto.csv"
+output_file = "results/3_clust_segm_results/clust_nmi_manifesto.csv"
 
 #---
 
