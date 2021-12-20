@@ -14,21 +14,24 @@ base_path = os.getcwd()
 
 # ------------ Options
 
-input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
-input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+input_text_file = "corpora/clinical_pp/cl136_pp_wostw.txt"
+input_group_file = "corpora/clinical_pp/cl136_pp_wostw_groups.txt"
 
-results_file_name = "results/2_hyperparam_search/LDA_Gn_61320_201211_pp_wostw.csv"
+results_file_name = "results/2_hyperparam_search/LDA_G2_cl136_pp_wostw.csv"
 
 # ---
 
 # Number groups (if None, extracted from data)
-n_groups = None
+n_groups = 2
 
 # Number of tests
 n_tests = 20
 
-# Search on
-chunk_size_vec = list(range(1000, 6001, 250))
+# Search : either chunk_size_vec directly (put None to use "chunk_vec_sep")
+chunk_size_vec = None
+# either split length(token) into approx equal parts
+chunk_vec_sep = 20
+# Use prior ?
 use_prior_vec = [True, False]
 
 # -------------------------------------
@@ -48,22 +51,31 @@ if n_groups is None:
     n_groups = len(set(real_group_vec))
 
 # The number of Topic and a-priori probabality
-topic_distrib = [np.sum(real_group_vec == topic_id) / len(real_group_vec) for topic_id in set(real_group_vec)]
+if n_groups == len(set(real_group_vec)):
+    topic_distrib = [np.sum(real_group_vec == topic_id) / len(real_group_vec) for topic_id in set(real_group_vec)]
+else:
+    topic_distrib = None
 
 # Get tokens
 with open(input_text_file) as text_file:
     text = text_file.read()
     token_list = text.split()
 
-# -- Loop on chunk_size
+# Define chunk exploration space
+if chunk_size_vec is None:
+    step_chunk = int(np.ceil(len(token_list) / chunk_vec_sep))
+    chunk_size_vec = list(range(step_chunk, step_chunk*chunk_vec_sep + 1, step_chunk))
 
-for chunk_size in chunk_size_vec:
+# -- Loop on chunk_size
+for chunk_size in tqdm(chunk_size_vec):
 
     # Divide the corpus by chunk
     n_chunk = int(np.ceil(len(token_list) / chunk_size))
     token_list_list = []
     for i in range(n_chunk):
         token_list_list.append(token_list[i * chunk_size:(i + 1) * chunk_size])
+    if n_chunk == 1:
+        chunk_size = len(token_list)
 
     # The common voc
     lda_voc = Dictionary(token_list_list)
@@ -76,12 +88,13 @@ for chunk_size in chunk_size_vec:
 
         # -- Make the n tests
         nmi_list, pk_list, pk_rdm_list, wd_list, wd_rdm_list = [], [], [], [], []
-        for _ in tqdm(range(n_tests)):
+        for _ in range(n_tests):
 
             # LDA
-            if use_prior:
+            if use_prior and topic_distrib is not None:
                 lda = LdaModel(lda_corpus, num_topics=n_groups, alpha=topic_distrib)
             else:
+                use_prior = False
                 lda = LdaModel(lda_corpus, num_topics=n_groups)
 
             # Id doc
