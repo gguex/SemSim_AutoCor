@@ -553,9 +553,9 @@ def seg_eval(algo_group_vec, real_group_vec):
     """
     A function computing the Pk and win_diff value for 2 segmentations. Also give random baselines
     :param algo_group_vec: The algorithm result in the form a token group memberships
-    :type algo_group_vec: numpy.ndarray
+    :type algo_group_vec: Union[list, numpy.ndarray]
     :param real_group_vec: The real group memberships of tokens
-    :type real_group_vec: numpy.ndarray
+    :type real_group_vec: Union[list, numpy.ndarray]
     :return: Pk value, Win_diff value, Pk random value, Win_diff random value
     :rtype: (float, float, float, float)
     """
