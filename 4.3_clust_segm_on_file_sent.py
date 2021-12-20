@@ -6,14 +6,19 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
+# Input text file
 input_text_file = "corpora/manifesto_pp/61320_200411_pp_wostw.txt"
+# Input group file
 input_group_file = "corpora/manifesto_pp/61320_200411_pp_wostw_groups.txt"
-
+# Root name for output files
 output_names_root = "results/61320_200411_sent"
 
-# N groups (if none, extracted from data)
+#---
+
+# Number of groups (if none, extracted from data)
 n_groups = None
 
+# Algo hyperparameters
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15

@@ -7,37 +7,22 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
+# Input folder
 input_text_folder = "corpora/wiki50_pp"
+# Take stopwords
 stop_words = False
+# Output file name
 output_file = "results/segm2_wiki50.csv"
 
 # ---
 
-# N groups (if none, extracted from data)
+# Number of groups (if none, extracted from data)
 n_groups = None
 
 # Block size
 block_size = None
 
-# Best param for NMI
-# manif :   w2v, 15, 5, 100, 0.5
-# wiki50 :  ftx, 15, 30, 100, 0
-# cities :  w2v, 15, 10, 50, 0.25
-# elem :    ftx, 15, 30, 10, 0
-# clini :   ftx, 15, 5, 50, 0.75
-# Best param for Pk (none groups)
-# manif :   ftx, 5, 2, 5, 0.25
-# wiki50 :  ftx, 15, 10, 50, 0.25
-# cities :  ftx, 10, 5, 5, 0.25
-# elem :    ftx, 5, 2, 5, 0.5
-# clini :   ftx, 5, 1, 5, 0
-# Best param for Pk (2 groups)
-# manif :   w2v, 15, 5, 100, 0
-# wiki50 :  glv, 10, 2, 5, 0.75
-# cities :  ftx, 5, 2, 10, 1
-# elem :    ftx, 15, 30, 200, 0
-# clini :   w2v, 15, 1, 10, 0.75
-
+# Algo hyperparameters
 sim_tag = "glv"
 dist_option = "max_minus"
 exch_mat_opt = "u"
@@ -47,12 +32,14 @@ beta = 5
 kappa = 0.75
 known_label_ratio = 0  # if > 0, semi-supervised model
 
+# Number of times algo is run
 n_tests = 3
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
 
+# List files
 file_list = os.listdir(input_text_folder)
 
 # Restrict them to those with or without stopwords

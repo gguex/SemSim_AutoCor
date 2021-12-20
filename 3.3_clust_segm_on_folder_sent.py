@@ -8,15 +8,19 @@ from sentence_transformers import SentenceTransformer, util
 # --- Parameters
 # -------------------------------------
 
+# Input folder
 input_text_folder = "corpora/wiki50_pp"
+# Take stopwords
 stop_words = False
+# Output file name
 output_file = "results/segm_sent_wiki50.csv"
 
 # ---
 
-# N groups (if none, extracted from data)
+# Number of groups (if none, extracted from data)
 n_groups = None
 
+# Algo hyperparameters
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 10
@@ -25,12 +29,14 @@ beta = 5
 kappa = 0.75
 known_label_ratio = 0  # if > 0, semi-supervised model
 
+# Number of times algo is run
 n_tests = 3
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
 
+# List files
 file_list = os.listdir(input_text_folder)
 
 # Restrict them to those with or without stopwords

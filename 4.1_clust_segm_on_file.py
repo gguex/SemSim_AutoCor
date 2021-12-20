@@ -9,15 +9,21 @@ from itertools import permutations
 # --- Parameters
 # -------------------------------------
 
+# Input text file
 input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
+# Input group file
 input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
+# Input sim file
 input_sim_file = "similarity_matrices/61320_199211_pp_wostw_w2v.csv"
-
+# Root name for output files
 output_names_root = "results/61320_199211_pp_wostw"
 
-# N groups (if none, extracted from data)
+#---
+
+# Number of groups (if none, extracted from data)
 n_groups = None
 
+# Algo hyperparameters
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15

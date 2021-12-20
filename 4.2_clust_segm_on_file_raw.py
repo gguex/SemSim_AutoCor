@@ -6,12 +6,23 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
+# Input text file
 input_text_file = "corpora/clinical_pp/cl002_pp_wostw.txt"
+# Input group file
 input_group_file = "corpora/clinical_pp/cl002_pp_wostw_groups.txt"
+# Input vector model
 home = os.path.expanduser("~")
 vector_model_path = f"{home}/Documents/data/pretrained_word_vectors/en_fasttext.model"
 
+#---
+
+# Number of groups (if none, extracted from data)
 n_groups = None
+
+# Block size
+block_size = None
+
+# Algo hyperparameters
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
@@ -19,9 +30,6 @@ alpha = 5
 beta = 1
 kappa = 0
 known_label_ratio = 0  # if > 0, semi-supervised model
-
-# Block size
-block_size = None
 
 # -------------------------------------
 # --- Computations

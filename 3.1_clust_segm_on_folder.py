@@ -7,15 +7,19 @@ from sklearn.metrics import normalized_mutual_info_score
 # --- Parameters
 # -------------------------------------
 
+# Input folder
 input_text_folder = "corpora/manifesto_pp"
+# Take stopwords
 stop_words = False
+# Output file name
 output_file = "results/3.1_clust_results/clust_nmi_manifesto.csv"
 
 #---
 
-# N groups (if none, extracted from data)
+# Number of groups (if none, extracted from data)
 n_groups = None
 
+# Algo hyperparameters
 sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
@@ -25,12 +29,14 @@ beta = 100
 kappa = 0.5
 known_label_ratio = 0  # if > 0, semi-supervised model
 
+# Number of times algo is run
 n_tests = 3
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
 
+# List files
 file_list = os.listdir(input_text_folder)
 
 # Restrict them to those with or without stopwords
