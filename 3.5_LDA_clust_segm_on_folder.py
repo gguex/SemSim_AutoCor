@@ -11,11 +11,11 @@ from local_functions import seg_eval
 # -------------------------------------
 
 # Input folder
-input_text_folder = "corpora/manifesto_pp"
+input_text_folder = "corpora/clinical_pp"
 # Take stopwords
 stop_words = False
 # Output file name
-output_file_name = "results/3.1_clust_results/LDA_clust_manifesto.csv"
+output_file_name = "results/3.1_clust_results/LDA_clust_clinical.csv"
 
 # N groups (if None, extracted from data)
 n_groups = None
@@ -24,7 +24,7 @@ n_groups = None
 n_tests = 20
 
 # Hyperparameters
-chunk_size = 2250
+chunk_size = 310
 use_prior = False
 
 # -------------------------------------
@@ -50,7 +50,7 @@ with open(output_file_name, "w") as output_file:
     output_file.write("input_file,n_groups,n_tests,use_prior,chunk_size,"
                       "mean_nmi,mean_pk,mean_rdm_pk,mean_wd,mean_rdm_wd\n")
 
-for index_file in range(len(input_text_file_list)):
+for index_file in tqdm(range(len(input_text_file_list))):
 
     # Get text file associated files
     input_text_file = input_text_file_list[index_file]
@@ -85,7 +85,7 @@ for index_file in range(len(input_text_file_list)):
 
     # -- Make the n tests
     nmi_list, pk_list, pk_rdm_list, wd_list, wd_rdm_list = [], [], [], [], []
-    for _ in tqdm(range(n_tests)):
+    for _ in range(n_tests):
 
         # LDA
         if use_prior:
