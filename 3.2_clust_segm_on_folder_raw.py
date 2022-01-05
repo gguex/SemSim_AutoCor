@@ -12,7 +12,7 @@ input_text_folder = "corpora/wiki50_pp"
 # Take stopwords
 stop_words = False
 # Output file name
-output_file = "results/segm2_wiki50.csv"
+output_file = "results/test_wiki50.csv"
 
 # ---
 
@@ -23,17 +23,17 @@ n_groups = None
 block_size = None
 
 # Algo hyperparameters
-sim_tag = "glv"
+sim_tag = "ftx"
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 10
-alpha = 2
-beta = 5
-kappa = 0.75
-known_label_ratio = 0  # if > 0, semi-supervised model
+exch_range = 15
+alpha = 30
+beta = 100
+kappa = 0
+known_label_ratio = 0.05  # if > 0, semi-supervised model
 
 # Number of times algo is run
-n_tests = 3
+n_tests = 1
 
 # -------------------------------------
 # --- Computations
@@ -111,8 +111,13 @@ for index_file in range(len(input_text_file_list)):
         algo_group_vec = np.argmax(result_matrix, 1) + 1
 
         # Restrained results
-        rstr_real_group_vec = np.delete(real_group_vec, indices_for_known_label)
-        rstr_algo_group_vec = np.delete(algo_group_vec, indices_for_known_label)
+        if known_labels is not None:
+            rstr_index = known_labels[existing_pos_list] == 0
+            rstr_real_group_vec = real_group_vec[rstr_index]
+            rstr_algo_group_vec = algo_group_vec[rstr_index]
+        else:
+            rstr_real_group_vec = real_group_vec
+            rstr_algo_group_vec = algo_group_vec
 
         # Compute nmi score
         nmi = normalized_mutual_info_score(rstr_real_group_vec, rstr_algo_group_vec)
