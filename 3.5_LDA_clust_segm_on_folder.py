@@ -17,8 +17,8 @@ stop_words = False
 # Output file name
 output_file_name = "results/3.1_clust_results/LDA_clust_elements.csv"
 
-# N groups (if None, extracted from data)
-n_groups = None
+# Fixed number of groups (if none, extracted from data)
+fixed_n_groups = None
 
 # Number of tests
 n_tests = 20
@@ -60,8 +60,10 @@ for index_file in tqdm(range(len(input_text_file_list))):
     with open(input_group_file) as ground_truth:
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
-    if n_groups is None:
+    if fixed_n_groups is None:
         n_groups = len(set(real_group_vec))
+    else:
+        n_groups = fixed_n_groups
 
     # The number of Topic and a-priori probabality
     topic_distrib = [np.sum(real_group_vec == topic_id) / len(real_group_vec) for topic_id in set(real_group_vec)]
