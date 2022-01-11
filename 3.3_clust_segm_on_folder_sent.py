@@ -83,7 +83,7 @@ for index_file in range(len(input_text_file_list)):
 
     # Get the number of groups if there is no group defined
     if fixed_n_groups is None:
-        n_groups = len(set(real_group_vec))
+        n_groups = len(set(real_sent_group_vec))
     else:
         n_groups = fixed_n_groups
 

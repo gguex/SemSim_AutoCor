@@ -77,7 +77,7 @@ for index_file in range(len(input_text_file_list)):
         real_group_nr_vec = ground_truth.read()
         real_group_nr_vec = np.array([int(element) for element in real_group_nr_vec.split(",")])
     if fixed_n_groups is None:
-        n_groups = len(set(real_group_vec))
+        n_groups = len(set(real_group_nr_vec))
     else:
         n_groups = fixed_n_groups
 
