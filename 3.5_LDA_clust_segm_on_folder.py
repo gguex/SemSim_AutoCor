@@ -48,7 +48,7 @@ input_group_file_list = [f"{input_text_folder}/{file}" for file in file_list if 
 # Make results file
 with open(output_file_name, "w") as output_file:
     output_file.write("input_file,n_groups,n_tests,use_prior,chunk_size,"
-                      "mean_nmi,mean_pk,mean_rdm_pk,mean_wd,mean_rdm_wd\n")
+                      "nmi,pk,pk_rdm,wd,wd_rdm\n")
 
 for index_file in tqdm(range(len(input_text_file_list))):
 
