@@ -11,20 +11,20 @@ from local_functions import seg_eval
 # -------------------------------------
 
 # Input folder
-input_text_folder = "corpora/elements_pp"
+input_text_folder = "corpora/clinical_pp"
 # Take stopwords
 stop_words = False
 # Output file name
-output_file_name = "results/3.1_clust_results/LDA_clust_elements.csv"
+output_file_name = "results/3.1_clust_results/LDA_clust_clinical.csv"
 
 # Fixed number of groups (if none, extracted from data)
 fixed_n_groups = None
 
 # Number of tests
-n_tests = 20
+n_tests = 10
 
 # Hyperparameters
-chunk_size = 156
+chunk_size = 310
 use_prior = False
 
 # -------------------------------------

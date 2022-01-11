@@ -1,7 +1,7 @@
 import pandas as pd
 from scipy.stats import sem, t
 
-path_to_file = "results/3.3_semi_clust_results/semi_clust_10_clinical.csv"
+path_to_file = "results/segm_sent_wiki50.csv"
 col_to_compute = "nmi"
 
 # Computations
