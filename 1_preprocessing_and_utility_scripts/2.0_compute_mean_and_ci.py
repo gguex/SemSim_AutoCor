@@ -1,8 +1,8 @@
 import pandas as pd
 from scipy.stats import sem, t
 
-path_to_file = "results/3.1_clust_results/LDA_clust_elements.csv"
-col_to_compute = "mean_nmi"
+path_to_file = "results/3.3_semi_clust_results/semi_clust_10_clinical.csv"
+col_to_compute = "nmi"
 
 # Computations
 
