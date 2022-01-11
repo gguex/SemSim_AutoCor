@@ -8,16 +8,16 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # Input folder
-input_text_folder = "corpora/wiki50_pp"
+input_text_folder = "corpora/elements_pp"
 # Take stopwords
 stop_words = False
 # Output file name
-output_file = "results/test_wiki50.csv"
+output_file = "results/test_elements.csv"
 
 # ---
 
-# Number of groups (if none, extracted from data)
-n_groups = None
+# Fixed number of groups (if none, extracted from data)
+fixed_n_groups = None
 
 # Block size
 block_size = None
@@ -28,7 +28,7 @@ dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
 alpha = 30
-beta = 100
+beta = 10
 kappa = 0
 known_label_ratio = 0.05  # if > 0, semi-supervised model
 
@@ -76,8 +76,10 @@ for index_file in range(len(input_text_file_list)):
     with open(input_group_file) as ground_truth:
         real_group_nr_vec = ground_truth.read()
         real_group_nr_vec = np.array([int(element) for element in real_group_nr_vec.split(",")])
-    if n_groups is None:
-        n_groups = len(set(real_group_nr_vec))
+    if fixed_n_groups is None:
+        n_groups = len(set(real_group_vec))
+    else:
+        n_groups = fixed_n_groups
 
     # Loop on n_tests
     nmi_vec = []

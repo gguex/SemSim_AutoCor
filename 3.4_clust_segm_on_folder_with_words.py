@@ -18,8 +18,8 @@ output_word_stat_file = "results/word_stat_manifesto.csv"
 
 # ---
 
-# Number of groups (if none, extracted from data)
-n_groups = None
+# Fixed number of groups (if none, extracted from data)
+fixed_n_groups = None
 
 # Algo hyperparameters
 sim_tag = "w2v"
@@ -109,8 +109,10 @@ for index_file in range(len(input_text_file_list)):
         real_group_vec = ground_truth.read()
         real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
     real_group_vec = real_group_vec[existing_index_list]
-    if n_groups is None:
+    if fixed_n_groups is None:
         n_groups = len(set(real_group_vec))
+    else:
+        n_groups = fixed_n_groups
 
     # Label the words
     known_labels = np.zeros(len(real_group_vec))

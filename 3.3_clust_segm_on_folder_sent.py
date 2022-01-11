@@ -17,8 +17,8 @@ output_file = "results/segm_sent_wiki50.csv"
 
 # ---
 
-# Number of groups (if none, extracted from data)
-n_groups = None
+# Fixed number of groups (if none, extracted from data)
+fixed_n_groups = None
 
 # Algo hyperparameters
 dist_option = "max_minus"
@@ -82,8 +82,10 @@ for index_file in range(len(input_text_file_list)):
     real_sent_group_vec = np.array(real_sent_group_vec)
 
     # Get the number of groups if there is no group defined
-    if n_groups is None:
-        n_groups = len(set(real_sent_group_vec))
+    if fixed_n_groups is None:
+        n_groups = len(set(real_group_vec))
+    else:
+        n_groups = fixed_n_groups
 
     # Make the sentence vectors
     sentence_embeddings = sbert_model.encode(sent_list)
