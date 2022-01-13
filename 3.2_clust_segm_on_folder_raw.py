@@ -82,11 +82,7 @@ for index_file in range(len(input_text_file_list)):
         n_groups = fixed_n_groups
 
     # Loop on n_tests
-    nmi_vec = []
-    pk_vec = []
-    win_diff_vec = []
-    pk_rdm_vec = []
-    win_diff_rdm_vec = []
+    nmi_vec, pk_vec, win_diff_vec, pk_rdm_vec, win_diff_rdm_vec = [], [], [], [], []
     for id_test in range(n_tests):
 
         # For semi-supervised results, pick some labels

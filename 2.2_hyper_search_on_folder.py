@@ -151,12 +151,9 @@ for id_file, input_text_file in enumerate(input_text_file_list):
 
 
                 def val_computation(alpha, beta, kappa):
+
                     # Compute the matrix and val  n_train time
-                    nmi_list = []
-                    pk_list = []
-                    pk_rdm_list = []
-                    wd_list = []
-                    wd_rdm_list = []
+                    nmi_list, pk_list, pk_rdm_list, wd_list, wd_rdm_list = [], [], [], [], []
                     for _ in range(n_tests):
                         # Compute the membership matrix
                         res_matrix = token_clustering(d_ext_mat=d_ext_mat,

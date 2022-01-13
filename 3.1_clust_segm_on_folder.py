@@ -96,11 +96,7 @@ for index_file in range(len(input_text_file_list)):
                                                        exch_mat_opt=exch_mat_opt,
                                                        exch_range=exch_range)
     # Loop on n_tests
-    nmi_vec = []
-    pk_vec = []
-    win_diff_vec = []
-    pk_rdm_vec = []
-    win_diff_rdm_vec = []
+    nmi_vec, pk_vec, win_diff_vec, pk_rdm_vec, win_diff_rdm_vec = [], [], [], [], []
     for id_test in range(n_tests):
 
         # Compute the membership matrix

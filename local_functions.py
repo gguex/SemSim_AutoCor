@@ -398,7 +398,7 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
 
 
 def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
-                             kappa, block_size=1000, init_labels=None, known_labels=None, strong_pass=False,
+                             kappa, block_size=None, init_labels=None, known_labels=None, strong_pass=False,
                              conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
                              verbose=False):
     """
