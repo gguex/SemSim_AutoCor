@@ -63,6 +63,9 @@ for index_file in range(len(input_text_file_list)):
     input_text_file = input_text_file_list[index_file]
     input_group_file = input_group_file_list[index_file]
 
+    # Print loop status
+    print(f"Computing results for {input_text_file}")
+
     # Load corpus
     with open(input_text_file, "r") as text_file:
         sent_list = text_file.readlines()

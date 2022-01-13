@@ -8,11 +8,11 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # Input folder
-input_text_folder = "corpora/elements_pp"
+input_text_folder = "corpora/manifesto_pp"
 # Take stopwords
 stop_words = False
 # Output file name
-output_file = "results/test_elements.csv"
+output_file = "results/clust_b5000_strong.csv"
 
 # ---
 
@@ -20,17 +20,19 @@ output_file = "results/test_elements.csv"
 fixed_n_groups = None
 
 # Block size
-block_size = None
+block_size = 5000
+# Strong pass
+strong_pass = True
 
 # Algo hyperparameters
-sim_tag = "ftx"
+sim_tag = "w2v"
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
-alpha = 30
-beta = 10
-kappa = 0
-known_label_ratio = 0.05  # if > 0, semi-supervised model
+alpha = 5
+beta = 100
+kappa = 0.5
+known_label_ratio = 0  # if > 0, semi-supervised model
 
 # Number of times algo is run
 n_tests = 1
@@ -72,6 +74,9 @@ for index_file in range(len(input_text_file_list)):
     input_text_file = input_text_file_list[index_file]
     input_group_file = input_group_file_list[index_file]
 
+    # Print loop status
+    print(f"Computing results for {input_text_file}")
+
     # Loading ground truth
     with open(input_group_file) as ground_truth:
         real_group_nr_vec = ground_truth.read()
@@ -101,7 +106,7 @@ for index_file in range(len(input_text_file_list)):
             token_clustering_on_file(input_text_file, vector_model_path, dist_option,
                                      exch_mat_opt, exch_range, n_groups, alpha, beta,
                                      kappa, known_labels=known_labels, block_size=block_size, verbose=True,
-                                     strong_pass=True)
+                                     strong_pass=strong_pass)
 
         # Restrain real group
         real_group_vec = real_group_nr_vec[existing_pos_list]
