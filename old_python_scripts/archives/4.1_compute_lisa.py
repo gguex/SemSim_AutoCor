@@ -59,8 +59,7 @@ for input_file in input_file_list:
         d_ext_mat, token_list, _ = type_to_token_matrix_expansion(text_file_path, d_mat, type_list)
 
         # Compute the exchange and transition matrices
-        exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
-                                                           exch_mat_opt=exch_mat_opt,
+        exch_mat, w_mat = exchange_and_transition_matrices(len(token_list), exch_mat_opt=exch_mat_opt,
                                                            exch_range=exch_range)
 
         # Compute the lisa vector

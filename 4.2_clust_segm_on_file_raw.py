@@ -43,9 +43,9 @@ if n_groups is None:
     n_groups = len(set(real_group_vec))
 
 z_res, existing_token_list, existing_pos_list = \
-    token_clustering_on_file(input_text_file, vector_model_path, dist_option,
-                             exch_mat_opt, exch_range, n_groups, alpha, beta,
-                             kappa, block_size=block_size, verbose=True, strong_pass=True)
+    spatial_clustering_on_file(input_text_file, vector_model_path, dist_option,
+                               exch_mat_opt, exch_range, n_groups, alpha, beta,
+                               kappa, block_size=block_size, verbose=True, strong_pass=True)
 
 write_groups_in_html_file("test.html", existing_token_list, z_res)
 

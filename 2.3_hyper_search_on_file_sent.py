@@ -1,6 +1,6 @@
 import os
 from local_functions import similarity_to_dissimilarity, \
-    exchange_and_transition_matrices, token_clustering, seg_eval
+    exchange_and_transition_matrices, spatial_clustering, seg_eval
 import numpy as np
 from sklearn.metrics import normalized_mutual_info_score
 from itertools import product
@@ -92,8 +92,7 @@ for dist_option in dist_option_vec:
     for exch_mat_opt, exch_range in product(exch_mat_opt_vec, exch_range_vec):
 
         # Compute the exchange and transition matrices
-        exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list),
-                                                           exch_mat_opt=exch_mat_opt,
+        exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list), exch_mat_opt=exch_mat_opt,
                                                            exch_range=exch_range)
 
         ########################################
@@ -106,13 +105,13 @@ for dist_option in dist_option_vec:
             ext_nmi_list, ext_pk_list, ext_pk_rdm_list, ext_wd_list, ext_wd_rdm_list = [], [], [], [], []
             for _ in range(n_tests):
                 # Compute the membership matrix
-                res_matrix = token_clustering(d_ext_mat=d_mat,
-                                              exch_mat=exch_mat,
-                                              w_mat=w_mat,
-                                              n_groups=n_groups,
-                                              alpha=alpha,
-                                              beta=beta,
-                                              kappa=kappa)
+                res_matrix = spatial_clustering(d_ext_mat=d_mat,
+                                                exch_mat=exch_mat,
+                                                w_mat=w_mat,
+                                                n_groups=n_groups,
+                                                alpha=alpha,
+                                                beta=beta,
+                                                kappa=kappa)
                 # Compute the aglo groups
                 algo_sent_group_vec = np.argmax(res_matrix, 1) + 1
 

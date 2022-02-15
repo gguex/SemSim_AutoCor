@@ -191,17 +191,19 @@ def similarity_to_dissimilarity(sim_mat, dist_option="max_minus"):
     return d_mat / np.max(d_mat)
 
 
-def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
+def exchange_and_transition_matrices(n, exch_mat_opt, exch_range, f_vec=None):
     """
-    Compute the exchange matrix and the Markov chain transition matrix from given number of tokens
+    Compute the exchange matrix and the Markov chain transition matrix from given number of objects
 
-    :param n_token: the number of tokens
-    :type n_token: int
+    :param n: the number of objects
+    :type n: int
     :param exch_mat_opt: option for the exchange matrix, "s" = standard, "u" = uniform, "d" = diffusive, "r" = ring
     :type exch_mat_opt: str
     :param exch_range: range of the exchange matrix
     :type exch_range: int
-    :return: the n_token x n_token exchange matrix and the n_token x n_token markov transition matrix
+    :param f_vec: an optional vector of relative weight
+    :type f_vec: list[int]
+    :return: the (n x n) exchange matrix and the (n x n) markov transition matrix
     :rtype: (numpy.ndarray, numpy.ndarray)
     """
 
@@ -210,33 +212,34 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
         warnings.warn("Exchange matrix option ('exch_mat_opt') not recognized, setting it to 's'")
         exch_mat_opt = "s"
 
+    # Weights if None
+    if f_vec is None:
+        f_vec = np.ones(n) / n
     # Computation regarding options
     if exch_mat_opt == "s":
-        exch_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+        exch_mat = np.abs(np.add.outer(np.arange(n), -np.arange(n))) <= exch_range
         np.fill_diagonal(exch_mat, 0)
         exch_mat = exch_mat / np.sum(exch_mat)
     elif exch_mat_opt == "u":
-        f_vec = np.ones(n_token) / n_token
-        adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+        adj_mat = np.abs(np.add.outer(np.arange(n), -np.arange(n))) <= exch_range
         np.fill_diagonal(adj_mat, 0)
         g_vec = np.sum(adj_mat, axis=1) / np.sum(adj_mat)
         k_vec = f_vec / g_vec
         b_mat = np.array([[min(v1, v2) for v2 in k_vec] for v1 in k_vec]) * adj_mat / np.sum(adj_mat)
         exch_mat = np.diag(f_vec) - np.diag(np.sum(b_mat, axis=1)) + b_mat
     elif exch_mat_opt == "d":
-        f_vec = np.ones(n_token) / n_token
-        adj_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= 1
+        adj_mat = np.abs(np.add.outer(np.arange(n), -np.arange(n))) <= 1
         np.fill_diagonal(adj_mat, 0)
         l_adj_mat = np.diag(np.sum(adj_mat, axis=1)) - adj_mat
         pi_outer_mat = np.outer(np.sqrt(f_vec), np.sqrt(f_vec))
         phi_mat = (l_adj_mat / pi_outer_mat) / np.trace(l_adj_mat)
         exch_mat = expm(- exch_range * phi_mat) * pi_outer_mat
     else:
-        exch_mat = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= exch_range
+        exch_mat = np.abs(np.add.outer(np.arange(n), -np.arange(n))) <= exch_range
         if exch_range == 1:
             np.fill_diagonal(exch_mat, 0)
         else:
-            to_remove = np.abs(np.add.outer(np.arange(n_token), -np.arange(n_token))) <= (exch_range - 1)
+            to_remove = np.abs(np.add.outer(np.arange(n), -np.arange(n))) <= (exch_range - 1)
             exch_mat = exch_mat ^ to_remove
         exch_mat = exch_mat / np.sum(exch_mat)
 
@@ -246,18 +249,18 @@ def exchange_and_transition_matrices(n_token, exch_mat_opt, exch_range):
     return exch_mat, w_mat
 
 
-def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None, known_labels=None,
-                     conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
-                     verbose=False):
+def spatial_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, init_labels=None, known_labels=None,
+                       conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                       verbose=False):
     """
-    Cluster tokens with cut soft clustering from a dissimilarity matrix, exchange matrix and transition matrix.
+    Cluster objects with soft clustering from a dissimilarity matrix, exchange matrix and transition matrix.
     Semi-supervised option available if init_labels is given.
 
-    :param d_ext_mat: the n_token x n_token distance matrix
+    :param d_ext_mat: the (n x n) distance matrix
     :type d_ext_mat: numpy.ndarray
-    :param exch_mat: the n_token x n_token exchange matrix
+    :param exch_mat: the (n x n) exchange matrix
     :type exch_mat: numpy.ndarray
-    :param w_mat: the n_token x n_token Markov chain transition matrix
+    :param w_mat: the (n x n) Markov chain transition matrix
     :type w_mat: numpy.ndarray
     :param n_groups: the number of groups
     :type n_groups: int
@@ -283,7 +286,7 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
     :type learning_rate_mult: float
     :param verbose: turn on messages during computation (default = False)
     :type verbose: bool
-    :return: the n_tokens x n_groups membership matrix for each token
+    :return: the (n x m) membership matrix for each token
     :rtype: numpy.ndarray
     """
 
@@ -397,12 +400,12 @@ def token_clustering(d_ext_mat, exch_mat, w_mat, n_groups, alpha, beta, kappa, i
     return z_mat
 
 
-def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
-                             kappa, block_size=None, init_labels=None, known_labels=None, strong_pass=False,
-                             conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
-                             verbose=False):
+def spatial_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_opt, exch_range, n_groups, alpha, beta,
+                               kappa, block_size=None, init_labels=None, known_labels=None, strong_pass=False,
+                               conv_threshold=1e-5, n_hist=10, max_it=200, learning_rate_init=1, learning_rate_mult=0.9,
+                               verbose=False):
     """
-    Cluster tokens with cut soft clustering from any file. Uses the block_size to cut the text in smaller segments.
+    Cluster objects with cut soft clustering from any file. Uses the block_size to cut the text in smaller segments.
     Semi-supervised option available if init_labels is given.
 
     :param file_path: The path of the text file
@@ -537,11 +540,11 @@ def token_clustering_on_file(file_path, word_vector_path, dist_option, exch_mat_
             arg_dict = {"init_labels": previous_labels}
 
         # Compute the membership matrix for the block
-        z_block = token_clustering(d_ext_mat=dist_matrix, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups,
-                                   alpha=alpha, beta=beta, kappa=kappa, **arg_dict,
-                                   conv_threshold=conv_threshold, n_hist=n_hist, max_it=max_it,
-                                   learning_rate_init=learning_rate_init, learning_rate_mult=learning_rate_mult,
-                                   verbose=verbose)
+        z_block = spatial_clustering(d_ext_mat=dist_matrix, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups,
+                                     alpha=alpha, beta=beta, kappa=kappa, **arg_dict,
+                                     conv_threshold=conv_threshold, n_hist=n_hist, max_it=max_it,
+                                     learning_rate_init=learning_rate_init, learning_rate_mult=learning_rate_mult,
+                                     verbose=verbose)
 
         # Put the z_block in z_final
         z_final[range_list[i], :] = z_block

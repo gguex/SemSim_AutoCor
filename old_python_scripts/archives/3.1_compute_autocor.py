@@ -73,8 +73,7 @@ for sim_tag in sim_tag_list:
         # the z_autocor function
         def z_autocor(exch_range):
             # Compute the exchange and transition matrices
-            exch_mat, w_mat = exchange_and_transition_matrices(len(token_list),
-                                                               exch_mat_opt=exch_mat_opt,
+            exch_mat, w_mat = exchange_and_transition_matrices(len(token_list), exch_mat_opt=exch_mat_opt,
                                                                exch_range=exch_range)
             # Compute the autocorrelation index
             autocor_index, theoretical_mean, theoretical_var = autocorrelation_index(d_ext_mat, exch_mat, w_mat)

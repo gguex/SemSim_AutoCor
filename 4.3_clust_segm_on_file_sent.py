@@ -60,13 +60,11 @@ sim_mat = np.array(util.pytorch_cos_sim(sentence_embeddings, sentence_embeddings
 d_ext_mat = similarity_to_dissimilarity(sim_mat, dist_option=dist_option)
 
 # Compute the exchange and transition matrices
-exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list),
-                                                   exch_mat_opt=exch_mat_opt,
-                                                   exch_range=exch_range)
+exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list), exch_mat_opt=exch_mat_opt, exch_range=exch_range)
 
 # Compute the membership matrix
-result_matrix = token_clustering(d_ext_mat=d_ext_mat, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups, alpha=alpha,
-                                 beta=beta, kappa=kappa, verbose=True)
+result_matrix = spatial_clustering(d_ext_mat=d_ext_mat, exch_mat=exch_mat, w_mat=w_mat, n_groups=n_groups, alpha=alpha,
+                                   beta=beta, kappa=kappa, verbose=True)
 
 # Compute the groups
 algo_group_vec = np.argmax(result_matrix, 1) + 1
