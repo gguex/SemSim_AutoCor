@@ -20,7 +20,7 @@ base_path = os.getcwd()
 input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 
-results_file_name = "results/2_hyperparam_search/SentGn_61320_201211_pp_wostw.csv"
+results_file_name = "results/2_hyperparam_search/SentGn_61320_201211_pp_wostw_new.csv"
 
 # N groups (if None, extracted from data)
 n_groups = None
@@ -61,12 +61,15 @@ with open(input_group_file, "r") as group_file:
 # Transform the vector to get 1 group by sentence
 ind_1 = 0
 real_sent_group_vec = []
+sent_weights = []
 for sent in sent_list:
     sent_token = nltk.word_tokenize(sent)
     token_group = group_list[ind_1:(ind_1 + len(sent_token))]
     real_sent_group_vec.append(int(max(set(token_group), key=token_group.count)))
     ind_1 = ind_1 + len(sent_token)
+    sent_weights.append(len(sent_token))
 real_sent_group_vec = np.array(real_sent_group_vec)
+sent_weights = np.array(sent_weights) / sum(sent_weights)
 # Get the number of groups if there is no group defined
 if n_groups is None:
     n_groups = len(set(real_sent_group_vec))
@@ -93,7 +96,7 @@ for dist_option in dist_option_vec:
 
         # Compute the exchange and transition matrices
         exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list), exch_mat_opt=exch_mat_opt,
-                                                           exch_range=exch_range)
+                                                           exch_range=exch_range, f_vec=sent_weights)
 
         ########################################
         # -- Creating a function to multiprocess

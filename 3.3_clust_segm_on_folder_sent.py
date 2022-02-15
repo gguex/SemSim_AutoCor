@@ -77,11 +77,14 @@ for index_file in range(len(input_text_file_list)):
     # Transform the vector to get 1 group by sentence
     ind_1 = 0
     real_sent_group_vec = []
+    sent_weights = []
     for sent in sent_list:
         sent_token = nltk.word_tokenize(sent)
         token_group = group_list[ind_1:(ind_1 + len(sent_token))]
         real_sent_group_vec.append(int(max(set(token_group), key=token_group.count)))
         ind_1 = ind_1 + len(sent_token)
+        sent_weights.append(len(sent_token))
+    sent_weights = np.array(sent_weights) / sum(sent_weights)
     real_sent_group_vec = np.array(real_sent_group_vec)
 
     # Get the number of groups if there is no group defined
@@ -99,7 +102,8 @@ for index_file in range(len(input_text_file_list)):
     d_mat = similarity_to_dissimilarity(sim_mat, dist_option=dist_option)
 
     # Compute the exchange and transition matrices
-    exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list), exch_mat_opt=exch_mat_opt, exch_range=exch_range)
+    exch_mat, w_mat = exchange_and_transition_matrices(len(sent_list), exch_mat_opt=exch_mat_opt, exch_range=exch_range,
+                                                       f_vec=sent_weights)
 
     # Loop on n_tests
     nmi_vec, pk_vec, win_diff_vec, pk_rdm_vec, win_diff_rdm_vec, \
