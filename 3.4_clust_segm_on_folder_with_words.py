@@ -172,7 +172,7 @@ for index_file in range(len(input_text_file_list)):
         result_matrix, existing_token_list, existing_pos_list = \
             spatial_clustering_on_file(input_text_file, vector_model_path, dist_option,
                                        exch_mat_opt, exch_range, n_groups, alpha, beta,
-                                       kappa, known_labels=known_labels, verbose=True)
+                                       kappa, **arg_label, verbose=True)
 
         # Restrain real group
         real_group_vec = real_group_nr_vec[existing_pos_list]

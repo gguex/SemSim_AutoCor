@@ -1,7 +1,7 @@
 import pandas as pd
 from scipy.stats import sem, t
 
-path_to_file = "results/3.1_clust_results/NMF_clust_elements.csv"
+path_to_file = "results/3.3_semi_clust_results/clust_10_wiki50.csv"
 col_to_compute = "nmi"
 
 # Computations
