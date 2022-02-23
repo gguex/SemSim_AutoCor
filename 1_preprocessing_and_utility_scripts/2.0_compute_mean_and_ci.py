@@ -1,8 +1,8 @@
 import pandas as pd
 from scipy.stats import sem, t
 
-path_to_file = "results/3.2_segm_results/segm_cities.csv"
-col_to_compute = "pk"
+path_to_file = "results/3.1_clust_results/NMF_clust_elements.csv"
+col_to_compute = "nmi"
 
 # Computations
 
