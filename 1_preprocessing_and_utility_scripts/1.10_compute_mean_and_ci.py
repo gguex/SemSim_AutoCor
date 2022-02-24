@@ -1,8 +1,8 @@
 import pandas as pd
 from scipy.stats import sem, t
 
-path_to_file = "results/3.3_semi_clust_results/clust_clinical.csv"
-col_to_compute = "pk"
+path_to_file = "results/sent_segm_clinical.csv"
+col_to_compute = "ext_pk"
 
 # Computations
 
