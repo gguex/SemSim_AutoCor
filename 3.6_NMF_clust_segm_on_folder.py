@@ -61,9 +61,6 @@ for index_file in tqdm(range(len(input_text_file_list))):
     else:
         n_groups = fixed_n_groups
 
-    # The number of Topic and a-priori probabality
-    topic_distrib = [np.sum(real_group_vec == topic_id) / len(real_group_vec) for topic_id in set(real_group_vec)]
-
     # Get tokens
     with open(input_text_file) as text_file:
         text = text_file.read()

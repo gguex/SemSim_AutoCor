@@ -10,13 +10,13 @@ from itertools import permutations
 # -------------------------------------
 
 # Input text file
-input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
+input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 # Input group file
-input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
+input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 # Input sim file
-input_sim_file = "similarity_matrices/61320_199211_pp_wostw_w2v.csv"
+input_sim_file = "similarity_matrices/61320_201211_pp_wostw_w2v.csv"
 # Root name for output files
-output_names_root = "results/61320_199211_pp_wostw"
+output_names_root = "results/NMF_61320_201211_pp_wostw"
 
 #---
 
@@ -28,7 +28,7 @@ dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
 alpha = 5
-beta = 50
+beta = 100
 kappa = 0.5
 known_label_ratio = 0 # if > 0, semi-supervised model
 
@@ -107,12 +107,17 @@ map = np.mean(ap_vector)
 # Segmentation evaluation
 pk_res, win_diff, pk_rdm, win_diff_rdm = seg_eval(algo_group_vec, real_group_vec)
 
-# Compute the aggregate labels
+# Compute the P(g|w)
 df_results = pd.DataFrame(result_matrix)
 df_results["Token"] = token_list
 type_results = df_results.groupby("Token").mean()
 type_list = list(type_results.index)
 type_values = type_results.to_numpy()
+# Compute P(w|g)
+ntype_results = df_results.groupby("Token").sum()
+ntype_list = list(ntype_results.index)
+ntype_values = ntype_results.to_numpy()
+ntype_values = ntype_values / ntype_values.sum(axis=0)
 
 # -------------------------------------
 # --- Writing
@@ -126,6 +131,8 @@ write_groups_in_html_file(output_names_root + "_real.html", token_list, z_real_m
 # Write csv results
 write_membership_mat_in_csv_file(output_names_root + "_token.csv", token_list, result_matrix)
 # Write csv type result
-write_membership_mat_in_csv_file(output_names_root + "_type.csv", type_list, type_values)
+write_membership_mat_in_csv_file(output_names_root + "_P_topic_type.csv", type_list, type_values)
+# Write csv type result
+write_membership_mat_in_csv_file(output_names_root + "_P_type_topic.csv", ntype_list, ntype_values)
 # Print nmi, pk_res, win_diff
 print(f"nmi = {nmi}, map = {map}, pk={pk_res} (rdm={pk_rdm}), win_diff={win_diff} (rdm={win_diff_rdm})")
