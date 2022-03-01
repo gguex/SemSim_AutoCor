@@ -10,9 +10,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # -------------------------------------
 
 # Input text file
-input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_text_file = "../corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 # Input group file
-input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+input_group_file = "../corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 # Root name for output files
 output_names_root = "results/NMF_61320_201211_pp_wostw"
 # Fixed number of groups (if none, extracted from data)
