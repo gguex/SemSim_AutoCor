@@ -10,26 +10,26 @@ from itertools import permutations
 # -------------------------------------
 
 # Input text file
-input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
 # Input group file
-input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
 # Input sim file
-input_sim_file = "similarity_matrices/61320_201211_pp_wostw_w2v.csv"
+input_sim_file = "similarity_matrices/61320_199211_pp_wostw_w2v.csv"
 # Root name for output files
-output_names_root = "results/NMF_61320_201211_pp_wostw"
+output_names_root = "results/clust_61320_199211_pp_wostw"
 
 #---
 
 # Number of groups (if none, extracted from data)
-n_groups = None
+n_groups = 3
 
 # Algo hyperparameters
 dist_option = "max_minus"
 exch_mat_opt = "u"
 exch_range = 15
-alpha = 5
-beta = 100
-kappa = 0.5
+alpha = 2
+beta = 50
+kappa = 1
 known_label_ratio = 0 # if > 0, semi-supervised model
 
 # -------------------------------------
@@ -77,16 +77,17 @@ algo_group_vec = np.argmax(result_matrix, 1) + 1
 original_group = list(range(1, n_groups + 1))
 best_real_group_vec = real_group_vec
 best_nb_match = np.sum(real_group_vec == algo_group_vec)
-for perm in list(permutations(original_group)):
-    perm = np.array(perm)
-    test_real_group_vec = perm[real_group_vec - 1]
-    test_nb_match = np.sum(test_real_group_vec == algo_group_vec)
-    if test_nb_match > best_nb_match:
-        best_nb_match = test_nb_match
-        best_real_group_vec = test_real_group_vec
+if n_groups is None:
+    for perm in list(permutations(original_group)):
+        perm = np.array(perm)
+        test_real_group_vec = perm[real_group_vec - 1]
+        test_nb_match = np.sum(test_real_group_vec == algo_group_vec)
+        if test_nb_match > best_nb_match:
+            best_nb_match = test_nb_match
+            best_real_group_vec = test_real_group_vec
 
 # Compute the real membership matrix
-z_real_mat = np.zeros((len(token_list), n_groups))
+z_real_mat = np.zeros((len(token_list), len(set(real_group_vec))))
 for i, label in enumerate(best_real_group_vec):
     if label != 0:
         z_real_mat[i, :] = 0
