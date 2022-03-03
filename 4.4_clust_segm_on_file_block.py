@@ -12,7 +12,7 @@ input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 # Input group file
 input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 # Output file
-output_file = "results/3.6_block_results/block_results_weak_61320_201211.csv"
+output_file = "results/3.6_block_results/block_clust_weak_61320_201211.csv"
 
 #---
 
