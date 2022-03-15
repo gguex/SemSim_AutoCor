@@ -7,9 +7,9 @@ from sklearn.metrics import normalized_mutual_info_score
 # -------------------------------------
 
 # Input text file
-input_text_file = "corpora/clinical_pp/cl002_pp_wostw.txt"
+input_text_file = "corpora/manifesto_pp/61320_202011_pp_wostw.txt"
 # Input group file
-input_group_file = "corpora/clinical_pp/cl002_pp_wostw_groups.txt"
+input_group_file = "corpora/manifesto_pp/61320_202011_pp_wostw_groups.txt"
 # Input vector model
 home = os.path.expanduser("~")
 vector_model_path = f"{home}/Documents/data/pretrained_word_vectors/en_fasttext.model"
@@ -22,13 +22,16 @@ n_groups = None
 # Block size
 block_size = None
 
+# Strong pass
+strong_pass = False
+
 # Algo hyperparameters
 dist_option = "max_minus"
 exch_mat_opt = "u"
-exch_range = 15
-alpha = 5
-beta = 1
-kappa = 0
+exch_range = 5
+alpha = 2
+beta = 5
+kappa = 0.25
 known_label_ratio = 0  # if > 0, semi-supervised model
 
 # -------------------------------------
@@ -45,7 +48,7 @@ if n_groups is None:
 z_res, existing_token_list, existing_pos_list = \
     spatial_clustering_on_file(input_text_file, vector_model_path, dist_option,
                                exch_mat_opt, exch_range, n_groups, alpha, beta,
-                               kappa, block_size=block_size, verbose=True, strong_pass=True)
+                               kappa, block_size=block_size, verbose=True, strong_pass=strong_pass)
 
 write_groups_in_html_file("test.html", existing_token_list, z_res)
 
