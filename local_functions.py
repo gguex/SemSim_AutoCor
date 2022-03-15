@@ -552,7 +552,7 @@ def spatial_clustering_on_file(file_path, word_vector_path, dist_option, exch_ma
     return z_final, existing_token_list, existing_pos_list
 
 
-def seg_eval(algo_group_vec, real_group_vec):
+def seg_eval(algo_group_vec, real_group_vec, rev=True):
     """
     A function computing the Pk and win_diff value for 2 segmentations. Also give random baselines
     :param algo_group_vec: The algorithm result in the form a token group memberships
@@ -572,19 +572,32 @@ def seg_eval(algo_group_vec, real_group_vec):
     rdm.shuffle(rdm_group_vec)
     rdm_segm_vec = convert_positions_to_masses(rdm_group_vec)
 
-    # Compute the real value
-    pk_res = pk(algo_segm_vec, real_segm_vec)
-    try:
-        win_diff = window_diff(algo_segm_vec, real_segm_vec)
-    except:
-        win_diff = 1
-
-    # Compute the random value
-    pk_rdm = pk(rdm_segm_vec, real_segm_vec)
-    try:
-        win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
-    except:
-        win_diff_rdm = 1
+    if rev:
+        # Compute the real value
+        pk_res = pk(real_segm_vec, algo_segm_vec)
+        try:
+            win_diff = window_diff(real_segm_vec, algo_segm_vec)
+        except:
+            win_diff = 1
+        # Compute the random value
+        pk_rdm = pk(real_segm_vec, rdm_segm_vec)
+        try:
+            win_diff_rdm = window_diff(real_segm_vec, rdm_segm_vec)
+        except:
+            win_diff_rdm = 1
+    else:
+        # Compute the real value
+        pk_res = pk(algo_segm_vec, real_segm_vec)
+        try:
+            win_diff = window_diff(algo_segm_vec, real_segm_vec)
+        except:
+            win_diff = 1
+        # Compute the random value
+        pk_rdm = pk(rdm_segm_vec, real_segm_vec)
+        try:
+            win_diff_rdm = window_diff(rdm_segm_vec, real_segm_vec)
+        except:
+            win_diff_rdm = 1
 
     # Return
     return pk_res, win_diff, pk_rdm, win_diff_rdm
