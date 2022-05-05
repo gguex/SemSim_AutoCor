@@ -1,6 +1,6 @@
-from sentence_transformers import SentenceTransformer, util
 from local_functions import *
 import pandas as pd
+from sentence_transformers import SentenceTransformer, util
 
 # Loading the corpus
 democrat_1992 = pd.read_csv("Democrat_1992.csv")
