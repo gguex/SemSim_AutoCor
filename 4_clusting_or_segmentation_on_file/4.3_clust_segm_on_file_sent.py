@@ -8,9 +8,9 @@ import pandas as pd
 # -------------------------------------
 
 # Input text file
-input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_text_file = "../corpora/manifesto_pp/61320_201211_pp_wostw.txt"
 # Input group file
-input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+input_group_file = "../corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 # Root name for output files
 output_names_root = "results/sent_clust_61320_200411"
 

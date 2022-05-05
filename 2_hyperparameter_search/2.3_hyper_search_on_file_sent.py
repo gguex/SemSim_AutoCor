@@ -17,8 +17,8 @@ base_path = os.getcwd()
 
 # ------------ Options
 
-input_text_file = "corpora/manifesto_pp/61320_201211_pp_wostw.txt"
-input_group_file = "corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
+input_text_file = "../corpora/manifesto_pp/61320_201211_pp_wostw.txt"
+input_group_file = "../corpora/manifesto_pp/61320_201211_pp_wostw_groups.txt"
 
 results_file_name = "results/2_hyperparam_search/SentGn_61320_201211_pp_wostw_new.csv"
 

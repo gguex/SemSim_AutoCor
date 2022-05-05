@@ -15,7 +15,7 @@ input_text_folder = "corpora/clinical_pp"
 # Take stopwords
 stop_words = False
 # Output file name
-output_file_name = "results/3.1_clust_results/LDA_clust_clinical.csv"
+output_file_name = "../results/3.1_clust_results/LDA_clust_clinical.csv"
 
 # Fixed number of groups (if none, extracted from data)
 fixed_n_groups = None

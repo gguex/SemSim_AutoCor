@@ -20,6 +20,14 @@ segm_max.iloc[0, 1] = n_max_token
 clust_max2.iloc[0, 1] = n_max_token
 segm_max2.iloc[0, 1] = n_max_token
 
+# Function for CI plotting
+def plot_ci(x, y, var, hline_width=100, color="black"):
+    for x_i, y_i, var_i in zip(x, y, var):
+        plt.plot([x_i, x_i], [y_i + var_i, y_i - var_i], ":", color=color)
+        plt.plot([x_i - hline_width, x_i + hline_width], [y_i + var_i, y_i + var_i], color=color)
+        plt.plot([x_i - hline_width, x_i + hline_width], [y_i - var_i, y_i - var_i], color=color)
+
+
 # Time results
 time_df = pd.concat([clust_s_res["elapse_time"], clust_w_res["elapse_time"], clust_w2_res["elapse_time"],
            segm_s_res["elapse_time"], segm_w_res["elapse_time"], segm_w2_res["elapse_time"]], axis=1)
@@ -33,9 +41,10 @@ max_time_sd = max_time_df.std(axis=1)
 
 plt.figure()
 plt.grid()
-plt.plot(clust_s_res["block_size"], time_mean, '-bo', color="black")
-plt.plot(clust_s_res["block_size"], time_mean - 2.57*time_sd/(5**(1/2)), '--', color="black")
-plt.plot(clust_s_res["block_size"], time_mean + 2.57*time_sd/(5**(1/2)), '--', color="black")
+plt.plot(clust_s_res["block_size"], time_mean, '-', color="black")
+#plt.plot(clust_s_res["block_size"], time_mean - 2.57*time_sd/(5**(1/2)), '--', color="black")
+#plt.plot(clust_s_res["block_size"], time_mean + 2.57*time_sd/(5**(1/2)), '--', color="black")
+plot_ci(clust_s_res["block_size"], time_mean, 2.57*time_sd/(5**(1/2)))
 plt.plot()
 plt.xlabel("Block size")
 plt.ylabel("Computing time (sec)")
@@ -55,9 +64,10 @@ max_nmi_sd = max_nmi_df.std(axis=1)
 
 plt.figure()
 plt.grid()
-plt.plot(clust_s_res["block_size"], nmi_mean, '-bo', color="black")
-plt.plot(clust_s_res["block_size"], nmi_mean - 4.3*nmi_sd/(2**(1/2)), '--', color="black")
-plt.plot(clust_s_res["block_size"], nmi_mean + 4.5*nmi_sd/(2**(1/2)), '--', color="black")
+plt.plot(clust_s_res["block_size"], nmi_mean, '-o', color="black", markersize=4)
+#plt.plot(clust_s_res["block_size"], nmi_mean - 4.3*nmi_sd/(2**(1/2)), '--', color="black")
+#plt.plot(clust_s_res["block_size"], nmi_mean + 4.5*nmi_sd/(2**(1/2)), '--', color="black")
+plot_ci(clust_s_res["block_size"], nmi_mean, 4.3*nmi_sd/(2**(1/2)))
 plt.plot()
 plt.xlabel("Block size")
 plt.ylabel("NMI")
@@ -71,15 +81,16 @@ pk_df = pd.concat([segm_s_res["pk"], segm_w_res["pk"], segm_w2_res["pk"]], axis=
 pk_mean = pk_df.mean(axis=1)
 pk_sd = pk_df.std(axis=1)
 
-max_pk_df = pd.concat([segm_max["pk"], segm_max2["pk"], pd.Series(0.392931)], axis=1)
+max_pk_df = pd.concat([segm_max["pk"], pd.Series(0.395245), pd.Series(0.389452)], axis=1)
 max_pk_mean = max_pk_df.mean(axis=1)
 max_pk_sd = max_pk_df.std(axis=1)
 
 plt.figure()
 plt.grid()
-plt.plot(clust_s_res["block_size"], pk_mean, '-bo', color="black")
-plt.plot(clust_s_res["block_size"], pk_mean - 4.3*pk_sd/(2**(1/2)), '--', color="black")
-plt.plot(clust_s_res["block_size"], pk_mean + 4.5*pk_sd/(2**(1/2)), '--', color="black")
+plt.plot(clust_s_res["block_size"], pk_mean, '-o', color="black", markersize=4)
+#plt.plot(clust_s_res["block_size"], pk_mean - 4.3*pk_sd/(2**(1/2)), '--', color="black")
+#plt.plot(clust_s_res["block_size"], pk_mean + 4.5*pk_sd/(2**(1/2)), '--', color="black")
+plot_ci(clust_s_res["block_size"], pk_mean, 4.3*pk_sd/(2**(1/2)))
 plt.plot()
 plt.xlabel("Block size")
 plt.ylabel("Pk")

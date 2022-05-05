@@ -1,8 +1,8 @@
+from local_functions import seg_eval
 import numpy as np
 from sklearn.metrics import normalized_mutual_info_score
-from tqdm import tqdm
 import os
-from local_functions import seg_eval
+from tqdm import tqdm
 from sklearn.decomposition import NMF
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -10,61 +10,53 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # --- Parameters
 # -------------------------------------
 
-# Input folder
-input_text_folder = "corpora/elements_pp"
-# Take stopwords
-stop_words = False
-# Output file name
-output_file_name = "results/3.1_clust_results/NMF_clust_elements.csv"
+base_path = os.getcwd()
 
-# Fixed number of groups (if none, extracted from data)
-fixed_n_groups = None
+# ------------ Options
 
-# Hyperparameters
-chunk_size = 156
+input_text_file = "../corpora/elements_pp/e10_pp_wostw.txt"
+input_group_file = "../corpora/elements_pp/e10_pp_wostw_groups.txt"
+
+results_file_name = "../results/2_hyperparam_search/NMF_Gn_e10_pp_wostw.csv"
+
+# ---
+
+# Number groups (if None, extracted from data)
+n_groups = None
+
+# Search : either chunk_size_vec directly (put None to use "chunk_vec_sep")
+chunk_size_vec = None
+# either split length(token) into approx equal parts
+chunk_vec_sep = 20
 
 # -------------------------------------
 # --- Computations
 # -------------------------------------
 
-# List files
-file_list = os.listdir(input_text_folder)
-
-# Restrict them to those with or without stopwords
-file_list = [file for file in file_list if ("wostw" in file) ^ stop_words]
-
-# Sort the list
-file_list.sort()
-
-# Split groups and non-groups file
-text_file_list = [file for file in file_list if "groups" not in file]
-input_text_file_list = [f"{input_text_folder}/{file}" for file in file_list if "groups" not in file]
-input_group_file_list = [f"{input_text_folder}/{file}" for file in file_list if "groups" in file]
-
 # Make results file
-with open(output_file_name, "w") as output_file:
+with open(results_file_name, "w") as output_file:
     output_file.write("input_file,n_groups,chunk_size,"
-                      "nmi,pk,pk_rdm,wd,wd_rdm\n")
+                      "mean_nmi,mean_pk,mean_rdm_pk,mean_wd,mean_rdm_wd\n")
 
-for index_file in tqdm(range(len(input_text_file_list))):
+# Get real groups
+with open(input_group_file) as ground_truth:
+    real_group_vec = ground_truth.read()
+    real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
+if n_groups is None:
+    n_groups = len(set(real_group_vec))
 
-    # Get text file associated files
-    input_text_file = input_text_file_list[index_file]
-    input_group_file = input_group_file_list[index_file]
+# Get tokens
+with open(input_text_file) as text_file:
+    text = text_file.read()
+    token_list = text.split()
 
-    # Get real groups
-    with open(input_group_file) as ground_truth:
-        real_group_vec = ground_truth.read()
-        real_group_vec = np.array([int(element) for element in real_group_vec.split(",")])
-    if fixed_n_groups is None:
-        n_groups = len(set(real_group_vec))
-    else:
-        n_groups = fixed_n_groups
+# Define chunk exploration space
+if chunk_size_vec is None:
+    step_chunk = int(np.ceil(len(token_list) / chunk_vec_sep))
+    chunk_size_vec = list(range(step_chunk, step_chunk*chunk_vec_sep + 1, step_chunk))
 
-    # Get tokens
-    with open(input_text_file) as text_file:
-        text = text_file.read()
-        token_list = text.split()
+# -- Loop on chunk_size
+for chunk_size in tqdm(chunk_size_vec):
 
     # Divide the corpus by chunk
     n_chunk = int(np.ceil(len(token_list) / chunk_size))
@@ -100,8 +92,7 @@ for index_file in tqdm(range(len(input_text_file_list))):
     for chunk_id, token_chunk_list in enumerate(token_list_list):
 
         # words x documents probabilities
-        word_likelihood = (norm_word_array * np.outer(norm_document_array[chunk_id, :],
-                                                      np.ones(norm_word_array.shape[1]))).T
+        word_likelihood = (norm_word_array * np.outer(norm_document_array[chunk_id, :], np.ones(norm_word_array.shape[1]))).T
         word_groups = np.argmax(word_likelihood, 1) + 1
 
         # Contruct the algo_group_vec
@@ -120,5 +111,6 @@ for index_file in tqdm(range(len(input_text_file_list))):
     pk, wd, pk_rdm, wd_rdm = seg_eval(algo_group_vec, real_group_vec)
 
     # Writing results
-    with open(output_file_name, "a") as output_file:
-        output_file.write(f"{input_text_file},{n_groups},{chunk_size},{nmi},{pk},{pk_rdm},{wd},{wd_rdm}\n")
+    with open(results_file_name, "a") as output_file:
+        output_file.write(f"{input_text_file},{n_groups},{chunk_size},{nmi},"
+                          f"{pk},{pk_rdm},{wd},{wd_rdm}\n")

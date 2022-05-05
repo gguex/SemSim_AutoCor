@@ -10,11 +10,11 @@ from itertools import permutations
 # -------------------------------------
 
 # Input text file
-input_text_file = "corpora/manifesto_pp/61320_199211_pp_wostw.txt"
+input_text_file = "../corpora/manifesto_pp/61320_199211_pp_wostw.txt"
 # Input group file
-input_group_file = "corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
+input_group_file = "../corpora/manifesto_pp/61320_199211_pp_wostw_groups.txt"
 # Input sim file
-input_sim_file = "similarity_matrices/61320_199211_pp_wostw_w2v.csv"
+input_sim_file = "../similarity_matrices/61320_199211_pp_wostw_w2v.csv"
 # Root name for output files
 output_names_root = "results/clust_61320_199211_pp_wostw"
 

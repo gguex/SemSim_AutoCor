@@ -2,7 +2,7 @@
 # import numpy as np
 # from nltk.corpus import wordnet as wn
 # from nltk.corpus import wordnet_ic
-# from old_python_scripts.local_functions import get_all_paths
+# from old_scripts.local_functions import get_all_paths
 # from tqdm import tqdm
 # from itertools import product
 

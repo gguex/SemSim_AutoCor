@@ -14,10 +14,10 @@ base_path = os.getcwd()
 
 # ------------ Options
 
-input_text_file = "corpora/clinical_pp/cl136_pp_wostw.txt"
-input_group_file = "corpora/clinical_pp/cl136_pp_wostw_groups.txt"
+input_text_file = "../corpora/clinical_pp/cl136_pp_wostw.txt"
+input_group_file = "../corpora/clinical_pp/cl136_pp_wostw_groups.txt"
 
-results_file_name = "results/2_hyperparam_search/LDA_G2_cl136_pp_wostw.csv"
+results_file_name = "../results/2_hyperparam_search/LDA_G2_cl136_pp_wostw.csv"
 
 # ---
 
