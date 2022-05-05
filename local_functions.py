@@ -680,17 +680,17 @@ def write_groups_in_html_file(output_file, token_list, z_mat, comment_line=None)
 
         # Writing comment is present
         if comment_line is None:
-            html_file.write("<body><p>")
+            html_file.write("<body>\n<p>\n")
         else:
-            html_file.write(f"<body><p>{comment_line}</p> <p>")
+            html_file.write(f"<body>\n<p>{comment_line}</p>\n<p>")
 
         # Writing tokens with colors
         for i in range(len(token_list)):
             html_file.write(f"<span style=\"background-color: "
                             f"rgb({token_color_mat[i, 0]},{token_color_mat[i, 1]},{token_color_mat[i, 2]})\">")
-            html_file.write(token_list[i] + " </span>")
+            html_file.write(token_list[i] + " </span>\n")
 
-        html_file.write("</p></body>\n</html>")
+        html_file.write("</p>\n</body>\n</html>")
 
     # Return 0 is all went well
     return 0
