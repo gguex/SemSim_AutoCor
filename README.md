@@ -77,7 +77,7 @@ You can fine additional, documented functions in the `local_functions.py` file, 
 #### Text segmentation results, indicated with Pk score (lower is better) compared to state-of-the-art methods
 
 <p align="center">
-<img src="results/fig/pk.png" alt="tokens" style="width:100%">
+<img src="results/fig/pk.png" alt="pk_results" style="width:100%">
 </p>
 
 ### Organisation of this page
