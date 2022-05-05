@@ -1,18 +1,20 @@
-# Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering
+# A general framework for spatial clustering of textual objects: applications in topic clustering and text segmentation
 
 Welcome to the GitHub repository for the (upcoming) article 
-*Spatial methods applied to text : Autocorrelation indices and Fuzzy Topic Clustering*.
+*A general framework for spatial clustering of textual objects: applications in topic clustering and text segmentation*.
 
 ### Abstract 
 
-This paper presents a general formalism, originated from spatial statistics, which systematically combines two different aspects of tokens found in a text: their **semantic similarities** and their **position** relatively to each others. Uniting these two elements through a classical data analytic formalism yields textual autocorrelation indices of direct relevance for clustering: the **global autocorrelation index** indicates if, overall, semantically similar tokens lies in the same textual neighborhood; the **local autocorrelation index**, referring to each token, indicates if the token semantically contrasted within its vicinity. This formalism also provides a **fuzzy tokens clustering** algorithm, where resulting clusters contain a mixture of semantically and spatially similar tokens. This method, while close to **Topic Modeling** or **Topic Segmentation** approaches, differs from them as it assigns a probability of topic to each tokens, while preserving a spatial coherence between topics, all of this in a unsupervised fashion. It demonstrates promising results on artificial and real-life corpora and provides an new way to extract topics from a document, hence the name **Fuzzy Topic Clustering**.
+We present a general, classical, framework of spatial clustering which can be applied to various textual objects (e.g. character n-grams, words, sentences). This framework proposes to cluster objects according to users defined linguistic similarity, while keeping a spatial coherence of objects among clusters. Two methods are derived from this formalism: SpatialWord, which applies on word-tokens, and SpatialSent, operating on sentences, which both balance between semantic similarities of objects and their position along the textual sequence. We show that these unsupervised methods, along with semi-supervised variants, can perform jointly two operations often achieved individually by methods in literature: (1) the extraction of a desirable number of topics from a document along with list of words to interpret them; and (2) the textual segmentation of the document reflecting these extracted topics. Case studies show that these methods perform competitively against state-of-the-art methods on baseline datasets.
 
-### Result examples
+### Some Results
 
-#### Standardized values of the Global Autocorrelation index vs distance between tokens according to the *Wu-Palmer semantic similarity*
+#### Clustering results, with different hyperparameters, on a *Manifesto project* (https://manifesto-project.wzb.eu/) file.
 
-<p align="center">
-<img src="results/fig/3.1_autocor50_wup.png" alt="tokens" style="width:50%">
+<p>
+<img src="results/fig/high_beta.png" alt="tokens" style="width:30%">
+<img src="results/fig/high_entrop.png" alt="tokens" style="width:30%">
+<img src="results/fig/low_beta.png" alt="tokens" style="width:30%">
 </p>
 
 #### Local semantic autocorrelation of tokens of *Flower of the Farms* corpus according to GloVe semantic similarity.
